@@ -1,13 +1,13 @@
-### ENDINC – Define the End of an Include File
+### ENDINC – Define the End of an Include File {#kw-ENDINC}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword marks the end of an include file specified on the INCLUDE keyword. When the ENDINC keyword is encountered in the INCLUDE file, input data is read from the next keyword in the current file. Any keywords and data after the ENDINC keyword in the INCLUDE file are ignored.
+This keyword marks the end of an include file specified on the [INCLUDE](#kw-INCLUDE) keyword. When the ENDINC keyword is encountered in the [INCLUDE](#kw-INCLUDE) file, input data is read from the next keyword in the current file. Any keywords and data after the ENDINC keyword in the [INCLUDE](#kw-INCLUDE) file are ignored.
 
 There is no data required for this keyword.
 
@@ -52,4 +52,4 @@ DATES
 ```
 
 
-In the above example OPM Flow will process the data up to October 1, 2006 only, and return control to the file that called the INCLUDE keyword, and then continue processing the input files. All keywords after the ENDINC keyword in the INCLUDE FILE will not be read or processed.
+In the above example OPM Flow will process the data up to October 1, 2006 only, and return control to the file that called the [INCLUDE](#kw-INCLUDE) keyword, and then continue processing the input files. All keywords after the ENDINC keyword in the [INCLUDE](#kw-INCLUDE) FILE will not be read or processed.

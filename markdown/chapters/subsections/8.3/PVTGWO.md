@@ -1,13 +1,13 @@
-### PVTGWO – Gas PVT Properties for Wet Gas with Vaporized Water and Oil
+### PVTGWO – Gas PVT Properties for Wet Gas with Vaporized Water and Oil {#kw-PVTGWO}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-PVTGWO defines the gas PVT properties for wet gas^[Natural gas that contains significant heavy hydrocarbons such as propane, butane and other liquid hydrocarbons is known as wet gas or rich gas. The general rule of thumb is if the gas contains less methane (typically less than 85% methane) and more ethane, and other more complex hydrocarbons, it is labeled as wet gas. Wet gas normally has GOR's less than 100,000 scf/stb or 18,000 Sm3/m3, with the condensate having a gravity greater than 50 oAPI.] with vaporized water and oil. This keyword should be used when the VAPOIL and VAPWAT keywords have been declared in the RUNSPEC section indicating that vaporized oil and water are present in the wet gas phase. The keyword may be used for oil-water-gas input decks that contain the wet gas with vaporized oil and water phases.
+PVTGWO defines the gas PVT properties for wet gas^[Natural gas that contains significant heavy hydrocarbons such as propane, butane and other liquid hydrocarbons is known as wet gas or rich gas. The general rule of thumb is if the gas contains less methane (typically less than 85% methane) and more ethane, and other more complex hydrocarbons, it is labeled as wet gas. Wet gas normally has GOR's less than 100,000 scf/stb or 18,000 Sm3/m3, with the condensate having a gravity greater than 50 oAPI.] with vaporized water and oil. This keyword should be used when the [VAPOIL](#kw-VAPOIL) and [VAPWAT](#kw-VAPWAT) keywords have been declared in the [RUNSPEC](#kw-RUNSPEC) section indicating that vaporized oil and water are present in the wet gas phase. The keyword may be used for oil-water-gas input decks that contain the wet gas with vaporized oil and water phases.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -31,11 +31,8 @@ This is an OPM Flow specific keyword for the simulator’s Water Vaporization Mo
 | 5 | VISS | VISU | VISS a columnar vector of real increasing down the column values that defines the corresponding gas phase viscosity for a given pressure (PRESS) and for a given RWS and RVS. VISU a columnar vector of real decreasing from VISS down the column values that defines the corresponding gas phase viscosity for a given pressure (PRESS) and for a given RWU and RVU. | None |
 | cP | cP | cP |  |  |
 | Notes: |  |  |  |  |
-
-*Table 8.3.232.1: PVTGWO Keyword Description*
-
-
-See also the PVTG keyword in the PROPS section that defines the wet gas PVT properties when  vaporized oil is present in the gas phase, and the PVTGW keyword in the PROPS section that defines the dry gas PVT properties when vaporized water is present in the gas phase. As an alternative to using the PVTGWO keyword, the PVTGW and PVTG keywords may be combined to fully define the wet gas PVT properties if both vaporized water and vaporized oil are present in the gas phase.
+: PVTGWO Keyword Description {#tbl-8-3-232-1}
+See also the [PVTG](#kw-PVTG) keyword in the [PROPS](#kw-PROPS) section that defines the wet gas PVT properties when  vaporized oil is present in the gas phase, and the [PVTGW](#kw-PVTGW) keyword in the [PROPS](#kw-PROPS) section that defines the dry gas PVT properties when vaporized water is present in the gas phase. As an alternative to using the PVTGWO keyword, the [PVTGW](#kw-PVTGW) and [PVTG](#kw-PVTG) keywords may be combined to fully define the wet gas PVT properties if both vaporized water and vaporized oil are present in the gas phase.
 
 
 #### Example
@@ -81,6 +78,6 @@ PVTGWO
 ```
 
 
-The above example defines two wet PVT tables assuming NTPVT equals two and NPPVT is greater than or equal to eight on the TABDIMS keyword in the RUNSPEC section.
+The above example defines two wet PVT tables assuming NTPVT equals two and NPPVT is greater than or equal to eight on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 Notice that there is no terminating “/” for this keyword only for a table and a sub table.

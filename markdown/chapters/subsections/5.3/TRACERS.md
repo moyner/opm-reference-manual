@@ -1,7 +1,7 @@
-### TRACERS – Activate Tracer Options and Set Tracer Array Dimensions
+### TRACERS – Activate Tracer Options and Set Tracer Array Dimensions {#kw-TRACERS}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -12,10 +12,10 @@ The TRACERS keyword defines the number of tracers in the model and the various p
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | MXOILTR | A positive integer defining the maximum number of passive oil tracers defined using the TRACER keyword. | 0 |
-| 2 | MXWATTR | A positive integer defining the maximum number of passive water tracers defined using the TRACER keyword. | 0 |
-| 3 | MXGASTR | A positive integer defining the maximum number of passive gas tracers defined using the TRACER keyword. | 0 |
-| 4 | MXENVTR | A positive integer defining the maximum number of passive environmental tracers defined using the TRACER keyword.  Environmental tracers are used with the Environment Tracer model that takes into account tracer adsorption and decay. Only the default value of zero is currently supported. | 0 |
+| 1 | MXOILTR | A positive integer defining the maximum number of passive oil tracers defined using the [TRACER](#kw-TRACER) keyword. | 0 |
+| 2 | MXWATTR | A positive integer defining the maximum number of passive water tracers defined using the [TRACER](#kw-TRACER) keyword. | 0 |
+| 3 | MXGASTR | A positive integer defining the maximum number of passive gas tracers defined using the [TRACER](#kw-TRACER) keyword. | 0 |
+| 4 | MXENVTR | A positive integer defining the maximum number of passive environmental tracers defined using the [TRACER](#kw-TRACER) keyword.  Environmental tracers are used with the Environment Tracer model that takes into account tracer adsorption and decay. Only the default value of zero is currently supported. | 0 |
 | 5 | DIFFOPT | A character string defining the numerical diffusion option for tracer tracking runs that should be set to: Only the default value of NODIFF is supported | NODIFF |
 | 6 | MXITRTR | A positive integer defining the maximum number of non-linear iterations to be used when the tracer option is activated. | 12 |
 | 7 | MNITRTR | A positive integer defining the minimum number of non-linear iterations to be used when the tracer option is activated. | 1 |
@@ -25,11 +25,8 @@ The TRACERS keyword defines the number of tracers in the model and the various p
 | 11 | CONFAC | A real value defining the LNCONFAC and NLCONFAC convergence factors to be used after the initial convergence factor has been applied. | 1.0 |
 | 12 | NUMCONF | A positive integer defining the maximum number of times CONFAC can be used. | 0 |
 | Notes: |  |  |  |
-
-*Table 5.48: TRACERS Keyword Description*
-
-
-See also the TRACER keyword in the PROPS section that defines the individual tracers.
+: TRACERS Keyword Description {#tbl-5-48}
+See also the [TRACER](#kw-TRACER) keyword in the [PROPS](#kw-PROPS) section that defines the individual tracers.
 
 
 #### Example

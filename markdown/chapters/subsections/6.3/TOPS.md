@@ -1,7 +1,7 @@
-### TOPS – Define the Depth at the Center of the Top Face for Each Cell
+### TOPS – Define the Depth at the Center of the Top Face for Each Cell {#kw-TOPS}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -15,13 +15,10 @@ It can only be used with the Cartesian Regular Grid or Radial Grid models.
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | TOPS | TOPS is an array of real numbers defining the depth at the top face of each cell in the model. One can either just enter the TOPS for the first layer only based on NX x NY entries and OPM Flow will calculate the remaining TOPS based on either DZ or DZV. Alternatively NX x NY x NZ TOPS may be entered for each cell in the model. See the DIMENS keyword in the RUNSPEC section for the definition of NX, NY and NZ. Repeat counts may be used, for example 10*5201.0. | None |
+| 1 | TOPS | TOPS is an array of real numbers defining the depth at the top face of each cell in the model. One can either just enter the TOPS for the first layer only based on NX x NY entries and OPM Flow will calculate the remaining TOPS based on either [DZ](#kw-DZ) or [DZV](#kw-DZV). Alternatively NX x NY x NZ TOPS may be entered for each cell in the model. See the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section for the definition of NX, NY and NZ. Repeat counts may be used, for example 10*5201.0. | None |
 | feet | m | cm |  |
 | Notes: |  |  |  |
-
-*Table 6.129: TOPS Keyword Description*
-
-
+: TOPS Keyword Description {#tbl-6-129}
 See also the DEPTHS keyword to define the structural depth for the cells.
 
 
@@ -49,7 +46,7 @@ DYV
 
 A second example is shown on the following page.
 
-This example defines the same grid as before but with the TOPS keyword only defining the top layer and DZV keyword defining the cells thickness.
+This example defines the same grid as before but with the TOPS keyword only defining the top layer and [DZV](#kw-DZV) keyword defining the cells thickness.
 
 
 ```

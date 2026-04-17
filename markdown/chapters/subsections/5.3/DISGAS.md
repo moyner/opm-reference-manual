@@ -1,7 +1,7 @@
-### DISGAS – Activate the Dissolved Gas Phase in the Model
+### DISGAS – Activate the Dissolved Gas Phase in the Model {#kw-DISGAS}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -9,7 +9,7 @@
 
 This keyword indicates that dissolved gas is present in live^[“Live” oil is oil that contains gas in solution, which is normally the case for most conventional oil reservoirs. However, for oil reservoirs classified as heavy oil reservoirs, the in situ dissolved gas may be negligible and oil would then be classified as gas-free oil which is commonly referred to as “dead” oil.] oil in the model and the keyword should only be used if the there is both oil and gas phases in the model. The keyword may be used for oil-water and oil-water-gas input decks that contain the oil and gas phases. The keyword will also invoke data input file checking to ensure that all the required oil and gas phase input parameters are defined in the input deck.
 
-If the oil has a constant and uniform dissolved gas concentration, Gas-Oil Ratio (“GOR”), and if the reservoir pressure never drops below the saturation pressure (bubble point pressure), then the model can be run more efficiently by omitting the GAS and DISGAS keywords from the RUNSPEC section, treating the oil as a dead oil^[“Dead” oil is oil that it contains no dissolved gas or a relatively thick oil or residue that has lost its volatile components.], and defining a constant Rs (GOR) value with keyword RSCONST or RSCONSTT in the PROPS section. This results in the model being run with as a dead oil problem with no active gas phase. However, OPM Flow takes into account the constant Rs in the calculations and reporting.
+If the oil has a constant and uniform dissolved gas concentration, Gas-Oil Ratio (“GOR”), and if the reservoir pressure never drops below the saturation pressure (bubble point pressure), then the model can be run more efficiently by omitting the [GAS](#kw-GAS) and DISGAS keywords from the [RUNSPEC](#kw-RUNSPEC) section, treating the oil as a dead oil^[“Dead” oil is oil that it contains no dissolved gas or a relatively thick oil or residue that has lost its volatile components.], and defining a constant Rs (GOR) value with keyword [RSCONST](#kw-RSCONST) or [RSCONSTT](#kw-RSCONSTT) in the [PROPS](#kw-PROPS) section. This results in the model being run with as a dead oil problem with no active gas phase. However, OPM Flow takes into account the constant Rs in the calculations and reporting.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 

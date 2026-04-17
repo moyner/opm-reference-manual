@@ -1,13 +1,13 @@
-### SALTMF – Define the Salt Liquid-Phase Mole Fraction for All Cells
+### SALTMF – Define the Salt Liquid-Phase Mole Fraction for All Cells {#kw-SALTMF}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The SALTMF keyword defines a uniform salt liquid-phase mole fraction for all cells in the model. The keyword should only be used with OPM Flow’s CO2-Brine model which is activated via the CO2STORE keyword in the RUNSPEC section.
+The SALTMF keyword defines a uniform salt liquid-phase mole fraction for all cells in the model. The keyword should only be used with OPM Flow’s CO2-Brine model which is activated via the [CO2STORE](#kw-CO2STORE) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 This is an OPM Flow specific keyword.
 
@@ -18,11 +18,8 @@ This is an OPM Flow specific keyword.
 | 1 | SALTMF | A real positive value that defines the salt liquid-phase mole fraction for all grid blocks in the model for when the CO2-Brine model has been activated. |  |  |  |
 | mole fraction | mole fraction | mole fraction |  |  |  |
 | Notes: |  |  |  |  |  |
-
-*Table 8.3.277.1: SALTMF Keyword Description*
-
-
-See also the CO2STORE keyword in the RUNSPEC section.
+: SALTMF Keyword Description {#tbl-8-3-277-1}
+See also the [CO2STORE](#kw-CO2STORE) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 
 #### Example

@@ -1,30 +1,27 @@
-### WVFPDP – Modify Well BHP Obtained from VFP Tables
+### WVFPDP – Modify Well BHP Obtained from VFP Tables {#kw-WVFPDP}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The WVFPDP keyword modifies a well’s Bottom-Hole Pressure (“BHP”) estimated by the simulator by interpolation of the Vertical Flow Performance (“VFP”) tables. The production VFP tables are entered via the VFPPROD keyword and the injection tables by the VFPINJ keyword; both keywords are in the SCHEDULE section.
+The WVFPDP keyword modifies a well’s Bottom-Hole Pressure (“BHP”) estimated by the simulator by interpolation of the Vertical Flow Performance (“VFP”) tables. The production VFP tables are entered via the [VFPPROD](#kw-VFPPROD) keyword and the injection tables by the [VFPINJ](#kw-VFPINJ) keyword; both keywords are in the [SCHEDULE](#kw-SCHEDULE) section.
 
-Note that simulator automatically adjusts the interpolated BHP to account for hydrostatic head using the density of the wellbore fluid and the difference between a well’s BHP reference depth, as per the BHPREF parameter on the WELSPECS or WELSPECL keywords in the SCHEDULE section, and the VFPREF   parameter reference depth on the VFPPROD and VFPINJ keywords. Thus, WVFPDP applies an additional adjustment in order to match a well’s flow rate to a given tubing head pressure, by adjusting the BHP.
+Note that simulator automatically adjusts the interpolated BHP to account for hydrostatic head using the density of the wellbore fluid and the difference between a well’s BHP reference depth, as per the BHPREF parameter on the [WELSPECS](#kw-WELSPECS) or [WELSPECL](#kw-WELSPECL) keywords in the [SCHEDULE](#kw-SCHEDULE) section, and the VFPREF   parameter reference depth on the [VFPPROD](#kw-VFPPROD) and [VFPINJ](#kw-VFPINJ) keywords. Thus, WVFPDP applies an additional adjustment in order to match a well’s flow rate to a given tubing head pressure, by adjusting the BHP.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which VFP interpolated BHP adjustment is to be applied. Note that the well name (WELNAME) must have been declared previously using the WELSPECS and WCONPROD (or WCONINJE) keywords in the SCHEDULE section, otherwise an error may occur. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which VFP interpolated BHP adjustment is to be applied. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) and [WCONPROD](#kw-WCONPROD) (or [WCONINJE](#kw-WCONINJE)) keywords in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
 | 2 | DELTAP | A real positive or negative value that is added to the VFP interpolated BHP value (BHPVFP). A positive value of DELTAP increases the BHP and therefore makes a production well less productive; whereas, a negative value is subtracted from the BHP and therefore increases the productivity of a production well. Consequently, the opposite effect occurs for injection wells, that is,  a positive value of BHPVFP increases the BHP and therefore increases an injection well’s injectivity; whereas, a negative value is subtracted from the BHP and therefore decreases the injectivity of an injection well. | 0.0 |
 | psia | barsa | atma |  |
 | 3 | MULTP | MULTP is a real positive or negative value that scales the tubing pressure loss by the following equation; ${\mathit{BHP}}_{\mathit{Adjusted}} = \mathit{THP} + \mathit{MULTP}({\mathit{BHP}}_{\mathit{VFP}} - \mathit{THP})$ Thus, a MULTP value greater then 1.0 increases the BHP and therefore makes a production well less productive; whereas, a value less than 1.0 increases the productivity of a production well.  Consequently, the opposite effect occurs for injection wells | 1.0 |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-
-*Table 12.130: WVFPDP Keyword Description*
-
-
+: WVFPDP Keyword Description {#tbl-12-130}
 #### Example
 
 The following example below shows three oils operating under THP control.

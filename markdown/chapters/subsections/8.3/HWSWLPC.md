@@ -1,15 +1,15 @@
-### HWSWLPC – End-Point Scaling Grid Cell SWLPC (High Salinity and Water Wet)
+### HWSWLPC – End-Point Scaling Grid Cell SWLPC (High Salinity and Water Wet) {#kw-HWSWLPC}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-HWSWLPC defines the capillary pressure connate water saturation (“SWLPC”), for all the cells in the model via an array, for when the Low Salt and Surfactant Wettability options have been selected.  The data is used to scale the water saturation in the high salinity water wet water-oil capillary pressure tables.  The ENDSCALE keyword in the RUNSPEC section should be activated to enable end-point scaling and the use of this keyword. In addition, the Low Salt option should be activated by the LOWSALT keyword in the RUNSPEC section and the Surfactant Wettability option activated by the SURFACT or SURFACTW keywords, which are also in the RUNSPEC section.
+HWSWLPC defines the capillary pressure connate water saturation (“[SWLPC](#kw-SWLPC)”), for all the cells in the model via an array, for when the Low Salt and Surfactant Wettability options have been selected.  The data is used to scale the water saturation in the high salinity water wet water-oil capillary pressure tables.  The [ENDSCALE](#kw-ENDSCALE) keyword in the [RUNSPEC](#kw-RUNSPEC) section should be activated to enable end-point scaling and the use of this keyword. In addition, the Low Salt option should be activated by the [LOWSALT](#kw-LOWSALT) keyword in the [RUNSPEC](#kw-RUNSPEC) section and the Surfactant Wettability option activated by the [SURFACT](#kw-SURFACT) or [SURFACTW](#kw-SURFACTW) keywords, which are also in the [RUNSPEC](#kw-RUNSPEC) section.
 
-Note the keyword only applies the scaling to the capillary pressures tables, unlike the HWSWL keyword that applies the scaling to both the capillary pressure and relative permeability tables.
+Note the keyword only applies the scaling to the capillary pressures tables, unlike the [HWSWL](#kw-HWSWL) keyword that applies the scaling to both the capillary pressure and relative permeability tables.
 
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.

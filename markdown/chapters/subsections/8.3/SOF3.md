@@ -1,7 +1,7 @@
-### SOF3 – Oil Saturation Tables with Respect to Gas and Water (Format Type 2)
+### SOF3 – Oil Saturation Tables with Respect to Gas and Water (Format Type 2) {#kw-SOF3}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -13,17 +13,14 @@ The SOF3 keyword defines the oil relative permeability versus oil saturation tab
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | SOIL | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the oil or the hydrocarbon solvent saturation. The final entry should be at the connate water saturation, that is 1- Swc. | None |
+| 1 | [SOIL](#kw-SOIL) | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the oil or the hydrocarbon solvent saturation. The final entry should be at the connate water saturation, that is 1- Swc. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | 3 | KROW | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the oil relative permeability with respect to oil and water saturation. The first value in the column should be zero. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | 4 | KROG | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the oil relative permeability with respect to oil, gas and connate water saturation. The first value in the column should be zero. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-
-*Table 8.166: SOF3 Keyword Description*
-
-
+: SOF3 Keyword Description {#tbl-8-166}
 #### Example
 
 

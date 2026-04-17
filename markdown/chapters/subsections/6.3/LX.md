@@ -1,13 +1,13 @@
-### LX – Dual Porosity Viscous Displacement X Direction Matrix Size for All Cells
+### LX – Dual Porosity Viscous Displacement X Direction Matrix Size for All Cells {#kw-LX}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The LX keyword defines the size of  “representative” matrix grid blocks in the X direction via an array in dual porosity and dual permeability runs, for when the VISCD keyword has been used in the RUNSPEC section to activate the dual porosity viscous displacement option. In addition, either the DUALPORO or DUALPERM keyword should be entered in the RUNSPEC section to activate the dual porosity or dual permeability models.  The VISCD option is used to model the viscous displacement of fluids from the matrix by the fracture pressure gradient, for when the fracture system has a more moderate permeability, and flow to and from the matrix caused by the fracture pressure gradient acts as an additional production mechanism.
+The LX keyword defines the size of  “representative” matrix grid blocks in the X direction via an array in dual porosity and dual permeability runs, for when the [VISCD](#kw-VISCD) keyword has been used in the [RUNSPEC](#kw-RUNSPEC) section to activate the dual porosity viscous displacement option. In addition, either the [DUALPORO](#kw-DUALPORO) or [DUALPERM](#kw-DUALPERM) keyword should be entered in the [RUNSPEC](#kw-RUNSPEC) section to activate the dual porosity or dual permeability models.  The [VISCD](#kw-VISCD) option is used to model the viscous displacement of fluids from the matrix by the fracture pressure gradient, for when the fracture system has a more moderate permeability, and flow to and from the matrix caused by the fracture pressure gradient acts as an additional production mechanism.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -18,11 +18,8 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | 1 | LX | LX is an array of real numbers describing the “representative” cell size in the X direction for each cell in the model. Repeat counts may be used, for example 10*100.0. | 0 |
 | feet | m | cm |  |
 | Notes: |  |  |  |
-
-*Table 6.55: LX Keyword Description*
-
-
-If the VISCD keyword has been used to activate the Dual Porosity Viscous Displacement option and LX has not been specified then LX is set to zero in the calculation of the viscous displacement term. See also the LY, LZ and LTOSIGMA keywords in the GRID section.
+: LX Keyword Description {#tbl-6-55}
+If the [VISCD](#kw-VISCD) keyword has been used to activate the Dual Porosity Viscous Displacement option and LX has not been specified then LX is set to zero in the calculation of the viscous displacement term. See also the [LY](#kw-LY), [LZ](#kw-LZ) and [LTOSIGMA](#kw-LTOSIGMA) keywords in the [GRID](#kw-GRID) section.
 
 
 #### Example
@@ -47,4 +44,4 @@ LX
 ENDBOX
 ```
 
-The above example defines a subset of the grid and the size of the “representative” matrix cells in the X direction to 10.0 ft.;  after which the ENDBOX keyword resets the input to be the full grid.
+The above example defines a subset of the grid and the size of the “representative” matrix cells in the X direction to 10.0 ft.;  after which the [ENDBOX](#kw-ENDBOX) keyword resets the input to be the full grid.

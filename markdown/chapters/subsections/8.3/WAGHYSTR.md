@@ -1,13 +1,13 @@
-### WAGHYSTR – Define Water-Alternating-Gas Hysteresis Parameters
+### WAGHYSTR – Define Water-Alternating-Gas Hysteresis Parameters {#kw-WAGHYSTR}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword defines the parameters for the Water-Alternating-Gas (“WAG”) hysteresis option, for when the hysteresis option has been activated by the WAGHYSTR variable on the SATOPTS keyword in the RUNSPEC section.
+This keyword defines the parameters for the Water-Alternating-Gas (“WAG”) hysteresis option, for when the hysteresis option has been activated by the WAGHYSTR variable on the [SATOPTS](#kw-SATOPTS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 The WAG recovery mechanism is an Enhanced Oil Recovery (“EOR”) process to optimize oil recovery by improving volumetric sweep efficiency. It was originally proposed as a method to improve the sweep efficiency of gas by using water to control the mobility ratio and to stabilize the front (Caudle and Dyes, 1958^[Caudle, B. H., & Dyes, A. B. (1958, January 1). Improving Miscible Displacement by Gas-Water Injection. Society of Petroleum Engineers.]; Christensen et al., 1998^[Christensen, J. R., Stenby, E. H., & Skauge, A. (1998, January 1). Review of WAG Field Experience. Society of Petroleum Engineers. doi:10.2118/39883-MS.]; and Christensen et al., 2001^[Christensen, J. R., Stenby, E. H., & Skauge, A. (2001, April 1). Review of WAG Field Experience. Society of Petroleum Engineers. doi:10.2118/71203-PA.]). WAG injection can lead to improved oil recovery by combining better mobility control and contacting upswept zones, and by leading to improved microscopic displacement. Although initially the injected gas was immiscible with respect to the oil (WAG Immiscible) the more common process is WAG Miscible, with alternating different types of hydrocarbon gases and non-hydrocarbon gases, such as N2 and CO2 Gases.  WAG flooding has been successfully applied to various fields worldwide.
 
@@ -28,13 +28,10 @@ Only the gas phase relative permeability WAG hysteresis model has been implement
 | dimensionless | dimensionless | dimensionless |  |
 | 7 | THREEPHASE_SAT_LIMIT | A real value between zero and one that defines the three-phase model threshold saturation. When the water saturation exceeds this threshold above the connate water saturation the gas (non-wetting) phase hysteresis switches from the two-phase model to the three-phase model. In the two-phase model a secondary drainage process follows the imbibition curve. However, if the water saturation exceeds the connate saturation by the given threshold, at the beginning of the secondary drainage process a three-phase secondary drainage curve is followed. This value also defines the minimum percentage change in gas saturation to allow switching from drainage to imbibition curve and vice-versa. This threshold allows better control of the numerical sensitivity of the system, preventing it from being too unstable. | 0.001 |
 | dimensionless | dimensionless | dimensionless |  |
-| 8 | RES_OIL_MOD_FRACTION | A real value between zero and one that defines the residual oil modification fraction. This is the fraction of the trapped gas saturation subtracted from the residual oil (SOM) in the STONE 1 three-phase oil relative permeability model. This is not supported and will be ignored by the simulator. | 1.0 |
+| 8 | RES_OIL_MOD_FRACTION | A real value between zero and one that defines the residual oil modification fraction. This is the fraction of the trapped gas saturation subtracted from the residual oil (SOM) in the [STONE](#kw-STONE) 1 three-phase oil relative permeability model. This is not supported and will be ignored by the simulator. | 1.0 |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-
-*Table 8.3.364.1: WAGHYSTR Keyword Description*
-
-
+: WAGHYSTR Keyword Description {#tbl-8-3-364-1}
 #### Example
 
 The following example defines the WAG hysteresis model parameters using the WAGHYSTR keyword for a case with three saturation table regions

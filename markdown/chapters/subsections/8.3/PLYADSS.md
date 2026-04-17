@@ -1,15 +1,15 @@
-### PLYADSS – Define Polymer Rock Adsorption with Salt Dependence Tables
+### PLYADSS – Define Polymer Rock Adsorption with Salt Dependence Tables {#kw-PLYADSS}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The PLYADSS keyword defines the rock polymer adsorption tables for when the polymer and the salt options has been activated by the POLYMER and BRINE keywords in the RUNSPEC section.
+The PLYADSS keyword defines the rock polymer adsorption tables for when the polymer and the salt options has been activated by the [POLYMER](#kw-POLYMER) and [BRINE](#kw-BRINE) keywords in the [RUNSPEC](#kw-RUNSPEC) section.
 
-Note that the BRINE option is not currently supported by OPM Flow; however, the polymer rock adsorption functions without salt dependence may be entered via the PLYADS keyword in the PROPS section, for when salt sensitivity is not to be considered.
+Note that the [BRINE](#kw-BRINE) option is not currently supported by OPM Flow; however, the polymer rock adsorption functions without salt dependence may be entered via the [PLYADS](#kw-PLYADS) keyword in the [PROPS](#kw-PROPS) section, for when salt sensitivity is not to be considered.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -19,14 +19,11 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | Field | Metric | Laboratory |  |
 | 1 | POLCON | A columnar vector of real monotonically increasing down the column values that defines the polymer concentration in the solution surrounding the rock. The first entry should be zero to define a no polymer and no salt concentration data set. POLCON should only be given for the first entry of the POLCON/POLRATIO set and skipped until another POLCON/POLRATIO table is entered. | None |
 | lb/stb | kg/sm3 | gm/scc |  |
-| 2 | POLRATIO | A columnar vector of real increasing down the column values that defines the mass of adsorbed polymer per unit mass of rock of the saturated concentration of polymer adsorbed by the rock for a given POLCON and the salt concentration given by SALTCON on the ADSALNOD keyword in the PROPS section. The first table data set entry should be zero to define a no polymer and no salt concentration data set. Subsequent POLRATIO values define the POLCON/POLRATIO combinations for a given salt concentration as listed (and in the same order) by the SALTCON variable on the ADSALNOD keyword in the PROPS section. Each POLCON/POLRATIO/SALT data sets should be terminated by a “/” | None |
+| 2 | POLRATIO | A columnar vector of real increasing down the column values that defines the mass of adsorbed polymer per unit mass of rock of the saturated concentration of polymer adsorbed by the rock for a given POLCON and the salt concentration given by SALTCON on the [ADSALNOD](#kw-ADSALNOD) keyword in the [PROPS](#kw-PROPS) section. The first table data set entry should be zero to define a no polymer and no salt concentration data set. Subsequent POLRATIO values define the POLCON/POLRATIO combinations for a given salt concentration as listed (and in the same order) by the SALTCON variable on the [ADSALNOD](#kw-ADSALNOD) keyword in the [PROPS](#kw-PROPS) section. Each POLCON/POLRATIO/[SALT](#kw-SALT) data sets should be terminated by a “/” | None |
 | lb/lb | kg/kg | gm/gm |  |
 | Notes: |  |  |  |
-
-*Table 8.100: PLYADSS Keyword Description*
-
-
-See also the PLYADS keyword in the PROPS section to also define rock polymer adsorption tables when the polymer concentration is not a function of salinity.
+: PLYADSS Keyword Description {#tbl-8-100}
+See also the [PLYADS](#kw-PLYADS) keyword in the [PROPS](#kw-PROPS) section to also define rock polymer adsorption tables when the polymer concentration is not a function of salinity.
 
 
 #### Example
@@ -80,6 +77,6 @@ PLYADSS
 
 ```
 
-The above example defines four polymer rock adsorption tables for four salt concentration on the ADSALNOD keyword, assuming NTSFUN equals one and NSSFUN is greater than or equal to four on the TABDIMS keyword in the RUNSPEC section.
+The above example defines four polymer rock adsorption tables for four salt concentration on the [ADSALNOD](#kw-ADSALNOD) keyword, assuming NTSFUN equals one and NSSFUN is greater than or equal to four on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 There is no terminating “/” for this keyword.

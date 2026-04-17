@@ -1,15 +1,15 @@
-### PBUB – Define the Initial Equilibration Bubble-Point Pressure for All Grid Blocks
+### PBUB – Define the Initial Equilibration Bubble-Point Pressure for All Grid Blocks {#kw-PBUB}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The PBUB keyword defines the initial equilibration buble-point saturation pressures values for all grid cells in the model and should be used in conjunction with the PDEW, PRESSURE, RS, RV, SGAS, SOIL and SWAT keywords etc., to fully describe the initial state of the model. The keyword should only be used if dissolved gas has been activated in the model via the DISGAS keyword in the RUNSPEC section.
+The PBUB keyword defines the initial equilibration buble-point saturation pressures values for all grid cells in the model and should be used in conjunction with the [PDEW](#kw-PDEW), [PRESSURE](#kw-PRESSURE), [RS](#kw-RS), [RV](#kw-RV), [SGAS](#kw-SGAS), [SOIL](#kw-SOIL) and [SWAT](#kw-SWAT) keywords etc., to fully describe the initial state of the model. The keyword should only be used if dissolved gas has been activated in the model via the [DISGAS](#kw-DISGAS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
-This is the non-standard method to initialize the model via enumeration and is seldom employed in the industry. The standard methodology is for OPM Flow to initialize a model using the parameters on the EQUIL keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
+This is the non-standard method to initialize the model via enumeration and is seldom employed in the industry. The standard methodology is for OPM Flow to initialize a model using the parameters on the [EQUIL](#kw-EQUIL) keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -20,11 +20,8 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | 1 | PBUB | PBUB is an array of real positive numbers assigning the initial equilibration bubble-point saturation pressure values to each cell in the model. Repeat counts may be used, for example 20*3500.0 | None |
 | psia | barsa | atma |  |
 | Notes: |  |  |  |
-
-*Table 10.19: PBUB Keyword Description*
-
-
-See also the PBVD, PDEW, PRESSURE, RV, SGAS, SOIL and SWAT keywords to fully define the initial state of the model.
+: PBUB Keyword Description {#tbl-10-19}
+See also the [PBVD](#kw-PBVD), [PDEW](#kw-PDEW), [PRESSURE](#kw-PRESSURE), [RV](#kw-RV), [SGAS](#kw-SGAS), [SOIL](#kw-SOIL) and [SWAT](#kw-SWAT) keywords to fully define the initial state of the model.
 
 
 #### Example

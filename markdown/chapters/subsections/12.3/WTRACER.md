@@ -1,33 +1,30 @@
-### WTRACER  – Define An Injection Well’s Tracer Concentration
+### WTRACER  – Define An Injection Well’s Tracer Concentration {#kw-WTRACER}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The WTRACER keyword defines the tracer concentration of the injection fluid being injected by an injection well. This keyword should only be used if the Tracer option has been invoked by the TRACERS keyword in the RUNSPEC section and the tracers have be declared via the TRACER keyword in the PROPS section.
+The WTRACER keyword defines the tracer concentration of the injection fluid being injected by an injection well. This keyword should only be used if the Tracer option has been invoked by the [TRACERS](#kw-TRACERS) keyword in the [RUNSPEC](#kw-RUNSPEC) section and the tracers have be declared via the [TRACER](#kw-TRACER) keyword in the [PROPS](#kw-PROPS) section.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name of an injection well for which the tracer fraction data is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
-| 2 | NAME | A three letter character string defining the tracer’s name which has previously been defined via the TRACER keyword in the PROPS section. Note it is best to avoid names beginning with the letters F, S, and T as these names may create naming issues in post-processing software. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name of an injection well for which the tracer fraction data is being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
+| 2 | NAME | A three letter character string defining the tracer’s name which has previously been defined via the [TRACER](#kw-TRACER) keyword in the [PROPS](#kw-PROPS) section. Note it is best to avoid names beginning with the letters F, S, and T as these names may create naming issues in post-processing software. | None |
 | 3 | TRCON | A real positive value that defines the tracer concentration of the well’s injection stream. This value may be specified using a User Defined Argument (UDA). | None |
 | Liquid: 1/stb Gas: 1/Mscf | Liquid: 1/sm3 Gas: 1/sm3 | Liquid: 1/scc Gas: 1/scc |  |
 | 4 | TRCUM | A real positive value that defines the cumulative tracer concentration factor of the well’s injection stream. This value may be specified using a User Defined Argument (UDA). This feature is currently not supported by OPM Flow. | None |
 | Liquid: 1/stb Gas: 1/Mscf | Liquid: 1/sm3 Gas: 1/sm3 | Liquid: 1/scc Gas: 1/scc |  |
-| 5 | GRPNAME | A character string of up to eight characters in length that defines the group from which the produced tracer concentration should be used for the well’s injection stream. GRPNAME must have been previously defined via the GCONPROD keyword in the SCHEDULE section, unless the FIELD group has been specified here. Note if GRPNAME is not defined then TRCON will be used for the tracer concentration of the well’s injection stream. This feature is currently not supported by OPM Flow. | None |
+| 5 | GRPNAME | A character string of up to eight characters in length that defines the group from which the produced tracer concentration should be used for the well’s injection stream. GRPNAME must have been previously defined via the [GCONPROD](#kw-GCONPROD) keyword in the [SCHEDULE](#kw-SCHEDULE) section, unless the [FIELD](#kw-FIELD) group has been specified here. Note if GRPNAME is not defined then TRCON will be used for the tracer concentration of the well’s injection stream. This feature is currently not supported by OPM Flow. | None |
 | Notes: |  |  |  |
-
-*Table 12.129: WTRACER Keyword Description*
-
-
+: WTRACER Keyword Description {#tbl-12-129}
 Injection wells that are not declared via this keyword have their tracer concentrations set to zero.
 
-See also the GCONINJE keyword to define a group’s injection targets and constraints, and the WCONINJE keyword to define an injection well’s targets and constraints. All the aforementioned keywords are described in the SCHEDULE section.
+See also the [GCONINJE](#kw-GCONINJE) keyword to define a group’s injection targets and constraints, and the [WCONINJE](#kw-WCONINJE) keyword to define an injection well’s targets and constraints. All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
 
 
 #### Example

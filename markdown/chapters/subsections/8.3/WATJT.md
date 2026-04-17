@@ -1,13 +1,13 @@
-### WATJT – Define Water Joule-Thomson Coefficient
+### WATJT – Define Water Joule-Thomson Coefficient {#kw-WATJT}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-WATJT activates the water Joule-Thomson effect^[The Joule–Thomson coefficient is defined as the change in temperature with respect to an increase in pressure at constant enthalpy.] in temperature calculations, and defines the water Joule-Thomson Coefficient (“JTC”) at a given reference pressure, for when OPM Flow’s thermal option has been activated by the THERMAL keyword in the RUNSPEC.
+WATJT activates the water Joule-Thomson effect^[The Joule–Thomson coefficient is defined as the change in temperature with respect to an increase in pressure at constant enthalpy.] in temperature calculations, and defines the water Joule-Thomson Coefficient (“JTC”) at a given reference pressure, for when OPM Flow’s thermal option has been activated by the [THERMAL](#kw-THERMAL) keyword in the [RUNSPEC](#kw-RUNSPEC).
 
 
 ::: {.callout-note}
@@ -15,7 +15,7 @@ This is an OPM Flow keyword used with OPM Flow’s black-oil thermal model, that
 :::
 
 
-This keyword can only be used if OPM Flow’s thermal option has been activated by the THERMAL keyword in the RUNSPEC section. Note this is different to the commercial simulator that uses the TEMP keyword in the RUNSPEC section to activate the black-oil thermal model, and does not include the Joule-Thomson effect in temperature calculations.
+This keyword can only be used if OPM Flow’s thermal option has been activated by the [THERMAL](#kw-THERMAL) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Note this is different to the commercial simulator that uses the [TEMP](#kw-TEMP) keyword in the [RUNSPEC](#kw-RUNSPEC) section to activate the black-oil thermal model, and does not include the Joule-Thomson effect in temperature calculations.
 
 
 | No. | Name | Description | Default |
@@ -23,13 +23,10 @@ This keyword can only be used if OPM Flow’s thermal option has been activated 
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | A real positive value that defines the reference pressure for the corresponding Joule-Thomson Coefficient, WATJTC. | None |
 | psia | barsa | atma |  |
-| 2 | WATJTC | WATJTC is a real positive or negative value that defines the water phase Joule-Thomson Coefficient. If the value is defaulted (1*) or set to 0, then WATJTC is internally calculated using thermal water density data on the WATSDENT keyword in the PROPS section. If a non-zero value is specified, then the WATJTC is assumed to be constant and equal to that value. | 0 |
+| 2 | WATJTC | WATJTC is a real positive or negative value that defines the water phase Joule-Thomson Coefficient. If the value is defaulted (1*) or set to 0, then WATJTC is internally calculated using thermal water density data on the WATSDENT keyword in the [PROPS](#kw-PROPS) section. If a non-zero value is specified, then the WATJTC is assumed to be constant and equal to that value. | 0 |
 | oF/psia | oC/barsa | oC/atma |  |
 | Notes: |  |  |  |
-
-*Table 8.198: WATJT Keyword Description*
-
-
+: WATJT Keyword Description {#tbl-8-198}
 The Joule–Thomson effect is when a real gas, as oppose to an ideal gas, expands, resulting in the temperature of the gas dropping^[Natural Gas Engineering (McGraw-Hill chemical engineering series), Donald L. Katz, Robert l Lee, McGraw-Hill Education, 1990 (ISBN 0071007776, 9780071007771).]. For liquids the effect is the opposite, that is the internal energy is transferred to kinetic energy with a corresponding increase in temperature as velocity increases.
 
 Thermodynamically, the Joule–Thomson coefficient is defined as the isenthalpic^[An isenthalpic process or isoenthalpic process, is a process that proceeds without any change in enthalpy, H; or specific enthalpy, h.] change in temperature in a fluid caused by a unitary pressure drop, as shown in the following equation:
@@ -73,7 +70,7 @@ $z$ 	= 	height (m).
 
 #### Example
 
-The following example shows the WATJT keyword for when the thermal option has been activated by the THERMAL keyword in the RUNSPEC section, and for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set equal to two.
+The following example shows the WATJT keyword for when the thermal option has been activated by the [THERMAL](#kw-THERMAL) keyword in the [RUNSPEC](#kw-RUNSPEC) section, and for when NTPVT on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section is set equal to two.
 
 
 ```
@@ -89,6 +86,6 @@ WATJT
 ```
 
 
-Here the first entry is defaulted, and the simulator will therefore calculate the water JTC internally using the data on the WATDENT keyword in the PROPS section.
+Here the first entry is defaulted, and the simulator will therefore calculate the water JTC internally using the data on the [WATDENT](#kw-WATDENT) keyword in the [PROPS](#kw-PROPS) section.
 
 There is no terminating “/” for this keyword.

@@ -1,7 +1,7 @@
-### PERMY – Define the Permeability in the Y Direction for All the Cells
+### PERMY – Define the Permeability in the Y Direction for All the Cells {#kw-PERMY}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,11 +16,8 @@ PERMY defines the permeability in the Y direction for all the cells in the model
 | 1 | PERMY | PERMY is an array of real positive numbers assigning the permeability in the Y direction to each cell in the model. Repeat counts may be used, for example 20*100.0. | None |
 | mD | mD | mD |  |
 | Notes: |  |  |  |
-
-*Table 6.106: PERMY Keyword Description*
-
-
-See also the PERMX and PERMZ keywords to fully define the permeability for the model.
+: PERMY Keyword Description {#tbl-6-106}
+See also the [PERMX](#kw-PERMX) and [PERMZ](#kw-PERMZ) keywords to fully define the permeability for the model.
 
 
 #### Example
@@ -35,4 +32,4 @@ PERMY
 
 ```
 
-The above example defines the PERMY to be 500.0, 50.0, and 200.0 for the first, second and third layers in the model for all 300 cells, as defined by the DIMENS keyword in the RUNSPEC section.
+The above example defines the PERMY to be 500.0, 50.0, and 200.0 for the first, second and third layers in the model for all 300 cells, as defined by the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.

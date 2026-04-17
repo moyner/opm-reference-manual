@@ -1,13 +1,13 @@
-### EXCEL – Activate the EXCEL Option for the SUMMARY File
+### EXCEL – Activate the EXCEL Option for the SUMMARY File {#kw-EXCEL}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword activates the writing out of the RSM file data in a format that can easily be loaded into Microsoft's EXCEL spreadsheet program or LibreOffice’s CALC spreadsheet program. The RSM file output is activated by the RUNSUM keyword in the SUMMARY section.
+This keyword activates the writing out of the RSM file data in a format that can easily be loaded into Microsoft's EXCEL spreadsheet program or LibreOffice’s CALC spreadsheet program. The RSM file output is activated by the [RUNSUM](#kw-RUNSUM) keyword in the [SUMMARY](#kw-SUMMARY) section.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 
@@ -35,4 +35,4 @@ EXCEL
 ```
 
 
-The above example activates the SUMMARY file EXCEL option for directly loading the RSM file into either Microsoft's EXCEL or LibreOffice’s CALC spreadsheet programs.
+The above example activates the [SUMMARY](#kw-SUMMARY) file EXCEL option for directly loading the RSM file into either Microsoft's EXCEL or LibreOffice’s CALC spreadsheet programs.

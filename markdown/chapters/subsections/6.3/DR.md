@@ -1,13 +1,13 @@
-### DR – Define the Size of Grid Blocks in the R Direction for All Cells
+### DR – Define the Size of Grid Blocks in the R Direction for All Cells {#kw-DR}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-DR defines the size of all grid blocks in the R direction via an array for each cell in the model. The RADIAL or SPIDER keyword in the RUNSPEC section should be activated to indicate that radial or spider geometry is being used.
+DR defines the size of all grid blocks in the R direction via an array for each cell in the model. The [RADIAL](#kw-RADIAL) or [SPIDER](#kw-SPIDER) keyword in the [RUNSPEC](#kw-RUNSPEC) section should be activated to indicate that radial or spider geometry is being used.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -18,18 +18,15 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | 1 | DR | DR is an array of real numbers describing the cell size in the R direction for each cell in the model in a radial grid. Repeat counts may be used, for example 10*100.0. | None |
 | feet | m | cm |  |
 | Notes: |  |  |  |
+: DR Keyword Description {#tbl-6-22}
+Note that the [SPIDER](#kw-SPIDER) keyword activates OPM Flow’s radial grid geometry option for the model. This keyword will create a spiderweb-shaped grid based on a corner-point grid using the standard radial grid keywords: [INRAD](#kw-INRAD), [DRV](#kw-DRV), [DTHETAV](#kw-DTHETAV), [DZ](#kw-DZ)/[DZV](#kw-DZV) etc. in the [GRID](#kw-GRID) the section. A spider grid can be viewed in 3D in OPM ResInsight unlike radial grids that cannot be viewed in the software.  To overcome this, the simulator now converts radial grids to Irregular Corner-Point Grids and adjusts the model’s pore volume to reflect radial coordinates; thus, overcoming the display limitation.
 
-*Table 6.22: DR Keyword Description*
-
-
-Note that the SPIDER keyword activates OPM Flow’s radial grid geometry option for the model. This keyword will create a spiderweb-shaped grid based on a corner-point grid using the standard radial grid keywords: INRAD, DRV, DTHETAV, DZ/DZV etc. in the GRID the section. A spider grid can be viewed in 3D in OPM ResInsight unlike radial grids that cannot be viewed in the software.  To overcome this, the simulator now converts radial grids to Irregular Corner-Point Grids and adjusts the model’s pore volume to reflect radial coordinates; thus, overcoming the display limitation.
-
-See also the DRV, DTHETAV, DZ and TOPS keywords in the GRID section to fully define a radial or spider grid model.
+See also the [DRV](#kw-DRV), [DTHETAV](#kw-DTHETAV), [DZ](#kw-DZ) and [TOPS](#kw-TOPS) keywords in the [GRID](#kw-GRID) section to fully define a radial or spider grid model.
 
 
 #### Example
 
-Given the dimensions of the grid in the RUNSPEC section to be 10,1, 8 for NX, NY and NZ respectively, we first define the inner radius of the radial model,
+Given the dimensions of the grid in the [RUNSPEC](#kw-RUNSPEC) section to be 10,1, 8 for NX, NY and NZ respectively, we first define the inner radius of the radial model,
 
 
 ```
@@ -62,7 +59,7 @@ DR
 ```
 
 
-The above example defines the size of the cells in the R direction based on 80 cells in the model as defined by the DIMENS keyword in the RUNSPEC section.
+The above example defines the size of the cells in the R direction based on 80 cells in the model as defined by the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 
 Note that since the first layer (K=1) must be defined and subsequent layers default to the layer above then:

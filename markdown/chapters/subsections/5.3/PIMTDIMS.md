@@ -1,7 +1,7 @@
-### PIMTDIMS – Define Well Productivity Scaling Table Dimensions
+### PIMTDIMS – Define Well Productivity Scaling Table Dimensions {#kw-PIMTDIMS}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -15,10 +15,7 @@ PIMTDIMS keyword defines the maximum number of PIMULTAB tables and the maximum n
 | 1 | NTPIMT | A positive integer value that defines the maximum number of PIMULTAB keywords defined in the input deck. | 0 |
 | 2 | NRPIMT | A positive integer value defining the maximum number of entries (rows) in the PIMULTAB keyword. | 0 |
 | Notes: |  |  |  |
-
-*Table 5.35: PIMTDIMS Keyword Description*
-
-
+: PIMTDIMS Keyword Description {#tbl-5-35}
 #### Example
 
 

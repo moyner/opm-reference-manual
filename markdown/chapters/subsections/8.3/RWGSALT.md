@@ -1,13 +1,13 @@
-### RWGSALT – Water Vaporization versus Pressure and Salt Concentration
+### RWGSALT – Water Vaporization versus Pressure and Salt Concentration {#kw-RWGSALT}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-RWGSALT defines the relationship of water vaporization versus pressure and salt concentration. This keyword should be used when the VAPWAT keyword has be declared in the RUNSPEC section indicating that vaporized water is present in the gas phase. In addition, if the Salt Precipitation model has been activated via the BRINE and PRECSALT keywords, also in the RUNSPEC section, then this keyword must be present. The keyword may be used for gas-water and oil-water-gas input decks that contain the either dry or wet gas and vaporized water phases.
+RWGSALT defines the relationship of water vaporization versus pressure and salt concentration. This keyword should be used when the [VAPWAT](#kw-VAPWAT) keyword has be declared in the [RUNSPEC](#kw-RUNSPEC) section indicating that vaporized water is present in the gas phase. In addition, if the Salt Precipitation model has been activated via the [BRINE](#kw-BRINE) and [PRECSALT](#kw-PRECSALT) keywords, also in the [RUNSPEC](#kw-RUNSPEC) section, then this keyword must be present. The keyword may be used for gas-water and oil-water-gas input decks that contain the either dry or wet gas and vaporized water phases.
 
 
 ::: {.callout-note}
@@ -25,16 +25,13 @@ This is an OPM Flow specific keyword for the simulator’s Water Vaporization an
 | 3 | RW | A columnar vector of real positive number values defining the vaporized  water in gas ratio (Rw) that for a given PRESS and SALTCON. | None |
 | stb/Mscf | sm3/sm3 | scc/scc |  |
 | Notes: |  |  |  |
-
-*Table 8.139: RWGSALT Keyword Description*
-
-
-Since the water component is in both the water and the gas phases, RWGSALT controls the amount of water component evaporated from the water phase into the gas phase, which is a function of both the water phase salinity and a grid cells pressure.  The keyword should be used in conjunction with the dry gas PVTGW keyword or the wet gas PVTGWO keyword,  both of which are in the PROPS section.
+: RWGSALT Keyword Description {#tbl-8-139}
+Since the water component is in both the water and the gas phases, RWGSALT controls the amount of water component evaporated from the water phase into the gas phase, which is a function of both the water phase salinity and a grid cells pressure.  The keyword should be used in conjunction with the dry gas [PVTGW](#kw-PVTGW) keyword or the wet gas [PVTGWO](#kw-PVTGWO) keyword,  both of which are in the [PROPS](#kw-PROPS) section.
 
 
 #### Example
 
-The example defines two RWGSALT tables assuming NTPVT equals two and NPPVT is greater than or equal to eight on the TABDIMS keyword in the RUNSPEC section.
+The example defines two RWGSALT tables assuming NTPVT equals two and NPPVT is greater than or equal to eight on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 
 ```

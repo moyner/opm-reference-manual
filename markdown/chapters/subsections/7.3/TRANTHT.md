@@ -1,7 +1,7 @@
-### TRANTHT – Define the Transmissibility in the +Theta Direction for All the Cells
+### TRANTHT – Define the Transmissibility in the +Theta Direction for All the Cells {#kw-TRANTHT}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -18,11 +18,8 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | 1 | TRANTHT | TRANTHT is an array of real positive numbers assigning the transmissibility in the +Theta direction to each cell in the model. Repeat counts may be used, for example 20*100.0. | None |
 | cP.rb/day/psia | cP.rm3/day/bars | cP.rcc/hr/atm |  |
 | Notes: |  |  |  |
-
-*Table 7.8: TRANR Keyword Description*
-
-
-See also the TRANR and TRANYZ keywords to modify the transmissibilities in the other directions.
+: TRANR Keyword Description {#tbl-7-8}
+See also the [TRANR](#kw-TRANR) and TRANYZ keywords to modify the transmissibilities in the other directions.
 
 
 #### Example
@@ -47,4 +44,4 @@ TRANTHT
 ENDBOX
 ```
 
-Here the BOX statement is used to define the input grid for the TRANTHT keyword, which overwrites the transmissibility previously calculated with transmissibility values of zero, resulting in a no-flow boundary in that part of the grid. The ENDBOX keyword resets the input box to the full grid.
+Here the [BOX](#kw-BOX) statement is used to define the input grid for the TRANTHT keyword, which overwrites the transmissibility previously calculated with transmissibility values of zero, resulting in a no-flow boundary in that part of the grid. The [ENDBOX](#kw-ENDBOX) keyword resets the input box to the full grid.

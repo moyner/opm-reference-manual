@@ -1,31 +1,28 @@
-### MISCNUM – Define the Miscibility Region Numbers
+### MISCNUM – Define the Miscibility Region Numbers {#kw-MISCNUM}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The MISCNUM keyword defines the miscibility region number mixing tables as defined by the TLMIXPAR keyword in the PROPS section, for when the miscibility option has been activated by the MISCIBLE keyword in the RUNSPEC section. MISCNUM also allocates miscible residual oil saturation versus water saturation tables (SORWMIS keyword in the PROPS section) used to calculate the relative permeability and PVT properties for a grid cell.
+The MISCNUM keyword defines the miscibility region number mixing tables as defined by the [TLMIXPAR](#kw-TLMIXPAR) keyword in the [PROPS](#kw-PROPS) section, for when the miscibility option has been activated by the [MISCIBLE](#kw-MISCIBLE) keyword in the [RUNSPEC](#kw-RUNSPEC) section. MISCNUM also allocates miscible residual oil saturation versus water saturation tables ([SORWMIS](#kw-SORWMIS) keyword in the [PROPS](#kw-PROPS) section) used to calculate the relative permeability and PVT properties for a grid cell.
 
-Note that although this keyword can only be used when the miscibility option is active, it is not necessary to use this keyword even if the MISCIBLE keyword in the RUNSPEC has been activated as the default value of one will be applied to all grid blocks. Secondly, a value of zero for a grid cell results in immiscible fluids in that grid cell.
+Note that although this keyword can only be used when the miscibility option is active, it is not necessary to use this keyword even if the [MISCIBLE](#kw-MISCIBLE) keyword in the [RUNSPEC](#kw-RUNSPEC) has been activated as the default value of one will be applied to all grid blocks. Secondly, a value of zero for a grid cell results in immiscible fluids in that grid cell.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | MISCNUM | MISCNUM defines an array of positive integers greater than or equal to zero, that assign a grid cell to a particular table of mixing parameters as defined by the TLMIXPAR and SORWMIS keywords. A value of zero sets the fluids within a grid cell to be immiscible. The maximum number of MISCNUM regions is set by the NTMIS variable on the MISCIBLE keyword in the RUNSPEC section. | 1 |
+| 1 | MISCNUM | MISCNUM defines an array of positive integers greater than or equal to zero, that assign a grid cell to a particular table of mixing parameters as defined by the [TLMIXPAR](#kw-TLMIXPAR) and [SORWMIS](#kw-SORWMIS) keywords. A value of zero sets the fluids within a grid cell to be immiscible. The maximum number of MISCNUM regions is set by the NTMIS variable on the [MISCIBLE](#kw-MISCIBLE) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | 1 |
 | Notes: |  |  |  |
-
-*Table 9.15: MISCNUM Keyword Description*
-
-
-See also the TLMIXPAR and SORWMIS keyword in the PROPS section.
+: MISCNUM Keyword Description {#tbl-9-15}
+See also the [TLMIXPAR](#kw-TLMIXPAR) and [SORWMIS](#kw-SORWMIS) keyword in the [PROPS](#kw-PROPS) section.
 
 
 #### Example
 
-The example below sets three MISCNUM regions in the model on a layer by layer basis, using the EQUALS keyword.
+The example below sets three MISCNUM regions in the model on a layer by layer basis, using the [EQUALS](#kw-EQUALS) keyword.
 
 
 ```

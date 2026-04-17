@@ -173,6 +173,68 @@ This manual corresponds to **OPM Flow version 2025-04**.
 """
 
 
+def generate_quarto_yml() -> str:
+    """Generate the _quarto.yml configuration file with explicit chapter/appendix titles."""
+    chapter_entries = ["    - index.qmd"]
+    for num in range(1, 13):
+        slug = CHAPTER_SLUGS[num]
+        title = CHAPTER_TITLES[num]
+        chapter_entries.append(f'    - text: "{title}"')
+        chapter_entries.append(f'      href: chapters/{slug}.qmd')
+
+    appendix_entries = []
+    for letter in ["A", "B", "C", "D", "E", "F"]:
+        slug = APPENDIX_SLUGS[letter]
+        title = APPENDIX_TITLES[letter]
+        appendix_entries.append(f'    - text: "{title}"')
+        appendix_entries.append(f'      href: appendices/{slug}.qmd')
+
+    chapters_block = "\n".join(chapter_entries)
+    appendices_block = "\n".join(appendix_entries)
+
+    return f"""project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "OPM Flow Reference Manual"
+  subtitle: "2025-04"
+  author: "Open Porous Media"
+  date: "2025"
+  search: true
+  repo-url: https://github.com/OPM/opm-reference-manual
+  chapters:
+{chapters_block}
+  appendices:
+{appendices_block}
+
+format:
+  html:
+    theme:
+      light: cosmo
+    css: styles.css
+    code-fold: true
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    smooth-scroll: true
+    link-external-newwindow: true
+  pdf:
+    documentclass: scrreprt
+    number-sections: true
+    toc: true
+    toc-depth: 2
+    colorlinks: true
+    keep-tex: false
+    geometry:
+      - margin=1in
+    include-in-header:
+      text: |
+        \\usepackage{{fvextra}}
+        \\DefineVerbatimEnvironment{{Highlighting}}{{Verbatim}}{{breaklines,commandchars=\\\\\\{{\\}}}}
+"""
+
+
 def main():
     CHAPTERS_DIR.mkdir(parents=True, exist_ok=True)
     APPENDICES_DIR.mkdir(parents=True, exist_ok=True)
@@ -190,6 +252,11 @@ def main():
             Path("../../markdown/appendices/images"), target_is_directory=True
         )
         print("Created symlink: appendices/images -> ../../markdown/appendices/images")
+
+    # Generate _quarto.yml with explicit chapter/appendix titles
+    quarto_yml_path = QUARTO_DIR / "_quarto.yml"
+    quarto_yml_path.write_text(generate_quarto_yml())
+    print(f"Generated {quarto_yml_path.relative_to(QUARTO_DIR)}")
 
     # Generate index.qmd
     index_path = QUARTO_DIR / "index.qmd"
@@ -214,7 +281,7 @@ def main():
         filepath.write_text(content)
         print(f"Generated appendices/{slug}.qmd")
 
-    print(f"\nDone! Generated {12 + 6 + 1} files.")
+    print(f"\nDone! Generated {12 + 6 + 1} files + _quarto.yml.")
 
 
 if __name__ == "__main__":

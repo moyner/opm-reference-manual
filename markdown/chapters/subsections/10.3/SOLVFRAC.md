@@ -1,17 +1,17 @@
-### SOLVFRAC – Define the Initial Gas Solvent Fraction for All Grid Blocks
+### SOLVFRAC – Define the Initial Gas Solvent Fraction for All Grid Blocks {#kw-SOLVFRAC}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The SOLVFRAC keyword defines the initial solvent faction within the gas phase values for all matrix grid cells in the model. The keyword should only be used if the coal phase has been activated in the model via the COAL keyword in the RUNSPEC section.
+The SOLVFRAC keyword defines the initial solvent faction within the gas phase values for all matrix grid cells in the model. The keyword should only be used if the coal phase has been activated in the model via the [COAL](#kw-COAL) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
-SOLVFRAC is used with the standard equilibration method to initialize the model via the EQUIL keyword in the RUNSPEC section, as oppose to the non-standard enumeration method.
+SOLVFRAC is used with the standard equilibration method to initialize the model via the [EQUIL](#kw-EQUIL) keyword in the [RUNSPEC](#kw-RUNSPEC) section, as oppose to the non-standard enumeration method.
 
 
 | No. | Name | Description | Default |
@@ -20,11 +20,8 @@ SOLVFRAC is used with the standard equilibration method to initialize the model 
 | 1 | SOLVFRAC | SOLVFRAC is an array of real positive numbers that define the initial solvent fraction within the gas phase values for each matrix cell in the model. Repeat counts may be used, for example 20*0.075. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-
-*Table 10.49: SOLVFRAC Keyword Description*
-
-
-See also the EQUIL keyword in the SOLUTION section to fully define the initial state of the model.
+: SOLVFRAC Keyword Description {#tbl-10-49}
+See also the [EQUIL](#kw-EQUIL) keyword in the [SOLUTION](#kw-SOLUTION) section to fully define the initial state of the model.
 
 
 #### Example

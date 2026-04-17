@@ -1,15 +1,15 @@
-### DRVDTR – Vaporized Oil (Rv) Maximum Rate of Increase Parameters by Region
+### DRVDTR – Vaporized Oil (Rv) Maximum Rate of Increase Parameters by Region {#kw-DRVDTR}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-DRVDTR defines the maximum rate at which the vaporized oil-gas ratio or condensate-gas ratio (Rv) can be increased in a grid cell for various regions in the model.  The keyword is similar in functionality to the DRVDT keyword, that defines the maximum rate at which Rv can be increased in a grid cell for all cells in the model. The number of DRVDTR vector data sets is defined by the NTPVT parameter on the TABDIMS keyword in the RUNSPEC section and the allocation of the DRVDTR records to different grid blocks in the model is done via the PVTNUM keyword in the REGION section. One data set consists of one record or line which is terminated by a “/”.
+DRVDTR defines the maximum rate at which the vaporized oil-gas ratio or condensate-gas ratio (Rv) can be increased in a grid cell for various regions in the model.  The keyword is similar in functionality to the [DRVDT](#kw-DRVDT) keyword, that defines the maximum rate at which Rv can be increased in a grid cell for all cells in the model. The number of DRVDTR vector data sets is defined by the NTPVT parameter on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section and the allocation of the DRVDTR records to different grid blocks in the model is done via the [PVTNUM](#kw-PVTNUM) keyword in the REGION section. One data set consists of one record or line which is terminated by a “/”.
 
-This keyword should only be used if the OIL, GAS, and VAPOIL (condensate) keywords in the RUNSPEC section have been invoked to allow oil, gas and condensate to be present in the model.   The keyword only affects the behavior of an increasing Rv, for example when gas is being injected into a gas condensate reservoir as part of as gas re-cycling scheme, and is subject to the availability of free oil (condensate) and the ability of the undersaturated gas to adsorb this condensate.
+This keyword should only be used if the [OIL](#kw-OIL), [GAS](#kw-GAS), and [VAPOIL](#kw-VAPOIL) (condensate) keywords in the [RUNSPEC](#kw-RUNSPEC) section have been invoked to allow oil, gas and condensate to be present in the model.   The keyword only affects the behavior of an increasing Rv, for example when gas is being injected into a gas condensate reservoir as part of as gas re-cycling scheme, and is subject to the availability of free oil (condensate) and the ability of the undersaturated gas to adsorb this condensate.
 
 
 | No. | Name | Description | Default |
@@ -18,18 +18,15 @@ This keyword should only be used if the OIL, GAS, and VAPOIL (condensate) keywor
 | 1 | DRVDT1 | DRVDT1 is a real positive number that defines the maximum rate at which the vaporized oil-gas ratio is allowed to increase in a grid cell, that is the maximum rate at which the oil can vaporize into the available undersaturated gas. A value of zero means that Rv cannot increase and free oil cannot vaporize into the unsaturated gas in a grid cell. Alternatively a very large value of DRVDT1 allows Rv to increase rapidly until there is no free oil or the gas within the grid block is fully saturated. Note if the keyword is not present in the input deck then DRVDT1 is assumed to be a very large number resulting in complete re-vaporization of the oil into the available undersaturated gas. | None |
 | stb/Mscf/d | sm3/sm3/day | scc/scc/day |  |
 | Notes: |  |  |  |
-
-*Table 12.24: DRVDTR Keyword Description*
-
-
+: DRVDTR Keyword Description {#tbl-12-24}
 Note this keyword can be used in history matching field performance to control the availability of the movable gas phase.
 
-See also the VAPPARS keyword in the SOLUTION section and DRVDT, DRSDT, and DRSDTR keywords in the SCHEDULE section that controls how dissolved gas is treated and the rate at which the vaporized phase ratio increases within a grid block.
+See also the [VAPPARS](#kw-VAPPARS) keyword in the [SOLUTION](#kw-SOLUTION) section and [DRVDT](#kw-DRVDT), [DRSDT](#kw-DRSDT), and [DRSDTR](#kw-DRSDTR) keywords in the [SCHEDULE](#kw-SCHEDULE) section that controls how dissolved gas is treated and the rate at which the vaporized phase ratio increases within a grid block.
 
 
 #### Examples
 
-The first example prevents the vaporized oil-gas ratio from increasing and applies this to all regions for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to three.
+The first example prevents the vaporized oil-gas ratio from increasing and applies this to all regions for when NTPVT on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section is set to three.
 
 
 ```
@@ -46,7 +43,7 @@ DRVDTR
 ```
 
 
-The second example below prevents the vaporized oil-gas ratio from increasing and applies this to all grid cells in PVTNUM region one. For PVTNUM regions one and two the keyword applies 0.005 stb//Mscf/d as the maximum rate at which the vaporized oil-gas ratio is allowed to increase in a grid cell,
+The second example below prevents the vaporized oil-gas ratio from increasing and applies this to all grid cells in [PVTNUM](#kw-PVTNUM) region one. For [PVTNUM](#kw-PVTNUM) regions one and two the keyword applies 0.005 stb//Mscf/d as the maximum rate at which the vaporized oil-gas ratio is allowed to increase in a grid cell,
 
 
 ```

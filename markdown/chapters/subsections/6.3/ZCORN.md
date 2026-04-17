@@ -1,7 +1,7 @@
-### ZCORN – Define the Depth of Each Corner-Point of a Grid Block
+### ZCORN – Define the Depth of Each Corner-Point of a Grid Block {#kw-ZCORN}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -18,11 +18,8 @@ The keyword can be only used be used with Irregular Corner-Point Grids.
 | 1 | ZCORN | An array of depths with 8 depths for each cell, for a total of 8 x Nx x NY x NZ entries | None |
 | feet | metres | cm |  |
 | Notes: |  |  |  |
-
-*Table 6.131: ZCORN Keyword Description*
-
-
-See also the SPECGRID, COORD and COORDSYS keywords to fully define an Irregular Corner-Point Grid.
+: ZCORN Keyword Description {#tbl-6-131}
+See also the [SPECGRID](#kw-SPECGRID), [COORD](#kw-COORD) and [COORDSYS](#kw-COORDSYS) keywords to fully define an Irregular Corner-Point Grid.
 
 
 #### Example

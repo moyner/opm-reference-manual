@@ -1,13 +1,13 @@
-### MAPAXES – Define the Map Origin Input Data
+### MAPAXES – Define the Map Origin Input Data {#kw-MAPAXES}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-MAPAXES specifies the origin of the map used to create the grid. It is usually output by pre-processing software when exporting the grid geometry. The data is not used by OPM Flow intrinsically, but is merely written to the output EGRID file, as specified by the GRIDFILE keyword, for the use of post-processing software like OPM ResInsight.
+MAPAXES specifies the origin of the map used to create the grid. It is usually output by pre-processing software when exporting the grid geometry. The data is not used by OPM Flow intrinsically, but is merely written to the output EGRID file, as specified by the [GRIDFILE](#kw-GRIDFILE) keyword, for the use of post-processing software like OPM ResInsight.
 
 
 | No. | Name | Description | Default |
@@ -20,10 +20,7 @@ MAPAXES specifies the origin of the map used to create the grid. It is usually o
 | 5 | X3 | X3 is a real number that defines the x co-ordinate of a point on the x-axis. | None |
 | 6 | Y3 | Y3 is a real number that defines the y co-ordinate of a point on the x-axis. | None |
 | Notes: |  |  |  |
-
-*Table 6.58: MAPAXES Keyword Description*
-
-
+: MAPAXES Keyword Description {#tbl-6-58}
 #### Example
 
 

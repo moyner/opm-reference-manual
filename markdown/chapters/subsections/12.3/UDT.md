@@ -1,7 +1,7 @@
-### UDT – Declare User Define Tables (“UDT”)
+### UDT – Declare User Define Tables (“UDT”) {#kw-UDT}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -9,7 +9,7 @@
 
 The UDT keyword defines a single multi-dimensional User Defined Table (“UDT”).
 
-User Defined Quantities (“UDQ”) defined using the UDQ keyword in the SCHEDULE section can be assigned values by looking up a UDT.
+User Defined Quantities (“[UDQ](#kw-UDQ)”) defined using the [UDQ](#kw-UDQ) keyword in the [SCHEDULE](#kw-SCHEDULE) section can be assigned values by looking up a UDT.
 
 This keyword is partially supported by OPM Flow; only one-dimensional lookup tables are supported.
 
@@ -19,7 +19,7 @@ Each User Defined Table must be defined with a separate UDT keyword that consist
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | 1-1 | NAME | A character string of up to eight characters in length beginning with ‘TU’ that defines the table name. | None |
-| 1-2 | NDIMS | An integer value between one and MXDIMS that defines the number of dimensions for the table. MXDIMS is the maximum number of UDT table dimensions defined using the UDTDIMS keyword in the RUNSPEC section. OPM Flow only supports one-dimensional tables (NDIMS = 1). | None |
+| 1-2 | NDIMS | An integer value between one and MXDIMS that defines the number of dimensions for the table. MXDIMS is the maximum number of UDT table dimensions defined using the [UDTDIMS](#kw-UDTDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. OPM Flow only supports one-dimensional tables (NDIMS = 1). | None |
 | 1-3 | / | Record terminated by a “/” | Not Applicable |
 | 2-1 | TYPE | A defined character string that defines the type of interpolation for this dimension and must one of the following: | None |
 | 2-2 | POINTS | A monotonically increasing vector of real values that defines the numerical value of the interpolation points for this dimension if the specified type of interpolation TYPE is either ‘NV’, ‘LC’ or ‘LL’. Otherwise, a vector of character strings of up to eight characters in length defining the ‘ID’. | None |
@@ -31,10 +31,7 @@ Each User Defined Table must be defined with a separate UDT keyword that consist
 | 3-5 | / | If the number of dimensions NDIMS is equal to four then records (3-1) to (3-4) are repeated for each of the interpolation POINTS in the forth dimension, and then followed by an additional “/”. | Not Applicable |
 | 3-6 | / | The keyword is terminated by a “/” | Not Applicable |
 | Notes: |  |  |  |
-
-*Table 12.3.235.1: UDT Keyword Description*
-
-
+: UDT Keyword Description {#tbl-12-3-235-1}
 The format for a one-dimensional table with m interpolation points is outlined below:
 
 

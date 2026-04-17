@@ -1,31 +1,28 @@
-### WVFPEXP – Define Well VFP Interpolation Options
+### WVFPEXP – Define Well VFP Interpolation Options {#kw-WVFPEXP}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword, WVFPEXP, defines how Vertical Flow Performance (“VFP”) tables are interpolated and can be used to resolve certain issues with wells operating under tubing head pressure control. For example, setting the VFP table to interpolate explicitly, that is using the previous time step results of the gas and water ratios for an oil well, may improve convergence. The default is to use implicit interpolation that uses the current time step values and may result in solution convergence oscillations in solving the linear equations. The WCONPROD keyword is used to allocate the VFPPROD tables to specific production wells.  Note that one VFP table can be allocated to one or more wells; however, WVFPEXP is applied to a well’s allocated VFP table, not to all wells that use the same table, unless specifically requested.  All the aforementioned keywords are in the SCHEDULE section.
+This keyword, WVFPEXP, defines how Vertical Flow Performance (“VFP”) tables are interpolated and can be used to resolve certain issues with wells operating under tubing head pressure control. For example, setting the VFP table to interpolate explicitly, that is using the previous time step results of the gas and water ratios for an oil well, may improve convergence. The default is to use implicit interpolation that uses the current time step values and may result in solution convergence oscillations in solving the linear equations. The [WCONPROD](#kw-WCONPROD) keyword is used to allocate the [VFPPROD](#kw-VFPPROD) tables to specific production wells.  Note that one VFP table can be allocated to one or more wells; however, WVFPEXP is applied to a well’s allocated VFP table, not to all wells that use the same table, unless specifically requested.  All the aforementioned keywords are in the [SCHEDULE](#kw-SCHEDULE) section.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well’s VFP interpolation options are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
-| 2 | IMPEXP | A defined character string of length three that defines the how the well’s VFPPROD tables are to be interpolated and should be set to one of the following character strings: If a well's WCUT and GOR is varying as a function of BHP inside a Newton/Linear iteration (as for example when gas cusping or water coning is occurring), the implicit lookup of the VFP tables might indicate that the well has died, due to the interpolation/extrapolation. If a well dies using implicit WCUT and GOR VFP lookup then the simulator automatically switches to explicit (previous time step) VFP lookup to prevent the well from premature closure, and writes a message to the screen and print file stating the fact. Note the explicit treatment is just for the VFP lookup only. Using the IMPEXP option allows one to select wells that should use either the implicit or explicit lookup option, which may be useful in improving run time performance. Note that if the default value of IMP is used, the simulator will still switch to explicit VFP lookup to prevent a well from premature closure if the condition occurs. | IMP |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well’s VFP interpolation options are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
+| 2 | IMPEXP | A defined character string of length three that defines the how the well’s [VFPPROD](#kw-VFPPROD) tables are to be interpolated and should be set to one of the following character strings: If a well's WCUT and GOR is varying as a function of BHP inside a Newton/Linear iteration (as for example when gas cusping or water coning is occurring), the implicit lookup of the VFP tables might indicate that the well has died, due to the interpolation/extrapolation. If a well dies using implicit WCUT and GOR VFP lookup then the simulator automatically switches to explicit (previous time step) VFP lookup to prevent the well from premature closure, and writes a message to the screen and print file stating the fact. Note the explicit treatment is just for the VFP lookup only. Using the IMPEXP option allows one to select wells that should use either the implicit or explicit lookup option, which may be useful in improving run time performance. Note that if the default value of IMP is used, the simulator will still switch to explicit VFP lookup to prevent a well from premature closure if the condition occurs. | IMP |
 | 3 | STATUS | A defined character string that defines if the well’s operating condition should be checked to see if the VFP table lookup indicates if the well is operating on the flat or horizontal part of stabilized portion of the VLP table (curve), and should be set to one of the following character strings: This option is specific to the commercial simulator’s VFPi program that can generate VFPF tables where the unstable part of the VFP curves to the left of the minimum is replaced with a horizontal line at the minimum BHP value. This option is not supported by OPM Flow. | NO |
 | 4 | CONTROL | A defined character string that defines the behavior of rate control wells operating on the unstabilized portion of the VFP table,  and should be set to one of the following character strings: In the commercial simulator this option will also print a message the first time a well is prevented from changing its control mode, whereas OPM Flow always prints a message every time a well is prevented from changing its control mode. The default value of NO allows wells to die when they are constrained by a lower rate that forces them to operate on the unstable section of the VFP curve. This can occur if a well’s rate is being set to match its group target rate or constraint limit.   Using either the YES1 or YES2 option will help prevent the "hunting between control modes" issue or the well prematurely being shut-in. | NO |
 | 5 | EXTRAP | The EXTRAP parameter is a defined character string in the commercial composition simulator that declares how the extrapolation of a well’s gas fraction, water fraction, and ALQ values is to be conducted. This option is not supported by OPM Flow. | WG |
 | Notes: |  |  |  |
-
-*Table 12.131: WVFPEXP Keyword Description*
-
-
+: WVFPEXP Keyword Description {#tbl-12-131}
 #### Example
 
-The following example defines two oil wells using the WELSPECS and WCONPROD keywords, together with the WVFPEXP keyword that declares how the VFPPROD table lookup should be performed.
+The following example defines two oil wells using the [WELSPECS](#kw-WELSPECS) and [WCONPROD](#kw-WCONPROD) keywords, together with the WVFPEXP keyword that declares how the [VFPPROD](#kw-VFPPROD) table lookup should be performed.
 
 
 ```
@@ -58,4 +55,4 @@ WVFPEXP
 
 ```
 
-Here both wells are declared as initially shut on the WELSPECS keyword and use VFPPROD table number one as declared on the WCONPROD keyword. The WVFPEXP keyword declares all wells with a name beginning with OP to use implicit lookup and the wells are prevented from changing from rate control to THP control provided they can produce at a higher rate under THP control.
+Here both wells are declared as initially shut on the [WELSPECS](#kw-WELSPECS) keyword and use [VFPPROD](#kw-VFPPROD) table number one as declared on the [WCONPROD](#kw-WCONPROD) keyword. The WVFPEXP keyword declares all wells with a name beginning with OP to use implicit lookup and the wells are prevented from changing from rate control to THP control provided they can produce at a higher rate under THP control.

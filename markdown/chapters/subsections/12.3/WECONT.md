@@ -1,15 +1,15 @@
-### WECONT – Well Economic Tracer Criteria for Production Wells
+### WECONT – Well Economic Tracer Criteria for Production Wells {#kw-WECONT}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The WECONT keyword defines the tracer economic criteria for production wells that have previously been defined by the WELSPECS and WCONPROD keywords in the SCHEDULE section, for tracers define by the TRACER keyword in the PROPS section.
+The WECONT keyword defines the tracer economic criteria for production wells that have previously been defined by the [WELSPECS](#kw-WELSPECS) and [WCONPROD](#kw-WCONPROD) keywords in the [SCHEDULE](#kw-SCHEDULE) section, for tracers define by the [TRACER](#kw-TRACER) keyword in the [PROPS](#kw-PROPS) section.
 
-Note that wells can be allocated to a group when they are specified by the WELSPECS keyword and groups can also have economic controls. Wells under group control are therefore subject to the economic criteria set via the GECONT keyword in the SCHEDULE section and the controls specified by this keyword. Note that GECONT is not supported by OPM Flow in the current release
+Note that wells can be allocated to a group when they are specified by the [WELSPECS](#kw-WELSPECS) keyword and groups can also have economic controls. Wells under group control are therefore subject to the economic criteria set via the [GECONT](#kw-GECONT) keyword in the [SCHEDULE](#kw-SCHEDULE) section and the controls specified by this keyword. Note that [GECONT](#kw-GECONT) is not supported by OPM Flow in the current release
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -18,8 +18,8 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1-1 | WELNAME | A character string of up to eight characters in length that defines the well  name for which the well target and constraints are being defined. | None |
-| 1-2 | ACTION | A defined character string that defines the action to be taken if the economic WCUT, GOR, or WGR limits are violated. ACTION should be set to one of the following character strings: The corrective action takes places at the end of the time step in which the constraint is violated. | None |
-| 1-3 | END | A defined character string that defines if the simulation should terminate if the well is shut or stopped. END should be set to one of the following character strings: | NO |
+| 1-2 | [ACTION](#kw-ACTION) | A defined character string that defines the action to be taken if the economic WCUT, GOR, or WGR limits are violated. [ACTION](#kw-ACTION) should be set to one of the following character strings: The corrective action takes places at the end of the time step in which the constraint is violated. | None |
+| 1-3 | [END](#kw-END) | A defined character string that defines if the simulation should terminate if the well is shut or stopped. [END](#kw-END) should be set to one of the following character strings: | NO |
 | 1-4 | WELL | A character string of up to eight characters in length that defines the well name of a fully defined well that will be “opened” when the well WELNAME is shut-in or stopped. | None |
 | 1-5 | / | Record one terminated by a “/” | Not Applicable |
 | 2-1 | NAME | A three letter character string defining the tracer’s name. Note it is best to void names beginning with the letters F, S, and T as these names may create naming issues in post-processing software. | None |
@@ -32,11 +32,8 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | 2-8 | / | Record two terminated by a “/” | Not Applicable |
 | 3-1 | / | Well terminated by a “/” | Not Applicable |
 | Notes: |  |  |  |
-
-*Table 12.83: WECONT Keyword Description*
-
-
-See also the WELSPECS keyword to define a wells shut-in or stop options,  and WECON for setting a well’s economic criteria. Both the aforementioned keywords are described in the SCHEDULE section.
+: WECONT Keyword Description {#tbl-12-83}
+See also the [WELSPECS](#kw-WELSPECS) keyword to define a wells shut-in or stop options,  and [WECON](#kw-WECON) for setting a well’s economic criteria. Both the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
 
 
 #### Example

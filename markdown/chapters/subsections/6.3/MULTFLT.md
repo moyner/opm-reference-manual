@@ -1,25 +1,22 @@
-### MULTFLT – Multiply the Transmissibility of a Defined Fault by a Constant
+### MULTFLT – Multiply the Transmissibility of a Defined Fault by a Constant {#kw-MULTFLT}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-MULTFLT enables the transmissibilities across defined faults, as declared by the FAULTS keyword, to be modified. They keyword allows for the re-scaling of the existing fault transmissibilities calculated by OPM Flow, for example setting a fault to be completely sealing by setting the multiplier to zero.
+MULTFLT enables the transmissibilities across defined faults, as declared by the [FAULTS](#kw-FAULTS) keyword, to be modified. They keyword allows for the re-scaling of the existing fault transmissibilities calculated by OPM Flow, for example setting a fault to be completely sealing by setting the multiplier to zero.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | FLTNAME | FLTNAME is a character string enclosed in quotes with a maximum length of eight characters, that defines the name of the fault that FLTMULT will be applied to. FLTNAME must have previously been defined using the FAULTS keyword in GRID section | None |
+| 1 | FLTNAME | FLTNAME is a character string enclosed in quotes with a maximum length of eight characters, that defines the name of the fault that FLTMULT will be applied to. FLTNAME must have previously been defined using the [FAULTS](#kw-FAULTS) keyword in [GRID](#kw-GRID) section | None |
 | 2 | FLT-TRS | A positive real number that sets the transmissible multiplier to be applied to the FLTNAME transmissibilities positive real number that sets the transmissible multiplier to be applied to the FLTNAME transmissibilities. | 1.0 |
-| 3 | FLT-DIF | A positive real number that sets the diffusivity multiplier to be applied to the FLTNAME diffusivities. This option should only be used if the Diffusion option has been made activate by the DIFFUSE keyword in the RUNSPEC section. OPM Flow does not support this Diffusion option. | 1.0 |
+| 3 | FLT-DIF | A positive real number that sets the diffusivity multiplier to be applied to the FLTNAME diffusivities. This option should only be used if the Diffusion option has been made activate by the [DIFFUSE](#kw-DIFFUSE) keyword in the [RUNSPEC](#kw-RUNSPEC) section. OPM Flow does not support this Diffusion option. | 1.0 |
 | Notes: |  |  |  |
-
-*Table 6.67: MULTFLT Keyword Description*
-
-
+: MULTFLT Keyword Description {#tbl-6-67}
 #### Example
 
 

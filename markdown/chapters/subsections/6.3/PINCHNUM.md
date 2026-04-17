@@ -1,25 +1,22 @@
-### PINCHNUM – Define Pinch-Out Regions for the PINCHREG Keyword
+### PINCHNUM – Define Pinch-Out Regions for the PINCHREG Keyword {#kw-PINCHNUM}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The PINCHNUM keyword defines the pinch-out region numbers for each grid block, as such there must be one entry for each cell in the model. The array is used with the PINCHREG keyword to set the pinch-out options and threshold thickness for each region.
+The PINCHNUM keyword defines the pinch-out region numbers for each grid block, as such there must be one entry for each cell in the model. The array is used with the [PINCHREG](#kw-PINCHREG) keyword to set the pinch-out options and threshold thickness for each region.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | PINCHNUM | PINCHNUM defines an array of positive integers assigning a grid cell to a particular PINCHNUM region. The maximum number of PINCHNUM regions is set by the NRPINC variable on the GRIDOPTS keyword in the RUNSPEC section. | 1 |
+| 1 | PINCHNUM | PINCHNUM defines an array of positive integers assigning a grid cell to a particular PINCHNUM region. The maximum number of PINCHNUM regions is set by the NRPINC variable on the [GRIDOPTS](#kw-GRIDOPTS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | 1 |
 | Notes: |  |  |  |
-
-*Table 6.109: PINCHNUM Keyword Description*
-
-
+: PINCHNUM Keyword Description {#tbl-6-109}
 #### Example
 
 The example below sets defines three PINCHNUM regions for various layers in a model based on the model’s layering.

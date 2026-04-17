@@ -1,39 +1,36 @@
-### SPECHEAT – Define the Specific Heat of Oil, Water and Gas
+### SPECHEAT – Define the Specific Heat of Oil, Water and Gas {#kw-SPECHEAT}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-SPECHEAT defines the specific heat of the oil, water and gas phases for various PVT regions in the model  for when the THERMAL option has been activated in the RUNSPEC section. The number of SPECHEAT vector data sets is defined by the NTPVT parameter on the TABDIMS keyword in the RUNSPEC section and the allocation of the SPECHEAT data sets to different grid blocks in the model is done via the PVTNUM keyword in the REGIONS section.
+SPECHEAT defines the specific heat of the oil, water and gas phases for various PVT regions in the model  for when the [THERMAL](#kw-THERMAL) option has been activated in the [RUNSPEC](#kw-RUNSPEC) section. The number of SPECHEAT vector data sets is defined by the NTPVT parameter on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section and the allocation of the SPECHEAT data sets to different grid blocks in the model is done via the [PVTNUM](#kw-PVTNUM) keyword in the [REGIONS](#kw-REGIONS) section.
 
-This keyword can only be used if OPM Flow’s thermal option has been activated by the THERMAL keyword in the RUNSPEC section. Note this is different to the commercial simulator that uses the TEMP keyword in the RUNSPEC section to activate the black-oil thermal model.
+This keyword can only be used if OPM Flow’s thermal option has been activated by the [THERMAL](#kw-THERMAL) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Note this is different to the commercial simulator that uses the [TEMP](#kw-TEMP) keyword in the [RUNSPEC](#kw-RUNSPEC) section to activate the black-oil thermal model.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | TEMP | A columnar vector of real monotonically increasing down the column   values that define the temperature for the corresponding oil, water and gas specific heat values. | None |
+| 1 | [TEMP](#kw-TEMP) | A columnar vector of real monotonically increasing down the column   values that define the temperature for the corresponding oil, water and gas specific heat values. | None |
 | oF | oC | oC |  |
-| 2 | OILSHEAT | OILSHEAT is a columnar vector of positive real numbers defining the specific heat of oil at the corresponding temperature, TEMP. | None |
+| 2 | OILSHEAT | OILSHEAT is a columnar vector of positive real numbers defining the specific heat of oil at the corresponding temperature, [TEMP](#kw-TEMP). | None |
 | Btu/lb/oR | kJ/kg/K | J/gm/K |  |
-| 3 | WATSHEAT | WATSHEAT is a columnar vector of positive real numbers defining the specific heat of water at the corresponding temperature, TEMP. | None |
+| 3 | WATSHEAT | WATSHEAT is a columnar vector of positive real numbers defining the specific heat of water at the corresponding temperature, [TEMP](#kw-TEMP). | None |
 | Btu/lb/oR | kJ/kg/K | J/gm/K |  |
-| 4 | GASSHEAT | GASHEAT is a columnar vector of positive real numbers defining the specific heat of gas at the corresponding temperature, TEMP. | None |
+| 4 | GASSHEAT | GASHEAT is a columnar vector of positive real numbers defining the specific heat of gas at the corresponding temperature, [TEMP](#kw-TEMP). | None |
 | Btu/lb/oR | kJ/kg/K | J/gm/K |  |
 | Notes: |  |  |  |
-
-*Table 8.170: SPECHEAT Keyword Description*
-
-
-See also the SPECROCK keyword to define the reservoir rock specific heat.
+: SPECHEAT Keyword Description {#tbl-8-170}
+See also the [SPECROCK](#kw-SPECROCK) keyword to define the reservoir rock specific heat.
 
 
 #### Example
 
-The example below defines three fluid phases specific heat versus temperature tables assuming NTPVT equals three and NPPVT is greater than or equal to two on the TABDIMS keyword in the RUNSPEC section.
+The example below defines three fluid phases specific heat versus temperature tables assuming NTPVT equals three and NPPVT is greater than or equal to two on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 
 ```

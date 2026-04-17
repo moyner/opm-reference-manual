@@ -1,13 +1,13 @@
-### ROCK – Define the Rock Compressibility for Various Regions
+### ROCK – Define the Rock Compressibility for Various Regions {#kw-ROCK}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-ROCK defines the rock compressibility for various regions in the model. The number of ROCK vector data sets is defined by the NTPVT parameter on the TABDIMS keyword in the RUNSPEC section and the allocation of the ROCK tables to different grid blocks in the model is done via the PVTNUM keyword in the REGIONS section. One data set consists of one record or line which is terminated by a “/”.
+ROCK defines the rock compressibility for various regions in the model. The number of ROCK vector data sets is defined by the NTPVT parameter on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section and the allocation of the ROCK tables to different grid blocks in the model is done via the [PVTNUM](#kw-PVTNUM) keyword in the [REGIONS](#kw-REGIONS) section. One data set consists of one record or line which is terminated by a “/”.
 
 This keyword must be defined in the OPM Flow input deck.
 
@@ -19,11 +19,8 @@ This keyword must be defined in the OPM Flow input deck.
 | psia 14.7 | barsa 1.0132 | atma 1.0 |  |
 | 2 | RCOMP | RCOMP is a real number defining the rock compressibility (cf) at the rock reference pressure and is defined as: ${c}_{f} = -\frac{1}{V}(\frac{\mathit{dV}}{\mathit{dP}})$ | Defined |
 | 1/psia 0.0 | 1/barsa 0.0 | 1/atma 0.0 |  |
-| Notes: Note, however, that if ROCKOPTS(ROCKOPT3) parameter has been used to set the allocation of the ROCK data via the ROCKNUM array, then the number of ROCK vectors should correspond to the value entered on TABDIMS(NTROCC) in the RUNSPEC section. Similarly, if the ROCKOPTS(ROCKOPT3) has been used to set the assignment of the ROCK data via the SATNUM array, then the number of vectors should correspond to the value entered via the TABDIMS(NTSFUN) parameter, since the tables will be allocated via the SATNUM array. |  |  |  |
-
-*Table 8.125: ROCK Keyword Description*
-
-
+| Notes: Note, however, that if [ROCKOPTS](#kw-ROCKOPTS)(ROCKOPT3) parameter has been used to set the allocation of the ROCK data via the [ROCKNUM](#kw-ROCKNUM) array, then the number of ROCK vectors should correspond to the value entered on [TABDIMS](#kw-TABDIMS)(NTROCC) in the [RUNSPEC](#kw-RUNSPEC) section. Similarly, if the [ROCKOPTS](#kw-ROCKOPTS)(ROCKOPT3) has been used to set the assignment of the ROCK data via the [SATNUM](#kw-SATNUM) array, then the number of vectors should correspond to the value entered via the [TABDIMS](#kw-TABDIMS)(NTSFUN) parameter, since the tables will be allocated via the [SATNUM](#kw-SATNUM) array. |  |  |  |
+: ROCK Keyword Description {#tbl-8-125}
 The simulator adjusts the pore volume based on the reference pressure (PRESS), that is:
 
 
@@ -45,16 +42,16 @@ $V({P}_{r})$	=	pore volume at at the reference pressure.
 
 
 ::: {.callout-note}
-If the Rock Compaction option has been activated via the ROCKCOMP keyword in the RUNSPEC section, then the ROCKTAB keyword in the PROPS section should be used instead of ROCK keyword.
+If the Rock Compaction option has been activated via the [ROCKCOMP](#kw-ROCKCOMP) keyword in the [RUNSPEC](#kw-RUNSPEC) section, then the [ROCKTAB](#kw-ROCKTAB) keyword in the [PROPS](#kw-PROPS) section should be used instead of ROCK keyword.
 :::
 
 
-See also the ROCKOPTS and ROCKTAB keywords in the PROPS section.
+See also the [ROCKOPTS](#kw-ROCKOPTS) and [ROCKTAB](#kw-ROCKTAB) keywords in the [PROPS](#kw-PROPS) section.
 
 
 #### Examples
 
-The following shows the ROCK keyword for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to one.
+The following shows the ROCK keyword for when NTPVT on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section is set to one.
 
 
 ```
@@ -74,7 +71,7 @@ ROCK
 ```
 
 
-The next example shows the ROCK keyword for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to three.
+The next example shows the ROCK keyword for when NTPVT on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section is set to three.
 
 
 ```
@@ -96,6 +93,6 @@ ROCK
 ```
 
 
-The above example defines three ROCK tables and assumes that NTPVT equals three on the TABDIMS keyword in the RUNSPEC section.
+The above example defines three ROCK tables and assumes that NTPVT equals three on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
-There is no terminating “/” for this keyword, and thus the number entries must match the value entered via the TABDIMS(NTPVT), TABDIMS(NTROCC), or TABDIMS(NTSFUN) parameters, depending on the option selected via the ROCKOPTS keyword.
+There is no terminating “/” for this keyword, and thus the number entries must match the value entered via the [TABDIMS](#kw-TABDIMS)(NTPVT), [TABDIMS](#kw-TABDIMS)(NTROCC), or [TABDIMS](#kw-TABDIMS)(NTSFUN) parameters, depending on the option selected via the [ROCKOPTS](#kw-ROCKOPTS) keyword.

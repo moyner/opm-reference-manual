@@ -1,23 +1,20 @@
-### INCLUDE – Load Another Data File at the Current Position
+### INCLUDE – Load Another Data File at the Current Position {#kw-INCLUDE}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The INCLUDE keyword informs OPM Flow to continue reading input data from the specified INCLUDE file. When the end of the INCLUDE file is reached, or the ENDINC keyword is encountered in the included file, input data is read from the next keyword in the current file. Although INCLUDE files can be nested, that is INCLUDE files within INCLUDE files etc., in practice this should be avoided due to the complexity of tracking the files.
+The INCLUDE keyword informs OPM Flow to continue reading input data from the specified INCLUDE file. When the end of the INCLUDE file is reached, or the [ENDINC](#kw-ENDINC) keyword is encountered in the included file, input data is read from the next keyword in the current file. Although INCLUDE files can be nested, that is INCLUDE files within INCLUDE files etc., in practice this should be avoided due to the complexity of tracking the files.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | 1 | FILENAME | A character string enclosed in quotes that defines a file to read in and be processed by OPM Flow. | None |
 | Notes: |  |  |  |
-
-*Table 4.4: INCLUDE Keyword Description*
-
-
+: INCLUDE Keyword Description {#tbl-4-4}
 #### Examples
 
 The first example shown below loads the grid file from the same directory as the data file.

@@ -1,7 +1,7 @@
-### WINJCLN – Clean a Fraction of a Deposited Filter Cake
+### WINJCLN – Clean a Fraction of a Deposited Filter Cake {#kw-WINJCLN}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -13,18 +13,15 @@ The [WINJCLN](#REF_HEADING_KEYWORD_WINJCLN) keyword signals that a filter cake s
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the filter cake properties are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the filter cake properties are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
 | 2 | FCLNFRAC | A real positive value between 0 and 1 that defines the fraction of filter cake permeability (skin factor) to be removed. The accumulated filter cake skin factor for matching connections will be multiplied by (1 – FCLNFRAC), so the default value of 1 will completely clean the filter cake. | 1 |
 | dimensionless | dimensionless | dimensionless |  |
 | 3 | I | An integer that defines the matching connection location in the I-direction. If set to < 1 then all connections in the I-direction that also satisfy J and K criteria are selected. | -1 |
 | 4 | J | An integer that defines the matching connection location in the J-direction. If set to < 1 then all connections in the J-direction that also satisfy I and K criteria are selected. | -1 |
 | 5 | K | An integer that defines the matching connection location in the K-direction. If set to < 1 then all connections in the K-direction that also satisfy I and J criteria are selected. | -1 |
 | Notes: |  |  |  |
-
-*Table 12.3.295.1: WINJCLN Keyword Description*
-
-
-See also the WINJDAN keyword to define the filter cake properties and the [WINJFCNC](#REF_HEADING_KEYWORD_WINJFCNC) keyword to define a well’s injected filtrate concentration. All the aforementioned keywords are described in the SCHEDULE section.
+: WINJCLN Keyword Description {#tbl-12-3-295-1}
+See also the WINJDAN keyword to define the filter cake properties and the [WINJFCNC](#REF_HEADING_KEYWORD_WINJFCNC) keyword to define a well’s injected filtrate concentration. All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
 
 
 #### Example

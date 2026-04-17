@@ -1,13 +1,13 @@
-### DRSDT – Solution Gas (Rs) Maximum Rate of Increase Parameters
+### DRSDT – Solution Gas (Rs) Maximum Rate of Increase Parameters {#kw-DRSDT}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-DRSDT defines the maximum rate at which the solution gas-oil ratio (Rs) can be increased in a grid cell. The keyword is similar in functionality to the DRSDTR keyword, that defines the maximum rate at which Rs can be increased in a grid cell by region. Both keywords should only be used if the OIL, GAS, and DISGAS keywords in the RUNSPEC section have been invoked to allow oil, gas and dissolved gas to be present in the model.   The keyword only affects the behavior of an increasing Rs, for example when gas is being injected into an oil reservoir, and is subject to the availability of free gas and the ability of the undersaturated oil to adsorb this gas.
+DRSDT defines the maximum rate at which the solution gas-oil ratio (Rs) can be increased in a grid cell. The keyword is similar in functionality to the [DRSDTR](#kw-DRSDTR) keyword, that defines the maximum rate at which Rs can be increased in a grid cell by region. Both keywords should only be used if the [OIL](#kw-OIL), [GAS](#kw-GAS), and [DISGAS](#kw-DISGAS) keywords in the [RUNSPEC](#kw-RUNSPEC) section have been invoked to allow oil, gas and dissolved gas to be present in the model.   The keyword only affects the behavior of an increasing Rs, for example when gas is being injected into an oil reservoir, and is subject to the availability of free gas and the ability of the undersaturated oil to adsorb this gas.
 
 
 | No. | Name | Description | Default |
@@ -15,15 +15,12 @@ DRSDT defines the maximum rate at which the solution gas-oil ratio (Rs) can be i
 | Field | Metric | Laboratory |  |
 | 1 | DRSDT1 | DRSDT1 is a real positive number that defines the maximum rate at which the solution gas-oil ratio is allowed to increase in a grid cell, that is the maximum rate the gas can dissolve into the available undersaturated oil. A value of zero means that Rs cannot increase and free gas cannot dissolve into the unsaturated oil in a grid cell. Alternatively a very large value of DRSDT1 allows Rs to increase rapidly until there is no free gas or the oil within the grid block is fully saturated. Note if the keyword is not present in the input deck then DRSDT1 is assumed to be a very large number resulting in complete re-solution of the gas into the available undersaturated oil. | None |
 | Mscf/stb/d | sm3/sm3/day | scc/scc/day |  |
-| 2 | DRSDT2 | DRSDT2 is a defined character string that defines whether the DRSDT1 is applied to either all grid blocks or just those grid blocks containing free gas: Note if the keyword is not present in the input deck then DRSDT2 is set to the default value of ALL. | ALL |
+| 2 | DRSDT2 | DRSDT2 is a defined character string that defines whether the DRSDT1 is applied to either all grid blocks or just those grid blocks containing free gas: Note if the keyword is not present in the input deck then DRSDT2 is set to the default value of [ALL](#kw-ALL). | [ALL](#kw-ALL) |
 | Notes: |  |  |  |
-
-*Table 12.20: DRSDT Keyword Description*
-
-
+: DRSDT Keyword Description {#tbl-12-20}
 Note this keyword can be used in history matching field performance to control the availability of the movable gas phase.
 
-See also the VAPPARS keyword in the SOLUTION section and the DRSDTR, DRVDT and DRVDTR keywords in the SCHEDULE section that controls how vaporized oil is treated and the rate at which the dissolved phase ratio increases within a grid block.
+See also the [VAPPARS](#kw-VAPPARS) keyword in the [SOLUTION](#kw-SOLUTION) section and the [DRSDTR](#kw-DRSDTR), [DRVDT](#kw-DRVDT) and [DRVDTR](#kw-DRVDTR) keywords in the [SCHEDULE](#kw-SCHEDULE) section that controls how vaporized oil is treated and the rate at which the dissolved phase ratio increases within a grid block.
 
 
 #### Examples

@@ -1,35 +1,32 @@
-### GSF – Gas Saturation Function Tables (Gas-Water Systems)
+### GSF – Gas Saturation Function Tables (Gas-Water Systems) {#kw-GSF}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The GSF keyword defines the gas relative permeability and gas-water capillary pressure data versus gas saturation tables for when only gas and water are present in the input deck.  This keyword should only be used if the gas and water phases are present in the run, and can therefore also be used with the CO2STORE and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) models. In addition, the keyword must be used in conjunction with the WSF keyword in the PROPS section, that defines the water relative permeability versus water saturation for gas-water systems.
+The GSF keyword defines the gas relative permeability and gas-water capillary pressure data versus gas saturation tables for when only gas and water are present in the input deck.  This keyword should only be used if the gas and water phases are present in the run, and can therefore also be used with the [CO2STORE](#kw-CO2STORE) and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) models. In addition, the keyword must be used in conjunction with the [WSF](#kw-WSF) keyword in the [PROPS](#kw-PROPS) section, that defines the water relative permeability versus water saturation for gas-water systems.
 
 
 ::: {.callout-note}
-GSF is a compositional keyword in the commercial compositional simulator, and will therefore cause an error in the commercial black-oil simulator. Currently, both the GSF and WSF keywords can only be used with the CO2STORE and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) models.
+GSF is a compositional keyword in the commercial compositional simulator, and will therefore cause an error in the commercial black-oil simulator. Currently, both the GSF and [WSF](#kw-WSF) keywords can only be used with the [CO2STORE](#kw-CO2STORE) and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) models.
 :::
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | SGAS | A columnar vector of real values monotonically increasing down the column starting from zero and terminating at one minus the connate water saturation, that defines the gas saturation. | None |
+| 1 | [SGAS](#kw-SGAS) | A columnar vector of real values monotonically increasing down the column starting from zero and terminating at one minus the connate water saturation, that defines the gas saturation. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 2 | KRG | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the gas relative permeability. Note that the first entry in the column must be zero. | None |
+| 2 | [KRG](#kw-KRG) | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the gas relative permeability. Note that the first entry in the column must be zero. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | 3 | PCWG | A columnar vector of real values that are either equal or increasing down the column that defines the gas-water capillary pressure. | None |
 | psia | bars | atm |  |
 | Notes: |  |  |  |
-
-*Table 8.44: GSF Keyword Description*
-
-
-See also the WSF - Water Saturation Tables versus Water Saturation (Gas-Water and CO2STORE Systems) keyword in the PROPS section, that defines the water saturation as a function of water saturation for when only the gas and water phases are present in the model.
+: GSF Keyword Description {#tbl-8-44}
+See also the [WSF](#kw-WSF) - Water Saturation Tables versus Water Saturation (Gas-Water and [CO2STORE](#kw-CO2STORE) Systems) keyword in the [PROPS](#kw-PROPS) section, that defines the water saturation as a function of water saturation for when only the gas and water phases are present in the model.
 
 
 #### Example

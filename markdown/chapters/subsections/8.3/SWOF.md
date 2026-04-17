@@ -1,7 +1,7 @@
-### SWOF – Water-Oil Saturation Tables (Format Type 1)
+### SWOF – Water-Oil Saturation Tables (Format Type 1) {#kw-SWOF}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -13,22 +13,19 @@ The SWOF keyword defines the water and oil relative permeability and water-oil c
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | SWAT | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the water saturation. The first entry is the connate water saturation Swc and the last entry should be 1.0. | None |
+| 1 | [SWAT](#kw-SWAT) | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the water saturation. The first entry is the connate water saturation Swc and the last entry should be 1.0. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 2 | KRW | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the water relative permeability with respect to gas saturation. The first value in the column should be zero. | None |
+| 2 | [KRW](#kw-KRW) | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the water relative permeability with respect to gas saturation. The first value in the column should be zero. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 3 | KRO | A columnar vector of real values that are either equal or decreasing down the column and that are greater than or equal to zero and less than or equal to one that defines the oil relative permeability with respect to oil and water saturation. When gas is active in the run, the first entry the column, that is at krow(So = 1-Swc), must be the same as the first entry in the corresponding SGOF or SLGOF table, that is at krog(Sg = 0). The first value in the column should be one. | None |
+| 3 | [KRO](#kw-KRO) | A columnar vector of real values that are either equal or decreasing down the column and that are greater than or equal to zero and less than or equal to one that defines the oil relative permeability with respect to oil and water saturation. When gas is active in the run, the first entry the column, that is at krow(So = 1-Swc), must be the same as the first entry in the corresponding [SGOF](#kw-SGOF) or [SLGOF](#kw-SLGOF) table, that is at krog(Sg = 0). The first value in the column should be one. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 4 | PCWO | A columnar vector of real values that are either equal or decreasing down the column that defines the water-oil relative capillary pressure. If the SWATINIT keyword has been used to initialize the model then columnar vector has to be strictly monotonically increasing. | None |
+| 4 | PCWO | A columnar vector of real values that are either equal or decreasing down the column that defines the water-oil relative capillary pressure. If the [SWATINIT](#kw-SWATINIT) keyword has been used to initialize the model then columnar vector has to be strictly monotonically increasing. | None |
 | psia | bars | atm |  |
 | Notes: |  |  |  |
-
-*Table 8.189: SWOF Keyword Description*
-
-
+: SWOF Keyword Description {#tbl-8-189}
 #### Example
 
-The following example is based on NTSFUN equals two on the TABDIMS keyword in the RUNSPEC section.
+The following example is based on NTSFUN equals two on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 
 ```

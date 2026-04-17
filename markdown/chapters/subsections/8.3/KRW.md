@@ -1,13 +1,13 @@
-### KRW – End-Point Scaling of Grid Cell Krw(Sw =1.0) (Drainage)
+### KRW – End-Point Scaling of Grid Cell Krw(Sw =1.0) (Drainage) {#kw-KRW}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-KRW defines the scaling parameter at the maximum drainage water relative permeability value (SWU), that is for Sw = 1.0, for all the cells in the model via an array.  The ENDSCALE keyword in the RUNSPEC section should be activated to enable end-point scaling and the use of this keyword. The SCALCERS keyword in the PROPS section defines the options used in the re-scaling process, the options are two point scaling and three point scaling.
+KRW defines the scaling parameter at the maximum drainage water relative permeability value ([SWU](#kw-SWU)), that is for Sw = 1.0, for all the cells in the model via an array.  The [ENDSCALE](#kw-ENDSCALE) keyword in the [RUNSPEC](#kw-RUNSPEC) section should be activated to enable end-point scaling and the use of this keyword. The SCALCERS keyword in the [PROPS](#kw-PROPS) section defines the options used in the re-scaling process, the options are two point scaling and three point scaling.
 
 
 | No. | Name | Description | Default |
@@ -16,15 +16,12 @@ KRW defines the scaling parameter at the maximum drainage water relative permeab
 | 1 | KRW | KRW is an array of positive real numbers which are greater than zero and less than or equal to 1.0, that are the assigned scaling KRW values for each cell in the model. Repeat counts may be used, for example 50*1.000. | Taken from cell allocated relative permeability table. |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-
-*Table 8.83: KRW Keyword Description*
-
-
+: KRW Keyword Description {#tbl-8-83}
 ```
 
 ```
 
-For the two point scaling option and for the KRWR water relative permeability array NOT present in the input deck the krw value for a grid block is scaled by:
+For the two point scaling option and for the [KRWR](#kw-KRWR) water relative permeability array NOT present in the input deck the krw value for a grid block is scaled by:
 
 
 $$
@@ -48,24 +45,22 @@ ${k}_{{\mathit{rw}}_{ \mathit{TABLE}-\mathit{MAX}}}$	=	the maximum water relativ
 relative table, that is at the maximum water saturation.
 
 
-If the KRWR keyword is present in the input deck then the scaling matches the relative permeability at the critical saturation of the displacing phase.
+If the [KRWR](#kw-KRWR) keyword is present in the input deck then the scaling matches the relative permeability at the critical saturation of the displacing phase.
 
-If three point scaling option has been selected via the SCALECRS keyword in the PROPS section the critical displacing phase is defined as:
+If three point scaling option has been selected via the [SCALECRS](#kw-SCALECRS) keyword in the [PROPS](#kw-PROPS) section the critical displacing phase is defined as:
 
 
 | No | Phases Present | Critical Saturation |
 | --- | --- | --- |
-| 1 | Gas-Oil | S critical = 1.0 –  SOWCR - SGL |
-| 2 | Gas-Oil-Water | S critical = 1.0 –  SOWCR - SGL |
-| 3 | Gas-Water | S critical = 1.0 – SGCR |
+| 1 | Gas-Oil | S critical = 1.0 –  [SOWCR](#kw-SOWCR) - [SGL](#kw-SGL) |
+| 2 | Gas-Oil-Water | S critical = 1.0 –  [SOWCR](#kw-SOWCR) - [SGL](#kw-SGL) |
+| 3 | Gas-Water | S critical = 1.0 – [SGCR](#kw-SGCR) |
+: Critical Displacement Relationships {#tbl-8-84}
+End-point scaling allows the entered relative permeability functions to be re-scaled based on the saturation end-points allocated to each cell by the [SWL](#kw-SWL), [SWCR](#kw-SWCR), [SWU](#kw-SWU), [SGL](#kw-SGL), [SGCR](#kw-SGCR), [SGU](#kw-SGU), [SOWCR](#kw-SOWCR), and [SOGCR](#kw-SOGCR)  saturation grid arrays for the saturation end-points, In addition end-point scaling may be directional dependent in which case the directional dependent versions of the aforementioned arrays should be used, that is SWUX, SWUY and SWUZ instead of [SWU](#kw-SWU), There is also the facility to make the directional end-point scaling reversible or non-reversible and if the non-reversible option is selected the non-reversible versions of the aforementioned arrays should be used, that is SWUX, SWUX-, SWUY, SWUY-, SWUZ and SWUZ-,  instead of the [SWU](#kw-SWU) keyword.
 
-*Table 8.84: Critical Displacement Relationships*
+End-point scaling also allows the entered relative permeability functions to be scale on the relative permeability values using the [KRG](#kw-KRG), [KRGR](#kw-KRGR), KRW, [KRORG](#kw-KRORG), [KRORW](#kw-KRORW), KRW and [KRWR](#kw-KRWR) relative permeability grid cell arrays for the relative permeability end-point data.  In addition end-point scaling may be directional dependent in which case the directional dependent versions of the aforementioned arrays should be used, that is KRWX, KRWY and KRWZ instead of KRW, There is also the facility to make the directional end-point scaling reversible or non-reversible and if the non-reversible option is selected the non-reversible versions of the aforementioned arrays should be used, that is KRWX, KRWX-, KRWY, KRWY-, KRWZ and KRWZ-,  instead of the KRW keyword.
 
-End-point scaling allows the entered relative permeability functions to be re-scaled based on the saturation end-points allocated to each cell by the SWL, SWCR, SWU, SGL, SGCR, SGU, SOWCR, and SOGCR  saturation grid arrays for the saturation end-points, In addition end-point scaling may be directional dependent in which case the directional dependent versions of the aforementioned arrays should be used, that is SWUX, SWUY and SWUZ instead of SWU, There is also the facility to make the directional end-point scaling reversible or non-reversible and if the non-reversible option is selected the non-reversible versions of the aforementioned arrays should be used, that is SWUX, SWUX-, SWUY, SWUY-, SWUZ and SWUZ-,  instead of the SWU keyword.
-
-End-point scaling also allows the entered relative permeability functions to be scale on the relative permeability values using the KRG, KRGR, KRW, KRORG, KRORW, KRW and KRWR relative permeability grid cell arrays for the relative permeability end-point data.  In addition end-point scaling may be directional dependent in which case the directional dependent versions of the aforementioned arrays should be used, that is KRWX, KRWY and KRWZ instead of KRW, There is also the facility to make the directional end-point scaling reversible or non-reversible and if the non-reversible option is selected the non-reversible versions of the aforementioned arrays should be used, that is KRWX, KRWX-, KRWY, KRWY-, KRWZ and KRWZ-,  instead of the KRW keyword.
-
-If the hysteresis model option has been activated on the SATOPTS keyword in the RUNSPEC section, then the equivalent imbibition arrays suffixed with the letter I, for example IKRW, can be used to define the KRW for the relative permeability imbibition tables.
+If the hysteresis model option has been activated on the [SATOPTS](#kw-SATOPTS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, then the equivalent imbibition arrays suffixed with the letter I, for example [IKRW](#kw-IKRW), can be used to define the KRW for the relative permeability imbibition tables.
 
 
 #### Examples
@@ -93,7 +88,7 @@ ENDBOX
 ```
 
 
-The next example does exactly the same thing using the EQUALS keyword instead.
+The next example does exactly the same thing using the [EQUALS](#kw-EQUALS) keyword instead.
 
 
 ```

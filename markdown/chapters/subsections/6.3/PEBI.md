@@ -1,7 +1,7 @@
-### PEBI – Activate and Defined PEBI Grid Options
+### PEBI – Activate and Defined PEBI Grid Options {#kw-PEBI}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,10 +16,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | --- | --- | :------ | --- |
 | 1 | OPTION1 | A defined character string that activates or deactivates the checking of negative transmissibility values. OPTION1 should be set to YES to check for negative values, or NO switches off this option. | NO |
 | 2 | OPTION2 | A defined character string that activates or deactivates the calculation of pore volumes and transmissibilities. OPTION2 should be set to YES if the pore volumes and transmissibilities are provided, or NO for the values to calculated by the simulator. | NO |
-
-*Table 6.101: PEBI Keyword Description*
-
-
+: PEBI Keyword Description {#tbl-6-101}
 #### Example
 
 

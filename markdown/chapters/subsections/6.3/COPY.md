@@ -1,7 +1,7 @@
-### COPY – Copy Array Data to Another Array
+### COPY – Copy Array Data to Another Array {#kw-COPY}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -21,44 +21,38 @@ The COPY keyword copies an array (or part of an array) to another array or part 
 | 7 | K1 | A positive integer that defines the lower bound of the array in the K-direction to be modified must be greater than or equal to one and less than or equal to K2 and NZ. | 1 |
 | 8 | K2 | A positive integer that defines the upper bound of the array in the K-direction to be modified must be greater than or equal to KI and less than or equal to NZ. | NZ |
 | Notes: |  |  |  |
-
-*Table 6.16: COPY Keyword Description*
-
-
-Examples of the arrays most commonly operated on in each section are given in Table 6.17. Cells colored red indicate arrays that are not supported by OPM Flow operations.
+: COPY Keyword Description {#tbl-6-16}
+Examples of the arrays most commonly operated on in each section are given in @tbl-6-17. Cells colored red indicate arrays that are not supported by OPM Flow operations.
 
 
 | COPY Keyword and Variable Options by Section |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- |
-| GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
-| DX | DEPTH | SWL | ENDNUM | PRESSURE |  |  |
-| DY | PORV | SWCR | EQLNUM | SWAT |  |  |
-| DZ | TRANX | SWU | FIPNUM | SGAS |  |  |
-| PERMX | TRANY | SGL | IMBNUM | RV |  |  |
-| PERMY | TRANZ | SGCR | MISCNUM | RS |  |  |
-| PERMZ | DIFFX | SGU | PVTNUM | TBLK |  |  |
-| MULTX | DIFFY | KRW | ROCKNUM | GI |  |  |
-| MULTY | DIFFZ | KRO | SATNUM | OILAPI |  |  |
-| MULTZ | TRANR | KRG | WH2NUM | SALT |  |  |
-| DR | TRANTHT | PCG |  | GASCONC |  |  |
-| DTHETA | DIFFR | PCW |  | SOLVCONC |  |  |
-| PERMR | DIFFTHT |  |  | SOLVFRAC |  |  |
-| PERMTHT |  |  |  | SFOAM |  |  |
-| DZNET |  |  |  | SPOLY |  |  |
-| PORO |  |  |  |  |  |  |
-| NTG |  |  |  |  |  |  |
-| FLUXNUM |  |  |  |  |  |  |
-| MULTNUM |  |  |  |  |  |  |
-| MPFANUM |  |  |  |  |  |  |
-| DIFFX |  |  |  |  |  |  |
-| DIFFY |  |  |  |  |  |  |
-| DIFFZ |  |  |  |  |  |  |
-| DIFFR |  |  |  |  |  |  |
-| DIFFTHT |  |  |  |  |  |  |
-
-*Table 6.17: COPY Keyword Applicable Arrays by Section*
-
-
+| [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| [DX](#kw-DX) | [DEPTH](#kw-DEPTH) | [SWL](#kw-SWL) | [ENDNUM](#kw-ENDNUM) | [PRESSURE](#kw-PRESSURE) |  |  |
+| [DY](#kw-DY) | [PORV](#kw-PORV) | [SWCR](#kw-SWCR) | [EQLNUM](#kw-EQLNUM) | [SWAT](#kw-SWAT) |  |  |
+| [DZ](#kw-DZ) | [TRANX](#kw-TRANX) | [SWU](#kw-SWU) | [FIPNUM](#kw-FIPNUM) | [SGAS](#kw-SGAS) |  |  |
+| [PERMX](#kw-PERMX) | [TRANY](#kw-TRANY) | [SGL](#kw-SGL) | [IMBNUM](#kw-IMBNUM) | [RV](#kw-RV) |  |  |
+| [PERMY](#kw-PERMY) | [TRANZ](#kw-TRANZ) | [SGCR](#kw-SGCR) | [MISCNUM](#kw-MISCNUM) | [RS](#kw-RS) |  |  |
+| [PERMZ](#kw-PERMZ) | [DIFFX](#kw-DIFFX) | [SGU](#kw-SGU) | [PVTNUM](#kw-PVTNUM) | [TBLK](#kw-TBLK) |  |  |
+| [MULTX](#kw-MULTX) | [DIFFY](#kw-DIFFY) | [KRW](#kw-KRW) | [ROCKNUM](#kw-ROCKNUM) | [GI](#kw-GI) |  |  |
+| [MULTY](#kw-MULTY) | [DIFFZ](#kw-DIFFZ) | [KRO](#kw-KRO) | [SATNUM](#kw-SATNUM) | [OILAPI](#kw-OILAPI) |  |  |
+| [MULTZ](#kw-MULTZ) | [TRANR](#kw-TRANR) | [KRG](#kw-KRG) | [WH2NUM](#kw-WH2NUM) | [SALT](#kw-SALT) |  |  |
+| [DR](#kw-DR) | [TRANTHT](#kw-TRANTHT) | [PCG](#kw-PCG) |  | [GASCONC](#kw-GASCONC) |  |  |
+| [DTHETA](#kw-DTHETA) | [DIFFR](#kw-DIFFR) | [PCW](#kw-PCW) |  | [SOLVCONC](#kw-SOLVCONC) |  |  |
+| [PERMR](#kw-PERMR) | [DIFFTHT](#kw-DIFFTHT) |  |  | [SOLVFRAC](#kw-SOLVFRAC) |  |  |
+| [PERMTHT](#kw-PERMTHT) |  |  |  | [SFOAM](#kw-SFOAM) |  |  |
+| [DZNET](#kw-DZNET) |  |  |  | [SPOLY](#kw-SPOLY) |  |  |
+| [PORO](#kw-PORO) |  |  |  |  |  |  |
+| [NTG](#kw-NTG) |  |  |  |  |  |  |
+| [FLUXNUM](#kw-FLUXNUM) |  |  |  |  |  |  |
+| [MULTNUM](#kw-MULTNUM) |  |  |  |  |  |  |
+| [MPFANUM](#kw-MPFANUM) |  |  |  |  |  |  |
+| [DIFFX](#kw-DIFFX) |  |  |  |  |  |  |
+| [DIFFY](#kw-DIFFY) |  |  |  |  |  |  |
+| [DIFFZ](#kw-DIFFZ) |  |  |  |  |  |  |
+| [DIFFR](#kw-DIFFR) |  |  |  |  |  |  |
+| [DIFFTHT](#kw-DIFFTHT) |  |  |  |  |  |  |
+: COPY Keyword Applicable Arrays by Section {#tbl-6-17}
 #### Example
 
 
@@ -80,4 +74,4 @@ MULTIPLY
 
 ```
 
-The above example copies PERMX array to the PERMY and PERMZ arrays in the GRID section for all grid blocks in the model. The PERMZ array is then multiplied by 0.5 for all grid blocks in the model.
+The above example copies [PERMX](#kw-PERMX) array to the [PERMY](#kw-PERMY) and [PERMZ](#kw-PERMZ) arrays in the [GRID](#kw-GRID) section for all grid blocks in the model. The [PERMZ](#kw-PERMZ) array is then multiplied by 0.5 for all grid blocks in the model.

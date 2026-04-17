@@ -1,13 +1,13 @@
-### SIMULATE – Activate the Simulation Mode
+### SIMULATE – Activate the Simulation Mode {#kw-SIMULATE}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-SIMULATE switches the mode of the simulation to run simulation mode from the data input checking mode activated by the NOSIM keyword in the SCHEDULE section. Note that if NOSIM has been used in the RUNSPEC section then SIMULATE will have no effect.
+SIMULATE switches the mode of the simulation to run simulation mode from the data input checking mode activated by the [NOSIM](#kw-NOSIM) keyword in the [SCHEDULE](#kw-SCHEDULE) section. Note that if [NOSIM](#kw-NOSIM) has been used in the [RUNSPEC](#kw-RUNSPEC) section then SIMULATE will have no effect.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 

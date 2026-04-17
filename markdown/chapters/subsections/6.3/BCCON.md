@@ -1,7 +1,7 @@
-### BCCON – Define Boundary Conditions Connections
+### BCCON – Define Boundary Conditions Connections {#kw-BCCON}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -29,16 +29,13 @@ This is an OPM Flow specific keyword and will therefore cause an error in the co
 | 6 | K2 | A positive integer that defines the upper bound of the grid in the K-direction for which the boundary conditions are to be applied, must be greater than or equal to KI and less than or equal to NZ. | NZ |
 | 7 | DIRECT | A character string that defines the direction to apply the boundary conditions, and should be set to one of the following X, Y, or Z for the positive direction, or X-, Y- or Z- for the negative direction. | None |
 | Notes: |  |  |  |
-
-*Table 6.3.12.1: BCCON Keyword Description*
-
-
-See also the AQUFLUX keyword that is supported by OPM Flow in both the SOLUTION and SCHEDULE sections, to define a constant flux analytical aquifer.
+: BCCON Keyword Description {#tbl-6-3-12-1}
+See also the [AQUFLUX](#kw-AQUFLUX) keyword that is supported by OPM Flow in both the [SOLUTION](#kw-SOLUTION) and [SCHEDULE](#kw-SCHEDULE) sections, to define a constant flux analytical aquifer.
 
 
 If the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keywords are not present in the input deck, then the boundary conditions for the model are set to be no flow, which is the normal behavior in both OPM Flow and the commercial simulator.
 
-The BC keyword has been replaced by the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keywords.
+The [BC](#kw-BC) keyword has been replaced by the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keywords.
 
 
 #### Examples
@@ -69,9 +66,9 @@ BCPROP
 
 ```
 
-With this option it is only necessary to define the boundary cells and all the other parameters (COMPONENT, RATE, PRESS, and TEMP) can be defaulted, as they are ignored when TYPE equals FREE.
+With this option it is only necessary to define the boundary cells and all the other parameters (COMPONENT, RATE, PRESS, and [TEMP](#kw-TEMP)) can be defaulted, as they are ignored when TYPE equals FREE.
 
-The next example is based on NX, NY and NZ equal to 20, 1, 10 respectively, on the DIMENS keyword in the RUNSPEC section,  and shows how different boundary types can be assigned to different parts of the model.
+The next example is based on NX, NY and NZ equal to 20, 1, 10 respectively, on the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section,  and shows how different boundary types can be assigned to different parts of the model.
 
 
 ```

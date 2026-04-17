@@ -1,7 +1,7 @@
-### CPR – Activate Constrained Pressure Residual (“CPR”) Linear Solver
+### CPR – Activate Constrained Pressure Residual (“CPR”) Linear Solver {#kw-CPR}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -14,10 +14,7 @@ Turns on the Constrained Pressure Residual (“CPR”)^[Wallis, J. R., Little, T
 | --- | --- | :------ | --- |
 | 1 | CPROPTN | A defined character string that determines how the CPR linear solver should be applied, and should be set to one of the following: Note that OPM Flow only supports the ORIGINAL option, which is the default value in OPM Flow, whereas the default value in the commercial simulator is ADAPTIVE. . | ORIGINAL |
 | Notes: |  |  |  |
-
-*Table 5.8: CPR Keyword Description*
-
-
+: CPR Keyword Description {#tbl-5-8}
 See section 2.2 Running OPM Flow 2023-04 From The Command Line on how to invoke various numerical schemes via the OPM Flow command line interface.
 
 

@@ -1,7 +1,7 @@
-### GCONSALE – Define Group Sales Gas Production Targets and Constraints
+### GCONSALE – Define Group Sales Gas Production Targets and Constraints {#kw-GCONSALE}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -23,21 +23,18 @@ Thus, surplus gas that cannot be sold is re-injected, which requires that there 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group gas sales target and constraints are being defined. The group named FIELD is the top most group and should be used to set the gas sales targets and constraints for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
-| 2 | GSALE | GSALE should either be set to: This value may be specified using a User Defined Argument (UDA). Note that if GSALE has been set to switch off both gas sales and gas re-injection, then the GCONINJE keyword in the SCHEDULE section may be used to re-enable gas re-injection again. | None |
+| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group gas sales target and constraints are being defined. The group named [FIELD](#kw-FIELD) is the top most group and should be used to set the gas sales targets and constraints for the field. Note that the group hierarchy should be defined by the [GRUPTREE](#kw-GRUPTREE) keyword when there is more than one level of groups, otherwise all the groups will sit directly under the [FIELD](#kw-FIELD) group in the group tree hierarchy. | None |
+| 2 | GSALE | GSALE should either be set to: This value may be specified using a User Defined Argument (UDA). Note that if GSALE has been set to switch off both gas sales and gas re-injection, then the [GCONINJE](#kw-GCONINJE) keyword in the [SCHEDULE](#kw-SCHEDULE) section may be used to re-enable gas re-injection again. | None |
 | Mscf/d | sm3/day | scc/hour |  |
-| 3 | GSALEMAX | A real positive value that must be greater than GSALE that defines the maximum allowed gas sales rate. If GSALE exceeds GSALEMAX then the action defined by the ACTION variable on this keyword is implemented at the end of the current time step. This value may be specified using a User Defined Argument (UDA). | 1 x 1020 |
+| 3 | GSALEMAX | A real positive value that must be greater than GSALE that defines the maximum allowed gas sales rate. If GSALE exceeds GSALEMAX then the action defined by the [ACTION](#kw-ACTION) variable on this keyword is implemented at the end of the current time step. This value may be specified using a User Defined Argument (UDA). | 1 x 1020 |
 | Mscf/d | sm3/day | scc/hour |  |
 | 4 | GSALEMIN | A real positive value that must be less than GSALE that defines the minimum allowed gas sales rate. If GSALE is less than GSALEMIN then one of the following actions will be implemented at the end of the current time step: If none of the above actions can be implemented then the minimum gas sales rate will not be satisfied. This value may be specified using a User Defined Argument (UDA). | -1 x 1020 |
-| 5 | ACTION | A defined character string that defines the action to be taken if the maximum gas sales rate, GSALEMAX, is violated. ACTION should be set to one of the following character strings: The corrective action takes places at the end of the time step in which the constraint is violated. | None |
+| 5 | [ACTION](#kw-ACTION) | A defined character string that defines the action to be taken if the maximum gas sales rate, GSALEMAX, is violated. [ACTION](#kw-ACTION) should be set to one of the following character strings: The corrective action takes places at the end of the time step in which the constraint is violated. | None |
 | Notes: |  |  |  |
+: GCONSALE Keyword Description {#tbl-12-32}
+GCONSALE can also be used with the [GCONINJE](#kw-GCONINJE) keyword in the [SCHEDULE](#kw-SCHEDULE) section in order to apply additional limits, for example by applying a maximum group injection rate. In this scenario, the TARGET variable on the [GCONINJE](#kw-GCONINJE) keyword must be set to “REIN”, and if desired, a re-injection fraction (REIN on the [GCONINJE](#kw-GCONINJE) keyword), or any other constraint.
 
-*Table 12.32: GCONSALE Keyword Description*
-
-
-GCONSALE can also be used with the GCONINJE keyword in the SCHEDULE section in order to apply additional limits, for example by applying a maximum group injection rate. In this scenario, the TARGET variable on the GCONINJE keyword must be set to “REIN”, and if desired, a re-injection fraction (REIN on the GCONINJE keyword), or any other constraint.
-
-See also the GCONSUMP in the SCHEDULE section that defines the fuel gas requirements for groups.
+See also the [GCONSUMP](#kw-GCONSUMP) in the [SCHEDULE](#kw-SCHEDULE) section that defines the fuel gas requirements for groups.
 
 
 #### Example

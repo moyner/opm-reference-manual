@@ -1,19 +1,19 @@
-### CSKIN – Re-Define Well Connection Skin Factors
+### CSKIN – Re-Define Well Connection Skin Factors {#kw-CSKIN}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword, CSKIN, is used to re-define a well’s connection skin factors and as such will result in the well’s connection transmissibility factors being updated accordingly. The well connections must already be defined using the COMPDAT keyword in the SCHEDULE section before this keyword can be used.
+This keyword, CSKIN, is used to re-define a well’s connection skin factors and as such will result in the well’s connection transmissibility factors being updated accordingly. The well connections must already be defined using the [COMPDAT](#kw-COMPDAT) keyword in the [SCHEDULE](#kw-SCHEDULE) section before this keyword can be used.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection skin is being re-defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection skin is being re-defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
 | 2 | I | A positive integer greater than or equal to one and less than or equal to NX that defines the connection location in the I-direction. If set to zero or defaulted with 1* then connections in any I-direction location will be modified. | 0 |
 | 3 | J | A positive integer greater than or equal to one and less than or equal to NY that defines the connection location in the J-direction. If set to zero or defaulted with 1* then connections in any J-direction location will be modified. | 0 |
 | 4 | K1 | A positive integer greater than or equal to one and less than or equal to K2 and NZ that defines the UPPER connection location in the K-direction. If set to zero or defaulted with 1* then this will be taken from the top connection of the well. | 0 |
@@ -21,10 +21,7 @@ This keyword, CSKIN, is used to re-define a well’s connection skin factors and
 | 6 | SKIN | A real value that defines the connections’ dimensionless skin factors. | 0.0 |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-
-*Table 12.3.43.1: CSKIN Keyword Description*
-
-
+: CSKIN Keyword Description {#tbl-12-3-43-1}
 #### Example
 
 The following example re-defines the skin factor for all well OP01 connections in layers 4 to 6.
