@@ -1,0 +1,2005 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.29">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; GLOBAL SECTION KEYWORDS – OPM Flow Reference Manual</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/05-runspec.html" rel="next">
+<link href="../chapters/03-keyword-structure.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-03794022afb4c9cee5c9e6c1f4a5553d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-global-keywords.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">OPM Flow Reference Manual</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/OPM/opm-reference-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">OPM Flow Reference Manual</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">01-introduction.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">02-installation.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-keyword-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">03-keyword-structure.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-global-keywords.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-runspec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-grid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-edit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-props.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-regions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-solution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/A-keyword-summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Keyword Summary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/B-release-notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Release Notes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/C-opmrun.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">OPMRUN</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/D-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Python Interface</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/E-command-line.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Command Line Options</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/F-output-formats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Output File Formats</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">5.1</span> Introduction</a></li>
+  <li><a href="#keyword-definitions" id="toc-keyword-definitions" class="nav-link" data-scroll-target="#keyword-definitions"><span class="header-section-number">5.2</span> Keyword Definitions</a></li>
+  <li><a href="#data-requirements" id="toc-data-requirements" class="nav-link" data-scroll-target="#data-requirements"><span class="header-section-number">5.3</span> Data Requirements</a></li>
+  <li><a href="#keyword-definitions-1" id="toc-keyword-definitions-1" class="nav-link" data-scroll-target="#keyword-definitions-1"><span class="header-section-number">5.4</span> Keyword Definitions</a>
+  <ul class="collapse">
+  <li><a href="#columns-define-input-file-column-margins" id="toc-columns-define-input-file-column-margins" class="nav-link" data-scroll-target="#columns-define-input-file-column-margins"><span class="header-section-number">5.4.1</span> COLUMNS – Define Input File Column Margins</a></li>
+  <li><a href="#debug-define-the-debug-data-to-be-printed-to-file" id="toc-debug-define-the-debug-data-to-be-printed-to-file" class="nav-link" data-scroll-target="#debug-define-the-debug-data-to-be-printed-to-file"><span class="header-section-number">5.4.2</span> DEBUG – Define the Debug Data to be Printed to File</a></li>
+  <li><a href="#echo-activate-echoing-of-user-input-files-to-the-print-file" id="toc-echo-activate-echoing-of-user-input-files-to-the-print-file" class="nav-link" data-scroll-target="#echo-activate-echoing-of-user-input-files-to-the-print-file"><span class="header-section-number">5.4.3</span> ECHO – Activate Echoing of User Input Files to the Print File</a></li>
+  <li><a href="#end-define-the-end-of-the-input-file" id="toc-end-define-the-end-of-the-input-file" class="nav-link" data-scroll-target="#end-define-the-end-of-the-input-file"><span class="header-section-number">5.4.4</span> END – Define the End of the Input File</a></li>
+  <li><a href="#endinc-define-the-end-of-an-include-file" id="toc-endinc-define-the-end-of-an-include-file" class="nav-link" data-scroll-target="#endinc-define-the-end-of-an-include-file"><span class="header-section-number">5.4.5</span> ENDINC – Define the End of an Include File</a></li>
+  <li><a href="#endskip-deactivate-skipping-of-keywords-and-input-data" id="toc-endskip-deactivate-skipping-of-keywords-and-input-data" class="nav-link" data-scroll-target="#endskip-deactivate-skipping-of-keywords-and-input-data"><span class="header-section-number">5.4.6</span> ENDSKIP – Deactivate Skipping of Keywords and Input Data</a></li>
+  <li><a href="#extrapms-activate-extrapolation-warning-messages" id="toc-extrapms-activate-extrapolation-warning-messages" class="nav-link" data-scroll-target="#extrapms-activate-extrapolation-warning-messages"><span class="header-section-number">5.4.7</span> EXTRAPMS – Activate Extrapolation Warning Messages</a></li>
+  <li><a href="#formfeed-defined-the-print-file-form-feed-character" id="toc-formfeed-defined-the-print-file-form-feed-character" class="nav-link" data-scroll-target="#formfeed-defined-the-print-file-form-feed-character"><span class="header-section-number">5.4.8</span> FORMFEED – Defined the Print File Form-Feed Character</a></li>
+  <li><a href="#include-load-another-data-file-at-the-current-position" id="toc-include-load-another-data-file-at-the-current-position" class="nav-link" data-scroll-target="#include-load-another-data-file-at-the-current-position"><span class="header-section-number">5.4.9</span> INCLUDE – Load Another Data File at the Current Position</a></li>
+  <li><a href="#message-output-user-message" id="toc-message-output-user-message" class="nav-link" data-scroll-target="#message-output-user-message"><span class="header-section-number">5.4.10</span> MESSAGE – Output User Message</a></li>
+  <li><a href="#messages-define-message-print-limits-and-stop-limits" id="toc-messages-define-message-print-limits-and-stop-limits" class="nav-link" data-scroll-target="#messages-define-message-print-limits-and-stop-limits"><span class="header-section-number">5.4.11</span> MESSAGES – Define Message Print Limits and Stop Limits</a></li>
+  <li><a href="#noecho-deactivate-echoing-of-user-input-files-to-the-print-file" id="toc-noecho-deactivate-echoing-of-user-input-files-to-the-print-file" class="nav-link" data-scroll-target="#noecho-deactivate-echoing-of-user-input-files-to-the-print-file"><span class="header-section-number">5.4.12</span> NOECHO – Deactivate Echoing of User Input Files to the Print File</a></li>
+  <li><a href="#nowarn-deactivate-warning-messages" id="toc-nowarn-deactivate-warning-messages" class="nav-link" data-scroll-target="#nowarn-deactivate-warning-messages"><span class="header-section-number">5.4.13</span> NOWARN – Deactivate Warning Messages</a></li>
+  <li><a href="#skip-activate-skipping-of-all-keywords-and-input-data" id="toc-skip-activate-skipping-of-all-keywords-and-input-data" class="nav-link" data-scroll-target="#skip-activate-skipping-of-all-keywords-and-input-data"><span class="header-section-number">5.4.14</span> SKIP – Activate Skipping of All Keywords and Input Data</a></li>
+  <li><a href="#skip100-activate-skipping-of-keywords-by-black-oil-simulator" id="toc-skip100-activate-skipping-of-keywords-by-black-oil-simulator" class="nav-link" data-scroll-target="#skip100-activate-skipping-of-keywords-by-black-oil-simulator"><span class="header-section-number">5.4.15</span> SKIP100 – Activate Skipping of Keywords by Black-Oil Simulator</a></li>
+  <li><a href="#skip300-activate-skipping-of-keywords-by-compositional-simulator" id="toc-skip300-activate-skipping-of-keywords-by-compositional-simulator" class="nav-link" data-scroll-target="#skip300-activate-skipping-of-keywords-by-compositional-simulator"><span class="header-section-number">5.4.16</span> SKIP300 – Activate Skipping of Keywords by Compositional Simulator</a></li>
+  <li><a href="#warn-activate-warning-messages" id="toc-warn-activate-warning-messages" class="nav-link" data-scroll-target="#warn-activate-warning-messages"><span class="header-section-number">5.4.17</span> WARN – Activate Warning Messages</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">GLOBAL SECTION KEYWORDS</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> Introduction</h2>
+<p>Keywords used in this section can be used in all input file sections, that is the RUNSPEC, GRID, EDIT PROPS, REGIONS, SOLUTION, SUMMARY, and SCHEDULE sections.</p>
+</section>
+<section id="keyword-definitions" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="keyword-definitions"><span class="header-section-number">5.2</span> Keyword Definitions</h2>
+</section>
+<section id="data-requirements" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="data-requirements"><span class="header-section-number">5.3</span> Data Requirements</h2>
+<p>There are no data requirements for the GLOBAL section keywords, as all the keywords are optional and considered to be utility keywords that can be used throughout the input deck. A complete list of these global keywords is given in Table 4.1.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>No.</th>
+<th>GLOBAL Keyword</th>
+<th>Description</th>
+<th>Section Applied</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>COLUMNS</td>
+<td>COLUMNS – Define Input File Column Margins. The COLUMNS keyword defines the input file column margins; characters outside the margins are ignored by the input parser.</td>
+<td>ALL</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>DEBUG</td>
+<td>DEBUG – Define the Debug Data to be Printed to File. This keyword defines the debug data to be written to the debug file (*.DBG), it is ignored by OPM Flow.</td>
+<td>ALL</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>ECHO</td>
+<td>ECHO – Activate Echoing of User Input Files to the Print File. Turns on echoing of all the input files to the print file.</td>
+<td>ALL</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>END</td>
+<td>END – Define the End of the Input File. This keyword marks the end of the input file and can occur in any section. Any keywords and data after the END keyword are ignored.</td>
+<td>ALL</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>ENDINC</td>
+<td>ENDINC – Define the End of an Include File. This keyword marks the end of an include file specified on the INCLUDE keyword. When the ENDINC keyword is encountered in the INCLUDE file, input data is read from the next keyword in the current file.</td>
+<td>ALL</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>ENDSKIP</td>
+<td>ENDSKIP – Deactivate Skipping of Keywords and Input Data. Turns off skipping of keywords that was activated by the SKIP, SKIP100, or SKIP300 keywords.</td>
+<td>ALL</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>EXTRAPMS</td>
+<td>EXTRAPMS – Activate Extrapolation Warning Messages. The EXTRAPMS keyword activates extrapolation warning messages for when simulator extrapolates the PVT or VFP tables.</td>
+<td>ALL</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>FORMFEED</td>
+<td>FORMFEED – Defined the Print File Form-Feed Character. The keyword defines the form-feed character, or carriage control character, for the output print (<em>.PRT) run summary (</em>.RSM) files.</td>
+<td>ALL</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>INCLUDE</td>
+<td>INCLUDE – Load Another Data File at the Current Position. The INCLUDE keyword informs OPM Flow to continue reading input data from the specified INCLUDE file.</td>
+<td>ALL</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>MESSAGE</td>
+<td>MESSAGE – Output User Message. The MESSAGE keyword outputs a user message to the terminal, as well as to the print (<em>.PRT) and debug (</em>.DBG) files.</td>
+<td>ALL</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>MESSAGES</td>
+<td>MESSAGES – Define Message Print Limits and Stop Limits. The MESSAGES keyword defines the print and stops levels for various messages.</td>
+<td>ALL</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>NOECHO</td>
+<td>NOECHO – Deactivate Echoing of User Input Files to the Print File. Turns off echoing of all the input files to the print file.</td>
+<td>ALL</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>NOWARN</td>
+<td>NOWARN – Deactivate Warning Messages. Turns off warning messages to be printed to the print file.</td>
+<td>ALL</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>SKIP</td>
+<td>SKIP – Activate Skipping of All Keywords and Input Data. The keyword turns on skipping of keywords until the ENDSKIP activation keyword is encountered.</td>
+<td>ALL</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>SKIP100</td>
+<td>SKIP100 – Activate Skipping of Keywords by Black-Oil Simulator. This keyword turns on skipping of all keywords and input data by the commercial black-oil simulator until the ENDSKIP keyword is encountered.</td>
+<td>ALL</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>SKIP300</td>
+<td>SKIP300 – Activate Skipping of Compositional Keywords. This keyword turns on skipping of all keywords and input data by the commercial compositional simulator until the ENDSKIP keyword is encountered.</td>
+<td>ALL</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td>WARN</td>
+<td>WARN – Activate Warning Messages. Turns on warning messages to be printed to the print file (*.PRT); note that this keyword is activated by default.</td>
+<td>ALL</td>
+</tr>
+<tr class="even">
+<td>Notes:</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 4.1: Alphabetic List of GLOBAL Section Keywords</em></p>
+<p>A more detailed description of the keywords is presented in the following sections.</p>
+</section>
+<section id="keyword-definitions-1" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="keyword-definitions-1"><span class="header-section-number">5.4</span> Keyword Definitions</h2>
+<section id="columns-define-input-file-column-margins" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="columns-define-input-file-column-margins"><span class="header-section-number">5.4.1</span> COLUMNS – Define Input File Column Margins</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description" class="level4" data-number="5.4.1.1">
+<h4 data-number="5.4.1.1" class="anchored" data-anchor-id="description"><span class="header-section-number">5.4.1.1</span> Description</h4>
+<p>The COLUMNS keyword defines the input file column margins; characters outside the margins are ignored by the input parser.</p>
+<p>This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.</p>
+</section>
+</section>
+<section id="debug-define-the-debug-data-to-be-printed-to-file" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="debug-define-the-debug-data-to-be-printed-to-file"><span class="header-section-number">5.4.2</span> DEBUG – Define the Debug Data to be Printed to File</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-1" class="level4" data-number="5.4.2.1">
+<h4 data-number="5.4.2.1" class="anchored" data-anchor-id="description-1"><span class="header-section-number">5.4.2.1</span> Description</h4>
+<p>This keyword defines the debug data to be written to the debug file (*.DBG). This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.</p>
+</section>
+</section>
+<section id="echo-activate-echoing-of-user-input-files-to-the-print-file" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="echo-activate-echoing-of-user-input-files-to-the-print-file"><span class="header-section-number">5.4.3</span> ECHO – Activate Echoing of User Input Files to the Print File</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-2" class="level4" data-number="5.4.3.1">
+<h4 data-number="5.4.3.1" class="anchored" data-anchor-id="description-2"><span class="header-section-number">5.4.3.1</span> Description</h4>
+<p>Turns on echoing of all the input files to the print file; note that this keyword is activated by default and can subsequently be switched off by the NOECHO activation keyword.</p>
+<p>There is no data required for this keyword.</p>
+<p>This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.</p>
+</section>
+<section id="example" class="level4" data-number="5.4.3.2">
+<h4 data-number="5.4.3.2" class="anchored" data-anchor-id="example"><span class="header-section-number">5.4.3.2</span> Example</h4>
+<pre><code>--
+--        SWITCH OFF ECHOING OF INPUT FILES
+--
+NOECHO
+--
+--        INCLUDE SIMULATION GRID WITH SLOPING FAULTS
+--
+INCLUDE
+          './INCLUDE/GRID/IRAP_1005.GRDECL' /
+--
+--        SWITCH ON ECHOING OF INPUT FILES
+--
+ECHO</code></pre>
+<p>The examples deactivates the echoing of the input files, reads in the grid geometry data using the INCLUDE keyword, and then activates the echoing of the input files again.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Especially for the large voluminous data sets in the GRID section, it is good practice to deactivate the echoing of the input files when loading this data to avoid the print output file becoming too large to view in a text editor.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="end-define-the-end-of-the-input-file" class="level3" data-number="5.4.4">
+<h3 data-number="5.4.4" class="anchored" data-anchor-id="end-define-the-end-of-the-input-file"><span class="header-section-number">5.4.4</span> END – Define the End of the Input File</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-3" class="level4" data-number="5.4.4.1">
+<h4 data-number="5.4.4.1" class="anchored" data-anchor-id="description-3"><span class="header-section-number">5.4.4.1</span> Description</h4>
+<p>This keyword marks the end of the input file and can occur in any section. Any keywords and data after the END keyword are ignored.</p>
+<p>There is no data required for this keyword.</p>
+</section>
+<section id="example-1" class="level4" data-number="5.4.4.2">
+<h4 data-number="5.4.4.2" class="anchored" data-anchor-id="example-1"><span class="header-section-number">5.4.4.2</span> Example</h4>
+<pre><code>-- ------------------------------------------------------------------------------
+-- SCHEDULE SECTION - 2006-01-01
+-- ------------------------------------------------------------------------------
+RPTSCHED
+'WELLS=2'    'WELSPECS'    'CPU=2'     'FIP=2'                                 /
+
+DATES
+ 1  JAN   2006  /
+/
+
+RPTSCHED
+'NOTHING'                                                                      /
+
+DATES
+ 1  APR   2006  /
+ 1  JLY   2006  /
+ 1  OCT   2006  /
+/
+       ECHO
+--
+-- ******************************************************************************
+-- END OF FILE
+-- ******************************************************************************
+END
+-- ------------------------------------------------------------------------------
+-- SCHEDULE SECTION - 2007-01-01
+-- ------------------------------------------------------------------------------
+RPTSCHED
+'WELLS=2'    'WELSPECS'    'CPU=2'     'FIP=2'                                 /
+
+DATES
+ 1  JAN   2007  /
+/</code></pre>
+<p>In the above example OPM Flow will process the data up to October 1, 2006 only, and then start to run the simulation. All keywords after the END file keyword will not be read or processed.</p>
+</section>
+</section>
+<section id="endinc-define-the-end-of-an-include-file" class="level3" data-number="5.4.5">
+<h3 data-number="5.4.5" class="anchored" data-anchor-id="endinc-define-the-end-of-an-include-file"><span class="header-section-number">5.4.5</span> ENDINC – Define the End of an Include File</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-4" class="level4" data-number="5.4.5.1">
+<h4 data-number="5.4.5.1" class="anchored" data-anchor-id="description-4"><span class="header-section-number">5.4.5.1</span> Description</h4>
+<p>This keyword marks the end of an include file specified on the INCLUDE keyword. When the ENDINC keyword is encountered in the INCLUDE file, input data is read from the next keyword in the current file. Any keywords and data after the ENDINC keyword in the INCLUDE file are ignored.</p>
+<p>There is no data required for this keyword.</p>
+</section>
+<section id="example-2" class="level4" data-number="5.4.5.2">
+<h4 data-number="5.4.5.2" class="anchored" data-anchor-id="example-2"><span class="header-section-number">5.4.5.2</span> Example</h4>
+<pre><code>-- ------------------------------------------------------------------------------
+-- SCHEDULE SECTION - 2006-01-01
+-- ------------------------------------------------------------------------------
+RPTSCHED
+'WELLS=2'    'WELSPECS'    'CPU=2'     'FIP=2'                                 /
+
+DATES
+ 1  JAN   2006  /
+/
+
+RPTSCHED
+'NOTHING'                                                                      /
+
+DATES
+ 1  APR   2006  /
+ 1  JLY   2006  /
+ 1  OCT   2006  /
+/
+       ECHO
+--
+-- ******************************************************************************
+-- END OF INCLUDE FILE PROCESSING
+-- ******************************************************************************
+ENDINC
+-- ------------------------------------------------------------------------------
+-- SCHEDULE SECTION - 2007-01-01
+-- ------------------------------------------------------------------------------
+RPTSCHED
+'WELLS=2'    'WELSPECS'    'CPU=2'     'FIP=2'                                 /
+
+DATES
+ 1  JAN   2007  /
+/</code></pre>
+<p>In the above example OPM Flow will process the data up to October 1, 2006 only, and return control to the file that called the INCLUDE keyword, and then continue processing the input files. All keywords after the ENDINC keyword in the INCLUDE FILE will not be read or processed.</p>
+</section>
+</section>
+<section id="endskip-deactivate-skipping-of-keywords-and-input-data" class="level3" data-number="5.4.6">
+<h3 data-number="5.4.6" class="anchored" data-anchor-id="endskip-deactivate-skipping-of-keywords-and-input-data"><span class="header-section-number">5.4.6</span> ENDSKIP – Deactivate Skipping of Keywords and Input Data</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-5" class="level4" data-number="5.4.6.1">
+<h4 data-number="5.4.6.1" class="anchored" data-anchor-id="description-5"><span class="header-section-number">5.4.6.1</span> Description</h4>
+<p>The ENDSKIP keyword deactivates the skipping of keywords that was activated by the SKIP, SKIP100 or SKIP300 keywords. Each SKIP, SKIP100 or SKIP300 keyword should be paired with an ENDSKIP keyword.</p>
+<p>There is no data required for this keyword.</p>
+<p>The nesting of pairs of either the SKIP, SKIP100, or SKIP300 keyword and the ENDSKIP keyword is not supported by OPM Flow.</p>
+</section>
+<section id="example-3" class="level4" data-number="5.4.6.2">
+<h4 data-number="5.4.6.2" class="anchored" data-anchor-id="example-3"><span class="header-section-number">5.4.6.2</span> Example</h4>
+<pre><code>--
+--       SWITCH ON SKIPPING OF KEYWORDS AND DATA
+--
+SKIP
+--
+--       INCLUDE SIMULATION GRID WITH SLOPING FAULTS
+--
+INCLUDE
+         './INCLUDE/GRID/IRAP_1005.GRDECL' /
+--
+--       SWITCH ON READING OF KEYWORDS AND DATA
+--
+ENDSKIP</code></pre>
+<p>The example skips reading of the grid geometry data input using the INCLUDE keyword, and then reverts back to reading the remainder of the input file.</p>
+</section>
+</section>
+<section id="extrapms-activate-extrapolation-warning-messages" class="level3" data-number="5.4.7">
+<h3 data-number="5.4.7" class="anchored" data-anchor-id="extrapms-activate-extrapolation-warning-messages"><span class="header-section-number">5.4.7</span> EXTRAPMS – Activate Extrapolation Warning Messages</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-6" class="level4" data-number="5.4.7.1">
+<h4 data-number="5.4.7.1" class="anchored" data-anchor-id="description-6"><span class="header-section-number">5.4.7.1</span> Description</h4>
+<p>The EXTRAPMS keyword activates extrapolation warning messages for when OPM Flow extrapolates the PVT or VFP tables. Frequent extrapolation warning messages should be investigated and resolved as this would indicate possible incorrect data and may result in the simulator extrapolating to unrealistic values.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>No.</th>
+<th>Name</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>EXTRAP</td>
+<td>Defines a single integer that activates the extrapolation warning message options for PVT and VFP tables. EXTRAP can have the following values:</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Notes:</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 4.2: EXTRAPMS Keyword Description</em></p>
+<p>This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.</p>
+</section>
+<section id="example-4" class="level4" data-number="5.4.7.2">
+<h4 data-number="5.4.7.2" class="anchored" data-anchor-id="example-4"><span class="header-section-number">5.4.7.2</span> Example</h4>
+<pre><code>--
+--       ACTIVATE EXTRAPOLATION MESSAGES
+--
+EXTRAPMS
+         2                                                                    /</code></pre>
+<p>The above example activates the default the VFP table extrapolation warnings option.</p>
+</section>
+</section>
+<section id="formfeed-defined-the-print-file-form-feed-character" class="level3" data-number="5.4.8">
+<h3 data-number="5.4.8" class="anchored" data-anchor-id="formfeed-defined-the-print-file-form-feed-character"><span class="header-section-number">5.4.8</span> FORMFEED – Defined the Print File Form-Feed Character</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-7" class="level4" data-number="5.4.8.1">
+<h4 data-number="5.4.8.1" class="anchored" data-anchor-id="description-7"><span class="header-section-number">5.4.8.1</span> Description</h4>
+<p>The FORMFEED keyword defines the form-feed character, or carriage control character, for the output print (<em>.PRT) run summary (</em>.RSM) files. The keyword should be place at the very top of the input file.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>No.</th>
+<th>Name</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>FORMFEED</td>
+<td>Defines a single integer that defines the carriage control character activates, and should be set to:</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Notes:</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 4.3: FORMFEED Keyword Description</em></p>
+<p>This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.</p>
+</section>
+<section id="example-5" class="level4" data-number="5.4.8.2">
+<h4 data-number="5.4.8.2" class="anchored" data-anchor-id="example-5"><span class="header-section-number">5.4.8.2</span> Example</h4>
+<pre><code>--
+--       ACTIVATE EXTRAPOLATION MESSAGES
+--
+FORMFEED
+         3                                                                      /</code></pre>
+<p>The above example sets the carriage return character to no form-feed character.</p>
+</section>
+</section>
+<section id="include-load-another-data-file-at-the-current-position" class="level3" data-number="5.4.9">
+<h3 data-number="5.4.9" class="anchored" data-anchor-id="include-load-another-data-file-at-the-current-position"><span class="header-section-number">5.4.9</span> INCLUDE – Load Another Data File at the Current Position</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-8" class="level4" data-number="5.4.9.1">
+<h4 data-number="5.4.9.1" class="anchored" data-anchor-id="description-8"><span class="header-section-number">5.4.9.1</span> Description</h4>
+<p>The INCLUDE keyword informs OPM Flow to continue reading input data from the specified INCLUDE file. When the end of the INCLUDE file is reached, or the ENDINC keyword is encountered in the included file, input data is read from the next keyword in the current file. Although INCLUDE files can be nested, that is INCLUDE files within INCLUDE files etc., in practice this should be avoided due to the complexity of tracking the files.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>No.</th>
+<th>Name</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>FILENAME</td>
+<td>A character string enclosed in quotes that defines a file to read in and be processed by OPM Flow.</td>
+<td>None</td>
+</tr>
+<tr class="even">
+<td>Notes:</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 4.4: INCLUDE Keyword Description</em></p>
+</section>
+<section id="examples" class="level4" data-number="5.4.9.2">
+<h4 data-number="5.4.9.2" class="anchored" data-anchor-id="examples"><span class="header-section-number">5.4.9.2</span> Examples</h4>
+<p>The first example shown below loads the grid file from the same directory as the data file.</p>
+<pre><code>--
+--       LOAD INCLUDE FILE
+--
+INCLUDE
+         'NOR-OPM-A00-GRID.inc'  /
+</code></pre>
+<p>The next example loads the same file one directory above from where the data file is located.</p>
+<pre><code>--
+--       LOAD INCLUDE FILE
+--
+INCLUDE
+         '../NOR-OPM-A00-FAULTS.inc'  /</code></pre>
+<p>The final example loads the same file from a separate include directory found in the parent directory relative to where the data file is located.</p>
+<pre><code>--
+--       LOAD INCLUDE FILE
+--
+INCLUDE
+         '../INCLUDE/NOR-OPM-A00-FAULTS.inc'  /</code></pre>
+</section>
+</section>
+<section id="message-output-user-message" class="level3" data-number="5.4.10">
+<h3 data-number="5.4.10" class="anchored" data-anchor-id="message-output-user-message"><span class="header-section-number">5.4.10</span> MESSAGE – Output User Message</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-9" class="level4" data-number="5.4.10.1">
+<h4 data-number="5.4.10.1" class="anchored" data-anchor-id="description-9"><span class="header-section-number">5.4.10.1</span> Description</h4>
+<p>The MESSAGE keyword outputs a user message to the terminal, as well as to the print (<em>.PRT) and debug (</em>.DBG) files. Note this is different to the MESSAGES keyword, that defines OPM Flows message print limits and stop limits generated by the simulator.</p>
+<p>This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.</p>
+</section>
+</section>
+<section id="messages-define-message-print-limits-and-stop-limits" class="level3" data-number="5.4.11">
+<h3 data-number="5.4.11" class="anchored" data-anchor-id="messages-define-message-print-limits-and-stop-limits"><span class="header-section-number">5.4.11</span> MESSAGES – Define Message Print Limits and Stop Limits</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-10" class="level4" data-number="5.4.11.1">
+<h4 data-number="5.4.11.1" class="anchored" data-anchor-id="description-10"><span class="header-section-number">5.4.11.1</span> Description</h4>
+<p>The MESSAGES keyword defines the print and stops levels for various messages. The “print limits” set the maximum number of messages that will be printed, after which no more messages will be printed and the “stop limits” terminate the run when these limits are exceeded. There are six levels of message that increase in severity from informative all the way to programming errors, as outlined in Table 4.5.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>No.</th>
+<th>Name</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>PRTSMESG</td>
+<td>An integer defining the maximum number of MESSAGE type messages to be printed after which this type of message stops printing.</td>
+<td>1,000,000</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>PRTSCOMT</td>
+<td>An integer defining the maximum number of COMMENT type messages be printed after which this type of message stops printing.</td>
+<td>1,000,000</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>PRTSWARN</td>
+<td>An integer defining the maximum number of WARNING type messages be printed after which this type of message stops printing.</td>
+<td>10,000</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>PRTSPROB</td>
+<td>An integer defining the maximum number of PROBLEM type messages to be printed after which this type of message stops printing.</td>
+<td>100</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>PRTSERRS</td>
+<td>An integer defining the maximum number of ERROR type messages to be printed after which this type of message stops printing.</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>PRTSBUGS</td>
+<td>An integer defining the maximum number of BUG type messages to be printed after which this type of message stops printing.</td>
+<td>100</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>STOPMESG</td>
+<td>An integer defining the maximum number of MESSAGE type messages to be printed after which OPM Flow terminates the run. Not used by OPM Flow.</td>
+<td>1,000,000</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>STOPCOMT</td>
+<td>An integer defining the maximum number of COMMENT type messages to be printed after which OPM Flow terminates the run. Not used by OPM Flow.</td>
+<td>1,000,000</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>STOPWARN</td>
+<td>An integer defining the maximum number of WARNING type messages to be printed after which OPM Flow terminates the run. Not used by OPM Flow.</td>
+<td>10,000</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>STOPPROB</td>
+<td>An integer defining the maximum number of PROBLEM type messages to be printed after which OPM Flow terminates the run. Not used by OPM Flow.</td>
+<td>100</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>STOPERRS</td>
+<td>An integer defining the maximum number of ERROR type messages to be printed after which OPM Flow terminates the run. Not used by OPM Flow.</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>STOPBUGS</td>
+<td>An integer defining the maximum number of BUG type messages to be printed after which OPM Flow terminates the run. Not used by OPM Flow.</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>PRTGRPMS</td>
+<td>An integer defining the maximum number of GROUP MESSAGE type messages to be printed after which this type of message stops printing. Not used by OPM Flow.</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Notes:</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 4.5: MESSAGES Keyword Description</em></p>
+</section>
+<section id="example-6" class="level4" data-number="5.4.11.2">
+<h4 data-number="5.4.11.2" class="anchored" data-anchor-id="example-6"><span class="header-section-number">5.4.11.2</span> Example</h4>
+<pre><code>--
+--       MESS  COMMT WARN  PROBL ERROR BUG   MESS COMMT WARN  PROBL ERROR BUG
+--       LIMIT LIMIT LIMIT LIMIT LIMIT LIMIT STOP STOP  STOP  STOP  STOP  STOP
+MESSAGES
+         1*    1*    1*    1500  1*    1*    1*   1*    1*    1000  1*    1*   /
+</code></pre>
+<p>The above example sets the PROBLEM type message print limit to 1,500 and the stop limit to 1,000.</p>
+</section>
+</section>
+<section id="noecho-deactivate-echoing-of-user-input-files-to-the-print-file" class="level3" data-number="5.4.12">
+<h3 data-number="5.4.12" class="anchored" data-anchor-id="noecho-deactivate-echoing-of-user-input-files-to-the-print-file"><span class="header-section-number">5.4.12</span> NOECHO – Deactivate Echoing of User Input Files to the Print File</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-11" class="level4" data-number="5.4.12.1">
+<h4 data-number="5.4.12.1" class="anchored" data-anchor-id="description-11"><span class="header-section-number">5.4.12.1</span> Description</h4>
+<p>Turns off echoing of all the input files to the print file. Note by default echoing of the inputs files is active, but can subsequently be switched off by the NOECHO activation keyword.</p>
+<p>There is no data required for this keyword.</p>
+<p>This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.</p>
+</section>
+<section id="example-7" class="level4" data-number="5.4.12.2">
+<h4 data-number="5.4.12.2" class="anchored" data-anchor-id="example-7"><span class="header-section-number">5.4.12.2</span> Example</h4>
+<pre><code>--
+--       SWITCH OFF ECHOING OF INPUT FILES
+--
+NOECHO
+--
+--       INCLUDE SIMULATION GRID WITH SLOPING FAULTS
+--
+INCLUDE
+         './INCLUDE/GRID/IRAP_1005.GRDECL' /
+--
+--       SWITCH ON ECHOING OF INPUT FILES
+--
+ECHO</code></pre>
+<p>The example deactivates the echoing of the input files, reads in the grid geometry data using the INCLUDE keyword, and then activates the echoing of the input files again.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Especially for the large voluminous data sets in the GRID section, it is good practice to deactivate the echoing of the input files when loading this data to avoid the print output file becoming too large to view in a text editor.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="nowarn-deactivate-warning-messages" class="level3" data-number="5.4.13">
+<h3 data-number="5.4.13" class="anchored" data-anchor-id="nowarn-deactivate-warning-messages"><span class="header-section-number">5.4.13</span> NOWARN – Deactivate Warning Messages</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-12" class="level4" data-number="5.4.13.1">
+<h4 data-number="5.4.13.1" class="anchored" data-anchor-id="description-12"><span class="header-section-number">5.4.13.1</span> Description</h4>
+<p>Turns off warning messages to be printed to the print file; note that this keyword is deactivated by default and can subsequently be switched off by the WARN activation keyword. The warning messages may be turned on and off using keywords WARN and NOWARN.</p>
+<p>It is recommended that WARN should always be used and action taken if necessary. For subsequent runs, the warning messages can be turned off.</p>
+<p>There is no data required for this keyword.</p>
+<p>This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.</p>
+</section>
+<section id="example-8" class="level4" data-number="5.4.13.2">
+<h4 data-number="5.4.13.2" class="anchored" data-anchor-id="example-8"><span class="header-section-number">5.4.13.2</span> Example</h4>
+<pre><code>--
+--      SWITCH OFF WARNING MESSAGES
+NOWARN
+--
+--      INCLUDE SIMULATION GRID WITH SLOPING FAULTS
+--
+INCLUDE
+     './INCLUDE/GRID/IRAP_1005.GRDECL' /
+--
+--      SWITCH ON WARNING MESSAGES
+--
+WARN</code></pre>
+<p>The example deactivates the warning messages before reading the grid geometry data using the INCLUDE keyword, and then activates the warning messages after reading the INCLUDE file.</p>
+</section>
+</section>
+<section id="skip-activate-skipping-of-all-keywords-and-input-data" class="level3" data-number="5.4.14">
+<h3 data-number="5.4.14" class="anchored" data-anchor-id="skip-activate-skipping-of-all-keywords-and-input-data"><span class="header-section-number">5.4.14</span> SKIP – Activate Skipping of All Keywords and Input Data</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-13" class="level4" data-number="5.4.14.1">
+<h4 data-number="5.4.14.1" class="anchored" data-anchor-id="description-13"><span class="header-section-number">5.4.14.1</span> Description</h4>
+<p>The SKIP keyword activates skipping of all keywords and input data until the ENDSKIP keyword is encountered. All keywords between the SKIP and ENDSKIP keywords are ignored. Each SKIP keyword should be paired with an ENDSKIP keyword. See also the SKIP100 and SKIP300 keywords.</p>
+<p>There is no data required for this keyword.</p>
+<p>The nesting of pairs of the SKIP, SKIP100, or SKIP300 keywords and the ENDSKIP keyword is not supported by OPM Flow.</p>
+</section>
+<section id="example-9" class="level4" data-number="5.4.14.2">
+<h4 data-number="5.4.14.2" class="anchored" data-anchor-id="example-9"><span class="header-section-number">5.4.14.2</span> Example</h4>
+<pre><code>--
+--       SWITCH ON SKIPPING OF ALL KEYWORDS AND DATA
+--
+SKIP
+--
+--       INCLUDE SIMULATION GRID WITH SLOPING FAULTS
+--
+INCLUDE
+         './INCLUDE/GRID/IRAP_1005.GRDECL' /
+--
+--       SWITCH ON READING OF ALL KEYWORDS AND DATA
+--
+ENDSKIP</code></pre>
+<p>The example skips reading of the grid geometry data input using the INCLUDE keyword, and then reverts back to reading the remainder of the input file.</p>
+</section>
+</section>
+<section id="skip100-activate-skipping-of-keywords-by-black-oil-simulator" class="level3" data-number="5.4.15">
+<h3 data-number="5.4.15" class="anchored" data-anchor-id="skip100-activate-skipping-of-keywords-by-black-oil-simulator"><span class="header-section-number">5.4.15</span> SKIP100 – Activate Skipping of Keywords by Black-Oil Simulator</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-14" class="level4" data-number="5.4.15.1">
+<h4 data-number="5.4.15.1" class="anchored" data-anchor-id="description-14"><span class="header-section-number">5.4.15.1</span> Description</h4>
+<p>The SKIP100 keyword activates skipping of all keywords and input data by the commercial black-oil simulator until the ENDSKIP keyword is encountered. All keywords between the SKIP100 and ENDSKIP keywords are ignored by the commercial black-oil simulator. The SKIP100 keyword is ignored by the commercial compositional simulator. Each SKIP100 keyword should be paired with an ENDSKIP keyword. See also the SKIP and SKIP300 keywords.</p>
+<p>There is no data required for this keyword.</p>
+<p>By default OPM Flow behaves like the commercial black-oil simulator. However, this behaviour can be changed using the –input-skip-mode command line parameter.</p>
+<p>The nesting of pairs of either the SKIP, SKIP100, or SKIP300 keyword and the ENDSKIP keyword is not supported by OPM Flow.</p>
+</section>
+<section id="example-10" class="level4" data-number="5.4.15.2">
+<h4 data-number="5.4.15.2" class="anchored" data-anchor-id="example-10"><span class="header-section-number">5.4.15.2</span> Example</h4>
+<p>If the following example is read using the commercial black-oil simulator then the SKIP300 keyword will be ignored and the black-oil PVT data will be read, the SKIP100 keyword will cause the compositional PVT data to be ignored, and then the remainder of the input will be read after the next ENDSKIP keyword is encountered.</p>
+<pre><code>--
+--       ACTIVATE SKIPPING OF KEYWORDS BY COMPOSITIONAL SIMULATOR
+--
+SKIP300
+--
+--       INCLUDE BLACK-OIL PVT DATA
+--
+INCLUDE
+         './INCLUDE/’BLACK-OIL-PVT'         /
+--
+--       DEACTIVATE SKIPPING OF KEYWORDS
+--
+ENDSKIP
+--
+--       ACTIVATE SKIPPING OF KEYWORDS BY BLACK-OIL SIMULATOR
+--
+SKIP100
+--
+--       INCLUDE COMPOSITIONAL PVT DATA
+--
+INCLUDE
+         './INCLUDE/’COMPOSITION-PVT-EOS'   /
+--
+--       SWITCH ON READING OF ALL KEYWORDS AND DATA
+--
+ENDSKIP
+--
+--       WATER PVT TABLE
+--
+PVTW
+--       REF PRES  BW        CW        VISC     VISC
+--       PSIA      RB/STB   1/PSIA    CPOISE   GRAD
+--       --------  ------   -------   ------   ------
+          4840.0    1.019    2.7E-6    0.370    1*         / WATER DATA REGION 1
+--
+--       OIL      WAT        GAS
+--       DENSITY  DENSITY    DENSITY
+--       -------  -------    -------
+DENSITY
+          39.0     62.37     0.04520                       / PVT DATA REGION 1
+--       ROCK COMPRESSIBILITY
+--
+--       REF PRES  CF
+--       PSIA      1/PSIA
+--       --------  -------
+ROCK
+          3966.9   5.0E-06                                 / ROCK COMPRESSIBILITY</code></pre>
+</section>
+</section>
+<section id="skip300-activate-skipping-of-keywords-by-compositional-simulator" class="level3" data-number="5.4.16">
+<h3 data-number="5.4.16" class="anchored" data-anchor-id="skip300-activate-skipping-of-keywords-by-compositional-simulator"><span class="header-section-number">5.4.16</span> SKIP300 – Activate Skipping of Keywords by Compositional Simulator</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-15" class="level4" data-number="5.4.16.1">
+<h4 data-number="5.4.16.1" class="anchored" data-anchor-id="description-15"><span class="header-section-number">5.4.16.1</span> Description</h4>
+<p>The SKIP300 keyword activates skipping of all keywords and input data by the commercial compositional simulator until the ENDSKIP keyword is encountered. All keywords between the SKIP300 and ENDSKIP keywords are ignored by the commercial compositional simulator. The SKIP300 keyword is ignored by the commercial black-oil simulator. Each SKIP300 keyword should be paired with an ENDSKIP keyword. See also the SKIP and SKIP100 keywords.</p>
+<p>There is no data required for this keyword.</p>
+<p>By default OPM Flow behaves like the commercial black-oil simulator. However, this behaviour can be changed using the –input-skip-mode command line parameter.</p>
+<p>The nesting of pairs of either the SKIP, SKIP100, or SKIP300 keyword and the ENDSKIP keyword is not supported by OPM Flow.</p>
+</section>
+<section id="example-11" class="level4" data-number="5.4.16.2">
+<h4 data-number="5.4.16.2" class="anchored" data-anchor-id="example-11"><span class="header-section-number">5.4.16.2</span> Example</h4>
+<p>If the following example is read using the commercial compositional simulator then the SKIP300 keyword will cause the black-oil PVT data to be ignored, the input will continue to be read after the next ENDSKIP keyword is encountered, and the SKIP100 keyword will be ignored and the compositional PVT data will be read along with the remainder of the input.</p>
+<pre><code>--
+--       ACTIVATE SKIPPING OF KEYWORDS BY COMPOSITIONAL SIMULATOR
+--
+SKIP300
+--
+--       INCLUDE BLACK-OIL PVT DATA
+--
+INCLUDE
+         './INCLUDE/’BLACK-OIL-PVT'         /
+--
+--       DEACTIVATE SKIPPING OF KEYWORDS
+--
+ENDSKIP
+--
+--       ACTIVATE SKIPPING OF KEYWORDS BY BLACK-OIL SIMULATOR
+--
+SKIP100
+--
+--       INCLUDE COMPOSITIONAL PVT DATA
+--
+INCLUDE
+         './INCLUDE/’COMPOSITION-PVT-EOS'   /
+--
+--       SWITCH ON READING OF ALL KEYWORDS AND DATA
+--
+ENDSKIP
+--
+--       WATER PVT TABLE
+--
+PVTW
+--       REF PRES  BW        CW        VISC     VISC
+--       PSIA      RB/STB   1/PSIA    CPOISE   GRAD
+--       --------  ------   -------   ------   ------
+          4840.0    1.019    2.7E-6    0.370    1*         / WATER DATA REGION 1
+--
+--       OIL      WAT        GAS
+--       DENSITY  DENSITY    DENSITY
+--       -------  -------    -------
+DENSITY
+          39.0     62.37     0.04520                       / PVT DATA REGION 1
+--       ROCK COMPRESSIBILITY
+--
+--       REF PRES  CF
+--       PSIA      1/PSIA
+--       --------  -------
+ROCK
+          3966.9   5.0E-06                                 / ROCK COMPRESSIBILITY
+</code></pre>
+</section>
+</section>
+<section id="warn-activate-warning-messages" class="level3" data-number="5.4.17">
+<h3 data-number="5.4.17" class="anchored" data-anchor-id="warn-activate-warning-messages"><span class="header-section-number">5.4.17</span> WARN – Activate Warning Messages</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>RUNSPEC</th>
+<th>GRID</th>
+<th>EDIT</th>
+<th>PROPS</th>
+<th>REGIONS</th>
+<th>SOLUTION</th>
+<th>SUMMARY</th>
+<th>SCHEDULE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<section id="description-16" class="level4" data-number="5.4.17.1">
+<h4 data-number="5.4.17.1" class="anchored" data-anchor-id="description-16"><span class="header-section-number">5.4.17.1</span> Description</h4>
+<p>Turns on warning messages to be printed to the print file (*.PRT); note that this keyword is activated by default and can subsequently be switched off by the NOWARN activation keyword. The warning messages may be turned on and off using keywords WARN and NOWARN. OPM Flow always prints error messages.</p>
+<p>It is recommended that WARN should always be used and action taken if necessary for the initial runs, once the run has been “cleaned up” the warning messages can be turned off.</p>
+<p>There is no data required for this keyword.</p>
+<p>This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.</p>
+</section>
+<section id="example-12" class="level4" data-number="5.4.17.2">
+<h4 data-number="5.4.17.2" class="anchored" data-anchor-id="example-12"><span class="header-section-number">5.4.17.2</span> Example</h4>
+<pre><code>--
+--       SWITCH OFF WARNING MESSAGES
+--
+NOWARN
+
+--
+--       INCLUDE SIMULATION GRID WITH SLOPING FAULTS
+--
+INCLUDE
+         './INCLUDE/GRID/IRAP_1005.GRDECL' /
+
+--
+--       SWITCH ON WARNING MESSAGES
+--
+WARN</code></pre>
+<p>The example deactivates the warning messages before reading the grid geometry data using the INCLUDE keyword, and then activates the warning messages after reading the INCLUDE file.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/03-keyword-structure.html" class="pagination-link" aria-label="03-keyword-structure.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">03-keyword-structure.html</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/05-runspec.html" class="pagination-link" aria-label="Keyword Definitions">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

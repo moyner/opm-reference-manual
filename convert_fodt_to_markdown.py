@@ -280,10 +280,14 @@ def mathml_to_latex(elem):
         stretchy = elem.get("stretchy", "false")
         if fence == "true" and stretchy == "true":
             form = elem.get("form", "")
-            if text in ("(", "[", "{", "|"):
+            if text in ("(", "[", "|"):
                 result = r"\left" + text
-            elif text in (")", "]", "}", "|"):
+            elif text == "{":
+                result = r"\left\{"
+            elif text in (")", "]", "|"):
                 result = r"\right" + text
+            elif text == "}":
+                result = r"\right\}"
         return result
 
     elif tag == "mfrac":

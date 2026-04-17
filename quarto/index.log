@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.4.17)  17 APR 2026 13:25
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.4.17)  17 APR 2026 13:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1454,22 +1454,27 @@ Missing character: There is no α (U+03B1) in font [lmroman8-regular]:mapping=te
 x-text;!
 Missing character: There is no α (U+03B1) in font [lmroman8-regular]:mapping=te
 x-text;!
-
-! LaTeX Error: \mathit allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.703 \$ \{p\}\emph{\{c,\mathit{ow}\} = \{p\}}
-                                              \{o\} - \{p\}\_\{w\}\$ & 
+[11]
+Missing character: There is no α (U+03B1) in font [lmroman8-regular]:mapping=te
+x-text;!
+Missing character: There is no α (U+03B1) in font [lmroman8-regular]:mapping=te
+x-text;!
+[12]
+Missing character: There is no α (U+03B1) in font [lmroman8-regular]:mapping=te
+x-text;!
+[13]
+! Missing delimiter (. inserted).
+<to be read again> 
+                   {
+l.861 U\left(α,\mathit{ij}\right) = \left{
+                                          \begin{matrix}i, \mathrm{Δ}{\mathr...
+ 
 Here is how much of TeX's memory you used:
- 40402 strings out of 476846
- 822709 string characters out of 5803824
- 1932627 words of memory out of 5000000
- 61742 multiletter control sequences out of 15000+600000
+ 40394 strings out of 476846
+ 822423 string characters out of 5803824
+ 1936627 words of memory out of 5000000
+ 61735 multiletter control sequences out of 15000+600000
  564556 words of font info for 93 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,13n,120p,10919b,1017s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-Output written on index.pdf (10 pages).
+ 108i,8n,120p,10919b,1017s stack positions out of 10000i,1000n,20000p,200000b,200000s
+Output written on index.pdf (13 pages).

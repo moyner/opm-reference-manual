@@ -241,7 +241,7 @@ Use the table of contents or the search bar to navigate to specific
 keywords or topics. Keywords are organized by their input deck section,
 matching the structure of OPM Flow simulation input files.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This manual corresponds to \textbf{OPM Flow version 2025-04}.
 
@@ -610,7 +610,7 @@ The following section briefly describe the simulator's formulation,
 equation, and the various numerical procedures available to solve the
 equations.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The material in the following sections is taken from Rasmussen et
 al.~{[}Rasmussen, A.F., Sandve, T.H., Bao, K., Lauser, A., Hove, J.,
@@ -659,31 +659,17 @@ one for each pseudo component α:
 
 where the accumulation terms and fluxes are given by:
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\({A}_{w}={m}_{ϕ}{b}_{w}{s}_{w}\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(\mathbf{{\text{u}}_{\mathrm{w}}}={b}_{w}\mathbf{{\text{v}}_{\mathrm{w}}}\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-(1.2)
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\({A}_{o}={m}_{ϕ}\left({b}_{o}{s}_{o}+{r}_{\mathit{og}}{b}_{g}{s}_{g}\right)\)
-&
-\(\mathbf{{\text{u}}_{\mathrm{o}}}={b}_{o}\mathbf{{\text{v}}_{\mathrm{o}}}+{r}_{\mathit{og}}{b}_{g}\mathbf{{\text{v}}_{\mathrm{g}}}\)
-& (1.3) \\
-\({A}_{g}={m}_{ϕ}\left({b}_{g}{s}_{g}+{r}_{\mathit{go}}{b}_{o}{s}_{o}\right)\)
-&
-\(\mathbf{{\text{u}}_{\mathrm{g}}}={b}_{g}\mathbf{{\text{v}}_{\mathrm{g}}}+{r}_{\mathit{go}}{b}_{o}\mathbf{{\text{v}}_{\mathrm{o}}}\)
-& (1.4) \\
-\end{longtable}
+\begin{equation}\phantomsection\label{eq-1-2}{
+{A}_{w}={m}_{ϕ}{b}_{w}{s}_{w}
+}\end{equation}
+
+\begin{equation}\phantomsection\label{eq-1-3}{
+{A}_{o}={m}_{ϕ}\left({b}_{o}{s}_{o}+{r}_{\mathit{og}}{b}_{g}{s}_{g}\right)
+}\end{equation}
+
+\begin{equation}\phantomsection\label{eq-1-4}{
+{A}_{g}={m}_{ϕ}\left({b}_{g}{s}_{g}+{r}_{\mathit{go}}{b}_{o}{s}_{o}\right)
+}\end{equation}
 
 and the phase fluxes are given by Darcy's law:
 
@@ -693,18 +679,17 @@ and the phase fluxes are given by Darcy's law:
 
 In addition, the following closure relations should hold:
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule\noalign{}
-\({s}_{w} + {s}_{o} + {s}_{g} = 1\) & (1.6) \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\$ \{p\}\emph{\{c,\mathit{ow}\} = \{p\}}\{o\} - \{p\}\_\{w\}\$ &
-(1.7) \\
-\$ \{p\}\emph{\{c,\mathit{og}\} = \{p\}}\{o\} - \{p\}\_\{g\}\$ &
-(1.8) \\
-\end{longtable}
+\begin{equation}\phantomsection\label{eq-1-6}{
+{s}_{w} + {s}_{o} + {s}_{g} = 1
+}\end{equation}
+
+\begin{equation}\phantomsection\label{eq-1-7}{
+{p}_{c,\mathit{ow}} = {p}_{o} - {p}_{w}
+}\end{equation}
+
+\begin{equation}\phantomsection\label{eq-1-8}{
+{p}_{c,\mathit{og}} = {p}_{o} - {p}_{g}
+}\end{equation}
 
 where:
 
@@ -826,83 +811,55 @@ and fluxes \({u}_{α}\)are of similar form to the velocities,
 \(\mathbf{{\text{u}}_{\mathrm{α}}}\) in the aforementioned equations;
 thus we have
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\({A}_{w i}={\left({m}_{ϕ}{b}_{w}{s}_{w}\right)}_{i}\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\({u}_{w i}={\left({b}_{w}{υ}_{w}\right)}_{i}\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-(1.10)
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\({A}_{o i}={\left({m}_{ϕ}\left({b}_{o}{s}_{o}+{r}_{\mathit{og}}{b}_{g}{s}_{g}\right)\right)}_{i}\)
-&
-\({u}_{o i}={\left({b}_{o}{υ}_{o}+{r}_{\mathit{og}}{b}_{g}{υ}_{g}\right)}_{i}\)
-& (1.11) \\
-\({A}_{g i}={\left({m}_{ϕ}\left({b}_{g}{s}_{g}+{r}_{\mathit{go}}{b}_{o}{s}_{o}\right)\right)}_{i}\)
-&
-\({u}_{g i}={\left({b}_{g}{υ}_{g}+{r}_{\mathit{go}}{b}_{o}{υ}_{o}\right)}_{i}\)
-& (1.12) \\
-\end{longtable}
+\begin{equation}\phantomsection\label{eq-1-10}{
+{A}_{w i}={\left({m}_{ϕ}{b}_{w}{s}_{w}\right)}_{i}
+}\end{equation}
+
+\begin{equation}\phantomsection\label{eq-1-11}{
+{A}_{o i}={\left({m}_{ϕ}\left({b}_{o}{s}_{o}+{r}_{\mathit{og}}{b}_{g}{s}_{g}\right)\right)}_{i}
+}\end{equation}
+
+\begin{equation}\phantomsection\label{eq-1-12}{
+{A}_{g i}={\left({m}_{ϕ}\left({b}_{g}{s}_{g}+{r}_{\mathit{go}}{b}_{o}{s}_{o}\right)\right)}_{i}
+}\end{equation}
 
 In addition, equations (1.6) to (1.8) also hold for each cell i, that
 is:
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\({\left( {s}_{w} + {s}_{o} + {s}_{g} \right)}_{i} = 1\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-(1.13)
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\$ \{\left( \{p\}\emph{\{c,\mathit{ow}\} \right)\}}\{i\} = \{\left(
-\{p\}\emph{\{o\} - \{p\}}\{w\} \right)\}\_\{i\}\$ & (1.14) \\
-\$ \{\left( \{p\}\emph{\{c,\mathit{og}\} \right)\}}\{i\} = \{\left(
-\{p\}\emph{\{o\} - \{p\}}\{g\} \right)\}\_\{i\} \$ & (1.15) \\
-\end{longtable}
+\begin{equation}\phantomsection\label{eq-1-13}{
+{\left( {s}_{w} + {s}_{o} + {s}_{g} \right)}_{i} = 1
+}\end{equation}
+
+\begin{equation}\phantomsection\label{eq-1-14}{
+{\left( {p}_{c,\mathit{ow}} \right)}_{i} = {\left( {p}_{o} - {p}_{w} \right)}_{i}
+}\end{equation}
+
+\begin{equation}\phantomsection\label{eq-1-15}{
+{\left( {p}_{c,\mathit{og}} \right)}_{i} = {\left( {p}_{o} - {p}_{g} \right)}_{i}
+}\end{equation}
 
 Finally, the fluxes are given for each connection\(\mathit{ij}\)by the
 following relationships:
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\$ \{\left(\{b\}\emph{\{α\}\{υ\}}\{α\}\right)\}\emph{\{\mathit{ij}\} =
-\{\left(\{b\}}\{α\}\{λ\}\emph{\{α\}\{m\}}\{T\}\right)\}\emph{\{\{U\}}\{(α,\mathit{ij})\}\}\{T\}\emph{\{\mathit{ij}\}\mathrm{Δ}{\mathrm{Φ}}}\{α,\mathit{ij}\}\$
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-(1.16)
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\$
-\{\left(\{r\}\emph{\{βα\}\{b\}}\{α\}\{υ\}\emph{\{α\}\right)\}}\{\mathit{ij}\}
-=
-\{\left(\{r\}\emph{\{βα\}\{b\}}\{α\}\{λ\}\emph{\{α\}\{m\}}\{T\}\right)\}\emph{\{\{U\}}\{(α,\mathit{ij})\}\}\{T\}\emph{\{\mathit{ij}\}\mathrm{Δ}{\mathrm{Φ}}}\{α,\mathit{ij}\}
-\$ & (1.17) \\
-\$ \mathrm{Δ}{\mathrm{Φ}}\emph{\{α,\mathit{ij}\} =
-\{p\}}\{α,i\}-\{p\}\emph{\{α,j\}-g\{ρ\}}\{α,\mathit{ij}\}\left(\{z\}\emph{\{i\}-\{z\}}\{j\}\right)\$
-& (1.18) \\
-\$ \{ρ\}\_\{α,\mathit{ij}\} =
-\frac{\left({ρ}_{α,i}+{ρ}_{α,j}\right)}{2}\$ & (1.19) \\
-\$ U\left(α,\mathit{ij}\right) = \textbackslash left\{ & (1.20) \\
-\end{longtable}
+\begin{equation}\phantomsection\label{eq-1-16}{
+{\left({b}_{α}{υ}_{α}\right)}_{\mathit{ij}} = {\left({b}_{α}{λ}_{α}{m}_{T}\right)}_{{U}_{(α,\mathit{ij})}}{T}_{\mathit{ij}}\mathrm{Δ}{\mathrm{Φ}}_{α,\mathit{ij}}
+}\end{equation}
+
+\begin{equation}\phantomsection\label{eq-1-17}{
+{\left({r}_{βα}{b}_{α}{υ}_{α}\right)}_{\mathit{ij}} = {\left({r}_{βα}{b}_{α}{λ}_{α}{m}_{T}\right)}_{{U}_{(α,\mathit{ij})}}{T}_{\mathit{ij}}\mathrm{Δ}{\mathrm{Φ}}_{α,\mathit{ij}}
+}\end{equation}
+
+\begin{equation}\phantomsection\label{eq-1-18}{
+\mathrm{Δ}{\mathrm{Φ}}_{α,\mathit{ij}} = {p}_{α,i}-{p}_{α,j}-g{ρ}_{α,\mathit{ij}}\left({z}_{i}-{z}_{j}\right)
+}\end{equation}
+
+\begin{equation}\phantomsection\label{eq-1-19}{
+{ρ}_{α,\mathit{ij}} = \frac{\left({ρ}_{α,i}+{ρ}_{α,j}\right)}{2}
+}\end{equation}
+
+\begin{equation}\phantomsection\label{eq-1-20}{
+U\left(α,\mathit{ij}\right) = \left{\begin{matrix}i, \mathrm{Δ}{\mathrm{Φ}}_{α,\mathit{ij}}\geq 0 \\ j, \mathrm{Δ}{\mathrm{Φ}}_{α,\mathit{ij}}\geq 0\end{matrix}
+}\end{equation}
 
 where:
 
@@ -1149,22 +1106,13 @@ The well equations are added to the global system using a Schur
 Its Applications. Numerical Methods and Algorithms. Vol. 4. Springer.
 doi:10.1007/b105056. ISBN 0-387-24271-6.{]} complement approach:
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\((A - \underset{w}{\sum }{C}_{w}{D}_{w}^{-1}{B}_{w}){x}_{r} = {R}_{r} - \underset{w}{\sum }{C}_{w}{{D}_{w}}^{-1}{R}_{w}\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-(1.30)
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\$ \{x\}\emph{\{w\} = \{\{D\}}\{w\}\}\^{}\{-1\}(\{R\}\emph{\{w\} -
-\{B\}}\{w\}\{x\}\_\{r\})\$ & \\
-\end{longtable}
+\begin{equation}\phantomsection\label{eq-1-30}{
+(A - \underset{w}{\sum }{C}_{w}{D}_{w}^{-1}{B}_{w}){x}_{r} = {R}_{r} - \underset{w}{\sum }{C}_{w}{{D}_{w}}^{-1}{R}_{w}
+}\end{equation}
+
+\[
+{x}_{w} = {{D}_{w}}^{-1}({R}_{w} - {B}_{w}{x}_{r})
+\]
 
 Figure 1.3 depicts a multi-segment well with the main wellbore branch as
 the vertical segment, together with four offsetting horizontal branches.
@@ -1457,20 +1405,9 @@ system stemming from these equations is challenging, since it is likely
 non-symmetric and ill-conditioned. Thus, instead of solving equation
 (1.36), that is:
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\(J({y}_{n})\left({y}_{n+1} - {y}_{n}\right) = -R({y}_{n})\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-((1.36))
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\end{longtable}
+\[
+J({y}_{n})\left({y}_{n+1} - {y}_{n}\right) = -R({y}_{n})
+\]
 
 directly, the solution is approximated by an iterative linear solver.
 Two variants are available in OPM Flow:
@@ -2220,7 +2157,7 @@ mpirun -np 4 flow --parameter-file=path_to_data/CASENAME.param
 
 will run OPM Flow on four nodes etc.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 On Red Hat based distributions, including centOS distributions, one
 needs to install the openmpi version of the simulator,
@@ -2963,7 +2900,7 @@ parameters in CamelCase in both the \emph{.PRT and }.DBG files for
 reference, one can therefore use this as basis for creating additional
 run specific parameter files.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 It is worth considering having a parameter file for each run of the form
 CASENAME.param, in order to re-run a case using the same parameters or
@@ -3321,7 +3258,7 @@ application's menus including:
 All the aforementioned options and tools are described in detail in
 Error: Reference source not foundError: Reference source not found,
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 OPMRUN can be run as either a Linux or a Windows application. If the
 software is installed and run under Windows, then the program
@@ -4177,7 +4114,7 @@ Note that the simulator has various other numerical performance
 parameters than can use used to identify the cause for under
 performance.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 To obtain the numerical performance data, the easiest way is to add the
 PERFORMA keyword in the SUMMARY section, that enables the writing out of
@@ -4445,7 +4382,7 @@ Notes: & & & \\
 
 \emph{Table 2.4: Major Solver Time Stepping Controls}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 OPM Flow also has a series of command line parameters of the form
 --time-step* that are subordinate to the --solver* series of command
@@ -4512,7 +4449,7 @@ reach non-linear convergence. The latter is normally associated with
 operational events, for example new wells being brought on stream, major
 changes to group controls etc.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 As mentioned previously, in general the number of Newton iterations is
 indicative of the ease of convergence, with one to three iterations
@@ -5766,7 +5703,7 @@ The examples deactivates the echoing of the input files, reads in the
 grid geometry data using the INCLUDE keyword, and then activates the
 echoing of the input files again.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Especially for the large voluminous data sets in the GRID section, it is
 good practice to deactivate the echoing of the input files when loading
@@ -6535,7 +6472,7 @@ The example deactivates the echoing of the input files, reads in the
 grid geometry data using the INCLUDE keyword, and then activates the
 echoing of the input files again.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Especially for the large voluminous data sets in the GRID section, it is
 good practice to deactivate the echoing of the input files when loading
@@ -8274,7 +8211,7 @@ hydrogen loss. The conceptual model includes the following mechanisms:
 (1) Biofilm is present in the storage site prior to injection and (2)
 the biofilm consumes injected H2/CO2, leading to clogging effects.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword used to investigate biofilm effects
 in underground applications. The module requires that either the
@@ -9528,7 +9465,7 @@ declares the number of components active in the model.
 OPM Flow does not currently support the general compositional modeling
 formulation.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This keyword is only supported by OPM Flow when the two component
 gas-water CO2 storage model has been activated using the CO2STORE
@@ -9814,7 +9751,7 @@ section.
 There is no data required for this keyword and there is no terminating
 ``/'' for this keyword.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The option has been tested in combination with the CO2STORE keyword, but
 not for the general case at this point.
@@ -10050,7 +9987,7 @@ declared. The keyword will also invoke data input file checking to
 ensure that all the required gas and water phase input parameters are
 defined in the input deck.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's Dissolved Gas
 in Water Model that is activated by declaring that this phase is present
@@ -11708,7 +11645,7 @@ This keyword activates the two-phase Gas-Water model, as such it is
 equivalent to using both the GAS and WATER keywords in the RUNSPEC
 section..
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow keyword, and should not be confused with the more
 general version of the GASWAT keyword used in the commercial
@@ -13956,7 +13893,7 @@ leakage remediation by micp-based plugging technology. In: Røkke, N.A.
 and Knuutila, H.K. (Eds) Short Papers from the 11th International
 Trondheim CCS conference, ISBN: 978-82-536-1714-5, 284-290.{]}.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword used to investigate leakage
 remediation. The module requires that both the MICP and WATER keywords
@@ -14029,7 +13966,7 @@ within a time step where the well production and injection targets may
 be updated, after which the well targets will be frozen until the time
 step calculations have converged and the time step is complete.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword that sets the minimum number of
 Newton iterations, as opposed to the NUPCOL keyword that defines the
@@ -15574,7 +15511,7 @@ keyword so that the simulation will proceed.
 -- NOSIM
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Simulation input decks are complex and are therefore prone to typing
 errors, thus before submitting a run that will take over 15 minutes or
@@ -15777,7 +15714,7 @@ The above example sets maximum number of previous search directions
 stored by the linear solver to 30, this has no effect in OPM Flow input
 decks.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If the run is suffering from linear convergence problems, then check the
 data first for any data issues before manipulating the numerical control
@@ -16605,7 +16542,7 @@ tables for the SKPRWAT, SKPRPOLY, and PLYMWINJ keywords, and the number
 of entries in the PLYVMH keyword. All the aforementioned keywords are in
 the PROPS section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword that employs an alternative polymer
 flood model based on a Polymer Molecular Weight Transport equation, that
@@ -16796,7 +16733,7 @@ associated with the skin pressure for polymer and water injection. All
 the aforementioned keywords are OPM Flow specific keywords, that are not
 available in the commercial simulator.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword that employs an alternative polymer
 flood model based on a Polymer Molecular Weight Transport equation, that
@@ -16873,7 +16810,7 @@ PRECSALT keyword has been activated in the input deck then the VAPWAT
 keyword should also be activated. The keyword should only be used if
 both water and gas phases are active in the model.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's Salt
 Precipitation model, note that this is an extension to the commercial
@@ -18057,7 +17994,7 @@ the KRNUMX, KRNUMY, KRNUMZ, KRNUMX-, KRNUMY-, KRNUMZ- keywords, and the
 imbibition relative permeability curves are allocated by the IMBNUMX,
 IMBNUMY, IMBNUMZ, IMBNUMX-, IMBNUMY-, IMBNUMZ- keywords.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This keyword activates how relative permeability curves are assigned in
 the model. The ENDSCALE keyword allows the end-point scaling also to
@@ -18656,7 +18593,7 @@ START
 
 The above example sets the start date for the run to be January 1, 2014.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Whenever possible it is a good idea to always set the start date to be
 at the beginning of the year as per the example. As like most
@@ -19335,7 +19272,7 @@ Notes: & & & \\
 
 \emph{Table 5.47: TITLE Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 It is good practice to include the name of the input file in the tittle
 (without the extension) for when cross checking results from multiple
@@ -20560,7 +20497,7 @@ PRECSALT keyword in the RUNSPEC section in order to activate OPM Flow's
 Salt Precipitation model. VAPWAT may be used for gas-water and
 oil-water-gas input decks that contain the oil, gas and water phases.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's Water
 Vaporization Model that is activated by declaring that vaporized water
@@ -21640,7 +21577,7 @@ PERMZ
 The above keywords define all the properties required for the RUNSPEC
 and GRID sections for this type of grid geometry.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Radial grids are currently not fully implemented in OPM Flow as the
 completion of the circle in the THETA direction is not supported. For
@@ -21856,7 +21793,7 @@ than one. & PERMX PERMY PERMZ & PERMR PERMTHT PERMZ \\
 
 \emph{Table 6.1: Key Static Grid Properties}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Static grid properties are frequently generated from a static earth
 model using petrophysical evaluation of the well logs and propagated
@@ -22552,7 +22489,7 @@ Notes: & & & \\
 
 \emph{Table 6.7: AQUANCON Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If the AQUANCON keyword has been utilized in the run deck then OPM Flow
 will write the AQUIFERA array to the *.INIT file in order to visualize
@@ -22699,7 +22636,7 @@ Notes: & & & \\
 
 \emph{Table 6.8: AQUCON Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If the AQUCON keyword has been utilized in the run deck then OPM Flow
 will write the AQUIFERN array to the *.INIT file in order to visualize
@@ -22869,7 +22806,7 @@ Notes: & & & \\
 
 \emph{Table 6.9: AQUCT Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 OPM Flow includes the infinite acting Carter-Tracy aquifer influence
 table as a default for table number one; thus data entered on AQUTAB
@@ -23182,7 +23119,7 @@ aquifer properties via the AQUNUM keyword, and how the aquifer is
 connected to the reservoir using the AQUCON keyword in the GRID or
 SOLUTION sections.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If the AQUCON keyword has been utilized in the run deck then OPM Flow
 will write the AQUIFERN array to the *.INIT file in order to visualize
@@ -23356,7 +23293,7 @@ the reservoir pressure and production history. For example, when the
 average reservoir pressure remains constant throughout the production
 period due to water influx, or gas migration from an external source.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword and will therefore cause an error
 in the commercial simulator.
@@ -23702,7 +23639,7 @@ EQUALS
 /
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 It is good practice to always use the ENDBOX keyword to reset the input
 back to the full grid when all the modifications for a sub-grid have
@@ -25413,7 +25350,7 @@ Notes: & & & \\
 \emph{Table 6.3.39.1:
 \hyperref[REF_HEADING_KEYWORD_DISPERC_6_3]{DISPERC} Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The option has been tested in combination with the CO2STORE,
 \hyperref[REF_HEADING_KEYWORD_H2STORE]{H2STORE},
@@ -26967,7 +26904,7 @@ The above example defines a subset of the grid and sets the cells PERMZ
 values to 0.01 for that area. After which the ENDBOX keyword resets the
 input to be the full grid.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 It is good practice to always use the ENDBOX keyword to reset the input
 back to the full grid when all the modifications for a sub-grid have
@@ -27402,7 +27339,7 @@ DIFFTHT & & & & & & \\
 
 \emph{Table 6.36: EQUALS Keyword Applicable Arrays by Section}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Unlike the commercial simulator, using the EQUALS keyword to setup the
 structure of the grid using the DX, DY, DZ and TOPS keywords should be
@@ -30248,7 +30185,7 @@ de-normalize these curves for each active cell in the model using the
 options and values defined with the JFUNC keyword combined with a cells
 porosity and permeability values.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If either the JFUNC or JFUNCR keywords are used to activate J-Function
 scaling then the ENDSCALE keyword in the RUNSPEC section must also be
@@ -30462,7 +30399,7 @@ de-normalize these curves for each active cell in the model using the
 options and values defined with the JFUNC keyword combined with a cells
 porosity and permeability values.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If either the JFUNC or JFUNCR keywords are used to activate J-Function
 scaling then the ENDSCALE keyword in the RUNSPEC section must also be
@@ -33316,7 +33253,7 @@ Notes: & & & \\
 
 \emph{Table 6.79: MULTREGT Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Note if the MULTREGT keyword is used in the EDIT section, OPM Flow will
 always apply the changes irrespective, of if the TRANX, TRANY and TRANZ
@@ -35633,7 +35570,7 @@ TRANZ-) may result in unintended consequences as these arrays have zero
 values on the boundary of the grid. In this use OPM ResInsight to verify
 and visually inspect the results.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The OPERATER and OPERATE keywords allow for great flexibility in
 generating or modifying the simulator's input arrays. In addition, OPM
@@ -36776,7 +36713,7 @@ Notes: & & & \\
 
 \emph{Table 6.107: PERMZ Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Although PERMX and PERMY are commonly set to be equal, PERMZ is
 typically not equal to either PERMX or PERMY. Normally PERMZ is set as a
@@ -37544,7 +37481,7 @@ allows the user to implement complex functionality and the
 implementation is new for the 2020-04 release. Users should therefore
 use caution when using this facility.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's scripting
 facility using the standard Python interpreter, as such it gives more
@@ -37660,7 +37597,7 @@ allows the user to implement complex functionality and the
 implementation is new for the 2020-04 release. Users should therefore
 use caution when using this facility.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's scripting
 facility using the standard Python interpreter, as such it gives more
@@ -38268,7 +38205,7 @@ Notes: & & & \\
 
 \emph{Table 6.116: RPTGRID Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This keyword has the potential to produce very large print files that
 some text editors may have difficulty loading, coupled with the fact
@@ -38402,7 +38339,7 @@ Notes: & & & \\
 
 \emph{Table 6.117: RPTGRIDL Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This keyword has the potential to produce very large print files that
 some text editors may have difficulty loading, coupled with the fact
@@ -43177,7 +43114,7 @@ formation volume factor for a given reservoir pressure and temperature:
 E = \left(\frac{{P}_{i}}{{P}_{\mathit{sc}}}\right) \left(\frac{{T}_{\mathit{sc}}}{{T}_{i}}\right) \left(\frac{1}{{Z}_{i}}\right)
 }\end{equation}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 In oilfield units when we are dealing with oil reservoirs the gas
 formation volume factor is more commonly denoted as Bg and has the units
@@ -43957,7 +43894,7 @@ saturation tables may be entered and allocated by region and combined
 with end-point scaling option to enable a more robust reservoir rock
 characterization.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Confusion abounds with the terms: critical water saturation, connate
 water saturation, and irreducible water saturation definitions, as the
@@ -44170,7 +44107,7 @@ addition, there is also the facility to incorporate end-point scaling
 based on the drainage and/or imbibition process which again can be
 either non-directional or directional.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If the hysteresis model option has been activated on the SATOPTS keyword
 in the RUNSPEC section, then the standard end-point scaling arrays, for
@@ -44994,7 +44931,7 @@ Notes: & & & & & \\
 
 \emph{Table 8.15: LET Functions (DCI1) versus SGWFLET Keyword}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The SGWFLET keyword has not been implemented, as of this current
 release.
@@ -45135,7 +45072,7 @@ Notes: & & & & & \\
 
 \emph{Table 8.16: LET Functions (DCI1) versus SGWFLET Keyword}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The SGWFLET keyword has not been implemented, as of this current
 release.
@@ -45930,7 +45867,7 @@ Notes: & & & \\
 
 \emph{Table 8.18: AQUTAB Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 OPM Flow includes the infinite acting Carter-Tracy aquifer influence
 table as a default for table number one; thus data entered on this
@@ -46450,7 +46387,7 @@ Notes: & & & & & \\
 
 \emph{Table 8.24: BDENSITY Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 In OPM Flow the tracer equations are solved decoupled from the reservoir
 equations at the end of a time step. For each tracer an implicit system
@@ -46822,7 +46759,7 @@ Notes: & & & \\
 
 \emph{Table 8.87: BIOFPARA Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword.
 
@@ -46982,7 +46919,7 @@ RUNSPEC section.
 OPM Flow does not currently support the general compositional modeling
 formulation.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This keyword is only supported by OPM Flow when the two phase gas-water
 CO2 storage model has been activated using the CO2STORE keyword and
@@ -47609,7 +47546,7 @@ formulation assumed by the
 \hyperref[REF_HEADING_KEYWORD_DIFFAWAT_8_3]{DIFFAWAT} keywords cannot be
 used in combination with the DIFFCGAS and DIFFCWAT keywords.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow keyword used with OPM Flow's CO2STORE or
 \hyperref[REF_HEADING_KEYWORD_H2STORE]{H2STORE} and GASWAT keywords in
@@ -47651,7 +47588,7 @@ Notes: & & & \\
 
 \emph{Table 8.3.31.1: DIFFAGAS Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The option has been tested in combination with the CO2STORE keyword, but
 not for the general case at this point.
@@ -47778,7 +47715,7 @@ formulation assumed by the
 \hyperref[REF_HEADING_KEYWORD_DIFFAWAT_8_3]{DIFFAWAT} keywords cannot be
 used in combination with the DIFFCGAS and DIFFCWAT keywords.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword used with OPM Flow's CO2STORE or
 \hyperref[REF_HEADING_KEYWORD_H2STORE]{H2STORE} and GASWAT keywords in
@@ -47817,7 +47754,7 @@ Notes: & & & \\
 
 \emph{Table 8.3.32.1: DIFFAWAT Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The option has been tested in combination with the CO2STORE keyword, but
 not for the general case at this point.
@@ -47978,7 +47915,7 @@ Notes: & & & \\
 
 \emph{Table 8.27: DIFFC Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The option has been tested in combination with the CO2STORE keyword, but
 not for the general case at this point.
@@ -48076,7 +48013,7 @@ keywords. The \hyperref[REF_HEADING_KEYWORD_DIFFAGAS_8_3]{DIFFAGAS} and
 \hyperref[REF_HEADING_KEYWORD_DIFFAWAT_8_3]{DIFFAWAT} keywords cannot be
 used in combination with the DIFFCGAS and DIFFCWAT keywords.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow keyword used with OPM Flow's CO2STORE or
 \hyperref[REF_HEADING_KEYWORD_H2STORE]{H2STORE} and GASWAT keywords in
@@ -48117,7 +48054,7 @@ Notes: & & & \\
 
 \emph{Table 8.28: DIFFCGAS Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The option has been tested in combination with the CO2STORE keyword, but
 not for the general case at this point.
@@ -48284,7 +48221,7 @@ keywords. The \hyperref[REF_HEADING_KEYWORD_DIFFAGAS_8_3]{DIFFAGAS} and
 \hyperref[REF_HEADING_KEYWORD_DIFFAWAT_8_3]{DIFFAWAT} keywords cannot be
 used in combination with the DIFFCGAS and DIFFCWAT keywords.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow keyword used with OPM Flow's CO2STORE or
 \hyperref[REF_HEADING_KEYWORD_H2STORE]{H2STORE} and GASWAT keywords in
@@ -48325,7 +48262,7 @@ Notes: & & & \\
 
 \emph{Table 8.30: DIFFCWAT Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The option has been tested in combination with the CO2STORE keyword, but
 not for the general case at this point.
@@ -48476,7 +48413,7 @@ used if either the MICP or
 \hyperref[REF_HEADING_KEYWORD_BIOFILM]{BIOFILM} model has been activated
 in the RUNSPEC section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword.
 
@@ -50654,7 +50591,7 @@ Notes: & & & \\
 
 \emph{Table 8.38: FOAMROCK Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 In the commercial simulator if the POLYMER and SURFACT phases have been
 activated in conjunction with the FOAM phase then the mass density of
@@ -50883,7 +50820,7 @@ in temperature calculations, and defines the gas Joule-Thomson
 Coefficient (``JTC'') at a given reference pressure, for when OPM Flow's
 thermal option has been activated by the THERMAL keyword in the RUNSPEC.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow keyword used with OPM Flow's black-oil thermal
 model, that is not available in the commercial simulator's black-oil
@@ -51497,7 +51434,7 @@ keyword must be used in conjunction with the WSF keyword in the PROPS
 section, that defines the water relative permeability versus water
 saturation for gas-water systems.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 GSF is a compositional keyword in the commercial compositional
 simulator, and will therefore cause an error in the commercial black-oil
@@ -59389,7 +59326,7 @@ should only be used if the CO2STORE keyword and either the GASWAT or the
 GAS and WATER keywords in the RUNSPEC section, have also be activated
 for the gas-water two component model.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow keyword used with OPM Flow's CO2STORE and GASWAT
 keywords in the RUNSPEC section, and should not be confused with the
@@ -59709,7 +59646,7 @@ calculations, and defines the oil Joule-Thomson Coefficient (``JTC'') at
 a given reference pressure, for when OPM Flow's thermal option has been
 activated by the THERMAL keyword in the RUNSPEC.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow keyword used with OPM Flow's black-oil thermal
 model, that is not available in the commercial simulator's black-oil
@@ -60169,7 +60106,7 @@ model, in which the pore space is reduced due to salt precipitating in
 the pore space, causing a reduction in porosity and an associated
 increase in capillary pressure.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's Salt
 Precipitation model that is activated by the BRINE and PRECSALT keywords
@@ -60884,7 +60821,7 @@ associated reduction in permeability. This keyword is also used for the
 the pore space is reduced due to biofilm formation, and for the MICP
 model, also due to calcite precipitation.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword.
 
@@ -61861,7 +61798,7 @@ Notes: & & & \\
 
 \emph{Table 8.103: PLYMAX Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Currently, combining the BRINE and POLYMER models is not implemented in
 OPM Flow, and therefore SALTCON parameter on the PLYMAX keyword is
@@ -61940,7 +61877,7 @@ scaled viscosity.
 This keyword should only be used if the POLYMER and POLYMW keywords in
 the RUNSPEC section are also activated.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword that employs an alternative polymer
 flood model based on a Polymer Molecular Weight Transport equation, that
@@ -62857,7 +62794,7 @@ constants used in calculating the polymer viscosity
 This keyword should only be used if the POLYMER and POLYMW keywords in
 the RUNSPEC section are also activated.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword that employs an alternative polymer
 flood model based on a Polymer Molecular Weight Transport equation, that
@@ -63368,7 +63305,7 @@ Notes: & & & \\
 
 \emph{Table 8.111: PPCWMAX Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Using this keyword to limit the re-scaled grid block capillary pressure
 values will effect the fluids in-place when the simulator has to
@@ -64383,7 +64320,7 @@ may be defaulted, in this case the prior table is copied to the current
 table. See the second example for an illustration on how to use this
 feature.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If the VAPWAT keyword in the RUNSPEC section is also present in the
 input deck, then the PVTG keyword in the PROPS section should be used to
@@ -64543,7 +64480,7 @@ indicating that that vaporized water is present in the dry gas phase.
 The keyword may be used for gas-water and oil-water-gas input decks that
 contain the dry gas and vaporized water phases.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's Water
 Vaporization Model that is activated by declaring that vaporized water
@@ -64614,7 +64551,7 @@ Note that provided the first table has been entered, subsequent tables
 may be defaulted, in this case the prior table is copied to the current
 table.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If both the VAPWAT and VAPOIL keywords have been declared in the RUNSPEC
 section indicating that both vaporized water and vaporized oil are
@@ -64739,7 +64676,7 @@ that contain the wet gas with vaporized oil and water phases.
 This keyword is not supported by OPM Flow but would change the results
 if supported so the simulation will be stopped.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's Water
 Vaporization Model that is activated by declaring that vaporized water
@@ -65260,7 +65197,7 @@ model CO2 injection, using the SOLVENT model (CO2 Standard EOR), this is
 the conventional approach, and does not take into account black-oil
 properties being dependent on the fraction of CO2.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 In the CO2 Dynamic EOR Model the oil properties within a cell are
 dependent on the CO2 saturation in the cell. However, the model is not
@@ -66257,7 +66194,7 @@ where:
 
 \(V({P}_{r})\) = pore volume at at the reference pressure.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If the Rock Compaction option has been activated via the ROCKCOMP
 keyword in the RUNSPEC section, then the ROCKTAB keyword in the PROPS
@@ -67524,7 +67461,7 @@ Notes: & & & \\
 
 \emph{Table 8.132: RPTPROPS Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Except for tabular like data, PVDG etc., this keyword has the potential
 to produce very large print files that some text editors may have
@@ -68396,7 +68333,7 @@ keywords, also in the RUNSPEC section, then this keyword must be
 present. The keyword may be used for gas-water and oil-water-gas input
 decks that contain the either dry or wet gas and vaporized water phases.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's Water
 Vaporization and Salt Precipitation Models, note that these are
@@ -68867,7 +68804,7 @@ region. The keyword should only be used with OPM Flow's Salt
 Precipitation model which is activated via the PRECSALT keyword in the
 RUNSPEC section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's Salt
 Precipitation model that is activated by the PRECSALT keyword and
@@ -70071,7 +70008,7 @@ The keyword is used as a replacement for the SGOF keyword for
 three-phase oil-gas-water systems, and the LET series of keywords cannot
 be combined with the standard set of relative permeability keywords.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword and will therefore cause an error
 in the commercial simulator.
@@ -70195,7 +70132,7 @@ cycle (n equals one). This is case for when oil is migrating into the
 reservoir rock and displacing the initial water contained with the
 reservoir.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 All the LET parameters are dependent on the flooding event and flooding
 cycle, and thus are expected vary as such. To be clear, the values of
@@ -70404,7 +70341,7 @@ The keyword is used as a replacement for the SGWFN keyword for two-phase
 gas-water systems, and the LET series of keywords cannot be combined
 with the standard set of relative permeability keywords.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword and will therefore cause an error
 in the commercial simulator.
@@ -70528,7 +70465,7 @@ first cycle (n equals one). This is case for when gas is migrating into
 the reservoir rock and displacing the initial water contained with the
 reservoir.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 All the LET parameters are dependent on the flooding event and flooding
 cycle, and thus are expected vary as such. To be clear, the values of
@@ -70873,7 +70810,7 @@ on the polymer concentration.
 This keyword should only be used if the POLYMER and POLYMW keywords in
 the RUNSPEC section are also activated.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword that employs an alternative polymer
 flood model based on a Polymer Molecular Weight Transport equation, that
@@ -71063,7 +71000,7 @@ concentration.
 This keyword should only be used if the POLYMER and POLYMW keywords in
 the RUNSPEC section are also activated.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword that employs an alternative polymer
 flood model based on a Polymer Molecular Weight Transport equation, that
@@ -75712,7 +75649,7 @@ The keyword is used as a replacement for the SWOF keyword for
 three-phase oil-gas-water systems, and the LET series of keywords cannot
 be combined with the standard set of relative permeability keywords.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword and will therefore cause an error
 in the commercial simulator.
@@ -75836,7 +75773,7 @@ cycle (n equals one). This is case for when oil is migrating into the
 reservoir rock and displacing the initial water contained with the
 reservoir.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 All the LET parameters are dependent on the flooding event and flooding
 cycle, and thus are expected vary as such. To be clear, the values of
@@ -78475,7 +78412,7 @@ calculations, and defines the water Joule-Thomson Coefficient (``JTC'')
 at a given reference pressure, for when OPM Flow's thermal option has
 been activated by the THERMAL keyword in the RUNSPEC.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow keyword used with OPM Flow's black-oil thermal
 model, that is not available in the commercial simulator's black-oil
@@ -78750,7 +78687,7 @@ the keyword must be used in conjunction with the GSF keyword in the
 PROPS section, that defines the gas relative permeability and gas-water
 capillary pressure data versus gas saturation for gas-water systems.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 WSF is a compositional keyword in the commercial compositional
 simulator, and will therefore cause an error in the commercial black-oil
@@ -78911,7 +78848,7 @@ PROPS section. The keyword should only be used if the CO2STORE and
 GASWAT keywords in the RUNSPEC section have also be activated for the
 gas-water two component model.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow keyword used with OPM Flow's CO2STORE and GASWAT
 keywords in the RUNSPEC section, and should not be confused with the
@@ -79155,7 +79092,7 @@ Notes: & & & \\
 
 \emph{Table 9.1: REGIONS Section Allocation Array Summary}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Earth modeling software may export the region arrays to be loaded into
 the simulator with values starting from zero instead of one. This may
@@ -79792,7 +79729,7 @@ of the keyword, including the concatenated characters, are used as the
 property region name. For example, if we wish define a fluid in-place
 region name called UNIT, then the keyword would be FIPUNIT.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The commercial simulator prints out a fluid in-place report if the FIP
 option on the RPTSCHED keyword is set equal to three, that is: FIP=3.
@@ -79978,7 +79915,7 @@ Notes: & & & \\
 
 \emph{Table 9.5: FIPNUM Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 In most simulation models the FIPNUM array is used to define various
 regions in the model for fluid in-place reporting and to identify (or
@@ -81621,7 +81558,7 @@ Notes: & & & \\
 
 \emph{Table 9.17: PVTNUM Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Care should be taken that cells in different PVTNUM regions are not in
 communication, since the fluid properties are associated with a cell. If
@@ -82102,7 +82039,7 @@ Notes: & & & \\
 This keyword is not supported by OPM Flow but has no effect on the
 results so it will be ignored.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This keyword has the potential to produce very large print files that
 some text editors may have difficulty loading, coupled with the fact
@@ -84228,7 +84165,7 @@ Notes: & & & \\
 
 \emph{Table 10.6: AQANCONL Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If the AQANCONL keyword has been utilized in the run deck then OPM Flow
 will write the AQUIFERA array to the *.INIT file in order to visualize
@@ -84641,7 +84578,7 @@ Notes: & & & \\
 Note this keyword should only be used in equilibration and enumerated
 initialize runs, that is it should be omitted from RESTART runs.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If the model is unstable then this may be due to an aquifer not being in
 equilibrium with the connecting reservoir blocks, for example the
@@ -84803,7 +84740,7 @@ Notes: & & & \\
 Note this keyword should only be used in equilibration and enumerated
 initialize runs, that is it should be omitted from RESTART runs.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If the model is unstable then this may be due to an aquifer not being in
 equilibrium with the connecting reservoir blocks, for example if the
@@ -85094,7 +85031,7 @@ that defines the boundary condition connections and the
 \hyperref[REF_HEADING_KEYWORD_BCPROP]{BCPROP} keyword in the SCHEDULE
 section that defines the boundary condition properties.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword and will therefore cause an error
 in the commercial simulator.
@@ -85895,7 +85832,7 @@ Notes: & & & \\
 
 \emph{Table 10.14: EQUIL Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 A common method to initialize a model is by using the SWATINIT property
 array to set the initial water saturation for each cell in the model.
@@ -88302,7 +88239,7 @@ Notes: & & & \\
 
 \emph{Table 10.27: Data Sets Automatically Written to the RESTART File}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Currently, OPM Flow distinguishes between those arrays which are
 required for restarting a run and those which are ``merely'' for
@@ -88481,7 +88418,7 @@ Notes: & & & \\
 
 \emph{Table 10.3.80.1: RPTSOL Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Except for non-array like data, FIP etc., this keyword has the potential
 to produce very large print files that some text editors may have
@@ -88812,7 +88749,7 @@ Notes: & & & \\
 See also the PBUB, PDEW, PRESSURE, RS, SGAS, SOIL and SWAT keywords to
 fully define the initial state of the model.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's Dissolved Gas
 in Water Model that is activated by declaring that dissolved gas in
@@ -88953,7 +88890,7 @@ Notes: & & & \\
 See also the RTEMP keyword in the PROPS section for an alternative way
 to define a uniform initial reservoir temperature.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The keyword is documented here in the SOLUTION section, the same as the
 commercial simulator, but it can also be used in the PROPS section by
@@ -89284,7 +89221,7 @@ Notes: & & & \\
 See also the PBUB, PDEW, PRESSURE, RV, SGAS, SOIL and SWAT keywords to
 fully define the initial state of the model.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's Water
 Vaporization Model that is activated by declaring that vaporized water
@@ -89396,7 +89333,7 @@ to initialize the model via enumeration is being employed.
 
 See also the EQUIL keywords in the SOLUTION section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's Water
 Vaporization Model that is activated by declaring that vaporized water
@@ -89620,7 +89557,7 @@ Notes: & & & \\
 See also the PBUB, PDEW, PRESSURE, RS, RV, SGAS, SOIL and SWAT keywords
 to fully define the initial state of the model.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's Salt
 Precipitation Model that is activated by the PRECSALT keyword and
@@ -89732,7 +89669,7 @@ the PRECSALT keyword in the RUNSPEC section. The keyword defines the
 initial deposited salt as a volume fraction (Ss), that is solid salt
 saturation.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's Salt
 Precipitation Model that is activated by the PRECSALT keyword and
@@ -90034,7 +89971,7 @@ Notes: & & & \\
 
 \emph{Table 10.40: SALTVD Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is the initial salt concentration contained within the water phase,
 see the SALTPVD keyword in the SOLUTION section that defines the initial
@@ -90198,7 +90135,7 @@ fraction for all grid cells in the model. The keyword should only be
 used if either the \hyperref[REF_HEADING_KEYWORD_BIOFILM]{BIOFILM} or
 MICP model has been activated in the RUNSPEC section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword.
 
@@ -90296,7 +90233,7 @@ The SCALC keyword defines the initial equilibration calcite volume
 fraction for all grid cells in the model. The keyword should only be
 used if the MICP model has been activated in the RUNSPEC section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword.
 
@@ -90754,7 +90691,7 @@ only be used if either the
 \hyperref[REF_HEADING_KEYWORD_BIOFILM]{BIOFILM} or MICP model has been
 activated in the RUNSPEC section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword.
 
@@ -91235,7 +91172,7 @@ The SOXYG keyword defines the initial equilibration oxygen concentration
 values for all grid cells in the model. The keyword should only be used
 if the MICP model has been activated in the RUNSPEC section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword.
 
@@ -91437,7 +91374,7 @@ initial state of the model.
 This keyword should only be used if the POLYMER and POLYMW keywords in
 the RUNSPEC section are also activated.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword that employs an alternative polymer
 flood model based on a Polymer Molecular Weight Transport equation, that
@@ -91641,7 +91578,7 @@ The SUREA keyword defines the initial equilibration urea concentration
 values for all grid cells in the model. The keyword should only be used
 if the MICP model has been activated in the RUNSPEC section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword.
 
@@ -92000,7 +91937,7 @@ maximum number of tracers for each phase, the TRACER keyword in the
 PROPS section to define the tracer, and the WTRACER keyword in the
 SCHEDULE section that defines the wells injecting the tracer.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Currently, one cannot initialize tracers using the EQUALS keyword.
 Instead use the array format, that is the keyword followed by the
@@ -92404,7 +92341,7 @@ See also the MULTREGT keyword in the GRID section that uses the
 transmissibility between the MULTNUM, FLUXNUM or OPERNUM region arrays
 to control the flow between various regions within the model.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Care should be taken that cells in different EQLNUM regions are not in
 communication, as this will result in an unstable initial equilibration.
@@ -97012,7 +96949,7 @@ Notes: & & \\
 \emph{Table 11.31: Simulator Performance Summary Variables (Numerical
 Performance)}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If the summary vector data is unavailable then zeros are written at each
 time step to the SUMMARY and RSM file.
@@ -97732,7 +97669,7 @@ normally ``included'' from an external source, typically the production
 data base, and may have to be edited to ensure that the correct
 connections/completions are opened and shut at the appropriate time.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The term well connection is used to describe individual connections from
 the wellbore to a reservoir grid cell, as opposed to a well completion.
@@ -97763,7 +97700,7 @@ read the TUNING keyword if the appropriate command line parameter has
 been activated (see section 2.2 Running OPM Flow 2023-04 From The
 Command Line).
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 When the DATES, TIME, and TSTEP keywords are used to advance the
 simulation through time, this ``new'' time step is known as a ``report
@@ -99359,7 +99296,7 @@ Flow. UDQ variables can be constants, SUMMARY variables, as defined in
 the SUMMARY section, or a formula using various mathematical functions
 together with constants and SUMMARY variables.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Within an ACTIONW Definition Section any UDQ variables utilizing well
 variables, must have their associated wells previously fully defined in
@@ -99789,7 +99726,7 @@ Flow. UDQ variables can be constants, SUMMARY variables, as defined in
 the SUMMARY section, or a formula using various mathematical functions
 together with constants and SUMMARY variables.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Within an ACTIONX Definition Section any UDQ variables utilizing group
 and well variables, must have their associated groups and wells
@@ -100116,7 +100053,7 @@ the reservoir pressure and production history. For example, when the
 average reservoir pressure remains constant throughout the production
 period due to water influx, or gas migration from an external source.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword and will therefore cause an error
 in the commercial simulator.
@@ -100817,7 +100754,7 @@ COMPLUMP keyword groups well connections together to form well
 completions for a well. All the aforementioned keywords are described in
 the SCHEDULE section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The term well connection is used to describe individual connections from
 the wellbore to the reservoir grid, as opposed to well completions. A
@@ -101016,7 +100953,7 @@ COMPLUMP keyword groups well connections together to form well
 completions for a well. All the aforementioned keywords are described in
 the SCHEDULE section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The term well connection is used to describe individual connections from
 the wellbore to the reservoir grid, as opposed to well completions. A
@@ -101824,7 +101761,7 @@ Notes: & & & \\
 
 See also the COMPDAT keyword in the SCHEDULE section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If visual inspection of the well trajectories in the model indicate
 problematic or unrealistic well connections, the options on this keyword
@@ -102434,7 +102371,7 @@ the WELTRAJ keyword, and WELTRAJ defined wells must use the COMPTRAJ
 keyword to define the connections to the grid, that is one cannot use
 COMPDAT for these type of wells.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword and will therefore cause an error
 in the commercial simulator.
@@ -102540,7 +102477,7 @@ connections are no longer required to be re-calculated for each ensemble
 case. In addition, quality control of the model is improved by using
 consistent perforation data in both the static and dynamic models.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The term well connection is used to describe individual connections from
 the wellbore to the reservoir grid, as opposed to well completions. A
@@ -103733,7 +103670,7 @@ Convective mixing influenced by the capillary transition zone.
 Computational Geosciences, 18(3-4), 417-431{]} also state that 0.04 is a
 reasonable value for CHI for the Utsira formation.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 In the commercial simulator a constant or regional value for DRSDT can
 be given as an input parameter. This can be used to include the effect
@@ -104533,7 +104470,7 @@ code. The ACTION facility allows the user to enter computational logic
 to the simulation run based on the how the simulation run is proceeding
 -- see the ACTIONX keyword in the SCHEDULE section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's ACTION facility
 and will therefore cause an error if used in the commercial simulator.
@@ -106483,7 +106420,7 @@ rate calculated by:
 \begin{matrix}\text{Group Gas Injection Rate} = \text{Group Gas Injection Rate} \times  \text{Group Re-Injection Fraction} \\  + \text{Total Group Gas Import Rate} \\  - \text{Total Group Gas Consumption}\end{matrix}
 }\end{equation}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 In oil fields with no gas compression typical values of fuel gas range
 from three to five percent.
@@ -109040,7 +108977,7 @@ production rates and the group hierarchy, respectively. For
 non-satellite groups see the GCONINJE and GCONPROD keywords. All the
 aforementioned keywords are in the SCHEDULE section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Once a group has been defined to be a satellite group, via the GSATINJE
 and GSATPROD keywords, then the equivalent modeled group keywords,
@@ -109266,7 +109203,7 @@ injection rates and the group hierarchy, respectively. For non-satellite
 groups see the GCONINJE and GCONPROD keywords. All the aforementioned
 keywords are in the SCHEDULE section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Once a group has been defined to be a satellite group, via the GSATINJE
 and GSATPROD keywords, then the equivalent modeled group keywords,
@@ -109852,7 +109789,7 @@ guide rates will be calculated using the well's potential rates. The
 WGRUPCON keyword in the SCHEDULE section can be used to set a constant
 potential guide rate for a well.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 GUIDERAT can be used to penalize wells producing excessive water by
 utilizing the C and D coefficients in equation (12.28), and to
@@ -112862,7 +112799,7 @@ allows the user to implement complex functionality and the
 implementation was new for the 2020-04 release. Users should therefore
 use caution when using this facility.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword for the simulator's scripting
 facility using the standard Python interpreter, as such it gives more
@@ -113894,7 +113831,7 @@ Development is current progressing on developing reports in a similar
 format to the commercial simulator and this section will be updated as
 additional reports are added to OPM Flow's functionality.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Unlike the other reporting keywords in the RUNSPEC, GRID, EDIT, PROPS
 and SOLUTION keywords, the requested reports on the this keyword remain
@@ -113916,7 +113853,7 @@ first two regions from the Norne field.
 \pandocbounded{\includegraphics[keepaspectratio]{chapters/images/Frame72_6cf6993cfc73.png}}
 \pandocbounded{\includegraphics[keepaspectratio]{chapters/images/Image65_6cf6993cfc73.png}}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Note that the ``PORV'' quantity in the FIP (Balance) Report, as shown in
 Figure 12.6, is reported at reference conditions, meaning there is no
@@ -116479,7 +116416,7 @@ See also the UDADIMS, UDQDIMS and UDQPARAM keywords in the RUNSPEC
 section to define the dimensions for the UDQ keyword and associated
 variables.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Wells and/or groups needed in a UDQ DEFINE statement must be present at
 the point of definition. In particular, wells must have been introduced
@@ -116545,7 +116482,7 @@ Notes: & & & & & \\
 
 \emph{Table 12.72: UDQ - User Defined Argument Supported Keywords}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Note that after the terminating ``/'' for the ASSIGN operator normally
 any comments can be entered; however, if there is ``/'' within the
@@ -117173,7 +117110,7 @@ Notes: & & & \\
 
 \emph{Table 12.73: VFPCHK Keyword Description}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 One reason for external programs generating crossing VFP curves is that
 the curves have been generated with too much resolution. For example, if
@@ -117405,7 +117342,7 @@ VFPINJ
 The example shows the first two and the last two records of the fourth
 kind, as the data is too voluminous to be included.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The VFPTAB variable defines the table number of the VFPINJ data set; if
 more then one VFPINJ keyword is entered with the same VFPTAB number then
@@ -117631,7 +117568,7 @@ Note that for equivalent two phase runs:
 - Gas-water models with only the GAS and WATER keywords in the RUNSPEC section, or models that only have dry gas [Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.] with a constant condensate-gas ratio defined by the RVCONST keyword in the PROPS section, then the FLO parameter in Table 12.75 must be set to GAS, WFR to WGR, and GFR to OGR.
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 It is possible to have only the OIL and WATER keywords in the RUNSPEC
 section and to use gas lift for the wells, without declaring the GAS
@@ -118403,7 +118340,7 @@ and injection targets and constraints, and the WCONPROD keyword to
 define a production well's targets and constraints. All the
 aforementioned keywords are described in the SCHEDULE section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 One can use TARGET set to RESV in the initial history matching runs to
 get a ``reasonable'' pressure match, this ensures that the total
@@ -120425,7 +120362,7 @@ See also the GEFAC keyword in the SCHEDULE section to set the efficiency
 at the group level, as opposed to applying the efficiency to individual
 wells.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 One can also apply plant efficiencies through the GEFAC keyword in the
 SCHEDULE section. If all the wells in a group are flowing through a
@@ -120773,7 +120710,7 @@ The keyword should only be used if the CO2STORE and GASWAT keywords in
 the RUNSPEC section have also be activated for the gas-water two
 component model.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow keyword used with OPM Flow's CO2STORE and GASWAT
 keywords in the RUNSPEC section, and should not be confused with the
@@ -121402,7 +121339,7 @@ via the COMPDAT keyword, are re-scaled to match the required
 productivity and injectivity index. See section Well Productivity on
 well productivity for further information on well productivity.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 One should not modify the productivity and injectivity index of gas
 wells that use:
@@ -122530,7 +122467,7 @@ defined the general well specification parameters using the WELSPECS
 keyword in the SCHEDULE section. In this case, the wellhead location
 parameters, WELSPECS(I, J), should be defaulted with 1*.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword and will therefore cause an error
 in the commercial simulator.
@@ -123982,7 +123919,7 @@ The keyword should only be used if the CO2STORE and GASWAT keywords in
 the RUNSPEC section have also be activated for the gas-water two
 component model.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow keyword used with OPM Flow's CO2STORE and GASWAT
 keywords in the RUNSPEC section, and should not be confused with the
@@ -124243,7 +124180,7 @@ since the scaling is performed on the connection fluid mobility values,
 then the reported connection transmissibilities in the print file etc.
 remain unchanged.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 If all the connection parameters (I, J, K) are defaulted, or OPTION is
 set equal to WREV, then the multiplier is applied to all connections in
@@ -125153,7 +125090,7 @@ description of the model.
 Note the keyword should only be used for wells declared as water
 injection wells via the WCONINJE keyword in the SCHEDULE section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword.
 
@@ -125658,7 +125595,7 @@ to define a well's connections, and the WPAVE for defining how the
 average bottom-hole pressure should be calculated. All the
 aforementioned keywords are described in the SCHEDULE section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The keyword is normally used to reset a well's bottom-hole pressure
 depth to match the pressure gauge depth for when observed pressure is
@@ -126255,7 +126192,7 @@ keywords in the RUNSPEC section are also activated. The keyword assigns
 the PLYMWINJ tables that are defined via the PLYMWINJ keyword in the
 PROPS section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword that employs an alternative polymer
 flood model based on a Polymer Molecular Weight Transport equation, that
@@ -129272,7 +129209,7 @@ tables, that are defined via the SKPRPOLY keyword in the PROPS section,
 that are used to calculable the wellbore skin pressure during polymer
 injection.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 This is an OPM Flow specific keyword that employs an alternative polymer
 flood model based on a Polymer Molecular Weight Transport equation, that
@@ -136464,7 +136401,7 @@ Queue files allow for various jobs to be load efficiently, especially
 for ensemble and sensitivity cases and may contain a large number of
 cases.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 When running under Windows 10 the Job names will follow the Windows 10
 file naming convention and OPMRUN automatically handles the file names
@@ -136898,7 +136835,7 @@ A sample of the generated output file is shown in Figure C.37.
 \pandocbounded{\includegraphics[keepaspectratio]{appendices/images/Frame110_e1ad4ec6e910.png}}
 \pandocbounded{\includegraphics[keepaspectratio]{appendices/images/Image105_e1ad4ec6e910.png}}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Note the current release only support production data via the WCONHIST
 keyword, injection data via WCONINJH keyword is not supported.
@@ -137057,7 +136994,7 @@ underlying C++ implementation, and to get a deeper understanding of what
 is possible and how to achieve specialized tasks one might need to
 consult the simulator's C++ code.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Observe that the Python bindings described here are not very mature. The
 API might change in future releases. It is in general quite simple to
@@ -140586,7 +140523,7 @@ integer value that declares the unit system for the file. Note that
 Cells colored red in the No.~column indicate that this item is either
 ``Not Used'' or ``Undefined''.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 Under the No.~column in Table A.5 the count base is one (offset one), as
 per FORTRAN; however, in C++ the base is zero (offset zero) and
@@ -141579,7 +141516,7 @@ This keyword type is repeated for each LGR in the model with the last
 LGR data set terminated by the LGRSGONE keyword to mark the end of the
 LGR input.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The LGR, LGRHEADI, LGRHEADQ, and LGRHEADD always proceed LGR data sets
 and the ENDLGR keyword terminates the end of a data section of LGR data.
@@ -142213,7 +142150,7 @@ by the pertinent data and in the order outlined in Table A.13 and with
 the last LGR data set terminated by the LGRSGONE keyword to mark the end
 of the LGR input section.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, titlerule=0mm, left=2mm, opacitybacktitle=0.6, toptitle=1mm, leftrule=.75mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colback=white, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacitybacktitle=0.6, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0]
 
 The LGR, LGRHEADI, LGRHEADQ, and LGRHEADD keywords always proceeds and
 LGR data sets and the LGRSGONE keyword terminates the end of the LGR
