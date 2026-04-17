@@ -1,5 +1,8 @@
 /.quarto/
 /_book/
+/chapters/images/
+/appendices/images/
+/images/
 *.aux
 *.log
 *.tex

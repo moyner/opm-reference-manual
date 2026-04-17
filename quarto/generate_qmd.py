@@ -8,6 +8,7 @@ Re-run this script whenever new keyword files are added.
 
 import sys
 import json
+import shutil
 from pathlib import Path
 
 QUARTO_DIR = Path(__file__).resolve().parent
@@ -141,9 +142,7 @@ title: "OPM Flow Reference Manual"
 subtitle: "2025-04"
 ---
 
-::: {.content-visible when-format="html"}
 ![](images/Image46_409be8acca21.png){fig-align="center" width="40%"}
-:::
 
 ## About This Manual
 
@@ -167,9 +166,7 @@ Use the table of contents or the search bar to navigate to specific keywords or 
 Keywords are organized by their input deck section, matching the structure of OPM Flow
 simulation input files.
 
-::: {.callout-note}
-This manual corresponds to **OPM Flow version 2025-04**.
-:::
+> **Note:** This manual corresponds to **OPM Flow version 2025-04**.
 """
 
 
@@ -206,6 +203,8 @@ def generate_quarto_yml() -> str:
     return f"""project:
   type: book
   output-dir: _book
+  pre-render: python3 generate_qmd.py
+from: markdown+fenced_divs
 filters:
   - keyword_link_filter.lua
 
@@ -252,23 +251,19 @@ def main():
     CHAPTERS_DIR.mkdir(parents=True, exist_ok=True)
     APPENDICES_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Create symlinks for image directories so Quarto can resolve image paths
-    ch_images_link = CHAPTERS_DIR / "images"
-    if not ch_images_link.exists():
-        ch_images_link.symlink_to(
-            Path("../../markdown/chapters/images"), target_is_directory=True
-        )
-        print("Created symlink: chapters/images -> ../../markdown/chapters/images")
-    app_images_link = APPENDICES_DIR / "images"
-    if not app_images_link.exists():
-        app_images_link.symlink_to(
-            Path("../../markdown/appendices/images"), target_is_directory=True
-        )
-        print("Created symlink: appendices/images -> ../../markdown/appendices/images")
-    root_images_link = QUARTO_DIR / "images"
-    if not root_images_link.exists():
-        root_images_link.symlink_to(Path("../markdown/images"), target_is_directory=True)
-        print("Created symlink: images -> ../markdown/images")
+    # Copy image directories so builds also work on platforms without symlink support.
+    image_dirs = [
+        (MARKDOWN_DIR / "chapters" / "images", CHAPTERS_DIR / "images"),
+        (MARKDOWN_DIR / "appendices" / "images", APPENDICES_DIR / "images"),
+        (MARKDOWN_DIR / "images", QUARTO_DIR / "images"),
+    ]
+    for src, dst in image_dirs:
+        if dst.is_symlink() or dst.is_file():
+            dst.unlink()
+        elif dst.is_dir():
+            shutil.rmtree(dst)
+        shutil.copytree(src, dst)
+        print(f"Copied {src.relative_to(QUARTO_DIR.parent)} -> {dst.relative_to(QUARTO_DIR)}")
 
     # Generate keyword map for Quarto link rewriting filter
     keyword_map_path = QUARTO_DIR / "keyword_map.json"

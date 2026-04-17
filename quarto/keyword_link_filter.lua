@@ -1,7 +1,8 @@
 local input_file = (PANDOC_STATE.input_files and PANDOC_STATE.input_files[1]) or ""
-local quarto_dir = input_file:match("^(.*)/chapters/[^/]+%.qmd$")
-  or input_file:match("^(.*)/appendices/[^/]+%.qmd$")
-  or input_file:match("^(.*)/index%.qmd$")
+local normalized_input_file = input_file:gsub("\\", "/")
+local quarto_dir = normalized_input_file:match("^(.*)/chapters/[^/]+%.qmd$")
+  or normalized_input_file:match("^(.*)/appendices/[^/]+%.qmd$")
+  or normalized_input_file:match("^(.*)/index%.qmd$")
   or "."
 
 local function read_keyword_map()
@@ -41,16 +42,13 @@ local location_headers = {
 }
 
 local current_dir = ""
-local current_slug = ""
 
 do
-  local dir, file = input_file:match(".*/([^/]+)/([^/]+)%.qmd$")
-  if dir and file then
+  local dir = normalized_input_file:match(".*/([^/]+)/[^/]+%.qmd$")
+  if dir then
     current_dir = dir
-    current_slug = file
-  elseif input_file:match("index%.qmd$") then
+  elseif normalized_input_file:match("index%.qmd$") then
     current_dir = ""
-    current_slug = "index"
   end
 end
 
