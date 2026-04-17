@@ -56,7 +56,7 @@ This is followed by the Linear phase where the finger speed is assumed to be rel
 
 
 $$
-{F}_{\mathit{lin}} = χ\left(\frac{{R}_{s,\mathit{sat}}{K}_{z}\mathrm{Δ}{ρ}_{c}g}{{μ}_{o}{S}_{o} {D}_{z}ϕ}\right)
+{F}_{\mathit{lin}} = χ(\frac{{R}_{s,\mathit{sat}}{K}_{z}\mathrm{Δ}{ρ}_{c}g}{{μ}_{o}{S}_{o} {D}_{z}ϕ})
 $$ {#eq-12-3-53-2}
 
 Where:

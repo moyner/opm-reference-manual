@@ -61,21 +61,21 @@ And substituting equation (8.85) and (8.86) into (8.87) we obtain
 
 
 $$
-E = \left(\frac{{P}_{i}}{{P}_{\mathit{sc}}}\right) \left(\frac{{T}_{\mathit{sc}}}{{T}_{i}}\right) \left(\frac{1}{{Z}_{i}}\right)
+E = (\frac{{P}_{i}}{{P}_{\mathit{sc}}}) (\frac{{T}_{\mathit{sc}}}{{T}_{i}}) (\frac{1}{{Z}_{i}})
 $$ {#eq-8-88}
 
 Incorporating standard pressure and temperature values gives in SI units:
 
 
 $$
-E = \left(\frac{{P}_{i}}{101.325}\right) \left(\frac{273.15 + 15}{{T}_{i}}\right) \left(\frac{1}{{Z}_{i}}\right) = 2.84 \left(\frac{{P}_{i}}{{Z}_{i}{T}_{i}}\right)
+E = (\frac{{P}_{i}}{101.325}) (\frac{273.15 + 15}{{T}_{i}}) (\frac{1}{{Z}_{i}}) = 2.84 (\frac{{P}_{i}}{{Z}_{i}{T}_{i}})
 $$ {#eq-8-89}
 
 or in field units:
 
 
 $$
-E = \left(\frac{{P}_{i}}{14.7}\right) \left(\frac{460 + 60}{{T}_{i}}\right) \left(\frac{1}{{Z}_{i}}\right) = 35.37 \left(\frac{{P}_{i}}{{Z}_{i}{T}_{i}}\right)
+E = (\frac{{P}_{i}}{14.7}) (\frac{460 + 60}{{T}_{i}}) (\frac{1}{{Z}_{i}}) = 35.37 (\frac{{P}_{i}}{{Z}_{i}{T}_{i}})
 $$ {#eq-8-90}
 
 

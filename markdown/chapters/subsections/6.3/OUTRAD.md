@@ -28,14 +28,14 @@ The keyword allows for an alternative method of entering the size of the R direc
 
 
 $$
-\frac{{R}_{i}}{{R}_{i-1}} = \left(\frac{\mathit{OUTRAD}}{{R}_{{i}_{j}-1}}\right){ }^{\frac{1}{\left(\mathit{NX} - {i}_{j} + 1\right)}}
+\frac{{R}_{i}}{{R}_{i-1}} = (\frac{\mathit{OUTRAD}}{{R}_{{i}_{j}-1}}){ }^{\frac{1}{(\mathit{NX} - {i}_{j} + 1)}}
 $$ {#eq-6-12}
 
 or
 
 
 $$
-{R}_{i} = \left({R}_{{i}_{j}-1}\right)\left(\frac{\mathit{OUTRAD}}{{R}_{{i}_{j}-1}}\right){ }^{\frac{\left(i - {i}_{j} +1 \right)}{\left(\mathit{NX} - {i}_{j} + 1\right)}}
+{R}_{i} = ({R}_{{i}_{j}-1})(\frac{\mathit{OUTRAD}}{{R}_{{i}_{j}-1}}){ }^{\frac{(i - {i}_{j} +1 )}{(\mathit{NX} - {i}_{j} + 1)}}
 $$ {#eq-6-13}
 
 and the DR value for the ith cell, that is the value that can also be manually entered on the DR keyword in the GRID section, is given by:

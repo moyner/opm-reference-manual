@@ -20,7 +20,7 @@ This is an OPM Flow specific keyword for the simulator’s Salt Precipitation mo
 | Field | Metric | Laboratory |  |
 | 1 | POROFAC | A real monotonically increasing positive columnar vector that defines the porosity factor ($\frac{ϕ}{{ϕ}_{0}}$) for the corresponding PCFAC vector. In the simulator’s Salt Precipitation model, the maximum value of $ϕ$ is ${ϕ}_{0}$, implying a maximum value of one for POROFAC. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 2 | PCFAC | A real positive monotonically decreasing columnar vector that defines the capillary pressure (${p}_{c}$) multiplier associated with POROFAC and used to scale a grid block's capillary pressure due to the reduction in pore volume caused by salt precipitation.  Where: $\begin{matrix}\mathit{PCFAC} = m\left(\frac{ϕ}{{ϕ}_{0}}\right) \\ \mathit{with} {p}_{c} = m\left(\frac{ϕ}{{ϕ}_{0}}\right){p}_{c0}\end{matrix}$ | None |
+| 2 | PCFAC | A real positive monotonically decreasing columnar vector that defines the capillary pressure (${p}_{c}$) multiplier associated with POROFAC and used to scale a grid block's capillary pressure due to the reduction in pore volume caused by salt precipitation.  Where: $\begin{matrix}\mathit{PCFAC} = m(\frac{ϕ}{{ϕ}_{0}}) \\ \mathit{with} {p}_{c} = m(\frac{ϕ}{{ϕ}_{0}}){p}_{c0}\end{matrix}$ | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
 
@@ -38,7 +38,7 @@ The capillary pressure factor data can be estimated from the permeability and po
 
 
 $$
-\frac{{p}_{c}}{{p}_{c0}} = {\left(\frac{ϕ}{{ϕ}_{0}}\frac{{k}_{0}}{k}\right)}^{\frac{1}{2}}
+\frac{{p}_{c}}{{p}_{c0}} = {(\frac{ϕ}{{ϕ}_{0}}\frac{{k}_{0}}{k})}^{\frac{1}{2}}
 $$ {#eq-8-3-199-2}
 
 Where:

@@ -30,7 +30,7 @@ The gas mobility reduction as a function of surfactant concentration is of the f
 
 
 $$
-{F}_{s} = {\left(\frac{{C}_{s}}{{C}_{s}^{r}}\right)}^{{e}_{s}}
+{F}_{s} = {(\frac{{C}_{s}}{{C}_{s}^{r}})}^{{e}_{s}}
 $$ {#eq-8-51}
 
 Where:
@@ -54,7 +54,7 @@ The functional form of the reduction in gas mobility factor (Mrf) is:
 
 
 $$
-{M}_{\mathit{rf}} = \frac{1}{1 + \left({M}_{r} \times  {F}_{s} \times  {F}_{w} \times  {F}_{o} \times  {F}_{c}\right)}
+{M}_{\mathit{rf}} = \frac{1}{1 + ({M}_{r} \times  {F}_{s} \times  {F}_{w} \times  {F}_{o} \times  {F}_{c})}
 $$ {#eq-8-52}
 
 Where:

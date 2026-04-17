@@ -11,7 +11,7 @@ This keyword, TRACERKP, defines the Standard Partitioned Tracer option K(P) tabl
 
 
 $$
-K\left(P\right) = \frac{{C}_{\mathit{gas}}}{{C}_{\mathit{oil}}}
+K(P) = \frac{{C}_{\mathit{gas}}}{{C}_{\mathit{oil}}}
 $$ {#eq-8-93}
 
 Where:

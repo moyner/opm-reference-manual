@@ -28,7 +28,7 @@ For the two point scaling option and for the KRWR water relative permeability ar
 
 
 $$
-{k}_{\mathit{rw}} = {k}_{{\mathit{rw}}_{ \mathit{TABLE}}}\left(\frac{\mathit{KRW}}{{k}_{{\mathit{rw}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)
+{k}_{\mathit{rw}} = {k}_{{\mathit{rw}}_{ \mathit{TABLE}}}(\frac{\mathit{KRW}}{{k}_{{\mathit{rw}}_{ \mathit{TABLE}-\mathit{MAX}}}})
 $$ {#eq-8-63}
 
 Where:

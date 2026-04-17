@@ -28,7 +28,7 @@ For the two point scaling option and for the KRGR gas relative permeability arra
 
 
 $$
-{k}_{\mathit{rg}} = {k}_{{\mathit{rg}}_{ \mathit{TABLE}}}\left(\frac{\mathit{KRG}}{{k}_{{\mathit{rg}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)
+{k}_{\mathit{rg}} = {k}_{{\mathit{rg}}_{ \mathit{TABLE}}}(\frac{\mathit{KRG}}{{k}_{{\mathit{rg}}_{ \mathit{TABLE}-\mathit{MAX}}}})
 $$ {#eq-8-61}
 
 Where:

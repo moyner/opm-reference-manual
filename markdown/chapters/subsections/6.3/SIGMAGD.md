@@ -11,7 +11,7 @@ The SIGMAGD keyword defines the dual porosity matrix to fracture transmissibilit
 
 
 $$
-\mathrm{σ} = 4\left(\frac{1}{{{l}_{x}}^{2}} +\frac{1}{{{l}_{y}}^{2}} +\frac{1}{{{l}_{z}}^{2}} \right)
+\mathrm{σ} = 4(\frac{1}{{{l}_{x}}^{2}} +\frac{1}{{{l}_{y}}^{2}} +\frac{1}{{{l}_{z}}^{2}} )
 $$ {#eq-6-16}
 
 Where lx, ly and lz are not the grid block dimensions in the model in the respective directions, but the dimensions of the blocks of the matrix material. In practice,  σ is used as a tuning parameter in dual porosity runs to match reservoir and well performance.

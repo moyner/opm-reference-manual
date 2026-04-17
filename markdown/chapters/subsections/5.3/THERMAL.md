@@ -78,10 +78,10 @@ with
 
 
 $$
-{W}_{i} = {\sum }_{p}^{N}\left({{ρ}^{r}}_{\mathit{pi}}\right) \left({{q}^{r}}_{\mathit{pi}}\right) {c}_{p}
+{W}_{i} = {\sum }_{p}^{N}({{ρ}^{r}}_{\mathit{pi}}) ({{q}^{r}}_{\mathit{pi}}) {c}_{p}
 $$ {#eq-5-2}
 
-The term $\left({{ρ}^{r}}_{\mathit{pi}}\right) \left({{q}^{r}}_{\mathit{pi}}\right) {c}_{p}$is the energy rate density (J/(K s)) of phase p,
+The term $({{ρ}^{r}}_{\mathit{pi}}) ({{q}^{r}}_{\mathit{pi}}) {c}_{p}$is the energy rate density (J/(K s)) of phase p,
 
 where:
 
@@ -122,7 +122,7 @@ $$ {#eq-5-4}
 
 where ${P}_{\mathit{pi}}$ is connection grid block pressure of phase p.
 
-The phase rates at surface conditions$\left({{q}^{s}}_{pi}\right)$are converted to reservoir in situ rates$\left({{q}^{r}}_{pi}\right)$using the phase formation volume factor, Bpi, via:
+The phase rates at surface conditions$({{q}^{s}}_{pi})$are converted to reservoir in situ rates$({{q}^{r}}_{pi})$using the phase formation volume factor, Bpi, via:
 
 
 $$
@@ -133,7 +133,7 @@ And thus equation (5.2) can be simplified to:
 
 
 $$
-{W}_{i} = {\sum }_{p}^{N}\left({{ρ}^{r}}_{\mathit{pi}}\right) \left(\frac{{{q}^{s}}_{\mathit{pi}} {e}_{\mathit{pi}}}{{{B}^{-1}}_{\mathit{pi}} ⋅ {T}_{i}}\right)
+{W}_{i} = {\sum }_{p}^{N}({{ρ}^{r}}_{\mathit{pi}}) (\frac{{{q}^{s}}_{\mathit{pi}} {e}_{\mathit{pi}}}{{{B}^{-1}}_{\mathit{pi}} ⋅ {T}_{i}})
 $$ {#eq-5-6}
 
 

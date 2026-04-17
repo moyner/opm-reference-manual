@@ -36,7 +36,7 @@ Thermodynamically, the Joule–Thomson coefficient is defined as the isenthalpic
 
 
 $$
-\mathrm{η} = \left(\frac{\partial T}{\partial P}\right)
+\mathrm{η} = (\frac{\partial T}{\partial P})
 $$ {#eq-8-53}
 
 
@@ -44,7 +44,7 @@ One can also express enthalpy changes in terms of pressure, temperature and volu
 
 
 $$
-\mathrm{η} = \frac{{\mathit{RT}}^{2}}{{\mathit{Pc}}_{p}}{\left(\frac{\partial Z}{\partial T}\right)}_{P}
+\mathrm{η} = \frac{{\mathit{RT}}^{2}}{{\mathit{Pc}}_{p}}{(\frac{\partial Z}{\partial T})}_{P}
 $$ {#eq-8-54}
 
 Where:

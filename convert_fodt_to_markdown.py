@@ -271,8 +271,10 @@ def mathml_to_latex(elem):
                 rest_text = "".join(mathml_to_latex(c) for c in children[1:])
                 if r"\begin{matrix}" in rest_text:
                     # Replace \begin{matrix}...\end{matrix} with cases env
+                    # and strip any leading \{ that was added
                     rest_text = rest_text.replace(r"\begin{matrix}", r"\begin{cases}")
                     rest_text = rest_text.replace(r"\end{matrix}", r"\end{cases}")
+                    rest_text = rest_text.replace(r"\{", "").replace(r"\}", "")
                     return rest_text
         return "".join(mathml_to_latex(c) for c in elem)
 
@@ -294,15 +296,12 @@ def mathml_to_latex(elem):
         fence = elem.get("fence", "false")
         stretchy = elem.get("stretchy", "false")
         if fence == "true" and stretchy == "true":
-            form = elem.get("form", "")
-            if text in ("(", "[", "|"):
-                result = r"\left" + text
-            elif text == "{":
-                result = r"\left\{"
-            elif text in (")", "]", "|"):
-                result = r"\right" + text
+            # Map special delimiters but don't use \left/\right (causes
+            # balancing issues with LibreOffice MathML output)
+            if text == "{":
+                result = r"\{"
             elif text == "}":
-                result = r"\right\}"
+                result = r"\}"
         return result
 
     elif tag == "mfrac":
@@ -441,6 +440,38 @@ def mathml_to_latex(elem):
         return "".join(parts)
 
 
+def balance_left_right(latex: str) -> str:
+    """Balance unmatched \\left and \\right delimiters in a LaTeX string.
+
+    Inserts \\right. for unmatched \\left... and \\left. for unmatched \\right...
+    """
+    import re
+    # Pattern to find \left or \right followed by a delimiter
+    token_re = re.compile(r'\\(left|right)(\\[|{}]|[^\\\s]|\\.)?')
+    tokens = list(token_re.finditer(latex))
+
+    # Count unmatched lefts
+    depth = 0
+    for m in tokens:
+        if m.group(1) == 'left':
+            depth += 1
+        else:
+            depth -= 1
+            if depth < 0:
+                # Unmatched right — prepend \left.
+                insert_pos = m.start()
+                latex = latex[:insert_pos] + r'\left.' + latex[insert_pos:]
+                depth = 0
+                # Re-run after modification
+                return balance_left_right(latex)
+
+    # Append \right. for each unmatched \left
+    if depth > 0:
+        latex = latex + r'\right.' * depth
+
+    return latex
+
+
 def extract_frame(frame_elem):
     """Extract content from a draw:frame element (images or objects).
 
@@ -453,6 +484,7 @@ def extract_frame(frame_elem):
             math_elem = obj.find(f'{{{NS["math"]}}}math')
             if math_elem is not None:
                 latex = mathml_to_latex(math_elem)
+                latex = balance_left_right(latex)
                 return f"${latex}$"
     # Fall back to image placeholder
     for image in frame_elem.iter(f'{{{NS["draw"]}}}image'):
@@ -616,6 +648,7 @@ class FODTConverter:
         math_elem = self._get_sole_math_frame(elem)
         if math_elem is not None:
             latex = mathml_to_latex(math_elem)
+            latex = balance_left_right(latex)
             return f"$$\n{latex}\n$$\n"
 
         # --- Case 2: paragraph contains any math frames (inline or mixed) ---
@@ -956,6 +989,10 @@ class FODTConverter:
 
         # Remove placeholder image markers that weren't properly handled
         text = re.sub(r"<<IMAGE:base64:[^>]+>>", "", text)
+
+        # Remove non-printable ASCII control characters (except tab, newline, CR)
+        # \x7f is DEL, \x00-\x08 and \x0b-\x0c and \x0e-\x1f are control chars
+        text = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]", "", text)
 
         # Collapse multiple blank lines to max 2
         text = re.sub(r"\n{4,}", "\n\n\n", text)

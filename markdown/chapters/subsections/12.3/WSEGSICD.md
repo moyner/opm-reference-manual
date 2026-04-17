@@ -51,7 +51,7 @@ The equations used to calculate the pressure drop across the ICD are given below
 
 
 $$
-\mathrm{Δ}P = {\left(\frac{{\mathrm{ρ}}_{\mathit{calibrated}}}{{\mathrm{ρ}}_{\mathit{mixture}}}⋅\frac{{\mathrm{μ}}_{\mathit{mixture}}}{{\mathrm{μ}}_{\mathit{calibrated}}}\right)}^{\frac{1}{4}}⋅ \frac{{\mathrm{ρ}}_{\mathit{mixture}}}{{\mathrm{ρ}}_{\mathit{calibrated}}} ⋅ \mathrm{β} ⋅ {q}^{2}
+\mathrm{Δ}P = {(\frac{{\mathrm{ρ}}_{\mathit{calibrated}}}{{\mathrm{ρ}}_{\mathit{mixture}}}⋅\frac{{\mathrm{μ}}_{\mathit{mixture}}}{{\mathrm{μ}}_{\mathit{calibrated}}})}^{\frac{1}{4}}⋅ \frac{{\mathrm{ρ}}_{\mathit{mixture}}}{{\mathrm{ρ}}_{\mathit{calibrated}}} ⋅ \mathrm{β} ⋅ {q}^{2}
 $$ {#eq-12-39}
 
 Where:
@@ -62,7 +62,7 @@ Where:
 
 
 $$
-{\mathrm{ρ}}_{\mathit{mixture}} = \left({\mathrm{α}}_{\mathit{oil}} ⋅ {\mathrm{ρ}}_{\mathit{oil}}\right) + \left({\mathrm{α}}_{\mathit{wat}} ⋅ {\mathrm{ρ}}_{\mathit{wat}}\right) + \left({\mathrm{α}}_{\mathit{gas}} ⋅ {\mathrm{ρ}}_{\mathit{gas}}\right)
+{\mathrm{ρ}}_{\mathit{mixture}} = ({\mathrm{α}}_{\mathit{oil}} ⋅ {\mathrm{ρ}}_{\mathit{oil}}) + ({\mathrm{α}}_{\mathit{wat}} ⋅ {\mathrm{ρ}}_{\mathit{wat}}) + ({\mathrm{α}}_{\mathit{gas}} ⋅ {\mathrm{ρ}}_{\mathit{gas}})
 $$ {#eq-12-40}
 
 
@@ -74,7 +74,7 @@ $$ {#eq-12-40}
 
 
 $$
-{\mathrm{μ}}_{\mathit{mixture}} = \left({\mathrm{α}}_{\mathit{oil}} + {\mathrm{α}}_{\mathit{wat}}\right) ⋅ {\mathrm{μ}}_{\mathit{emulsion}} + \left({\mathrm{α}}_{\mathit{gas}} ⋅ {\mathrm{μ}}_{\mathit{gas}}\right)
+{\mathrm{μ}}_{\mathit{mixture}} = ({\mathrm{α}}_{\mathit{oil}} + {\mathrm{α}}_{\mathit{wat}}) ⋅ {\mathrm{μ}}_{\mathit{emulsion}} + ({\mathrm{α}}_{\mathit{gas}} ⋅ {\mathrm{μ}}_{\mathit{gas}})
 $$ {#eq-12-41}
 
 

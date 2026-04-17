@@ -31,7 +31,7 @@ The methodology for applying the well pressure dependent injectivity multipliers
 
 
 $$
-\begin{matrix}\mathit{Multiplier}= & 1.0 + α \left({P}_{\mathit{WBHP}} - {P}_{\mathit{fracture}}\right) & \text{ for }{P}_{\mathit{WBHP}} > {P}_{\mathit{fracture}} \\ \mathit{Multiplier}= & 1.0 & \text{ for }{P}_{\mathit{WBHP}} < {P}_{\mathit{fracture}}\end{matrix}
+\begin{matrix}\mathit{Multiplier}= & 1.0 + α ({P}_{\mathit{WBHP}} - {P}_{\mathit{fracture}}) & \text{ for }{P}_{\mathit{WBHP}} > {P}_{\mathit{fracture}} \\ \mathit{Multiplier}= & 1.0 & \text{ for }{P}_{\mathit{WBHP}} < {P}_{\mathit{fracture}}\end{matrix}
 $$ {#eq-12-3-296-1}
 
 where:

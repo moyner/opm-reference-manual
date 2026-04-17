@@ -28,7 +28,7 @@ For the two point scaling option and for the IKRGR gas relative permeability arr
 
 
 $$
-{k}_{\mathit{rg}} = {k}_{{\mathit{rg}}_{ \mathit{TABLE}}}\left(\frac{\mathit{IKRG}}{{k}_{{\mathit{rg}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)
+{k}_{\mathit{rg}} = {k}_{{\mathit{rg}}_{ \mathit{TABLE}}}(\frac{\mathit{IKRG}}{{k}_{{\mathit{rg}}_{ \mathit{TABLE}-\mathit{MAX}}}})
 $$ {#eq-8-56}
 
 Where:

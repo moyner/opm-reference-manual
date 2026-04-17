@@ -17,7 +17,7 @@ This keyword must be defined in the OPM Flow input deck.
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | PRESS is a real number defining the rock reference pressure for the other parameters for this data set. | Default |
 | psia 14.7 | barsa 1.0132 | atma 1.0 |  |
-| 2 | RCOMP | RCOMP is a real number defining the rock compressibility (cf) at the rock reference pressure and is defined as: ${c}_{f} = -\frac{1}{V}\left(\frac{\mathit{dV}}{\mathit{dP}}\right)$ | Defined |
+| 2 | RCOMP | RCOMP is a real number defining the rock compressibility (cf) at the rock reference pressure and is defined as: ${c}_{f} = -\frac{1}{V}(\frac{\mathit{dV}}{\mathit{dP}})$ | Defined |
 | 1/psia 0.0 | 1/barsa 0.0 | 1/atma 0.0 |  |
 | Notes: Note, however, that if ROCKOPTS(ROCKOPT3) parameter has been used to set the allocation of the ROCK data via the ROCKNUM array, then the number of ROCK vectors should correspond to the value entered on TABDIMS(NTROCC) in the RUNSPEC section. Similarly, if the ROCKOPTS(ROCKOPT3) has been used to set the assignment of the ROCK data via the SATNUM array, then the number of vectors should correspond to the value entered via the TABDIMS(NTSFUN) parameter, since the tables will be allocated via the SATNUM array. |  |  |  |
 
@@ -28,7 +28,7 @@ The simulator adjusts the pore volume based on the reference pressure (PRESS), t
 
 
 $$
-V({P}_{i}) = V({P}_{r})\left(1 + {c}_{f}\left({P}_{i} - {P}_{r}\right) + \frac{{\left({c}_{f}({P}_{i} - {P}_{r})\right)}^{2}}{2}\right)
+V({P}_{i}) = V({P}_{r})(1 + {c}_{f}({P}_{i} - {P}_{r}) + \frac{{({c}_{f}({P}_{i} - {P}_{r}))}^{2}}{2})
 $$ {#eq-8-91}
 
 where:

@@ -28,7 +28,7 @@ The capillary pressure for a grid block is scaled by:
 
 
 $$
-{P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{PCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)
+{P}_{c} = {P}_{{c}_{\mathit{TABLE}}}(\frac{\mathit{PCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}})
 $$ {#eq-8-70}
 
 Where:

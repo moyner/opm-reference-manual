@@ -13,7 +13,7 @@ MISC defines the transformation between the miscible and immiscible relative per
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | SSOL | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the solvent fraction with respect to the solvent and gas saturation, and is defined by: $\frac{{S}_{s}}{\left({S}_{g} + {S}_{s}\right)}$ Where Sg is the gas saturation and Ss is the solvent saturation. Note that the first entry in the columnar vector should be zero and the last entry should be one to fully define the solvent fraction range. | None |
+| 1 | SSOL | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the solvent fraction with respect to the solvent and gas saturation, and is defined by: $\frac{{S}_{s}}{({S}_{g} + {S}_{s})}$ Where Sg is the gas saturation and Ss is the solvent saturation. Note that the first entry in the columnar vector should be zero and the last entry should be one to fully define the solvent fraction range. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | 2 | MISC | A columnar vector of real equal or increasing down the column values that are greater than or equal to zero and less then one,  that define the corresponding miscibility for the corresponding solvent fraction SSOL. The first entry in the columnar vector should be zero and the last entry should be one to fully define the miscible-immiscible relationship. | None |
 | dimensionless | dimensionless | dimensionless |  |

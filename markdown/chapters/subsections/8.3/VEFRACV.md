@@ -11,7 +11,7 @@ This keyword defines the Vertical Equilibrium (“VE”) relative permeability w
 
 
 $$
-{\mathit{VE}}_{(\mathit{average})} = \left(1.0 - \mathrm{α}\right) \times  \left({\mathit{SATNUM}}_{\mathit{curves}}\right) + \mathrm{α} \times  \left(\mathit{VE}{\mathit{Model}}_{\mathit{curves}}\right)
+{\mathit{VE}}_{(\mathit{average})} = (1.0 - \mathrm{α}) \times  ({\mathit{SATNUM}}_{\mathit{curves}}) + \mathrm{α} \times  (\mathit{VE}{\mathit{Model}}_{\mathit{curves}})
 $$ {#eq-8-97}
 
 

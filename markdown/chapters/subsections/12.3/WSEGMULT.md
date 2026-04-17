@@ -11,7 +11,7 @@ WSEGMULT supplies a set of constants used to modify (or scale) a multi-segment w
 
 
 $$
-\mathit{Frictional} \mathit{Loss} \mathit{Multipler} = \mathit{min}\left({x}_{1} + {x}_{2}{(\mathit{WOR})}^{{x}_{3}} + {x}_{4}{\left(\frac{\mathit{GOR}}{{\mathit{GOR}}_{\mathit{min}}}\right)}^{{x}^{5}}, 1.0\right)
+\mathit{Frictional} \mathit{Loss} \mathit{Multipler} = \mathit{min}({x}_{1} + {x}_{2}{(\mathit{WOR})}^{{x}_{3}} + {x}_{4}{(\frac{\mathit{GOR}}{{\mathit{GOR}}_{\mathit{min}}})}^{{x}^{5}}, 1.0)
 $$ {#eq-12-38}
 
 

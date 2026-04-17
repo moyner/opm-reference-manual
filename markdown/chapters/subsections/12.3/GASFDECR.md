@@ -29,7 +29,7 @@ Here the GASFDECR keyword allows for a reduction in the calculated final pass mo
 
 
 $$
-{Q}_{\mathit{month}} = \left(\mathit{DCQ}\times {\mathit{SWINGFAC}}_{\mathit{month}}\right) - {\mathit{GASFDECR}}_{\mathit{month}}
+{Q}_{\mathit{month}} = (\mathit{DCQ}\times {\mathit{SWINGFAC}}_{\mathit{month}}) - {\mathit{GASFDECR}}_{\mathit{month}}
 $$ {#eq-12-20}
 
 Where:

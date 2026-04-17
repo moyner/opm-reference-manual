@@ -24,7 +24,7 @@ For the two point scaling option and for the KRORW or KRORG oil relative permeab
 
 
 $$
-{k}_{\mathit{ro}} = {k}_{{\mathit{ro}}_{ \mathit{TABLE}}}\left(\frac{\mathit{KRO}}{{k}_{{\mathit{ro}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)
+{k}_{\mathit{ro}} = {k}_{{\mathit{ro}}_{ \mathit{TABLE}}}(\frac{\mathit{KRO}}{{k}_{{\mathit{ro}}_{ \mathit{TABLE}-\mathit{MAX}}}})
 $$ {#eq-8-62}
 
 Where:

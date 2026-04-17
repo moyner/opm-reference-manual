@@ -17,11 +17,11 @@ PVCDO defines the oil PVT properties for dead oil [“Dead” oil is oil that it
 | psia | barsa | atma |  |
 | 2 | OFVF | OFVF is a real positive value defining the oil formation volume factor (Bo) at the reference pressure. | None |
 | rb/stb | rm3/sm3 | rcc/scc |  |
-| 3 | OCOMP | OCOMP is a real positive value defining the oil compressibility (Co) at the oil reference pressure and is defined as: ${C}_{o} = -\frac{1}{{B}_{o}}\left(\frac{{\mathit{dB}}_{o}}{\mathit{dP}}\right)$ | None |
+| 3 | OCOMP | OCOMP is a real positive value defining the oil compressibility (Co) at the oil reference pressure and is defined as: ${C}_{o} = -\frac{1}{{B}_{o}}(\frac{{\mathit{dB}}_{o}}{\mathit{dP}})$ | None |
 | 1/psia | 1/barsa | 1/atma |  |
 | 4 | OVISC | OVISC is a real positive value defining the oil viscosity (µo) at the oil reference pressure. | None |
 | cP | cP | cP |  |
-| 5 | OVISCOMP | OVISCOMP is a real positive value defining the oil viscosibility (µoc) at the oil reference pressure and is defined as: ${μ}_{\mathit{oc}} = \frac{1}{{μ}_{o}}\left(\frac{d{μ}_{o}}{\mathit{dP}}\right)$ | None |
+| 5 | OVISCOMP | OVISCOMP is a real positive value defining the oil viscosibility (µoc) at the oil reference pressure and is defined as: ${μ}_{\mathit{oc}} = \frac{1}{{μ}_{o}}(\frac{d{μ}_{o}}{\mathit{dP}})$ | None |
 | 1/psia | 1/barsa | 1/atma |  |
 | Notes: |  |  |  |
 

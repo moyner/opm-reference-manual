@@ -17,11 +17,11 @@ PVTW defines the water properties for various regions in the model. The number o
 | psia | barsa | atma |  |
 | 2 | WFVF | WFVF is a real number defining the water formation volume factor (Bw) at the water reference pressure. | Defined |
 | rb/stb 1.0 | rm3/sm3 1.0 | rcc/scc 1.0 |  |
-| 3 | WCOMP | WCOMP is a real number defining the water compressibility (Cw) at the water reference pressure and is defined as: ${C}_{w} = -\frac{1}{{B}_{w}}\left(\frac{{\mathit{dB}}_{w}}{\mathit{dP}}\right)$ | Defined |
+| 3 | WCOMP | WCOMP is a real number defining the water compressibility (Cw) at the water reference pressure and is defined as: ${C}_{w} = -\frac{1}{{B}_{w}}(\frac{{\mathit{dB}}_{w}}{\mathit{dP}})$ | Defined |
 | 1/psia 0.00004 | 1/barsa 0.00004 | 1/atma 0.00004 |  |
 | 4 | WVISC | WVISC is a real number defining the water viscosity (µw) at the water reference pressure. | Defined |
 | cP 0.50 | cP 0.50 | cP 0.50 |  |
-| 5 | WVISCOMP | WVISCOMP is a real number defining the water viscosibility (µwc) at the water reference pressure, µwc(Pref) and is defined as: ${\mathrm{μ}}_{\mathit{wc}} = -\frac{1}{{\mathrm{μ}}_{w}}\left(\frac{d{\mathrm{μ}}_{w}}{\mathit{dP}}\right)$ | Defined |
+| 5 | WVISCOMP | WVISCOMP is a real number defining the water viscosibility (µwc) at the water reference pressure, µwc(Pref) and is defined as: ${\mathrm{μ}}_{\mathit{wc}} = -\frac{1}{{\mathrm{μ}}_{w}}(\frac{d{\mathrm{μ}}_{w}}{\mathit{dP}})$ | Defined |
 | 1/psia 0.0 | 1/barsa 0.0 | 1/atma 0.0 |  |
 | Notes: |  |  |  |
 

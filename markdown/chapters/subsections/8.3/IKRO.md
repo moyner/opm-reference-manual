@@ -24,7 +24,7 @@ For the two point scaling option and for the IKRORW or IKRORG oil imbibition rel
 
 
 $$
-{k}_{\mathit{ro}} = {k}_{{\mathit{ro}}_{ \mathit{TABLE}}}\left(\frac{\mathit{IKRO}}{{k}_{{\mathit{ro}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)
+{k}_{\mathit{ro}} = {k}_{{\mathit{ro}}_{ \mathit{TABLE}}}(\frac{\mathit{IKRO}}{{k}_{{\mathit{ro}}_{ \mathit{TABLE}-\mathit{MAX}}}})
 $$ {#eq-8-57}
 
 Where:

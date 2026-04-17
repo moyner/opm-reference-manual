@@ -29,7 +29,7 @@ Here the GASFTARG keyword sets a minimum target rate in the calculated final pas
 
 
 $$
-{Q}_{\mathit{month}} = \mathit{Minimum} \left(\left(\mathit{DCQ}\times {\mathit{SWINGFAC}}_{\mathit{month}}\right), {\mathit{GASFTARG}}_{\mathit{month}}\right)
+{Q}_{\mathit{month}} = \mathit{Minimum} ((\mathit{DCQ}\times {\mathit{SWINGFAC}}_{\mathit{month}}), {\mathit{GASFTARG}}_{\mathit{month}})
 $$ {#eq-12-22}
 
 Where:

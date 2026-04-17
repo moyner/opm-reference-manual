@@ -33,7 +33,7 @@ Here, the THCROCK keyword is used in conjunction with the other thermal conducti
 
 
 $$
-\text{Average Thermal Conductivity}=\frac{\mathit{PORO}\times \left(\mathit{THCOIL}+\mathit{THCGAS}+\mathit{THCWATER}+\mathit{THCSOLID}\right)}{\text{        NUMBER OF PHASES IN THE MODEL}}\times \left(1-\mathit{PORO}\right)\times \mathit{THCROCK}
+\text{Average Thermal Conductivity}=\frac{\mathit{PORO}\times (\mathit{THCOIL}+\mathit{THCGAS}+\mathit{THCWATER}+\mathit{THCSOLID})}{\text{        NUMBER OF PHASES IN THE MODEL}}\times (1-\mathit{PORO})\times \mathit{THCROCK}
 $$ {#eq-6-22}
 
 

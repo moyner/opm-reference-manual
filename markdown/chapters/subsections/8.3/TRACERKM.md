@@ -11,7 +11,7 @@ This keyword, TRACERKM, defines the Multi-Partitioned Tracer option K(P) tables,
 
 
 $$
-{K}_{\mathit{ow}}\left(P\right) = \frac{{C}_{\mathit{oil}}}{{C}_{\mathit{water}}}\text{    and    }{K}_{\mathit{gw}}\left(P\right) = \frac{{C}_{\mathit{gas}}}{{C}_{\mathit{water}}}
+{K}_{\mathit{ow}}(P) = \frac{{C}_{\mathit{oil}}}{{C}_{\mathit{water}}}\text{    and    }{K}_{\mathit{gw}}(P) = \frac{{C}_{\mathit{gas}}}{{C}_{\mathit{water}}}
 $$ {#eq-8-92}
 
 Where:

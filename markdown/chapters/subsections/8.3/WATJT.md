@@ -36,7 +36,7 @@ Thermodynamically, the Joule–Thomson coefficient is defined as the isenthalpic
 
 
 $$
-\mathrm{η} = \left(\frac{\partial T}{\partial P}\right)
+\mathrm{η} = (\frac{\partial T}{\partial P})
 $$ {#eq-8-98}
 
 
@@ -44,14 +44,14 @@ Which can also express as [Pippard, A.B.: Elements of Classical Thermodynamics: 
 
 
 $$
-\mathrm{η} = \left(T\mathrm{α} - 1\right)\frac{1}{(\mathrm{ρ}{C}_{p})} - {\left(\frac{g}{{C}_{p}}\frac{\mathit{dp}}{\mathit{dz}}\right)}^{-1}
+\mathrm{η} = (T\mathrm{α} - 1)\frac{1}{(\mathrm{ρ}{C}_{p})} - {(\frac{g}{{C}_{p}}\frac{\mathit{dp}}{\mathit{dz}})}^{-1}
 $$ {#eq-8-99}
 
 Setting the gravity term, $g$, to zero we have:
 
 
 $$
-\mathrm{η} = \left(T\mathrm{α} - 1\right)\frac{1}{(\mathrm{ρ}{C}_{b})}
+\mathrm{η} = (T\mathrm{α} - 1)\frac{1}{(\mathrm{ρ}{C}_{b})}
 $$ {#eq-8-100}
 
 Where:

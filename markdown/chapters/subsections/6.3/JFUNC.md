@@ -70,7 +70,7 @@ However, in the simulator it is necessary to use the formal definition as outlin
 
 
 $$
-J ({S}_{w}) = \frac{{P}_{c,\mathit{res}}({S}_{w}) \left(\frac{{k}^{\mathrm{β}}}{{φ}^{\mathrm{α}}}\right)}{σ}
+J ({S}_{w}) = \frac{{P}_{c,\mathit{res}}({S}_{w}) (\frac{{k}^{\mathrm{β}}}{{φ}^{\mathrm{α}}})}{σ}
 $$ {#eq-6-7}
 
 Where:

@@ -35,7 +35,7 @@ Thus, THCONSF scales the THCONR values via a multiplier Ω, by:
 
 
 $$
-{\mathrm{Ω}}_{i,j,k} = {\left(1-\text{THCONSF x Gas Saturation}\right)}_{i,j,k}
+{\mathrm{Ω}}_{i,j,k} = {(1-\text{THCONSF x Gas Saturation})}_{i,j,k}
 $$ {#eq-6-21}
 
 

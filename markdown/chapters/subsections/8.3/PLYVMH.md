@@ -54,7 +54,7 @@ Specific viscosity is defined as:
 
 
 $$
-\begin{matrix}{\mathrm{η}}_{\text{sp}} = \frac{\left(\mathrm{η}-{\mathrm{η}}_{s}\right)}{{\mathrm{η}}_{s}} \\   = \frac{\mathrm{η}}{{\mathrm{η}}_{s}} - 1 \\   = {\mathrm{η}}_{\mathit{rel}} - 1\end{matrix}
+\begin{matrix}{\mathrm{η}}_{\text{sp}} = \frac{(\mathrm{η}-{\mathrm{η}}_{s})}{{\mathrm{η}}_{s}} \\   = \frac{\mathrm{η}}{{\mathrm{η}}_{s}} - 1 \\   = {\mathrm{η}}_{\mathit{rel}} - 1\end{matrix}
 $$ {#eq-8-74}
 
 where:
@@ -68,7 +68,7 @@ Reduced Specific Viscosity is given by:
 
 
 $$
-\begin{matrix}{\mathrm{η}}_{\text{red}} = \frac{{\mathrm{η}}_{\text{sp}}}{{C}_{p}} \\   = \frac{\left({\mathrm{η}}_{\mathit{rel}} - 1\right)}{{C}_{p}}\end{matrix}
+\begin{matrix}{\mathrm{η}}_{\text{red}} = \frac{{\mathrm{η}}_{\text{sp}}}{{C}_{p}} \\   = \frac{({\mathrm{η}}_{\mathit{rel}} - 1)}{{C}_{p}}\end{matrix}
 $$ {#eq-8-75}
 
 where:
@@ -82,12 +82,12 @@ Finally, the Intrinsic Velocity, which is defined as a measure for the internal 
 
 
 $$
-\begin{matrix}\left[\mathrm{η}\right] = \underset{{C}_{p}\rightarrow 0}{lim}\frac{{\mathrm{η}}_{\text{sp}}}{{C}_{p}} \\   = \underset{{C}_{p}\rightarrow 0}{lim}\frac{\mathrm{η}-{\mathrm{η}}_{0}}{{\mathrm{η}}_{0}{C}_{p}}\end{matrix}
+\begin{matrix}[\mathrm{η}] = \underset{{C}_{p}\left.\rightarrow 0}{lim}\frac{{\mathrm{η}}_{\text{sp}}}{{C}_{p}} \\   = \underset{{C}_{p}\left.\rightarrow 0}{lim}\frac{\mathrm{η}-{\mathrm{η}}_{0}}{{\mathrm{η}}_{0}{C}_{p}}\end{matrix}
 $$ {#eq-8-76}
 
 where:
 
-$\left[η\right]$	=	is the intrinsic water-polymer viscosity and describes the increase in
+$[η]$	=	is the intrinsic water-polymer viscosity and describes the increase in
 
 viscosity arising from an individual polymer chain and is a measure of the polymers' thickening power,  and
 
@@ -98,7 +98,7 @@ For any given solvent pair, the intrinsic viscosity increases as the molecular w
 
 
 $$
-\left[\mathrm{η}\right] = K ⋅ {{M}_{w}}^{a}
+[\mathrm{η}] = K ⋅ {{M}_{w}}^{a}
 $$ {#eq-8-77}
 
 where:
@@ -118,7 +118,7 @@ The Mark-Houwink parameters can be determined from a double logarithmic plot of 
 
 
 $$
-ln\left([\mathrm{η}]\right) = ln(K) + a \times  ln({M}_{w})
+ln([\mathrm{η}]) = ln(K) + a \times  ln({M}_{w})
 $$ {#eq-8-78}
 
 
@@ -126,7 +126,7 @@ OPM Flow uses a form of the Huggins [Huggins, M. L. 1942. The viscosity of dilut
 
 
 $$
-\begin{matrix} \frac{{\mathrm{η}}_{0}}{{\mathrm{η}}_{s}} = 1 + \mathrm{γ}\left(X + \mathrm{κ}{X}^{2}\right) \\ \text{where} X = \left[\mathrm{η}\right]{C}_{p}\end{matrix}
+\begin{matrix} \frac{{\mathrm{η}}_{0}}{{\mathrm{η}}_{s}} = 1 + \mathrm{γ}(X + \mathrm{κ}{X}^{2}) \\ \text{where} X = [\mathrm{η}]{C}_{p}\end{matrix}
 $$ {#eq-8-79}
 
 where:
@@ -142,14 +142,14 @@ In terms of the keyword units, given the intrinsic viscosity in ml/g, polymer co
 
 
 $$
-\left[\mathrm{η}\right] = K{\left({M}_{w} ⋅ 1.0\times {10}^{-3}\right)}^{a}\cdot 1.0\times {10}^{-3}
+[\mathrm{η}] = K{({M}_{w} ⋅ 1.0\times {10}^{-3})}^{a}\cdot 1.0\times {10}^{-3}
 $$ {#eq-8-80}
 
 and equation (8.79) becomes:
 
 
 $$
-\begin{matrix} \frac{{\mathrm{η}}_{0}}{{\mathrm{η}}_{s}} = 1 + \mathrm{γ}\left(X + \mathrm{κ}{X}^{2}\right) \\ \text{where} X = 1.0\times {10}^{-6}\left[\mathrm{η}\right]{C}_{p}\end{matrix}
+\begin{matrix} \frac{{\mathrm{η}}_{0}}{{\mathrm{η}}_{s}} = 1 + \mathrm{γ}(X + \mathrm{κ}{X}^{2}) \\ \text{where} X = 1.0\times {10}^{-6}[\mathrm{η}]{C}_{p}\end{matrix}
 $$ {#eq-8-81}
 
 

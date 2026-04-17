@@ -23,9 +23,9 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | rb/stb | rm3/sm3 | rcc/scc |  |
 | 4 | OVISC | OVISC is a real positive value defining the oil viscosity (µo) at the oil saturated reference pressure, PRESS. | 1* |
 | cP | cP | cP |  |
-| 5 | OCOMP | OCOMP is a real positive value defining the oil compressibility (Co) at the saturated oil reference pressure and is defined as: ${C}_{o} = -\frac{1}{{B}_{o}}\left(\frac{{\mathit{dB}}_{o}}{\mathit{dP}}\right)$ | 1* |
+| 5 | OCOMP | OCOMP is a real positive value defining the oil compressibility (Co) at the saturated oil reference pressure and is defined as: ${C}_{o} = -\frac{1}{{B}_{o}}(\frac{{\mathit{dB}}_{o}}{\mathit{dP}})$ | 1* |
 | 1/psia | 1/barsa | 1/atma |  |
-| 6 | OVISCOMP | OVISCOMP is a real positive value defining the oil viiscosibility (µoc) at the saturated oil reference pressure with the given RS, where (µoc) is defined as: ${\mathrm{μ}}_{\mathit{oc}} = -\frac{1}{{\mathrm{μ}}_{o}}\left(\frac{d{\mathrm{μ}}_{o}}{\mathit{dP}}\right)$ | 1* |
+| 6 | OVISCOMP | OVISCOMP is a real positive value defining the oil viiscosibility (µoc) at the saturated oil reference pressure with the given RS, where (µoc) is defined as: ${\mathrm{μ}}_{\mathit{oc}} = -\frac{1}{{\mathrm{μ}}_{o}}(\frac{d{\mathrm{μ}}_{o}}{\mathit{dP}})$ | 1* |
 | 1/psia | 1/barsa | 1/atma |  |
 | Notes: |  |  |  |
 
