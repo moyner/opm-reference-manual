@@ -15,7 +15,7 @@ SOLVFRAC is used with the standard equilibration method to initialize the model 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SOLVFRAC | SOLVFRAC is an array of real positive numbers that define the initial solvent fraction within the gas phase values for each matrix cell in the model. Repeat counts may be used, for example 20*0.075. | None |
 | dimensionless | dimensionless | dimensionless |  |

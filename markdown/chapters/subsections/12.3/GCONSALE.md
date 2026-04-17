@@ -12,15 +12,16 @@ GCONSALE defines group sales gas production targets and constraints for when the
 Note that the keyword should not be used to control sales gas for a gas field group, as the gas injection rate is used to control the sales gas production with this keyword, that is:
 
 
-| $\begin{matrix}\text{Gas Sales Rate} = \text{Total Group Gas Production Rate} \\  - \text{Group Gas Injection Rate} \\  + \text{Total Group Gas Import Rate} \\  - \text{Total Group Gas Consumption}\end{matrix}$ | (12.23) |
-| --- | --- |
+$$
+\begin{matrix}\text{Gas Sales Rate} = \text{Total Group Gas Production Rate} \\  - \text{Group Gas Injection Rate} \\  + \text{Total Group Gas Import Rate} \\  - \text{Total Group Gas Consumption}\end{matrix}
+$$ {#eq-12-23}
 
 
 Thus, surplus gas that cannot be sold is re-injected, which requires that there are active gas injectors in the model that are subordinate to groups with gas sales targets. Note that the surplus gas re-injection rates are automatically calculated by OPM Flow at each time step.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group gas sales target and constraints are being defined. The group named FIELD is the top most group and should be used to set the gas sales targets and constraints for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
 | 2 | GSALE | GSALE should either be set to: This value may be specified using a User Defined Argument (UDA). Note that if GSALE has been set to switch off both gas sales and gas re-injection, then the GCONINJE keyword in the SCHEDULE section may be used to re-enable gas re-injection again. | None |

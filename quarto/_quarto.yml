@@ -1,0 +1,57 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "OPM Flow Reference Manual"
+  subtitle: "2025-04"
+  author: "Open Porous Media"
+  date: "2025"
+  search: true
+  repo-url: https://github.com/OPM/opm-reference-manual
+  chapters:
+    - index.qmd
+    - chapters/01-introduction.qmd
+    - chapters/02-installation.qmd
+    - chapters/03-keyword-structure.qmd
+    - chapters/04-global-keywords.qmd
+    - chapters/05-runspec.qmd
+    - chapters/06-grid.qmd
+    - chapters/07-edit.qmd
+    - chapters/08-props.qmd
+    - chapters/09-regions.qmd
+    - chapters/10-solution.qmd
+    - chapters/11-summary.qmd
+    - chapters/12-schedule.qmd
+  appendices:
+    - appendices/A-keyword-summary.qmd
+    - appendices/B-release-notes.qmd
+    - appendices/C-opmrun.qmd
+    - appendices/D-python.qmd
+    - appendices/E-command-line.qmd
+    - appendices/F-output-formats.qmd
+
+format:
+  html:
+    theme:
+      light: cosmo
+    css: styles.css
+    code-fold: true
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    smooth-scroll: true
+    link-external-newwindow: true
+  pdf:
+    documentclass: scrreprt
+    number-sections: true
+    toc: true
+    toc-depth: 2
+    colorlinks: true
+    keep-tex: false
+    geometry:
+      - margin=1in
+    include-in-header:
+      text: |
+        \usepackage{fvextra}
+        \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}

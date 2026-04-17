@@ -7,18 +7,19 @@
 
 #### Description
 
-OILJT activates the oil Joule-Thomson effect [The Joule–Thomson coefficient is defined as the change in temperature with respect to an increase in pressure at constant enthalpy.] in temperature calculations, and defines the oil Joule-Thomson Coefficient (“JTC”) at a given reference pressure, for when OPM Flow’s thermal option has been activated by the THERMAL keyword in the RUNSPEC.
+OILJT activates the oil Joule-Thomson effect^[The Joule–Thomson coefficient is defined as the change in temperature with respect to an increase in pressure at constant enthalpy.] in temperature calculations, and defines the oil Joule-Thomson Coefficient (“JTC”) at a given reference pressure, for when OPM Flow’s thermal option has been activated by the THERMAL keyword in the RUNSPEC.
 
 
-| Note This is an OPM Flow keyword used with OPM Flow’s black-oil thermal model, that is not available in the commercial simulator’s black-oil thermal formulation. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow keyword used with OPM Flow’s black-oil thermal model, that is not available in the commercial simulator’s black-oil thermal formulation.
+:::
 
 
 This keyword can only be used if OPM Flow’s thermal option has been activated by the THERMAL keyword in the RUNSPEC section. Note this is different to the commercial simulator that uses the TEMP keyword in the RUNSPEC section to activate the black-oil thermal model, and does not include the Joule-Thomson effect in temperature calculations.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | A real positive value that defines the reference pressure for the corresponding Joule-Thomson Coefficient, OILJTC. | None |
 | psia | barsa | atma |  |
@@ -29,26 +30,29 @@ This keyword can only be used if OPM Flow’s thermal option has been activated 
 *Table 8.92: OILJT Keyword Description*
 
 
-The Joule–Thomson effect is when a real gas, as oppose to an ideal gas, expands, resulting in the temperature of the gas dropping [Natural Gas Engineering (McGraw-Hill chemical engineering series), Donald L. Katz, Robert l Lee, McGraw-Hill Education, 1990 (ISBN 0071007776, 9780071007771).]. For liquids the effect is the opposite, that is the internal energy is transferred to kinetic energy with a corresponding increase in temperature as velocity increases.
+The Joule–Thomson effect is when a real gas, as oppose to an ideal gas, expands, resulting in the temperature of the gas dropping^[Natural Gas Engineering (McGraw-Hill chemical engineering series), Donald L. Katz, Robert l Lee, McGraw-Hill Education, 1990 (ISBN 0071007776, 9780071007771).]. For liquids the effect is the opposite, that is the internal energy is transferred to kinetic energy with a corresponding increase in temperature as velocity increases.
 
-Thermodynamically, the Joule–Thomson coefficient is defined as the isenthalpic [An isenthalpic process or isoenthalpic process, is a process that proceeds without any change in enthalpy, H; or specific enthalpy, h.] change in temperature in a fluid caused by a unitary pressure drop, as shown in the following equation:
-
-
-| $\mathrm{η} = \left(\frac{\partial T}{\partial P}\right)$ | (8.66) |
-| --- | --- |
+Thermodynamically, the Joule–Thomson coefficient is defined as the isenthalpic^[An isenthalpic process or isoenthalpic process, is a process that proceeds without any change in enthalpy, H; or specific enthalpy, h.] change in temperature in a fluid caused by a unitary pressure drop, as shown in the following equation:
 
 
-Which can also express as [Pippard, A.B.: Elements of Classical Thermodynamics: For Advanced Students of Physics. Cambridge University Press, Cambridge, UK (1957)]:
+$$
+\mathrm{η} = (\frac{\partial T}{\partial P})
+$$ {#eq-8-66}
 
 
-| $\mathrm{η} = \left(T\mathrm{α} - 1\right)\frac{1}{(\mathrm{ρ}{C}_{p})} - {\left(\frac{g}{{C}_{p}}\frac{\mathit{dp}}{\mathit{dz}}\right)}^{-1}$ | (8.67) |
-| --- | --- |
+Which can also express as^[Pippard, A.B.: Elements of Classical Thermodynamics: For Advanced Students of Physics. Cambridge University Press, Cambridge, UK (1957)]:
+
+
+$$
+\mathrm{η} = (T\mathrm{α} - 1)\frac{1}{(\mathrm{ρ}{C}_{p})} - {(\frac{g}{{C}_{p}}\frac{\mathit{dp}}{\mathit{dz}})}^{-1}
+$$ {#eq-8-67}
 
 Setting the gravity term, $g$, to zero we have:
 
 
-| $\mathrm{η} = \left(T\mathrm{α} - 1\right)\frac{1}{(\mathrm{ρ}{C}_{b})}$ | (8.68) |
-| --- | --- |
+$$
+\mathrm{η} = (T\mathrm{α} - 1)\frac{1}{(\mathrm{ρ}{C}_{b})}
+$$ {#eq-8-68}
 
 Where:
 

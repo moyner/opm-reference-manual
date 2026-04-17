@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1-1 | WELNAME | A character string of up to eight characters in length that defines the well  name for which the well target and constraints are being defined. | None |
 | 1-2 | ACTION | A defined character string that defines the action to be taken if the economic WCUT, GOR, or WGR limits are violated. ACTION should be set to one of the following character strings: The corrective action takes places at the end of the time step in which the constraint is violated. | None |

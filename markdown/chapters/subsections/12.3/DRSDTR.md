@@ -13,7 +13,7 @@ DRSDTR should only be used if the OIL, GAS, and DISGAS keywords in the RUNSPEC s
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DRSDT1 | DRSDT1 is a real positive number that defines the maximum rate at which the solution gas-oil ratio is allowed to increase in a grid cell, that is the maximum rate the gas can dissolve into the available undersaturated oil. A value of zero means that Rs cannot increase and free gas cannot dissolve into the unsaturated oil in a grid cell. Alternatively a very large value of DRSDT1 allows Rs to increase rapidly until there is no free gas or the oil within the grid block is fully saturated. Note if the keyword is not present in the input deck then DRSDT1 is assumed to be a very large number resulting in complete re-solution of the gas into the available undersaturated oil. | None |
 | Mscf/stb/d | sm3/sm3/day | scc/scc/day |  |

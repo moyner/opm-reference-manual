@@ -11,7 +11,7 @@ The MULTREGP keyword multiplies the pore volume of a cell by a constant for all 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | REGION | REGION is a positive integer representing the region for which the CONSTANT in (2) should be applied. | None |
 | 2 | CONSTANT | A real value to multiply the pore volume by for a given REGION. | 1 |
 | 3 | REGION ARRAY | The REGION ARRAY to use for applying the CONSTANT in (2) based on the REGION in (1).  ARRAY can have the following values: | M |

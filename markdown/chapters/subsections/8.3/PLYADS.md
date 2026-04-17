@@ -11,7 +11,7 @@ The PLYADS keyword defines the rock polymer adsorption tables for when the polym
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | POLCON | A columnar vector of real monotonically increasing down the column values that defines the polymer concentration in the solution surrounding the rock. The first entry should be zero to define a no polymer concentration. | None |
 | lb/stb | kg/sm3 | gm/scc |  |

@@ -11,7 +11,7 @@ NETBALAN keyword causes the simulator to perform a network balancing operation a
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | NTSTEP | NSTEP is a real value that defines the criteria for the network balancing interval, used to define the frequency of the network balancing algorithm. NSTEP may be a negative number, a value of zero, or a positive number, as described below: Note only negative or zero values are currently supported. | 0.0 |
 | days or dimensionless | days or dimensionless | hours or dimensionless |  |

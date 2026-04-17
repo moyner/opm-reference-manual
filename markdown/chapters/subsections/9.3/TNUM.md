@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | TNUM | A four letter character equal to TNUM that is the root keyword name for this data set array. | None |
 | 2 | PHASE | A one letter character string that must be equal to F or S, that is concatenated to TNUM. The letter F states that the tracer is for the “free” phase, for example oil or water, as well as gas cap gas (free gas). The letter S signifies that the tracer is a “solution” phase tracer, for example gas dissolved in oil (as activated by the DISGAS keyword in the RUNSPEC section), or condensate (vaporized oil) in the gas (as per the VAPOIL keyword in the RUNSPEC section). Note tracers that are defined by the letter S to be in the “solution” phase, must also be initialized by the “free” phase as well. | None |
 | 3 | NAME | A three letter character string defining the tracer’s name, which is concatenate to TNUM and PHASE to given the full name of the keyword Note it is best to void names beginning with the letters F, S, and T as these names may great naming issues in post-processing software. | None |
@@ -24,7 +24,7 @@ Following the declaration of the full keyword name, TNUMPHASENAME,  the keyword 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | TNUMREG | TUNREG defines an array of positive integers assigning a grid cell to a particular tracer table region. The maximum number of TNUMREG regions is set by the NTTRVD variable on the EQLDIMS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 

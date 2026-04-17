@@ -15,7 +15,7 @@ OPM Flow will automatically generate connections between non neighbor cells in t
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PINCHTHK | A real number defining the pinch-out threshold thickness for any cell.  NNCs are generated across inactive cells having a vertical thickness less than PINCHTHK. | Defined |
 | ft. 0.001 | m 0.001 | cm 0.001 |  |

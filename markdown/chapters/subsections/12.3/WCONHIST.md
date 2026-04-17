@@ -13,7 +13,7 @@ Note that although wells can be allocated to a group when they are specified by 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the wells observed production rates and pressures are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | STATUS | A defined character string that declares the status of the well. STATUS should be set to one of the following character strings: Note a well’s STATUS should always be set either STOP or SHUT if the well’s production is to be set to zero. Just setting a well’s production rate to zero means that the well is open to flow with a zero rate. | OPEN |
@@ -40,8 +40,9 @@ Note that although wells can be allocated to a group when they are specified by 
 See also the WHISTCTL keyword that can be used to reset the TARGET phase, the GCONPROD and GCONINJE keywords to define a group’s production and injection targets and constraints, and the WCONPROD keyword to define a production well’s targets and constraints. All the aforementioned keywords are described in the SCHEDULE section.
 
 
-| Note One can use TARGET set to RESV in the initial history matching runs to get a “reasonable” pressure match, this ensures that the total reservoir withdrawals are correct, although the individual phase withdrawals will not match. Once a reasonable pressure match is achieved for the reservoir then one can reset TARGET to the sales phase, OIL or GAS, and continue with the matching of all the phases. In oil reservoirs some engineers prefer to use LIQ rather than OIL as the TARGET phase, although one should consider that as the water phase has no commercial value, the measurement accuracy is significantly less than the oil sales phase. |
-| --- |
+::: {.callout-note}
+One can use TARGET set to RESV in the initial history matching runs to get a “reasonable” pressure match, this ensures that the total reservoir withdrawals are correct, although the individual phase withdrawals will not match. Once a reasonable pressure match is achieved for the reservoir then one can reset TARGET to the sales phase, OIL or GAS, and continue with the matching of all the phases. In oil reservoirs some engineers prefer to use LIQ rather than OIL as the TARGET phase, although one should consider that as the water phase has no commercial value, the measurement accuracy is significantly less than the oil sales phase.
+:::
 
 
 History matching wells are converted to ordinary wells by restating a well’s control mode using either the  WCONPROD or WELTARG keywords in the SCHEDULE section.

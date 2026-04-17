@@ -11,7 +11,7 @@ The WELTARG keyword modifies the target and constraints values of both rates and
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well production rates and pressures data are being redefined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS and WCONPROD (or WCONINJE) keywords in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | TARGET | A defined character string that sets the item to be changed for the well the value of the item is set by item (3). The commercial compositional simulator options:  WGRA, NGL, CVAL, REIN, STRA, SATP and SATT are not applicable.  Note that TARGET only defines the variable to be changed, it does not change how a well is controlled. For example, if a well is operating on ORAT control, as defined by the previously entered WCONPROD keyword, entering TARGET equal to LRAT with a value, changes the liquid constraint but the well still remains on ORAT control. Use the WELCNTL keyword in the SCHEDULE section to change the control mode of a well. | None |

@@ -10,12 +10,13 @@
 The PINTDIMS keyword defines the number of property tables used in the OPM Flow's Polymer Molecular Weight Transport option, that uses the polymer molecular weight in calculating the polymer viscosity, as well as accounting for formation damage due to the water and polymer injection, by adjusting the wellbore skin pressure. This keyword should only be used if the POLYMER and POLYMW keywords in the RUNSPEC section are also activated.  The PINTDIMS keyword defines the maximum number of tables for the SKPRWAT, SKPRPOLY, and PLYMWINJ keywords, and the number of entries in the PLYVMH keyword. All the aforementioned keywords are in the PROPS section.
 
 
-| Note This is an OPM Flow specific keyword that employs an alternative polymer flood model based on a Polymer Molecular Weight Transport equation, that is not available in the commercial simulator. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword that employs an alternative polymer flood model based on a Polymer Molecular Weight Transport equation, that is not available in the commercial simulator.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NTSKWAT | NTSKWAT is a positive integer that defines the number of SKPRWAT  tables in the PROPS section, used to describe the relationship of wellbore skin pressure as a function of water throughput and water velocity, for the simulator's Polymer Molecular Weight Transport option. | 1 |
 | 2 | NTSKPOLY | NTSKPOLY is a positive integer that defines the number of SKPRPOLY  tables in the PROPS section, used to describe the relationship of wellbore skin pressure as a function of polymer throughput and polymer velocity, for the simulator's Polymer Molecular Weight Transport option. | 1 |
 | 3 | NTPMWINJ | NTPMWINJ is a positive integer that defines the number of PLYMWINJ  tables in the PROPS section, used to describe the relationship of the injected polymer molecular weight as a function of polymer throughput and polymer velocity, for the simulator's Polymer Molecular Weight Transport option. | 1 |

@@ -15,7 +15,7 @@ Currently the Brine option is not implemented in OPM Flow and therefore both the
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | POLCON | A real positive value that defines the polymer concentration of the well’s injection stream. This value may be specified using a User Defined Argument (UDA). | None |

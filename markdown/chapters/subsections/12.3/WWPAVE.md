@@ -13,7 +13,7 @@ Note that WWPAVE will overwrite any parameters on the WPAVE keyword for a given 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well average pressure calculation parameters are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | WPAVE1 | A real dimensionless value that defines the weighting factor between the inner block and the surrounding blocks used in the calculation of the connection factor weighted average pressure. If WPAVE1 is greater than or equal to zero and less than or equal to one, then the average pressure for each well connection is calculated based on this weighting factor. A value of zero indicates only the surrounding blocks should be used in the calculation; and a value of one indicates only the inner blocks should be used. If WPAVE1 is less than zero, then the average pressure for each well connection is weighted based on the pore volumes of the inner and surrounding blocks. | 0.5 |

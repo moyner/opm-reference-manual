@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SKRW | SKRW is an array of positive real numbers which are greater than zero and less than or equal to 1.0, that are the assigned scaling SKRW values for each cell in the model. Repeat counts may be used, for example 50*1.000. | Taken from cell allocated relative permeability table. |
 | dimensionless | dimensionless | dimensionless |  |

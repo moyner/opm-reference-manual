@@ -11,7 +11,7 @@ The EQUALS keyword sets a specified array or part of an array to a constant. The
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | ARRAY | A character string of up to eight characters in length that defines the keyword identifying the property to be modified. | None |
 | 2 | CONSTANT | An integer or real value that the ARRAY will be set to in the same units as the ARRAY property. | None |
 | 3 | I1 | A positive integer that defines the lower bound of the array in the I-direction to be modified must be greater than or equal to one and less than or equal to I2 and NX. | 1 |
@@ -59,8 +59,9 @@ Examples of the arrays most commonly operated on in each section are given in Ta
 *Table 6.36: EQUALS Keyword Applicable Arrays by Section*
 
 
-| Note Unlike the commercial simulator, using the EQUALS keyword to setup the structure of the grid using the DX, DY, DZ and TOPS keywords should be avoided as it may cause OPM Flow to prematurely fail during the initialization. See the second example on the correct way to setup this type of grid. |
-| --- |
+::: {.callout-note}
+Unlike the commercial simulator, using the EQUALS keyword to setup the structure of the grid using the DX, DY, DZ and TOPS keywords should be avoided as it may cause OPM Flow to prematurely fail during the initialization. See the second example on the correct way to setup this type of grid.
+:::
 
 
 #### Examples

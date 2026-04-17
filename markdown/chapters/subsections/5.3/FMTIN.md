@@ -11,7 +11,7 @@ This keyword switches on the Format Input Files option for all input files. Simi
 
 
 | Process | Keyword | Description | Files |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Input | FMTIN | A character string that defines the input files to be formatted as ASCII i.e. text files, as oppose to binary files.  The input deck file is always of this type. The option relates to the OPM Flow derived files that used as input, for  for example when restarting from another case. If the keyword is omitted then the default is for binary file input. | *.FEGRID *.FINSPEC *.FINIT *.FRSSPEC *.FUNRST *.FSMSPEC *.FUNSMRY |
 | MULTIN | A character string that defines the input files to be non-unified multiple files, as opposed to unified files. In this case, one file is read in per  reporting time step, as opposed to all time steps reports being read from  one file. If the keyword is omitted then the default is for one file per reporting time step. | *.RSSPEC *.X0001 *.SMSPEC *.S0001 |  |
 | UNIFIN | A character string that defines the input files to be unified files, as opposed to non-unified multiple files. A unified file is a single file containing output for each reporting time step.  For this option a single summary file and a single restart file will be read. If the keyword is omitted then the default is for one file per reporting time step. | *.RSSPEC *.UNRST *.SMSPEC *.UNSMRY |  |

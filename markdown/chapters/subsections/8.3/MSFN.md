@@ -11,7 +11,7 @@ The MSFN keyword defines the miscible normalized relative permeability tables fo
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | SGAS | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating at one, that defines the gas plus solvent saturation. | None |
 | 2 | KRSG | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the gas plus solvent relative permeability multiplier. | None |
 | 3 | KRO | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the oil relative permeability multiplier. | None |

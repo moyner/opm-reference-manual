@@ -15,7 +15,7 @@ Note that wells are allocated to a group when they are specified by the WELSPECS
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group target and constraints are being defined. The group named FIELD is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
 | 2 | ENEVAL | A real positive value that defines the minimum economic surface energy production rate, below which an economic action of shutting in or stopping all the wells in the group, as requested by item (9) of the WELSPECS keyword. A value less than or equal to zero switches of this criteria. | 0.0 |

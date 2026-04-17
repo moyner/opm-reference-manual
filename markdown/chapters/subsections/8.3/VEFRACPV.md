@@ -10,8 +10,9 @@
 This keyword defines the Vertical Equilibrium (“VE”) capillary pressure weighting factor (α) used to calculate the VE capillary pressure curves to be used in the simulation, for when the VE option has been activated by the VE keyword in the RUNSPEC section.  If α = 1.0, then the VE model calculated capillary pressure curves will be used, and if α = 0.0, then the curves entered via the SWOF, SGOF, SLGOF series of keywords or the SWFN, SGFN, SGWFN, SOF2, SOF3, SOF32D series of keywords, will be used. A value of α between zero and one will result in weighted average capillary pressure curves being employed, that is:
 
 
-| ${\mathit{VE}}_{(\mathit{average})} = \left(1.0 - \mathrm{α}\right) \times  \left({\mathit{SATNUM}}_{\mathit{curves}}\right) + \mathrm{α} \times  \left(\mathit{VE}{\mathit{Model}}_{\mathit{curves}}\right)$ | (8.96) |
-| --- | --- |
+$$
+{\mathit{VE}}_{(\mathit{average})} = (1.0 - \mathrm{α}) \times  ({\mathit{SATNUM}}_{\mathit{curves}}) + \mathrm{α} \times  (\mathit{VE}{\mathit{Model}}_{\mathit{curves}})
+$$ {#eq-8-96}
 
 
 Note that VEFRACPV sets α on a cell by cell basis; whereas, the VEFRACP keyword in the PROPS section assigns α for the whole grid, See also the VEFRAC and VEFRACV keywords that apply the weighting factors to the relative permeability data.

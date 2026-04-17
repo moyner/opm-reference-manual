@@ -3,7 +3,7 @@ The command line syntax for running OPM Flow is:
 
 ```
 
-			flow [OPTIONS] CASENAME
+flow [OPTIONS] CASENAME
 ```
 
 
@@ -12,7 +12,7 @@ and typing the following command from your terminal:
 
 ```
 
-			flow CASENAME
+flow CASENAME
 ```
 
 
@@ -23,7 +23,7 @@ OPM Flow accepts command line options to control various aspects of the simulato
 
 ```
 
-			flow --parameter-file=CASENAME.param
+flow --parameter-file=CASENAME.param
 ```
 
 
@@ -63,7 +63,7 @@ to instruct OPM Flow to read the parameter file.
 | 28 | --enable-async-ecl-output | A boolean value that sets the output mode to be asynchronous (true), letting the simulator continue computing the next time step while writing results to restart and summary files in the commercial simulator’s format on a separate thread. | true |
 | 29 | --enable-async-vtk-output | A boolean value that sets the output mode to be asynchronous (true), letting the simulator continue computing the next time step while writing results to the VTK output files on a separate thread. | true |
 | 30 | --enable-drift-compensation | A boolean value that enables (true) or disables (false) partial compensation of systematic mass losses via the source term of the next time step. | false |
-| 31 | --enable-dry-run | A boolean value that specifies if the simulation should actually run (true), or just check the input deck (false). This option is equivalent to activating the NOSIM keyword in the RUNSPEC section of the input deck (see section Error: Reference source not found Error: Reference source not found). The default value of “auto’ will use whatever is stipulated in the input deck via the NOSIM keyword. | “auto” |
+| 31 | --enable-dry-run | A boolean value that specifies if the simulation should actually run (true), or just check the input deck (false). This option is equivalent to activating the NOSIM keyword in the RUNSPEC section of the input deck (see section  ). The default value of “auto’ will use whatever is stipulated in the input deck via the NOSIM keyword. | “auto” |
 | 32 | --enable-ecl-output | A boolean value that specifies if the binary output files (restart,  summary files, etc.)  should be written in the commercial simulator’s format (true), or OPM Flow’s format (false). | true |
 | 33 | --enable-esmry | A boolean value that switches on (true) or off (false) the output of SUMMARY vectors to the ESMRY file for fast loading of summary data. | false |
 | 34 | --enable-gravity | A boolean value that switches on (true) or off (false) the use of the gravity correction for the pressure gradients. | true |
@@ -234,7 +234,7 @@ to instruct OPM Flow to read the parameter file.
 | 200 | --tolerance-wells | A real positive double precision value that defines the maximum non-linear error for the well equations. | 1e-04 |
 | 201 | --update-equations-scaling | A boolean value that switches on (true) or off (false) the updating of the scaling factors for mass balance equations during the simulation. | false |
 | 202 | --use-average-density-ms-wells | A boolean value that specifies whether to approximate segment densitities by averaging over the segment and its outlet (true) or not (false). | false |
-| 203 | --use-gmres | A boolean value that when set to true OPM Flow will use Generalized Minimal Residual (“GMRES”) [Y. Saad, A flexible inner-outer preconditioned GMRES algorithm, SIAM J. Sci. Statist. Comput.,14, (1993).] and  [Y. Saad and M.H. Schultz, GMRES: A generalized minimum residual algorithm for solving nonsymmetric linear systems, SIAM J. Sci. Statist. Comput., 7 (1986), pp. 856{869.] solver instead of Biconjugate Gradient Stabilized (“BiCGSTAB”) [Van der Vorst, H. A. (1992). "Bi-CGSTAB: A Fast and Smoothly Converging Variant of Bi-CG for the Solution of Nonsymmetric Linear Systems". SIAM J. Sci. Stat. Comput. 13 (2): 631–644. doi:10.1137/0913035. hdl:10338.dmlcz/104566] and  [Sleijpen, G. L. G.; Fokkema, D. R. (November 1993). "BiCGstab(l) for linear equations involving unsymmetric matrices with complex spectrum" (PDF). Electronic Transactions on Numerical Analysis. Kent, OH: Kent State University. 1: 11–32. ISSN 1068-9613.] as the linear solver within the Newton iterations. | false |
+| 203 | --use-gmres | A boolean value that when set to true OPM Flow will use Generalized Minimal Residual (“GMRES”)^[Y. Saad, A flexible inner-outer preconditioned GMRES algorithm, SIAM J. Sci. Statist. Comput.,14, (1993).] and ^[Y. Saad and M.H. Schultz, GMRES: A generalized minimum residual algorithm for solving nonsymmetric linear systems, SIAM J. Sci. Statist. Comput., 7 (1986), pp. 856{869.] solver instead of Biconjugate Gradient Stabilized (“BiCGSTAB”)^[Van der Vorst, H. A. (1992). "Bi-CGSTAB: A Fast and Smoothly Converging Variant of Bi-CG for the Solution of Nonsymmetric Linear Systems". SIAM J. Sci. Stat. Comput. 13 (2): 631–644. doi:10.1137/0913035. hdl:10338.dmlcz/104566] and ^[Sleijpen, G. L. G.; Fokkema, D. R. (November 1993). "BiCGstab(l) for linear equations involving unsymmetric matrices with complex spectrum" (PDF). Electronic Transactions on Numerical Analysis. Kent, OH: Kent State University. 1: 11–32. ISSN 1068-9613.] as the linear solver within the Newton iterations. | false |
 | 204 | --use-implicit-ipr | A boolean value. Compute implicit IPR for stability checks and stable solution search. | true |
 | 205 | --use-multisegment-well | A boolean value that when set to true the simulator will use the well model for multi-segment wells instead of the one for single-segment wells. | true |
 | 206 | --use-update-stabilization | A boolean value that switches on (true) or off (false) the stabilized Newton option, that attempts to detect and correct oscillations or stagnation during the Newton iterations. This option may improve convergence for some cases. | true |
@@ -252,7 +252,7 @@ The command line syntax for running OPM Flow is:
 
 ```
 
-			flow [OPTIONS] CASENAME
+flow [OPTIONS] CASENAME
 ```
 
 
@@ -261,7 +261,7 @@ and typing the following command from your terminal:
 
 ```
 
-			flow CASENAME
+flow CASENAME
 ```
 
 
@@ -272,7 +272,7 @@ OPM Flow accepts command line options to control various aspects of the simulato
 
 ```
 
-			flow --parameter-file=CASENAME.param
+flow --parameter-file=CASENAME.param
 ```
 
 
@@ -309,7 +309,7 @@ to instruct OPM Flow to read the parameter file.
 | 25 | --enable-async-ecl-output | A boolean value that sets the output mode to be asynchronous (true), letting the simulator continue computing the next time step while writing results to restart and summary files in the commercial simulator’s format on a separate thread. | true |
 | 26 | --enable-async-vtk-output | A boolean value that sets the output mode to be asynchronous (true), letting the simulator continue computing the next time step while writing results to the VTK output files on a separate thread. | true |
 | 27 | --enable-drift-compensation | A boolean value that enables (true) or disables (false) partial compensation of systematic mass losses via the source term of the next time step. | false |
-| 28 | --enable-dry-run | A boolean value that specifies if the simulation should actually run (true), or just check the input deck (false). This option is equivalent to activating the NOSIM keyword in the RUNSPEC section of the input deck (see section Error: Reference source not found Error: Reference source not found). The default value of “auto’ will use whatever is stipulated in the input deck via the NOSIM keyword. | “auto” |
+| 28 | --enable-dry-run | A boolean value that specifies if the simulation should actually run (true), or just check the input deck (false). This option is equivalent to activating the NOSIM keyword in the RUNSPEC section of the input deck (see section  ). The default value of “auto’ will use whatever is stipulated in the input deck via the NOSIM keyword. | “auto” |
 | 29 | --enable-ecl-output | A boolean value that specifies if the binary output files (restart,  summary files, etc.)  should be written in the commercial simulator’s format (true), or OPM Flow’s format (false). | true |
 | 30 | --enable-esmry | A boolean value that switches on (true) or off (false) the output of SUMMARY vectors to the ESMRY file for fast loading of summary data. | false |
 | 31 | --enable-gravity | A boolean value that switches on (true) or off (false) the use of the gravity correction for the pressure gradients. | true |
@@ -320,7 +320,7 @@ to instruct OPM Flow to read the parameter file.
 | 36 | --enable-storage-cache | A boolean value that turns on (true) or off (false) storing previous storage terms and avoid re-calculating them. | true |
 | 37 | --enable-terminal-output | A boolean value that turns on (true) or off (false) high-level information about the simulation's progress to the terminal | true |
 | 38 | --enable-thermodynamic-hints | A boolean value that enables (true) or disables (false) thermodynamic hints. | false |
-| 39 | --enable-tuning | A boolean value that instructs OPM Flow to read the time stepping parameters from the Error: Reference source not found keyword in the input deck, if set to true. Note that only the first record of the TUNING keyword is processed. | false |
+| 39 | --enable-tuning | A boolean value that instructs OPM Flow to read the time stepping parameters from the  keyword in the input deck, if set to true. Note that only the first record of the TUNING keyword is processed. | false |
 | 40 | --enable-vtk-output | A boolean value that turns on (true) or off (false) a global switch for writing VTK files. | false |
 | 41 | --enable-well-operability-check | A boolean value that enables (true)  checking of a well’s operating status, or disables (false) the checking. | true |
 | 42 | --enable-well-operability-check-iter | A boolean value that enables (true)  checking of a well’s operating status during iterations, or disables (false) the checking during iterations. | false |
@@ -467,7 +467,7 @@ to instruct OPM Flow to read the parameter file.
 | 182 | --tolerance-wells | A real positive double precision value that defines the maximum non-linear error for the well equations. | 1e-04 |
 | 183 | -update-equations-scaling | A boolean value that switches on (true) or off (false) the updating of the scaling factors for mass balance equations during the simulation. | false |
 | 184 | --use-average-density-ms-wells | A boolean value that specifies whether to approximate segment densitities by averaging over the segment and its outlet (true) or not (false). | false |
-| 185 | --use-gmres | A boolean value that when set to true OPM Flow will use Generalized Minimal Residual (“GMRES”) [Y. Saad, A flexible inner-outer preconditioned GMRES algorithm, SIAM J. Sci. Statist. Comput.,14, (1993).] and  [Y. Saad and M.H. Schultz, GMRES: A generalized minimum residual algorithm for solving nonsymmetric linear systems, SIAM J. Sci. Statist. Comput., 7 (1986), pp. 856{869.] solver instead of Biconjugate Gradient Stabilized (“BiCGSTAB”) [Van der Vorst, H. A. (1992). "Bi-CGSTAB: A Fast and Smoothly Converging Variant of Bi-CG for the Solution of Nonsymmetric Linear Systems". SIAM J. Sci. Stat. Comput. 13 (2): 631–644. doi:10.1137/0913035. hdl:10338.dmlcz/104566] and  [Sleijpen, G. L. G.; Fokkema, D. R. (November 1993). "BiCGstab(l) for linear equations involving unsymmetric matrices with complex spectrum" (PDF). Electronic Transactions on Numerical Analysis. Kent, OH: Kent State University. 1: 11–32. ISSN 1068-9613.] as the linear solver within the Newton iterations. | false |
+| 185 | --use-gmres | A boolean value that when set to true OPM Flow will use Generalized Minimal Residual (“GMRES”)^[Y. Saad, A flexible inner-outer preconditioned GMRES algorithm, SIAM J. Sci. Statist. Comput.,14, (1993).] and ^[Y. Saad and M.H. Schultz, GMRES: A generalized minimum residual algorithm for solving nonsymmetric linear systems, SIAM J. Sci. Statist. Comput., 7 (1986), pp. 856{869.] solver instead of Biconjugate Gradient Stabilized (“BiCGSTAB”)^[Van der Vorst, H. A. (1992). "Bi-CGSTAB: A Fast and Smoothly Converging Variant of Bi-CG for the Solution of Nonsymmetric Linear Systems". SIAM J. Sci. Stat. Comput. 13 (2): 631–644. doi:10.1137/0913035. hdl:10338.dmlcz/104566] and ^[Sleijpen, G. L. G.; Fokkema, D. R. (November 1993). "BiCGstab(l) for linear equations involving unsymmetric matrices with complex spectrum" (PDF). Electronic Transactions on Numerical Analysis. Kent, OH: Kent State University. 1: 11–32. ISSN 1068-9613.] as the linear solver within the Newton iterations. | false |
 | 186 | --use-implicit-ipr | A boolean value. Compute implicit IPR for stability checks and stable solution search. | true |
 | 187 | --use-multisegment-well | A boolean value that when set to true the simulator will use the well model for multi-segment wells instead of the one for single-segment wells. | true |
 | 188 | --use-update-stabilization | A boolean value that switches on (true) or off (false) the stabilized Newton option, that attempts to detect and correct oscillations or stagnation during the Newton iterations. This option may improve convergence for some cases. | true |
@@ -479,12 +479,12 @@ to instruct OPM Flow to read the parameter file.
 *Table A.1: OPM Flow 2024-10 Command Line Options*
 
 
-  - The command line syntax for running OPM Flow is:
+- The command line syntax for running OPM Flow is:
 
 
 ```
 
-			flow [OPTIONS] CASENAME
+flow [OPTIONS] CASENAME
 ```
 
 
@@ -493,7 +493,7 @@ and typing the following command from your terminal:
 
 ```
 
-			flow CASENAME
+flow CASENAME
 ```
 
 
@@ -504,7 +504,7 @@ OPM Flow accepts command line options to control various aspects of the simulato
 
 ```
 
-			flow --parameter-file=CASENAME.param
+flow --parameter-file=CASENAME.param
 ```
 
 
@@ -542,7 +542,7 @@ to instruct OPM Flow to read the parameter file.
 | 26 | --enable-adaptive-time-stepping | A boolean value that turns on (true) or off (false) adaptive time stepping. If set to false the report time steps provided by the input deck are used. | true |
 | 27 | --enable-async-ecl-output | A boolean value that sets the output mode to be asynchronous (true), letting the simulator continue computing the next time step while writing results to restart and summary files in the commercial simulator’s format on a separate thread. | true |
 | 28 | --enable-async-vtk-output | A boolean value that sets the output mode to be asynchronous (true), letting the simulator continue computing the next time step while writing results to the VTK output files on a separate thread. | true |
-| 29 | --enable-dry-run | A boolean value that specifies if the simulation should actually run (true), or just check the input deck (false). This option is equivalent to activating the NOSIM keyword in the RUNSPEC section of the input deck (see section Error: Reference source not found Error: Reference source not found). The default value of “auto’ will use whatever is stipulated in the input deck via the NOSIM keyword. | “auto” |
+| 29 | --enable-dry-run | A boolean value that specifies if the simulation should actually run (true), or just check the input deck (false). This option is equivalent to activating the NOSIM keyword in the RUNSPEC section of the input deck (see section  ). The default value of “auto’ will use whatever is stipulated in the input deck via the NOSIM keyword. | “auto” |
 | 30 | --enable-ecl-output | A boolean value that specifies if the binary output files (restart,  summary files, etc.)  should be written in the commercial simulator’s format (true), or OPM Flow’s format (false). | true |
 | 31 | --enable-esmry | A boolean value that switches on (true) or off (false) the output of SUMMARY vectors to the ESMRY file for fast loading of summary data. | false |
 | 32 | --enable-gravity | A boolean value that switches on (true) or off (false) the use of the gravity correction for the pressure gradients. | true |
@@ -553,7 +553,7 @@ to instruct OPM Flow to read the parameter file.
 | 37 | --enable-storage-cache | A boolean value that turns on (true) or off (false) storing previous storage terms and avoid re-calculating them. | true |
 | 38 | --enable-terminal-output | A boolean value that turns on (true) or off (false) high-level information about the simulation's progress to the terminal | true |
 | 39 | --enable-thermodynamic-hints | A boolean value that enables (true) or disables (false) thermodynamic hints. | false |
-| 40 | --enable-tuning | A boolean value that instructs OPM Flow to read the time stepping parameters from the Error: Reference source not found keyword in the input deck, if set to true. Note that only the first record of the TUNING keyword is processed. | false |
+| 40 | --enable-tuning | A boolean value that instructs OPM Flow to read the time stepping parameters from the  keyword in the input deck, if set to true. Note that only the first record of the TUNING keyword is processed. | false |
 | 41 | --enable-vtk-output | A boolean value that turns on (true) or off (false) a global switch for writing VTK files. | false |
 | 42 | --enable-well-operability-check | A boolean value that enables (true)  checking of a well’s operating status, or disables (false) the checking. | true |
 | 43 | --enable-well-operability-check-iter | A boolean value that enables (true)  checking of a well’s operating status during iterations, or disables (false) the checking during iterations. | false |
@@ -686,7 +686,7 @@ to instruct OPM Flow to read the parameter file.
 | 170 | --tolerance-wells | A real positive double precision value that defines the maximum non-linear error for the well equations. | 1.0 x 10-4 |
 | 171 | -update-equations-scaling | A boolean value that switches on (true) or off (false) the updating of the scaling factors for mass balance equations during the simulation. | false |
 | 172 | --use-average-density-ms-wells | A boolean value that specifies whether to approximate segment densitities by averaging over the segment and its outlet (true) or not (false). | false |
-| 173 | --use-gmres | A boolean value that when set to true OPM Flow will use Generalized Minimal Residual (“GMRES”) [Y. Saad, A flexible inner-outer preconditioned GMRES algorithm, SIAM J. Sci. Statist. Comput.,14, (1993).] and  [Y. Saad and M.H. Schultz, GMRES: A generalized minimum residual algorithm for solving nonsymmetric linear systems, SIAM J. Sci. Statist. Comput., 7 (1986), pp. 856{869.] solver instead of Biconjugate Gradient Stabilized (“BiCGSTAB”) [Van der Vorst, H. A. (1992). "Bi-CGSTAB: A Fast and Smoothly Converging Variant of Bi-CG for the Solution of Nonsymmetric Linear Systems". SIAM J. Sci. Stat. Comput. 13 (2): 631–644. doi:10.1137/0913035. hdl:10338.dmlcz/104566] and  [Sleijpen, G. L. G.; Fokkema, D. R. (November 1993). "BiCGstab(l) for linear equations involving unsymmetric matrices with complex spectrum" (PDF). Electronic Transactions on Numerical Analysis. Kent, OH: Kent State University. 1: 11–32. ISSN 1068-9613.] as the linear solver within the Newton iterations. | false |
+| 173 | --use-gmres | A boolean value that when set to true OPM Flow will use Generalized Minimal Residual (“GMRES”)^[Y. Saad, A flexible inner-outer preconditioned GMRES algorithm, SIAM J. Sci. Statist. Comput.,14, (1993).] and ^[Y. Saad and M.H. Schultz, GMRES: A generalized minimum residual algorithm for solving nonsymmetric linear systems, SIAM J. Sci. Statist. Comput., 7 (1986), pp. 856{869.] solver instead of Biconjugate Gradient Stabilized (“BiCGSTAB”)^[Van der Vorst, H. A. (1992). "Bi-CGSTAB: A Fast and Smoothly Converging Variant of Bi-CG for the Solution of Nonsymmetric Linear Systems". SIAM J. Sci. Stat. Comput. 13 (2): 631–644. doi:10.1137/0913035. hdl:10338.dmlcz/104566] and ^[Sleijpen, G. L. G.; Fokkema, D. R. (November 1993). "BiCGstab(l) for linear equations involving unsymmetric matrices with complex spectrum" (PDF). Electronic Transactions on Numerical Analysis. Kent, OH: Kent State University. 1: 11–32. ISSN 1068-9613.] as the linear solver within the Newton iterations. | false |
 | 174 | --use-implicit-ipr | A boolean value. Compute implicit IPR for stability checks and stable solution search. | false |
 | 175 | --use-multisegment-well | A boolean value that when set to true the simulator will use the well model for multi-segment wells instead of the one for single-segment wells. | true |
 | 176 | --use-update-stabilization | A boolean value that switches on (true) or off (false) the stabilized Newton option, that attempts to detect and correct oscillations or stagnation during the Newton iterations. This option may improve convergence for some cases. | true |
@@ -698,12 +698,12 @@ to instruct OPM Flow to read the parameter file.
 *Table A.3: OPM Flow 2024-04 Command Line Options*
 
 
-  - The command line syntax for running OPM Flow is:
+- The command line syntax for running OPM Flow is:
 
 
 ```
 
-			flow [OPTIONS] CASENAME
+flow [OPTIONS] CASENAME
 ```
 
 
@@ -712,7 +712,7 @@ and typing the following command from your terminal:
 
 ```
 
-			flow CASENAME
+flow CASENAME
 ```
 
 
@@ -723,7 +723,7 @@ OPM Flow accepts command line options to control various aspects of the simulato
 
 ```
 
-			flow --parameter-file=CASENAME.param
+flow --parameter-file=CASENAME.param
 ```
 
 
@@ -760,7 +760,7 @@ to instruct OPM Flow to read the parameter file.
 | 25 | --enable-adaptive-time-stepping | A boolean value that turns on (true) or off (false) adaptive time stepping. If set to false the report time steps provided by the input deck are used. | true |
 | 26 | --enable-async-ecl-output | A boolean value that sets the output mode to be asynchronously (true), letting the simulator continue computing the next time step while writing results to restart and summary files in the commercial simulators format. | true |
 | 27 | --enable-async-vtk-output | A boolean value that sets the output mode to be asynchronously (true), letting the simulator continue computing the next time step while writing results to the VTK output files. | true |
-| 28 | --enable-dry-run | A boolean value that specifies if the simulation should actually run, (true) or just check the input deck (false). This option is equivalent to activating the NOSIM keyword in the RUNSPEC section of the input deck (see section Error: Reference source not found Error: Reference source not found). The default value of “auto’ will use whatever is stipulated in the input deck via the NOSIM keyword. | “auto” |
+| 28 | --enable-dry-run | A boolean value that specifies if the simulation should actually run, (true) or just check the input deck (false). This option is equivalent to activating the NOSIM keyword in the RUNSPEC section of the input deck (see section  ). The default value of “auto’ will use whatever is stipulated in the input deck via the NOSIM keyword. | “auto” |
 | 29 | --enable-ecl-output | A boolean value that specifies if the binary output files (restart,  summary files, etc.)  should be written in the commercial simulator’s format (true), or OPM Flow’s format (false). | true |
 | 30 | --enable-esmry | A boolean value that switches on (true) or off (false) the output SUMMARY vectors to  the ESMRY file for fast loading of summary data. | false |
 | 31 | --enable-gravity | A boolean value that switches on (true) or off (false) the use of the gravity correction for the pressure gradients. | true |
@@ -771,7 +771,7 @@ to instruct OPM Flow to read the parameter file.
 | 36 | --enable-storage-cache | A boolean value that turns on (true) or off (false) storing previous storage terms and avoid re-calculating them. | true |
 | 37 | --enable-terminal-output | A boolean value that turns on (true) or off (false) high-level information about the simulation's progress to the terminal | true |
 | 38 | --enable-thermodynamic-hints | A boolean value that enables (true) or disables (false) thermodynamic hints. | false |
-| 39 | --enable-tuning | A boolean value that instructs OPM Flow to read the time stepping parameters from the Error: Reference source not found keyword in the input deck, if set to true. Note that only the first record of the TUNING keyword is processed. | false |
+| 39 | --enable-tuning | A boolean value that instructs OPM Flow to read the time stepping parameters from the  keyword in the input deck, if set to true. Note that only the first record of the TUNING keyword is processed. | false |
 | 40 | --enable-vtk-output | A boolean value that turns on (true) or off (false) a global switch for writing VTK files. | false |
 | 41 | --enable-well-operability-check | A boolean value that enables (true)  checking of a well’s operating status, or disables (false) the checking. | true |
 | 42 | --enable-well-operability-check-iter | A boolean value that enables (true)  checking of a well’s operating status during iterations, or disables (false) the checking during iterations. | false |
@@ -897,7 +897,7 @@ to instruct OPM Flow to read the parameter file.
 | 162 | --tolerance-wells | A real positive double precision value that defines the maximum non-linear error for the well equations. | 1.0 x 10-4 |
 | 163 | -update-equations-scaling | A boolean value that switches on (true) or off (false) the updating of the scaling factors for mass balance equations during the simulation. | false |
 | 164 | --use-average-density-ms-wells | A boolean value that specifies whether to approximate segment densitities by averaging over the segment and its outlet (true) or not (false). | false |
-| 165 | --use-gmres | A boolean value that when set to true OPM Flow will use Generalized Minimal Residual (“GMRES”) [Y. Saad, A flexible inner-outer preconditioned GMRES algorithm, SIAM J. Sci. Statist. Comput.,14, (1993).] and  [Y. Saad and M.H. Schultz, GMRES: A generalized minimum residual algorithm for solving nonsymmetric linear systems, SIAM J. Sci. Statist. Comput., 7 (1986), pp. 856{869.] solver instead of Biconjugate Gradient Stabilized (“BiCGSTAB”) [Van der Vorst, H. A. (1992). "Bi-CGSTAB: A Fast and Smoothly Converging Variant of Bi-CG for the Solution of Nonsymmetric Linear Systems". SIAM J. Sci. Stat. Comput. 13 (2): 631–644. doi:10.1137/0913035. hdl:10338.dmlcz/104566] and  [Sleijpen, G. L. G.; Fokkema, D. R. (November 1993). "BiCGstab(l) for linear equations involving unsymmetric matrices with complex spectrum" (PDF). Electronic Transactions on Numerical Analysis. Kent, OH: Kent State University. 1: 11–32. ISSN 1068-9613.] as the linear solver within the Newton iterations. | false |
+| 165 | --use-gmres | A boolean value that when set to true OPM Flow will use Generalized Minimal Residual (“GMRES”)^[Y. Saad, A flexible inner-outer preconditioned GMRES algorithm, SIAM J. Sci. Statist. Comput.,14, (1993).] and ^[Y. Saad and M.H. Schultz, GMRES: A generalized minimum residual algorithm for solving nonsymmetric linear systems, SIAM J. Sci. Statist. Comput., 7 (1986), pp. 856{869.] solver instead of Biconjugate Gradient Stabilized (“BiCGSTAB”)^[Van der Vorst, H. A. (1992). "Bi-CGSTAB: A Fast and Smoothly Converging Variant of Bi-CG for the Solution of Nonsymmetric Linear Systems". SIAM J. Sci. Stat. Comput. 13 (2): 631–644. doi:10.1137/0913035. hdl:10338.dmlcz/104566] and ^[Sleijpen, G. L. G.; Fokkema, D. R. (November 1993). "BiCGstab(l) for linear equations involving unsymmetric matrices with complex spectrum" (PDF). Electronic Transactions on Numerical Analysis. Kent, OH: Kent State University. 1: 11–32. ISSN 1068-9613.] as the linear solver within the Newton iterations. | false |
 | 166 | --use-multisegment-well | A boolean value that when set to true the simulator will use the well model for multi-segment wells instead of the one for single-segment wells. | true |
 | 167 | --use-update-stabilization | A boolean value that switches on (true) or off (false) the stabilized Newton option, that attempts to detect and correct oscillations or stagnation during the Newton iterations. This option may improve convergence for some cases. | true |
 | 168 | --water-only-threshold | A real positive value that defines the saturation threshold, for which cells with water saturations above or equal to this threshold are considered one-phase water only. | 1.0 |

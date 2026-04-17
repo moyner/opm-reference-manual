@@ -13,7 +13,7 @@ This is an OPM Flow specific keyword.
 
 
 | No. | Name | Description | Default |  |  |
-| --- | --- | --- | --- | --- | --- |
+| --- | --- | :------ | --- | --- | --- |
 |  |  | Field | Metric | Laboratory | 0 |
 | 1 | SALTMF | A real positive value that defines the salt liquid-phase mole fraction for all grid blocks in the model for when the CO2-Brine model has been activated. |  |  |  |
 | mole fraction | mole fraction | mole fraction |  |  |  |

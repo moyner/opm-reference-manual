@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but it will be parsed and its data ign
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | [VCRIT](#REF_HEADING_KEYWORD_VCRIT) | A series of real numbers that define the critical volumes for each of the compositional components active in the model. | None |
 | ft3/lb-M | m3/kg-M | m3/kg-M |  |

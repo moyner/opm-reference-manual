@@ -13,7 +13,7 @@ It can only be used with the Cartesian Regular Grid or Radial Grid models.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | TOPS | TOPS is an array of real numbers defining the depth at the top face of each cell in the model. One can either just enter the TOPS for the first layer only based on NX x NY entries and OPM Flow will calculate the remaining TOPS based on either DZ or DZV. Alternatively NX x NY x NZ TOPS may be entered for each cell in the model. See the DIMENS keyword in the RUNSPEC section for the definition of NX, NY and NZ. Repeat counts may be used, for example 10*5201.0. | None |
 | feet | m | cm |  |

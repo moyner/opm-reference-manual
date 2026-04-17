@@ -16,12 +16,13 @@ There is no data required for this keyword and there is no terminating “/” f
 Although this keyword is read by OPM Flow and the script processing has been implemented, one should use caution when using this facility as it may result in OPM Flow aborting. This is because the PYINPUT facility allows the user to implement complex functionality and the implementation is new for the 2020-04 release. Users should therefore use caution when using this facility.
 
 
-| Note This is an OPM Flow specific keyword for the simulator’s scripting facility using the standard Python interpreter, as such it gives more flexibility than the commercial simulator’s data editing keywords (ADD, EQUALS, MULTIPLY, etc.), although OPM Flow also supports these keywords as well. The PYINPUT facility should be considered experimental as details of the OPM Flow - Python interface might change for future releases. In particular, the current implementation is quite minimal; however, future releases are expected to add more entry points in the simulator’s deck class which can be used to manipulate the input deck as the data is loaded.  As a user you are encouraged to come with wishes in this regard. The PYINPUT facility is very powerful and allows for any piece of Python code to be included and run, including potentially malicious code. The important point is to scrutinize the Python code in between PYINPUT and PYEND in a deck you receive from other parties. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword for the simulator’s scripting facility using the standard Python interpreter, as such it gives more flexibility than the commercial simulator’s data editing keywords (ADD, EQUALS, MULTIPLY, etc.), although OPM Flow also supports these keywords as well. The PYINPUT facility should be considered experimental as details of the OPM Flow - Python interface might change for future releases. In particular, the current implementation is quite minimal; however, future releases are expected to add more entry points in the simulator’s deck class which can be used to manipulate the input deck as the data is loaded.  As a user you are encouraged to come with wishes in this regard. The PYINPUT facility is very powerful and allows for any piece of Python code to be included and run, including potentially malicious code. The important point is to scrutinize the Python code in between PYINPUT and PYEND in a deck you receive from other parties.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | PYINPUT | PYINPUT declares the start of a PYINPUT Definition Section.  This is then followed by any number Python commands. | Not Applicable |  |
 | 1-1 | PYTHON | A series of standard Python commands with one line per command. The active Parser objects are accessible as context.parser and the active Deck object is available as context.deck. |  |
 | PYEND | PYEND declares the end of a PYINPUT Definition Section.  The Python code between PYINPUT and PYEND is read and executed, and the simulator thenreturns to reading the normal simulation input deck. |  |  |

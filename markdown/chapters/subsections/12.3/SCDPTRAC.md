@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | NAME | A three letter character string defining the tracer’s name that has previously been defined by the TRACER keyword in the PROPS section | None |
 | Notes: |  |  |  |

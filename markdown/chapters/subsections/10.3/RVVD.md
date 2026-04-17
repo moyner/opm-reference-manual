@@ -11,7 +11,7 @@ The RVVD keyword defines the vaporized oil-gas ratio (Rv) versus depth tables fo
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding vaporized oil-gas ratio values, RV. | None |
 | feet | m | cm |  |

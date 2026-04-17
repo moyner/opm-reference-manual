@@ -11,7 +11,7 @@ The ACTNUM keyword specifies which grid blocks are either active or inactive. A 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | ACTNUM | An array of integers equal to either 0 or 1 that define the activity of each cell in the model. A value of 0 indicates the cell is inactive. Grid blocks are ordered with the I index cycling fastest, followed by the J and K indices. Repeat counts may be used, for example 20*1. | 1 |
 | Notes: |  |  |  |
 

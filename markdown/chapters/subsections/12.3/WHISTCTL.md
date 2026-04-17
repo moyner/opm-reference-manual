@@ -11,7 +11,7 @@ The WHISTCTL keyword changes the target control for wells declared as history ma
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | TARGET | A defined character string that sets the observed target production phase for the well, all the other phases are calculated unconstrained and used for reporting only. The simulator will attempt to meet the TARGET based on the phase rate stated in items (4) to (6) and (10) on the WCONHIST keyword. TARGET should be set to one of the following character strings: | None |
 | 2 | END | A defined character string that defines if the simulation should terminate if the well has switch to BHP control by the simulator, and should be set to one of the following character strings: Wells set to BHP control via the WCONHIST or WHISCTL keywords are ignored. Only END equal to NO is currently supported in OPM Flow. | NO |

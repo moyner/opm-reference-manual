@@ -11,15 +11,16 @@ The TITLE keyword defines the title for the input deck. The title text will be p
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | TITLE | A character string that defines the title for the input deck | None￹ |
 | Notes: |  |  |  |
 
 *Table 5.47: TITLE Keyword Description*
 
 
-| Note It is good practice to include the name of the input file in the tittle (without the extension) for when cross checking results from multiple cases. |
-| --- |
+::: {.callout-note}
+It is good practice to include the name of the input file in the tittle (without the extension) for when cross checking results from multiple cases.
+:::
 
 
 #### Example

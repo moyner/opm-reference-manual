@@ -13,7 +13,7 @@ The maximum polymer concentration and the associated salt concentration are decl
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | PLMIXNUM | PLMIXNUM defines an array of positive integers greater than or equal to one, that assign a grid cell to a particular table of mixing parameters as defined by the PLMIXPAR and PLYMAX keywords. The maximum number of PLMIXNUM regions is set by the NPLMIX variable on the REGDIMS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 

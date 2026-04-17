@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well economic injection criteria data is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | MINVALUE | A real positive value that defines the minimum economic injection value, below which an economic action will take place, as defined by the AUTO parameter on the WELSPECS keyword (SHUT or STOP). Note that TYPE determines if the minimum value is applied to the well’s actual injection rate or the well’s potential. A value less than or equal to zero switches off this criterion. | 0.0 |

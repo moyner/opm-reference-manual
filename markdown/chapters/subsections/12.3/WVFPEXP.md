@@ -11,7 +11,7 @@ This keyword, WVFPEXP, defines how Vertical Flow Performance (“VFP”) tables 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well’s VFP interpolation options are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | IMPEXP | A defined character string of length three that defines the how the well’s VFPPROD tables are to be interpolated and should be set to one of the following character strings: If a well's WCUT and GOR is varying as a function of BHP inside a Newton/Linear iteration (as for example when gas cusping or water coning is occurring), the implicit lookup of the VFP tables might indicate that the well has died, due to the interpolation/extrapolation. If a well dies using implicit WCUT and GOR VFP lookup then the simulator automatically switches to explicit (previous time step) VFP lookup to prevent the well from premature closure, and writes a message to the screen and print file stating the fact. Note the explicit treatment is just for the VFP lookup only. Using the IMPEXP option allows one to select wells that should use either the implicit or explicit lookup option, which may be useful in improving run time performance. Note that if the default value of IMP is used, the simulator will still switch to explicit VFP lookup to prevent a well from premature closure if the condition occurs. | IMP |

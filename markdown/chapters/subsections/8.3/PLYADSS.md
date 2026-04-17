@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | POLCON | A columnar vector of real monotonically increasing down the column values that defines the polymer concentration in the solution surrounding the rock. The first entry should be zero to define a no polymer and no salt concentration data set. POLCON should only be given for the first entry of the POLCON/POLRATIO set and skipped until another POLCON/POLRATIO table is entered. | None |
 | lb/stb | kg/sm3 | gm/scc |  |

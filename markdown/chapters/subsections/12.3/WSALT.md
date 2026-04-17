@@ -11,7 +11,7 @@ The WSALT keyword defines a water injection well’s salt injection stream conce
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the injection salt concentrations are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | SALTCON | A real positive vector of values that defines the salt concentration of the well’s injection stream and consists of: Only options (1) and (2) are currently supported. This value may be specified using a User Defined Argument (UDA). Note if SALTCON is defaulted (1*) then the well’s salt concentration will be equal to the well’s group salt concentration. | 1* |

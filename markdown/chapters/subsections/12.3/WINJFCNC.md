@@ -11,7 +11,7 @@ The [WINJFCNC](#REF_HEADING_KEYWORD_WINJFCNC) keyword defines the injected filtr
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the filter cake properties are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | FCONCPPM | A real positive value that defines the volumetric concentration of filtrate in the injected water. This value may be specified using a User Defined Argument (UDA). | 0 |

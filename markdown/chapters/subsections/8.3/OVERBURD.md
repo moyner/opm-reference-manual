@@ -15,7 +15,7 @@ This keyword should only be used if compaction option has been enabled.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth for corresponding overburden pressure parameter PRESS. | None |
 | feet | m | cm |  |

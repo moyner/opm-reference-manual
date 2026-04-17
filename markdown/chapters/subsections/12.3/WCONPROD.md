@@ -11,7 +11,7 @@ The WCONPROD keyword defines production targets and constraints for wells that h
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well production targets and constraints data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | STATUS | A defined character string that declares the status of the well. STATUS should be set to one of the following character strings: Note a well’s STATUS should always be set either STOP or SHUT if the well’s production is to be set to zero. Just setting a well’s production rate to zero means that the well is open to flow with a zero rate, this will cause numerical issues especially for wells under THP control. | OPEN |

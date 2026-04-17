@@ -13,7 +13,7 @@ OPM Flow also supports the use of the WELSPECS keyword to change the properties 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well specification data are being defined. | None |
 | 2 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the well is assigned to. The group named FIELD is the top most group. GRPNAME can be set to FIELD although this is discouraged and a warning message will be issued. This is allowed in the commercial compositional simulator but not the commercial black-oil simulator. The FIELD group cannot contain both groups and wells. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. Secondly, groups defined by the GRUPTREE keyword cannot contain other groups and wells; that is, groups must either contain other groups or wells but not both. If necessary, wells can be re-allocated to a different group by re-entering a well's WELSPECS data together with a new value for GRPNAME. | None |

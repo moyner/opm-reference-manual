@@ -11,7 +11,7 @@ KRO defines the scaling parameter for the drainage oil relative permeability val
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | KRO | KRO is an array of positive real numbers which are greater than zero and less than or equal to 1.0, that are the assigned scaling KRO values for each cell in the model. Repeat counts may be used, for example 50*0.500. | Taken from cell allocated relative permeability table. |
 | dimensionless | dimensionless | dimensionless |  |
@@ -23,8 +23,9 @@ KRO defines the scaling parameter for the drainage oil relative permeability val
 For the two point scaling option and for the KRORW or KRORG oil relative permeability arrays NOT being present in the input deck the kro value for a grid block is scaled by:
 
 
-| ${k}_{\mathit{ro}} = {k}_{{\mathit{ro}}_{ \mathit{TABLE}}}\left(\frac{\mathit{KRO}}{{k}_{{\mathit{ro}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.62) |
-| --- | --- |
+$$
+{k}_{\mathit{ro}} = {k}_{{\mathit{ro}}_{ \mathit{TABLE}}}(\frac{\mathit{KRO}}{{k}_{{\mathit{ro}}_{ \mathit{TABLE}-\mathit{MAX}}}})
+$$ {#eq-8-62}
 
 Where:
 

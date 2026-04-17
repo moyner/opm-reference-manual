@@ -10,12 +10,13 @@
 The WPMITAB keyword assigns the well polymer molecular injection tables to water injection wells in OPM Flow's Polymer Molecular Weight Transport option, that uses the polymer molecular weight in calculating the polymer viscosity, as well as accounting for formation damage due to the water and polymer injection, by adjusting the wellbore skin pressure. This keyword should only be used if the POLYMER and POLYMW keywords in the RUNSPEC section are also activated. The keyword assigns the PLYMWINJ tables that are defined via the PLYMWINJ keyword in the PROPS section.
 
 
-| Note This is an OPM Flow specific keyword that employs an alternative polymer flood model based on a Polymer Molecular Weight Transport equation, that is not available in the commercial simulator. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword that employs an alternative polymer flood model based on a Polymer Molecular Weight Transport equation, that is not available in the commercial simulator.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length, that defines the water injection well name, for which the well polymer molecular injection table, PLYMWINJ, is to be assigned. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | PLYMWINJ | A positive integer value that defines the corresponding PLYMWINJ table to be allocated to the water injection well. A value less than or equal to zero means that no PLYMWIN table is allocated to the well | 0 |

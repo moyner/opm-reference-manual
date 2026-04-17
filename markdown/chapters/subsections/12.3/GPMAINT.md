@@ -11,7 +11,7 @@ The GPMAINT keyword defines the groups under pressure maintenance control, the a
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group’s associated FIPNUM region will have a targeted average reservoir pressure maintained.  The group named FIELD is the top most group and can also be used to set pressure target for the whole field. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
 | 2 | GRPCNTL | A defined character string of length four, that sets the production or injection control for the group, used to maintain the average pressure for the FIPNUM region. GRPCNTL should be set to one of the following character strings: | None |
@@ -30,11 +30,12 @@ The GPMAINT keyword defines the groups under pressure maintenance control, the a
 *Table 12.41: GPMAINT Keyword Description*
 
 
-The GPMAINT keyword utilizes control theory [John Doyle, Bruce Francis, Allen Tannenbaum, Feedback Control Theory, Macmillan Publishing Co., 1990.],  [Karl J. Åström; Richard M. Murray (2008). Feedback Systems: An Introduction for Scientists and Engineers. Princeton University Press. ISBN 978-0-691-13576-2.],  [Andrei, Neculai (2005)., Modern Control Theory – A Historical Perspective, Research Institute for Informatics,  Center for Advanced Modeling and Optimization,8-10, Averescu Avenue, Bucharest 1, Romania.] and  [Sontag, Eduardo (1998). Mathematical Control Theory: Deterministic Finite Dimensional Systems. Second Edition,  Springer. ISBN 978-0-387-98489-6.] to calculate the required injection and production rates to ensure some stability in the behavior of the average hydrocarbon pore volume reservoir pressure for a given region and the injection rates over time.  For example, if the group’s flow control (GRPCNTL) is set to one of the in situ reservoir volume injection rates (GINJ, OINJ or WINJ), say Q, then the group’s flow injection rates for each time step is calculated by:
+The GPMAINT keyword utilizes control theory^[John Doyle, Bruce Francis, Allen Tannenbaum, Feedback Control Theory, Macmillan Publishing Co., 1990.], ^[Karl J. Åström; Richard M. Murray (2008). Feedback Systems: An Introduction for Scientists and Engineers. Princeton University Press. ISBN 978-0-691-13576-2.], ^[Andrei, Neculai (2005)., Modern Control Theory – A Historical Perspective, Research Institute for Informatics,  Center for Advanced Modeling and Optimization,8-10, Averescu Avenue, Bucharest 1, Romania.] and ^[Sontag, Eduardo (1998). Mathematical Control Theory: Deterministic Finite Dimensional Systems. Second Edition,  Springer. ISBN 978-0-387-98489-6.] to calculate the required injection and production rates to ensure some stability in the behavior of the average hydrocarbon pore volume reservoir pressure for a given region and the injection rates over time.  For example, if the group’s flow control (GRPCNTL) is set to one of the in situ reservoir volume injection rates (GINJ, OINJ or WINJ), say Q, then the group’s flow injection rates for each time step is calculated by:
 
 
-| $Q = {Q}_{i} + \mathrm{α} \left(\left({P}_{\mathit{TARGET}} - {P}_{i-1}\right) + \frac{{\sum }_{i=1}^{i-1}\left({P}_{\mathit{TARGET}} - {P}_{i-1}\right)\times \mathrm{Δ}{t}_{i}}{\mathrm{β}}\right)$ | (12.26) |
-| --- | --- |
+$$
+Q = {Q}_{i} + \mathrm{α} (({P}_{\mathit{TARGET}} - {P}_{i-1}) + \frac{{\sum }_{i=1}^{i-1}({P}_{\mathit{TARGET}} - {P}_{i-1})\times \mathrm{Δ}{t}_{i}}{\mathrm{β}})
+$$ {#eq-12-26}
 
 Where:
 
@@ -60,9 +61,9 @@ parameter in Table 12.41.
 
 parameter in Table 12.41.
 
-The ${\sum }_{i=1}^{i-1}\left({P}_{\mathit{TARGET}} - {P}_{i-1}\right)\times \mathrm{Δ}{t}_{i}$term in equation (12.26) is the cumulative sum of the average hydrocarbon pore volume weighted reservoir pressure error for the region, times the time step length, from when the last GPMAINT keyword was entered, up to the preceding completed time step.
+The ${\sum }_{i=1}^{i-1}({P}_{\mathit{TARGET}} - {P}_{i-1})\times \mathrm{Δ}{t}_{i}$term in equation (12.26) is the cumulative sum of the average hydrocarbon pore volume weighted reservoir pressure error for the region, times the time step length, from when the last GPMAINT keyword was entered, up to the preceding completed time step.
 
-The objective of equation (12.26) is to stabilize the injection/production rates for the group for when there are changes to the average hydrocarbon pore volume weighted reservoir pressure target set by the initial and subsequent GPMAINT keywords, or by any group constraints applied afterwards. In addition, if the pressure error is small $\left({P}_{\mathit{TARGET}} - {P}_{i-1}\right)$then the equation should result in approximately the same rates as the previous time step, if the GPMAINT has been previously entered.
+The objective of equation (12.26) is to stabilize the injection/production rates for the group for when there are changes to the average hydrocarbon pore volume weighted reservoir pressure target set by the initial and subsequent GPMAINT keywords, or by any group constraints applied afterwards. In addition, if the pressure error is small $({P}_{\mathit{TARGET}} - {P}_{i-1})$then the equation should result in approximately the same rates as the previous time step, if the GPMAINT has been previously entered.
 
 However, if the first time the keyword is entered coincides with the start of injection, then Qi in equation (12.26) by definition will be zero, and the injection rate will start from zero and increase as calculated by the equation. The ALPHA and BETA parameters in Table 12.41 can be used to control how the rate is built up to meet the desired average hydrocarbon pore volume weighted reservoir pressure target.
 

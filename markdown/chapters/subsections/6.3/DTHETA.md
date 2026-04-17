@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DTHETA | DTHETA is an array of real numbers describing the cell size in the THETA direction in radial grids for each cell in the model. Repeat counts may be used, for example 10*25.0 | None |
 | degrees | degrees | degrees |  |

@@ -13,7 +13,7 @@ This keyword is an alias for the MINPV keyword in the GRID section, and thus pro
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | MINPORV | MINPORV is a real positive number that defines the minimum pore volume for a cell to be active in the model. | Defined |
 | rb 1.0e-6 | rm3 1.0e-6 | rcc 1.0e-6 |  |

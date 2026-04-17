@@ -11,7 +11,7 @@ This keyword activates the Extended Network option and defines the maximum numbe
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NODMAX | NODMAX is a positive integer that defines the maximum number of nodes in the Extended Network model. | None |
 | 2 | NBRMAX | NBRMAX is a positive integer that defines the maximum number of links in the Extended Network model. | None |
 | 3 | NBCMAX | NBCMAX is a positive integer that defines the maximum number of branches that can be connected to a node in the Extended Network model,  used in the commercial compositional simulator. The parameter is ignored by OPM Flow and should be defaulted or set to the default value of 20. | 20 |

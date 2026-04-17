@@ -11,7 +11,7 @@ The NUMRES keyword defines the number of reservoir grids (COORD data sets) that 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NUMRES | A positive integer that defines the number of COORD data sets to be processed by OPM Flow. OPM Flow currently only supports a single reservoir grid and so this item should be defaulted (1*) or set to one. | 1 |
 | Notes: |  |  |  |
 

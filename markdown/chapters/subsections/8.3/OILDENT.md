@@ -13,7 +13,7 @@ This keyword can only be used if OPM Flow’s thermal option has been activated 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | TEMP | TEMP is a real positive value greater than zero that defines the absolute reference temperature used with TEXP1 and TEXP2 to estimate the change in oil density with respect to temperature. | Defined |
 | oR 527.67 | K 293.15 | K 293.15 |  |
@@ -29,15 +29,17 @@ This keyword can only be used if OPM Flow’s thermal option has been activated 
 The oil density at a given pressure and temperature is calculated from its value at surface conditions and the oil shrinkage factor (the reciprocal of the oil formation volume factor) as shown in the following equation:
 
 
-| ${ρ}_{o}(p,T)={ρ}_{o}({p}_{s},{T}_{s}){b}_{o}(p,T)$ | (8.3.186.1) |
-| --- | --- |
+$$
+{ρ}_{o}(p,T)={ρ}_{o}({p}_{s},{T}_{s}){b}_{o}(p,T)
+$$ {#eq-8-3-186-1}
 
 
 Where the temperature dependence of the oil shrinkage factor relative to its value at the reference temperature is calculated as shown in the following equation:
 
 
-| ${b}_{o}(p,T)=\frac{{b}_{o}(p,{T}_{\mathit{ref}})}{1+{c}_{1}(T-{T}_{\mathit{ref}})+{c}_{2}{(T-{T}_{\mathit{ref}})}^{2}}$ | (8.3.186.2) |
-| --- | --- |
+$$
+{b}_{o}(p,T)=\frac{{b}_{o}(p,{T}_{\mathit{ref}})}{1+{c}_{1}(T-{T}_{\mathit{ref}})+{c}_{2}{(T-{T}_{\mathit{ref}})}^{2}}
+$$ {#eq-8-3-186-2}
 
 Where:
 

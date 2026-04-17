@@ -2,4 +2,4 @@
 
 Turns on skipping of “compositional” keywords until the ENDSKIP activation keyword is encountered. All “compositional” keywords between the SKIP300 and ENDSKIP keywords are ignored by OPM Flow.
 
-See Error: Reference source not found in the GLOBAL section for a full description.
+See  in the GLOBAL section for a full description.

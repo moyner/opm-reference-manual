@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but it will be parsed and its data ign
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | [EOSNUM](#REF_HEADING_KEYWORD_EOSNUM_9_3) | [EOSNUM](#REF_HEADING_KEYWORD_EOSNUM_9_3) is an array of positive integers less than or equal to NMEOSR that define the [EOS](#REF_HEADING_KEYWORD_EOS_5_3) region number for each cell in the model. The NMEOSR variable on the TABDIMS keyword in the RUNSPEC section defines the number of [EOS](#REF_HEADING_KEYWORD_EOS_5_3) regions in the model. | 1 |
 | Notes: |  |  |  |
 

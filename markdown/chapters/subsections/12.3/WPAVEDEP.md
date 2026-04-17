@@ -11,7 +11,7 @@ The WPAVEDEP keyword defines the reference depth to be used to calculate and rep
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well and well connection status data is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | BHPREF | A real value that defines the reference depth for reporting the bottom-hole pressure for the well. Ideally this value should be set to the midpoint of the perforations as defined by the COMPDAT keyword in the SCHEDULE section. If defaulted by 1* or set to a value less than or equal to zero, then the mid-point of shallowest connection defined by the COMPDAT keyword will be used. | Mid-point of shallowest connection defined by the COMPDAT keyword |
@@ -24,8 +24,9 @@ The WPAVEDEP keyword defines the reference depth to be used to calculate and rep
 See also the WELSPECS keyword that defines a well, the COMPDAT keyword to define a well’s connections, and the WPAVE for defining how the average bottom-hole pressure should be calculated. All the aforementioned keywords are described in the SCHEDULE section.
 
 
-| Note The keyword is normally used to reset a well’s bottom-hole pressure depth to match the pressure gauge depth for when observed pressure is available, for example when conducting a history match for a well test, or when attempting to match static bottom-hole surveys conducted on a well. |
-| --- |
+::: {.callout-note}
+The keyword is normally used to reset a well’s bottom-hole pressure depth to match the pressure gauge depth for when observed pressure is available, for example when conducting a history match for a well test, or when attempting to match static bottom-hole surveys conducted on a well.
+:::
 
 
 #### Example

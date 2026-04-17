@@ -13,7 +13,7 @@ This keyword can only be used if OPM Flow’s thermal option has been activated 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | HEATCRT | HEATCRT is an array of real positive numbers that define reservoir rock volumetric heat capacity temperature dependence of a grid block. Repeat counts may be used, for example 3000*0.05 | None |
 | Btu/ft3/°R2 | kJ/m3/K2 | J/cm3/K2 |  |
@@ -27,8 +27,9 @@ Note this keyword is incompatible with SPECROCK keyword in the PROPS section.
 The data for this keyword and the HEATCR keyword are used to calculate the reservoir rock volumetric heat capacity temperature dependence using the following relationship:
 
 
-| $\text{Heat Capacity of Rock }=\text{HEATCR}\left(\mathit{Temp} - {\mathit{Temp}}_{\mathit{ref}}\right) + \frac{\text{HEATCRT}{\left(\mathit{Temp} - {\mathit{Temp}}_{\mathit{ref}}\right)}^{2}}{2}$ | (6.3) |
-| --- | --- |
+$$
+\text{Heat Capacity of Rock }=\text{HEATCR}(\mathit{Temp} - {\mathit{Temp}}_{\mathit{ref}}) + \frac{\text{HEATCRT}{(\mathit{Temp} - {\mathit{Temp}}_{\mathit{ref}})}^{2}}{2}
+$$ {#eq-6-3}
 
 
 #### Example

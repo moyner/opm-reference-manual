@@ -13,7 +13,7 @@ This keyword can only be used if OPM’s Flow’s thermal option has been activa
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | TEMP | A columnar vector of real monotonically increasing down the column   values that define the temperature for the corresponding rock specific heat values. | None |
 | oF | oC | oC |  |

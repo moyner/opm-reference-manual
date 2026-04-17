@@ -11,7 +11,7 @@ The WELOPEN keyword defines the status of wells and well connections, and is use
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well or well connection status data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | STATUS | A defined character string of length four that defines the well or well connection operational status, STATUS should be set to one of the following character strings: | OPEN |

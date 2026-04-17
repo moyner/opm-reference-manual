@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GRGLCV | GRGLCV is a real positive value that specifies the linear convergence error target. | 0.0001 |
 | dimensionless | dimensionless | dimensionless |  |

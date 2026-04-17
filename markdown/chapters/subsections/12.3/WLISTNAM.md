@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | WLIST | A character string of up to eight characters in length, enclosed in quotes, that defines the well list name for the WELLNAMES declared by this record. Note the first character must be asterisk (“*”) and the second character must be a letter, for example, *PROD. | None |
 | 2-51 | WELNAMES | A character string of up to eight characters in length that defines the well name that belongs to the named well list (WLIST). A total of 50 well names can be added to WLISTNAM at a time. If the first well name in the list is the default value (“*1”), then the list is first cleared of all wells, before adding the subsequent wells in WELLNAMES. Well names roots may all be used in WELLNAMES as long as they are enclosed in quotes and end with an asterisk (“*”). In this case all wells that match the specification will be added to the list. For example, wells named OP01, OP02 and OP03, can be added as group by using “OP*” as the well name. Note that the well names must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | 1* |
 | Notes: |  |  |  |

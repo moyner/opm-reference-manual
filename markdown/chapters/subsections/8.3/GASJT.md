@@ -7,18 +7,19 @@
 
 #### Description
 
-GASJT activates the gas Joule-Thomson [Natural Gas Engineering (McGraw-Hill chemical engineering series), Donald L. Katz, Robert l Lee, McGraw-Hill Education, 1990 (ISBN 0071007776, 9780071007771).] effect in temperature calculations, and defines the gas Joule-Thomson Coefficient (“JTC”) at a given reference pressure, for when OPM Flow’s thermal option has been activated by the THERMAL keyword in the RUNSPEC.
+GASJT activates the gas Joule-Thomson^[Natural Gas Engineering (McGraw-Hill chemical engineering series), Donald L. Katz, Robert l Lee, McGraw-Hill Education, 1990 (ISBN 0071007776, 9780071007771).] effect in temperature calculations, and defines the gas Joule-Thomson Coefficient (“JTC”) at a given reference pressure, for when OPM Flow’s thermal option has been activated by the THERMAL keyword in the RUNSPEC.
 
 
-| Note This is an OPM Flow keyword used with OPM Flow’s black-oil thermal model, that is not available in the commercial simulator’s black-oil thermal formulation. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow keyword used with OPM Flow’s black-oil thermal model, that is not available in the commercial simulator’s black-oil thermal formulation.
+:::
 
 
 This keyword can only be used if OPM Flow’s thermal option has been activated by the THERMAL keyword in the RUNSPEC section. Note this is different to the commercial simulator that uses the TEMP keyword in the RUNSPEC section to activate the black-oil thermal model, and does not include the Joule-Thomson effect in temperature calculations.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | A real positive value that defines the reference pressure for the corresponding Joule-Thomson Coefficient, GASJTC. | None |
 | psia | barsa | atma |  |
@@ -29,20 +30,22 @@ This keyword can only be used if OPM Flow’s thermal option has been activated 
 *Table 8.40: GASJT Keyword Description*
 
 
-The Joule–Thomson effect is when a real gas, as oppose to an ideal gas, expands, resulting in the temperature of the gas dropping. During passage of a gas through a choke, the internal energy is transferred to kinetic energy with a corresponding reduction in temperature as the velocity increases. The effect for natural gas is approximately 7 oF for every 100 psi pressure reduction, or 0.5 oC per barsa [https://petrowiki.spe.org/Glossary:Joule-thompson_effect.], is valid for "normal" pressures and temperatures at the surface.
+The Joule–Thomson effect is when a real gas, as oppose to an ideal gas, expands, resulting in the temperature of the gas dropping. During passage of a gas through a choke, the internal energy is transferred to kinetic energy with a corresponding reduction in temperature as the velocity increases. The effect for natural gas is approximately 7 oF for every 100 psi pressure reduction, or 0.5 oC per barsa^[https://petrowiki.spe.org/Glossary:Joule-thompson_effect.], is valid for "normal" pressures and temperatures at the surface.
 
-Thermodynamically, the Joule–Thomson coefficient is defined as the isenthalpic [An isenthalpic process or isoenthalpic process, is a process that proceeds without any change in enthalpy, H; or specific enthalpy, h.] change in temperature in a fluid caused by a unitary pressure drop, as shown in the following equation:
+Thermodynamically, the Joule–Thomson coefficient is defined as the isenthalpic^[An isenthalpic process or isoenthalpic process, is a process that proceeds without any change in enthalpy, H; or specific enthalpy, h.] change in temperature in a fluid caused by a unitary pressure drop, as shown in the following equation:
 
 
-| $\mathrm{η} = \left(\frac{\partial T}{\partial P}\right)$ | (8.53) |
-| --- | --- |
+$$
+\mathrm{η} = (\frac{\partial T}{\partial P})
+$$ {#eq-8-53}
 
 
 One can also express enthalpy changes in terms of pressure, temperature and volume changes:
 
 
-| $\mathrm{η} = \frac{{\mathit{RT}}^{2}}{{\mathit{Pc}}_{p}}{\left(\frac{\partial Z}{\partial T}\right)}_{P}$ | (8.54) |
-| --- | --- |
+$$
+\mathrm{η} = \frac{{\mathit{RT}}^{2}}{{\mathit{Pc}}_{p}}{(\frac{\partial Z}{\partial T})}_{P}
+$$ {#eq-8-54}
 
 Where:
 

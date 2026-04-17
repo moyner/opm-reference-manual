@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | VFPCHK | VFPCHK is a real positive value that defines the BHP pressure above which crossing VFP curves will be ignored. Setting VFPCHK to a large number like the default value number will cause all crossing curves to be checked. Also if the keyword is omitted from the input deck then the check is performed using the default value. | 1.010 |
 | psia | barsa | atma |  |
@@ -24,8 +24,9 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 *Table 12.73: VFPCHK Keyword Description*
 
 
-| Note One reason for external programs generating crossing VFP curves is that the curves have been generated with too much resolution. For example, if the GOR entries has been generated with values of 100, 150, 200, 250, 300, 350, 400, 450 and 500,  then use a geometric spacing instead to generated the VFP table, that is: 100, 300, 900.  This will enable the simulator to interpolate the curves consistently and avoid crossing VFP curves. |
-| --- |
+::: {.callout-note}
+One reason for external programs generating crossing VFP curves is that the curves have been generated with too much resolution. For example, if the GOR entries has been generated with values of 100, 150, 200, 250, 300, 350, 400, 450 and 500,  then use a geometric spacing instead to generated the VFP table, that is: 100, 300, 900.  This will enable the simulator to interpolate the curves consistently and avoid crossing VFP curves.
+:::
 
 
 #### Example

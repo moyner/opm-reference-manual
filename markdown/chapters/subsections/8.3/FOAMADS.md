@@ -11,7 +11,7 @@ The FOAMADS keyword defines the foam rock adsorption tables for when the Foam op
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | FOAMCON | A columnar vector of real monotonically increasing down the column values that defines the foam concentration in the solution surrounding the rock. The first entry should be zero to define a no foam concentration data set. Units are dependent on the transport phase specified via the FOAMOPT1 variable on the FOAMOPTS keywod in the PROPS section. | None |
 | Gas: lb/Mscf Water: lb/stb | Gas: kg/sm3 Water: kg/sm3 | Gas: gm/scc Water: gm/scc |  |

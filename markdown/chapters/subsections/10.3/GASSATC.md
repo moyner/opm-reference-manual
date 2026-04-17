@@ -15,7 +15,7 @@ This is the non-standard method to initialize the model via enumeration and is s
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GASSATC | GASSATC is an array of real positive numbers that define the initial equilibration saturated coal gas concentration values to each cell in the model. Repeat counts may be used, for example 20*75.0. | None |
 | Mscf/ft3 | sm3/m3 | scc/cc |  |

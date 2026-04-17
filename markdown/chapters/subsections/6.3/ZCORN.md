@@ -13,7 +13,7 @@ The keyword can be only used be used with Irregular Corner-Point Grids.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | ZCORN | An array of depths with 8 depths for each cell, for a total of 8 x Nx x NY x NZ entries | None |
 | feet | metres | cm |  |

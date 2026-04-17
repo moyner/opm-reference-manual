@@ -11,7 +11,7 @@ The FOAMMOB keyword defines the reduction in gas mobility as a function of the f
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | FOAMCON | A columnar vector of real monotonically increasing down the column values that defines the foam concentration for the corresponding gas mobility reduction factor (FOAMRATI). The first entry should be zero to define a no foam concentration data set. Units are dependent on the transport phase specified via the FOAMOPT1 variable on the FOAMOPTS keyword in the PROPS section. FOAMOPT1 should be set to either GAS or WATER. | None |
 | Gas: lb/Mscf Water: lb/stb | Gas: kg/sm3 Water: kg/sm3 | Gas: gm/scc Water: gm/scc |  |

@@ -11,7 +11,7 @@ The INCLUDE keyword informs OPM Flow to continue reading input data from the spe
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | FILENAME | A character string enclosed in quotes that defines a file to read in and be processed by OPM Flow. | None |
 | Notes: |  |  |  |
 

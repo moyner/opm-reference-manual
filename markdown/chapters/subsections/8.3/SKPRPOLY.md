@@ -12,12 +12,13 @@ This keyword, SKPRPOLY, describes the relationship of a water injection well's i
 This keyword should only be used if the POLYMER and POLYMW keywords in the RUNSPEC section are also activated.
 
 
-| Note This is an OPM Flow specific keyword that employs an alternative polymer flood model based on a Polymer Molecular Weight Transport equation, that is not available in the commercial simulator. The model has been tested using metric units; however, using either field or laboratory units with the option should be considered experimental. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword that employs an alternative polymer flood model based on a Polymer Molecular Weight Transport equation, that is not available in the commercial simulator. The model has been tested using metric units; however, using either field or laboratory units with the option should be considered experimental.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1-1 | SKPRPNUM | A positive integer value greater than zero and less than or equal to the NTSKPOLY variable, as defined on the PINTDIMS keyword in the RUNSPEC section, that defines the SKPRPOLY Polymer Molecular Weight Model polymer injection skin pressure table number. | None |
 | 1-2 | POLCON | A real positive value that the defines the reference polymer concentration  for the table. | None |

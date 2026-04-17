@@ -13,7 +13,7 @@ Note that numerical aquifers are connected to the grid using the AQUCON keyword 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | AQUID | AQUID is a positive integer greater than or equal to one and less than the maximum number of analytical aquifers as defined by the NANAQU variable on the AQUDIMS keyword in the RUNSPEC section, that defines the aquifer to be connected to the grid. | None |
 | 2 | I1 | A positive integer that defines the lower bound of the cells in the I-direction to be connected to the aquifer and must be greater than or equal to one and less than or equal to I2 and NX. | 1 |
@@ -33,8 +33,9 @@ Note that numerical aquifers are connected to the grid using the AQUCON keyword 
 *Table 6.7: AQUANCON Keyword Description*
 
 
-| Note If the AQUANCON keyword has been utilized in the run deck then OPM Flow will write the  AQUIFERA array to the *.INIT file in order to visualize the aquifer connections in OPM ResInsight. This is accomplished by setting the AQUIFERA value to 2^(AQUID-1) for cells connected to aquifer AQUID. If a cell is connected to multiple analytical aquifers then AQUIFERA is summed for all aquifers connected to a cell. Note that connecting cells to multiple aquifers is best avoided. |
-| --- |
+::: {.callout-note}
+If the AQUANCON keyword has been utilized in the run deck then OPM Flow will write the  AQUIFERA array to the *.INIT file in order to visualize the aquifer connections in OPM ResInsight. This is accomplished by setting the AQUIFERA value to 2^(AQUID-1) for cells connected to aquifer AQUID. If a cell is connected to multiple analytical aquifers then AQUIFERA is summed for all aquifers connected to a cell. Note that connecting cells to multiple aquifers is best avoided.
+:::
 
 
 #### Example

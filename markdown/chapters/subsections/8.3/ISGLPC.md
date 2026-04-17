@@ -11,7 +11,7 @@ ISGLPC defines the imbibition connate gas saturation for all the cells in the mo
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | ISGLPC | ISGLPC is an array of real numbers assigning the connate gas saturation values to each cell in the model. The number of entries should correspond to the NX x NY x NZ parameters on the DIMENS keyword. If ISGLPC is omitted from the input deck the values will be defaulted to those on the ISGL series of keywords. If the ISGL series of keywords are missing from the input deck then the values are taken from the cell allocated capillary pressure table. Repeat counts may be used, for example 30*0.03 | Taken from SGL or from the cell allocated capillary pressure table. |
 | dimensionless | dimensionless | dimensionless |  |

@@ -11,7 +11,7 @@ MULTFLT enables the transmissibilities across defined faults, as declared by the
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | FLTNAME | FLTNAME is a character string enclosed in quotes with a maximum length of eight characters, that defines the name of the fault that FLTMULT will be applied to. FLTNAME must have previously been defined using the FAULTS keyword in GRID section | None |
 | 2 | FLT-TRS | A positive real number that sets the transmissible multiplier to be applied to the FLTNAME transmissibilities positive real number that sets the transmissible multiplier to be applied to the FLTNAME transmissibilities. | 1.0 |
 | 3 | FLT-DIF | A positive real number that sets the diffusivity multiplier to be applied to the FLTNAME diffusivities. This option should only be used if the Diffusion option has been made activate by the DIFFUSE keyword in the RUNSPEC section. OPM Flow does not support this Diffusion option. | 1.0 |

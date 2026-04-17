@@ -13,7 +13,7 @@ Note that wells can be allocated to a group when they are specified by the WELSP
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well economic criteria data is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | ORAT | A real positive value that defines the minimum economic surface oil production rate, below which an economic action will take place, as outlined below: Only option (2) is supported by OPM Flow as STATUS equals AUTO on the COMPDAT keyword is currently not supported by the simulator. Hence, the well be either shut or stopped. A value less than or equal to zero switches off this criterion. This value may be specified using a User Defined Argument (UDA). | 0.0 |

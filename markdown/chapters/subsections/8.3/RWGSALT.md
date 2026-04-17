@@ -10,12 +10,13 @@
 RWGSALT defines the relationship of water vaporization versus pressure and salt concentration. This keyword should be used when the VAPWAT keyword has be declared in the RUNSPEC section indicating that vaporized water is present in the gas phase. In addition, if the Salt Precipitation model has been activated via the BRINE and PRECSALT keywords, also in the RUNSPEC section, then this keyword must be present. The keyword may be used for gas-water and oil-water-gas input decks that contain the either dry or wet gas and vaporized water phases.
 
 
-| Note This is an OPM Flow specific keyword for the simulator’s Water Vaporization and Salt Precipitation Models, note that these are extensions to the simulator’s standard Brine model. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword for the simulator’s Water Vaporization and Salt Precipitation Models, note that these are extensions to the simulator’s standard Brine model.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | A real monotonically increasing down the column values that define the gas phase pressure, that together with salt concentration, defines the vaporized water in gas ratio (“VWGR”) or Rw | None |
 | psia | barsa | atma |  |

@@ -12,12 +12,13 @@ The COMPS keyword activates the Compositional Modeling Formulation, and declares
 OPM Flow does not currently support the general compositional modeling formulation.
 
 
-| Note This keyword is only supported by OPM Flow when the two component gas-water CO2 storage model has been activated using the CO2STORE keyword and either the GASWAT or the GAS and WATER keywords in the RUNSPEC section. Secondly, although OPM Flow parses the keyword, the simulator currently ignores the data for this keyword. |
-| --- |
+::: {.callout-note}
+This keyword is only supported by OPM Flow when the two component gas-water CO2 storage model has been activated using the CO2STORE keyword and either the GASWAT or the GAS and WATER keywords in the RUNSPEC section. Secondly, although OPM Flow parses the keyword, the simulator currently ignores the data for this keyword.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | COMPS | A positive integer defining the number of compositional components active in the model. Only the default value of two is currently supported by OPM Flow. | 2 |
 | Notes: |  |  |  |
 

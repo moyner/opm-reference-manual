@@ -13,7 +13,7 @@ OPM Flow provides only limited supported for this keyword and will ignore the un
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | DENO | Print the oil reservoir density array | N/A |
 | 2 | EQUIL | Print the equilibration report. | N/A |
 | 3 | FIP | Print the fluid in-place report. The parameter is assigned a value, OPTION, using the form FIP=OPTION, where OPTION is an integer variable set to: | FIP=2 |
@@ -24,8 +24,9 @@ OPM Flow provides only limited supported for this keyword and will ignore the un
 *Table 10.3.80.1: RPTSOL Keyword Description*
 
 
-| Note Except for non-array like data, FIP etc., this keyword has the potential to produce very large print files that some text editors may have difficulty loading. A more efficient solution for array type data is to load the *.INIT and *.RESTART files into OPM ResInsight to view the data graphically, this also has the benefit of being able to filter the grid based on I, J, K ranges and grid properties. |
-| --- |
+::: {.callout-note}
+Except for non-array like data, FIP etc., this keyword has the potential to produce very large print files that some text editors may have difficulty loading. A more efficient solution for array type data is to load the *.INIT and *.RESTART files into OPM ResInsight to view the data graphically, this also has the benefit of being able to filter the grid based on I, J, K ranges and grid properties.
+:::
 
 
 #### Examples

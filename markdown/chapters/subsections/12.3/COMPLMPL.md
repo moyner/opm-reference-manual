@@ -17,7 +17,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | LGRNAME | A character string of up to eight characters in length that defines the LGR name for which the well LGR connection data are being defined. Note that the well name (LGRNAME) must have been declared previously using the WELSPECL keyword in the SCHEDULE section, otherwise an error may occur. If defaulted with 1* the LGR on the WELSPECL keyword will be utilized. | Defined |

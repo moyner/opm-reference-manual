@@ -15,7 +15,7 @@ The initial reservoir temperature should be defined when OPM Flow’s CO2 or H2 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | RTEMP | Single real positive value that defines the reservoir temperature for the model. | None |
 | oF | oC | oC |  |

@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |  |  |
-| --- | --- | --- | --- | --- | --- |
+| --- | --- | :------ | --- | --- | --- |
 |  |  | Field | Metric | Laboratory |  |
 | 1 | SALTNODE | A real monotonically increasing positive columnar vector defining the salt concentration for a given PVTNUM table. | None |  |  |
 | lb/stb | kg/sm3 | gm/scc |  |  |  |

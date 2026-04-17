@@ -11,7 +11,7 @@ SOGCR defines the critical oil saturation for all the cells in the model via an 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SOGCR | SOGCR is an array of real numbers assigning the critical oil saturation with respect to gas values to each cell in the model. The number of entries should correspond to the NX x NY x NZ parameters on the DIMENS keyword. Repeat counts may be used, for example 30*0.30 dimensionless | Taken from cell allocated relative permeability table. |
 | dimensionless | dimensionless | dimensionless |  |

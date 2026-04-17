@@ -13,7 +13,7 @@ This keyword can only be used if OPM Flow’s thermal option has been activated 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | TEMP | A columnar vector of real monotonically increasing down the column values that defines the temperature values. | None |
 | oF | oC | oC |  |

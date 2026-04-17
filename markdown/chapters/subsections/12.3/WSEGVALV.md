@@ -15,7 +15,7 @@ A sub-critical valve ICD is a type of frictional ICD that adds an additional pre
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which a multi-segment well is being defined. Note that the well name (WELNAME) must have been declared previously using both the WELSPECS and WELSEGS keywords in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | ISEG1 | A positive integer greater than or equal to two and less than or equal to MXSEGS on the WSEGDIMS keyword in the RUNSPEC section that defines the segment containing the sub-critical valve. | None |
@@ -44,8 +44,9 @@ The total number of wells should be defined via the WELLDIMS keyword and the num
 OPM flow calculates the pressure drop across the ICD using a homogeneous sub-critical flow through a constriction model. The model consists of two variables, the pressure drop due to the constriction,$δ{P}_{\mathit{restriction}}$, and the pressure drop due to friction,$δ{P}_{\mathit{friction}}$, as shown in equation (12.42).
 
 
-| $\begin{matrix}\mathrm{δ}P = \mathrm{δ}{P}_{\mathit{restriction}} + \mathrm{δ}{P}_{\mathit{friction}} \\  \\ \mathit{where} \\ \mathrm{δ}{P}_{\mathit{restriction}} = {C}_{1}\frac{\mathrm{ρ}{{\mathrm{υ}}^{2}}_{r}}{{2{C}_{v}}^{2}} \\  \\ \mathrm{δ}{P}_{\mathit{friction}} = 2{C}_{2}f\frac{L}{D}{\mathrm{υ}}_{p}^{2}\end{matrix}$ | (12.42) |
-| --- | --- |
+$$
+\begin{matrix}\mathrm{δ}P = \mathrm{δ}{P}_{\mathit{restriction}} + \mathrm{δ}{P}_{\mathit{friction}} \\  \\ \mathit{where} \\ \mathrm{δ}{P}_{\mathit{restriction}} = {C}_{1}\frac{\mathrm{ρ}{{\mathrm{υ}}^{2}}_{r}}{{2{C}_{v}}^{2}} \\  \\ \mathrm{δ}{P}_{\mathit{friction}} = 2{C}_{2}f\frac{L}{D}{\mathrm{υ}}_{p}^{2}\end{matrix}
+$$ {#eq-12-42}
 
 Where:
 
@@ -82,15 +83,17 @@ L	=	Segment pipe length.
 In addition as both υr and υp are dependent on their respective cross-section areas then the volumetric flow (q) through the device requires that:
 
 
-| $q = {\mathrm{υ}}_{r}{A}_{r} = {\mathrm{υ}}_{p}{A}_{p}$ | (12.43) |
-| --- | --- |
+$$
+q = {\mathrm{υ}}_{r}{A}_{r} = {\mathrm{υ}}_{p}{A}_{p}
+$$ {#eq-12-43}
 
 
 Substituting equation (12.43) for$δ{P}_{\mathit{restriction}}$in equation (12.42) one obtains:
 
 
-| $\mathrm{δ}{P}_{\mathit{restriction}} = {C}_{2}\frac{\mathrm{ρ}{q}^{2}}{{2{C}_{v}}^{2}{A}_{r}^{2}}$ | (12.44) |
-| --- | --- |
+$$
+\mathrm{δ}{P}_{\mathit{restriction}} = {C}_{2}\frac{\mathrm{ρ}{q}^{2}}{{2{C}_{v}}^{2}{A}_{r}^{2}}
+$$ {#eq-12-44}
 
 Where:
 
@@ -108,8 +111,9 @@ q	= 	Volumetric flow rate.
 The base strength of the device, K is defined using equation (12.44) as follows:
 
 
-| $K = \frac{ {C}_{2}}{{2{C}_{v}}^{2}{A}_{r}^{2}}$ | (12.45) |
-| --- | --- |
+$$
+K = \frac{ {C}_{2}}{{2{C}_{v}}^{2}{A}_{r}^{2}}
+$$ {#eq-12-45}
 
 
 Note if K is greater than 0.1 then the device will be shut.
@@ -117,8 +121,9 @@ Note if K is greater than 0.1 then the device will be shut.
 The setting of the device, that is how open the device is, is related to the restricted area and the maximum restricted area of the device as follows:
 
 
-| $\mathit{Seting}\mathit{of}\mathit{Device} = \frac{{A}_{r}}{{A}_{\mathit{max}}}$ | (12.46) |
-| --- | --- |
+$$
+\mathit{Seting}\mathit{of}\mathit{Device} = \frac{{A}_{r}}{{A}_{\mathit{max}}}
+$$ {#eq-12-46}
 
 Where:
 

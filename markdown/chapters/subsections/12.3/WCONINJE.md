@@ -11,7 +11,7 @@ The WCONINJE keyword defines injection targets and constraints for wells that ha
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well injection targets and constraints data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | TYPE | A defined character string that defines the type of injection well. TYPE should be set to one of the following character strings: | None |

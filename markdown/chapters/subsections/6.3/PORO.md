@@ -11,7 +11,7 @@ PORO defines the porosity for all the cells in the model via an array. The keywo
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PORO | PORO is an array of real positive numbers that are greater than or equal to zero and less than or equal to one that are the porosity values for each cell in the model. Repeat counts may be used, for example 3000*0.15 | None |
 | dimensionless | dimensionless | dimensionless |  |

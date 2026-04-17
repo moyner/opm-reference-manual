@@ -13,7 +13,7 @@ Note that the total number of FIP and FIPNUM regions must be defined by the NMFI
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | FIPNAME | A character string of up to eight characters, consisting of FIP as the first three characters followed by up to a five letter character string defining the fluid in-place’s name. | None |
 | 2 | FIPNUM | FIPNUM defines an array of positive integers greater than or equal to one, that assigns a grid cell to a particular fluid in-place region named by FIPNAME. The maximum number of FIP and FIPNUM regions is set by the REGDIMS(NMFIPR) or the TABDIMS(NTFIP) keywords(variables) in the RUNSPEC section. If both REGDIMS(NMFIPR) and TABDIMS(NTFIP) have been defined then the maximum of the two is used. | 1 |
 | Notes: |  |  |  |
@@ -24,14 +24,15 @@ Note that the total number of FIP and FIPNUM regions must be defined by the NMFI
 The keyword behaves the same as the FIPNUM keyword except the full name of the keyword, including the concatenated characters, are used as the property region name. For example, if we wish define a fluid in-place region name called UNIT, then the keyword would be FIPUNIT.
 
 
-| Note The commercial simulator prints out a fluid in-place report if the FIP option on the RPTSCHED keyword is set equal to three, that is: FIP=3. This option is currently not available in OPM Flow. |
-| --- |
+::: {.callout-note}
+The commercial simulator prints out a fluid in-place report if the FIP option on the RPTSCHED keyword is set equal to three, that is: FIP=3. This option is currently not available in OPM Flow.
+:::
 
 The region property data for FIP arrays can be written to the SUMMARY file, and the RSM file if requested, similar to the FIPNUM regions, with some caveats:
 
-    - Only SUMMARY keywords for regions may be used, that is the SUMMARY variable name must begin with the letter R.
-    - The SUMMARY variable name must consist of a character string length of exactly five characters, if less than five characters, then the “_” character should be used to fill out the SUMMARY variable name. For example, instead of RPRUNIT, use RPR__UNI, or instead of ROIPUNIT, use ROIP_UNI.
-    - Only the first three characters of the FIP region name should be concatenated with the SUMMARY variable name. This means if the FIP region name is UNIT, the FIP keyword would be FIPUNIT; however, to access the regional pressures for FIPUNIT, one should use RPR__UNI, or to access the regional oil in-place one would use ROIP_UNI.
+- Only SUMMARY keywords for regions may be used, that is the SUMMARY variable name must begin with the letter R.
+- The SUMMARY variable name must consist of a character string length of exactly five characters, if less than five characters, then the “_” character should be used to fill out the SUMMARY variable name. For example, instead of RPRUNIT, use RPR__UNI, or instead of ROIPUNIT, use ROIP_UNI.
+- Only the first three characters of the FIP region name should be concatenated with the SUMMARY variable name. This means if the FIP region name is UNIT, the FIP keyword would be FIPUNIT; however, to access the regional pressures for FIPUNIT, one should use RPR__UNI, or to access the regional oil in-place one would use ROIP_UNI.
 
 See also the FIPOWG keyword in the REGIONS section that automatically defines the fluid-in-place regions at the start of the run based the gas, oil and water zones at the time the model was initialized.
 

@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | ADINDX | A positive integer of 1 or 2 that defines the surfactant desorption option. | Defined |
 | dimensionless 1 | dimensionless 1 | dimensionless 1 |  |

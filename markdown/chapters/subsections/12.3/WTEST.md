@@ -11,14 +11,14 @@ The WTEST keyword outlines the testing procedures to be applied to wells that ar
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name of the well to be tested. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | TIME | A real value greater than zero that defines the minimum period of time that must elapse between well tests. The next well test is performed at the beginning of the next time step after the specified period of time has elapsed since the previous well test, for example if TIME is set equal to 365.25 (days), the test is performed approximately every year. | None |
 | days | days | hours |  |
 | 3 | TEST | A character string of up to five characters in length that defines a list of reasons why a well could have been closed. If a well was closed for one of the specified reasons then the well is tested to see if it can be put back on production. The characters that can be used to define TEST are as follows: Here,  if the well has at least one connection open then the well is opened. If a well has no open connections, then those connections that have been closed due to an economic limit test ("ELT"), are all individually tested and reopened if they meet the ELT criteria as defined by the WECON, CECON and WECONINJ keywords in the SCHEDULE section. And the well is opened if it has at least one open connection. Where the ELT applies to ORAT, GRAT, WCUT, GOR and WGR etc. The default value is an empty string “ ” that switches off testing. Note that only the P, E and G options are currently supported in OPM Flow. | “ ” |
 | 4 | NTIME | A positive integer greater than or equal to zero that define the number of times a well can be tested. The default value of zero means an infinite number of times. | 0 |
-| 5 | START | A real positive value that defines the start up time used to prorate the rate at which the well is put back on production. If START is large compared to the time step size, then the well is brought on gradually, if it is less than the time step size, then the well is opened faster. The rate is prorated based on the following: ${Q}_{i} = {Q}_{\mathit{final}}\times \left(\frac{{T}_{\mathit{End}\mathit{of}\mathit{Time}\mathit{Step}} - {T}_{\mathit{opened}}}{\mathit{START}}\right)$ The default value of 0.0 means the well is opened immediately. | 0.0 |
+| 5 | START | A real positive value that defines the start up time used to prorate the rate at which the well is put back on production. If START is large compared to the time step size, then the well is brought on gradually, if it is less than the time step size, then the well is opened faster. The rate is prorated based on the following: ${Q}_{i} = {Q}_{\mathit{final}}\times (\frac{{T}_{\mathit{End}\mathit{of}\mathit{Time}\mathit{Step}} - {T}_{\mathit{opened}}}{\mathit{START}})$ The default value of 0.0 means the well is opened immediately. | 0.0 |
 | days | days | hours |  |
 | Notes: |  |  |  |
 

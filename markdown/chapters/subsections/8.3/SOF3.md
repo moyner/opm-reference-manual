@@ -11,7 +11,7 @@ The SOF3 keyword defines the oil relative permeability versus oil saturation tab
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SOIL | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the oil or the hydrocarbon solvent saturation. The final entry should be at the connate water saturation, that is 1- Swc. | None |
 | dimensionless | dimensionless | dimensionless |  |

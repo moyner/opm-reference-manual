@@ -11,7 +11,7 @@ The WINJMULT keyword defines pressure dependent injectivity multipliers for inje
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | FRACPRES | FRACPRES is the fracture opening pressure (Pfractue) used in equation 12.3.296.1. | None |
@@ -30,8 +30,9 @@ The WINJMULT keyword defines pressure dependent injectivity multipliers for inje
 The methodology for applying the well pressure dependent injectivity multipliers is outlined in equation 12.3.296.1.
 
 
-| $\begin{matrix}\mathit{Multiplier}= & 1.0 + α \left({P}_{\mathit{WBHP}} - {P}_{\mathit{fracture}}\right) & \text{ for }{P}_{\mathit{WBHP}} > {P}_{\mathit{fracture}} \\ \mathit{Multiplier}= & 1.0 & \text{ for }{P}_{\mathit{WBHP}} < {P}_{\mathit{fracture}}\end{matrix}$ | (12.3.296.1) |
-| --- | --- |
+$$
+\begin{matrix}\mathit{Multiplier}= & 1.0 + α ({P}_{\mathit{WBHP}} - {P}_{\mathit{fracture}}) & \text{ for }{P}_{\mathit{WBHP}} > {P}_{\mathit{fracture}} \\ \mathit{Multiplier}= & 1.0 & \text{ for }{P}_{\mathit{WBHP}} < {P}_{\mathit{fracture}}\end{matrix}
+$$ {#eq-12-3-296-1}
 
 where:
 
@@ -49,8 +50,9 @@ Pfracture	=  	the effective fracture opening pressure, FRACPRES in Table 12.3.29
 The equation is applied every time there is a calculation to determine a well’s flow rate, this results in the calculated mobility rates being scaled up by the Multiplier value in equation 12.3.296.1. Note also that since the scaling is performed on the connection fluid mobility values, then the reported connection transmissibilities in the print file etc. remain unchanged.
 
 
-| Note If all the connection parameters (I, J, K) are defaulted, or OPTION is set equal to WREV, then the multiplier is applied to all connections in the well. If any of the connection parameters (I, J, K) have positive values and OPTION is set equal to CIRR or CREV, then the multiplier is applied to the selected connections as determined by the (I, J, K) parameters. |
-| --- |
+::: {.callout-note}
+If all the connection parameters (I, J, K) are defaulted, or OPTION is set equal to WREV, then the multiplier is applied to all connections in the well. If any of the connection parameters (I, J, K) have positive values and OPTION is set equal to CIRR or CREV, then the multiplier is applied to the selected connections as determined by the (I, J, K) parameters.
+:::
 
 
 #### Example

@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NRSOUT | A positive integer value that specifies the maximum number of elements that can be written to the RESTART file at each reporting time step. | 3600 |
 | Notes: |  |  |  |
 

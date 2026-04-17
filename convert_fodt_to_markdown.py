@@ -11,6 +11,7 @@ import hashlib
 import os
 import re
 import sys
+import textwrap
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -177,19 +178,27 @@ def extract_text(elem, style_map, in_code=False):
             else:
                 parts.append(link_text)
         elif local == "note":
-            # Footnote
+            # Footnote — render as Pandoc/Quarto inline footnote
             note_body = child.find(f'{{{NS["text"]}}}note-body')
             if note_body is not None:
                 note_text = ""
                 for p in note_body:
                     note_text += extract_text(p, style_map, in_code)
-                parts.append(f" [{note_text.strip()}]")
+                note_text = note_text.strip()
+                if note_text:
+                    parts.append(f"^[{note_text}]")
         elif local == "bookmark-start" or local == "bookmark-end":
             pass
         elif local == "bookmark-ref" or local == "bookmark":
-            parts.append(extract_text(child, style_map, in_code))
+            ref_text = extract_text(child, style_map, in_code)
+            # Drop unresolved cross-references
+            if "Error: Reference source not found" not in ref_text:
+                parts.append(ref_text)
         elif local == "sequence" or local == "sequence-ref":
-            parts.append(extract_text(child, style_map, in_code))
+            ref_text = extract_text(child, style_map, in_code)
+            # Drop unresolved cross-references
+            if "Error: Reference source not found" not in ref_text:
+                parts.append(ref_text)
         elif local == "soft-page-break":
             pass
         elif local == "change-start" or local == "change-end" or local == "change":
@@ -258,6 +267,23 @@ def mathml_to_latex(elem):
         return ""
 
     elif tag in ("mrow", "mpadded", "mphantom"):
+        children = list(elem)
+        # Detect piecewise function: mrow with opening { fence followed by mtable
+        # This should become \begin{cases}...\end{cases}
+        if len(children) >= 2:
+            first = children[0]
+            first_tag = first.tag.split("}")[1] if "}" in first.tag else first.tag
+            if (first_tag == "mo" and first.text == "{"
+                    and first.get("fence", "false") == "true"):
+                # Check if there's an mtable somewhere in the remaining children
+                rest_text = "".join(mathml_to_latex(c) for c in children[1:])
+                if r"\begin{matrix}" in rest_text:
+                    # Replace \begin{matrix}...\end{matrix} with cases env
+                    # and strip any leading \{ that was added
+                    rest_text = rest_text.replace(r"\begin{matrix}", r"\begin{cases}")
+                    rest_text = rest_text.replace(r"\end{matrix}", r"\end{cases}")
+                    rest_text = rest_text.replace(r"\{", "").replace(r"\}", "")
+                    return rest_text
         return "".join(mathml_to_latex(c) for c in elem)
 
     elif tag == "mi":
@@ -278,11 +304,12 @@ def mathml_to_latex(elem):
         fence = elem.get("fence", "false")
         stretchy = elem.get("stretchy", "false")
         if fence == "true" and stretchy == "true":
-            form = elem.get("form", "")
-            if text in ("(", "[", "{", "|"):
-                result = r"\left" + text
-            elif text in (")", "]", "}", "|"):
-                result = r"\right" + text
+            # Map special delimiters but don't use \left/\right (causes
+            # balancing issues with LibreOffice MathML output)
+            if text == "{":
+                result = r"\{"
+            elif text == "}":
+                result = r"\}"
         return result
 
     elif tag == "mfrac":
@@ -350,14 +377,24 @@ def mathml_to_latex(elem):
         if len(children) >= 2:
             base = mathml_to_latex(children[0])
             over = mathml_to_latex(children[1])
+            over_stripped = over.strip()
             over_map = {
                 "^": r"\hat",
                 "→": r"\vec",
                 "¯": r"\bar",
                 "˙": r"\dot",
                 "¨": r"\ddot",
+                r"\dot": r"\dot",
+                r"\ddot": r"\ddot",
             }
-            over_cmd = over_map.get(over.strip())
+            # Special case: dot accent over empty/whitespace base → just the cdot operator
+            # This pattern appears in FODT for the divergence operator (∇·)
+            base_stripped = base.strip()
+            if over_stripped in ("˙", r"\dot", r"\cdot") and (
+                not base_stripped or base_stripped == r"\text{ }"
+            ):
+                return r"\cdot "
+            over_cmd = over_map.get(over_stripped)
             if over_cmd:
                 return over_cmd + "{" + base + "}"
             return r"\overset{" + over + "}{" + base + "}"
@@ -411,6 +448,40 @@ def mathml_to_latex(elem):
         return "".join(parts)
 
 
+def balance_left_right(latex: str) -> str:
+    """Balance unmatched \\left and \\right delimiters in a LaTeX string.
+
+    Inserts \\right. for unmatched \\left... and \\left. for unmatched \\right...
+    """
+    import re
+    # Pattern to find \left or \right followed by a delimiter character.
+    # Use a negative lookahead to avoid matching commands like \rightarrow, \leftarrow, etc.
+    # \left/\right must be followed by a non-letter (delimiter) or a backslash sequence.
+    token_re = re.compile(r'\\(left|right)(?![a-zA-Z])(\\[|{}]|[^\\\s]|\\.)?')
+    tokens = list(token_re.finditer(latex))
+
+    # Count unmatched lefts
+    depth = 0
+    for m in tokens:
+        if m.group(1) == 'left':
+            depth += 1
+        else:
+            depth -= 1
+            if depth < 0:
+                # Unmatched right — prepend \left.
+                insert_pos = m.start()
+                latex = latex[:insert_pos] + r'\left.' + latex[insert_pos:]
+                depth = 0
+                # Re-run after modification
+                return balance_left_right(latex)
+
+    # Append \right. for each unmatched \left
+    if depth > 0:
+        latex = latex + r'\right.' * depth
+
+    return latex
+
+
 def extract_frame(frame_elem):
     """Extract content from a draw:frame element (images or objects).
 
@@ -423,6 +494,12 @@ def extract_frame(frame_elem):
             math_elem = obj.find(f'{{{NS["math"]}}}math')
             if math_elem is not None:
                 latex = mathml_to_latex(math_elem)
+                latex = balance_left_right(latex)
+                # Strip leading/trailing whitespace so the opening $ is not
+                # immediately followed by a space (which Pandoc treats as literal $)
+                latex = latex.strip()
+                if not latex:
+                    continue
                 return f"${latex}$"
     # Fall back to image placeholder
     for image in frame_elem.iter(f'{{{NS["draw"]}}}image'):
@@ -435,9 +512,10 @@ def extract_frame(frame_elem):
 class FODTConverter:
     """Convert a single FODT file to Markdown."""
 
-    def __init__(self, fodt_path, images_dir):
+    def __init__(self, fodt_path, images_dir, md_dir=None):
         self.fodt_path = Path(fodt_path)
         self.images_dir = Path(images_dir)
+        self.md_dir = Path(md_dir) if md_dir else self.images_dir.parent
         self.image_counter = 0
         self.lines = []
         self.tree = None
@@ -535,9 +613,11 @@ class FODTConverter:
         """Flush accumulated code lines as a fenced code block."""
         if not code_block:
             return
+        # Strip common leading whitespace from the code block
+        dedented = textwrap.dedent("\n".join(code_block))
         self.lines.append("")
         self.lines.append("```")
-        for line in code_block:
+        for line in dedented.split("\n"):
             self.lines.append(line)
         self.lines.append("```")
         self.lines.append("")
@@ -583,6 +663,10 @@ class FODTConverter:
         math_elem = self._get_sole_math_frame(elem)
         if math_elem is not None:
             latex = mathml_to_latex(math_elem)
+            latex = balance_left_right(latex)
+            latex = latex.strip()
+            if not latex:
+                return ""
             return f"$$\n{latex}\n$$\n"
 
         # --- Case 2: paragraph contains any math frames (inline or mixed) ---
@@ -631,7 +715,7 @@ class FODTConverter:
         if set(resolved_style) & NOTE_STYLES:
             text = extract_text(elem, self.style_map).strip()
             if text:
-                return f"> {text}"
+                return f"::: {{.callout-note}}\n{text}\n:::\n"
             return None
 
         # Regular paragraph
@@ -710,7 +794,9 @@ class FODTConverter:
             f.write(img_bytes)
 
         # Return relative path for markdown
-        rel_path = os.path.relpath(img_path, self.images_dir.parent)
+        # Use a simple images/filename path - the Quarto build creates
+        # symlinks so this resolves correctly regardless of MD file depth
+        rel_path = f"images/{filename}"
         alt_text = frame_name if frame_name else f"Image {self.image_counter}"
         return f"![{alt_text}]({rel_path})"
 
@@ -805,23 +891,90 @@ class FODTConverter:
 
         # Check if this looks like a "Note" table (single cell with note content)
         if max_cols <= 2 and len(rows) >= 1:
-            first_cell = rows[0][0].strip().lower() if rows[0] else ""
-            if first_cell in ("note", "notes", "warning", "caution", "tip"):
-                # Render as blockquote
+            first_cell = rows[0][0].strip() if rows[0] else ""
+            first_cell_lower = first_cell.lower()
+            callout_map = {
+                "note": "note",
+                "notes": "note",
+                "warning": "warning",
+                "caution": "caution",
+                "tip": "tip",
+            }
+            # Match either exact keyword or text starting with "Note ..." etc.
+            matched_type = None
+            if first_cell_lower in callout_map:
+                matched_type = callout_map[first_cell_lower]
+            else:
+                for prefix, ctype in callout_map.items():
+                    if first_cell_lower.startswith(prefix + " "):
+                        matched_type = ctype
+                        break
+            if matched_type is not None:
                 self.lines.append("")
+                self.lines.append(f"::: {{.callout-{matched_type}}}")
                 for row in rows:
                     for cell in row:
-                        if cell.strip():
-                            self.lines.append(f"> {cell.strip()}")
+                        cell_stripped = cell.strip()
+                        if not cell_stripped:
+                            continue
+                        # Remove the leading "Note"/"Warning"/etc. prefix from first cell
+                        cell_lower = cell_stripped.lower()
+                        if cell_lower in callout_map:
+                            continue
+                        for prefix in callout_map:
+                            if cell_lower.startswith(prefix + " "):
+                                cell_stripped = cell_stripped[len(prefix):].strip()
+                                break
+                        if cell_stripped:
+                            self.lines.append(cell_stripped)
+                self.lines.append(":::")
                 self.lines.append("")
+                return
+
+        # Check if this looks like an equation table:
+        # Each row has 2 cells, first cell is $...$, last is (X.Y) style number or empty
+        non_empty_rows = [r for r in rows if any(c.strip() for c in r)]
+        if non_empty_rows and len(non_empty_rows[0]) >= 2:
+            all_eq = True
+            eq_entries = []
+            for row_data in non_empty_rows:
+                eq_cell = row_data[0].strip()
+                num_cell = row_data[-1].strip()
+                eq_num_match = re.match(r"^\(?(\d+(?:\.\d+)*)\)?$", num_cell)
+                if eq_cell.startswith("$") and eq_cell.endswith("$"):
+                    eq_content = eq_cell[1:-1].strip()
+                    if eq_num_match:
+                        eq_label = eq_num_match.group(1).replace(".", "-")
+                    else:
+                        eq_label = None
+                    eq_entries.append((eq_content, eq_label))
+                else:
+                    all_eq = False
+                    break
+            if all_eq and eq_entries:
+                for eq_content, eq_label in eq_entries:
+                    self.lines.append("")
+                    self.lines.append("$$")
+                    self.lines.append(eq_content)
+                    if eq_label:
+                        self.lines.append(f"$$ {{#eq-{eq_label}}}")
+                    else:
+                        self.lines.append("$$")
+                    self.lines.append("")
                 return
 
         # Build markdown table
         self.lines.append("")
         # Header row
         self.lines.append("| " + " | ".join(rows[0]) + " |")
-        # Separator
-        self.lines.append("| " + " | ".join(["---"] * max_cols) + " |")
+        # Separator: use wider dashes for a "Description" column to give it more space
+        sep_cells = []
+        for col_idx, header in enumerate(rows[0]):
+            if header.strip().lower() in ("description", "desc"):
+                sep_cells.append(":------")
+            else:
+                sep_cells.append("---")
+        self.lines.append("| " + " | ".join(sep_cells) + " |")
         # Data rows
         for row in rows[1:]:
             self.lines.append("| " + " | ".join(row) + " |")
@@ -835,11 +988,13 @@ class FODTConverter:
             if tag_local(item) != "list-item":
                 continue
 
+            has_text = False
             for child in item:
                 local = tag_local(child)
                 if local == "p":
                     text = extract_text(child, self.style_map).strip()
                     if text:
+                        has_text = True
                         # Determine if ordered or unordered
                         # ODF lists with text:style-name containing "Number" are ordered
                         list_style = list_elem.get(
@@ -852,7 +1007,10 @@ class FODTConverter:
                         else:
                             self.lines.append(f"{prefix_space}- {text}")
                 elif local == "list":
-                    self._process_list(child, indent + 1)
+                    # If this list-item had text, indent sub-list one level deeper.
+                    # If this list-item has NO text (it's just a wrapper), process the
+                    # sub-list at the same indent level to avoid 4-space code-block traps.
+                    self._process_list(child, indent + (1 if has_text else 0))
 
     def _finalize(self):
         """Clean up the markdown output."""
@@ -860,6 +1018,13 @@ class FODTConverter:
 
         # Remove placeholder image markers that weren't properly handled
         text = re.sub(r"<<IMAGE:base64:[^>]+>>", "", text)
+
+        # Remove non-printable ASCII control characters (except tab, newline, CR)
+        # \x7f is DEL, \x00-\x08 and \x0b-\x0c and \x0e-\x1f are control chars
+        text = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]", "", text)
+
+        # Remove unresolved cross-reference error messages
+        text = re.sub(r",?\s*Error: Reference source not found", "", text)
 
         # Collapse multiple blank lines to max 2
         text = re.sub(r"\n{4,}", "\n\n\n", text)
@@ -914,13 +1079,24 @@ def main():
         md_rel = rel_path.with_suffix(".md")
 
         out_dir = markdown_dir / md_rel.parent
-        images_dir = out_dir / "images"
+        out_file = markdown_dir / md_rel
+
+        # Determine the top-level category for shared images directory
+        # chapters/* and chapters/sections/* and chapters/subsections/* -> chapters/images
+        # appendices/* -> appendices/images
+        # other -> images
+        rel_parts = md_rel.parts
+        if len(rel_parts) >= 2 and rel_parts[0] == "chapters":
+            images_dir = markdown_dir / "chapters" / "images"
+        elif len(rel_parts) >= 2 and rel_parts[0] == "appendices":
+            images_dir = markdown_dir / "appendices" / "images"
+        else:
+            images_dir = out_dir / "images"
 
         try:
-            converter = FODTConverter(fodt_path, images_dir)
+            converter = FODTConverter(fodt_path, images_dir, md_dir=out_dir)
             markdown = converter.convert()
 
-            out_file = markdown_dir / md_rel
             out_file.parent.mkdir(parents=True, exist_ok=True)
             with open(out_file, "w", encoding="utf-8") as f:
                 f.write(markdown)

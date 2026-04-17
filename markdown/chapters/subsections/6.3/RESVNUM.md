@@ -13,7 +13,7 @@ Although the keyword is processed by OPM Flow, the keyword is effectively ignore
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | RESVNUM | A positive integer values that defines the reservoir coordinate data set, or the independent reservoir, for which the subsequent COORD data is to be associated with. RESVNUM should be less than or equal to NUMRES on the NUMRES keyword in the RUNSPEC section. OPM Flow currently only accepts a single data set, that is the default value of one. | 1 |
 | Notes: |  |  |  |
 

@@ -11,7 +11,7 @@ DXV defines the size of grid blocks in the X direction via a vector as opposed t
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DXV | DXV is a vector of real numbers describing the cell size for the grid blocks in the X direction. Repeat counts may be used, for example 10*100.0. | None |
 | feet | m | cm |  |

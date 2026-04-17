@@ -14,12 +14,13 @@ This keyword starts the definition of a PYACTION section that specifies the name
 Although this keyword is read by OPM Flow and the script processing has been implemented, one should use caution when using this facility as it may result in OPM Flow aborting. This is because the PYACTION facility allows the user to implement complex functionality and the implementation was new for the 2020-04 release. Users should therefore use caution when using this facility.
 
 
-| Note This is an OPM Flow specific keyword for the simulator’s scripting facility using the standard Python interpreter, as such it gives more flexibility than the commercial simulator’s ACTIONX keyword, although OPM Flow also supports this as well. The keyword should be considered experimental as details of the OPM Flow - Python interface might change for future releases. In particular, the current implementation is quite minimal; however, future releases are expected to add more entry points in the Schedule class which can be used to manipulate the reservoir model as the simulation progresses.  Users are encouraged to make suggestions for new features in this regard. The PYACTION keyword is a very powerful keyword and allows any piece of Python code to be included and run, including potentially malicious code. The important point is to scrutinize any PYACTION keyword in a deck you receive from other parties. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword for the simulator’s scripting facility using the standard Python interpreter, as such it gives more flexibility than the commercial simulator’s ACTIONX keyword, although OPM Flow also supports this as well. The keyword should be considered experimental as details of the OPM Flow - Python interface might change for future releases. In particular, the current implementation is quite minimal; however, future releases are expected to add more entry points in the Schedule class which can be used to manipulate the reservoir model as the simulation progresses.  Users are encouraged to make suggestions for new features in this regard. The PYACTION keyword is a very powerful keyword and allows any piece of Python code to be included and run, including potentially malicious code. The important point is to scrutinize any PYACTION keyword in a deck you receive from other parties.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | PYACTION | PYACTION declares the start of a PYACTION Definition Section.  This is then followed by one record that defines the name of the action and a string indicating the number of times the action should be run; this is then followed by a second record indicating the file containing the Python script. | Not Applicable |  |
 | 1-1 | ACTNAME | ACTNAME is a character sting of any length enclose in quotes that defines the name of this action definition. | None |
 | 1-2 | ACTNSTEP | ACTNSTEP is a defined character string that indicates the number of times the action should be performed, and should be set to one of the following: Note that the FIRST_TRUE option is only supported for back compatibility when using the deprecated run() function style Python scripts. | SINGLE |
@@ -51,10 +52,10 @@ bash% pydoc opm.io.sim.SummaryState
 
 ```
 
-The Python script file (FILENAME in the PYACTION keyword) should be a standard Python module [A Python module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended. Within a module, the module’s name (as a string) is available as the value of the global variable __name__.] that defines the PYACTION script and should consist of 100% pure Python.  The PYACTION Python module (FILENAME) is imported during processing of the input deck and as such this implies:
+The Python script file (FILENAME in the PYACTION keyword) should be a standard Python module^[A Python module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended. Within a module, the module’s name (as a string) is available as the value of the global variable __name__.] that defines the PYACTION script and should consist of 100% pure Python.  The PYACTION Python module (FILENAME) is imported during processing of the input deck and as such this implies:
 
-    - Basic Python syntax checking is performed when the Python module (FILENAME) is read in.
-    - It is verified that the module has the correct format.
+- Basic Python syntax checking is performed when the Python module (FILENAME) is read in.
+- It is verified that the module has the correct format.
 
 The syntax of the Python module (FILENAME) is given in Table 12.61 together with a description of the Python module opm_embedded.
 
@@ -70,7 +71,7 @@ The syntax of the Python module (FILENAME) is given in Table 12.61 together with
 
 *Table 12.61: PYACTION Module Script Definition*
 
-See also the PYINPUT and PYEND keywords in the GRID [Note the PYINPUT and PYEND keywords can be used in the GRID, EDIT, PROPS, SOLUTION, SUMMARY and SCHEDULE sections, but are described in the GRID section.] section which are also part of OPM Flow’s Python scripting facility, that process standard Python commands that can be used to manipulate and define the simulators input parameters during processing of the input deck.  The main purpose of the facility is to script the construction of the various keywords.
+See also the PYINPUT and PYEND keywords in the GRID^[Note the PYINPUT and PYEND keywords can be used in the GRID, EDIT, PROPS, SOLUTION, SUMMARY and SCHEDULE sections, but are described in the GRID section.] section which are also part of OPM Flow’s Python scripting facility, that process standard Python commands that can be used to manipulate and define the simulators input parameters during processing of the input deck.  The main purpose of the facility is to script the construction of the various keywords.
 
 
 #### Examples

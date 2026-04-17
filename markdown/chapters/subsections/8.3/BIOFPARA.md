@@ -7,11 +7,11 @@
 
 #### Description
 
-The [BIOFPARA](#REF_HEADING_KEYWORD_BIOFPARA) keyword defines parameters for models including biofilms. For the parameters, biomass means both suspended microbes in the water phase (labeled as microbial) and biofilm. Currently the two available models with biofilm effects are the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) and the MICP model. See Landa-Marbán et al [Landa-Marbán, D., Tveit, S., Kumar, K., Gasda, S.E., 2021. Practical approaches to study microbially induced calcite precipitation at the field scale. Int. J. Greenh. Gas Control 106, 103256. https://doi.org/10.1016/j.ijggc.2021.103256.] and  [Landa-Marbán, D., Kumar, K., Tveit, S., Gasda, S.E., 2021. Numerical studies of CO2 leakage remediation by micp-based plugging technology. In: Røkke, N.A. and Knuutila, H.K. (Eds) Short Papers from the 11th International Trondheim CCS conference, ISBN: 978-82-536-1714-5, 284-290.] for further information on the MICP model parameters, which are also used in the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) model.
+The [BIOFPARA](#REF_HEADING_KEYWORD_BIOFPARA) keyword defines parameters for models including biofilms. For the parameters, biomass means both suspended microbes in the water phase (labeled as microbial) and biofilm. Currently the two available models with biofilm effects are the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) and the MICP model. See Landa-Marbán et al^[Landa-Marbán, D., Tveit, S., Kumar, K., Gasda, S.E., 2021. Practical approaches to study microbially induced calcite precipitation at the field scale. Int. J. Greenh. Gas Control 106, 103256. https://doi.org/10.1016/j.ijggc.2021.103256.] and ^[Landa-Marbán, D., Kumar, K., Tveit, S., Gasda, S.E., 2021. Numerical studies of CO2 leakage remediation by micp-based plugging technology. In: Røkke, N.A. and Knuutila, H.K. (Eds) Short Papers from the 11th International Trondheim CCS conference, ISBN: 978-82-536-1714-5, 284-290.] for further information on the MICP model parameters, which are also used in the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) model.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DENSBIOF | A real positive value that defines the density of the biofilm. | None |
 | lb/rft3 | kg/rm3 | gm/rcc |  |
@@ -44,8 +44,9 @@ The [BIOFPARA](#REF_HEADING_KEYWORD_BIOFPARA) keyword defines parameters for mod
 *Table 8.87: BIOFPARA Keyword Description*
 
 
-| Note This is an OPM Flow specific keyword. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword.
+:::
 
 
 #### Example

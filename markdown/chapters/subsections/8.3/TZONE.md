@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | OILZONE | OILZONE is a single character that sets the oil phase transition zone end-point scaling option and should be set to either T or F: | F |
 | 2 | WATZONE | WATZONE is a single character that sets the water phase transition zone end-point scaling option and should be set to either T or F: | F |
 | 3 | GASZONE | GASZONE is a single character that sets the gas phase transition zone end-point scaling option and should be set to either T or F: | F |

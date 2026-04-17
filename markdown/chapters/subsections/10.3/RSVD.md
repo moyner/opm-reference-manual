@@ -11,7 +11,7 @@ The RSVD keyword defines the dissolved gas-oil ratio (Rs) versus depth tables fo
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding dissolve gas-oil ratio values, RS. | None |
 | feet | m | cm |  |

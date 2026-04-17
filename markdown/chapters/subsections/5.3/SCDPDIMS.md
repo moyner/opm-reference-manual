@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NTSCDP | NTSCDP is a positive integer that defines the number of SCDPTAB scale deposition tables used in the Scale Deposition option. | 0 |
 | 2 | NPSCDP | NPSCDP is a positive integer that defines the maximum number of entries (or rows) in any one SCDPTAB scale deposition table defined in the input deck. | 0 |
 | 3 | NTSCDA | NTSCDA is a positive integer that defines the number of SCDATAB scale damage tables used in the Scale Deposition option. | 0 |

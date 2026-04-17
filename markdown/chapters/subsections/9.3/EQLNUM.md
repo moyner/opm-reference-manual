@@ -11,7 +11,7 @@ The EQLNUM keyword defines the equilibration region numbers for each grid block.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | EQLNUM | EQLNUM defines an array of positive integers assigning a grid cell to a particular equilibration region. The maximum number of EQLNUM regions is set by the NTEQUL variable on the EQLDIMS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 

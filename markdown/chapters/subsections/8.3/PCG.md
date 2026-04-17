@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PCG | PCG is an array of positive real numbers assigning the maximum drainage  gas-oil capillary pressure values for each cell in the model. Repeat counts may be used, for example 30*100.0. | None |
 | psia | bars | atm |  |
@@ -24,8 +24,9 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 The capillary pressure for a grid block is scaled by:
 
 
-| ${P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{PCG}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.69) |
-| --- | --- |
+$$
+{P}_{c} = {P}_{{c}_{\mathit{TABLE}}}(\frac{\mathit{PCG}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}})
+$$ {#eq-8-69}
 
 Where:
 

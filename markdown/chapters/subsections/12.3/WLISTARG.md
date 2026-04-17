@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WLIST | A character string of up to eight characters in length, enclosed in quotes, that defines the well list name declared by the WLIST keyword. Note the first character must be asterisk (“*”) and the second character must be a letter, for example, *PROD. | None |
 | 2 | TARGET | A defined character string that sets the item to be changed for the well the value of the item is set by item (3). | None |

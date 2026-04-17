@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1-1 | TSINIT | TSINT is a real positive value that defines the maximum length of the next time step. Note that whenever the keyword is used TSINIT is always set back to the default value of one, unless explicitly over written. | 1.0 |
 | days | days | hours |  |

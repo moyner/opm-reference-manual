@@ -13,7 +13,7 @@ Currently, OPM Flow does not support the local grid refinement feature and there
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | LGRNAME | A character string of up to eight characters in length that defines the LGR name for which independent solution time stepping is to be activated. The LGR must have been previously defined by the CARFIN (Cartesian LGR grid) or RADIN/RADIN4 (radial LGR grid) keywords in the GRID section. | None |
 | Notes: |  |  |  |
 

@@ -11,7 +11,7 @@ The FAULTS keyword defines the faults in the grid geometry and the keyword is no
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | FLTNAME | FLTNAME is a character string enclosed in quotes with a maximum length of eight characters, that defines the name of the fault. | None |
 | 2 | I1 | The lower bound of the fault’s I-direction range must be greater than or equal to one and less than or equal to I2 and NX. | None |
 | 3 | I2 | The upper bound of the fault’s I-direction range must be greater than or equal to II and less than or equal to NX | None |

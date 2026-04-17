@@ -7,11 +7,11 @@
 
 #### Description
 
-The AQUFETP keyword defines Fetkovich [Fetkovich, M. J. “A Simplified Approach to Water Influx Calculations - Finite Aquifer Systems,” Journal of Petroleum Technology, (1971) 23, No. 7, 814-828.] analytical aquifers and the aquifer properties. Each row entry in the AQUFETP keyword defines one Fetkovich analytical aquifer. In order to fully define this type of aquifer, the aquifer must be connected to the reservoir using the AQUANCON keyword in the GRID or SOLUTION sections.
+The AQUFETP keyword defines Fetkovich^[Fetkovich, M. J. “A Simplified Approach to Water Influx Calculations - Finite Aquifer Systems,” Journal of Petroleum Technology, (1971) 23, No. 7, 814-828.] analytical aquifers and the aquifer properties. Each row entry in the AQUFETP keyword defines one Fetkovich analytical aquifer. In order to fully define this type of aquifer, the aquifer must be connected to the reservoir using the AQUANCON keyword in the GRID or SOLUTION sections.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | AQUID | A positive integer greater than or equal to one and less than or equal to NANAQ on the AQUDIMS keyword in the RUNSPEC section, that defines the Fetkovich aquifer number. | 1 |
 | 2 | DATUM | DATUM is a single positive value that defines the Fetkovich reference datum depth for PRESS. | None |
@@ -37,8 +37,9 @@ The AQUFETP keyword defines Fetkovich [Fetkovich, M. J. “A Simplified Approach
 Note this keyword should only be used in equilibration and enumerated initialize runs, that is it should be omitted from RESTART runs.
 
 
-| Note If the model is unstable then this may be due to an aquifer not being in equilibrium with the connecting reservoir blocks, for example if the aquifer is connected to some hydrocarbon reservoir cells. Try commenting out the aquifer and see if this resolves the instabilities, and if so amend the aquifer connections accordingly. |
-| --- |
+::: {.callout-note}
+If the model is unstable then this may be due to an aquifer not being in equilibrium with the connecting reservoir blocks, for example if the aquifer is connected to some hydrocarbon reservoir cells. Try commenting out the aquifer and see if this resolves the instabilities, and if so amend the aquifer connections accordingly.
+:::
 
 
 #### Example

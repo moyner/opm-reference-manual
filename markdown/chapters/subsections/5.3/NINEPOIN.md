@@ -7,7 +7,7 @@
 
 #### Description
 
-The NINEPOIN keyword activates the Nine-Point Discretization formulation for the whole grid. If the keyword is absent from the run then the conventional standard five-point discretization formulation is used for the model. The nine-point scheme is based on adding additional non-neighbor connections between the diagonal neighbors in the areal plane, in order to reduce grid orientation effects [Yanosik, J. L. and McCracken, T. A. “A Nine-Point, Finite-Difference Reservoir Simulator for Realistic Prediction of Adverse Mobility Ratio Displacements,” paper SPE 5734, Society of Petroleum Engineers Journal (1979) 19, No. 4, 253-262.].
+The NINEPOIN keyword activates the Nine-Point Discretization formulation for the whole grid. If the keyword is absent from the run then the conventional standard five-point discretization formulation is used for the model. The nine-point scheme is based on adding additional non-neighbor connections between the diagonal neighbors in the areal plane, in order to reduce grid orientation effects^[Yanosik, J. L. and McCracken, T. A. “A Nine-Point, Finite-Difference Reservoir Simulator for Realistic Prediction of Adverse Mobility Ratio Displacements,” paper SPE 5734, Society of Petroleum Engineers Journal (1979) 19, No. 4, 253-262.].
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 

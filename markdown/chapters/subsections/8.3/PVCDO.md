@@ -7,21 +7,21 @@
 
 #### Description
 
-PVCDO defines the oil PVT properties for dead oil [“Dead” oil is oil that it contains no dissolved gas or a relatively thick oil or residue that has lost its volatile components.] with constant compressibility. If the oil has a constant and uniform dissolved gas concentration, Gas-Oil Ratio (“GOR”), and if the reservoir pressure never drops below the saturation pressure (bubble point pressure), then the model can be run more efficiently by omitting the GAS and DISGAS keywords from the RUNSPEC section, treating the oil as a dead oil, and defining a constant Rs (GOR) value with keyword RSCONST or RSCONSTT in the PROPS section. This results in the model being run as a dead oil problem with no active gas phase. However, OPM Flow takes into account the constant Rs in the calculations and reporting.
+PVCDO defines the oil PVT properties for dead oil^[“Dead” oil is oil that it contains no dissolved gas or a relatively thick oil or residue that has lost its volatile components.] with constant compressibility. If the oil has a constant and uniform dissolved gas concentration, Gas-Oil Ratio (“GOR”), and if the reservoir pressure never drops below the saturation pressure (bubble point pressure), then the model can be run more efficiently by omitting the GAS and DISGAS keywords from the RUNSPEC section, treating the oil as a dead oil, and defining a constant Rs (GOR) value with keyword RSCONST or RSCONSTT in the PROPS section. This results in the model being run as a dead oil problem with no active gas phase. However, OPM Flow takes into account the constant Rs in the calculations and reporting.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | PRESS is a real positive value defining the oil reference pressure for the other parameters for this data set. | None |
 | psia | barsa | atma |  |
 | 2 | OFVF | OFVF is a real positive value defining the oil formation volume factor (Bo) at the reference pressure. | None |
 | rb/stb | rm3/sm3 | rcc/scc |  |
-| 3 | OCOMP | OCOMP is a real positive value defining the oil compressibility (Co) at the oil reference pressure and is defined as: ${C}_{o} = -\frac{1}{{B}_{o}}\left(\frac{{\mathit{dB}}_{o}}{\mathit{dP}}\right)$ | None |
+| 3 | OCOMP | OCOMP is a real positive value defining the oil compressibility (Co) at the oil reference pressure and is defined as: ${C}_{o} = -\frac{1}{{B}_{o}}(\frac{{\mathit{dB}}_{o}}{\mathit{dP}})$ | None |
 | 1/psia | 1/barsa | 1/atma |  |
 | 4 | OVISC | OVISC is a real positive value defining the oil viscosity (µo) at the oil reference pressure. | None |
 | cP | cP | cP |  |
-| 5 | OVISCOMP | OVISCOMP is a real positive value defining the oil viscosibility (µoc) at the oil reference pressure and is defined as: ${μ}_{\mathit{oc}} = \frac{1}{{μ}_{o}}\left(\frac{d{μ}_{o}}{\mathit{dP}}\right)$ | None |
+| 5 | OVISCOMP | OVISCOMP is a real positive value defining the oil viscosibility (µoc) at the oil reference pressure and is defined as: ${μ}_{\mathit{oc}} = \frac{1}{{μ}_{o}}(\frac{d{μ}_{o}}{\mathit{dP}})$ | None |
 | 1/psia | 1/barsa | 1/atma |  |
 | Notes: |  |  |  |
 

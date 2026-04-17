@@ -11,7 +11,7 @@ The MAXVALUE keyword sets a maximum value for the specified array or part of an 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | ARRAY | A character string of up to eight characters in length that defines the keyword identifying the array to be modified. | None |
 | 2 | CONSTANT | CONSTANT is a positive integer or positive real value that an ARRAY element will be reset to if an element in the defined input BOX, as defined by items (3) to (8), is greater than CONSTANT. CONSTANT has in the same units as the ARRAY property. | None |
 | 3 | I1 | The lower bound of the array in the I-direction to be modified must be greater than or equal to one and less than or equal to I2 and NX. | 1 |

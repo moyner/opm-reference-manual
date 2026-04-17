@@ -13,7 +13,7 @@ This is an OPM Flow specific keyword that should only be used if the CO2STORE ke
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | SALTMOD | A defined character string that specifies the thermal mixing model for salt in the liquid phase, and should be set to one of the following: | MICHAELIDES |
 | 2 | LIQMOD | A defined character string that specifies the thermal mixing model for CO2 in the liquid phase, and should be set to one of the following: | DUANSUN |
 | 3 | GASMOD | A defined character string that specifies the thermal mixing model for vaporized water in the gas phase, and should be set to one of the following: | NONE |

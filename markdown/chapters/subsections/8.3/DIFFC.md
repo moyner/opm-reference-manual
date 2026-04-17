@@ -7,11 +7,11 @@
 
 #### Description
 
-The DIFFC keyword defines the molecular weight of the fluids and diffusion coefficients between phases for each PVT region, for when the Molecular Diffusion option has been activated by the DIFFUSE keyword in the RUNSPEC section. This keyword is optional as OPM Flow will automatically calculate the coefficients, as described by Sandve et al. [Tor Harald Sandve1, Sarah E. Gasda, Atgeirr Rasmussen, and Alf Birger Rustad. Convective dissolution in field scale CO2 storage simulation using the OPM Flow simulator. Submitted to TCCS 11 – Trondheim Conference on CO2 Capture, Transport and Storage Trondheim, Norway – June 21-23, 2021.], if the DIFFC keyword is absent from the input deck.  The keyword thus allows one to overwrite the automatically calculated values.
+The DIFFC keyword defines the molecular weight of the fluids and diffusion coefficients between phases for each PVT region, for when the Molecular Diffusion option has been activated by the DIFFUSE keyword in the RUNSPEC section. This keyword is optional as OPM Flow will automatically calculate the coefficients, as described by Sandve et al.^[Tor Harald Sandve1, Sarah E. Gasda, Atgeirr Rasmussen, and Alf Birger Rustad. Convective dissolution in field scale CO2 storage simulation using the OPM Flow simulator. Submitted to TCCS 11 – Trondheim Conference on CO2 Capture, Transport and Storage Trondheim, Norway – June 21-23, 2021.], if the DIFFC keyword is absent from the input deck.  The keyword thus allows one to overwrite the automatically calculated values.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | OILMW | OILMW is a real positive number that specifies the molecular weight of the oil in the given PVT region. | None |
 | lb/lb-M | kg/kg-M | gm/gm-M |  |
@@ -34,8 +34,9 @@ The DIFFC keyword defines the molecular weight of the fluids and diffusion coeff
 *Table 8.27: DIFFC Keyword Description*
 
 
-| Note The option has been tested in combination with the CO2STORE keyword, but not for the general case at this point. |
-| --- |
+::: {.callout-note}
+The option has been tested in combination with the CO2STORE keyword, but not for the general case at this point.
+:::
 
 
 See also the DIFFUSE keyword in the RUNSPEC section to activate the Molecular Diffusion option.

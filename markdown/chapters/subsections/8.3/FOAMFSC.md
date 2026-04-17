@@ -11,7 +11,7 @@ The FOAMFSC keyword defines the reduction in gas mobility as a function of the f
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | FOAMCON | A real positive value that defines the foam surfactant concentration at which foam modeling becomes active in the model and a strong foam is formed. FOAMCON cannot be defaulted and must be specified for the first table. Subsequent tables can be defaulted and will in this case use the previous tables’ entries as the default value. | None |
 | lb/stb | kg/sm3 | gm/scc |  |
@@ -29,8 +29,9 @@ The FOAMFSC keyword defines the reduction in gas mobility as a function of the f
 The gas mobility reduction as a function of surfactant concentration is of the form:
 
 
-| ${F}_{s} = {\left(\frac{{C}_{s}}{{C}_{s}^{r}}\right)}^{{e}_{s}}$ | (8.51) |
-| --- | --- |
+$$
+{F}_{s} = {(\frac{{C}_{s}}{{C}_{s}^{r}})}^{{e}_{s}}
+$$ {#eq-8-51}
 
 Where:
 
@@ -52,8 +53,9 @@ gas mobility due to foam (FAOAMEXP).
 The functional form of the reduction in gas mobility factor (Mrf) is:
 
 
-| ${M}_{\mathit{rf}} = \frac{1}{1 + \left({M}_{r} \times  {F}_{s} \times  {F}_{w} \times  {F}_{o} \times  {F}_{c}\right)}$ | (8.52) |
-| --- | --- |
+$$
+{M}_{\mathit{rf}} = \frac{1}{1 + ({M}_{r} \times  {F}_{s} \times  {F}_{w} \times  {F}_{o} \times  {F}_{c})}
+$$ {#eq-8-52}
 
 Where:
 

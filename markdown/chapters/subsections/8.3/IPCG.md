@@ -11,7 +11,7 @@ IPCG defines the maximum imbibition gas-oil capillary pressure values for all th
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | IPCG | IPCG is an array of positive real numbers assigning the maximum imbibition gas capillary pressure values for each cell in the model. Repeat counts may be used, for example 30*100.0. | None |
 | psia | bars | atm |  |
@@ -23,8 +23,9 @@ IPCG defines the maximum imbibition gas-oil capillary pressure values for all th
 The capillary pressure for a grid block is scaled by:
 
 
-| ${P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{IPCG}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.59) |
-| --- | --- |
+$$
+{P}_{c} = {P}_{{c}_{\mathit{TABLE}}}(\frac{\mathit{IPCG}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}})
+$$ {#eq-8-59}
 
 Where:
 

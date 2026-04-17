@@ -11,7 +11,7 @@ GRUPTREE defines the group hierarchy of groups that have been created by having 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | LOWER | A character string of up to eight characters in length that defines the group name which belongs to the HIGHER group. The group named FIELD is the top most group and should NOT be used as as a group name for the LOWER group name. Undefined group relationships are automatically assigned to the FIELD group. | None |
 | 2 | HIGHER | A character string of up to eight characters in length that defines the HIGHER group name that the LOWER group belongs to. The group named FIELD is the top most group and can be used as as the HIGHER group name. Undefined group relationships are automatically assigned to the FIELD group. | None |
 | Notes: |  |  |  |

@@ -11,7 +11,7 @@ VAPPARS defines the rate of oil vaporization in the presence of undersaturated g
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | VAPPAR1 | VAPPAR1 is a real positive dimensionless number that defines the rate at which oil vaporizes into the available undersaturated gas in a grid block. The default value of zero invokes the standard black-oil formulation in which all oil vaporizes into the available undersaturated phase in a grid cell. Increasing this parameter decreases the rate of vaporization. Typical values for VAPPAR1 range from zero to five. | 0 |
 | dimensionless | dimensionless | dimensionless |  |

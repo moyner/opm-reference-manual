@@ -11,7 +11,7 @@ The SALINITY keyword defines a uniform salinity for all cells in the model. The 
 
 
 | No. | Name | Description | Default |  |  |
-| --- | --- | --- | --- | --- | --- |
+| --- | --- | :------ | --- | --- | --- |
 |  |  | Field | Metric | Laboratory | 0 |
 | 1 | SALINITY | A real positive value that defines the salinity for all grid blocks in the model for when the CO2-Brine model has been activated. Note that the units for salinity are molality, that is gm-M/Kg, and therefore   the units are defined as given below with the 10-3 prefix. |  |  |  |
 | 10-3 x lb-M/lb | 10-3 x kg-M/kg | 10-3 x gm-M/gm |  |  |  |

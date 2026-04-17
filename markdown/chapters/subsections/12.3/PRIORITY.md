@@ -10,8 +10,9 @@
 The PRIORITY keyword activates the Well Priority option and defines the coefficients in the well priority equation. Wells under group control are ranked based on their well potential in order to satisfy group controls. For example if a group’s oil target is exceeded, then the group may shut-in the lease productive oil wells based on their well potential.   The Priority option is an alternative form of ranking the wells based on the following equation:
 
 
-| $\text{Priority} = \frac{{a}_{1} + {a}_{2}{Q}_{\mathit{oil}} +{a}_{3}{Q}_{\mathit{water}} +{a}_{4}{Q}_{\mathit{gas}}}{{b}_{1} + {b}_{2}{Q}_{\mathit{oil}} +{b}_{3}{Q}_{\mathit{water}} +{b}_{4}{Q}_{\mathit{gas}}}$ | (12.31) |
-| --- | --- |
+$$
+\text{Priority} = \frac{{a}_{1} + {a}_{2}{Q}_{\mathit{oil}} +{a}_{3}{Q}_{\mathit{water}} +{a}_{4}{Q}_{\mathit{gas}}}{{b}_{1} + {b}_{2}{Q}_{\mathit{oil}} +{b}_{3}{Q}_{\mathit{water}} +{b}_{4}{Q}_{\mathit{gas}}}
+$$ {#eq-12-31}
 
 
 Where:
@@ -31,7 +32,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | TIME | A real positive integer that defines the minimum time interval between executing the well priority calculation. The calculation is performed at the beginning of the time step that exceeds the previous calculation (t0) by a minimum of TIME, that is for when tn ≥  ( t0 + TIME). Note that the default value of zero means that the calculation is performed at each time step. As a consequence, this may result in some oscillation as well wells are switched on/off at subsequent time steps. | 0 |
 | days | days | hours |  |

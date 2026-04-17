@@ -11,7 +11,7 @@ The SDENSITY keyword defines density at surface conditions of either the miscibl
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SDENSITY | SDENSITY is a real positive number defining the density at surface conditions of either: | None |
 | lb/ft3 | kg/m3 | gm/cc |  |

@@ -23,7 +23,7 @@ Group pressure values are optionally entered for each group in the network toget
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the network parameters are being defined. The group named FIELD is the top most group and may be used as a GRPNAME. | None |
 | 2 | PRES | A real value that defines the fixed pressure for this group when the group is a terminating group. If the group is not a terminating group then PRES should be defaulted  with 1* or set to a negative number. | 1* |

@@ -11,7 +11,7 @@ This keyword defines the OPERATER region numbers for each grid block. The OPERNU
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | OPERNUM | OPERNUM defines an array of positive integers greater than or equal to one that assigns a grid cell to a particular OPERNUM region. The maximum number of OPERNUM regions is set by the NOPREG variable on the REGDIMS keyword in the RUNSPEC section. Note that the default value of zero implies that the calculations requested by the OPERATER keyword will not be performed. | 0 |
 | Notes: |  |  |  |
 

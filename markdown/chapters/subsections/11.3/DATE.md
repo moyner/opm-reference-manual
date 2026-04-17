@@ -25,7 +25,6 @@ The following example shows an example RSM file output when the DATE option has 
  DAYS         YEARS        PSIA                      STB/DAY      STB
 
 
-
  -------------------------------------------------------------------------------
         0            0     4467.125            0            0            0
  1.000000     0.002738     4466.943     0.000239     3235.662     3235.662
@@ -58,7 +57,6 @@ Results in the following example RSM file output.
  -------------------------------------------------------------------------------
  DATE         YEARS    DAY  MONTH  YEAR  FPR          FOEW         FOPR
               YEARS                      PSIA                      STB/DAY
-
 
 
  -------------------------------------------------------------------------------

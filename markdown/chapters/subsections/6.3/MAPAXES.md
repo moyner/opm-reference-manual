@@ -11,7 +11,7 @@ MAPAXES specifies the origin of the map used to create the grid. It is usually o
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field (feet) | Metric (metres) | Laboratory (metres) |  |
 | 1 | X1 | X1 is a real number that defines the x co-ordinate of a point on the y-axis. | None |
 | 2 | Y1 | Y1 is a real number that defines the y co-ordinate of a point on the y-axis. | None |

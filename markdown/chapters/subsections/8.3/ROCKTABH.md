@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | If the ROCKOPT1 variable has been set to PRESSURE on the ROCKOPTS keyword in the PROPS section, then PRESS should be a columnar vector of real monotonically increasing down the column values, that define the reference pressure for which the other parameters correspond to. If ROCKOPT1 has been set to STRESS, then PRESS should be a columnar vector of real monotonically decreasing down the column values. | None |
 | psia | bars | atm |  |
@@ -76,38 +76,38 @@ Here the deflation curve is define for table number one is:
 
 
 ```
-         1500.0   0.9600   0.9800
-         2500.0   0.9900   0.9900
-         3500.0   1.0000   1.0000
-         4500.0   1.0100   1.0100
+1500.0   0.9600   0.9800
+2500.0   0.9900   0.9900
+3500.0   1.0000   1.0000
+4500.0   1.0100   1.0100
 ```
 
 and for table number 2:
 
 
 ```
-         1500.0   0.9400   0.9700
-         2250.0   0.9800   0.9900
-         3250.0   1.0000   1.0000
-         4250.0   1.0200   1.0100
+1500.0   0.9400   0.9700
+2250.0   0.9800   0.9900
+3250.0   1.0000   1.0000
+4250.0   1.0200   1.0100
 ```
 
 And the dilation curve is define for table number one is:
 
 
 ```
-         4500.0   0.9900   0.9950
-         4750.0   0.9980   0.9980
-         5500.0   1.0100   1.0100
-         5750.0   1.0200   1.0200
+4500.0   0.9900   0.9950
+4750.0   0.9980   0.9980
+5500.0   1.0100   1.0100
+5750.0   1.0200   1.0200
 ```
 
 and for table number 2:
 
 
 ```
-         2250.0   0.9400   0.9700
-         3250.0   0.9800   0.9900
-         4250.0   1.0000   1.0000
-         5250.0   1.0200   1.0100
+2250.0   0.9400   0.9700
+3250.0   0.9800   0.9900
+4250.0   1.0000   1.0000
+5250.0   1.0200   1.0100
 ```

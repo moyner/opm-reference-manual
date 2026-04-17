@@ -13,7 +13,7 @@ OPM Flow uses dynamic memory allocation and therefore the keyword has no effect 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NSUMMX | A positive integer that defines the maximum number of summary vectors to be written out to the SUMMARY file (*.SUMMARY). | 10000 |
 | Notes: |  |  |  |
 

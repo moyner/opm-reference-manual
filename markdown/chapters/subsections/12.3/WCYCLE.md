@@ -11,7 +11,7 @@ The WCYCLE keyword defines automatic well opening and closing cycling parameters
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well automatic cycling parameters are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 4 | ONTIME | A real positive value that defines the length of time for the on period. The well will be turned off at the beginning of the first time step after the on period has elapsed. If ONTIME is zero or negative then the well will not be turned on by the automatic well cycling. | 0.0 |

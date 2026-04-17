@@ -11,7 +11,7 @@ PERMX defines the permeability in the X direction for all the cells in the model
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PERMX | PERMX is an array of real positive numbers assigning the permeability in the X direction to each cell in the model. Repeat counts may be used, for example 20*100.0. | None |
 | mD | mD | mD |  |

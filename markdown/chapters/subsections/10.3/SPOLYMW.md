@@ -12,12 +12,13 @@ The SPOLYMW keyword defines the initial equilibration polymer molecular weights 
 This keyword should only be used if the POLYMER and POLYMW keywords in the RUNSPEC section are also activated.
 
 
-| Note This is an OPM Flow specific keyword that employs an alternative polymer flood model based on a Polymer Molecular Weight Transport equation, that is not available in the commercial simulator. The model has been tested using metric units; however, using either field or laboratory units with the option should be considered experimental. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword that employs an alternative polymer flood model based on a Polymer Molecular Weight Transport equation, that is not available in the commercial simulator. The model has been tested using metric units; however, using either field or laboratory units with the option should be considered experimental.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SPOLYMW | SPOLYMW is an array of real positive numbers that are greater than or equal to zero assigning the initial equilibration polymer molecular weights to each cell in the model.  Repeat counts may be used, for example 20*5.0 | 0,0 |
 | lb/lb-M | kg/kg-M | gm/gm-M |  |

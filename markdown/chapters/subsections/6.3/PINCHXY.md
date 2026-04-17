@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PINCHTHX | A real number defining the pinch-out threshold width for any cell in the x-direction.  NNCs are generated across inactive cells having a width less than PINCHTHX in the x-direction. | Defined |
 | ft. 0.001 | m 0.001 | cm 0.001 |  |

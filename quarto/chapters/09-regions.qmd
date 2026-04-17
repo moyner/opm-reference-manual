@@ -1,0 +1,151 @@
+{{< include ../../markdown/chapters/9.md >}}
+
+{{< include ../../markdown/chapters/sections/9/2.md >}}
+
+## Keyword Definitions
+
+{{< include ../../markdown/chapters/subsections/9.3/ADD.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/ADDREG.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/BOUNDARY.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/BOX.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/COLUMNS.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/COPY.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/COPYBOX.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/COPYREG.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/DEBUG.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/ECHO.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/END.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/ENDBOX.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/ENDFIN.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/ENDINC.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/ENDNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/ENDSKIP.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/EOSNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/EQLNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/EQUALREG.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/EQUALS.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/EXTRAPMS.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/FILEUNIT.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/FIP.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/FIPNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/FIPOWG.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/FORMFEED.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/GETDATA.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/HA.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/HBNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/HM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/HMPROPS.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/HWSNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/IMBNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/IMBNUMMF.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/IMPORT.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/INCLUDE.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/KRNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/KRNUMMF.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/LSLTWNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/LSNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/LWSLTNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/LWSNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/MESSAGE.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/MESSAGES.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/MISCNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/MULTIPLY.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/MULTIREG.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/NOECHO.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/NOWARN.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/OPERATE.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/OPERATER.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/OPERNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/PENUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/PLMIXNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/PVTNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/PYEND.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/PYINPUT.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/REFINE.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/REGIONS.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/RESIDNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/ROCKNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/RPTREGS.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/SATNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/SKIP.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/SKIP100.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/SKIP300.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/SURFNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/SURFWNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/TNUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/TRKPF.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/WARN.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/WH2NUM.md >}}
+
+{{< include ../../markdown/chapters/subsections/9.3/WH3NUM.md >}}

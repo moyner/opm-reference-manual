@@ -11,7 +11,7 @@ The PARALLEL keyword defines the run to use parallel processing and sets the dom
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NPROCS | A positive integer that defines the number of domains or parallel processors to use for this run. | 1 |
 | 2 | RTYPE | A character string set to either SERIAL to run the parallel code in serial mode for testing the code, or DISTRIBUTED to full utilize parallel processing. | DISTRIBUTED |
 | Notes: |  |  |  |

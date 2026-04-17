@@ -11,7 +11,7 @@ The IMPORT keyword informs the simulator to import data from the specified IMPOR
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | FILENAME | A character string enclosed in quotes that defines a file to be imported and to be processed by OPM Flow. | None |
 | 2 | FMTOPT |  | U |
 | Notes: |  |  |  |

@@ -11,7 +11,7 @@ The ADDREG keyword adds a constant to a specified array or part of an array base
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | ARRAY | A character string of up to eight characters in length that defines the keyword identifying the array to be modified. | None |
 | 2 | CONSTANT | An integer or real value to be added to the ARRAY in the same units as the ARRAY property for a given REGION. | 0 |
 | 3 | REGION NUMBER | REGION NUMBER is a positive integer representing the region for which the CONSTANT in (2) should be applied. | None |

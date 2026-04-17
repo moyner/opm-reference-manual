@@ -7,11 +7,11 @@
 
 #### Description
 
-The AQUTAB keyword defines additional Carter-Tracy [Carter, R. D., and Tracy, G. W. “An Improved Method for Calculating Water Influx.” Transactions of AIME, Vol. 219 (1060), pp 415-417.] aquifer functions to be used in the model.  Carter-Tracy representation of the aquifer influx is via a qw term in the non-linear aquifer influence function Q(t).  It allows the water influx from the aquifer to be represented in the simulator by assuming that there is a constant water influx rate over finite time periods.  It is derived from the superposition methods of van Everdingen and Hurst [Van Everdingen, A. F., and Hurst, W. “The Application of the Laplace Transform to Flow Problems in Reservoirs.” Transactions of AIME, Vol. 186 (1949), pp. 305-324.], whose superposition methods are not suitable for implementation in reservoir simulation software, although they are very useful in interpreting aquifer response. The storage requirements and calculation complexity of handling the resulting superposition formulae can be largely eliminated by use of the Carter-Tracy approximate water influx method.
+The AQUTAB keyword defines additional Carter-Tracy^[Carter, R. D., and Tracy, G. W. “An Improved Method for Calculating Water Influx.” Transactions of AIME, Vol. 219 (1060), pp 415-417.] aquifer functions to be used in the model.  Carter-Tracy representation of the aquifer influx is via a qw term in the non-linear aquifer influence function Q(t).  It allows the water influx from the aquifer to be represented in the simulator by assuming that there is a constant water influx rate over finite time periods.  It is derived from the superposition methods of van Everdingen and Hurst^[Van Everdingen, A. F., and Hurst, W. “The Application of the Laplace Transform to Flow Problems in Reservoirs.” Transactions of AIME, Vol. 186 (1949), pp. 305-324.], whose superposition methods are not suitable for implementation in reservoir simulation software, although they are very useful in interpreting aquifer response. The storage requirements and calculation complexity of handling the resulting superposition formulae can be largely eliminated by use of the Carter-Tracy approximate water influx method.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | TD | Dimensionless Time | None |
 | dimensionless | dimensionless | dimensionless |  |
@@ -22,11 +22,12 @@ The AQUTAB keyword defines additional Carter-Tracy [Carter, R. D., and Tracy, G.
 *Table 8.18: AQUTAB Keyword Description*
 
 
-| Note OPM Flow includes the infinite acting Carter-Tracy aquifer influence table as a default for table number one; thus data entered on this keyword starts from table number two. |
-| --- |
+::: {.callout-note}
+OPM Flow includes the infinite acting Carter-Tracy aquifer influence table as a default for table number one; thus data entered on this keyword starts from table number two.
+:::
 
 
-Table 8.19 to Table 8.22 outline the standard finite tables derived by van Everdingen and Hurst that are used for the Carter-Tracy analytical aquifers and are taken from Bradely [Bradley Howard B., et al., Petroleum Engineering Handbook, Society of Petroleum Engineers (June 1989), ISBN:9781555630102.] table 38-6 on page 38-12. In the tables rD is defined as the ratio of the aquifer external radius divided by hydrocarbon radius, that is:${r}_{D} = \frac{{r}_{e}}{{r}_{o}}$.
+Table 8.19 to Table 8.22 outline the standard finite tables derived by van Everdingen and Hurst that are used for the Carter-Tracy analytical aquifers and are taken from Bradely^[Bradley Howard B., et al., Petroleum Engineering Handbook, Society of Petroleum Engineers (June 1989), ISBN:9781555630102.] table 38-6 on page 38-12. In the tables rD is defined as the ratio of the aquifer external radius divided by hydrocarbon radius, that is:${r}_{D} = \frac{{r}_{e}}{{r}_{o}}$.
 
 
 | Carter-Tracy Aquifer Influence Functions |  |  |  |  |  |  |  |  |
@@ -166,7 +167,7 @@ Table 8.19 to Table 8.22 outline the standard finite tables derived by van Everd
 *Table 8.22: Carter-Tracy Aquifer Influence Functions (RD =10 and Finite Linear)*
 
 
-For the finite linear Carter-Tracy influence function in Table 8.22 set the inner radius of the aquifer to the length of linear aquifer and the angle of influence to$ = \frac{360\times \mathit{Width}}{(2\times π\times \mathit{Length})}$on the AQUCT keyword in the grid section.
+For the finite linear Carter-Tracy influence function in Table 8.22 set the inner radius of the aquifer to the length of linear aquifer and the angle of influence to$= \frac{360\times \mathit{Width}}{(2\times π\times \mathit{Length})}$on the AQUCT keyword in the grid section.
 
 For reference, Table 8.23 outlines the content terminal rate case for an infinite aquifer derived by van Everdingen and Hurst, that is the default table number one used for the Carter-Tracy analytical aquifers, as implemented in OPM Flow.
 
@@ -205,7 +206,7 @@ For reference, Table 8.23 outlines the content terminal rate case for an infinit
 *Table 8.23: Carter-Tracy Infinite Radial Aquifer Influence Function (Default)*
 
 
-For an overview of analytical aquifers see Dake [Dake, L.P. Fundamentals of Reservoir Engineering, Amsterdam, The Netherlands, Elsevier Science BV (1978)  Chapter 9.].
+For an overview of analytical aquifers see Dake^[Dake, L.P. Fundamentals of Reservoir Engineering, Amsterdam, The Netherlands, Elsevier Science BV (1978)  Chapter 9.].
 
 
 #### Example

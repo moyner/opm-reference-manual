@@ -37,5 +37,6 @@ ECHO
 The example deactivates the echoing of the input files, reads in the grid geometry data using the INCLUDE  keyword, and then activates the echoing of the input files again.
 
 
-| Note Especially for the large voluminous data sets in the GRID section, it is good practice to deactivate the echoing of the input files when loading this data to avoid the print output file becoming too large to view in a text editor. |
-| --- |
+::: {.callout-note}
+Especially for the large voluminous data sets in the GRID section, it is good practice to deactivate the echoing of the input files when loading this data to avoid the print output file becoming too large to view in a text editor.
+:::

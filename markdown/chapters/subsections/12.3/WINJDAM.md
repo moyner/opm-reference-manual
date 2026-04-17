@@ -11,7 +11,7 @@ The [WINJDAM](#REF_HEADING_KEYWORD_WINJDAM) keyword defines filter cake properti
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the filter cake properties are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | GEOMETRY | A defined character string that the filter cake geometry of the well. GEOMETRY must be set to one of the following character strings: | None |

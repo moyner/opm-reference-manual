@@ -13,7 +13,7 @@ This keyword should only be used if compaction option has been enabled.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SWAT | A columnar vector of real monotonically increasing down the column   values that defines the water saturations to be associated with the data on the ROCK2D and the ROCKTR keywords. | None |
 | dimensionless | dimensionless | dimensionless |  |

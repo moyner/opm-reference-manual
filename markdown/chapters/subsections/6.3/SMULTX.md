@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | SMULTX+ | SMULTX+ is an array of real positive numbers assigning the transmissibility multipliers in the +X direction to each cell face in the model. Repeat counts may be used, for example 20*100.0. | 1.0 |
 | Notes: |  |  |  |
 

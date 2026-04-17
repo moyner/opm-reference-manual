@@ -11,7 +11,7 @@ The SWOF keyword defines the water and oil relative permeability and water-oil c
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SWAT | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the water saturation. The first entry is the connate water saturation Swc and the last entry should be 1.0. | None |
 | dimensionless | dimensionless | dimensionless |  |

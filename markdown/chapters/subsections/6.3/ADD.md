@@ -11,7 +11,7 @@ The ADD keyword adds a constant to a specified array or part of an array. The co
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | ARRAY | A character string of up to eight characters in length that defines the keyword identifying the property to be modified. | None |
 | 2 | CONSTANT | An integer or real value to be added to the ARRAY in the same units as the ARRAY property. | 0 |
 | 3 | I1 | A positive integer that defines the lower bound of the array in the I-direction to be modified must be greater than or equal 1 and less than or equal to I2 and NX. | 1 |

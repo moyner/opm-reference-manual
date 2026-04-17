@@ -11,7 +11,7 @@ The COMPDAT keyword defines how a well is connected to the reservoir by defining
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | I | A positive integer greater than or equal to zero and less than or equal to NX that defines the connection location in the I-direction. If set to zero or defaulted with 1* the location is taken from the wellhead location I-direction value on the WELSPECS keyword in the SCHEDULE section. | 0 |
@@ -41,8 +41,9 @@ Multiple grid block connections can be defined on one record for vertical wells 
 See also the WELSPECS keyword to define wells, the COMPIMB to reset the imbibition relative permeability table allocation, and the COMPORD to re-order the completions along the well trajectory. In addition, the COMPLUMP keyword groups well connections together to form well completions for a well. All the aforementioned keywords are described in the SCHEDULE section.
 
 
-| Note The term well connection is used to describe individual connections from the wellbore to the reservoir grid, as opposed to well completions. A well completion is used to describe a set of connections, for example, a well may consist of several completions with each completion consisting of multiple connections. |
-| --- |
+::: {.callout-note}
+The term well connection is used to describe individual connections from the wellbore to the reservoir grid, as opposed to well completions. A well completion is used to describe a set of connections, for example, a well may consist of several completions with each completion consisting of multiple connections.
+:::
 
 
 #### Example

@@ -11,7 +11,7 @@ The DEPTH keywords modifies the depth at the center of selected cells in the mod
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DEPTH | DEPTH is an array of real numbers defining the depth at the center of each cell in the model.  Only the values in the currently defined input BOX needed be entered. Repeat counts may be used, for example 30*5201.0. | None |
 | feet | m | cm |  |

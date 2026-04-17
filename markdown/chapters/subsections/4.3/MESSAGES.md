@@ -11,7 +11,7 @@ The MESSAGES keyword defines the print and stops levels for various messages. Th
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | PRTSMESG | An integer defining the maximum number of MESSAGE type messages to be printed after which this type of message stops printing. | 1,000,000 |
 | 2 | PRTSCOMT | An integer defining the maximum number of COMMENT type messages be printed after which this type of message stops printing. | 1,000,000 |
 | 3 | PRTSWARN | An integer defining the maximum number of WARNING type messages be printed after which this type of message stops printing. | 10,000 |

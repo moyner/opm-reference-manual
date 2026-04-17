@@ -11,15 +11,16 @@ The PVTNUM keyword defines the PVT region numbers for each grid block, as such t
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | PVTNUM | PVTNUM defines an array of positive integers assigning a grid cell to a particular PVT region. The maximum number of PVTNUM regions is set by the NTPVT variable on the TABDIMS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 
 *Table 9.17: PVTNUM Keyword Description*
 
 
-| Note Care should be taken that cells in different PVTNUM regions are not in communication, since the fluid properties are associated with a cell. If for example, a rbbl or a rm3 of oil flows from PVTNUM region 1 to PVTNUM region 2,  then the oil properties of that oil will change from the PVT 1 data set to the PVT data set 2.  This will result in material balance errors, that may or may not cause numerical issues. To avoid this one should use the MULTNUM (or FLUXNUM, or OPERNUM) array with the MULTREGT array to ensure that the various PVTNUM regions are not in communication. |
-| --- |
+::: {.callout-note}
+Care should be taken that cells in different PVTNUM regions are not in communication, since the fluid properties are associated with a cell. If for example, a rbbl or a rm3 of oil flows from PVTNUM region 1 to PVTNUM region 2,  then the oil properties of that oil will change from the PVT 1 data set to the PVT data set 2.  This will result in material balance errors, that may or may not cause numerical issues. To avoid this one should use the MULTNUM (or FLUXNUM, or OPERNUM) array with the MULTREGT array to ensure that the various PVTNUM regions are not in communication.
+:::
 
 
 #### Examples

@@ -15,7 +15,7 @@ An autonomous ICD inhibits the production of high-mobility fluids such as water 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which a multi-segment well is being defined. Note that the well name (WELNAME) must have been declared previously using both the WELSPECS and WELSEGS keywords in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | ISEG1 | An integer greater than or equal to two and less than or equal to MXSEGS on the WSEGDIMS keyword in the RUNSPEC section that defines the start of the segment range. | None |
@@ -61,8 +61,9 @@ The total number of wells should be defined via the WELLDIMS keyword and the num
 The equations used to calculate the pressure drop across the ICD are given below and illustrate how the pressure reduction is dependent on the density and viscosity of the fluid flowing through the device.
 
 
-| $\mathrm{Δ}P = \left(\frac{{\mathrm{ρ}}_{\mathit{mixture}}}{{\mathrm{ρ}}_{\mathit{calibrated}}}\right){\mathrm{ρ}}_{exp}⋅{\left(\frac{{\mathrm{μ}}_{\mathit{calibrated}}}{{\mathrm{μ}}_{\mathit{mixture}}}\right)}^{{\mathrm{μ}}_{exp}}⋅ {\mathrm{ρ}}_{\mathit{mixture}} ⋅ \mathrm{β} ⋅ {\left(\frac{q}{{q}_{\mathit{calibrated}}}\right)}^{({Q}_{exp}- 2)} ⋅ {q}^{2}$ | (12.35) |
-| --- | --- |
+$$
+\mathrm{Δ}P = (\frac{{\mathrm{ρ}}_{\mathit{mixture}}}{{\mathrm{ρ}}_{\mathit{calibrated}}}){\mathrm{ρ}}_{exp}⋅{(\frac{{\mathrm{μ}}_{\mathit{calibrated}}}{{\mathrm{μ}}_{\mathit{mixture}}})}^{{\mathrm{μ}}_{exp}}⋅ {\mathrm{ρ}}_{\mathit{mixture}} ⋅ \mathrm{β} ⋅ {(\frac{q}{{q}_{\mathit{calibrated}}})}^{({Q}_{exp}- 2)} ⋅ {q}^{2}
+$$ {#eq-12-35}
 
 Where:
 
@@ -71,8 +72,9 @@ Where:
 ρmixture	=  the density of the mixture, as per:
 
 
-| ${\mathrm{ρ}}_{\mathit{mixture}} = \left({\mathrm{α}}_{\mathit{oil}}^{{a}_{1}}⋅{\mathrm{ρ}}_{\mathit{oil}}\right) + \left({\mathrm{α}}_{\mathit{wat}}^{{a}_{2}}⋅{\mathrm{ρ}}_{\mathit{wat}}\right) + \left({\mathrm{α}}_{\mathit{gas}}^{{a}_{3}}⋅{\mathrm{ρ}}_{\mathit{gas}}\right)$ | (12.36) |
-| --- | --- |
+$$
+{\mathrm{ρ}}_{\mathit{mixture}} = ({\mathrm{α}}_{\mathit{oil}}^{{a}_{1}}⋅{\mathrm{ρ}}_{\mathit{oil}}) + ({\mathrm{α}}_{\mathit{wat}}^{{a}_{2}}⋅{\mathrm{ρ}}_{\mathit{wat}}) + ({\mathrm{α}}_{\mathit{gas}}^{{a}_{3}}⋅{\mathrm{ρ}}_{\mathit{gas}})
+$$ {#eq-12-36}
 
 
 ρcalibrated	=  CALDEN, the density of the calibrating fluid at surface conditions.
@@ -82,8 +84,9 @@ Where:
 μmixture	=  the viscosity of the mixture, as per:
 
 
-| ${\mathrm{μ}}_{\mathit{mixture}} = \left({\mathrm{α}}_{\mathit{oil}}^{{b}_{1}}⋅{\mathrm{μ}}_{\mathit{oil}}\right) + \left({\mathrm{α}}_{\mathit{wat}}^{{b}_{2}}⋅{\mathrm{μ}}_{\mathit{wat}}\right) + \left({\mathrm{α}}_{\mathit{gas}}^{{b}_{3}}⋅{\mathrm{μ}}_{\mathit{gas}}\right)$ | (12.37) |
-| --- | --- |
+$$
+{\mathrm{μ}}_{\mathit{mixture}} = ({\mathrm{α}}_{\mathit{oil}}^{{b}_{1}}⋅{\mathrm{μ}}_{\mathit{oil}}) + ({\mathrm{α}}_{\mathit{wat}}^{{b}_{2}}⋅{\mathrm{μ}}_{\mathit{wat}}) + ({\mathrm{α}}_{\mathit{gas}}^{{b}_{3}}⋅{\mathrm{μ}}_{\mathit{gas}})
+$$ {#eq-12-37}
 
 
 β	=  ICDSTREN, the strength of the ICD as measured using the calibrated fluid.

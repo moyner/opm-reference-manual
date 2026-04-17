@@ -13,7 +13,7 @@ The salt concentrations within each data set should be positive and monotonicall
 
 
 | No. | Name | Description | Default |  |  |
-| --- | --- | --- | --- | --- | --- |
+| --- | --- | :------ | --- | --- | --- |
 | 1 | SALTCON | Field | Metric | Laboratory | None |
 | A real positive columnar vector that sets the salt concentrations for the given relative permeability saturation tables. |  |  |  |  |  |
 | lb/stb | kg/sm3 | gm/scc |  |  |  |

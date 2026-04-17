@@ -15,7 +15,7 @@ See also section 2.2 Running OPM Flow 2023-04 From The Command Line on how to se
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NUPCOL | A positive integer that defines the maximum number of Newton iterations used to update well targets within a time step. | 3 |
 | Notes: |  |  |  |
 

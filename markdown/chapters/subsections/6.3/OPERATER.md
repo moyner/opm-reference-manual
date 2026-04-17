@@ -11,11 +11,11 @@ The OPERATER keyword is similar to the OPERATE keyword, except it applies the ma
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | Y | A character string of up to eight characters in length that defines the keyword identifying the array to be modified. | None |
 | 2 | REGION | REGION is a positive integer representing the region for which the EQUATION should be applied. The default is to use the region number from the OPERNUM keyword; however this can be reset to another region array via the ARRAY item on this keyword, provided the array exists at the time the keyword is declared in the input deck. Note also the OPERNUM keyword must precede the use of the OPERATER keyword. | 0 |
 | 3 | EQUATION | A defined character string of up to eight characters that defines the mathematical function to be applied, using the X array and the ALPHA and BETA constants declared on this keyword. EQUATION should be set to one of the following character strings: | None |
-| ‘MULTA’  -$Y = αX + β$ ‘POLY’     -$Y =Y + α{X}^{β}$ ‘SLOG’    -$Y = {10}^{α + βX}$ ‘LOG10’  -$Y = log(X)$ ‘LOGE’    -$Y = ln(X)$ ‘INV’       -$Y = \frac{1}{X}$ ‘MULTX’ -$Y = αX$ | ‘ADDX’     -$Y = α + X$ ‘COPY’      -$Y = X$ ‘MAXLIM’   -$Y = \mathit{min}(α,X)$ ‘MINLIM’    -$Y = \mathit{max}(α,X)$ ‘MULTP’     -$Y = α{X}^{β}$ ‘ABS’          -$Y = \left\|(X)\left\|$ ‘MULTIPLY’ -$Y = \mathit{XY}$ |  |  |
+| ‘MULTA’  -$Y = αX + β$ ‘POLY’     -$Y =Y + α{X}^{β}$ ‘SLOG’    -$Y = {10}^{α + βX}$ ‘LOG10’  -$Y = log(X)$ ‘LOGE’    -$Y = ln(X)$ ‘INV’       -$Y = \frac{1}{X}$ ‘MULTX’ -$Y = αX$ | ‘ADDX’     -$Y = α + X$ ‘COPY’      -$Y = X$ ‘MAXLIM’   -$Y = \mathit{min}(α,X)$ ‘MINLIM’    -$Y = \mathit{max}(α,X)$ ‘MULTP’     -$Y = α{X}^{β}$ ‘ABS’          -$Y = \|(X)\|$ ‘MULTIPLY’ -$Y = \mathit{XY}$ |  |  |
 | 4 | X | A character string of up to eight characters in length that defines the keyword identifying the array to be used as an input parameter. | None |
 | 5 | ALPHA | An integer or real value that is the α variable in the EQUATION function. | None |
 | 6 | BETA | An integer or real value that is the β variable in the EQUATION function. | None |
@@ -64,8 +64,9 @@ Double precision and integer work arrays may also be used to hold temporary valu
 Note that care should be exercised when performing operations on integer array data as all transforms are performed using floating point arithmetic operations. In addition, operations on any of the transmissibility arrays (TRANX, TRANX-, TRANY, TRANY-, TRANZ, and TRANZ-) may result in unintended consequences as these arrays have zero values on the boundary of the grid. In this use OPM ResInsight to verify and visually inspect the results.
 
 
-| Note The OPERATER and OPERATE keywords allow for great flexibility in generating or modifying the simulator’s input arrays. In addition, OPM Flow also has a Python facility to manipulate and calculate data that offers even greater flexibility, but note that this feature is not compatible with the commercial simulator. Finally, OPM ResInsight, the post-processing plotting software, has both Octave and Python scripting facilities that enable both data generation and visual inspection of the results. The resulting calculated arrays can then be exported from OPM ResInsight and “included”  back into OPM Flow, thus maintaining compatibility with the commercial simulator. |
-| --- |
+::: {.callout-note}
+The OPERATER and OPERATE keywords allow for great flexibility in generating or modifying the simulator’s input arrays. In addition, OPM Flow also has a Python facility to manipulate and calculate data that offers even greater flexibility, but note that this feature is not compatible with the commercial simulator. Finally, OPM ResInsight, the post-processing plotting software, has both Octave and Python scripting facilities that enable both data generation and visual inspection of the results. The resulting calculated arrays can then be exported from OPM ResInsight and “included”  back into OPM Flow, thus maintaining compatibility with the commercial simulator.
+:::
 
 
 #### Example

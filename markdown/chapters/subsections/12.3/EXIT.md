@@ -10,12 +10,13 @@
 The EXIT keyword is part of OPM Flow’s ACTION facility that allows for terminating the simulation for when a condition within an ACTIONX definition is satisfied.  Invoking the keyword within an ACTIONX definition will result in the simulation terminating with an exit status code. The ACTION facility allows the user to enter computational logic to the simulation run based on the how the simulation run is proceeding – see the ACTIONX keyword in the SCHEDULE section.
 
 
-| Note This is an OPM Flow specific keyword for the simulator’s ACTION facility and will therefore cause an error if used in the commercial simulator. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword for the simulator’s ACTION facility and will therefore cause an error if used in the commercial simulator.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | EXITCODE | An optional integer that sets the exit code printed to the *.PRT file, if not not defined the default value of zero will be used. | 0 |
 | Notes: |  |  |  |
 

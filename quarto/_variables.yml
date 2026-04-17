@@ -1,0 +1,5 @@
+# Shared variables for OPM Flow Reference Manual
+version: "2025-04"
+revision: "Rev-A"
+project: "Open Porous Media"
+simulator: "OPM Flow"

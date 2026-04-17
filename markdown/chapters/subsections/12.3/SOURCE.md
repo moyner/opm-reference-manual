@@ -15,7 +15,7 @@ This is an OPM Flow specific keyword that is not supported by the commercial sim
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | I | A positive integer greater than zero and less than or equal to NX that defines the location of the source term in the I-direction. | None |
 | 2 | J | A positive integer greater than zero and less than or equal to NY that defines the location of the source term in the J-direction. | None |

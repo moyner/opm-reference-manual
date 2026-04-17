@@ -11,7 +11,7 @@ The GRIDUNIT keyword defines the units of the grid data. It is usually output by
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | GRIDUNIT | A character string that defines the units of the coordinates stated on the MAPAXES keyword, and should be set to: | METRES |
 | 2 | MAPOPT | A character string that defines if the grid data are measured relative to the map, or relative to the origin as stated on the MAPAXES keyword. MAPOPT should either be left blank (the default) indicating the origin is relative to the origin on the MAPAXES keyword, or set equal to MAP measured relative to the map. | 1* |
 | Notes: |  |  |  |

@@ -13,7 +13,7 @@ Each row entry in the THPRESFT keyword defines a fault threshold pressure.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | FLTNAME | FLTNAME is a character string enclosed in quotes with a maximum length of eight characters, that defines the name of the fault. FLTNAME must have been previously defined using the FAULTS keyword in the GROD section, otherwise an error will occur. | None |
 | 2 | PRESS | PRESS is a single positive real value that defines the threshold pressure for the fault (FLTNAME). If PRESS is defaulted then the simulator will set the threshold pressure to zero, that is the fault is open to flow along the fault plane. | 0 |

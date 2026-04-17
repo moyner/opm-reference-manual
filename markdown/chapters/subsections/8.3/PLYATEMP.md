@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PLYATEMP | Single real positive value that defines polymer adsorption temperature for subsequent polymer adsorption tables. | None |
 | oF | oC | oC |  |

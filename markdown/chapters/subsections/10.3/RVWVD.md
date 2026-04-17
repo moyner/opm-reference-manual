@@ -13,7 +13,7 @@ The keyword should only be used if both gas and water phases haves been activate
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding vaporized oil-gas ratio values, RVW | None |
 | feet | m | cm |  |
@@ -28,8 +28,9 @@ Alternatively, the vaporized water-gas ratio for each cell may be set via the RV
 See also the EQUIL keywords in the SOLUTION section.
 
 
-| Note This is an OPM Flow specific keyword for the simulator’s Water Vaporization Model that is activated by declaring that vaporized water is present in the run using the VAPWAT keyword in the RUNSPEC section. Use the command line option --enable-opm-rst-file=true to output the RVW data to the RESTART file. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword for the simulator’s Water Vaporization Model that is activated by declaring that vaporized water is present in the run using the VAPWAT keyword in the RUNSPEC section. Use the command line option --enable-opm-rst-file=true to output the RVW data to the RESTART file.
+:::
 
 
 #### Example

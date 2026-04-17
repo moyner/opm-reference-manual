@@ -12,12 +12,13 @@ The WINJGAS keyword defines the properties of the injection gas stream, for a gi
 The keyword should only be used if the CO2STORE and GASWAT keywords in the RUNSPEC section have also be activated for the gas-water two component model.
 
 
-| Note This is an OPM Flow keyword used with OPM Flow’s CO2STORE and GASWAT keywords in the RUNSPEC section, and should not be confused with the more general version of the WINJGAS keyword used in the commercial compositional simulator. Secondly, although OPM Flow parses the keyword, the simulator currently ignores the data for this keyword. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow keyword used with OPM Flow’s CO2STORE and GASWAT keywords in the RUNSPEC section, and should not be confused with the more general version of the WINJGAS keyword used in the commercial compositional simulator. Secondly, although OPM Flow parses the keyword, the simulator currently ignores the data for this keyword.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the injection well name, for which the gas injection properties are being specified. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | STREAM | A defined character string that determines the properties of the injection gas, and as should be set to one of the following values: Only the STREAM option is supported by OPM Flow. | GRUP |
 | 3 | [SOURCE](#REF_HEADING_KEYWORD_SOURCE_12_3) | A character string of up to eight characters in length, that defines the source of the gas injection stream, based on the value of STREAM. If STREAM equals GV, then source should be set to a group name. For STREAM equal to MIX or STREAM, then [SOURCE](#REF_HEADING_KEYWORD_SOURCE_12_3) should be set to the name of the gas stream, as defined by the WINJMIX, WINJORD, or WELLSTRE keywords. | None |

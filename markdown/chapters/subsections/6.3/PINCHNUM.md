@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | PINCHNUM | PINCHNUM defines an array of positive integers assigning a grid cell to a particular PINCHNUM region. The maximum number of PINCHNUM regions is set by the NRPINC variable on the GRIDOPTS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 

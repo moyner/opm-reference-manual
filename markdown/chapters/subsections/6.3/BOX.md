@@ -13,7 +13,7 @@ Note that the BOX grid is reset by the keyword ENDBOX by resetting the current d
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | I1 | A positive integer that defines the lower bound of the array in the I-direction to be modified must be greater than or equal 1 and less than or equal to I2 and NX. | 1 |
 | 2 | I2 | A positive integer that defines the upper bound of the array in the I-direction to be modified must be greater than or equal to II and less than or equal to NX | NX |
 | 3 | J1 | A positive integer that defines the lower bound of the array in the J-direction to be modified must be greater than or equal 1 and less than or equal to J2 and NY. | 1 |
@@ -72,5 +72,6 @@ EQUALS
 ```
 
 
-| Note It is good practice to always use the ENDBOX keyword to reset the input back to the full grid when all the modifications for a sub-grid have been completed. |
-| --- |
+::: {.callout-note}
+It is good practice to always use the ENDBOX keyword to reset the input back to the full grid when all the modifications for a sub-grid have been completed.
+:::

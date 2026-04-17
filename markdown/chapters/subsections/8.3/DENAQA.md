@@ -15,7 +15,7 @@ This keyword is only supported by OPM Flow when the two phase gas-water CO2 stor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | COEFFS | A series of real numbers that define the three Ezrokhi coeffients for each of the compositional components active in the model. | None |
 | dimensionless | dimensionless | dimensionless |  |

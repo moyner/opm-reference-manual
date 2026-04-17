@@ -7,13 +7,13 @@
 
 #### Description
 
-The EHYSTRR keyword defines the hysteresis model and associated parameters via the drainage SATNUM allocation region array, for when the hysteresis option has been activated by the HYSTER variable on the SATOPTS keyword in the RUNSPEC section. Only the Killough [Killough, J. E. “Reservoir Simulation with History-dependent Saturation Functions,” paper SPE 5106, Society of Petroleum Engineers Journal (1976) 16, No. 1, 37-48.] model is available for this keyword and the keyword is optional.
+The EHYSTRR keyword defines the hysteresis model and associated parameters via the drainage SATNUM allocation region array, for when the hysteresis option has been activated by the HYSTER variable on the SATOPTS keyword in the RUNSPEC section. Only the Killough^[Killough, J. E. “Reservoir Simulation with History-dependent Saturation Functions,” paper SPE 5106, Society of Petroleum Engineers Journal (1976) 16, No. 1, 37-48.] model is available for this keyword and the keyword is optional.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped. See also the EHYSTR keyword in the RUNSPEC for an alternative keyword to enter the hysteresis model and associated parameters that is supported by OPM Flow
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | HYSTRCP | HYSTRCP is a positive real value that defines the Killough curvature parameter for capillary pressure hysteresis model. The value should range from 0.05 to 0.10. | 0.1 |
 | 2 | HYSTREL | HYSTREL is a positive real number that defines the Killough’s wetting phase relative permeability curvature parameter. This parameter is  ignored if HYSMOD on the EHYSTR keyword is not set to 4. | 1.0 |
 | 3 | HYSTSGR | HYSTSGR is a positive real number that sets a scaling parameter for the trapped non-wetting phase saturation in the Killough model. | 0.1 |

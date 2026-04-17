@@ -11,7 +11,7 @@ TBLK keyword defines the initial tracer concentration for all or selected cells 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | NAME | A character string of up to eight characters, consisting of TBLK as the first four characters followed by a four letter character string defining the tracer’s name. The fifth character should either be the letter F or the letter S, that indicates the state of the tracer either to be free (F) or in solution (S). For example,  TBLKFIGS (free) or TBLKSIGS (solution). The last three characters of NAME (the effective tracer name) must also match an entry on the TRACER keyword’s NAME parameter, in the PROPS section. Note it is best to void names beginning with the letters F, S, and T as these names may create naming issues in post-processing software. | None |
 | 2 | TBLK | TBLK is an array of real numbers greater than or equal to zero, that are assigned the tracer concentration values for each cell in the model or the current input BOX. Repeat counts may be used, for example 200*0.0. The units for the tracer, if required, are set on the TRACER keyword in the PROPS section. This should be the same as the PHASE in the model. | None |
@@ -24,8 +24,9 @@ TBLK keyword defines the initial tracer concentration for all or selected cells 
 See also the TRACERS keyword in the RUNSPEC section to declared the maximum number of tracers for each phase, the TRACER keyword in the PROPS section to define the tracer, and the WTRACER keyword in the SCHEDULE section that defines the wells injecting the tracer.
 
 
-| Note Currently, one cannot initialize tracers using the EQUALS keyword. Instead use the array format, that is the keyword followed by the required number of values, or the TVDP keyword in the SOLUTION section to set the initial tracer concentrations as a function of depth. |
-| --- |
+::: {.callout-note}
+Currently, one cannot initialize tracers using the EQUALS keyword. Instead use the array format, that is the keyword followed by the required number of values, or the TVDP keyword in the SOLUTION section to set the initial tracer concentrations as a function of depth.
+:::
 
 
 #### Example

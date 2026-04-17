@@ -7,11 +7,11 @@
 
 #### Description
 
-Turns on the Constrained Pressure Residual (“CPR”) [Wallis, J. R., Little, T. E., and Nolen, J. S.: "Constrained Residual Acceleration of Conjugate Residual Methods," paper SPE 13536 presented at the SPE Reservoir Simulation Symposium, Dallas, Texas, USA (February 10-13, 1985).],  [R. Scheichl, M. Roland, J. Wendebourg, Decoupling and block preconditioning for sedimentary basin simulations, Computational Geosciences 7 (2003) 295{318.] and  [Klemetsdal, Ø.S., Møyner, O. & Lie, KA. Accelerating multiscale simulation of complex geomodels by use of dynamically adapted basis functions. Comput Geosci 24, 459–476 (2020). https://doi.org/10.1007/s10596-019-9827-z.] preconditioner linear solver option, and declares how the solver should be applied.  The keyword is equivalent to using the OPM Flow command line parameter  --linear-solver= “cprw”. Note that if the command line has been used, then this will take precedence over the CPR keyword.
+Turns on the Constrained Pressure Residual (“CPR”)^[Wallis, J. R., Little, T. E., and Nolen, J. S.: "Constrained Residual Acceleration of Conjugate Residual Methods," paper SPE 13536 presented at the SPE Reservoir Simulation Symposium, Dallas, Texas, USA (February 10-13, 1985).], ^[R. Scheichl, M. Roland, J. Wendebourg, Decoupling and block preconditioning for sedimentary basin simulations, Computational Geosciences 7 (2003) 295{318.] and ^[Klemetsdal, Ø.S., Møyner, O. & Lie, KA. Accelerating multiscale simulation of complex geomodels by use of dynamically adapted basis functions. Comput Geosci 24, 459–476 (2020). https://doi.org/10.1007/s10596-019-9827-z.] preconditioner linear solver option, and declares how the solver should be applied.  The keyword is equivalent to using the OPM Flow command line parameter  --linear-solver= “cprw”. Note that if the command line has been used, then this will take precedence over the CPR keyword.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | CPROPTN | A defined character string that determines how the CPR linear solver should be applied, and should be set to one of the following: Note that OPM Flow only supports the ORIGINAL option, which is the default value in OPM Flow, whereas the default value in the commercial simulator is ADAPTIVE. . | ORIGINAL |
 | Notes: |  |  |  |
 
@@ -69,7 +69,7 @@ flow --linear-solver=cprw --linear-solver-reduction=0.005 --cpr-reuse-setup=4
 ```
 
 
-See new Rasmussen et al. [Atgeirr Flø Rasmussen, Tor Harald Sandve, Kai Bao, Andreas Lauser, Joakim Hove, Bård Skaflestad, Robert Klöfkorn, Markus Blatt, Alf Birger Rustad, Ove Sævareid, Knut-Andreas Lie, Andreas Thune, The Open Porous Media Flow reservoir simulator, Computers & Mathematics with Applications, Volume 81, 2021, Pages 159-185, ISSN 0898-1221, [https://doi.org/10.1016/j.camwa.2020.05.014](https://doi.org/10.1016/j.camwa.2020.05.014). (https://www.sciencedirect.com/science/article/pii/S0898122120302182).]  for further information on the available numerical algorithms available in OPM Flow.
+See new Rasmussen et al.^[Atgeirr Flø Rasmussen, Tor Harald Sandve, Kai Bao, Andreas Lauser, Joakim Hove, Bård Skaflestad, Robert Klöfkorn, Markus Blatt, Alf Birger Rustad, Ove Sævareid, Knut-Andreas Lie, Andreas Thune, The Open Porous Media Flow reservoir simulator, Computers & Mathematics with Applications, Volume 81, 2021, Pages 159-185, ISSN 0898-1221, [https://doi.org/10.1016/j.camwa.2020.05.014](https://doi.org/10.1016/j.camwa.2020.05.014). (https://www.sciencedirect.com/science/article/pii/S0898122120302182).]  for further information on the available numerical algorithms available in OPM Flow.
 
 
 ```

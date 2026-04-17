@@ -11,7 +11,7 @@ The WSEGSDIMS keyword defines the multi-segment well dimensions for the multi-se
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MXWELS | A positive integer defining the maximum number of multi-segment wells for this model. | 0 |
 | 2 | MXSEGS | A positive integer defining the maximum number of segments per well for this model. | 1 |
 | 3 | MXBRAN | A positive integer defining the maximum number of branches per multi-segment well, including the main branch groups for this model. | 1 |

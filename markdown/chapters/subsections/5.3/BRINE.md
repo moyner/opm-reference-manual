@@ -11,7 +11,7 @@ The BRINE keyword activates the standard Brine Tracking model and optionally def
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | SALTS | An optional character vector string that defines the salts to be tracked for when the Multi-Component Brine model has been activated by the ECLMC keyword in the RUNSPEC section. SALTS should be set to one or more of the following salt chemical formulae: | None |
 | Salt Name | Salt Chemical Formulae |  |  |
 | Sodium Chloride | NaCl |  |  |

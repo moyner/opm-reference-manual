@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MXWELS | A positive integer defining the maximum number of wellbore friction wells for this model. | 0 |
 | 3 | MXBRAN | A positive integer defining the maximum number of branches per well. The default value of one implies a standard well with no branches. | 1 |
 | Notes: |  |  |  |

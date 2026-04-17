@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | ARRAY-1 | The name of the array to be copied This is the keyword name identifying the property and is up to eight characters in length and enclosed in quotes. | None |
 | 2 | I1 | A positive integer that defines the [SOURCE](#REF_HEADING_KEYWORD_SOURCE_12_3) lower bound of the array in the I-direction to be modified must be greater than or equal 1 and less than or equal to I2 and NX. | 1 |
 | 3 | I2 | A positive integer that defines the [SOURCE](#REF_HEADING_KEYWORD_SOURCE_12_3) upper bound of the array in the I-direction to be modified must be greater than or equal to II and less than or equal to NX | NX |

@@ -11,7 +11,7 @@ The ROCKCOMP keyword activates rock compaction and defines various rock compacti
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | ROCKOPT | A character string that defines the rock compaction option based on one of the following character strings: Only the REVERS and IRREVERS options are supported by OPM Flow. | REVERS |
 | 2 | NTROCC | A positive integer that defines the number of rock compaction tables, that is the number of ROCKTAB tables to be used by OPM Flow. | 1 |
 | 3 | WATINOPT | A character string that states if the water induced rock compaction option should be used (YES) or not (NO).  If set to YES then either the ROCKTABW or the ROCK2D and ROCKWNOD keywords should be entered in the PROPS section. | NO |

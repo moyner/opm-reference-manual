@@ -13,7 +13,7 @@ If the DATES keyword is to be used during the simulation, then the START keyword
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | DAY | A positive integer that defines the day of the month for the data set, the value should be greater than or equal to one and less than or equal to 31. | None |
 | 2 | MONTH | Character string for the month for the data set and should be one of the following 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL' (or 'JLY'), 'AUG', 'SEP', 'OCT', 'NOV', or 'DEC' | None |
 | 3 | YEAR | A positive four digit integer value representing the year for the data set, which must be specified fully by four digits, that is 1986. | None |

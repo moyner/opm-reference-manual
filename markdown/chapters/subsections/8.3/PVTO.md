@@ -7,11 +7,11 @@
 
 #### Description
 
-PVTO defines the oil PVT properties for live oil [“Live” oil is oil that contains gas in solution, which is normally the case for most conventional oil reservoirs. However, for oil reservoirs classified as heavy oil reservoirs, the in situ dissolved gas may be negligible and oil would then be classified as gas-free oil which is commonly referred to as “dead” oil.] and the keyword should only be used if the there is both oil and gas phases in the model. This keyword should be used when the DISGAS keyword has be declared in the RUNSPEC section indicating that dissolved gas (more commonly referred to as solution gas) is present in the oil. The keyword may be used for oil-water and oil-water-gas input decks.
+PVTO defines the oil PVT properties for live oil^[“Live” oil is oil that contains gas in solution, which is normally the case for most conventional oil reservoirs. However, for oil reservoirs classified as heavy oil reservoirs, the in situ dissolved gas may be negligible and oil would then be classified as gas-free oil which is commonly referred to as “dead” oil.] and the keyword should only be used if the there is both oil and gas phases in the model. This keyword should be used when the DISGAS keyword has be declared in the RUNSPEC section indicating that dissolved gas (more commonly referred to as solution gas) is present in the oil. The keyword may be used for oil-water and oil-water-gas input decks.
 
 
 | No. | Name | Description | Default |  |
-| --- | --- | --- | --- | --- |
+| --- | --- | :------ | --- | --- |
 | Field | Metric | Laboratory |  |  |
 | 1 | RS | A real monotonically increasing down the column values that defines the saturated gas-oil ratio (“GOR”) or Rs,  that defines the oil formation volume factor and the oil viscosity for the tabulated corresponding pressure for stated saturated RS. For a given RS the variability of the oil formation volume factor and the oil viscosity with respect to the saturated RS and pressure is optionally included as a sub table under PRSU, FVFU and VISU columns, that is it is not necessary to repeat RS for each sub table entry. However, each sub table must be terminated by a “/”. The under-saturated PRSU entries are optional, except for perhaps the last RS entry to define the PVT properties above the initial saturation pressure. If there are no following under-saturated PRSU entries then the RS entry row should be terminated by a “/”, if there are under-saturated PRSU entries then the last PRSU entry row should be terminated by a “/”. | None |  |
 | Mscf/stb | sm3/sm3 | scc/scc |  |  |

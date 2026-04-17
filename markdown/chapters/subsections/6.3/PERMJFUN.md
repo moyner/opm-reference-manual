@@ -7,13 +7,13 @@
 
 #### Description
 
-PERMJFUN defines the permeability to be used in de-normalizing the Leverett J-Functions [Leverett, M. C.; “Capillary Behaviour in Porous Solids”, Trans. AIME (1941) 142, 152-168.] for when the PERM variable on the JFUNC or the JFUNCR keyword in the GRID section has been set to “U”, as oppose to using PERMX, PERMY, PERMZ arrays etc.
+PERMJFUN defines the permeability to be used in de-normalizing the Leverett J-Functions^[Leverett, M. C.; “Capillary Behaviour in Porous Solids”, Trans. AIME (1941) 142, 152-168.] for when the PERM variable on the JFUNC or the JFUNCR keyword in the GRID section has been set to “U”, as oppose to using PERMX, PERMY, PERMZ arrays etc.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PERMJFUN | PERMJFUN is an array of real positive numbers assigning the permeability to be used in de-normalizing the Leverett J-Function to each cell in the model. Repeat counts may be used, for example 20*100.0. | None |
 | mD | mD | mD |  |

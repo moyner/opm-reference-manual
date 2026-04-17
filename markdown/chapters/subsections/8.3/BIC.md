@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but it will be parsed and its data ign
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | [BIC](#REF_HEADING_KEYWORD_BIC) | A series of real numbers that define the binary interaction coefficients ${k}_{\mathit{ij}}$ for each pair (i, j) of compositional components active in the model. The matrix ${k}_{\mathit{ij}}$ is symmetrical with zeroes on the diagonal so only the portion of the matrix below the diagonal is required (i.e., i = {2, ... COMPS} and j < i), where COMPS is specified by the COMPS keyword in the RUNSPEC section. The values are ordered with j cycling fastest (i.e. ${k}_{21}$, ${k}_{31}$, ${k}_{32}$, ${k}_{41}$, ${k}_{42}$, ${k}_{43}$, ...). | 0 |
 | Notes: |  |  |  |
 

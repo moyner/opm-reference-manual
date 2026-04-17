@@ -12,8 +12,9 @@ LWPCW defines the maximum water-oil pressure values for all the cells in the mod
 The capillary pressure for a grid block is scaled by:
 
 
-| ${P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{HWPCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.65) |
-| --- | --- |
+$$
+{P}_{c} = {P}_{{c}_{\mathit{TABLE}}}(\frac{\mathit{HWPCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}})
+$$ {#eq-8-65}
 
 Where:
 

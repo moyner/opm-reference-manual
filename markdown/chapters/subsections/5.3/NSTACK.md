@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NSTACK | A positive integer that defines the maximum number of previous search directions stored by the linear solver. | 10 |
 | Notes: |  |  |  |
 
@@ -37,5 +37,6 @@ NSTACK
 The above example sets maximum number of previous search directions stored by the linear solver to 30, this has no effect in OPM Flow input decks.
 
 
-| Note If the run is suffering from linear convergence problems, then check the data first for any data issues before manipulating the numerical control parameters. For example, if OPM Flow has written some WARNING messages with respect to end-point scaling, etc., then resolve these messages first before adjusting the numerical controls. |
-| --- |
+::: {.callout-note}
+If the run is suffering from linear convergence problems, then check the data first for any data issues before manipulating the numerical control parameters. For example, if OPM Flow has written some WARNING messages with respect to end-point scaling, etc., then resolve these messages first before adjusting the numerical controls.
+:::

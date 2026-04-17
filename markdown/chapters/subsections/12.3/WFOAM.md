@@ -11,7 +11,7 @@ The WFOAM keyword defines an injection wells foam concentration.  The foam optio
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well injection foam concentration is being defined. | None |
 | 2 | FOAMCON | A real positive value that defines the well’s injection foam concentration. This value may be specified using a User Defined Argument (UDA). Units are dependent on the transport phase specified via the FOAMOPT1 variable on the FOAMOPTS keyword in the PROPS section. FOAMOPT1 should be set to either GAS or WATER. Currently OPM Flow only supports injecting foam via the GAS phase. | None |

@@ -2,4 +2,4 @@
 
 The SKIP keyword activates skipping of all keywords and input data until the ENDSKIP keyword is encountered. All keywords between the SKIP and ENDSKIP keywords are ignored.
 
-See Error: Reference source not found in the GLOBAL section for a full description.
+See  in the GLOBAL section for a full description.

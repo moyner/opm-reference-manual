@@ -10,12 +10,13 @@
 SALTSOL defines a grid block's maximum salt solubility for each PVTNUM region. The keyword should only be used with OPM Flow’s Salt Precipitation model which is activated via the PRECSALT keyword in the RUNSPEC section.
 
 
-| Note This is an OPM Flow specific keyword for the simulator’s Salt Precipitation model that is activated by the PRECSALT keyword and declaring that vaporized water is present in the run via the VAPWAT in the RUNSPEC section. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword for the simulator’s Salt Precipitation model that is activated by the PRECSALT keyword and declaring that vaporized water is present in the run via the VAPWAT in the RUNSPEC section.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SALTSOL | A real positive value that defines the maximum salt solubility for all grid blocks in a PVTNUM region. | None |
 | lb/stb | kg/sm3 | gm/scc |  |

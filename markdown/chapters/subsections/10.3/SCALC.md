@@ -10,12 +10,13 @@
 The SCALC keyword defines the initial equilibration calcite volume fraction for all grid cells in the model. The keyword should only be used if the MICP model has been activated in the RUNSPEC section.
 
 
-| Note This is an OPM Flow specific keyword. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SCALC | SCALC is an array of real numbers that are greater than or equal to zero and less than or equal to one assigning the initial equilibration  calcite volume fraction values to each cell in the model. Repeat counts may be used, for example 20*0.0010. | None |
 | dimensionless | dimensionless | dimensionless |  |

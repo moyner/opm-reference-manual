@@ -13,7 +13,7 @@ Note this keyword is different to the MINPV and MINPORV keywords in the GRID sec
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | MINPVV | MINPVV is an array of real positive numbers that defines the minimum pore volumes for each cell in the model in order for the cells to be active. | Defined |
 | rb 1.0e-6 | rm3 1.0e-6 | rcc 1.0e-6 |  |

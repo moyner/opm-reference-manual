@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | PVDG | Print dry gas PVT tables | N/A |
 | 2 | PVTG | Print wet gas PVT tables | N/A |
 | 3 | SGFN | Print gas relative permeability saturation function tables. | N/A |
@@ -24,8 +24,9 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 *Table 8.132: RPTPROPS Keyword Description*
 
 
-| Note Except for tabular like data, PVDG etc., this keyword has the potential to produce very large print files that some text editors may have difficulty loading. A more efficient solution for array type data is to load the *.INIT file into OPM ResInsight to view the data graphically, this also has the benefit of being able to filter the grid based on I, J, K ranges and grid properties. |
-| --- |
+::: {.callout-note}
+Except for tabular like data, PVDG etc., this keyword has the potential to produce very large print files that some text editors may have difficulty loading. A more efficient solution for array type data is to load the *.INIT file into OPM ResInsight to view the data graphically, this also has the benefit of being able to filter the grid based on I, J, K ranges and grid properties.
+:::
 
 
 #### Examples

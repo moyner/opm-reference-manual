@@ -13,7 +13,7 @@ The number of PVTWSALT table data sets is defined by the NTPVT parameter on the 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1-1 | PRESS | Single real positive value that defines the reference pressure for the data in the following records (Pref). PRESS should be approximately equal to the average reservoir pressures in the model. The simulator uses the previous time step values to forecast the current  time step water properties by linear interpolation. If PRESS is not representative of the average reservoir pressures in the model then the linear interpolation might result in nonphysical values of the water saturation and water viscosity. | None |
 | psia | barsa | atma |  |
@@ -26,11 +26,11 @@ The number of PVTWSALT table data sets is defined by the NTPVT parameter on the 
 | 2-2 | WFVF | WFVF is a real columnar vector defining the water formation volume factor (Bw) at the reference pressure PRESS, for the corresponding salt concentration SALTCON. | None |
 | 2-1 |  |  |  |
 | rb/stb | rm3/sm3 | rcc/scc |  |
-| 2-3 | WCOMP | WCOMP is a real columnar vector defining the water compressibility (Cw) at the water reference pressure PRESS, for the corresponding salt concentration SALTCON. The water compressibility is defined as: ${C}_{w} = -\frac{1}{{B}_{w}}\left(\frac{{\mathit{dB}}_{w}}{\mathit{dP}}\right)$ | None |
+| 2-3 | WCOMP | WCOMP is a real columnar vector defining the water compressibility (Cw) at the water reference pressure PRESS, for the corresponding salt concentration SALTCON. The water compressibility is defined as: ${C}_{w} = -\frac{1}{{B}_{w}}(\frac{{\mathit{dB}}_{w}}{\mathit{dP}})$ | None |
 | 1/psia | 1/bars | 1/atma |  |
 | 2.4 | WVISC | WVISC is a real columnar vector defining the water viscosity (µw) at the water reference pressure PRESS, for the corresponding salt concentration SALTCON. | None |
 | cP | cP | cP |  |
-| 2.5 | WVISCOMP | WVISCOMP is a real columnar vector defining the water viscosibility (µwc) at the water reference pressure PRESS,  for the corresponding salt concentration SALTCON.  The water viscosibility is defined as: ${\mathrm{μ}}_{\mathit{wc}} = -\frac{1}{{\mathrm{μ}}_{w}}\left(\frac{d{\mathrm{μ}}_{w}}{\mathit{dP}}\right)$ | None |
+| 2.5 | WVISCOMP | WVISCOMP is a real columnar vector defining the water viscosibility (µwc) at the water reference pressure PRESS,  for the corresponding salt concentration SALTCON.  The water viscosibility is defined as: ${\mathrm{μ}}_{\mathit{wc}} = -\frac{1}{{\mathrm{μ}}_{w}}(\frac{d{\mathrm{μ}}_{w}}{\mathit{dP}})$ | None |
 | 1/psia | 1/barsa | 1/atma |  |
 | 2-6 | / | Table and record terminated by a “/” | Not Applicable |
 | Notes: |  |  |  |
@@ -41,14 +41,16 @@ The number of PVTWSALT table data sets is defined by the NTPVT parameter on the 
 As mentioned above, the simulator first calculates the water properties as functions of the salt concentration at the previous time step by linear interpolation in salt concentration for water compressibility (Cw), water viscosibility (μwc), $\frac{1}{{B}_{w}}$and$\frac{1}{{B}_{w} {μ}_{w}}$.  It then calculates the values of${B}_{w}$and${B}_{w} {μ}_{w}$at the current time step using the current pressure P, using the following equations:
 
 
-| ${B}_{w}(P,{C}_{s}) = \frac{{B}_{w}({P}_{\mathit{ref}},{C}_{s,\mathit{ref}})}{1 + {C}_{w}(P-{P}_{\mathit{ref}}) + \frac{{\left({C}_{w}(P-{P}_{\mathit{ref}})\right)}^{2}}{2}}$ | (8.82) |
-| --- | --- |
+$$
+{B}_{w}(P,{C}_{s}) = \frac{{B}_{w}({P}_{\mathit{ref}},{C}_{s,\mathit{ref}})}{1 + {C}_{w}(P-{P}_{\mathit{ref}}) + \frac{{({C}_{w}(P-{P}_{\mathit{ref}}))}^{2}}{2}}
+$$ {#eq-8-82}
 
 and
 
 
-| ${B}_{w}(P,{C}_{s}) {\mathrm{μ}}_{w}(P,{C}_{s}) = \frac{{B}_{w}({P}_{\mathit{ref}},{C}_{s,\mathit{ref}}) {\mathrm{μ}}_{w}({P}_{\mathit{ref}},{C}_{s,\mathit{ref}})}{1 + ({C}_{w}- {\mathrm{μ}}_{\mathit{wc}})(P-{P}_{\mathit{ref}}) + \frac{{\left(({C}_{w}- {\mathrm{μ}}_{\mathit{wc}})(P-{P}_{\mathit{ref}})\right)}^{2}}{2}}$ | (8.83) |
-| --- | --- |
+$$
+{B}_{w}(P,{C}_{s}) {\mathrm{μ}}_{w}(P,{C}_{s}) = \frac{{B}_{w}({P}_{\mathit{ref}},{C}_{s,\mathit{ref}}) {\mathrm{μ}}_{w}({P}_{\mathit{ref}},{C}_{s,\mathit{ref}})}{1 + ({C}_{w}- {\mathrm{μ}}_{\mathit{wc}})(P-{P}_{\mathit{ref}}) + \frac{{(({C}_{w}- {\mathrm{μ}}_{\mathit{wc}})(P-{P}_{\mathit{ref}}))}^{2}}{2}}
+$$ {#eq-8-83}
 
 See also the BDENSITY keyword in the PROPS section that defines the brine surface densities for the salt concentrations declared on the PVTWSALT keyword. Note that if the BDENSITY keyword is absent from the input file then the brine surface densities will be set to the water density values declared via the DENSITY keyword in the PROPS section. In this case there is no variation in brine surface density with respect to salt concentration.
 

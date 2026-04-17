@@ -7,11 +7,11 @@
 
 #### Description
 
-The EHYSTR keyword defines the hysteresis model and associated parameters when the hysteresis option has been activated by the HYSTER variable on the SATOPTS keyword in the RUNSPEC section. Both the Carlson [Carlson, F. M. “Simulation of Relative Permeability Hysteresis to the Non-Wetting Phase,” paper SPE 10157, presented at the SPE Annual Technical Conference & Exhibition, San Antonio, Texas, USA (October 5-7, 1981).] and Killough [Killough, J. E. “Reservoir Simulation with History-dependent Saturation Functions,” paper SPE 5106, Society of Petroleum Engineers Journal (1976) 16, No. 1, 37-48.] models are available.
+The EHYSTR keyword defines the hysteresis model and associated parameters when the hysteresis option has been activated by the HYSTER variable on the SATOPTS keyword in the RUNSPEC section. Both the Carlson^[Carlson, F. M. “Simulation of Relative Permeability Hysteresis to the Non-Wetting Phase,” paper SPE 10157, presented at the SPE Annual Technical Conference & Exhibition, San Antonio, Texas, USA (October 5-7, 1981).] and Killough^[Killough, J. E. “Reservoir Simulation with History-dependent Saturation Functions,” paper SPE 5106, Society of Petroleum Engineers Journal (1976) 16, No. 1, 37-48.] models are available.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | HYSTRCP | HYSTRCP is a positive real value that defines the Killough curvature parameter for capillary pressure hysteresis model. The value should range from 0.05 to 0.10. This item is not supported by OPM Flow and should be defaulted (1*). | 0.1 |
 | 2 | HYSTMOD | An integer value that determines the relative permeability hysteresis model to be used depending on the phase and the wettability of the system. HYSTMOD should be set to one of the following values: | 0 |
 | Water Wet Hysteresis Models |  |  |  |

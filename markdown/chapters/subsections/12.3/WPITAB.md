@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well productivity index multiplier versus water cut table, PIMULTAB, is being assigned. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | PIMULTAB | A positive integer value that defines the corresponding PIMULTAB table to be allocated to the well. A value less than or equal to zero means that no PIMULTAB table is allocated to the well | 0 |

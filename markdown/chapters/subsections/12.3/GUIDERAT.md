@@ -7,11 +7,12 @@
 
 #### Description
 
-This keyword defines a general formulae used to define a group’s and well’s guide rate as a function of the their potential.  The default behavior, that is when this keyword is not invoked,  is to set the target control mode and rate via the GCONPROD keyword in the SCHEDULE section.  In this case the target rate is distributed between the group’s wells that are under group control using a well’s guide rate. If a well’s guide rate has not been defined, for example by this keyword, then the well potential of the group controlling phase at the beginning of the time step is used.  For example, if the group target rate and phase is oil, then the well’s under group control will have their oil rates determined by their oil rate potential [Production and injection potentials are based on rates that are unrestricted. For wells this implies that well potential is calculated based on either the BHP or THP limit, which ever is the more constraining.]. The GUIDERAT keyword substitutes the potential calculation with a more general formulae in the aforementioned distribution and allocation of the rates:
+This keyword defines a general formulae used to define a group’s and well’s guide rate as a function of the their potential.  The default behavior, that is when this keyword is not invoked,  is to set the target control mode and rate via the GCONPROD keyword in the SCHEDULE section.  In this case the target rate is distributed between the group’s wells that are under group control using a well’s guide rate. If a well’s guide rate has not been defined, for example by this keyword, then the well potential of the group controlling phase at the beginning of the time step is used.  For example, if the group target rate and phase is oil, then the well’s under group control will have their oil rates determined by their oil rate potential^[Production and injection potentials are based on rates that are unrestricted. For wells this implies that well potential is calculated based on either the BHP or THP limit, which ever is the more constraining.]. The GUIDERAT keyword substitutes the potential calculation with a more general formulae in the aforementioned distribution and allocation of the rates:
 
 
-| $\mathit{Phase}\mathit{Guide}\mathit{Rate} =\frac{{({\mathit{Potential}}_{\mathit{Phase}})}^{A}}{B + C{(\mathit{Potential}{\mathit{Ratio}}_{1})}^{D} + E{(\mathit{Potential}{\mathit{Ratio}}_{2})}^{F}}$ | (12.28) |
-| --- | --- |
+$$
+\mathit{Phase}\mathit{Guide}\mathit{Rate} =\frac{{({\mathit{Potential}}_{\mathit{Phase}})}^{A}}{B + C{(\mathit{Potential}{\mathit{Ratio}}_{1})}^{D} + E{(\mathit{Potential}{\mathit{Ratio}}_{2})}^{F}}
+$$ {#eq-12-28}
 
 Where:
 
@@ -31,7 +32,7 @@ Note that groups can only have potential guide rates if they are subordinate in 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | TSTEP | A real positive value that defines the minimum time interval to re-calculate the guide rates.  The guide rates are calculated at the start of a time step and the default value of zero means that the guide rates are calculated for each time step. A non-zero value for TSTEP resets the minimum interval, for example setting TSTEP equal to 30 would mean the guide rates are calculate every 30 days, or to the nearest associated time step. Calculating guide rates every time step may cause issues due to the rate dependent behavior, for example gas cusping or water coning causing the well rates to oscillate. In this case using a non-zero value of TSTEP may eliminate this oscillating behavior. | 0.0 |
 | days | days | hours |  |
@@ -59,8 +60,9 @@ Note that the GUIDERAT keyword only applies to production groups and wells. Inje
 Finally, as mentioned previously, if the GUIDERAT or WGRUPCON keywords are not present in the input deck then the group and well potential guide rates will be calculated using the well’s potential rates. The WGRUPCON keyword in the SCHEDULE section can be used to set a constant potential guide rate for a well.
 
 
-| Note GUIDERAT can be used to penalize wells producing excessive water by utilizing the C and D coefficients in equation (12.28), and to discriminate against wells that are gassing out by setting the E and F coefficients. Note that the value range through which Potential Ratio1 and Potential Ratio2 vary is variable. For example, if Potential Ratio1 is water cut,  then the value should be between zero and one, whereas for the water-oil ratio the value can vary between zero and infinity. The same applies to the units of Potential Ratio2 which are dependent on if the GOR, GLR or OGR ratio is used in the calculation. One can use the C and E coefficients to scale these terms to the required relative magnitudes in the denominator and the D and F powers to influence how quickly the penalty increases with increasing water and gas fractions.  High positive value for D and F coefficients will make production fall off rapidly as the water or gas fraction increases, while a negative values will favor producing these type of wells. Note that the B coefficient should always be positive to prevent the denominator's going to zero. Finally, if one wishes each well to produce in proportion to its potential when the water fraction and gas fraction are equal (the usual case), then the A coefficient should be set to one. |
-| --- |
+::: {.callout-note}
+GUIDERAT can be used to penalize wells producing excessive water by utilizing the C and D coefficients in equation (12.28), and to discriminate against wells that are gassing out by setting the E and F coefficients. Note that the value range through which Potential Ratio1 and Potential Ratio2 vary is variable. For example, if Potential Ratio1 is water cut,  then the value should be between zero and one, whereas for the water-oil ratio the value can vary between zero and infinity. The same applies to the units of Potential Ratio2 which are dependent on if the GOR, GLR or OGR ratio is used in the calculation. One can use the C and E coefficients to scale these terms to the required relative magnitudes in the denominator and the D and F powers to influence how quickly the penalty increases with increasing water and gas fractions.  High positive value for D and F coefficients will make production fall off rapidly as the water or gas fraction increases, while a negative values will favor producing these type of wells. Note that the B coefficient should always be positive to prevent the denominator's going to zero. Finally, if one wishes each well to produce in proportion to its potential when the water fraction and gas fraction are equal (the usual case), then the A coefficient should be set to one.
+:::
 
 
 #### Examples
@@ -68,8 +70,9 @@ Finally, as mentioned previously, if the GUIDERAT or WGRUPCON keywords are not p
 The first example sets the guide phase to oil and the resulting Phase Guide Rate based on oil potential based on setting the A and B coefficients to to one, that is:
 
 
-| $\begin{matrix}\mathit{Phase}\mathit{Guide}\mathit{Rate} =\frac{{({\mathit{Potental}}_{\mathit{Phase}})}^{A}}{B + C{(\mathit{Potential}{\mathit{Ratio}}_{1})}^{D} + E{(\mathit{Potential}{\mathit{Ratio}}_{2})}^{F}} \\  \\  = \frac{\mathit{Oil}{\mathit{Potential}}^{1.0}}{1.0}\end{matrix}$ | (12.29) |
-| --- | --- |
+$$
+\begin{matrix}\mathit{Phase}\mathit{Guide}\mathit{Rate} =\frac{{({\mathit{Potental}}_{\mathit{Phase}})}^{A}}{B + C{(\mathit{Potential}{\mathit{Ratio}}_{1})}^{D} + E{(\mathit{Potential}{\mathit{Ratio}}_{2})}^{F}} \\  \\  = \frac{\mathit{Oil}{\mathit{Potential}}^{1.0}}{1.0}\end{matrix}
+$$ {#eq-12-29}
 
 
 with all the other parameters defaulted, except for the minimum time interval to re-calculate the guide rates which is set to 30 days.
@@ -89,8 +92,9 @@ GUIDERAT
 The next example sets the Phase Guide Rate to the reservoir fluid volume rate, with preference given to low GOR wells and with high GOR wells penalized, based on setting A and B to one, C and D to zero, E equal to 10 and F equal to two, that is:
 
 
-| $\begin{matrix}\mathit{Phase}\mathit{Guide}\mathit{Rate} =\frac{{({\mathit{Potental}}_{\mathit{Phase}})}^{A}}{B + C{(\mathit{Potential}{\mathit{Ratio}}_{1})}^{D} + E{(\mathit{Potential}{\mathit{Ratio}}_{2})}^{F}}  \\  \\  = \frac{\mathit{Reservoir} \mathit{Fluid} \mathit{Volume} {\mathit{Potential}}^{1.0}}{1.0 + 10\times {(\mathit{GOR})}^{2}}\end{matrix}$ | (12.30) |
-| --- | --- |
+$$
+\begin{matrix}\mathit{Phase}\mathit{Guide}\mathit{Rate} =\frac{{({\mathit{Potental}}_{\mathit{Phase}})}^{A}}{B + C{(\mathit{Potential}{\mathit{Ratio}}_{1})}^{D} + E{(\mathit{Potential}{\mathit{Ratio}}_{2})}^{F}}  \\  \\  = \frac{\mathit{Reservoir} \mathit{Fluid} \mathit{Volume} {\mathit{Potential}}^{1.0}}{1.0 + 10\times {(\mathit{GOR})}^{2}}\end{matrix}
+$$ {#eq-12-30}
 
 
 with all the other parameters defaulted.

@@ -11,7 +11,7 @@ The ACTDIMS keyword defines the maximum number of properties associated with the
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MXACTNS | A positive integer value that defines the maximum number of ACTION keywords defined in the input deck. | 2 |
 | 2 | MXLINES | A positive integer value that defines the maximum number of lines in an ACTION statement. | 50 |
 | 3 | MXCHARS | A positive integer value that defines the maximum characters in an ACTION statement. | 80 |

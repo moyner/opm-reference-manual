@@ -13,7 +13,7 @@ For the Extended Network Model the group hierarchy can be different to that defi
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | NODE | A character string of up to eight characters in length that defines the  node name for the data on this keyword record. | None |
 | 2 | PRESS | A real value that sets the terminal fixed pressure for the node, this should be set to: | 1* |

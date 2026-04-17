@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SALTREST | SALTREST is an array of real positive numbers that are greater than or equal to zero assigning the restart salt concentration values to each cell in the model. Repeat counts may be used, for example 20*15.0. | None |
 | lb/stb | kg/sm3 | gm/scc |  |

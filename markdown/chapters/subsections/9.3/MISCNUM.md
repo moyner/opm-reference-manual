@@ -13,7 +13,7 @@ Note that although this keyword can only be used when the miscibility option is 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MISCNUM | MISCNUM defines an array of positive integers greater than or equal to zero, that assign a grid cell to a particular table of mixing parameters as defined by the TLMIXPAR and SORWMIS keywords. A value of zero sets the fluids within a grid cell to be immiscible. The maximum number of MISCNUM regions is set by the NTMIS variable on the MISCIBLE keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 

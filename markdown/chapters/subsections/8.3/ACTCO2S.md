@@ -11,7 +11,7 @@ The keyword [ACTCO2S](#REF_HEADING_KEYWORD_ACTCO2S) specifies the activity model
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | ACTMODEL | A positive integer value selecting the activity model for the salting-out effect. The choices are: | 3 |
 | Notes: |  |  |  |
 

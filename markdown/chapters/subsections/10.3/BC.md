@@ -12,12 +12,13 @@ The BC keyword defines the boundary conditions for the model, and can be used to
 The BC keyword has been replaced by the [BCCON](#REF_HEADING_KEYWORD_BCCON) keyword in the GRID section that defines the boundary condition connections and the [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keyword in the SCHEDULE section that defines the boundary condition properties.
 
 
-| Note This is an OPM Flow specific keyword and will therefore cause an error in the commercial simulator. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword and will therefore cause an error in the commercial simulator.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | I1 | A positive integer that defines the lower bound of the grid in the I-direction for which the boundary conditions are to be applied, must be greater than or equal 1 and less than or equal to I2 and NX. | 1 |
 | 2 | I2 | A positive integer that defines the upper bound of the grid in the I-direction for which the boundary conditions are to be applied, must be greater than or equal to II and less than or equal to NX | NX |

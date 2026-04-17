@@ -11,7 +11,7 @@ IKRGR defines the imbibition scaling parameter at the relative permeability of g
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | IKRGR | IKRGR is an array of positive real numbers which are greater than zero and less than or equal to 1.0, that are the assigned imbibition scaling IKRGR values for each cell in the model.  In addition, for a given grid block IKGRGT should be less than IKRG. Repeat counts may be used, for example 50*0.400. | Taken from cell allocated relative permeability table. |
 | dimensionless | dimensionless | dimensionless |  |

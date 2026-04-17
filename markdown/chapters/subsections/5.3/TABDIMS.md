@@ -11,7 +11,7 @@ The TABDIMS keyword defines the maximum number of tables for a given table type 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NTSFUN | A positive integer that defines the number of relative permeability table sets defined in the input deck. The tables are allocated to different parts of the grid by the SATNUM keyword. | 1 |
 | 2 | NTPVT | A positive integer that defines the number of fluid property table sets  defined in the input deck. The tables are allocated to different parts of the grid by the PVTNUM keyword. | 1 |
 | 3 | NSSFUN | A positive integer that defines the maximum number of saturation entries in the relative permeability tables defined in the input deck. | 20 |

@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | AQUID | AQUID is a positive integer greater than or equal to one and less than the maximum number of analytical aquifers as defined by the NANAQU variable on the AQUDIMS keyword in the RUNSPEC section, that defines the aquifer to be connected to the grid. | None |
 | 2 | LGRNAME | A character string of up to eight characters in length that defines the name of the LGR that will connect to an analytical aquifer AQUID. The LGR must have been previously defined by the either the CARFIN (Cartesian LGR grid) keyword, or the RADIN/RADIN4 (radial LGR grid) keyword in the GRID section. | None |
@@ -34,8 +34,9 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 *Table 10.6: AQANCONL Keyword Description*
 
 
-| Note If the AQANCONL keyword has been utilized in the run deck then OPM Flow will write the  AQUIFERA array to the *.INIT file in order to visualize the aquifer connections in OPM ResInsight. This is accomplished by setting the AQUIFERA value to 2(AQUID-1) for cells connected to aquifer AQUID. If a cell is connected to multiple analytical aquifers then AQUIFERA is summed for all aquifers connected to a cell. Note that connecting cells to multiple aquifers is best avoided. |
-| --- |
+::: {.callout-note}
+If the AQANCONL keyword has been utilized in the run deck then OPM Flow will write the  AQUIFERA array to the *.INIT file in order to visualize the aquifer connections in OPM ResInsight. This is accomplished by setting the AQUIFERA value to 2(AQUID-1) for cells connected to aquifer AQUID. If a cell is connected to multiple analytical aquifers then AQUIFERA is summed for all aquifers connected to a cell. Note that connecting cells to multiple aquifers is best avoided.
+:::
 
 
 #### Example

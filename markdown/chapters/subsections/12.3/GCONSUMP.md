@@ -13,7 +13,7 @@ In addition to defining gas consumption, the keyword can also be used to define 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group gas consumption is being defined. The group named FIELD is the top most group and should be used to set the fuel consumption for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
 | 2 | GASFUEL | A real value that defines the gas consumption, that is the fuel gas consumed by the group, either defined as a volumetric rate or as a fraction of the group’s gas production.  The two options are implemented by: This value may be specified using a User Defined Argument (UDA). | 0.0 |
@@ -29,19 +29,22 @@ In addition to defining gas consumption, the keyword can also be used to define 
 If the group is acting under Group Gas Sales control via the GCONSALE keyword in the SCHEDULE section, then the sales gas is calculated by:
 
 
-| $\begin{matrix}\text{Gas Sales Rate} = \text{Total Group Gas Production Rate} \\  - \text{Group Gas Injection Rate} \\  + \text{Total Group Gas Import Rate} \\  - \text{Total Group Gas Consumption}\end{matrix}$ | (12.24) |
-| --- | --- |
+$$
+\begin{matrix}\text{Gas Sales Rate} = \text{Total Group Gas Production Rate} \\  - \text{Group Gas Injection Rate} \\  + \text{Total Group Gas Import Rate} \\  - \text{Total Group Gas Consumption}\end{matrix}
+$$ {#eq-12-24}
 
 
 If the group is acting under Group Gas Re-Injection control via the GCONINJE keyword in the SCHEDULE section, then the group gas injection rate calculated by:
 
 
-| $\begin{matrix}\text{Group Gas Injection Rate} = \text{Group Gas Injection Rate} \times  \text{Group Re-Injection Fraction} \\  + \text{Total Group Gas Import Rate} \\  - \text{Total Group Gas Consumption}\end{matrix}$ | (12.25) |
-| --- | --- |
+$$
+\begin{matrix}\text{Group Gas Injection Rate} = \text{Group Gas Injection Rate} \times  \text{Group Re-Injection Fraction} \\  + \text{Total Group Gas Import Rate} \\  - \text{Total Group Gas Consumption}\end{matrix}
+$$ {#eq-12-25}
 
 
-| Note In oil fields with no gas compression typical values of fuel gas range from three to five percent. |
-| --- |
+::: {.callout-note}
+In oil fields with no gas compression typical values of fuel gas range from three to five percent.
+:::
 
 
 #### Example

@@ -12,8 +12,9 @@ LPCW defines the maximum oil-water pressure values for all the cells in the mode
 The capillary pressure for a grid block is scaled by:
 
 
-| ${P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{LPCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.64) |
-| --- | --- |
+$$
+{P}_{c} = {P}_{{c}_{\mathit{TABLE}}}(\frac{\mathit{LPCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}})
+$$ {#eq-8-64}
 
 Where:
 

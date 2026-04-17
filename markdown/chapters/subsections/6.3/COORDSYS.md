@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | K1 | A positive integer that defines the lower bound of the array in the K-direction for the given grid system. | None |
 | 2 | K2 | A positive integer that defines the upper bound of the array in the K-direction for the given grid system. | None |
 | 3 | COMPLETE | COMPLETE is a defined character string that determines for radial grids if the circle should be completed in THETA direction, and should be set to COMP to complete the circle, or INCOMP for not completing the circle. | INCOMP |

@@ -11,7 +11,7 @@ The FLUXNUM keyword defines the flux region numbers for each grid block, as such
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | FLUXNUM | FLUXNUM defines an array of positive integers assigning a grid cell to a particular flux region. The maximum number of flux regions is set by the MXNFLX variable on the REGDIMS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 

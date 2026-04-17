@@ -17,7 +17,7 @@ See also the PYACTION keyword in the SCHEDULE section that implements OPM Flow�
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | ACTIONX | Define the start of ACTIONX Definition Section.  This is then followed on a new line by any number of ACTIONX records that define the conditions for which the defined action will be executed and the various operations to be performed if the conditions are satisfied. |  |  |
 | 1-1 | ACTNAME | ACTNAME is a character sting of up to eight characters in length, that defines the name of this action definition. If ACTNAME has previously been used by any ACTION series keyword, then the previous ACTION series definition will be replaced by the definition declared by this ACTIONX Definition Section. |  |
 | 1-2 | ACTNSTEP | ACTNSTEP is a positive integer that defines the number times that the ACTNAME definition is executed.  ACTIONX definitions are activated at the end of a time step and this parameter is used to set how many time steps the ACTNAME definition will be invoked. The default value of one means that the definition will be executed only once. Use a large value, for example 10,000 for the definition to be executed at every time step. Note that the counter only affects successful evaluations; i.e. if ACTNSTEP is set equal to one (the default), then the simulator will test the action at the end of every time step until it evaluates to true. | 1 |
@@ -41,7 +41,7 @@ The variable types and the associated definitions that are available for use wit
 
 
 | Variable Type | Description |
-| --- | --- |
+| --- | :------ |
 | AQUIFER | AQUIFER variable consists of two parameters: |
 | BLOCK | BLOCK variable consists of four parameters: The NX, NY, and NZ parameters are defined on the DIMENS keyword in the RUNSPEC section. |
 | CONSTANTS | CONSTANTS can consist of one or optionally two parameters: |
@@ -89,8 +89,9 @@ Although most SCHEDULE keywords should work with the ACTIONX keyword, Table 12.8
 As mentioned previously, the UDQ keyword stipulates the variables and operations used to access the User Defined Quantities features in OPM Flow. UDQ variables can be constants, SUMMARY variables, as defined in the SUMMARY section, or a formula using various mathematical functions together with constants and SUMMARY variables.
 
 
-| Note Within an ACTIONX Definition Section any UDQ variables utilizing group and well variables, must have their associated groups and wells previously fully defined in the commercial simulator, otherwise an error will occur. For example, if a well’s GOR is being used as part of a UDQ definition, then the well must be fully characterized prior to declaring the UDQ definition. This restriction does not apply to OPM Flow; however, it should be considered if the same deck is to be run with both simulators. |
-| --- |
+::: {.callout-note}
+Within an ACTIONX Definition Section any UDQ variables utilizing group and well variables, must have their associated groups and wells previously fully defined in the commercial simulator, otherwise an error will occur. For example, if a well’s GOR is being used as part of a UDQ definition, then the well must be fully characterized prior to declaring the UDQ definition. This restriction does not apply to OPM Flow; however, it should be considered if the same deck is to be run with both simulators.
+:::
 
 
 User Defined Quantities can also be used as User Defined Arguments (“UDA”) in the SCHEDULE section with various group, well, and connection keywords. In this case, the UDA variables are used to replace numerical values on these keywords by UDA variables that have been defined by the UDQ keyword.  For example, if we wish to make the oil rate for certain wells to be a function of their water cut, then one can define the function using the UDQ keyword that results in a UDQ variable, WU_OPR say, and then use WU_OPR as a UDA variable on the WCONPROD keyword for the ORAT parameter.  See Table 12.76 for a list of keywords that can be used with UDA variables in the UDQ - Declare User Define Quantities (“UDQ”) keyword section.

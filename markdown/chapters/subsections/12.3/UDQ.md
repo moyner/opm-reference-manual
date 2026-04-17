@@ -15,7 +15,7 @@ Although this keyword is read by OPM Flow and the ACTION and UDQ computational l
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | UDQ | Define the start of UDQ Definition Section.  This is then followed on a new line by any number of UDQ records that define the various operations to be performed using the ASSIGN, DEFINE UNITS and UPDATE sub-keywords for the OPERATOR. |  |  |
 | 1 | OPERATOR | OPERATOR is a defined character string that specifies the type of operation to perform, and should be one of the following: |  |
 | 2 | VARIABLE | VARIABLE is a character string of length eight that stipulates the name of the user defined variable that will processed by the OPERATOR command. The first two characters of VARIABLE must be set based on the type of variable being defined, that is: OPM Flow currently only supports field, group, segment and well variables (FU*, GU*, SU* and WU*). |  |
@@ -87,8 +87,9 @@ All the functions available for use in the DEFINE EXPRESSION in the commercial s
 See also the UDADIMS, UDQDIMS and UDQPARAM keywords in the RUNSPEC section to define the dimensions for the UDQ keyword and associated variables.
 
 
-| Note Wells and/or groups needed in a UDQ DEFINE statement must be present at the point of definition. In particular, wells must have been introduced using the WELSPECS keyword prior to the UDQ keyword if any specific well name is used in the defining expression. Similarly, well lists must have been introduced and populated through the WLIST keyword before using the well list name in the UDQ definition. Finally, groups must be introduced through the WELSPECS or GRUPTREE keywords before using any specific group names in the defining expression. |
-| --- |
+::: {.callout-note}
+Wells and/or groups needed in a UDQ DEFINE statement must be present at the point of definition. In particular, wells must have been introduced using the WELSPECS keyword prior to the UDQ keyword if any specific well name is used in the defining expression. Similarly, well lists must have been introduced and populated through the WLIST keyword before using the well list name in the UDQ definition. Finally, groups must be introduced through the WELSPECS or GRUPTREE keywords before using any specific group names in the defining expression.
+:::
 
 User Defined Quantities can also be used as User Defined Arguments (“UDA”) in the SCHEDULE section with various group, well, and connection keywords. In this case, the UDA variables are used to replace numerical values on these keywords by UDA variables that have been defined by the UDQ keyword.  For example, if we wish to make the oil rate for certain wells be a function of their water cut, then one can define the function using the UDQ keyword that results in a UDQ variable, WU_WCUT say, and then use WU_WCUT as a UDA variable on the WCONPROD keyword for the ORAT parameter. Table 12.72 lists the keywords that can be used with UDA variables.
 
@@ -114,13 +115,14 @@ User Defined Quantities can also be used as User Defined Arguments (“UDA”) i
 *Table 12.72: UDQ - User Defined Argument Supported Keywords*
 
 
-| Note Note that after the terminating “/” for the ASSIGN operator normally any comments can be entered; however, if there is “/” within the comment field, as per: ASSIGN FUNGLYLD 1.196   /    Condensate Yield (63.5 / 56.7) / (1.0 – 0.065) then the simulator will abort. The work around is to manually place the comment characters “--” after the ASSIGN terminating “/”, like so: ASSIGN FUNGLYLD 1.196   / -- Condensate Yield (63.5 / 56.7) / (1.0 – 0.06) |
-| --- |
+::: {.callout-note}
+Note that after the terminating “/” for the ASSIGN operator normally any comments can be entered; however, if there is “/” within the comment field, as per: ASSIGN FUNGLYLD 1.196   /    Condensate Yield (63.5 / 56.7) / (1.0 – 0.065) then the simulator will abort. The work around is to manually place the comment characters “--” after the ASSIGN terminating “/”, like so: ASSIGN FUNGLYLD 1.196   / -- Condensate Yield (63.5 / 56.7) / (1.0 – 0.06)
+:::
 
 
 #### Examples
 
-The first example shows how to define some constant field variables used for calculating facilities corrected condensate and Liquefied Petroleum Gas [Liquefied Petroleum Gas or LPG consists mainly of propane, propylene, butane, and butylene in various mixtures. It is produced as a by-product of natural gas processing and petroleum refining. The components of LPG are gases at standard conditions.] (“LPG “) yields in a wet gas model:
+The first example shows how to define some constant field variables used for calculating facilities corrected condensate and Liquefied Petroleum Gas^[Liquefied Petroleum Gas or LPG consists mainly of propane, propylene, butane, and butylene in various mixtures. It is produced as a by-product of natural gas processing and petroleum refining. The components of LPG are gases at standard conditions.] (“LPG “) yields in a wet gas model:
 
 
 ```

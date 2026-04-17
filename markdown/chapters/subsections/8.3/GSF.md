@@ -10,12 +10,13 @@
 The GSF keyword defines the gas relative permeability and gas-water capillary pressure data versus gas saturation tables for when only gas and water are present in the input deck.  This keyword should only be used if the gas and water phases are present in the run, and can therefore also be used with the CO2STORE and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) models. In addition, the keyword must be used in conjunction with the WSF keyword in the PROPS section, that defines the water relative permeability versus water saturation for gas-water systems.
 
 
-| Note GSF is a compositional keyword in the commercial compositional simulator, and will therefore cause an error in the commercial black-oil simulator. Currently, both the GSF and WSF keywords can only be used with the CO2STORE and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) models. |
-| --- |
+::: {.callout-note}
+GSF is a compositional keyword in the commercial compositional simulator, and will therefore cause an error in the commercial black-oil simulator. Currently, both the GSF and WSF keywords can only be used with the CO2STORE and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) models.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SGAS | A columnar vector of real values monotonically increasing down the column starting from zero and terminating at one minus the connate water saturation, that defines the gas saturation. | None |
 | dimensionless | dimensionless | dimensionless |  |

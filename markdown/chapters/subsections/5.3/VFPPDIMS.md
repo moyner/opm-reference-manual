@@ -11,7 +11,7 @@ VFPPDIMS keyword defines the maximum dimensions of the production well Vertical 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MXMFLO | A positive integer that defines the maximum number of production flow rate entries for the VFPPROD keyword. | 0 |
 | 2 | MXMTHP | A positive integer that defines the maximum number of THP entries for the VFPPROD keyword. | 0 |
 | 3 | MXMWFR | A positive integer that defines the maximum number of water fraction entries (WOR, WCUT, GWR etc.) for the VFPPROD keyword. | 0 |

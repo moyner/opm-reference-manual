@@ -12,12 +12,13 @@ This keyword, PLYMWINJ,  describes the relationship of the injected polymer mole
 This keyword should only be used if the POLYMER and POLYMW keywords in the RUNSPEC section are also activated.
 
 
-| Note This is an OPM Flow specific keyword that employs an alternative polymer flood model based on a Polymer Molecular Weight Transport equation, that is not available in the commercial simulator. The model has been tested using metric units; however, using either field or laboratory units with the option should be considered experimental. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword that employs an alternative polymer flood model based on a Polymer Molecular Weight Transport equation, that is not available in the commercial simulator. The model has been tested using metric units; however, using either field or laboratory units with the option should be considered experimental.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1-1 | PLYMWNUM | A positive integer value greater than zero and less than or equal to the NTPMWINJ variable, as defined on the PINTDIMS keyword in the RUNSPEC section, that defines the PLYMWINJ Polymer Molecular Weight Model throughput and velocity table number. | None |
 | 2-1 | THRUPUT | A real positive monotonically increasing vector, that defines the polymer throughput values.  The first entry should be zero to define a no throughput data set, and each vector record should be on a separate line terminated by a “/”. | None |

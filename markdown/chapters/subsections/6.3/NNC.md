@@ -11,7 +11,7 @@ NNC enables Non-Neighbor Connections (“NNC”) to be manually defined. This ke
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | I1 | A positive integer that defines the first grid block in the I-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NX on the DIMENS keyword in the RUNSPEC section. | None |
 | 2 | J1 | A positive integer that defines the first grid block in the J-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NY on the DIMENS keyword in the RUNSPEC section. | None |

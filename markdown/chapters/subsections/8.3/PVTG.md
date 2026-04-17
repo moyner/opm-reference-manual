@@ -7,11 +7,11 @@
 
 #### Description
 
-PVTG defines the gas PVT properties for wet gas [Natural gas that contains significant heavy hydrocarbons such as propane, butane and other liquid hydrocarbons is known as wet gas or rich gas. The general rule of thumb is if the gas contains less methane (typically less than 85% methane) and more ethane, and other more complex hydrocarbons, it is labeled as wet gas. Wet gas normally has GOR's less than 100,000 scf/stb or 18,000 Sm3/m3, with the condensate having a gravity greater than 50 oAPI.]. This keyword should be used when the VAPOIL keyword has be declared in the RUNSPEC section indicating that that vaporized oil (more commonly referred to as condensate) is present in the wet gas phase. The keyword may be used for gas-water and oil-water-gas input decks that contain the oil and gas phases.
+PVTG defines the gas PVT properties for wet gas^[Natural gas that contains significant heavy hydrocarbons such as propane, butane and other liquid hydrocarbons is known as wet gas or rich gas. The general rule of thumb is if the gas contains less methane (typically less than 85% methane) and more ethane, and other more complex hydrocarbons, it is labeled as wet gas. Wet gas normally has GOR's less than 100,000 scf/stb or 18,000 Sm3/m3, with the condensate having a gravity greater than 50 oAPI.]. This keyword should be used when the VAPOIL keyword has be declared in the RUNSPEC section indicating that that vaporized oil (more commonly referred to as condensate) is present in the wet gas phase. The keyword may be used for gas-water and oil-water-gas input decks that contain the oil and gas phases.
 
 
 | No. | Name | Description | Default |  |
-| --- | --- | --- | --- | --- |
+| --- | --- | :------ | --- | --- |
 | Field | Metric | Laboratory |  |  |
 | 1 | PRESS | A real monotonically increasing down the column vector that defines the gas phase pressure, associated with the saturated condensate-gas ratio (“CGR”) or Rv,  the gas formation volume factor and the gas viscosity for the corresponding pressure for the stated saturated RVS. For a given PRESS the variability of the gas formation volume factor and the gas viscosity with respect to the under-saturated Rv is optionally included as a sub table under RVU, FVFU and VISU columns, that is it is not necessary to repeat PRESS for each sub table entry. However, each sub table must be terminated by a “/”. The under saturated Rv entries are optional, except for perhaps the last  PRESS entry to define the PVT properties above the initial saturation pressure. | None |  |
 | psia | barsa | atma |  |  |
@@ -29,8 +29,9 @@ PVTG defines the gas PVT properties for wet gas [Natural gas that contains signi
 Note that provided the first table has been entered, subsequent tables may be defaulted, in this case the prior table is copied to the current table. See the second example for an illustration on how to use this feature.
 
 
-| Note If the VAPWAT keyword in the RUNSPEC section is also present in the input deck, then the PVTG keyword in the PROPS section should be used to define the gas properties as function of pressure and RV, assuming water-saturated gas. Also, in this case, the PVTGW keyword, also in the PROPS section, should also be in the input deck. In this case, PVTGW defines the gas properties as function of pressure and RVW, assuming oil-saturated gas. |
-| --- |
+::: {.callout-note}
+If the VAPWAT keyword in the RUNSPEC section is also present in the input deck, then the PVTG keyword in the PROPS section should be used to define the gas properties as function of pressure and RV, assuming water-saturated gas. Also, in this case, the PVTGW keyword, also in the PROPS section, should also be in the input deck. In this case, PVTGW defines the gas properties as function of pressure and RVW, assuming oil-saturated gas.
+:::
 
 
 #### Example

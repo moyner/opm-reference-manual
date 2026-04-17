@@ -12,12 +12,13 @@ The WELTRAJ keyword defines a trajectory well together with the well trajectory 
 Although WELTRAJ and COMPTRAJ keywords are sufficient to define the wellbore path and connections to the grid, it is still necessary to defined the general well specification parameters using the WELSPECS keyword in the SCHEDULE section.  In this case, the wellhead location parameters, WELSPECS(I, J), should be defaulted with 1*.
 
 
-| Note This is an OPM Flow specific keyword and will therefore cause an error in the commercial simulator. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword and will therefore cause an error in the commercial simulator.
+:::
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well trajectory data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. Secondly, the wellhead location parameters on the WELSPECS keyword, WELSPECS(I, J), should be defaulted with 1* for trajectory wells, as the well location will be calculated by the simulator. | None |
 | 2 | IBRANCH | A positive integer greater than or equal to one and less than or equal to MXBRAN on WSEGDIMS keyword in the RUNSPEC section that defines the branch number of a segment. All segments on the main stem must have IBRANCH set to one and lateral branches should have values between two and MXSEGS on the  WSEGDIMS keyword in the RUNSPEC section. Only the default value of one is currently supported, that is only the main branch of a multi-segment well is supported,  or a single trajectory for a conventional well. | 1 |
