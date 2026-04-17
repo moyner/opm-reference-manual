@@ -1,0 +1,682 @@
+#!/usr/bin/env python3
+"""
+Convert FODT (Flat ODF Text) files to Markdown.
+
+Extracts the content (descriptions, examples, tables, images) from FODT files
+and produces clean Markdown output with embedded images saved as separate files.
+"""
+
+import base64
+import hashlib
+import os
+import re
+import sys
+import xml.etree.ElementTree as ET
+from pathlib import Path
+
+# ODF XML namespaces
+NS = {
+    "office": "urn:oasis:names:tc:opendocument:xmlns:office:1.0",
+    "style": "urn:oasis:names:tc:opendocument:xmlns:style:1.0",
+    "text": "urn:oasis:names:tc:opendocument:xmlns:text:1.0",
+    "table": "urn:oasis:names:tc:opendocument:xmlns:table:1.0",
+    "draw": "urn:oasis:names:tc:opendocument:xmlns:drawing:1.0",
+    "xlink": "http://www.w3.org/1999/xlink",
+    "svg": "urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0",
+    "fo": "urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0",
+    "loext": "urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0",
+    "number": "urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0",
+    "math": "http://www.w3.org/1998/Math/MathML",
+}
+
+# Named styles that indicate code/example content
+EXAMPLE_STYLES = {
+    "_40_Example",
+    "_40_Code",
+    "Preformatted_20_Text",
+}
+
+# Named styles for headings
+HEADING_STYLES = {
+    "Heading_20_1",
+    "Heading_20_2",
+    "Heading_20_3",
+    "Heading_20_4",
+    "Heading_20_5",
+    "Heading_20_6",
+    "Heading_20_7",
+    "Heading_20_8",
+    "Heading_20_9",
+    "Heading_20_10",
+    "Heading",
+}
+
+# Named styles that indicate table-related content
+TABLE_CAPTION_STYLES = {
+    "Table",
+    "Figure",
+}
+
+# Named styles for note/warning boxes
+NOTE_STYLES = {
+    "_40_TextNote",
+}
+
+
+def tag_local(elem):
+    """Get the local tag name without namespace."""
+    t = elem.tag
+    if "}" in t:
+        return t.split("}")[1]
+    return t
+
+
+def build_style_map(root):
+    """
+    Build a mapping from style names to their full ancestor chain.
+    Returns a dict: style_name -> list of all styles in the chain (including self).
+    """
+    direct_parent = {}  # name -> parent-style-name (direct)
+
+    # Collect from office:styles (named styles) and office:automatic-styles
+    for section_tag in ["office:styles", "office:automatic-styles"]:
+        section = root.find(section_tag, NS)
+        if section is None:
+            continue
+        for style_elem in section:
+            if tag_local(style_elem) != "style":
+                continue
+            name = style_elem.get(f'{{{NS["style"]}}}name', "")
+            parent = style_elem.get(f'{{{NS["style"]}}}parent-style-name', "")
+            if name:
+                direct_parent[name] = parent
+
+    # Build full ancestor chain for each style
+    resolved = {}
+    for name in direct_parent:
+        chain = []
+        current = name
+        seen = set()
+        while current and current not in seen:
+            seen.add(current)
+            chain.append(current)
+            if current in direct_parent:
+                current = direct_parent[current]
+            else:
+                break
+        resolved[name] = chain
+    return resolved
+
+
+def style_chain_contains(style_name, style_map, target_styles):
+    """Check if any style in the ancestor chain matches target_styles."""
+    if style_name in target_styles:
+        return True
+    chain = style_map.get(style_name, [style_name])
+    return bool(set(chain) & target_styles)
+
+
+def is_example_style(style_name, style_map):
+    """Check if a style or any of its ancestors is an example/code style."""
+    return style_chain_contains(style_name, style_map, EXAMPLE_STYLES)
+
+
+def is_heading_style(style_name, style_map):
+    """Check if a style or any of its ancestors is a heading style."""
+    return style_chain_contains(style_name, style_map, HEADING_STYLES)
+
+
+def get_heading_level(elem, style_name, style_map):
+    """Get heading level from element or style."""
+    level = elem.get(f'{{{NS["text"]}}}outline-level', "")
+    if level:
+        return int(level)
+    # Try to infer from style chain
+    chain = style_map.get(style_name, [style_name])
+    for s in chain:
+        for i in range(1, 11):
+            if s == f"Heading_20_{i}":
+                return i
+    return 1
+
+
+def extract_text(elem, style_map, in_code=False):
+    """
+    Recursively extract text content from an element.
+    Handles text:s (spaces), text:tab, text:line-break, and text:span elements.
+    """
+    parts = []
+
+    # Element's own text
+    if elem.text:
+        parts.append(elem.text)
+
+    for child in elem:
+        local = tag_local(child)
+
+        if local == "s":
+            # text:s is a space element, c attribute gives count
+            count = int(child.get(f'{{{NS["text"]}}}c', "1"))
+            parts.append(" " * count)
+        elif local == "tab":
+            parts.append("\t")
+        elif local == "line-break":
+            parts.append("\n")
+        elif local == "span":
+            parts.append(extract_text(child, style_map, in_code))
+        elif local == "a":
+            # Hyperlink
+            href = child.get(f'{{{NS["xlink"]}}}href', "")
+            link_text = extract_text(child, style_map, in_code)
+            if href and link_text and not in_code:
+                parts.append(f"[{link_text}]({href})")
+            else:
+                parts.append(link_text)
+        elif local == "note":
+            # Footnote
+            note_body = child.find(f'{{{NS["text"]}}}note-body')
+            if note_body is not None:
+                note_text = ""
+                for p in note_body:
+                    note_text += extract_text(p, style_map, in_code)
+                parts.append(f" [{note_text.strip()}]")
+        elif local == "bookmark-start" or local == "bookmark-end":
+            pass
+        elif local == "bookmark-ref" or local == "bookmark":
+            parts.append(extract_text(child, style_map, in_code))
+        elif local == "sequence" or local == "sequence-ref":
+            parts.append(extract_text(child, style_map, in_code))
+        elif local == "soft-page-break":
+            pass
+        elif local == "change-start" or local == "change-end" or local == "change":
+            pass
+        elif local == "frame":
+            # Handle embedded images/objects
+            img_result = extract_frame(child)
+            if img_result:
+                parts.append(img_result)
+        elif local in ("note-citation",):
+            pass
+        else:
+            # For other elements, try to extract text
+            parts.append(extract_text(child, style_map, in_code))
+
+        # Tail text (text after the child element)
+        if child.tail:
+            parts.append(child.tail)
+
+    return "".join(parts)
+
+
+def extract_frame(frame_elem):
+    """Extract content from a draw:frame element (images or objects)."""
+    # Look for draw:image with binary data
+    for image in frame_elem.iter(f'{{{NS["draw"]}}}image'):
+        binary = image.find(f'{{{NS["office"]}}}binary-data')
+        if binary is not None and binary.text:
+            return f"<<IMAGE:base64:{binary.text.strip()[:40]}...>>"
+    return ""
+
+
+class FODTConverter:
+    """Convert a single FODT file to Markdown."""
+
+    def __init__(self, fodt_path, images_dir):
+        self.fodt_path = Path(fodt_path)
+        self.images_dir = Path(images_dir)
+        self.image_counter = 0
+        self.lines = []
+        self.tree = None
+        self.root = None
+        self.style_map = {}
+
+    def convert(self):
+        """Parse the FODT and return markdown string."""
+        self.tree = ET.parse(str(self.fodt_path))
+        self.root = self.tree.getroot()
+        self.style_map = build_style_map(self.root)
+
+        body = self.root.find(".//office:body/office:text", NS)
+        if body is None:
+            return ""
+
+        # Process body content - may have sections or direct content
+        self._process_elements(body)
+
+        return self._finalize()
+
+    def _process_elements(self, parent):
+        """Process child elements of a container (body or section)."""
+        code_block = []  # Accumulate consecutive code lines
+
+        for elem in parent:
+            local = tag_local(elem)
+            style = elem.get(f'{{{NS["text"]}}}style-name', "")
+
+            if local == "section":
+                # Flush code block before entering section
+                self._flush_code_block(code_block)
+                self._process_elements(elem)
+                continue
+
+            if local == "h":
+                # Heading
+                self._flush_code_block(code_block)
+                level = get_heading_level(elem, style, self.style_map)
+                text = extract_text(elem, self.style_map).strip()
+                if text:
+                    self.lines.append("")
+                    self.lines.append(f"{'#' * level} {text}")
+                    self.lines.append("")
+                continue
+
+            if local == "p":
+                if is_example_style(style, self.style_map):
+                    # Code example line
+                    text = extract_text(elem, self.style_map, in_code=True)
+                    code_block.append(text)
+                    continue
+
+                # Regular paragraph
+                self._flush_code_block(code_block)
+                text = self._process_paragraph(elem, style)
+                if text is not None:
+                    self.lines.append(text)
+                continue
+
+            if local == "table":
+                self._flush_code_block(code_block)
+                self._process_table(elem)
+                continue
+
+            if local == "list":
+                self._flush_code_block(code_block)
+                self._process_list(elem, indent=0)
+                self.lines.append("")
+                continue
+
+            if local in (
+                "forms",
+                "sequence-decls",
+                "user-field-decls",
+                "variable-decls",
+                "table-of-content",
+                "alphabetical-index",
+                "illustration-index",
+                "table-index",
+                "user-index",
+            ):
+                continue
+
+            # For any other elements, try to extract text
+            self._flush_code_block(code_block)
+            text = extract_text(elem, self.style_map).strip()
+            if text:
+                self.lines.append(text)
+                self.lines.append("")
+
+        self._flush_code_block(code_block)
+
+    def _flush_code_block(self, code_block):
+        """Flush accumulated code lines as a fenced code block."""
+        if not code_block:
+            return
+        self.lines.append("")
+        self.lines.append("```")
+        for line in code_block:
+            self.lines.append(line)
+        self.lines.append("```")
+        self.lines.append("")
+        code_block.clear()
+
+    def _process_paragraph(self, elem, style):
+        """Process a paragraph element and return markdown text."""
+        # Check for embedded images
+        images = list(elem.iter(f'{{{NS["draw"]}}}image'))
+        frames = list(elem.iter(f'{{{NS["draw"]}}}frame'))
+
+        resolved_style = self.style_map.get(style, [style])
+
+        # Handle image paragraphs
+        if images:
+            result_parts = []
+            # Extract any text before/around images
+            for frame in frames:
+                for image in frame.iter(f'{{{NS["draw"]}}}image'):
+                    img_md = self._extract_and_save_image(image, frame)
+                    if img_md:
+                        result_parts.append(img_md)
+
+            # Also get text content
+            text = extract_text(elem, self.style_map).strip()
+            # Remove the base64 placeholder markers
+            text = re.sub(r"<<IMAGE:base64:[^>]+>>", "", text).strip()
+
+            if result_parts:
+                result = "\n".join(result_parts)
+                if text:
+                    result += f"\n\n{text}"
+                return result + "\n"
+
+        # Handle captions
+        if set(resolved_style) & TABLE_CAPTION_STYLES:
+            text = extract_text(elem, self.style_map).strip()
+            if text:
+                return f"*{text}*\n"
+            return None
+
+        # Handle note styles
+        if set(resolved_style) & NOTE_STYLES:
+            text = extract_text(elem, self.style_map).strip()
+            if text:
+                return f"> {text}"
+            return None
+
+        # Regular paragraph
+        text = extract_text(elem, self.style_map).strip()
+
+        # Skip empty paragraphs but keep track for spacing
+        if not text:
+            return ""
+
+        return text + "\n"
+
+    def _extract_and_save_image(self, image_elem, frame_elem):
+        """Extract an embedded image, save to file, return markdown reference."""
+        binary = image_elem.find(f'{{{NS["office"]}}}binary-data')
+        if binary is None or not binary.text:
+            return None
+
+        data = binary.text.strip()
+        try:
+            img_bytes = base64.b64decode(data)
+        except Exception:
+            return None
+
+        if len(img_bytes) < 50:
+            return None
+
+        # Determine image format from magic bytes
+        ext = "png"  # default
+        if img_bytes[:4] == b"\x89PNG":
+            ext = "png"
+        elif img_bytes[:2] == b"\xff\xd8":
+            ext = "jpg"
+        elif img_bytes[:4] == b"GIF8":
+            ext = "gif"
+        elif img_bytes[:4] == b"RIFF" and img_bytes[8:12] == b"WEBP":
+            ext = "webp"
+        elif img_bytes[:2] in (b"BM",):
+            ext = "bmp"
+        elif b"<svg" in img_bytes[:200]:
+            ext = "svg"
+        elif img_bytes[:4] == b"%PDF":
+            ext = "pdf"
+        elif img_bytes[:2] == b"PK":
+            # Could be wmf/emf embedded in zip or OLE
+            ext = "png"
+        else:
+            # Try to detect EMF/WMF
+            if img_bytes[:4] == b"\x01\x00\x00\x00":
+                ext = "emf"
+            elif img_bytes[:4] == b"\xd7\xcd\xc6\x9a":
+                ext = "wmf"
+            else:
+                # Unknown format, skip small equation objects
+                return None
+
+        # Skip very small images (likely equation symbols that are better as text)
+        if len(img_bytes) < 200 and ext not in ("svg",):
+            return None
+
+        # Generate filename from content hash
+        content_hash = hashlib.md5(img_bytes).hexdigest()[:12]
+        self.image_counter += 1
+
+        # Get frame name for a more descriptive filename
+        frame_name = frame_elem.get(f'{{{NS["draw"]}}}name', "")
+        if frame_name:
+            safe_name = re.sub(r"[^\w]", "_", frame_name)
+            filename = f"{safe_name}_{content_hash}.{ext}"
+        else:
+            filename = f"image_{self.image_counter}_{content_hash}.{ext}"
+
+        # Save image
+        self.images_dir.mkdir(parents=True, exist_ok=True)
+        img_path = self.images_dir / filename
+        with open(img_path, "wb") as f:
+            f.write(img_bytes)
+
+        # Return relative path for markdown
+        rel_path = os.path.relpath(img_path, self.images_dir.parent)
+        alt_text = frame_name if frame_name else f"Image {self.image_counter}"
+        return f"![{alt_text}]({rel_path})"
+
+    def _process_table(self, table_elem):
+        """Convert an ODF table to Markdown table format."""
+        rows = []
+        for row in table_elem.iter(f'{{{NS["table"]}}}table-row'):
+            # Check for repeat
+            repeat = int(
+                row.get(f'{{{NS["table"]}}}number-rows-repeated', "1")
+            )
+            if repeat > 10:
+                continue  # Skip large empty row ranges
+
+            cells = []
+            for cell in row:
+                cell_local = tag_local(cell)
+                if cell_local == "covered-table-cell":
+                    continue  # Skip spanned cells
+
+                if cell_local == "table-cell":
+                    # Check for column span
+                    col_repeat = int(
+                        cell.get(
+                            f'{{{NS["table"]}}}number-columns-repeated', "1"
+                        )
+                    )
+                    if col_repeat > 50:
+                        continue
+
+                    # Extract cell text - check for images too
+                    cell_parts = []
+                    has_images = False
+                    for child in cell:
+                        child_local = tag_local(child)
+                        if child_local == "p":
+                            imgs = list(
+                                child.iter(f'{{{NS["draw"]}}}image')
+                            )
+                            if imgs:
+                                has_images = True
+                                for frame in child.iter(
+                                    f'{{{NS["draw"]}}}frame'
+                                ):
+                                    for img in frame.iter(
+                                        f'{{{NS["draw"]}}}image'
+                                    ):
+                                        img_md = (
+                                            self._extract_and_save_image(
+                                                img, frame
+                                            )
+                                        )
+                                        if img_md:
+                                            cell_parts.append(img_md)
+                            text = extract_text(
+                                child, self.style_map
+                            ).strip()
+                            text = re.sub(
+                                r"<<IMAGE:base64:[^>]+>>", "", text
+                            ).strip()
+                            if text:
+                                cell_parts.append(text)
+
+                    cell_text = " ".join(cell_parts)
+                    # Clean up for table cell
+                    cell_text = cell_text.replace("|", "\\|")
+                    cell_text = cell_text.replace("\n", " ")
+                    cells.append(cell_text)
+
+                    # Handle column repeat
+                    for _ in range(col_repeat - 1):
+                        cells.append(cell_text)
+
+            if cells and any(c.strip() for c in cells):
+                rows.append(cells)
+
+            for _ in range(min(repeat - 1, 3)):
+                if cells and any(c.strip() for c in cells):
+                    rows.append(cells)
+
+        if not rows:
+            return
+
+        # Normalize column count
+        max_cols = max(len(r) for r in rows) if rows else 0
+        if max_cols == 0:
+            return
+
+        for row in rows:
+            while len(row) < max_cols:
+                row.append("")
+
+        # Check if this looks like a "Note" table (single cell with note content)
+        if max_cols <= 2 and len(rows) >= 1:
+            first_cell = rows[0][0].strip().lower() if rows[0] else ""
+            if first_cell in ("note", "notes", "warning", "caution", "tip"):
+                # Render as blockquote
+                self.lines.append("")
+                for row in rows:
+                    for cell in row:
+                        if cell.strip():
+                            self.lines.append(f"> {cell.strip()}")
+                self.lines.append("")
+                return
+
+        # Build markdown table
+        self.lines.append("")
+        # Header row
+        self.lines.append("| " + " | ".join(rows[0]) + " |")
+        # Separator
+        self.lines.append("| " + " | ".join(["---"] * max_cols) + " |")
+        # Data rows
+        for row in rows[1:]:
+            self.lines.append("| " + " | ".join(row) + " |")
+        self.lines.append("")
+
+    def _process_list(self, list_elem, indent=0):
+        """Convert an ODF list to Markdown list format."""
+        prefix_space = "  " * indent
+
+        for i, item in enumerate(list_elem):
+            if tag_local(item) != "list-item":
+                continue
+
+            for child in item:
+                local = tag_local(child)
+                if local == "p":
+                    text = extract_text(child, self.style_map).strip()
+                    if text:
+                        # Determine if ordered or unordered
+                        # ODF lists with text:style-name containing "Number" are ordered
+                        list_style = list_elem.get(
+                            f'{{{NS["text"]}}}style-name', ""
+                        )
+                        if "Number" in list_style or "Ordered" in list_style:
+                            self.lines.append(
+                                f"{prefix_space}{i + 1}. {text}"
+                            )
+                        else:
+                            self.lines.append(f"{prefix_space}- {text}")
+                elif local == "list":
+                    self._process_list(child, indent + 1)
+
+    def _finalize(self):
+        """Clean up the markdown output."""
+        text = "\n".join(self.lines)
+
+        # Remove placeholder image markers that weren't properly handled
+        text = re.sub(r"<<IMAGE:base64:[^>]+>>", "", text)
+
+        # Collapse multiple blank lines to max 2
+        text = re.sub(r"\n{4,}", "\n\n\n", text)
+
+        # Strip trailing whitespace from lines
+        lines = [line.rstrip() for line in text.split("\n")]
+        text = "\n".join(lines)
+
+        # Ensure file ends with newline
+        text = text.strip() + "\n"
+
+        return text
+
+
+def convert_file(fodt_path, output_dir):
+    """Convert a single FODT file to Markdown."""
+    fodt_path = Path(fodt_path)
+    output_dir = Path(output_dir)
+
+    # Determine output markdown path
+    rel = fodt_path.relative_to(fodt_path.parent)
+    md_name = fodt_path.stem + ".md"
+
+    md_path = output_dir / md_name
+    images_dir = output_dir / "images"
+
+    converter = FODTConverter(fodt_path, images_dir)
+    markdown = converter.convert()
+
+    md_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(md_path, "w", encoding="utf-8") as f:
+        f.write(markdown)
+
+    return md_path
+
+
+def main():
+    repo_root = Path(__file__).parent
+    parts_dir = repo_root / "parts"
+    markdown_dir = repo_root / "markdown"
+
+    # Find all FODT files
+    fodt_files = sorted(parts_dir.rglob("*.fodt"))
+    print(f"Found {len(fodt_files)} FODT files")
+
+    total = len(fodt_files)
+    errors = []
+
+    for i, fodt_path in enumerate(fodt_files):
+        # Compute relative path from parts/ to mirror structure
+        rel_path = fodt_path.relative_to(parts_dir)
+        md_rel = rel_path.with_suffix(".md")
+
+        out_dir = markdown_dir / md_rel.parent
+        images_dir = out_dir / "images"
+
+        try:
+            converter = FODTConverter(fodt_path, images_dir)
+            markdown = converter.convert()
+
+            out_file = markdown_dir / md_rel
+            out_file.parent.mkdir(parents=True, exist_ok=True)
+            with open(out_file, "w", encoding="utf-8") as f:
+                f.write(markdown)
+
+            if (i + 1) % 100 == 0 or i == 0:
+                print(f"  [{i + 1}/{total}] Converted: {rel_path}")
+        except Exception as e:
+            errors.append((str(rel_path), str(e)))
+            print(f"  [{i + 1}/{total}] ERROR: {rel_path}: {e}")
+
+    print(f"\nDone! Converted {total - len(errors)}/{total} files.")
+    if errors:
+        print(f"\n{len(errors)} errors:")
+        for path, err in errors:
+            print(f"  {path}: {err}")
+
+    return 0 if not errors else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

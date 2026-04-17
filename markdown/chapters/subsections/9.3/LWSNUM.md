@@ -1,0 +1,43 @@
+### LWSNUM – Define the Low Salt Water Wet Saturation Table Region Numbers
+
+
+| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+#### Description
+
+The [LWSNUM](#__RefHeading___Toc355132_28433945141) keyword defines the saturation tables (relative permeability and capillary pressure tables) region numbers for each grid block, as such there must be one entry for each cell in the model. The region number specifies which set of relative permeability tables ([SWFN](#__RefHeading___Toc106882_335817223), [SOF3](#__RefHeading___Toc106878_335817223) and related keywords) are used to calculate the relative permeability and capillary pressure in a grid block. The keyword should only be used if the Low Salinity option for the Brine model and the Surfactant Wettability option have been activated by the [LOWSALT](#__RefHeading___Toc331072_2843394514) and [SURFACTW](#__RefHeading___Toc863864_4250154414) keywords, respectively, in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+
+The water wet curves are calculated as a weighted average of the low salinity saturation tables (allocated by this keyword) and the high salinity water wet saturation tables (allocated by the [HWSNUM](#__RefHeading___Toc269892_4219267791) keyword), using the weights provided by the [LSALTFNC](#__RefHeading___Toc338141_2843394514) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section.
+
+This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
+
+
+| No. | Name | Description | Default |
+| --- | --- | --- | --- |
+| 1 | [LWSNUM](#__RefHeading___Toc355132_28433945141) | [LWSNUM](#__RefHeading___Toc355132_28433945141) defines an array of positive integers assigning a grid cell to a particular saturation table region. The maximum number of [LWSNUM](#__RefHeading___Toc355132_28433945141) regions is set by the NTSFUN variable on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. | 1 |
+| Notes: |  |  |  |
+
+*Table 9.14: LWSNUM Keyword Description*
+
+
+The [HWSNUM](#__RefHeading___Toc269892_4219267791) allocated tables correspond to the immiscible high salinity water wet curves.
+
+
+#### Example
+
+The example below sets three [LWSNUM](#__RefHeading___Toc355132_28433945141) regions for the model.
+
+
+```
+--
+--       ARRAY       CONSTANT     ---------- BOX ---------
+--                                I1  I2   J1  J2   K1  K2
+EQUALS
+         LWSNUM      1            1*  1*   1*  1*   1*  1* / SET REGION 1
+         LWSNUM      2            1   2    1   2    1   1  / SET REGION 2
+         LWSNUM      3            1   2    1   2    2   2  / SET REGION 3
+/
+
+```

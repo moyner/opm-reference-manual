@@ -1,0 +1,40 @@
+### PLMIXNUM – Define the Polymer Region Numbers
+
+
+| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+#### Description
+
+The [PLMIXNUM](#__RefHeading___Toc107258_3812137098) keyword defines the polymer region number for each grid block that is used to assign the mixing tables as well as the maximum polymer and salt concentrations, as defined by the [PLMIXPAR](#__RefHeading___Toc93833_3812137098) and [PLYMAX](#__RefHeading___Toc110214_2939291539) keywords in the [PROPS](#__RefHeading___Toc39329_784232322) section, for when the polymer option has been activated by the [POLYMER](#__RefHeading___Toc38609_2267116897) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+
+The maximum polymer concentration and the associated salt concentration are declared on the [PLYMAX](#__RefHeading___Toc110214_2939291539) keyword.
+
+
+| No. | Name | Description | Default |
+| --- | --- | --- | --- |
+| 1 | [PLMIXNUM](#__RefHeading___Toc107258_3812137098) | [PLMIXNUM](#__RefHeading___Toc107258_3812137098) defines an array of positive integers greater than or equal to one, that assign a grid cell to a particular table of mixing parameters as defined by the [PLMIXPAR](#__RefHeading___Toc93833_3812137098) and [PLYMAX](#__RefHeading___Toc110214_2939291539) keywords. The maximum number of [PLMIXNUM](#__RefHeading___Toc107258_3812137098) regions is set by the NPLMIX variable on the [REGDIMS](#__RefHeading___Toc70161_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. | 1 |
+| Notes: |  |  |  |
+
+*Table 9.16: PLMIXNUM Keyword Description*
+
+
+See also the [PLYADS](#__RefHeading___Toc121087_57619843), [PLYADSS](#__RefHeading___Toc121089_57619843), PLYDHLF, [PLYMAX](#__RefHeading___Toc110214_2939291539), [PLYROCK](#__RefHeading___Toc110216_2939291539), [PLYSHEAR](#__RefHeading___Toc110218_2939291539), [PLYSHLOG](#__RefHeading___Toc110220_2939291539) and [PLYVISC](#__RefHeading___Toc110222_2939291539) keywords in the [PROPS](#__RefHeading___Toc39329_784232322) section.
+
+
+#### Example
+
+The example below sets three [PLMIXNUM](#__RefHeading___Toc107258_3812137098) regions in the model on a layer by layer basis, using the [EQUALS](#__RefHeading___Toc296597_1576177388) keyword.
+
+
+```
+--
+--       ARRAY       CONSTANT     ---------- BOX ---------
+--                                I1  I2   J1  J2   K1  K2
+EQUALS
+         PLMIXNUM      1          1*  1*   1*  1*   1   12 / SET REGION 1
+         PLMIXNUM      2          1*  1*   1*  1*   13  55 / SET REGION 2
+         PLMIXNUM      3          1*  1*   1*  1*   56 120 / SET REGION 3
+/
+```

@@ -1,0 +1,55 @@
+### RPTSOL – Define SOLUTION Section Reporting
+
+
+| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+#### Description
+
+This keyword defines the data in the [SOLUTION](#__RefHeading___Toc43947_784232322) section that is to be printed to the output print file in human readable format. The keyword has two distinct forms, the first of which consists of the keyword followed by a series of integers on the next line indicating the data to be printed (see the first example). This is the original formal in the commercial simulator and was subsequently superseded by the second format. The second format consists of the keyword followed by a series of character strings that indicate the data to be printed. In most cases the character string is the keyword used to load the data in the OPM Flow input deck, for example [PVDG](#__RefHeading___Toc104056_57619843) for the dry gas PVT tables. Its is anticipated that OPM Flow will eventually support the functionality of the second format only, the first format although recognized will be completely ignored.
+
+OPM Flow provides only limited supported for this keyword and will ignore the unsupported options because they have no effect on the results.
+
+
+| No. | Name | Description | Default |
+| --- | --- | --- | --- |
+| 1 | DENO | Print the oil reservoir density array | N/A |
+| 2 | [EQUIL](#__RefHeading___Toc135617_1317547213) | Print the equilibration report. | N/A |
+| 3 | [FIP](#__RefHeading___Toc250560_252421755) | Print the fluid in-place report. The parameter is assigned a value, OPTION, using the form [FIP](#__RefHeading___Toc250560_252421755)=OPTION, where OPTION is an integer variable set to: | [FIP](#__RefHeading___Toc250560_252421755)=2 |
+| 4 | FIPRESV | Print the reservoir volumes in-place report. | N/A |
+| 5 | [WELSPECS](#__RefHeading___Toc268463_1366622701) | [WELSPECS](#__RefHeading___Toc268463_1366622701) switches on reporting of the well connections, wells and groups at each report time step. There are numerous reports associated with this option. Unlike the other reporting parameters that produce a report for each reporting time step, the [WELSPECS](#__RefHeading___Toc268463_1366622701) report option only produces a report if an associated keyword has been activated at the current reporting time step. For example, if the reporting time steps are January, February,  and March 2020, and the [RPTSCHED](#__RefHeading___Toc268459_1366622701) [WELSPECS](#__RefHeading___Toc268463_1366622701) option is activated in January, with wells OP01 and OP02 being declared via the [WELSPECS](#__RefHeading___Toc268463_1366622701) and [COMPDAT](#__RefHeading___Toc97651_3261743917) keywords,  then a report will be printed for January for these two wells. If there are no further well activations until March, with well OP03 being declared, then there will be no report for February, and only well OP03 will reported at the March reporting time step. | N/A |
+| Notes: |  |  |  |
+
+*Table 10.3.80.1: RPTSOL Keyword Description*
+
+
+| Note Except for non-array like data, [FIP](#__RefHeading___Toc250560_252421755) etc., this keyword has the potential to produce very large print files that some text editors may have difficulty loading. A more efficient solution for array type data is to load the *.INIT and *.RESTART files into OPM ResInsight to view the data graphically, this also has the benefit of being able to filter the grid based on I, J, K ranges and grid properties. |
+| --- |
+
+
+#### Examples
+
+The first example shows the original format of this keyword; although the keyword and format are recognized by OPM Flow, the format is ignored and is unlikely to be implemented in in the simulator.
+
+
+```
+--
+--       DEFINE SOLUTION SECTION REPORT OPTION (ORIGINAL FORMAT)
+–
+RPTSOL
+         1        2*0      1        3*1                                        /
+```
+
+The next example shows the second format of the keyword which may be supported in a future release of OPM Flow.
+
+
+```
+--
+--       DEFINE SOLUTION SECTION REPORT OPTIONS
+--
+RPTSOL
+         FIP=2    FIPRESV  RESTART=3                                           /
+
+
+```
