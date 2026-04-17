@@ -60,6 +60,15 @@ tbody tr:hover {
   background-color: #eaf2f8;
 }
 
+table.keyword-location-table thead {
+  background-color: #d9ecfa;
+  color: #123f5c;
+}
+
+table.keyword-location-table thead th {
+  font-weight: 600;
+}
+
 /* -- Code blocks -------------------------------------------- */
 pre {
   background-color: var(--opm-code-bg);

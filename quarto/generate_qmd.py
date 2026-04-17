@@ -6,8 +6,8 @@ This script creates chapter and appendix .qmd files that use Quarto's
 Re-run this script whenever new keyword files are added.
 """
 
-import os
 import sys
+import json
 from pathlib import Path
 
 QUARTO_DIR = Path(__file__).resolve().parent
@@ -142,7 +142,7 @@ subtitle: "2025-04"
 ---
 
 ::: {.content-visible when-format="html"}
-![](../markdown/images/Image46_409be8acca21.png){fig-align="center" width="40%"}
+![](images/Image46_409be8acca21.png){fig-align="center" width="40%"}
 :::
 
 ## About This Manual
@@ -173,6 +173,17 @@ This manual corresponds to **OPM Flow version 2025-04**.
 """
 
 
+def generate_keyword_map() -> dict[str, str]:
+    """Generate keyword-to-chapter-slug map."""
+    keyword_map = {}
+    for num in KEYWORD_CHAPTERS:
+        slug = CHAPTER_SLUGS[num]
+        for kw_file in get_keyword_files(num):
+            keyword = Path(kw_file).stem
+            keyword_map[keyword] = slug
+    return keyword_map
+
+
 def generate_quarto_yml() -> str:
     """Generate the _quarto.yml configuration file with explicit chapter/appendix titles."""
     chapter_entries = ["    - index.qmd"]
@@ -195,6 +206,8 @@ def generate_quarto_yml() -> str:
     return f"""project:
   type: book
   output-dir: _book
+filters:
+  - keyword_link_filter.lua
 
 book:
   title: "OPM Flow Reference Manual"
@@ -252,6 +265,17 @@ def main():
             Path("../../markdown/appendices/images"), target_is_directory=True
         )
         print("Created symlink: appendices/images -> ../../markdown/appendices/images")
+    root_images_link = QUARTO_DIR / "images"
+    if not root_images_link.exists():
+        root_images_link.symlink_to(Path("../markdown/images"), target_is_directory=True)
+        print("Created symlink: images -> ../markdown/images")
+
+    # Generate keyword map for Quarto link rewriting filter
+    keyword_map_path = QUARTO_DIR / "keyword_map.json"
+    keyword_map_path.write_text(
+        json.dumps(generate_keyword_map(), sort_keys=True, indent=2) + "\n"
+    )
+    print(f"Generated {keyword_map_path.relative_to(QUARTO_DIR)}")
 
     # Generate _quarto.yml with explicit chapter/appendix titles
     quarto_yml_path = QUARTO_DIR / "_quarto.yml"
