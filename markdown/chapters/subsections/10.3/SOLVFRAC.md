@@ -1,0 +1,43 @@
+### SOLVFRAC – Define the Initial Gas Solvent Fraction for All Grid Blocks
+
+
+| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+#### Description
+
+The [SOLVFRAC](#__RefHeading___Toc785112_4250154414) keyword defines the initial solvent faction within the gas phase values for all matrix grid cells in the model. The keyword should only be used if the coal phase has been activated in the model via the [COAL](#__RefHeading___Toc234580_3519154785) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+
+This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
+
+[SOLVFRAC](#__RefHeading___Toc785112_4250154414) is used with the standard equilibration method to initialize the model via the [EQUIL](#__RefHeading___Toc135617_1317547213) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section, as oppose to the non-standard enumeration method.
+
+
+| No. | Name | Description | Default |
+| --- | --- | --- | --- |
+| Field | Metric | Laboratory |  |
+| 1 | [SOLVFRAC](#__RefHeading___Toc785112_4250154414) | [SOLVFRAC](#__RefHeading___Toc785112_4250154414) is an array of real positive numbers that define the initial solvent fraction within the gas phase values for each matrix cell in the model. Repeat counts may be used, for example 20*0.075. | None |
+| dimensionless | dimensionless | dimensionless |  |
+| Notes: |  |  |  |
+
+*Table 10.49: SOLVFRAC Keyword Description*
+
+
+See also the [EQUIL](#__RefHeading___Toc135617_1317547213) keyword in the [SOLUTION](#__RefHeading___Toc43947_784232322) section to fully define the initial state of the model.
+
+
+#### Example
+
+
+```
+--
+--       DEFINE INITIAL EQUILIBRATION GAS SOLVENT FRACTION FOR ALL CELLS
+--       BASED ON NX = 100, NY = 100 AND NZ = 6
+--
+SOLVFRAC
+         1000*0.0250    1000*0.0350    1000*0.0500                             /
+
+```
+
+The above example defines the initial gas solvent fraction values to be 0.250 for all the matrix cells in the first layer, 0.0350 for all the cells in the second layer, and finally 0.0500 for all the cells in the third layer.

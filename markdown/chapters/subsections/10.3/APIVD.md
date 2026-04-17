@@ -1,0 +1,49 @@
+### APIVD – Equilibration Oil API Gravity versus Depth Tables
+
+
+| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+#### Description
+
+The [APIVD](#__RefHeading___Toc407024_3174375363) keyword defines the oil [API](#__RefHeading___Toc4422_421927891) gravity versus depth tables for each equilibration region when [API](#__RefHeading___Toc4422_421927891) Tracking as been activated by the [API](#__RefHeading___Toc4422_421927891) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+
+This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
+
+
+| No. | Name | Description | Default |
+| --- | --- | --- | --- |
+| Field | Metric | Laboratory |  |
+| 1 | [DEPTH](#__RefHeading___Toc58139_3701168388) | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding [API](#__RefHeading___Toc4422_421927891) gravity    values,  [API](#__RefHeading___Toc4422_421927891). | None |
+| feet | m | cm |  |
+| 2 | [API](#__RefHeading___Toc4422_421927891) | A columnar vector of real values that defines the [API](#__RefHeading___Toc4422_421927891) gravity at the corresponding [DEPTH](#__RefHeading___Toc58139_3701168388). The American Petroleum Institute (“API”) classifies oils based on an [API](#__RefHeading___Toc4422_421927891) gravity (γAPI),  or degrees [API](#__RefHeading___Toc4422_421927891) (oAPI), the relationship between relative density (γo) of oil and [API](#__RefHeading___Toc4422_421927891) gravity (γAPI) is given by: | None |
+| oAPI | oAPI | oAPI |  |
+| Notes: |  |  |  |
+
+*Table 10.5: APIVD Keyword Description*
+
+
+#### Example
+
+Given NTEQUL equals three and NDRXVD is greater than or equal to two on the [EQLDIMS](#__RefHeading___Toc60335_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section, then the following example defines the bubble-point versus depth functions.
+
+
+```
+--
+--       DEPTH    API
+--                GRAVITY
+--       ------   --------
+APIVD
+         3000.0    41.10
+         8000.0    41.10                             / API VS DEPTH EQUIL REGN 01
+--       ------   --------
+         3000.0    41.10
+         8000.0    38.50                             / API VS DEPTH EQUIL REGN 02
+--       ------   --------
+         3000.0    41.10
+         8000.0    38.50                             / API VS DEPTH EQUIL REGN 03
+```
+
+
+Here three tables are entered; the first table has a constant [API](#__RefHeading___Toc4422_421927891) gravity versus depth relationship for  equilibration region number one and the other two equilibration regions have the [API](#__RefHeading___Toc4422_421927891) gravity varying with depth.

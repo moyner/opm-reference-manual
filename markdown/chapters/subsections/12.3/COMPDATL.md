@@ -1,0 +1,77 @@
+### COMPDATL – Define Well Connections to a LGR Grid
+
+
+| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+#### Description
+
+The [COMPDATL](#__RefHeading___Toc153110_63720426) keyword defines how a well in a Local Grid Refinement (“LGR”) is connected to the reservoir by declaring the [LGR](#__RefHeading___Toc55049_4106839650) and defining or modifying existing well connections. Ideally the connections should be declared in the correct sequence, starting with the connection nearest the well head and then working along the wellbore towards the bottom or toe of the well, however this may not be possible or convenient, for example when connections are added or removed from a well during the simulation (see the  [COMPORD](#__RefHeading___Toc97657_3261743917) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section for options regarding connection ordering).
+
+This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
+
+
+| No. | Name | Description | Default |
+| --- | --- | --- | --- |
+| Field | Metric | Laboratory |  |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section, otherwise an error may occur. | None |
+| 2 | LGRNAME | A character string of up to eight characters in length that defines the [LGR](#__RefHeading___Toc55049_4106839650) name for which the well [LGR](#__RefHeading___Toc55049_4106839650) connection data are being defined. Note that the well name (LGRNAME) must have been declared previously using the [WELSPECL](#__RefHeading___Toc147691_6053652) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section, otherwise an error may occur. If defaulted with 1* the [LGR](#__RefHeading___Toc55049_4106839650) on the [WELSPECL](#__RefHeading___Toc147691_6053652) keyword will be utilized. | Defined |
+| 3 | I | A positive integer greater than or equal to zero and less than or equal to NX that defines the connection location in the I-direction. If set to zero or defaulted with 1* the location is taken from the wellhead location I-direction value on the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section. | 0 |
+| 4 | J | A positive integer greater than or equal to zero and less than or equal to NY that defines the connection location in the J-direction. If set to zero or defaulted with 1* the location is taken from the wellhead location J-direction value on the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section. | 0 |
+| 5 | K1 | A positive integer greater than or equal to one and less than or equal to NZ that defines the UPPER connection location in the K-direction. | None |
+| 6 | K2 | A positive integer greater than or equal to K1 and less than or equal to NZ that defines the LOWER connection location in the K-direction. | None |
+| 7 | STATUS | A character string of length four that defines the connections’ operational status, STATUS should be set to one of the following character strings: | OPEN |
+| 8 | [SATNUM](#__RefHeading___Toc71136_2752266063) | An integer greater than or equal to zero and less than NTSFUN as declared on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979), that defines the saturation table number to be used for flow between the reservoir grid block and the well connections. If [SATNUM](#__RefHeading___Toc71136_2752266063) is set to zero or defaulted with 1* then: | 0 |
+| 9 | CONFACT | A real value greater than or equal to zero that defines the transmissibility connection factor between the well bore and the reservoir grid block. If set to zero or defaulted with 1* then items (9) through (13) are used to calculate CONFACT. | Defined |
+| cP.rb/day/psia 0 | cP.rm3/day/bars 0 | cP.rcc/hr/atm 0 |  |
+| 10 | DW | A real positive value that defines the well bore diameter of the connections for the well. DW is used in calculating a well’s productivity or injectivity index; however the value will be ignored in calculating the connections CONFACT value if CONFAC has been directly entered. | None |
+| feet | m | cm |  |
+| 11 | KH | A real value that defines the effective KH (permeability x length) for the connections. If less than or equal to zero or defaulted by 1* then KH is calculated from the connected grid blocks. KH is ignored if CONFAC has been directly entered. | Calculated from connected grid blocks |
+| mD.ft | mD.m | mD.cm |  |
+| 12 | SKIN | A real value that defines the connections dimensionless skin factor. SKIN is used in calculating a well’s productivity or injectivity index; however, the value will be ignored in calculating the connections CONFACT value if CONFAC has been directly entered. | 0.0 |
+| dimensionless | dimensionless | dimensionless |  |
+| 13 | DFACT | A real value that defines the non-Darcy D factor coefficient for gas wells. This value should be defaulted with 1* and the non-Darcy D factor coefficient for gas wells defined via the [WDFAC](#__RefHeading___Toc442057_2026549522) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section. Currently this option is not supported by OPM Flow. | 1* |
+| day/Mscf | day/m3 | hour/sc |  |
+| 14 | DIRECT | A one letter character string that defines the orientation of the connections and should be set to either X, Y, or Z. The direction of connections also determines the length of the connection used to calculate the connection factor if CONFAC has not been entered directly. The default value is for a vertical connection, that is DIRECT is defaulted to Z. | Z |
+| Notes: |  |  |  |
+
+*Table 12.11: COMPDATL Keyword Description*
+
+
+Multiple grid block connections can be defined on one record for vertical wells by assigning different values to K1 and K2, for deviated and horizontal wells this may not be possible and therefore each grid block connection must be separately defined by using one record per connection, setting K1 equal to K2 in each record.
+
+See also the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword to define wells, the [COMPIMB](#__RefHeading___Toc97653_3261743917) to reset the imbibition relative permeability table allocation, and the [COMPORD](#__RefHeading___Toc97657_3261743917) to re-order the completions along the well trajectory. In addition, the [COMPLUMP](#__RefHeading___Toc97655_3261743917) keyword groups well connections together to form well completions for a well. All the aforementioned keywords are described in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section.
+
+
+| Note The term well connection is used to describe individual connections from the wellbore to the reservoir grid, as opposed to well completions. A well completion is used to describe a set of connections, for example,  a well may consist of several completions with each completion consisting of multiple connections. |
+| --- |
+
+
+#### Example
+
+The following example defines two vertical oil wells using the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword and their associated connection data.
+
+
+```
+--
+--       WELL LGR SPECIFICATION DATA
+--
+--       WELL GROUP  LGR    -LOCATION- BHP    PHASE DRAIN INFLOW SHUT CROSS PVT
+--       NAME NAME   NAME     I    J   DEPTH  FLUID AREA  EQUA.  IN   FLOW  TABLE
+WELSPECL
+         OP01  PLAT OP01LGR  14   13   1*     OIL   1*    STD    SHUT  NO   1*  /
+         OP02  PLAT OP02LGR  28   96   1*     OIL   1*    STD    SHUT  NO   1*  /
+/
+--
+--       WELL LGR CONNECTION DATA
+--
+--       WELL  LGR   ---LOCATION---   OPEN   SAT CONN  WELL KH   SKIN  D    DIR
+--       NAME  NAME   II  JJ  K1  K2  SHUT   TAB FACT  DIA  FACT FACT  FACT PEN
+COMPDATL
+         OP01 OP01LGR 1*  1*  20  56  OPEN   1*  1*  0.708   1*   1*   1*   Z /
+         OP01 OP01LGR 1*  1*  75 100  SHUT   1*  1*  0.708   1*   1*   1*   Z /          	     OP02 OP02LGR 35  96  75 100  OPEN   1*  1*  0.708   1*   1*   1*   Z /
+/
+```
+
+Well OP01 has two sets of connections; the first one connects grid cells (14, 13, 20) to (14, 13, 56) to the well and is open to flow and the second connecting grid cells (14, 13, 75) to (14, 13, 100) is shut. Well OP02 has only one open connection from cells (35, 96, 75) to cells (35, 96, 100).

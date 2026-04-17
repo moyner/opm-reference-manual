@@ -1,0 +1,63 @@
+### SALTSOL – Define the Salt Solubility Limit by Region
+
+
+| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+#### Description
+
+[SALTSOL](#__RefHeading___Toc681417_1466963378) defines a grid block's maximum salt solubility for each [PVTNUM](#__RefHeading___Toc68366_2752266063) region. The keyword should only be used with OPM Flow’s Salt Precipitation model which is activated via the [PRECSALT](#__RefHeading___Toc332782_3149455253) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+
+
+| Note This is an OPM Flow specific keyword for the simulator’s Salt Precipitation model that is activated by the [PRECSALT](#__RefHeading___Toc332782_3149455253) keyword and declaring that vaporized water is present in the run via the [VAPWAT](#__RefHeading___Toc317543_3149455253) in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. |
+| --- |
+
+
+| No. | Name | Description | Default |
+| --- | --- | --- | --- |
+| Field | Metric | Laboratory |  |
+| 1 | [SALTSOL](#__RefHeading___Toc681417_1466963378) | A real positive value that defines the maximum salt solubility for all grid blocks in a [PVTNUM](#__RefHeading___Toc68366_2752266063) region. | None |
+| lb/stb | kg/sm3 | gm/scc |  |
+| ‍2 ‍ | SALTDEN | SALTDEN is a real number defining the density of salt at surface conditions. | Defined |
+| lb/ft3 135.469 | kg/m3 2170 | gm/cc 2.170 |  |
+| Notes: |  |  |  |
+
+*Table 8.142: SALTSOL Keyword Description*
+
+
+See also the [PRECSALT](#__RefHeading___Toc332782_3149455253) and [VAPWAT](#__RefHeading___Toc317543_3149455253) keywords in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section and the [PVTGW](#__RefHeading___Toc355649_3149455253) and [PVTGWO](#__RefHeading___Toc356776_4176551521) keywords in the [PROPS](#__RefHeading___Toc39329_784232322) section.
+
+
+#### Example
+
+The first example sets the maximum salt solubility for all cells in the model to 134.6 lb/stb, assuming that there is only one PVT region, that is NTPVT is equal to one on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+
+
+```
+--
+--       SET SALT SOLUBILITY LIMIT FOR EACH REGION (OPM FLOW KEYWORD)
+--
+SALTSOL
+--       MAX       SALT
+--       SALTSOL   DENSITY
+         134.6     1*                                             /
+```
+
+The 134.6 lb/stb, (380 kg/sm3 or 0.384 gm/scc for metric and laboratory units, respectively) is based on the solubility of NACL at 212 oF (100 oC) and should be used with care.
+
+The next example shows how to set the maximum salt solubility for when NTPVT is equal to three on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+
+
+```
+--
+--       SET SALT SOLUBILITY LIMIT FOR EACH REGION (OPM FLOW KEYWORD)
+--
+SALTSOL
+         134.6                                             / PVT REGION NO. 1
+         124.0                                             / PVT REGION NO. 2
+                                                           / PVT REGION NO. 3
+```
+
+
+Here the last entry, which is for region number three, is defaulted, and results in region’s three maximum salt solubility to take the previous value, in this case 124.0 lb/stb.

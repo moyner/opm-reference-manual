@@ -1,0 +1,56 @@
+### FOAMADS – Define Foam Rock Adsorption Tables
+
+
+| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+#### Description
+
+The [FOAMADS](#__RefHeading___Toc224974_3519154785) keyword defines the foam rock adsorption tables for when the Foam option has been activated by the [FOAM](#__RefHeading___Toc171586_289573908) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+
+
+| No. | Name | Description | Default |
+| --- | --- | --- | --- |
+| Field | Metric | Laboratory |  |
+| 1 | FOAMCON | A columnar vector of real monotonically increasing down the column values that defines the foam concentration in the solution surrounding the rock. The first entry should be zero to define a no foam concentration data set. Units are dependent on the transport phase specified via the FOAMOPT1 variable on the [FOAMOPTS](#__RefHeading___Toc224982_3519154785) keywod in the [PROPS](#__RefHeading___Toc39329_784232322) section. | None |
+| Gas: lb/Mscf Water: lb/stb | Gas: kg/sm3 Water: kg/sm3 | Gas: gm/scc Water: gm/scc |  |
+| 2 | FOAMRATI | A columnar vector of real increasing down the column values that defines the mass of adsorbed foam per unit mass of rock for a given FOAMCON. The first table data set entry should be zero to define a no foam concentration data set. | None |
+| lb/lb | kg/kg | gm/gm |  |
+| Notes: |  |  |  |
+
+*Table 8.3.58.1: FOAMADS Keyword Description*
+
+
+#### Example
+
+
+```
+--
+--       FOAM ROCK ADSORPTION TABLE
+--
+FOAMADS
+--       FOAM       FOAM
+--       FOAMCON    FOAMRATI
+--       -------    --------
+             0.0     0.00000
+             2.0     0.00003
+             4.0     0.00005
+             6.0     0.00007
+             8.0     0.00009
+            10.0     0.00011
+            12.0     0.00012
+            14.0     0.00015                               / TABLE NO. 01
+--       FOAM       FOAM
+--       FOAMCON    FOAMRATI
+--       -------    --------
+             0.0     0.00000
+             3.0     0.00004
+             5.0     0.00006
+             7.0     0.00008
+             8.0     0.00009
+            10.0     0.00011                               / TABLE NO. 02
+
+```
+
+The above example defines two foam rock adsorption tables assuming NTSFUN equals two and NSSFUN is greater than or equal to eight on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
