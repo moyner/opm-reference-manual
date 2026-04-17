@@ -7,7 +7,7 @@
 
 #### Description
 
-This keyword defines a general formulae used to define a group’s and well’s guide rate as a function of the their potential.  The default behavior, that is when this keyword is not invoked,  is to set the target control mode and rate via the GCONPROD keyword in the SCHEDULE section.  In this case the target rate is distributed between the group’s wells that are under group control using a well’s guide rate. If a well’s guide rate has not been defined, for example by this keyword, then the well potential of the group controlling phase at the beginning of the time step is used.  For example, if the group target rate and phase is oil, then the well’s under group control will have their oil rates determined by their oil rate potential [Production and injection potentials are based on rates that are unrestricted. For wells this implies that well potential is calculated based on either the BHP or THP limit, which ever is the more constraining.]. The GUIDERAT keyword substitutes the potential calculation with a more general formulae in the aforementioned distribution and allocation of the rates:
+This keyword defines a general formulae used to define a group’s and well’s guide rate as a function of the their potential.  The default behavior, that is when this keyword is not invoked,  is to set the target control mode and rate via the GCONPROD keyword in the SCHEDULE section.  In this case the target rate is distributed between the group’s wells that are under group control using a well’s guide rate. If a well’s guide rate has not been defined, for example by this keyword, then the well potential of the group controlling phase at the beginning of the time step is used.  For example, if the group target rate and phase is oil, then the well’s under group control will have their oil rates determined by their oil rate potential^[Production and injection potentials are based on rates that are unrestricted. For wells this implies that well potential is calculated based on either the BHP or THP limit, which ever is the more constraining.]. The GUIDERAT keyword substitutes the potential calculation with a more general formulae in the aforementioned distribution and allocation of the rates:
 
 
 $$
@@ -32,7 +32,7 @@ Note that groups can only have potential guide rates if they are subordinate in 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | TSTEP | A real positive value that defines the minimum time interval to re-calculate the guide rates.  The guide rates are calculated at the start of a time step and the default value of zero means that the guide rates are calculated for each time step. A non-zero value for TSTEP resets the minimum interval, for example setting TSTEP equal to 30 would mean the guide rates are calculate every 30 days, or to the nearest associated time step. Calculating guide rates every time step may cause issues due to the rate dependent behavior, for example gas cusping or water coning causing the well rates to oscillate. In this case using a non-zero value of TSTEP may eliminate this oscillating behavior. | 0.0 |
 | days | days | hours |  |

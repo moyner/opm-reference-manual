@@ -11,7 +11,7 @@ PIMTDIMS keyword defines the maximum number of PIMULTAB tables and the maximum n
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NTPIMT | A positive integer value that defines the maximum number of PIMULTAB keywords defined in the input deck. | 0 |
 | 2 | NRPIMT | A positive integer value defining the maximum number of entries (rows) in the PIMULTAB keyword. | 0 |
 | Notes: |  |  |  |

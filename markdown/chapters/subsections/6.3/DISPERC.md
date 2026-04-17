@@ -11,7 +11,7 @@ The [DISPERC](#REF_HEADING_KEYWORD_DISPERC_6_3) keyword defines the mechanical d
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 |  | Metric | Laboratory |  |
 | 1 | [DISPERC](#REF_HEADING_KEYWORD_DISPERC_6_3) | [DISPERC](#REF_HEADING_KEYWORD_DISPERC_6_3) is an array of real positive values that defines the mechanical dispersivity for each cell in the model. Repeat counts may be used, for example 20*1.0. | None |
 | feet | m | cm |  |

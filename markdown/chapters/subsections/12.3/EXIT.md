@@ -16,7 +16,7 @@ This is an OPM Flow specific keyword for the simulator’s ACTION facility and w
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | EXITCODE | An optional integer that sets the exit code printed to the *.PRT file, if not not defined the default value of zero will be used. | 0 |
 | Notes: |  |  |  |
 

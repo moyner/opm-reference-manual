@@ -11,7 +11,7 @@ The PLYROCK keyword defines rock properties for when the Polymer option has been
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PSPACE | A real positive value that is greater than or equal to zero and less the maximum water saturation and less than one, that defines available pore space for this rock type. | None |
 | dimensionless | dimensionless | dimensionless |  |

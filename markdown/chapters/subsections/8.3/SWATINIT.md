@@ -13,7 +13,7 @@ Normally the SWATINIT array is generated in the static earth model when calculat
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SWATINIT | SWATINIT is an array of real positive numbers that are greater than or equal to zero and less than or equal to one, that define the initial water saturation values to each cell in the model. Repeat counts may be used, for example 3000*0.15 | None |
 | dimensionless | dimensionless | dimensionless |  |

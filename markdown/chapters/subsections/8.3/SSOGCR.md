@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SSOGCR | SSOGCR is an array of real numbers assigning the surfactant critical oil saturation with respect to gas values to each cell in the model. The number of entries should correspond to the NX x NY x NZ parameters on the DIMENS keyword. Repeat counts may be used, for example 30*0.30 dimensionless | Taken from cell allocated relative permeability table. |
 | dimensionless | dimensionless | dimensionless |  |

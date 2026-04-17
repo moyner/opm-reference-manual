@@ -18,7 +18,7 @@ This is an OPM Flow specific keyword and will therefore cause an error in the co
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | INDEX | A positive integer that identifies the boundary condition. | None |
 | 2 | TYPE | A defined character string that defines the type of boundary condition to be applied, and should be set to one of the following character strings: | None |

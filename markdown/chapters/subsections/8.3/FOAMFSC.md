@@ -11,7 +11,7 @@ The FOAMFSC keyword defines the reduction in gas mobility as a function of the f
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | FOAMCON | A real positive value that defines the foam surfactant concentration at which foam modeling becomes active in the model and a strong foam is formed. FOAMCON cannot be defaulted and must be specified for the first table. Subsequent tables can be defaulted and will in this case use the previous tables’ entries as the default value. | None |
 | lb/stb | kg/sm3 | gm/scc |  |

@@ -11,7 +11,7 @@ The TITLE keyword defines the title for the input deck. The title text will be p
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | TITLE | A character string that defines the title for the input deck | None￹ |
 | Notes: |  |  |  |
 

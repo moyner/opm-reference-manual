@@ -15,7 +15,7 @@ See section 2.2 Running OPM Flow 2023-04 From The Command Line on how to invoke 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 0-1 | LGRNAME | A character string of up to eight characters in length that defines the LGR name for which the tuning data is being being defined. | None |
 | 0-2 | / | Record terminated by a “/” | Not Applicable |

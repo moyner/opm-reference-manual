@@ -11,7 +11,7 @@ SORWMIS defines the dependency between the miscible residual oil saturation and 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SWAT | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating at one, that defines the water  saturation. | None |
 | dimensionless | dimensionless | dimensionless |  |

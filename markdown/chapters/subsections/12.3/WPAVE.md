@@ -23,7 +23,7 @@ The WPAVE keyword defines the method and parameters for calculating a well’s b
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WPAVE1 | A real dimensionless value that defines the weighting factor between the inner block and the surrounding blocks used in the calculation of the connection factor weighted average pressure. If WPAVE1 is greater than or equal to zero and less than or equal to one, then the average pressure for each well connection is calculated based on this weighting factor. A value of zero indicates only the surrounding blocks should be used in the calculation; and a value of one indicates only the inner blocks should be used. If WPAVE1 is less than zero, then the average pressure for each well connection is weighted based on the pore volumes of the inner and surrounding blocks. | 0.5 |
 | 2 | WPAVE2 | A real dimensionless value greater than or equal to zero and less than or equal to one, that defines the weighting factor between the connection factor weighted average pressures and the pore volume weighted average pressures. If WPAVE2 is equal to one, then the average pressures are calculated based only on the connection factor weighted average pressures. If WPAVE2 is equal to zero, then average pressures are calculated based  only on the pore volumes weighted average pressures. | 1.0 |

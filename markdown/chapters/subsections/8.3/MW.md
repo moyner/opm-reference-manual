@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but it will be parsed and its data ign
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | [MW](#REF_HEADING_KEYWORD_MW) | A series of real numbers that define the molecular weights for each of the compositional components active in the model. | None |
 | lb/lb-M | kg/kg-M | gm/gm-M |  |

@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MAPUNITS | A character string that defines the units of the coordinates stated on the MAPAXES keyword, and should be set to: | METRES |
 | Notes: |  |  |  |
 

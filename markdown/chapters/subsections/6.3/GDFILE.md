@@ -11,7 +11,7 @@ The GDFILE keyword loads a GRID file that contains the structural data for the g
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | GRIDFILE | A character string enclosed in quotes that defines the GRID or EGRID file to be read in and be processed by OPM Flow. Again, OPM Flow only supports reading in EGRID files. | None |
 | 2 | FMTOPT | A defined character string that defines the format of the GRID or EGRID file to be read and should be set to one of the following: If the variable FMTOPT is omitted then the default is for binary file input for the commercial simulator; whereas, OPM Flow derives FMTOPT from the file extension (*.EGRID or *.FEGRID), making FMTOPT superfluous. | U |
 | Notes: |  |  |  |

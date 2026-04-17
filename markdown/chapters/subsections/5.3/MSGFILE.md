@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MSGOPT | A positive integer set to 0 for to deactivate message file output or 1 to activate message file output. | 1 |
 | Notes: |  |  |  |
 

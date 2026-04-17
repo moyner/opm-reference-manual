@@ -11,7 +11,7 @@ The COMPORD keyword defines how the well connection data entered on the COMPDAT 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | COMPORD | A character string that defines the method for ordering the well connections given on the COMPDAT keyword, and should be set to DEPTH, INPUT, or TRACK. All options are now supported by OPM Flow. | TRACK |

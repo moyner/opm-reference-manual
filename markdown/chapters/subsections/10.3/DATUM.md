@@ -11,7 +11,7 @@ The DATUM keyword defines the datum depth for the model. This allows for all gri
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DATUM | DATUM is a single positive value that defines the datum depth for the model. | None |
 | feet | m | cm |  |

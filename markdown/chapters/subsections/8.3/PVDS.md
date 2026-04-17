@@ -11,7 +11,7 @@ PVDS defines the solvent PVT properties for use with SOLVENT option. The solvent
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | A columnar vector of real monotonically increasing down the column   values that defines the solvent phase pressure. | None |
 | psia | barsa | atma |  |

@@ -11,7 +11,7 @@ The LIFTOPT keyword actives the gas lift optimization option and defines the gas
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GASLIFT | A real positive number that defines the gas lift gas size increment that is used to increase the gas lift size quantity in steps. For example, if GASLIFT is set to 0.5 MMscf/d then gas lift gas will be allocated in step of 0.5 MMscf/d to each well during the optimization process. A zero or negative value switches off gas lift optimization. | None |
 | Mscf/d | sm3/day | scc/hour |  |

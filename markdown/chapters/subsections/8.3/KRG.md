@@ -11,7 +11,7 @@ KRG defines the scaling parameter at the maximum drainage gas relative permeabil
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | KRG | KRG is an array of positive real numbers which are greater than zero and less than or equal to 1.0, that are the assigned scaling KRG values for each cell in the model. Repeat counts may be used, for example 50*0.400. dimensionless | Taken from cell allocated relative permeability table. |
 | dimensionless | dimensionless | dimensionless |  |

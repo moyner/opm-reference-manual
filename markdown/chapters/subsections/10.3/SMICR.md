@@ -16,7 +16,7 @@ This is an OPM Flow specific keyword.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SMICR | SMICR is an array of real numbers that are greater than or equal to zero assigning the initial equilibration microbial concentration values to each cell in the model. Repeat counts may be used, for example 20*0.1500. | None |
 | lb/stb | kg/sm3 | gm/scc |  |

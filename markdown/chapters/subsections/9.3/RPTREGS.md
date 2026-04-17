@@ -11,7 +11,7 @@ This keyword defines the data in the REGIONS section that is to be printed to th
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | EQLNUM | Print the equilibration region array. | N/A |
 | 2 | FIPNUM | Print the fluid in-place array. | N/A |
 | 3 | PVTNUM | Print the PVT table assignment array. | N/A |

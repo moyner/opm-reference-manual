@@ -11,7 +11,7 @@ The PBVD keyword defines the bubble-point pressure versus depth tables for each 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding bubble-point values, PBVALS. | None |
 | feet | m | cm |  |

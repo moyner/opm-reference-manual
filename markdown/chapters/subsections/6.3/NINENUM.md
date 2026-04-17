@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NINENUM | NINENUM defines an integer array of zeros and ones assigning a grid cell to a particular discretization region, a value of zero for five-point or a value of one for nine-point discretization. Note that the default value of one implies a cell is included in the Nine-Point Discretization region; thus, if a cell is to use the conventional standard five-point finite difference discretization formulation, then NINENUM must be explicitly set to zero. | 1 |
 | Notes: |  |  |  |
 

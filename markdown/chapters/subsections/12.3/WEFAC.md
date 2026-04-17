@@ -13,7 +13,7 @@ Note that wells are allocated to a group when they are specified by the WELSPECS
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well efficiency factor is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | FACTOR | A real positive value greater than zero and less than or equal to one that defines the efficiency factor for the well. If a well’s down time is 5% then FACTOR should be set to 0.95 (1.0 – 0.05). Note that well pressures and rates are calculated at their full flowing conditions but subject to any operating constraints, that is without the well efficiency being applied (FACTOR), in order to represent the actual flowing conditions in the field. The effective rates and volumes are calculated by applying FACTOR when summing individual well rates to their group level and higher, including summing to the top most group FIELD. In terms of a well’s cumulative production, FACTOR is applied to the well rate times the time interval for the time step. This ensures that correct effective volume is withdrawn from (or injected to) the reservoir. This approach means that wells are effectively arbitrarily offline for a period during a time step, as opposed to all wells going offline concurrently. And thus the group and field rates and volumes are the effective rates and volumes for the field. | 1.0 |

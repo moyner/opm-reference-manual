@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PDEW | PDEW is an array of real positive numbers assigning the initial equilibration dew-point pressure values to each cell in the model. Repeat counts may be used, for example 20*3525.0 | None |
 | psia | barsa | atma |  |

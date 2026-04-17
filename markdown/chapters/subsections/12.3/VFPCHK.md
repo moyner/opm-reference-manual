@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | VFPCHK | VFPCHK is a real positive value that defines the BHP pressure above which crossing VFP curves will be ignored. Setting VFPCHK to a large number like the default value number will cause all crossing curves to be checked. Also if the keyword is omitted from the input deck then the check is performed using the default value. | 1.010 |
 | psia | barsa | atma |  |

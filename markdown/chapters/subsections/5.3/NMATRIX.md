@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NMATRIX | A positive integer value that specifies the number of sub-grid blocks in the actual matrix grid blocks. | 1 |
 | Notes: |  |  |  |
 

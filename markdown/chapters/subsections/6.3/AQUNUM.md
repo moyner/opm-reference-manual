@@ -11,7 +11,7 @@ The AQUNUM keyword defines the properties of numerical aquifers, including which
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | AQUID | AQUID is a positive integer greater than or equal to one and less than or equal to the maximum number of numerical aquifers as defined by the MXNAQN variable on the AQUDIMS keyword in the RUNSPEC section, that defines the aquifer to be connected to the grid. | None |
 | 2 | I | A positive integer that defines the cell in the I-direction that represents  the AQUID aquifer, and which must be greater than or equal to one and less than or equal to NX. | None |
@@ -40,8 +40,8 @@ Numerical aquifers are modeled as one-dimensional, with aquifer flow assumed to 
 
 The values entered on the AQUNUM keyword are used to calculate the aquifer's pore volume and the transmissibility between the aquifer and the connected cell faces defined on the AQUCON keyword. Thus:
 
-    - The aquifer’s pore volume is always calculated from the data entered on the AQUNUM keyword using$\mathit{Pore} \mathit{Volume}=\mathit{AREA}\times \mathit{LENGTH}\times \mathit{PORO}$and any modifications to the host cell values performed in either the GRID or EDIT sections are always ignored for cells declared as numerical aquifers cells.
-    - For the transmissibility calculation either the cross-sectional area (AREA) defined on the AQUNUM keyword may be used or the connecting cell cross-sectional area by setting the AQUOPT1 variable on the AQUCON keyword.
+- The aquifer’s pore volume is always calculated from the data entered on the AQUNUM keyword using$\mathit{Pore} \mathit{Volume}=\mathit{AREA}\times \mathit{LENGTH}\times \mathit{PORO}$and any modifications to the host cell values performed in either the GRID or EDIT sections are always ignored for cells declared as numerical aquifers cells.
+- For the transmissibility calculation either the cross-sectional area (AREA) defined on the AQUNUM keyword may be used or the connecting cell cross-sectional area by setting the AQUOPT1 variable on the AQUCON keyword.
 
 In order to fully define a numerical aquifer one has to define the aquifer properties via the AQUNUM keyword, and how the aquifer is connected to the reservoir using the AQUCON keyword in the GRID or SOLUTION sections.
 
@@ -109,4 +109,4 @@ AQUCON
 /
 ```
 
-that creates a basal aquifer [Basal Aquifer: An aquifer located at the bottom of a geologic unit.].
+that creates a basal aquifer^[Basal Aquifer: An aquifer located at the bottom of a geologic unit.].

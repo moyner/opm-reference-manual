@@ -13,7 +13,7 @@ This is the non-standard method to initialize the model via enumeration and is s
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SWAT | SWAT is an array of real positive numbers that are greater than or equal to zero and less than or equal to one assigning the initial equilibration water saturation values to each cell in the model. Repeat counts may be used, for example 20*0.300. | None |
 | dimensionless | dimensionless | dimensionless |  |

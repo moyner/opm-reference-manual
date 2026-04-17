@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but it will be parsed and its data ign
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | [TCRIT](#REF_HEADING_KEYWORD_TCRIT) | A series of real numbers that define the critical temperatures for each of the compositional components active in the model. | None |
 | °R | K | K |  |

@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | LGRNAME | A character string of up to eight characters in length that defines the LGR name for which the LGR is being being defined. | None |
 | 2 | I1 | A positive integer that defines the lower index of the global or host grid in the I-direction to be refined; must be greater than or equal 1 and less than or equal to I2 and NX on the DIMENS keyword in the RUNSPEC section. | None |
 | 3 | I2 | A positive integer that defines the upper index of the global or host grid in the I-direction to be refined; must be greater than or equal 1 and II,  and less than or equal to NX on the DIMENS keyword in the RUNSPEC section. | None |

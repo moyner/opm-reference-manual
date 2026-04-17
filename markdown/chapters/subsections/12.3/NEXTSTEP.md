@@ -13,7 +13,7 @@ Time steps chops are computationally expensive as the simulator cannot solve the
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | NSTEP1 | A real positive value that defines the maximum length of the next time step. | None |
 | days | days | hours |  |

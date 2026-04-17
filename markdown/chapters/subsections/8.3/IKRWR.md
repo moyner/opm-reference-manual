@@ -11,7 +11,7 @@ IKRWR defines the scaling parameter at the imbibition critical oil to water satu
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | IKRWR | IKRWR is an array of positive real numbers which are greater than zero and less than or equal to 1.0, that are the assigned imbibition scaling IKRWR values for each cell in the model. Repeat counts may be used, for example 50*1.000. | Taken from cell allocated relative permeability table. |
 | dimensionless | dimensionless | dimensionless |  |

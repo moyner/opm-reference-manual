@@ -11,7 +11,7 @@ This keyword, CSKIN, is used to re-define a well’s connection skin factors and
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection skin is being re-defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | I | A positive integer greater than or equal to one and less than or equal to NX that defines the connection location in the I-direction. If set to zero or defaulted with 1* then connections in any I-direction location will be modified. | 0 |

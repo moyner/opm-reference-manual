@@ -17,7 +17,7 @@ See also the PYACTION keyword in the SCHEDULE section that implements OPM Flowâ€
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | ACTIONX | Define the start of ACTIONX Definition Section.  This is then followed on a new line by any number of ACTIONX records that define the conditions for which the defined action will be executed and the various operations to be performed if the conditions are satisfied. |  |  |
 | 1-1 | ACTNAME | ACTNAME is a character sting of up to eight characters in length, that defines the name of this action definition. If ACTNAME has previously been used by any ACTION series keyword, then the previous ACTION series definition will be replaced by the definition declared by this ACTIONX Definition Section. |  |
 | 1-2 | ACTNSTEP | ACTNSTEP is a positive integer that defines the number times that the ACTNAME definition is executed.  ACTIONX definitions are activated at the end of a time step and this parameter is used to set how many time steps the ACTNAME definition will be invoked. The default value of one means that the definition will be executed only once. Use a large value, for example 10,000 for the definition to be executed at every time step. Note that the counter only affects successful evaluations; i.e. if ACTNSTEP is set equal to one (the default), then the simulator will test the action at the end of every time step until it evaluates to true. | 1 |
@@ -41,7 +41,7 @@ The variable types and the associated definitions that are available for use wit
 
 
 | Variable Type | Description |
-| --- | --- |
+| --- | :------ |
 | AQUIFER | AQUIFER variable consists of two parameters: |
 | BLOCK | BLOCK variable consists of four parameters: The NX, NY, and NZ parameters are defined on the DIMENS keyword in the RUNSPEC section. |
 | CONSTANTS | CONSTANTS can consist of one or optionally two parameters: |

@@ -13,7 +13,7 @@ This option must be activated by THPRES variable on EQLOPTS keyword in the RUNSP
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | EQLNUM1 | EQLNUM1 is an a positive integer that is greater or equal to one and less than or equal to NTEQUL on the EQLDIMS keyword in the RUNSPEC section, that defines the “from” equilibration region number. | None |
 | dimensionless | dimensionless | dimensionless |  |

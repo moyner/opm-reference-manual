@@ -11,7 +11,7 @@ The ACTPARAM keyword defines the maximum target percent value for the ACTION ser
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | MXTOLS | A positive real value that defines the maximum target percent number for the ACTION series of keywords. The default value of 100 means the target is not applied. | Defined |
 | percent 100.0 | percent 100.0 | percent 100.0 |  |

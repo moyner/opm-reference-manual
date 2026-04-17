@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | COALNUM | COALNUM defines an array of positive integers assigning a grid cell to a particular coal region. The maximum number of COALNUM regions is set by the NTCREG variable on REGDIMS keywords in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 

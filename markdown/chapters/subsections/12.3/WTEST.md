@@ -11,7 +11,7 @@ The WTEST keyword outlines the testing procedures to be applied to wells that ar
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name of the well to be tested. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | TIME | A real value greater than zero that defines the minimum period of time that must elapse between well tests. The next well test is performed at the beginning of the next time step after the specified period of time has elapsed since the previous well test, for example if TIME is set equal to 365.25 (days), the test is performed approximately every year. | None |

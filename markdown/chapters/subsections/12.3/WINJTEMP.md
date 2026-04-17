@@ -13,7 +13,7 @@ This keyword can only be used if OPM Flow’s thermal option has been activated 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well injection fluid thermal properties are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | STEAMQAL | STEAMQAL is a real positive value greater than or equal to zero and less than or equal to one that defines the steam quality of the injected fluid for the defined well. This parameter should be defaulted using 1* as STEAMQAL is not used by OPM FLOW, as only water and gas injection is supported. This data is used by the commercial simulator’s THERMAL option and is not supported by OPM Flow’s THERMAL option. | 1* |

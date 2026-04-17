@@ -13,7 +13,7 @@ The keyword can only be used with Irregular Corner-Point Grids and Radial Grids.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NDIVIX | A positive integer value that defines the number of cells in the X or R direction | 1 |
 | 2 | NDIVIY | A positive integer value that defines the number of cells in the Y or THETA direction | 1 |
 | 3 | NDIVZ | A positive integer value that defines the number of cells in the Z direction | 1 |

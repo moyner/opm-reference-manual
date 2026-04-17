@@ -15,7 +15,7 @@ The initial reservoir temperature should be defined when OPM Flow’s CO2 or H2 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth for corresponding reservoir temperature parameter TEMP. | None |
 | feet | m | cm |  |

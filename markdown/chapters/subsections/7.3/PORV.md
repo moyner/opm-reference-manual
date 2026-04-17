@@ -11,7 +11,7 @@ PORV defines the pore volumes for all the cells in the model via an array. The k
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PORV | PORV is an array of real positive numbers assigning a pore volume to each cell in the model. Only the values in the currently defined input BOX needed be entered. Repeat counts may be used, for example 20*100.0. | None |
 | rb | rm3 | rcc |  |

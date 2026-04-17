@@ -11,7 +11,7 @@ This keyword activates and defines the parameters for the logarithm-based polyme
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1-1 | POLCON | A real positive value that defines the reference polymer concentration for the VELOCITY and VISFAC data for this keyword. | None |
 | lb/stb | kg/sm3 | gm/scc |  |

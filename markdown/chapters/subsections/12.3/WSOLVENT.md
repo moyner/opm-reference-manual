@@ -11,7 +11,7 @@ WSOLVENT defines a gas injection well’s solvent fraction in the injection stre
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name of a gas injection well for which the solvent fraction data is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 4 | SOLFRA | A real positive value greater than or equal to zero and less than or equal to one that defines the fraction of solvent in the gas well’s injection stream. This value may be specified using a User Defined Argument (UDA). | None |

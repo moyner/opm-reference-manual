@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but it will be parsed and its data ign
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | EQUATION | A defined character string that specifies the Equation of State to be used, and should be set to one of the following: | PR |
 | Notes: |  |  |  |
 

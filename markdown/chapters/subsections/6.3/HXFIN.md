@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | HXFIN | HXFIN is a vector of real numbers describing the ratio of cell size for the grid blocks in the x-direction in a Cartesian LGR grid. Repeat counts may be used, for example 2*2.0. | None |
 | dimensionless | dimensionless | dimensionless |  |

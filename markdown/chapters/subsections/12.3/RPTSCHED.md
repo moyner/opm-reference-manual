@@ -11,7 +11,7 @@ This keyword defines the data in the SCHEDULE section that is to be printed to t
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | FIP | Print the fluid in-place report. The parameter is assigned a value, OPTION, using the form FIP = OPTION, where OPTION is an integer variable set to: | FIP=2 |
 | 2 | FIPRESV | Print the reservoir volumes in-place report. | None |
 | 3 | NOTHING | Switches off all printed reports in the SCHEDULE section. | N/A |

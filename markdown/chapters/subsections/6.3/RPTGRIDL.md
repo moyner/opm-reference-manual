@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | ALLNCC | Print all the non-neighbor connections. | N/A |
 | 2 | COORD | Print the coordinate lines. | N/A |
 | 3 | COORDYS | Print the coordinate systems. | N/A |
@@ -23,7 +23,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 | …. |  | …. | N/A |
 | 24 | ALLNNC | ALLNNC is a defined positive integer that specifies the type of Non-Neighbor Connections (“NNC”) to be printed, and should be set to one of the follow: | N/A |
 | …. |  | …. | N/A |
-| 57 | EXTHOST | EXTHOSTS outputs host cells for Perpendicular Bisector (“PEBI”) [Heinemann, Z.E. and Brand, C.W. 1988. Gridding Techniques in Reservoir Simulation. Proc., First Intl. Forum on Reservoir Simulation, Alpbach, Austria, 339.] and  [Heinemann, Z.E., Brand, C.W., Munka, M. et al. 1991. Modeling Reservoir Geometry With Irregular Grids. SPE Res Eng 6 (2): 225–232. SPE-18412-PA. http://dx.doi.org/10.2118/18412-PA]  LGRs. |  |
+| 57 | EXTHOST | EXTHOSTS outputs host cells for Perpendicular Bisector (“PEBI”)^[Heinemann, Z.E. and Brand, C.W. 1988. Gridding Techniques in Reservoir Simulation. Proc., First Intl. Forum on Reservoir Simulation, Alpbach, Austria, 339.] and ^[Heinemann, Z.E., Brand, C.W., Munka, M. et al. 1991. Modeling Reservoir Geometry With Irregular Grids. SPE Res Eng 6 (2): 225–232. SPE-18412-PA. http://dx.doi.org/10.2118/18412-PA]  LGRs. |  |
 | …. |  | …. | N/A |
 | Notes: |  |  |  |
 

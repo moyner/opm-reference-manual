@@ -7,11 +7,11 @@
 
 #### Description
 
-WDFACCOR keyword defines the parameters to calculate a gas well’s connection D-factors (flow dependent skin factor) for each connection based on a correlation for the coefficient of inertial resistance, usually known as β, in Forchheimer’s flow equation [Dake, L.P. Fundamentals of Reservoir Engineering, Amsterdam, The Netherlands, Elsevier Science BV (1978)  Chapter 8.6, pages 252-257.], [Geertsma, J., 1974. Estimating the Coefficient of Inertial Resistance in Fluid Flow Through Porous Media. Soc.Pet.Eng.J., October: 445-450.],  [Gewers, C.W.W. and Nichol, L.R., 1969. Gas Turbulence Factor in a Microvugular Carbonate. J.Can.Pet.Tech., April.] and  [Wong, S.W., 1970. Effects of Liquid Saturation on Turbulence Factors for Gas Liquid Systems. J.Can.Pet.Tech., October]. This keyword uses Dake’s correlation to calculate the D-factor.
+WDFACCOR keyword defines the parameters to calculate a gas well’s connection D-factors (flow dependent skin factor) for each connection based on a correlation for the coefficient of inertial resistance, usually known as β, in Forchheimer’s flow equation^[Dake, L.P. Fundamentals of Reservoir Engineering, Amsterdam, The Netherlands, Elsevier Science BV (1978)  Chapter 8.6, pages 252-257.],^[Geertsma, J., 1974. Estimating the Coefficient of Inertial Resistance in Fluid Flow Through Porous Media. Soc.Pet.Eng.J., October: 445-450.], ^[Gewers, C.W.W. and Nichol, L.R., 1969. Gas Turbulence Factor in a Microvugular Carbonate. J.Can.Pet.Tech., April.] and ^[Wong, S.W., 1970. Effects of Liquid Saturation on Turbulence Factors for Gas Liquid Systems. J.Can.Pet.Tech., October]. This keyword uses Dake’s correlation to calculate the D-factor.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well D-factor correlation is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section. | None |
 | 2 | A | A real value greater than or equal to zero that defines the coefficient A in the D-factor correlation. | 0.0 |

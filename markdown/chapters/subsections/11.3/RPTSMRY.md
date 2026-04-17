@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | RPTSMRY | An integer value set to zero for no report, or one to produce the report. | 0 |
 | Notes: |  |  |  |
 

@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group’s artificial lift constraints are being defined. The group named FIELD is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
 | 2 | MXLIFT | A real positive value that defines the total amount of artificial lift available for this group and any subordinate groups. The units for MXLIFT are the same as that defined by the ALQ parameter on the VFPPROD keyword in the SCHEDULE section. For example, if ALQ has been set to GRAT on the VFPPROD keyword, then MXLIFT would be the maximum amount of gas lift gas available for this group and any subordinate groups, and the units would Mscf, assuming FIELD units had been activated in the RUNSPEC section. The default value of zero implies that there is no limit applied to the group and its subordinate groups. | 0 |

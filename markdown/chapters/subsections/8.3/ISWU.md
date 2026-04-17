@@ -11,7 +11,7 @@ ISWU defines the imbibition maximum water saturation for all the cells in the mo
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | ISWU | ISWU is an array of real numbers assigning the maximum water saturation values to each cell in the model. The number of entries should correspond to the NX x NY x NZ parameters on the DIMENS keyword. Repeat counts may be used, for example 30*0.70 | Taken from cell allocated relative permeability table. |
 | dimensionless | dimensionless | dimensionless |  |

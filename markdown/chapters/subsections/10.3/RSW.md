@@ -13,7 +13,7 @@ This is the non-standard method to initialize the model via enumeration and is s
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | RSW | RSW is an array of positive real numbers assigning the initial equilibration solution gas-water ratio values to each cell in the model. Repeat counts may be used, for example 20*1.30. | None |
 | Mscf/stb | sm3/sm3 | scc/scc |  |

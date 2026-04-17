@@ -38,6 +38,7 @@ format:
     css: styles.css
     code-fold: true
     toc: true
+    toc-depth: 3
     number-sections: true
     smooth-scroll: true
     link-external-newwindow: true
@@ -45,6 +46,7 @@ format:
     documentclass: scrreprt
     number-sections: true
     toc: true
+    toc-depth: 2
     colorlinks: true
     keep-tex: false
     geometry:

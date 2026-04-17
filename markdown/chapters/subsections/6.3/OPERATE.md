@@ -11,7 +11,7 @@ The OPERATE keyword performs a mathematical operation on a specified array or pa
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | Y | A character string of up to eight characters in length that defines the keyword identifying the array to be modified. | None |
 | 2 | I1 | A positive integer that defines the lower bound of the array in the I-direction to be modified must be greater than or equal to one and less than or equal to I2 and NX. | 1 |
 | 3 | I2 | A positive integer that defines the upper bound of the array in the I-direction to be modified must be greater than or equal to I1 and less than or equal to NX | NX |

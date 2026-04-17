@@ -15,7 +15,7 @@ The keyword is used in conjunction with the PVTWSALT keyword in the PROPS sectio
 
 
 | No. | Name | Description | Default |  |  |
-| --- | --- | --- | --- | --- | --- |
+| --- | --- | :------ | --- | --- | --- |
 | 1 | WATDEN | Field | Metric | Laboratory | None |
 | WATDEN is a real monotonically increasing positive row vector that defines the brine density at surface conditions for the given salt concentrations on the corresponding PVTWSALT keyword in the PROPS section. There should be one row element for each salt concentration columnar element (SALTCON) on the PVTWSALT keyword. |  |  |  |  |  |
 | lb/ft3 | kg/m | gm/cc |  |  |  |

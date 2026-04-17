@@ -13,7 +13,7 @@ See the WRFT keyword in the SCHEDULE section for a brief description of the RFT 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A columnar vector of character strings of up to eight characters in length for each item,  that defines the well name for which the RFT data should be written to the RFT file. Note that the WELNAME must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. If the WELNAME is left blank then the data is written out for all wells at the time they are first opened to flow. If the WELNAME is given, then the RFT data for the well at the time step the keyword is invoked is written out. | None |
 | 2 | RFT | A defined character string that sets the RFT data set output options and should be set to one of the following character strings. | NO |

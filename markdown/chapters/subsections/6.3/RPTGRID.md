@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | ALLNCC | Print all the non-neighbor connections. | N/A |
 | 2 | COORD | Print the coordinate lines. | N/A |
 | 3 | COORDYS | Print the coordinate systems. | N/A |

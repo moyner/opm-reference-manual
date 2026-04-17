@@ -11,7 +11,7 @@ DZV defines the size of grid blocks in the Z direction via a vector as opposed t
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DZV | DZV is a vector of real numbers describing the cell size for the grid blocks in the Z direction. Repeat counts may be used, for example 10*20.0. | None |
 | feet | m | cm |  |

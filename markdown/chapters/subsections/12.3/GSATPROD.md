@@ -13,7 +13,7 @@ This keyword is used to import additional fluid streams into the model from othe
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GRPNAME | A character string of up to eight characters in length that defines the satellite group name for which the group production import rates are being defined. The group named FIELD is the top most group and should not be used with this keyword. Note that the group hierarchy should be defined by the GRUPTREE keyword in the SCHEDULE section when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. Note that a satellite group cannot have subordinate groups or wells. | None |
 | 2 | ORAT | A real value, greater than or equal to zero, that defines the satellite’s surface oil production rate to be imported into the model. This value may be specified using a User Defined Argument (UDA). | 0.0 |

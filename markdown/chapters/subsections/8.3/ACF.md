@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but it will be parsed and its data ign
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | [ACF](#REF_HEADING_KEYWORD_ACF) | A series of real numbers that define the acentric factors for each of the compositional components active in the model. | None |
 | Notes: |  |  |  |
 

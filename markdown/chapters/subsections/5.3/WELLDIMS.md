@@ -11,7 +11,7 @@ WELLDIMS defines various well and group dimensions for the run. The commercial s
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MXWELS | A positive integer defining the maximum number of wells for this model. | 0 |
 | 2 | MXCONS | A positive integer defining the maximum number of grid block connections per well for this model. | 0 |
 | 3 | MXGRPS | A positive integer defining the maximum number of groups for this model. | 0 |

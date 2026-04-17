@@ -7,13 +7,13 @@
 
 #### Description
 
-The JFUNC keyword activates the Leverett-J-Function [Leverett, M. C.; “Capillary Behaviour in Porous Solids”, Trans. AIME (1941) 142, 152-168.] option which is a commonly used technique to normalize capillary pressure based on laboratory measured core plugs porosity and permeability values and the resulting capillary pressure data. The keyword performs the calculation based on the parameters on the this keyword combined with a cells porosity and permeability to perform the scaling globally.
+The JFUNC keyword activates the Leverett-J-Function^[Leverett, M. C.; “Capillary Behaviour in Porous Solids”, Trans. AIME (1941) 142, 152-168.] option which is a commonly used technique to normalize capillary pressure based on laboratory measured core plugs porosity and permeability values and the resulting capillary pressure data. The keyword performs the calculation based on the parameters on the this keyword combined with a cells porosity and permeability to perform the scaling globally.
 
 The keyword should only be used if end-point scaling is switched on using the ENDSCALE keyword in the RUNSPEC section.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | JFOPT | A character string that defines which capillary data sets the J-Function option should be applied to, based on the following options: | BOTH |
 | 2 | OWSTEN | A positive real number that defines oil-water surface tension used to de-normalized J-Function data entered in the PROPS section. | None |
@@ -28,7 +28,7 @@ The keyword should only be used if end-point scaling is switched on using the EN
 *Table 6.53: JFUNC Keyword Description*
 
 
-Just like the relative permeability data capillary pressure data are measured on core plugs with varying quality and perhaps from different reservoirs. It is therefore necessary to determine averaged data, before employing the data in engineering calculations. This is commonly done by using the Leverett J-function [Leverett, M. C.; “Capillary Behaviour in Porous Solids”, Trans. AIME (1941) 142, 152-168.], which is defined as:
+Just like the relative permeability data capillary pressure data are measured on core plugs with varying quality and perhaps from different reservoirs. It is therefore necessary to determine averaged data, before employing the data in engineering calculations. This is commonly done by using the Leverett J-function^[Leverett, M. C.; “Capillary Behaviour in Porous Solids”, Trans. AIME (1941) 142, 152-168.], which is defined as:
 
 
 $$

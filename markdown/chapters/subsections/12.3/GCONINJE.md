@@ -11,7 +11,7 @@ The GCONINJE keyword defines injection targets and constraints for groups, inclu
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group target and constraints are being defined. The group named FIELD is the top most group and should be used to set targets and constraints for the whole field. Note that the group hierarchy should be defined by the GRUPTREE keyword in the SCHEDULE, when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
 | 2 | TYPE | A defined character string that defines the type of injection fluid. TYPE should be set to one of the following character strings: | None |

@@ -9,7 +9,7 @@
 
 The DIFFCWAT keyword defines the water diffusion coefficients assuming the standard mole fraction formulation for each compositional component in the model and for each PVT region, for when the Molecular Diffusion option has been activated by the DIFFUSE keyword in the RUNSPEC section.
 
-This keyword is optional as OPM Flow will automatically calculate the coefficients assuming the mole fraction formulation, as described by Sandve et al. [Tor Harald Sandve, Sarah E. Gasda, Atgeirr Rasmussen, and Alf Birger Rustad. Convective dissolution in field scale CO2 storage simulation using the OPM Flow simulator. Submitted to TCCS 11 – Trondheim Conference on CO2 Capture, Transport and Storage Trondheim, Norway – June 21-23, 2021.], if the [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) and DIFFCWAT keywords are absent from the input deck.  The keyword thus allows one to overwrite the automatically calculated values.
+This keyword is optional as OPM Flow will automatically calculate the coefficients assuming the mole fraction formulation, as described by Sandve et al.^[Tor Harald Sandve, Sarah E. Gasda, Atgeirr Rasmussen, and Alf Birger Rustad. Convective dissolution in field scale CO2 storage simulation using the OPM Flow simulator. Submitted to TCCS 11 – Trondheim Conference on CO2 Capture, Transport and Storage Trondheim, Norway – June 21-23, 2021.], if the [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) and DIFFCWAT keywords are absent from the input deck.  The keyword thus allows one to overwrite the automatically calculated values.
 
 The keyword should only be used if the CO2STORE or [H2STORE](#REF_HEADING_KEYWORD_H2STORE) keyword and either the GASWAT or the GAS and WATER keywords in the RUNSPEC section, have also been activated for the gas-water two component model.
 
@@ -22,7 +22,7 @@ This is an OPM Flow keyword used with OPM Flow’s CO2STORE or [H2STORE](#REF_HE
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | CO2DIFF | A real positive number that declares the CO2 or H2 in water diffusion coefficient in the given PVT region. | None |
 | ft2/day | m2/day | cm2/hour |  |

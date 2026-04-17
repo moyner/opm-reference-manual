@@ -11,7 +11,7 @@ The PVTNUM keyword defines the PVT region numbers for each grid block, as such t
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | PVTNUM | PVTNUM defines an array of positive integers assigning a grid cell to a particular PVT region. The maximum number of PVTNUM regions is set by the NTPVT variable on the TABDIMS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 

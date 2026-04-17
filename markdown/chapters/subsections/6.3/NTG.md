@@ -11,7 +11,7 @@ NTG defines the Net-to-Gross Ratio (“NTG”) for all the cells in the model vi
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | NTG | NTG is an array of real numbers greater than or equal to zero and less than or equal to one, that are assigned the net-to-gross ratio values for each cell in the model. The number of entries should correspond to the NX x NY x NZ parameters on the DIMENS keyword. Repeat counts may be used, for example 200*0.850. | None |
 | dimensionless | dimensionless | dimensionless |  |

@@ -7,7 +7,7 @@
 
 #### Description
 
-PVTGW defines the gas PVT properties for dry gas [Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.] with vaporized water. This keyword should be used when the VAPWAT keyword has be declared in the RUNSPEC section indicating that that vaporized water is present in the dry gas phase. The keyword may be used for gas-water and oil-water-gas input decks that contain the dry gas and vaporized water phases.
+PVTGW defines the gas PVT properties for dry gas^[Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.] with vaporized water. This keyword should be used when the VAPWAT keyword has be declared in the RUNSPEC section indicating that that vaporized water is present in the dry gas phase. The keyword may be used for gas-water and oil-water-gas input decks that contain the dry gas and vaporized water phases.
 
 
 ::: {.callout-note}
@@ -16,7 +16,7 @@ This is an OPM Flow specific keyword for the simulator’s Water Vaporization Mo
 
 
 | No. | Name | Description | Default |  |
-| --- | --- | --- | --- | --- |
+| --- | --- | :------ | --- | --- |
 | Field | Metric | Laboratory |  |  |
 | 1 | PRESS | A real monotonically increasing down the column vector that defines the gas phase pressure, associated with the corresponding saturated water-gas ratio (“WGR”) or Rw,  the gas formation volume factor, and the gas viscosity for the stated saturated RWS. For a given PRESS the variability of the gas formation volume factor and the gas viscosity with respect to the under-saturated Rw is optionally included as a sub table under RWU, FVFU and VISU columns, that is it is not necessary to repeat PRESS for each sub table entry. However, each sub table must be terminated by a “/”. The under saturated Rw entries are optional, except for perhaps the last  PRESS entry to define the PVT properties above the initial saturation pressure. | None |  |
 | psia | barsa | atma |  |  |

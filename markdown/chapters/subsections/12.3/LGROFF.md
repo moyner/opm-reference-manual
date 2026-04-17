@@ -13,7 +13,7 @@ Currently, OPM Flow does not support the local grid refinement feature and there
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | LGRNAME | A character string of up to eight characters in length that defines the LGR name for which the LGR is being deactivated. The LGR must have been previously defined by the CARFIN (Cartesian LGR grid) or RADIN/RADIN4 (radial LGR grid) keywords in the GRID section. | None |
 | 2 | MNWELLS | A positive integer greater than or equal to zero that defines the minimum number of active wells, below which the LGR will be automatically deactivated. The default value of zero implies that there is no limit to the number of wells and results in the LGR being unconditionally being deactivated. | 0 |
 | Notes: |  |  |  |

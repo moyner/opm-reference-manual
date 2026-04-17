@@ -13,7 +13,7 @@ The keyword is used by the Enumeration Initialization method to initialize the m
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PRESSURE | PRESSURE is an array of real positive numbers assigning the initial equilibration pressures to each cell in the model. Repeat counts may be used, for example 20*4200.0. | None |
 | psia | barsa | atma |  |

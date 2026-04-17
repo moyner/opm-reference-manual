@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well production targets and constraints data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | VFPTAB | A positive integer greater than or equal to zero that references the production vertical lift performance table (VFPPROD), containing the tubing head temperature data for the well. Note, a well must have both a VFPPROD pressure and a VFPPROD temperature table, if the tubing head temperatures are to be calculated. Alternatively, if a constant tubing head temperature for a production well is to be defined via the TEMP parameter, then VFPTAB should be defaulted with 1* instead. | None |

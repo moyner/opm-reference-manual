@@ -13,7 +13,7 @@ Wells are allocated to groups when the wells are specified by the WELSPECS keywo
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group’s gas lift optimization parameters are being defined. The group named FIELD is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
 | 2 | MXLIFT | A real value that defines the total amount of gas lift gas available for this group and any subordinate groups, multiplied by their respective efficiency factors. The units for MXLIFT are the same as that defined by the ALQ parameter on the VFPPROD keyword in the SCHEDULE section. In this case ALQ should be GRAT on the VFPPROD keyword, as MXLIFT applies to the maximum amount of gas lift gas available. The default value of zero, or a negative value implies that there is no limit applied to the group and its subordinate groups. | 0 |

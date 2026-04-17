@@ -11,7 +11,7 @@ The RESTART keyword defines the parameters to restart the simulation from a prev
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | RSNAME | The RSNAME variable is a character string that defines the root name of the RESTART file to be read into the current input deck. | None |
 | 2 | RSNUM | A positive integer that defines the restart point on the RESTART file to be read and to be used to initialize the model. When OPM Flow writes a restart point a message is printed to the *.PRT file indicating the time step the restart was written out. | None |
 | 3 | RSTYPE | A defined character sting set to SAVE to read the restart data from the SAVE file, otherwise defaulted to 1* to read the data from the RESTART file. The SAVE file option is not supported by OPM Flow and should be defaulted with 1*. | 1* |
@@ -23,11 +23,11 @@ The RESTART keyword defines the parameters to restart the simulation from a prev
 
 The most direct way to start a restart run is to:
 
-    - Copy the existing data file that created the RESTART file and give it a new name. For example if the RESTART file is from a case named NOR-OPM-A01.DATA, then the copied data file could be named NOR-OPM-A01-R1.DATA.
-    - Edit the copied data file (NOR-OPM-A01-R1.DATA) and delete all equilibration keywords (EQUIL, RSVD, etc.) or the enumeration equilibration keywords (PRESSURE, SGAS, SOIL. SWAT, etc.) in the SOLUTION section used to initialize the model.
-    - In the SOLUTION section of NOR-OPM-A01-R1.DATA file insert the RESTART keyword, using NOR-OPM-A01 as RSNAME and the required RSNUM value for the time step to restart from.
-    - In the SCHEDULE section of NOR-OPM-A01-R1.DATA file insert the SKIPREST keyword at the very beginning of the SCHEDULE section. The SKIPREST keyword causes the simulator to only read in data it requires for restarting the run up to the RESTART point (RSNUM). Note that certain keywords always need to be present in a restart run in the SCHEDULE section as the data is not stored on the RESTART file, for example the VFP tables (VFPPROD and VFPINJ keywords). The SKIPREST keyword automatically processes the input deck and reads the required data.
-    - In the SCHEDULE section of NOR-OPM-A01-R1.DATA file after the RESTART point make any required changes, save the file and run the NOR-OPM-A01-R1.DATA with OPM Flow.
+- Copy the existing data file that created the RESTART file and give it a new name. For example if the RESTART file is from a case named NOR-OPM-A01.DATA, then the copied data file could be named NOR-OPM-A01-R1.DATA.
+- Edit the copied data file (NOR-OPM-A01-R1.DATA) and delete all equilibration keywords (EQUIL, RSVD, etc.) or the enumeration equilibration keywords (PRESSURE, SGAS, SOIL. SWAT, etc.) in the SOLUTION section used to initialize the model.
+- In the SOLUTION section of NOR-OPM-A01-R1.DATA file insert the RESTART keyword, using NOR-OPM-A01 as RSNAME and the required RSNUM value for the time step to restart from.
+- In the SCHEDULE section of NOR-OPM-A01-R1.DATA file insert the SKIPREST keyword at the very beginning of the SCHEDULE section. The SKIPREST keyword causes the simulator to only read in data it requires for restarting the run up to the RESTART point (RSNUM). Note that certain keywords always need to be present in a restart run in the SCHEDULE section as the data is not stored on the RESTART file, for example the VFP tables (VFPPROD and VFPINJ keywords). The SKIPREST keyword automatically processes the input deck and reads the required data.
+- In the SCHEDULE section of NOR-OPM-A01-R1.DATA file after the RESTART point make any required changes, save the file and run the NOR-OPM-A01-R1.DATA with OPM Flow.
 
 See also RPTRST, RPTSCHED and SKIPREST keywords.
 

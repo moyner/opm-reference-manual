@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Description | Default |
-| --- | --- | --- |
+| --- | :------ | --- |
 | 1 - 273 | Commercial simulator options keyword, used to to switch on or off specific features. The keyword is commonly used to revert the simulator's behavior to past functionality that has been depreciated in the current version of the commercial simulator, for backward compatibility with previous models. | 0 |
 | Notes: |  |  |
 

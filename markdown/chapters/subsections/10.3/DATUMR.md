@@ -11,7 +11,7 @@ The DATUMR keyword defines the datum depth for each fluid in-place region (FIPNU
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DATUMR | DATUMR is a vector of positive values that defines the datum depth for each fluid in-place region. | None |
 | feet | m | cm |  |

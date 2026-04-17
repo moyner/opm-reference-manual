@@ -13,7 +13,7 @@ This is the non-standard method to initialize the model via enumeration and is s
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | RV | RV is an array of real positive numbers assigning the initial equilibration vaporized oil-gas ratio values to each cell in the model. Repeat counts may be used, for example 20*0.00720 | None |
 | stb/Mscf | sm3/sm3 | scc/scc |  |

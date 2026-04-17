@@ -11,7 +11,7 @@ IPCW defines the maximum imbibition water-oil or water-gas capillary pressure va
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | IPCW | IPCW is an array of positive real numbers assigning the maximum imbibition water capillary pressure values for each cell in the model. Repeat counts may be used, for example 30*100.0. | None |
 | psia | bars | atm |  |

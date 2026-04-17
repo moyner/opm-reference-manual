@@ -18,7 +18,7 @@ This is an OPM Flow specific keyword that employs an alternative polymer flood m
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1-1 | SKPRPNUM | A positive integer value greater than zero and less than or equal to the NTSKPOLY variable, as defined on the PINTDIMS keyword in the RUNSPEC section, that defines the SKPRPOLY Polymer Molecular Weight Model polymer injection skin pressure table number. | None |
 | 1-2 | POLCON | A real positive value that the defines the reference polymer concentration  for the table. | None |

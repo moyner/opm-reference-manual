@@ -16,7 +16,7 @@ This is an OPM Flow specific keyword that employs an alternative polymer flood m
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length, that defines the water injection well name, for which the well water injection skin table, SKKPRWAT, and the polymer skin injection table, SKPRPOLY, are to be assigned. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | SKPRWAT | A positive integer value that defines the corresponding SKPRWAT table to be allocated to the water injection well. A value less than or equal to zero means that no SKPRWAT table is allocated to the well | 0 |

@@ -13,7 +13,7 @@ In addition to defining gas consumption, the keyword can also be used to define 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group gas consumption is being defined. The group named FIELD is the top most group and should be used to set the fuel consumption for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
 | 2 | GASFUEL | A real value that defines the gas consumption, that is the fuel gas consumed by the group, either defined as a volumetric rate or as a fraction of the group’s gas production.  The two options are implemented by: This value may be specified using a User Defined Argument (UDA). | 0.0 |

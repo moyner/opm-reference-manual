@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | LZ | LZ is an array of real numbers describing the “representative” cell size in the Z direction for each cell in the model. Repeat counts may be used, for example 10*100.0. | 0 |
 | feet | m | cm |  |

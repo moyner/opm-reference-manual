@@ -20,7 +20,7 @@ This is an OPM Flow specific keyword for the simulator’s scripting facility us
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | PYACTION | PYACTION declares the start of a PYACTION Definition Section.  This is then followed by one record that defines the name of the action and a string indicating the number of times the action should be run; this is then followed by a second record indicating the file containing the Python script. | Not Applicable |  |
 | 1-1 | ACTNAME | ACTNAME is a character sting of any length enclose in quotes that defines the name of this action definition. | None |
 | 1-2 | ACTNSTEP | ACTNSTEP is a defined character string that indicates the number of times the action should be performed, and should be set to one of the following: Note that the FIRST_TRUE option is only supported for back compatibility when using the deprecated run() function style Python scripts. | SINGLE |
@@ -52,10 +52,10 @@ bash% pydoc opm.io.sim.SummaryState
 
 ```
 
-The Python script file (FILENAME in the PYACTION keyword) should be a standard Python module [A Python module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended. Within a module, the module’s name (as a string) is available as the value of the global variable __name__.] that defines the PYACTION script and should consist of 100% pure Python.  The PYACTION Python module (FILENAME) is imported during processing of the input deck and as such this implies:
+The Python script file (FILENAME in the PYACTION keyword) should be a standard Python module^[A Python module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended. Within a module, the module’s name (as a string) is available as the value of the global variable __name__.] that defines the PYACTION script and should consist of 100% pure Python.  The PYACTION Python module (FILENAME) is imported during processing of the input deck and as such this implies:
 
-    - Basic Python syntax checking is performed when the Python module (FILENAME) is read in.
-    - It is verified that the module has the correct format.
+- Basic Python syntax checking is performed when the Python module (FILENAME) is read in.
+- It is verified that the module has the correct format.
 
 The syntax of the Python module (FILENAME) is given in Table 12.61 together with a description of the Python module opm_embedded.
 
@@ -71,7 +71,7 @@ The syntax of the Python module (FILENAME) is given in Table 12.61 together with
 
 *Table 12.61: PYACTION Module Script Definition*
 
-See also the PYINPUT and PYEND keywords in the GRID [Note the PYINPUT and PYEND keywords can be used in the GRID, EDIT, PROPS, SOLUTION, SUMMARY and SCHEDULE sections, but are described in the GRID section.] section which are also part of OPM Flow’s Python scripting facility, that process standard Python commands that can be used to manipulate and define the simulators input parameters during processing of the input deck.  The main purpose of the facility is to script the construction of the various keywords.
+See also the PYINPUT and PYEND keywords in the GRID^[Note the PYINPUT and PYEND keywords can be used in the GRID, EDIT, PROPS, SOLUTION, SUMMARY and SCHEDULE sections, but are described in the GRID section.] section which are also part of OPM Flow’s Python scripting facility, that process standard Python commands that can be used to manipulate and define the simulators input parameters during processing of the input deck.  The main purpose of the facility is to script the construction of the various keywords.
 
 
 #### Examples

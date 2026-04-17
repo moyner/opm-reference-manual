@@ -11,7 +11,7 @@ The REGDIMS keyword defines the maximum number of regions for various region arr
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NTFIP | A positive integer defining the maximum number of regions in the FIPNUM region array.  If additional sets of fluid in-place regions have been defined, as per the FIPxxxxx series of fluid in-place region keywords, then NTFIP should be set to the maximum number of regions in either the FIPNUM or FIPxxxxx associated arrays. Thus, if the maximum number of regions in the FIPNUM array is 12, and the maximum value in the FIPxxxxx series of arrays is 20, then 20 should be entered for NTFIP. Note that this parameter may also be set on the TABDIMS keyword as well. If NTFIP is set in both places, then the maximum value is used. | 1 |
 | 2 | NMFIPR | A positive integer defining the total maximum number of fluid in-place regions. The number of FIPNUM regions are defined by NTFIP. However, if additional sets of fluid in-place regions are required, as per the FIPxxxxx series of fluid in-place region keywords, then these are to be defined here by adding the number of FIPxxxxx arrays to the value NTFIP. So for example, if NTFIP equals five and the number of distinct FIPxxxxx regions is three, then the value to enter for NMFIPR is eight. | 1 |
 | 3 | NRFREG | A positive integer defining the maximum number of independent reservoir regions in the ISOLNUM region array. | 0 |

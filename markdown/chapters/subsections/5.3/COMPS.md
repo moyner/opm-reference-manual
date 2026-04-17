@@ -18,7 +18,7 @@ This keyword is only supported by OPM Flow when the two component gas-water CO2 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | COMPS | A positive integer defining the number of compositional components active in the model. Only the default value of two is currently supported by OPM Flow. | 2 |
 | Notes: |  |  |  |
 

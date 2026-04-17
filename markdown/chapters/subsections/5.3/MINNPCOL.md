@@ -23,7 +23,7 @@ See also section 2.2 Running OPM Flow 2023-04 From The Command Line on how to se
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MINNPCOL | A positive integer that defines the minimum number of Newton iterations within a timestep where well targets may be updated. | 3 |
 | Notes: |  |  |  |
 

@@ -11,7 +11,7 @@ This keyword defines a time interval for writing out the SUMMARY data to the SUM
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SUMSTEP | SUMSTEP is a real positive number that defines the time interval for which the first time step of data will be written to the SUMMARY file (and the RSM file if RSM output has been activated). For example, if SUMSTEP is set to 30 days, and if the simulator takes time steps of 0, 5, 10, 16,  24, 30, 40, 45, 60, 90 days. Then the SUMMARY data will be written out at time steps 0, 30, 40 and 60 days. | None |
 | days | days | hours |  |

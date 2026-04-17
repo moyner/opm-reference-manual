@@ -18,7 +18,7 @@ This is an OPM Flow specific keyword that employs an alternative polymer flood m
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SPOLYMW | SPOLYMW is an array of real positive numbers that are greater than or equal to zero assigning the initial equilibration polymer molecular weights to each cell in the model.  Repeat counts may be used, for example 20*5.0 | 0,0 |
 | lb/lb-M | kg/kg-M | gm/gm-M |  |

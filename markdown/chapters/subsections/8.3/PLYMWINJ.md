@@ -18,7 +18,7 @@ This is an OPM Flow specific keyword that employs an alternative polymer flood m
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1-1 | PLYMWNUM | A positive integer value greater than zero and less than or equal to the NTPMWINJ variable, as defined on the PINTDIMS keyword in the RUNSPEC section, that defines the PLYMWINJ Polymer Molecular Weight Model throughput and velocity table number. | None |
 | 2-1 | THRUPUT | A real positive monotonically increasing vector, that defines the polymer throughput values.  The first entry should be zero to define a no throughput data set, and each vector record should be on a separate line terminated by a “/”. | None |

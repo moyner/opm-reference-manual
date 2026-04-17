@@ -17,7 +17,7 @@ The keyword can be used with all grid types.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | TEMPI | TEMPI is an array of real positive numbers assigning the initial temperature to each cell in the model. Repeat counts may be used, for example 20*100.0. | None |
 | oF | oC | oC |  |

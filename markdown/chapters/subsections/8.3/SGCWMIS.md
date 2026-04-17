@@ -11,7 +11,7 @@ SGCWMIS defines the dependency between the miscible critical gas saturation and 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SWAT | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating atone, that defines the water  saturation. | None |
 | dimensionless | dimensionless | dimensionless |  |

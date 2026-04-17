@@ -7,7 +7,7 @@
 
 #### Description
 
-SWOFLET defines the relative permeability and capillary pressure parameters for the water-oil LET family of models. Both the oil and water phases should be made active in the model via the OIL and WATER keywords in the RUNSPEC section. See section 8.2.6Saturation Table Generation - LET Functions and Lomeland et al. [Lomeland F., Ebeltoft E. and Thomas W.H., 2005. A New Versatile Relative Permeability Correlation. Paper SCA2005-32 presented at the International Symposium of the Society of Core Analysts held in Toronto, Canada, 21-25 August, 2005.], [Lomeland F. and Ebeltoft E., 2008. A New Versatile Capillary Pressure Correlation. Paper SCA2008-08 presented at the International Symposium of the Society of Core Analysts held in Abu Dhabi, UAE, 29 Oct. – 2 Nov., 2008.]  [Lomeland F., Hasanov B., Ebeltoft E. and Berge M., 2012. A Versatile Representation of Up-scaled Relative Permeability for Field Applications. Paper SPE 154487-MS presented at the EAGE Annual Conference & Exhibition incorporating SPE Europec held in Copenhagen, Denmark, 4-7 June 2012.] and  [Lomeland F., 2018.Overview Of The Let Family Of Versatile Correlations For Flow Functions. Paper SCA2018-056 presented at the International Symposium of the Society of Core Analysts held in Trondheim, Norway, 27-30 August 2018.] for further information on the model.
+SWOFLET defines the relative permeability and capillary pressure parameters for the water-oil LET family of models. Both the oil and water phases should be made active in the model via the OIL and WATER keywords in the RUNSPEC section. See section 8.2.6Saturation Table Generation - LET Functions and Lomeland et al.^[Lomeland F., Ebeltoft E. and Thomas W.H., 2005. A New Versatile Relative Permeability Correlation. Paper SCA2005-32 presented at the International Symposium of the Society of Core Analysts held in Toronto, Canada, 21-25 August, 2005.],^[Lomeland F. and Ebeltoft E., 2008. A New Versatile Capillary Pressure Correlation. Paper SCA2008-08 presented at the International Symposium of the Society of Core Analysts held in Abu Dhabi, UAE, 29 Oct. – 2 Nov., 2008.] ^[Lomeland F., Hasanov B., Ebeltoft E. and Berge M., 2012. A Versatile Representation of Up-scaled Relative Permeability for Field Applications. Paper SPE 154487-MS presented at the EAGE Annual Conference & Exhibition incorporating SPE Europec held in Copenhagen, Denmark, 4-7 June 2012.] and ^[Lomeland F., 2018.Overview Of The Let Family Of Versatile Correlations For Flow Functions. Paper SCA2018-056 presented at the International Symposium of the Society of Core Analysts held in Trondheim, Norway, 27-30 August 2018.] for further information on the model.
 
 The keyword is used as a replacement for the SWOF keyword for three-phase oil-gas-water systems, and the  LET series of keywords cannot be combined with the standard set of relative permeability keywords.
 
@@ -18,7 +18,7 @@ This is an OPM Flow specific keyword and will therefore cause an error in the co
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SWL | SWL is a real positive number less than one, that defines the connate water saturation, that is the smallest water saturation in the LET function. | 0,0 |
 | dimensionless | dimensionless | dimensionless |  |
@@ -59,7 +59,7 @@ This is an OPM Flow specific keyword and will therefore cause an error in the co
 *Table 8.190: SWOFLET Keyword Description*
 
 
-Note there a two versions of the LET functions, LET255 for two-phase flowing conditions and LETx [Lomeland F. and Ebeltoft E., 2013. Versatile Three-phase Correlations for Relative Permeability and Capillary Pressure. Paper SCA2013-034 presented at the International Symposium of the Society of Core Analysts held in Napa Valley, California, USA, 16-19 September, 2013.] for three-phase flowing conditions.  This keyword implements the LET version for an oil-water system.
+Note there a two versions of the LET functions, LET255 for two-phase flowing conditions and LETx^[Lomeland F. and Ebeltoft E., 2013. Versatile Three-phase Correlations for Relative Permeability and Capillary Pressure. Paper SCA2013-034 presented at the International Symposium of the Society of Core Analysts held in Napa Valley, California, USA, 16-19 September, 2013.] for three-phase flowing conditions.  This keyword implements the LET version for an oil-water system.
 
 The functions are dependent on the drainage and imbibition cycle of the wetting phase as well as drainage and inhibition cycle number, since a reservoir may undergo several flooding events. To account for this the system defines the flooding event using the three saturations: Sw, So, and Sg together with the state of the three saturations during the flooding event. The saturation state can be Increasing, Decreasing, or Constant, for a given flooding event cycle number (n). Thus, Sw(D), So(I), Sg(C)1or DIC1, means the water phase is decreasing, the oil phase is increasing and the gas phase is constant for the primary or first cycle (n equals one). This is case for when oil is migrating into the reservoir rock and displacing the initial water contained with the reservoir.
 

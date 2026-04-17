@@ -15,7 +15,7 @@ Each VFPINJ table must be entered with a separate VFPINJ keyword that consists o
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1-1 | VFPTAB | A positive integer greater than zero and less than or equal to the MXVFPTAB variable as defined on the VFPIDIMS keyword in the RUNSPEC section,  that defines the vertical flow performance table number. | None |
 | 1-2 | VFPREF | A real positive value that defines the reference depth used to generate  this VFPINJ table data set. OPM Flow automatically corrects any difference between VFPREF and the BHPREF on the WELSPECS and WPAVDEP keywords in the SCHEDULE section, using the current hydrostatic head. | None |

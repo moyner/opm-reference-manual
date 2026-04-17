@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NTHRBL | A positive integer that defines the maximum number of Herschel-Bulkley versus polymer concentration tables to be used with the polymer model, as entered via the FHERCHBL keyword in the PROPS section. The tables are allocated to different parts of the grid by the HBNUM keyword in the REGIONS section | NTPVT |
 | 2 | NLNHBL | A positive integer that defines the maximum number of rows for each table entered by the FHERCHBL keyword in the PROPS section. | 2 |
 | Notes: |  |  |  |

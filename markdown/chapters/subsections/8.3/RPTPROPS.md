@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | PVDG | Print dry gas PVT tables | N/A |
 | 2 | PVTG | Print wet gas PVT tables | N/A |
 | 3 | SGFN | Print gas relative permeability saturation function tables. | N/A |

@@ -7,13 +7,13 @@
 
 #### Description
 
-The AQUFET keyword defines Fetkovich [Fetkovich, M. J. “A Simplified Approach to Water Influx Calculations - Finite Aquifer Systems,” Journal of Petroleum Technology, (1971) 23, No. 7, 814-828.] analytical aquifers, the aquifer properties, together with the cell connections to the aquifer. Each row entry in the AQUFETP keyword defines one Fetkovich analytical aquifer and one cell face to be connected to the aquifer.
+The AQUFET keyword defines Fetkovich^[Fetkovich, M. J. “A Simplified Approach to Water Influx Calculations - Finite Aquifer Systems,” Journal of Petroleum Technology, (1971) 23, No. 7, 814-828.] analytical aquifers, the aquifer properties, together with the cell connections to the aquifer. Each row entry in the AQUFETP keyword defines one Fetkovich analytical aquifer and one cell face to be connected to the aquifer.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped; however, see the AQUFETP keyword in the SOLUTION section and AQUANCON keyword in the GRID section, on how to define and connect Fetkovich analytical aquifers.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DATUM | DATUM is a single positive value that defines the Fetkovich reference datum depth for PRESS. | None |
 | feet | m | cm |  |

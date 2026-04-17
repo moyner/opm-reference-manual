@@ -11,7 +11,7 @@ The GCONPROD keyword defines production targets and constraints for groups, incl
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group target and constraints are being defined. The group named FIELD is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword in the SCHEDULE section, when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
 | 2 | TARGET | A defined character string that specifies the production rate control mode for the group. The simulator will attempt to meet the TARGET rate as defined by remaining items on this keyword. TARGET should be set to one of the following character strings: Note that the commercial simulator includes additional options (not listed above) that are not currently supported by OPM Flow. | None |

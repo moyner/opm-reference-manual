@@ -16,7 +16,7 @@ This is an OPM Flow specific keyword and will therefore cause an error in the co
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | IBRANCH | A positive integer greater than or equal to one and less than or equal to MXBRAN on WSEGDIMS keyword in the RUNSPEC section that defines the branch number of a segment. All segments on the main stem must have IBRANCH set to one and lateral branches should have values between two and MXSEGS on the  WSEGDIMS keyword in the RUNSPEC section. Only the default value of one is currently supported, that is only the main branch of a multi-segment well is supported,  or a single trajectory for a conventional well. | 1 |

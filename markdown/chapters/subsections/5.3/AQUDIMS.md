@@ -11,7 +11,7 @@ The AQUDIMS keyword defines the dimensions of the various aquifer property data.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MXNAQN | A positive integer value that defines the AQUNUM keyword maximum number of lines associated with this keyword, that is the maximum number of numerical aquifers | 1 |
 | 2 | MXNAQC | A positive integer value that defines the AQUCON keyword maximum number of lines of connection data associated with this keyword, that is the maximum number of lines of connection data for numerical aquifers. | 1 |
 | 3 | NIFTBL | A positive integer value that defines the AQUTAB keyword maximum number of Carter-Tracy aquifer tables associated with this keyword. | 1 |

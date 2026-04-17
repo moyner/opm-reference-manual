@@ -11,7 +11,7 @@ This keyword controls the output of a standard GRID or extended GRID file, as we
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NGRID | A positive integer that controls the output of the GRID geometry file: Only the default value of zero is supported. | 0 |
 | 2 | NEGRID | A positive integer that controls the output of the EGRID geometry file: Only the default value of one is supported. | 1 |
 | Notes: |  |  |  |

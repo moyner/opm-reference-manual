@@ -16,7 +16,7 @@ This is an OPM Flow keyword used with OPM Flow’s CO2STORE and GASWAT keywords 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NCOMPS | A positive integer defining the maximum number of compositional components in the model. Secondly the number of components must be the same as that enter via the COMPS keyword in the RUNSPEC section. Only the default value of two is currently supported by OPM Flow. | 2 |
 | Notes: |  |  |  |
 

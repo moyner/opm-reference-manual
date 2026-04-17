@@ -13,7 +13,7 @@ The RPTRST keyword should be followed by a series of character strings that indi
 
 
 | No. | Mnemonic | Description | Array Name |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | ALLPROPS | An alias for the BG, BO, BW, DEN, KRG, KRO, KRW, VGAS, VOIL and VWAT mnemonics combined that writes all the associated properties. |  |
 | 2 | BASIC | The BASIC mnemonic defines the frequency at which the restart data and the additional requested data is written to the RESTART file. The mnemonic is assigned a value, using the form BASIC=OPTION, where OPTION is an integer variable set to one of the following: |  |
 | 3 | BG | Gas formation volume factor. | 1OVERBG |
@@ -57,7 +57,7 @@ Note that OPM Flow automatically writes out all the data required to make a rest
 
 
 | No. | Mnemonic | Description | Array Name |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | BIOFILM | Biofilm volume fraction used when the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) or MICP option has been activated in the RUNSPEC section. | BIOFILM |
 | 2 | CALCITE | Calcite volume fraction used when the MICP option has been activated in the RUNSPEC section. | CALCITE |
 | 3 | FOAM | Foam concentration used when the FOAM option has been activated in the RUNSPEC section. | FOAM |
@@ -101,7 +101,7 @@ If the --enable-opm-rst-file=true command line option has been specified then th
 
 
 | No. | Mnemonic | Description | Array Name |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | XMFCO2 | CO2 liquid-phase mole fractions written when the CO2STORE option has been activated in the RUNSPEC section. | XMFCO2 |
 | 2 | XMFH2 | H2 liquid-phase mole fractions written when the [H2STORE](#REF_HEADING_KEYWORD_H2STORE) option has been activated in the RUNSPEC section. | XMFH2 |
 | 3 | YMFWAT | Water gas-phase mole fractions written when either the CO2STORE or [H2STORE](#REF_HEADING_KEYWORD_H2STORE) option has been activated in the RUNSPEC section. | YMFWAT |

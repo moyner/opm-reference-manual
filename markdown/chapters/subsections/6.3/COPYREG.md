@@ -11,7 +11,7 @@ The COPYREG keyword copies a specified array or part of an array based on cells 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | ARRAY-1 | A character string of up to eight characters in length that defines the keyword identifying the array to be copied from. | None |
 | 2 | ARRAY-2 | A character string of up to eight characters in length that defines the keyword identifying the array to be copied to. | None |
 | 3 | REGION NUMBER | Integer REGION NUMBER is the region for which the array data in (1) should be copied to array data in (2). | None |

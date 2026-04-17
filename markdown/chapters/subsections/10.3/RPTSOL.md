@@ -13,7 +13,7 @@ OPM Flow provides only limited supported for this keyword and will ignore the un
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | DENO | Print the oil reservoir density array | N/A |
 | 2 | EQUIL | Print the equilibration report. | N/A |
 | 3 | FIP | Print the fluid in-place report. The parameter is assigned a value, OPTION, using the form FIP=OPTION, where OPTION is an integer variable set to: | FIP=2 |

@@ -11,7 +11,7 @@ IPCG defines the maximum imbibition gas-oil capillary pressure values for all th
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | IPCG | IPCG is an array of positive real numbers assigning the maximum imbibition gas capillary pressure values for each cell in the model. Repeat counts may be used, for example 30*100.0. | None |
 | psia | bars | atm |  |

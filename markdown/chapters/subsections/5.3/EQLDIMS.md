@@ -11,7 +11,7 @@ The EQLDIMS keyword defines the maximum number of properties associated with equ
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NTEQUL | A positive integer value that defines the number of equilibration regions entered using the EQLNUM keyword in the REGIONS section and the number of entries associated with the EQUIL keyword in the SOLUTION section. | 1 |
 | 2 | NPRSVD | A positive integer value setting the number of pressure versus depth entries used by OPM Flow in determining equilibration parameters. Unless there is a requirement for a very fine equilibration this parameter should be defaulted. | 100 |
 | 3 | NDRXVD | A positive integer value that defines the maximum number of depth entries in equilibration property versus depth tables (RSVD, RVVD, PBVD or PDVD etc.) as defined in the SOLUTION section. | 20 |

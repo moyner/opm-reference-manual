@@ -11,7 +11,7 @@ The MULTNUM keyword defines the inter-region transmissibility region numbers for
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MULTNUM | MULTNUM defines an array of positive integers assigning a grid cell to a particular inter-region transmissibility region. The maximum number of MULTNUM regions is set by the NRMULT variable on the GRIDOPTS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 

@@ -7,7 +7,7 @@
 
 #### Description
 
-The SIGMAV keyword defines a dual porosity matrix to fracture multiplier, sigma, that is applied to individual cells, for when the Dual Porosity model has been invoked by either the DUALPORO or the DUALPERM keywords in the RUNSPEC section. Sigma (σ) takes into account the matrix-fracture interface area per unit volume and was defined by Kazemi et al [Kazemi, H., Merrill JR., L. S., Porterfield, K. L., and Zeman, P. R. “Numerical Simulation of Water-Oil Flow in Naturally Fractured Reservoirs,” paper SPE 5719, Society of Petroleum Engineers Journal (1976) 16, No. 6, 317-326.] to be:
+The SIGMAV keyword defines a dual porosity matrix to fracture multiplier, sigma, that is applied to individual cells, for when the Dual Porosity model has been invoked by either the DUALPORO or the DUALPERM keywords in the RUNSPEC section. Sigma (σ) takes into account the matrix-fracture interface area per unit volume and was defined by Kazemi et al^[Kazemi, H., Merrill JR., L. S., Porterfield, K. L., and Zeman, P. R. “Numerical Simulation of Water-Oil Flow in Naturally Fractured Reservoirs,” paper SPE 5719, Society of Petroleum Engineers Journal (1976) 16, No. 6, 317-326.] to be:
 
 
 $$

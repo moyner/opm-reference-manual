@@ -11,7 +11,7 @@ The AQUFLUX keyword defines the properties of Constant Flux Analytical Aquifers,
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | AQUID | A positive integer greater than or equal to one and less than or equal to NANAQ on the AQUDIMS keyword in the RUNSPEC section, that defines the AQUFLUX aquifer number. | 1 |
 | ‍2 ‍ | AQFLUX | A real positive value the defines the aquifer water influx rate, per unit area of the connected grid cell face. | None |

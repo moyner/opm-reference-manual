@@ -13,7 +13,7 @@ This keyword can only be used if OPM Flow’s thermal option has been activated 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | HEATCR | HEATCR is an array of real positive numbers that define reservoir rock volumetric heat capacity of a grid block. Repeat counts may be used, for example 3000*25.0 | None |
 | Btu/ft3/°R | kJ/m3/K | J/cm3/K |  |

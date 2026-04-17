@@ -11,7 +11,7 @@ Critical fluid saturations are determined from the relative permeability tables,
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | TOLCRIT | TOLCRIT is a real positive number greater than zero and less than one that defines the critical saturation tolerance used to determine the critical saturation of a fluid in the relative permeability tables. The default value of 1 x 10-6 means that relative permeabilty values less than this value will be treated as being equal to zero. | 1 x 10-6 |
 | dimensionless | dimensionless | dimensionless |  |

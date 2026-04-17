@@ -16,7 +16,7 @@ This is an OPM Flow specific keyword that employs an alternative polymer flood m
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length, that defines the water injection well name, for which the well polymer molecular injection table, PLYMWINJ, is to be assigned. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | PLYMWINJ | A positive integer value that defines the corresponding PLYMWINJ table to be allocated to the water injection well. A value less than or equal to zero means that no PLYMWIN table is allocated to the well | 0 |

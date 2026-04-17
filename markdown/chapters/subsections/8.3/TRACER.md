@@ -11,7 +11,7 @@ The TRACER keyword defines a series of passive tracers that are associated with 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | NAME | A three letter character string defining the tracer’s name. NAME is used by the TNUM keyword in the REGIONS section, and unlike other keywords, the TNUM keyword itself must be concatenated with the phase and the name of the tracer defined by NAME. Similarly for the TVDP keyword in the SOLUTION section, where the TVDP keyword itself must be concatenated with the either letter F (for free) or S (for solution), followed by the name of the tracer defined by NAME. Note it is best to void names beginning with the letters F, S, and T as these names may create naming issues in post-processing software. | None |
 | 2 | PHASE | A three letter character string that defines the tracer given by NAME to a particular fluid phase. The character should be set to OIL, WAT or GAS. | None |

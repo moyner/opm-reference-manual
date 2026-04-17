@@ -13,7 +13,7 @@ This keyword can only be used if the thermal option has been activated by the TH
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | THCGAS | THCGAS is an array of real positive numbers that define the thermal conductivity of the gas phase in each grid block. Repeat counts may be used, for example 3000*20.0 | None |
 | Btu/ft/day/°R | kJ/m/day/K | J/cm/hr/K |  |
@@ -24,8 +24,8 @@ This keyword can only be used if the thermal option has been activated by the TH
 
 Note that there two ways to define the rock and in situ fluids thermal conductivity:
 
-    - Either by using the THCONR keyword to define the combined rock and fluid conductivity, and optionally the THCONSF keyword in the GRID section, or
-    - by specifying the rock and fluid conductivities individually using the THCROCK, THCOIL, THCGAS, and THCWATER keywords in the GRID section.
+- Either by using the THCONR keyword to define the combined rock and fluid conductivity, and optionally the THCONSF keyword in the GRID section, or
+- by specifying the rock and fluid conductivities individually using the THCROCK, THCOIL, THCGAS, and THCWATER keywords in the GRID section.
 
 Hence,  the THCROCK and THCONR keywords are mutually exclusive.
 

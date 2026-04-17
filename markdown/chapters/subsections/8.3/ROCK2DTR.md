@@ -15,7 +15,7 @@ This keyword should only be used if compaction option has been enabled.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | A columnar vector of real monotonically increasing down the column   values that defines the corresponding overburden pressure for the subsequent MULT columnar vector. | None |
 | psia | bars | atm |  |

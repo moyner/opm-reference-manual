@@ -7,7 +7,7 @@
 
 #### Description
 
-PVTSOL defines the live oil PVT properties as a function of CO2 mass fraction. The keyword automatically invokes the simulator’s CO2 Dynamic EOR Model [T. H. Sandve, O. Sævareid and I. Aavatsmark: “Improved Extended Blackoil Formulation --  for CO2 EOR Simulations.” in ECMOR XVII – The 17th European Conference on the -- Mathematics of Oil Recovery,  September 2020.], that uses a fourth component to model the injected CO2., for use in evaluating CO2 Enhanced Oil Recovery (“EOR”) projects. Normally CO2 EOR projects are evaluated via compositional simulators to account for the mass transfer of the various components and phases. Unfortunately, compositional models are computationally expensive compared to the black-oil approach, which for field studies is challenging, especially if an ensemble approach is being used to capture the uncertainties. Previous extended black-oil formulations often poorly represent the PVT properties of the oil-CO2 mixtures, resulting in poor agreement with the compositional formulation.
+PVTSOL defines the live oil PVT properties as a function of CO2 mass fraction. The keyword automatically invokes the simulator’s CO2 Dynamic EOR Model^[T. H. Sandve, O. Sævareid and I. Aavatsmark: “Improved Extended Blackoil Formulation --  for CO2 EOR Simulations.” in ECMOR XVII – The 17th European Conference on the -- Mathematics of Oil Recovery,  September 2020.], that uses a fourth component to model the injected CO2., for use in evaluating CO2 Enhanced Oil Recovery (“EOR”) projects. Normally CO2 EOR projects are evaluated via compositional simulators to account for the mass transfer of the various components and phases. Unfortunately, compositional models are computationally expensive compared to the black-oil approach, which for field studies is challenging, especially if an ensemble approach is being used to capture the uncertainties. Previous extended black-oil formulations often poorly represent the PVT properties of the oil-CO2 mixtures, resulting in poor agreement with the compositional formulation.
 
 To overcome the limitations of the standard four component black-oil formulation, OPM Flow uses an improved extended black-oil formulation, the CO2 Dynamic EOR Model, with the black-oil properties dependent on the fraction of CO2 in the cell, as described by the PVTSOL keyword. This approach models the oil-CO2 mixture more accurately and thus give results closer to the compositional simulator. Data for the keyword should normally be derived from laboratory or numerical slim-tube experiments based on one-dimensional compositional Equation Of State (“EOS”) simulations.
 
@@ -15,7 +15,7 @@ Note, if this keyword is absent from the input deck then the CO2 Standard EOR Mo
 
 
 | No. | Name | Description | Default |  |
-| --- | --- | --- | --- | --- |
+| --- | --- | :------ | --- | --- |
 | Field | Metric | Laboratory |  |  |
 | 1 | CO2 | A real monotonically increasing down the column values that stipulates the CO2 mass fraction,  that defines the oil and gas properties, formation volume factor, viscosity etc., for the tabulated corresponding pressure for the stated CO2 mass fraction. CO2 should be greater than or equal to zero and less than or equal to one. Note it is not necessary to repeat the value of CO2 for the pressure column.  However, for a given CO2 mass fraction, the last pressure entry (PRESS) of the sub table should be terminated by a “/”. | None |  |
 | dimensionless | dimensionless | dimensionless |  |  |

@@ -16,7 +16,7 @@ This is an OPM Flow specific keyword.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SUREA | SUREA is an array of real numbers that are greater than or equal to zero assigning the initial equilibration urea concentration values to each cell in the model. Repeat counts may be used, for example 20*30.0. | None |
 | lb/stb | kg/sm3 | gm/scc |  |

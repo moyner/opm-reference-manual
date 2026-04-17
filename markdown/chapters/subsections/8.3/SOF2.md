@@ -11,7 +11,7 @@ The SOF2 keyword defines the oil relative permeability versus oil saturation tab
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SOIL | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the oil or the hydrocarbon solvent saturation. For two phase runs the oil saturation should be entered and for when the SOLVENT option has been activated in the RUNSPEC section the total hydrocarbon phase (including the solvent) should be entered, that is SOIL = So + Sg + Ss. | None |
 | dimensionless | dimensionless | dimensionless |  |

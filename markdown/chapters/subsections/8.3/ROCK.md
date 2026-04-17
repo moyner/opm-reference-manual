@@ -13,7 +13,7 @@ This keyword must be defined in the OPM Flow input deck.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | PRESS is a real number defining the rock reference pressure for the other parameters for this data set. | Default |
 | psia 14.7 | barsa 1.0132 | atma 1.0 |  |

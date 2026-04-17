@@ -14,7 +14,7 @@ will be stopped.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | VELOCITY | A columnar vector of real monotonically increasing down the column values that defines the water-polymer flow velocity. The VELOCITY value for the first row in the table should be zero. | None |
 | feet/day | m/day | cm/hour |  |

@@ -11,7 +11,7 @@ IKRO defines the scaling parameter for the imbibition oil relative permeability 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | IKRO | IKRO is an array of positive real numbers which are greater than zero and less than or equal to 1.0, that are the assigned imbibition scaling IKRO values for each cell in the model. Repeat counts may be used, for example 50*0.500. | Taken from cell allocated relative permeability table. |
 | dimensionless | dimensionless | dimensionless |  |

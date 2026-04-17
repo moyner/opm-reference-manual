@@ -11,7 +11,7 @@ The [WINJCLN](#REF_HEADING_KEYWORD_WINJCLN) keyword signals that a filter cake s
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the filter cake properties are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | FCLNFRAC | A real positive value between 0 and 1 that defines the fraction of filter cake permeability (skin factor) to be removed. The accumulated filter cake skin factor for matching connections will be multiplied by (1 – FCLNFRAC), so the default value of 1 will completely clean the filter cake. | 1 |

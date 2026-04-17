@@ -11,7 +11,7 @@ The PPCWMAX keyword defines the maximum capillary pressure allowed when scaling 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PCWO | A columnar vector of real values that defines the maximum allowable capillary pressure for each SATNUM region. The default value of infinity means there is no limit applied. | Infinity |
 | psia | barsa | atma |  |

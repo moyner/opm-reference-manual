@@ -7,13 +7,13 @@
 
 #### Description
 
-The PLMIXPAR keyword defines the Todd-Longstaff [Todd, M. and Longstaff, W. “The Development, Testing and Application of a Numerical Simulator for Predicting Miscible Flood Performance,” paper SPE 3484, Journal of Canadian Petroleum Technology (1972) 24, No. 7, 874-882.] mixing parameters for when the polymer option has been activated by the POLYMER keyword in the RUNSPEC section. This keyword must be present in the input deck if the POLYMER keyword has been activated.
+The PLMIXPAR keyword defines the Todd-Longstaff^[Todd, M. and Longstaff, W. “The Development, Testing and Application of a Numerical Simulator for Predicting Miscible Flood Performance,” paper SPE 3484, Journal of Canadian Petroleum Technology (1972) 24, No. 7, 874-882.] mixing parameters for when the polymer option has been activated by the POLYMER keyword in the RUNSPEC section. This keyword must be present in the input deck if the POLYMER keyword has been activated.
 
 Note that this keyword is used only for the polymer option, if the MISCIBLE keyword in the RUNSPEC section has been invoked then in addition the TLMIXPAR keyword is also required to define the Todd-Longstaff mixing parameters for the MISCIBLE option.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PLMVIS | A real positive value that is greater than or equal to zero and less than or equal to one, that defines the viscosity Todd-Longstaff mixing parameter for each polymer region. | None |
 | dimensionless | dimensionless | dimensionless |  |

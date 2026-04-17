@@ -11,7 +11,7 @@ This keyword defines the dimensions of the User Defined Tables (“UDT”) used 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MXUDT | MXUDT is a positive integer that defines the maximum number of User Defined Tables | 0 |
 | 2 | NUDT | NUDT is a positive integer that defines the maximum number of rows in any given User Defined Table. | 0 |
 | 3 | MXINTP | MXINTP is a positive integer that defines the maximum number of interpolation points allowed in any given dimension. | 0 |

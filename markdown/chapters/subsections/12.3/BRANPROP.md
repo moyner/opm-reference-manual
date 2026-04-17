@@ -13,7 +13,7 @@ For the Extended Network Model the group hierarchy can be different to that defi
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DOWNNODE | A character string of up to eight characters in length that defines the  down stream node name for this branch, that is the node closest to the wells. Thus for a production network,  this will be an inlet node as the wells are importing fluid into the branch node. Whereas for an injection node, this is an outlet node as injection fluid is being exported to the wells. | None |
 | 2 | UPNODE | A character string of up to eight characters in length that defines the up stream node name for this branch, that is the node furthermost from the wells. Thus for a production network,  this will be an outlet node as the wells are exporting fluid from the branch node. Whereas for an injection node, this is an inlet node as the wells are importing the injection fluid. | None |

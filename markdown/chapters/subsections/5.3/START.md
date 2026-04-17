@@ -11,7 +11,7 @@ This keyword sets the start date for the simulation switches. If the DATES keywo
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | DAY | A positive integer that defines the day of the month, the value should be greater than or equal to one and less than or equal to 31. | None |
 | 2 | MONTH | Character string for the month and should be one of the following 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL' (or 'JLY'), 'AUG', 'SEP', 'OCT', 'NOV', or 'DEC' | None |
 | 3 | YEAR | A positive four digit integer value of the start year, which must be specified fully by four digits, that is 1986. | None |

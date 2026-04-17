@@ -11,7 +11,7 @@ This keyword activates the logarithm-based polymer shear thinning/thickening opt
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SHRATE | A positive real value that defines the shear rate constant. | 4.8 |
 | dimensionless | dimensionless | dimensionless |  |

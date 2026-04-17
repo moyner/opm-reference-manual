@@ -7,11 +7,11 @@
 
 #### Description
 
-This keyword defines the exponent used in Stone’s [Stone, H. L. “Probability Model for Estimating Three-Phase Relative Permeability,” paper SPE 2116, Journal of Canadian Petroleum Technology (1973) 22, No. 2, 214-218.] first three phase oil relative permeability model as modified by Aziz and Settari [Aziz, K. and Settari, A. Petroleum Reservoir Simulation, London, UK, Applied Science Publishers (1979), page 398.]. The STONE1EX keyword should only be used in three phase runs containing the oil, gas and water phases and when the STONE1 keyword in the PROPS section has been used to activate Stone’s first three phase oil relative permeability model.
+This keyword defines the exponent used in Stone’s^[Stone, H. L. “Probability Model for Estimating Three-Phase Relative Permeability,” paper SPE 2116, Journal of Canadian Petroleum Technology (1973) 22, No. 2, 214-218.] first three phase oil relative permeability model as modified by Aziz and Settari^[Aziz, K. and Settari, A. Petroleum Reservoir Simulation, London, UK, Applied Science Publishers (1979), page 398.]. The STONE1EX keyword should only be used in three phase runs containing the oil, gas and water phases and when the STONE1 keyword in the PROPS section has been used to activate Stone’s first three phase oil relative permeability model.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | STONEPAR1 | A real positive value that defines the exponent to be used in the Modified Stone first three phase oil relative permeability model. | None |
 | dimensionless | dimensionless | dimensionless |  |

@@ -18,7 +18,7 @@ This keyword is only supported by OPM Flow when the two phase gas-water CO2 stor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | CNAMES | A series of character strings of up to eight characters in length that define the names for each of the compositional components active in the model. | None |
 | Notes: |  |  |  |
 

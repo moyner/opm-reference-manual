@@ -11,7 +11,7 @@ This keyword defines the initial equilibration tracer concentration versus depth
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | TVDP | A four letter character string equal to TVDP that is the root keyword name for this data set function. | None |
 | 2 | STATE | A one letter character string defining the tracer’s state, which is concatenated to TVDP to give the partial name of the keyword. STATE should be set to F (“free”) or S (“solution”), with the latter related to a tracer that is dissolved in an associated phase. If the tracer defined by NAME is associated with the OIL, GAS or WATER phases then STATE should be set to F.  If the tracer is associated with the DISGAS or VAPOIL phases then STATE should be set to S. | None |
 | 3 | NAME | A three letter character string defining the tracer’s name as defined by the TRACER keyword, which is concatenated to TVDP and STATE to given the full name of the keyword.  For example, if the TRACER keyword has been used to define a tracer named SEA in the WAT phase, then the full keyword name would be TVDPFSEA.  Whereas, if a tracer was defined as IGS for the GAS phase then it could be TVDPFIGS and/or TVDPSIGS depending if one was wishing to track the “free” or “solution” gas phase, or both. Note it is best to avoid names beginning with the letters F, S, and T as these names may create naming issues in post-processing software. | None |
@@ -22,7 +22,7 @@ Following the declaration of the full keyword name, TVDPSTATENAME,  the keyword 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding initial tracer saturations, TVDP | None |
 | feet | m | cm |  |

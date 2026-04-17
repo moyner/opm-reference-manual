@@ -11,7 +11,7 @@ The FORMFEED keyword defines the form-feed character, or carriage control charac
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | FORMFEED | Defines a single integer that defines the carriage control character activates, and should be set to: | 0 |
 | Notes: |  |  |  |
 

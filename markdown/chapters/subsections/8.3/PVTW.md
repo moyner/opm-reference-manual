@@ -11,7 +11,7 @@ PVTW defines the water properties for various regions in the model. The number o
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PRES | PRES is a real number defining the water reference pressure (P) for the other parameters for this data set. | None |
 | psia | barsa | atma |  |

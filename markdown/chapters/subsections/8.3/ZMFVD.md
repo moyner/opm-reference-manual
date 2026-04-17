@@ -16,7 +16,7 @@ This is an OPM Flow keyword used with OPM Flow’s CO2STORE and GASWAT keywords 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding compositional component mole fractions. The default number of DEPTH values is 20, as defined by the NDRXVD parameter on the EQLDIMS keyword in the RUNSPEC section, and which may be used to reset the number of DEPTH values. | None |
 | feet | m | cm |  |

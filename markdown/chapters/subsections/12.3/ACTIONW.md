@@ -17,7 +17,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | ACTIONW | Defines the start of an ACTIONW Definition Section.  This is followed on a new line by the ACTIONW record that stipulates the conditions for which the defined action will be executed, and then this is followed by the various operations to be performed if the condition is satisfied. |  |  |
 | 1-1 | ACTNAME | A character sting of up to eight characters in length that defines the name of this action definition. If ACTNAME has previously been used by any ACTION series keyword, then the previous ACTION definitions will be replaced by the definition declared by this ACTIONW Definition Section. | None |
 | 1-2 | ACTWELL | A character string of up to eight characters in length that defines the well name for which the ACTIONW Definition Section is being defined. Note that the well name (ACTWELL) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |

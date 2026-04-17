@@ -11,7 +11,7 @@ The TRACERS keyword defines the number of tracers in the model and the various p
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MXOILTR | A positive integer defining the maximum number of passive oil tracers defined using the TRACER keyword. | 0 |
 | 2 | MXWATTR | A positive integer defining the maximum number of passive water tracers defined using the TRACER keyword. | 0 |
 | 3 | MXGASTR | A positive integer defining the maximum number of passive gas tracers defined using the TRACER keyword. | 0 |

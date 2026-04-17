@@ -16,7 +16,7 @@ WSF is a compositional keyword in the commercial compositional simulator, and wi
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SWAT | A columnar vector of real values monotonically increasing down the column starting from the connate water saturation and terminating at one, that defines the water saturation. | None |
 | dimensionless | dimensionless | dimensionless |  |

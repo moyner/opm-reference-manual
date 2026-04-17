@@ -13,7 +13,7 @@ Although this keyword is read by OPM Flow and the ACTION and UDQ computational l
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MXFUNS | A positive integer that defines the maximum number of functions that can be included when defining a UDQ definition. This should also include any brackets that will be used in the UDQ definition. | 16 |
 | 2 | MXITEMS | MXITEMS is a positive integer that defines the maximum number of ITEMS allowed in an UDQ definition. | 16 |
 | 3 | MXUDC | MXUDC is a positive integer that defines the maximum number of user defined CONNECTION quantities allowed in an UDQ definition. | 0 |

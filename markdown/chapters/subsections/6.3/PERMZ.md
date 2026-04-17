@@ -11,7 +11,7 @@ PERMZ defines the permeability in the Z direction for all the cells in the model
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PERMZ | PERMZ is an array of real positive numbers assigning the permeability in the Z direction to each cell in the model. Repeat counts may be used, for example 200*50.0. | None |
 | mD | mD | mD |  |

@@ -11,7 +11,7 @@ The WTRACER keyword defines the tracer concentration of the injection fluid bein
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name of an injection well for which the tracer fraction data is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | NAME | A three letter character string defining the tracer’s name which has previously been defined via the TRACER keyword in the PROPS section. Note it is best to avoid names beginning with the letters F, S, and T as these names may create naming issues in post-processing software. | None |

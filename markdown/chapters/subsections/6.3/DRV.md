@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DRV | DRV is a vector of real numbers describing the cell size for the grid blocks in the R direction in a radial grid. Repeat counts may be used, for example 10*100.0. | None |
 | feet | m | cm |  |

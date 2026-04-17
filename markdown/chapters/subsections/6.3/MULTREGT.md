@@ -11,7 +11,7 @@ The MULTREGT keyword multiplies the transmissibility between two regions by a co
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | REGION1 | A positive integer value that defines the from REGION number for which the CONSTANT in (3) should be applied. | None |
 | 2 | REGION2 | A positive integer value that defines the to REGION number for which the CONSTANT in (3) should be applied. | None |
 | 3 | CONSTANT | A real positive value to multiply the transmissibility between REGION1 and REGION2. | 1 |

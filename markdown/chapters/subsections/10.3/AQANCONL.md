@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | AQUID | AQUID is a positive integer greater than or equal to one and less than the maximum number of analytical aquifers as defined by the NANAQU variable on the AQUDIMS keyword in the RUNSPEC section, that defines the aquifer to be connected to the grid. | None |
 | 2 | LGRNAME | A character string of up to eight characters in length that defines the name of the LGR that will connect to an analytical aquifer AQUID. The LGR must have been previously defined by the either the CARFIN (Cartesian LGR grid) keyword, or the RADIN/RADIN4 (radial LGR grid) keyword in the GRID section. | None |

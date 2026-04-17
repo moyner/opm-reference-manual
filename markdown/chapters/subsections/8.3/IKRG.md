@@ -11,7 +11,7 @@ IKRG defines the imbibition scaling parameter at the maximum gas relative permea
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | IKRG | IKRG is an array of positive real numbers which are greater than zero and less than or equal to 1.0, that are the assigned scaling IKRG imbibition values for each cell in the model. Repeat counts may be used, for example 50*0.400. dimensionless | Taken from cell allocated relative permeability table. |
 | dimensionless | dimensionless | dimensionless |  |

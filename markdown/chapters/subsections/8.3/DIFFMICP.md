@@ -16,7 +16,7 @@ This is an OPM Flow specific keyword.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | MICRDIFF | A real positive number that declares the microbial concentration in water diffusion coefficient in the given PVT region. | None |
 | ft2/day | m2/day | cm2/hour |  |

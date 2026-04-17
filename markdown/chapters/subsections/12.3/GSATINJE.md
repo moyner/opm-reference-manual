@@ -13,7 +13,7 @@ The keyword is used to define injection rates into the model from other sources 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GRPNAME | A character string of up to eight characters in length that defines the satellite group name for which the group injection rates are being defined. The group named FIELD is the top most group and should not be used to define a satellite group. Note that the group hierarchy should be defined by the GRUPTREE keyword in the SCHEDULE section, when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. Note that a satellite group cannot have subordinate groups or wells. | None |
 | 2 | TYPE | A defined character string that specifies the type of injection fluid. TYPE should be set to one of the following character strings: If the satellite group injects more than one phase then the rates should be specified in separate records. | None |

@@ -11,7 +11,7 @@ PERMTHT sets the permeability for each cell in the THETA direction in a radial g
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PERMTHT | PERMTHT is an array of real positive numbers assigning the permeability in the THETA direction to each cell in the model. This equivalent to PERMY in a Cartesian grid. Repeat counts may be used, for example 20*100.0. | None |
 | mD | mD | mD |  |

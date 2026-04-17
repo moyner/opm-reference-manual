@@ -11,7 +11,7 @@ The SLGOF keyword defines the oil and gas relative permeability and oil-gas capi
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SLIQ | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the liquid  saturation, that is the connate water saturation (SWL) plus the oil saturation. The first entry should correspond to residual liquid, that is Swc + Sorg and the last entry should be 1.0 to correspond to a gas saturation of zero. | None |
 | dimensionless | dimensionless | dimensionless |  |

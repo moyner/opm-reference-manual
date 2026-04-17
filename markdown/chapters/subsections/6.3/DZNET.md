@@ -11,7 +11,7 @@ DZNET defines the net thickness of all grid blocks in the Z direction via an arr
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DZNET | DZNET is an array of real numbers describing the net thickness in the Z direction for each cell in the model. Repeat counts may be used, for example 10*100.0. If the value for a grid block is not defined then the grid block size (DZ) is assigned to the missing values. | DZ |
 | feet | m | cm |  |

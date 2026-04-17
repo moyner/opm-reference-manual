@@ -16,7 +16,7 @@ This is an OPM Flow specific keyword that employs an alternative polymer flood m
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NTSKWAT | NTSKWAT is a positive integer that defines the number of SKPRWAT  tables in the PROPS section, used to describe the relationship of wellbore skin pressure as a function of water throughput and water velocity, for the simulator's Polymer Molecular Weight Transport option. | 1 |
 | 2 | NTSKPOLY | NTSKPOLY is a positive integer that defines the number of SKPRPOLY  tables in the PROPS section, used to describe the relationship of wellbore skin pressure as a function of polymer throughput and polymer velocity, for the simulator's Polymer Molecular Weight Transport option. | 1 |
 | 3 | NTPMWINJ | NTPMWINJ is a positive integer that defines the number of PLYMWINJ  tables in the PROPS section, used to describe the relationship of the injected polymer molecular weight as a function of polymer throughput and polymer velocity, for the simulator's Polymer Molecular Weight Transport option. | 1 |

@@ -13,7 +13,7 @@ This keyword is not in the standard keyword format due to the cell face (X, X-, 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | KRNUM | KRNUM defines an array of positive integers assigning a grid cell to a particular saturation table region. The maximum number of KRNUM regions is set by the NTSFUN variable on the TABDIMS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 

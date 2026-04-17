@@ -21,7 +21,7 @@ Thus, surplus gas that cannot be sold is re-injected, which requires that there 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group gas sales target and constraints are being defined. The group named FIELD is the top most group and should be used to set the gas sales targets and constraints for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
 | 2 | GSALE | GSALE should either be set to: This value may be specified using a User Defined Argument (UDA). Note that if GSALE has been set to switch off both gas sales and gas re-injection, then the GCONINJE keyword in the SCHEDULE section may be used to re-enable gas re-injection again. | None |

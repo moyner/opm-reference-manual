@@ -11,7 +11,7 @@ DIMENS defines the dimensions of the model entered as integer vector. The keywor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NX | A positive integer value that defines the number of grid blocks in the x direction for Cartesian grids or the number of grid blocks in the r direction for radial grids | None |
 | 2 | NY | A positive integer value that defines the number of grid blocks in the y direction for Cartesian grids or the number of grid blocks in the theta direction for radial grids. | None |
 | 3 | NZ | A positive integer value that defines the number of grid blocks in the z direction for both Cartesian and radial grids. | None |

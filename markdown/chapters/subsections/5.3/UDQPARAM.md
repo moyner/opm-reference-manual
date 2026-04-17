@@ -13,7 +13,7 @@ Although this keyword is read by OPM Flow and the ACTION and UDQ computational l
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | RSEED | RSEED is a positive integer greater than zero that sets a new random number seed for use in the UDQ functions RANDN, RANDU RRNDN and RRNDU. See also the RSEED character variable on the UDQDIMS keyword in the RUNSPEC section to default the random number seed for a restart run. This feature is not supported by OPM Flow. | 1 |
 | 2 | RANGE | RANGE is a real positive value greater than or equal to one and less than or equal to 1.0 x 1020, that sets the absolute range for the user defined quantities. The default value of 1 x 1020 sets the range from -1 x 1020 to +1 x 1020. | 1 x 1020 |
 | 3 | DEFAULT | DEFAULT is real value that is the default numerical value given to undefined UDQ variables and should be in the same range as RANGE. | 0.0 |

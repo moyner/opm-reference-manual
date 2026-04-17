@@ -11,7 +11,7 @@ The PDVD keyword defines the dew-point pressure versus depth tables for each equ
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding dew-point values, PDVALS. | None |
 | feet | m | cm |  |

@@ -11,7 +11,7 @@ INRAD defines the inner radius of the reservoir model for a radial grid geometry
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | INRAD | A single real positive number defining the inner radius of a radial grid. | None |
 | feet | m | cm |  |

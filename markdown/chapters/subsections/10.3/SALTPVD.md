@@ -16,7 +16,7 @@ This is an OPM Flow specific keyword for the simulator’s Salt Precipitation Mo
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth for corresponding salt volume fraction SALTPSAT. | None |
 | feet | m | cm |  |

@@ -11,7 +11,7 @@ TRANX defines the transmissibility in the z direction for all the cells in the m
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | TRANZ | TRANZ is an array of real positive numbers assigning the transmissibility in the Z direction to each cell in the model. Repeat counts may be used, for example 20*100.0. | None |
 | cP.rb/day/psia | cP.rm3/day/bars | cP.rcc/hr/atm |  |

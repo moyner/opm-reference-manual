@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well hydraulic head reference depth data is being defined. | None |
 | 2 | HYDREF | A real value that defines the hydraulic head reference depth for reporting the hydraulic head pressure for the well. HYDREF cannot be defaulted on the keyword; however if a well has not been set by this keyword HYDREF is set equal to the value on the HYDRHEAD keyword. | None |

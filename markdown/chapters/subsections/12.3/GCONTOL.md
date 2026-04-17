@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | GRPCNV | GRPCNV is a real positive value less than one that sets the group tolerance criteria used to define if convergence has been satisfied for group’s under rate control. Here, GRPCNV is an acceptable fraction of the group’s rate target. Thus, the a numerical quantity 0.01 means that values must be with 0.01 (or 1.0%) of the groups’ production target. For groups under priority control, as per GCONPRI keyword in the SCHEDULE section, GRPCNV is ignored. Note that this criteria may not be satisfied if the number of Newton iterations used in updating the well targets, as set by the NUPCOL keyword in the RUNSPEC section, or the NUPCOL parameter on this keyword, is exceeded. In this case, and only if the well potentials allow,  the well rates are re-calculated ignoring the NUPCOL limit. Group tolerance criteria can also be set by the GRPCNV parameter on the NETBALAN keyword in the SCHEDULE section. If both values of GRPCNV have been entered, then the minimum of the two is used. The default value means there is no convergence criteria. | 1.0 x 1020 |
 | dimensionless | dimensionless | dimensionless |  |

@@ -11,7 +11,7 @@ This keyword defines the maximum time step size the simulator should take for th
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | NSTEP1 | NSTEP1 is a real positive value that defines the maximum length of the next time step. | None |
 | days | days | hours |  |

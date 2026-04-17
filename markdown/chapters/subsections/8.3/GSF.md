@@ -16,7 +16,7 @@ GSF is a compositional keyword in the commercial compositional simulator, and wi
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SGAS | A columnar vector of real values monotonically increasing down the column starting from zero and terminating at one minus the connate water saturation, that defines the gas saturation. | None |
 | dimensionless | dimensionless | dimensionless |  |

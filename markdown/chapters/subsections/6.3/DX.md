@@ -11,7 +11,7 @@ DX defines the size of all grid blocks in the X direction via an array for each 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DX | DX is an array of real numbers describing the cell size in the X direction for each cell in the model. Repeat counts may be used, for example 10*100.0. | None |
 | feet | m | cm |  |

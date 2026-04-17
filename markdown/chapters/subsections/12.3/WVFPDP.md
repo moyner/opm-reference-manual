@@ -13,7 +13,7 @@ Note that simulator automatically adjusts the interpolated BHP to account for hy
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which VFP interpolated BHP adjustment is to be applied. Note that the well name (WELNAME) must have been declared previously using the WELSPECS and WCONPROD (or WCONINJE) keywords in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | DELTAP | A real positive or negative value that is added to the VFP interpolated BHP value (BHPVFP). A positive value of DELTAP increases the BHP and therefore makes a production well less productive; whereas, a negative value is subtracted from the BHP and therefore increases the productivity of a production well. Consequently, the opposite effect occurs for injection wells, that is,  a positive value of BHPVFP increases the BHP and therefore increases an injection well’s injectivity; whereas, a negative value is subtracted from the BHP and therefore decreases the injectivity of an injection well. | 0.0 |

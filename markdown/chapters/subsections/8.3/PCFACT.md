@@ -16,7 +16,7 @@ This is an OPM Flow specific keyword for the simulator’s Salt Precipitation mo
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | POROFAC | A real monotonically increasing positive columnar vector that defines the porosity factor ($\frac{ϕ}{{ϕ}_{0}}$) for the corresponding PCFAC vector. In the simulator’s Salt Precipitation model, the maximum value of $ϕ$ is ${ϕ}_{0}$, implying a maximum value of one for POROFAC. | None |
 | dimensionless | dimensionless | dimensionless |  |

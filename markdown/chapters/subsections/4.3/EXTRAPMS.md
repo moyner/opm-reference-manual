@@ -11,7 +11,7 @@ The EXTRAPMS keyword activates extrapolation warning messages for when OPM Flow 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | EXTRAP | Defines a single integer that activates the extrapolation warning message options for PVT and VFP tables. EXTRAP can have the following values: | 0 |
 | Notes: |  |  |  |
 

@@ -178,19 +178,27 @@ def extract_text(elem, style_map, in_code=False):
             else:
                 parts.append(link_text)
         elif local == "note":
-            # Footnote
+            # Footnote — render as Pandoc/Quarto inline footnote
             note_body = child.find(f'{{{NS["text"]}}}note-body')
             if note_body is not None:
                 note_text = ""
                 for p in note_body:
                     note_text += extract_text(p, style_map, in_code)
-                parts.append(f" [{note_text.strip()}]")
+                note_text = note_text.strip()
+                if note_text:
+                    parts.append(f"^[{note_text}]")
         elif local == "bookmark-start" or local == "bookmark-end":
             pass
         elif local == "bookmark-ref" or local == "bookmark":
-            parts.append(extract_text(child, style_map, in_code))
+            ref_text = extract_text(child, style_map, in_code)
+            # Drop unresolved cross-references
+            if "Error: Reference source not found" not in ref_text:
+                parts.append(ref_text)
         elif local == "sequence" or local == "sequence-ref":
-            parts.append(extract_text(child, style_map, in_code))
+            ref_text = extract_text(child, style_map, in_code)
+            # Drop unresolved cross-references
+            if "Error: Reference source not found" not in ref_text:
+                parts.append(ref_text)
         elif local == "soft-page-break":
             pass
         elif local == "change-start" or local == "change-end" or local == "change":
@@ -446,8 +454,10 @@ def balance_left_right(latex: str) -> str:
     Inserts \\right. for unmatched \\left... and \\left. for unmatched \\right...
     """
     import re
-    # Pattern to find \left or \right followed by a delimiter
-    token_re = re.compile(r'\\(left|right)(\\[|{}]|[^\\\s]|\\.)?')
+    # Pattern to find \left or \right followed by a delimiter character.
+    # Use a negative lookahead to avoid matching commands like \rightarrow, \leftarrow, etc.
+    # \left/\right must be followed by a non-letter (delimiter) or a backslash sequence.
+    token_re = re.compile(r'\\(left|right)(?![a-zA-Z])(\\[|{}]|[^\\\s]|\\.)?')
     tokens = list(token_re.finditer(latex))
 
     # Count unmatched lefts
@@ -485,6 +495,11 @@ def extract_frame(frame_elem):
             if math_elem is not None:
                 latex = mathml_to_latex(math_elem)
                 latex = balance_left_right(latex)
+                # Strip leading/trailing whitespace so the opening $ is not
+                # immediately followed by a space (which Pandoc treats as literal $)
+                latex = latex.strip()
+                if not latex:
+                    continue
                 return f"${latex}$"
     # Fall back to image placeholder
     for image in frame_elem.iter(f'{{{NS["draw"]}}}image'):
@@ -649,6 +664,9 @@ class FODTConverter:
         if math_elem is not None:
             latex = mathml_to_latex(math_elem)
             latex = balance_left_right(latex)
+            latex = latex.strip()
+            if not latex:
+                return ""
             return f"$$\n{latex}\n$$\n"
 
         # --- Case 2: paragraph contains any math frames (inline or mixed) ---
@@ -949,8 +967,14 @@ class FODTConverter:
         self.lines.append("")
         # Header row
         self.lines.append("| " + " | ".join(rows[0]) + " |")
-        # Separator
-        self.lines.append("| " + " | ".join(["---"] * max_cols) + " |")
+        # Separator: use wider dashes for a "Description" column to give it more space
+        sep_cells = []
+        for col_idx, header in enumerate(rows[0]):
+            if header.strip().lower() in ("description", "desc"):
+                sep_cells.append(":------")
+            else:
+                sep_cells.append("---")
+        self.lines.append("| " + " | ".join(sep_cells) + " |")
         # Data rows
         for row in rows[1:]:
             self.lines.append("| " + " | ".join(row) + " |")
@@ -964,11 +988,13 @@ class FODTConverter:
             if tag_local(item) != "list-item":
                 continue
 
+            has_text = False
             for child in item:
                 local = tag_local(child)
                 if local == "p":
                     text = extract_text(child, self.style_map).strip()
                     if text:
+                        has_text = True
                         # Determine if ordered or unordered
                         # ODF lists with text:style-name containing "Number" are ordered
                         list_style = list_elem.get(
@@ -981,7 +1007,10 @@ class FODTConverter:
                         else:
                             self.lines.append(f"{prefix_space}- {text}")
                 elif local == "list":
-                    self._process_list(child, indent + 1)
+                    # If this list-item had text, indent sub-list one level deeper.
+                    # If this list-item has NO text (it's just a wrapper), process the
+                    # sub-list at the same indent level to avoid 4-space code-block traps.
+                    self._process_list(child, indent + (1 if has_text else 0))
 
     def _finalize(self):
         """Clean up the markdown output."""
@@ -993,6 +1022,9 @@ class FODTConverter:
         # Remove non-printable ASCII control characters (except tab, newline, CR)
         # \x7f is DEL, \x00-\x08 and \x0b-\x0c and \x0e-\x1f are control chars
         text = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]", "", text)
+
+        # Remove unresolved cross-reference error messages
+        text = re.sub(r",?\s*Error: Reference source not found", "", text)
 
         # Collapse multiple blank lines to max 2
         text = re.sub(r"\n{4,}", "\n\n\n", text)

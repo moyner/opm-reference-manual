@@ -11,7 +11,7 @@ The SCALECRS keyword sets the end-point scaling option to be either two-point or
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | SCALEOPT | SCALEOPT is a character string that sets the end-point scaling option and should be set to either NO or YES: | NO |
 | Notes: |  |  |  |
 

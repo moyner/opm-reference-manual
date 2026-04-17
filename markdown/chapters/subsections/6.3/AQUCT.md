@@ -7,13 +7,13 @@
 
 #### Description
 
-The AQUCT keyword defines Carter-Tracy [Carter, R. D. and Tracy, G. W. “An Improved Method for Calculating Water Influx,” Transactions of AIME (1960) 219, 215-417.]  [Van Everdingen, A. & Hurst, W.,.The Application of the Laplace Transformation to Flow Problems in Reservoirs.  Petroleum Transactions, AIME (December,  1949).] analytical aquifers, the properties of the aquifer, including the Carter-Tracy aquifer influence function associated with the aquifer, defined by the AQUTAB keyword in the PROPS section.
+The AQUCT keyword defines Carter-Tracy^[Carter, R. D. and Tracy, G. W. “An Improved Method for Calculating Water Influx,” Transactions of AIME (1960) 219, 215-417.] ^[Van Everdingen, A. & Hurst, W.,.The Application of the Laplace Transformation to Flow Problems in Reservoirs.  Petroleum Transactions, AIME (December,  1949).] analytical aquifers, the properties of the aquifer, including the Carter-Tracy aquifer influence function associated with the aquifer, defined by the AQUTAB keyword in the PROPS section.
 
 Each row entry in the AQUCT keyword defines one Carter-Tracy aquifer.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | AQUID | A positive integer greater than or equal to one and less than or equal to NANAQU on the AQUDIMS keyword in the RUNSPEC section, that defines the Carter-Tracy aquifer number. | 1 |
 | 2 | DATUM | DATUM is a single positive value that defines the Carter-Tracy reference datum depth for PRESS. | None |
@@ -33,7 +33,7 @@ Each row entry in the AQUCT keyword defines one Carter-Tracy aquifer.
 | 9 | ANGLE | ANGLE is a real positive number that defines the angle of influence, that is the angular connection between the aquifer and the hydrocarbon reservoir. A value of 360o degrees, the default value, indicates that the aquifer completely surrounds the hydrocarbon reservoir. | 360.0 |
 | degrees | degrees | degrees |  |
 | 10 | PVTNUM | PVTNUM is positive integer greater than zero and less than the NTPVT variable on the TABDIMS keyword in the RUNSPEC section, that defines the PVTW table allocated to the Carter-Tracy aquifer. | 1 |
-| 11 | AQUTAB | AQUTAB is positive integer greater than zero and less than the NIFTBL variable as declared on the AQUDIMS keyword in the RUNSPEC section, that defines the AQUTAB table allocated to this Carter-Tracy aquifer. The default value of one sets the internal infinite acting Carter-Tracy aquifer influence table not the first table in the AQUTAB keyword in the PROPS section The first table in the AQUTAB keyword is considered to be table number two. The internal table, AQUTAB equal to one, is based on the Radial Flow, Constant Pressure and Constant Terminal Rate Cases for Infinite Reservoirs (Table I) in Van Everdingen and Hurst's  [Van Everdingen, A. & Hurst, W.,.The Application of the Laplace Transformation to Flow Problems in Reservoirs.  Petroleum Transactions, AIME (December,  1949).] paper. | 1 |
+| 11 | AQUTAB | AQUTAB is positive integer greater than zero and less than the NIFTBL variable as declared on the AQUDIMS keyword in the RUNSPEC section, that defines the AQUTAB table allocated to this Carter-Tracy aquifer. The default value of one sets the internal infinite acting Carter-Tracy aquifer influence table not the first table in the AQUTAB keyword in the PROPS section The first table in the AQUTAB keyword is considered to be table number two. The internal table, AQUTAB equal to one, is based on the Radial Flow, Constant Pressure and Constant Terminal Rate Cases for Infinite Reservoirs (Table I) in Van Everdingen and Hurst's ^[Van Everdingen, A. & Hurst, W.,.The Application of the Laplace Transformation to Flow Problems in Reservoirs.  Petroleum Transactions, AIME (December,  1949).] paper. | 1 |
 | 12 | SALTCON | SALTCON is a real positive number that defines the initial salt concentration in the aquifer, for when with simulator's Brine Model has been activated via the BRINE keyword in the RUNSPEC section. This variable is ignored by OPM Flow. | 0.0 |
 | lb/stb | kg/sm3 | gm/scc |  |
 | 13 | TEMP | TEMP is a real positive number that defines the initial temperature of the aquifer at DATUM for use with OPM Flow's thermal option. The THERMAL keyword in the RUNSPEC section must be activated to use this option. | 1* |

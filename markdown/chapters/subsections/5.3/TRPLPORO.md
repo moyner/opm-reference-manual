@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | TRPLPORO | A positive integer value that specifies the number of matrix porosity systems in the model. TRPLPORO should be set to either: | 1 |
 | Notes: |  |  |  |
 

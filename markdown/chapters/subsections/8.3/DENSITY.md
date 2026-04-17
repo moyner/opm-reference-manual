@@ -11,7 +11,7 @@ DENSITY defines the oil, water and gas surface densities for the fluids for vari
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | OILDEN | OILDEN is a real number defining the density of the oil phase at surface conditions. | Defined |
 | lb/ft3 37.457 | kg/m3 600 | gm/cc 0.6 |  |
@@ -26,7 +26,7 @@ DENSITY defines the oil, water and gas surface densities for the fluids for vari
 
 Note that provided the first table has been entered, subsequent tables may be defaulted, in this case the prior table is copied to the current table. See the third example for an illustration on how to use this feature.
 
-According to the SPE SI standard [The SI Metric System of Units and SPE Metric Standard, Adopted for Use as a Voluntary Standard by the SPE Board of Directors, June 1983, Society of Petroleum Engineers.], Relative Density (γ) replaces Specific Gravity as the term used to define the ratio of the density of a known material to the density of reference material, at standard conditions of pressure and temperature. Standard conditions vary throughout the world, but for oil field units one normally uses14.7 psia and 60 oF, whereas for SI units some areas use 101.325 kPa and 15 oC.
+According to the SPE SI standard^[The SI Metric System of Units and SPE Metric Standard, Adopted for Use as a Voluntary Standard by the SPE Board of Directors, June 1983, Society of Petroleum Engineers.], Relative Density (γ) replaces Specific Gravity as the term used to define the ratio of the density of a known material to the density of reference material, at standard conditions of pressure and temperature. Standard conditions vary throughout the world, but for oil field units one normally uses14.7 psia and 60 oF, whereas for SI units some areas use 101.325 kPa and 15 oC.
 
 See also the GRAVITY keyword in the PROPS section, that can be used to enter the relative density values instead of the density numbers.
 

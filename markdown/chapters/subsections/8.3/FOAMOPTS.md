@@ -11,7 +11,7 @@ The FOAMOPTS keyword defines the transport phase for the foam (gas, water or sol
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | FOAMOPT1 | A defined character string that specifies the transport phase for the foam, and should be set to one of the following: | GAS |
 | 2 | FOAMOPT2 | A defined character string that specifies the method to be used to calculate the reduction in gas mobility, and should be set to one of the following: Only the default value of TAB is currently supported by OPM Flow. | TAB |
 | Notes: |  |  |  |

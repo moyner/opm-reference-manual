@@ -11,7 +11,7 @@ The FAULTDIM keyword defines the maximum number of records (or segments) that ca
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MFSEGS | A positive integer value that defines the maximum number of records (segments) for the FAULTS keyword. | 0 |
 | Notes: |  |  |  |
 

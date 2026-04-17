@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | OUTRAD | A single real positive number greater than INRAD defining the outer radius of a radial grid. | None |
 | feet | m | cm |  |

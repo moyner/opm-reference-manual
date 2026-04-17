@@ -11,7 +11,7 @@ The ROCKNUM keyword defines the rock compaction table region numbers for each gr
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | ROCKNUM | ROCKNUM defines an array of positive integers assigning a grid cell to a particular rock compaction table region. The maximum number of ROCKNUM regions is set by the NTROCC variable on the ROCKCOMP keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 

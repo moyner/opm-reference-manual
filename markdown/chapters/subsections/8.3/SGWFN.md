@@ -11,7 +11,7 @@ The SGWFN keyword defines the gas and water relative permeability and gas-water 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SGAS | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating at one, that defines the gas  saturation. | None |
 | dimensionless | dimensionless | dimensionless |  |

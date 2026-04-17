@@ -17,7 +17,7 @@ Each User Defined Table must be defined with a separate UDT keyword that consist
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1-1 | NAME | A character string of up to eight characters in length beginning with ‘TU’ that defines the table name. | None |
 | 1-2 | NDIMS | An integer value between one and MXDIMS that defines the number of dimensions for the table. MXDIMS is the maximum number of UDT table dimensions defined using the UDTDIMS keyword in the RUNSPEC section. OPM Flow only supports one-dimensional tables (NDIMS = 1). | None |
 | 1-3 | / | Record terminated by a “/” | Not Applicable |

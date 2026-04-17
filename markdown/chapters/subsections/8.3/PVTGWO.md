@@ -7,7 +7,7 @@
 
 #### Description
 
-PVTGWO defines the gas PVT properties for wet gas [Natural gas that contains significant heavy hydrocarbons such as propane, butane and other liquid hydrocarbons is known as wet gas or rich gas. The general rule of thumb is if the gas contains less methane (typically less than 85% methane) and more ethane, and other more complex hydrocarbons, it is labeled as wet gas. Wet gas normally has GOR's less than 100,000 scf/stb or 18,000 Sm3/m3, with the condensate having a gravity greater than 50 oAPI.] with vaporized water and oil. This keyword should be used when the VAPOIL and VAPWAT keywords have been declared in the RUNSPEC section indicating that vaporized oil and water are present in the wet gas phase. The keyword may be used for oil-water-gas input decks that contain the wet gas with vaporized oil and water phases.
+PVTGWO defines the gas PVT properties for wet gas^[Natural gas that contains significant heavy hydrocarbons such as propane, butane and other liquid hydrocarbons is known as wet gas or rich gas. The general rule of thumb is if the gas contains less methane (typically less than 85% methane) and more ethane, and other more complex hydrocarbons, it is labeled as wet gas. Wet gas normally has GOR's less than 100,000 scf/stb or 18,000 Sm3/m3, with the condensate having a gravity greater than 50 oAPI.] with vaporized water and oil. This keyword should be used when the VAPOIL and VAPWAT keywords have been declared in the RUNSPEC section indicating that vaporized oil and water are present in the wet gas phase. The keyword may be used for oil-water-gas input decks that contain the wet gas with vaporized oil and water phases.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -18,7 +18,7 @@ This is an OPM Flow specific keyword for the simulator’s Water Vaporization Mo
 
 
 | No. | Name | Description | Default |  |
-| --- | --- | --- | --- | --- |
+| --- | --- | :------ | --- | --- |
 | Field | Metric | Laboratory |  |  |
 | 1 | PRESS | A real monotonically increasing down the column vector that defines the gas phase pressure, associated with the saturated water-gas ratio (“WGR”) or Rw,  the saturated condensate-gas ratio (“CGR”) or Rv, the gas formation volume factor, and the gas viscosity for the corresponding pressure for the stated saturated RWS. For a given PRESS the variability of the gas formation volume factor and the gas viscosity with respect to the under-saturated Rw and Rv is optionally included as a sub table under RWU, RVU, FVFU and VISU columns, that is it is not necessary to repeat PRESS for each sub table entry. However, each sub table must be terminated by a “/”. The under saturated Rw and Rv entries are optional, except for perhaps the last  PRESS entry to define the PVT properties above the initial saturation pressure. | None |  |
 | psia | barsa | atma |  |  |

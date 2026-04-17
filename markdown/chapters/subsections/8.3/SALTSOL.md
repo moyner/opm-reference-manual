@@ -16,7 +16,7 @@ This is an OPM Flow specific keyword for the simulator’s Salt Precipitation mo
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SALTSOL | A real positive value that defines the maximum salt solubility for all grid blocks in a PVTNUM region. | None |
 | lb/stb | kg/sm3 | gm/scc |  |

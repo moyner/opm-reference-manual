@@ -16,7 +16,7 @@ This is an OPM Flow specific keyword for the simulator’s Water Vaporization an
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | A real monotonically increasing down the column values that define the gas phase pressure, that together with salt concentration, defines the vaporized water in gas ratio (“VWGR”) or Rw | None |
 | psia | barsa | atma |  |

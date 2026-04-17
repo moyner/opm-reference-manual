@@ -13,7 +13,7 @@ Wells are allocated to groups when the wells are specified by the WELSPECS keywo
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well gas lift optimization parameters are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | OPTLIFT | A defined character string that sets if a well’s gas lift gas rate should be calculated by the gas lift optimization facility or not, and should be set to: | None |

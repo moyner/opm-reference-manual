@@ -13,7 +13,7 @@ The number of PVTWSALT table data sets is defined by the NTPVT parameter on the 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1-1 | PRESS | Single real positive value that defines the reference pressure for the data in the following records (Pref). PRESS should be approximately equal to the average reservoir pressures in the model. The simulator uses the previous time step values to forecast the current  time step water properties by linear interpolation. If PRESS is not representative of the average reservoir pressures in the model then the linear interpolation might result in nonphysical values of the water saturation and water viscosity. | None |
 | psia | barsa | atma |  |

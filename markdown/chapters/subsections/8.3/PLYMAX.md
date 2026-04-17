@@ -13,7 +13,7 @@ Note that If the BRINE option has not be activated by the BRINE keyword in the R
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | POLCON | A real value that defines the polymer concentration in the solution which is used to calculate maximum polymer fluid component viscosity. | None |
 | lb/stb | kg/sm3 | gm/scc |  |

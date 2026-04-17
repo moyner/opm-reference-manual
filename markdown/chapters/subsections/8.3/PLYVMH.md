@@ -18,7 +18,7 @@ This is an OPM Flow specific keyword that employs an alternative polymer flood m
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 ‍ | MHK | The Mark-Houwink K polymer specific constant in the Mark-Houwink equation, see equation (8.77). | None |
 |  | ml/g |  |  |
@@ -82,7 +82,7 @@ Finally, the Intrinsic Velocity, which is defined as a measure for the internal 
 
 
 $$
-\begin{matrix}[\mathrm{η}] = \underset{{C}_{p}\left.\rightarrow 0}{lim}\frac{{\mathrm{η}}_{\text{sp}}}{{C}_{p}} \\   = \underset{{C}_{p}\left.\rightarrow 0}{lim}\frac{\mathrm{η}-{\mathrm{η}}_{0}}{{\mathrm{η}}_{0}{C}_{p}}\end{matrix}
+\begin{matrix}[\mathrm{η}] = \underset{{C}_{p}\rightarrow 0}{lim}\frac{{\mathrm{η}}_{\text{sp}}}{{C}_{p}} \\   = \underset{{C}_{p}\rightarrow 0}{lim}\frac{\mathrm{η}-{\mathrm{η}}_{0}}{{\mathrm{η}}_{0}{C}_{p}}\end{matrix}
 $$ {#eq-8-76}
 
 where:
@@ -94,7 +94,7 @@ viscosity arising from an individual polymer chain and is a measure of the polym
 ${η}_{o}$	= 	zero-shear viscosity.
 
 
-For any given solvent pair, the intrinsic viscosity increases as the molecular weight of the polymer increases; here, the Mark-Houwink equation, also known as the  Mark-Houwink-Staudinger equation [H. Mark, in R. Saenger, Der feste Koerper, Hirzel, Leipzig, 1938.],   [R. Houwink , J. Prakt. Chem., Vol. 157, Issue 1-3, p. 15 (1940).], and   [H. Staudinger, Die Hochmolekulare Organischen Verbindungen, Julius Springer, Berlin 1932.] is used to calculate [η], that is:
+For any given solvent pair, the intrinsic viscosity increases as the molecular weight of the polymer increases; here, the Mark-Houwink equation, also known as the  Mark-Houwink-Staudinger equation^[H. Mark, in R. Saenger, Der feste Koerper, Hirzel, Leipzig, 1938.],  ^[R. Houwink , J. Prakt. Chem., Vol. 157, Issue 1-3, p. 15 (1940).], and  ^[H. Staudinger, Die Hochmolekulare Organischen Verbindungen, Julius Springer, Berlin 1932.] is used to calculate [η], that is:
 
 
 $$
@@ -122,7 +122,7 @@ ln([\mathrm{η}]) = ln(K) + a \times  ln({M}_{w})
 $$ {#eq-8-78}
 
 
-OPM Flow uses a form of the Huggins [Huggins, M. L. 1942. The viscosity of dilute solutions of long-chain molecules. IV. Dependence on concentration.» Journal of the American Chemical Society 64 (11): 2716-2718.] equation to calculate the polymer apparent viscosity, as shown below:
+OPM Flow uses a form of the Huggins^[Huggins, M. L. 1942. The viscosity of dilute solutions of long-chain molecules. IV. Dependence on concentration.» Journal of the American Chemical Society 64 (11): 2716-2718.] equation to calculate the polymer apparent viscosity, as shown below:
 
 
 $$

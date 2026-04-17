@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | OPTION1 | A defined character string that sets the matrix flow in and out of the matrix block option, and should be set to one of the following: | YES |
 | Notes: |  |  |  |
 

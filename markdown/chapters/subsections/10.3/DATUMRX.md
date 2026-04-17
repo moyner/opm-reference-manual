@@ -11,7 +11,7 @@ The DATUMRX keyword defines the datum depth for each fluid in-place family regio
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | FIPNAME | A character string of up to five characters in length that defines the FIP family name for which the datum depth data is being defined. The default value of 1* will set DATUMR to the standard FIPNUM region numbers. | 1* |
 | 2 | DATUMR | DATUMR is a vector of positive values that defines the datum depth for each fluid in-place family region. There must be one entry for each region in the FIP family name. A maximum of NTFIP values, as declared by the REGDIMS keyword in the RUNSPEC section, may be entered for each FIPNAME entry. | None |

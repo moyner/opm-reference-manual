@@ -15,7 +15,7 @@ Although this keyword is read by OPM Flow and the ACTION and UDQ computational l
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | UDQ | Define the start of UDQ Definition Section.  This is then followed on a new line by any number of UDQ records that define the various operations to be performed using the ASSIGN, DEFINE UNITS and UPDATE sub-keywords for the OPERATOR. |  |  |
 | 1 | OPERATOR | OPERATOR is a defined character string that specifies the type of operation to perform, and should be one of the following: |  |
 | 2 | VARIABLE | VARIABLE is a character string of length eight that stipulates the name of the user defined variable that will processed by the OPERATOR command. The first two characters of VARIABLE must be set based on the type of variable being defined, that is: OPM Flow currently only supports field, group, segment and well variables (FU*, GU*, SU* and WU*). |  |
@@ -122,7 +122,7 @@ Note that after the terminating “/” for the ASSIGN operator normally any com
 
 #### Examples
 
-The first example shows how to define some constant field variables used for calculating facilities corrected condensate and Liquefied Petroleum Gas [Liquefied Petroleum Gas or LPG consists mainly of propane, propylene, butane, and butylene in various mixtures. It is produced as a by-product of natural gas processing and petroleum refining. The components of LPG are gases at standard conditions.] (“LPG “) yields in a wet gas model:
+The first example shows how to define some constant field variables used for calculating facilities corrected condensate and Liquefied Petroleum Gas^[Liquefied Petroleum Gas or LPG consists mainly of propane, propylene, butane, and butylene in various mixtures. It is produced as a by-product of natural gas processing and petroleum refining. The components of LPG are gases at standard conditions.] (“LPG “) yields in a wet gas model:
 
 
 ```

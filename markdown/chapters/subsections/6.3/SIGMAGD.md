@@ -7,7 +7,7 @@
 
 #### Description
 
-The SIGMAGD keyword defines the dual porosity matrix to fracture transmissibility multiplier, sigma, that is applied to all cells, for when the Dual Porosity model has been activated by either the DUALPORO or the DUALPERM keywords in the RUNSPEC section.  In addition, the GRAVDR keyword in the RUNSPEC section should be used to enable the Gravity Drainage model for the run. Sigma (σ) takes into account the matrix-fracture interface area per unit volume and was defined by Kazemi et al [Kazemi, H., Merrill JR., L. S., Porterfield, K. L., and Zeman, P. R. “Numerical Simulation of Water-Oil Flow in Naturally Fractured Reservoirs,” paper SPE 5719, Society of Petroleum Engineers Journal (1976) 16, No. 6, 317-326.] to be:
+The SIGMAGD keyword defines the dual porosity matrix to fracture transmissibility multiplier, sigma, that is applied to all cells, for when the Dual Porosity model has been activated by either the DUALPORO or the DUALPERM keywords in the RUNSPEC section.  In addition, the GRAVDR keyword in the RUNSPEC section should be used to enable the Gravity Drainage model for the run. Sigma (σ) takes into account the matrix-fracture interface area per unit volume and was defined by Kazemi et al^[Kazemi, H., Merrill JR., L. S., Porterfield, K. L., and Zeman, P. R. “Numerical Simulation of Water-Oil Flow in Naturally Fractured Reservoirs,” paper SPE 5719, Society of Petroleum Engineers Journal (1976) 16, No. 6, 317-326.] to be:
 
 
 $$

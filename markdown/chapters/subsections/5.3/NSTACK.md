@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NSTACK | A positive integer that defines the maximum number of previous search directions stored by the linear solver. | 10 |
 | Notes: |  |  |  |
 

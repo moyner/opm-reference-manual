@@ -13,7 +13,7 @@ Although this keyword is read by OPM Flow and the ACTION and UDQ computational l
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | NMUDA | NMUDA is a positive integer that defines the number of arguments in a SCHEDULE section keyword, that are replaced by numeric UDQ values. | 0 |
 | 2 | IGNORED | Not used and should be defaulted. | 1* |
 | 3 | MXUDA | MXUDA is a positive integer that defines the maximum number of unique arguments in a keyword that are replaced by numeric UDA values. Note that MXUDA differs from NMUDA, for example: As MXUDA’s default value is 100 then this only needs to be increased  where the same UDA is used more than 100 times. | 100 |

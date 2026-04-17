@@ -11,7 +11,7 @@ The SSFN keyword defines the miscible normalized relative permeability tables fo
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | SGAS | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the gas plus solvent saturation ration which is defined as either: $\frac{{S}_{g}}{({S}_{g} + {S}_{s})}$or $\frac{{S}_{s}}{({S}_{g} + {S}_{s})}$ Where Sg is the gas saturation and Ss is the solvent saturation. | None |
 | dimensionless | dimensionless | dimensionless |  |

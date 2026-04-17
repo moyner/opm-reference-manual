@@ -11,7 +11,7 @@ VFPIDIMS keyword defines the maximum dimensions of the injection well Vertical L
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | MXMFLO | A positive integer that defines the maximum number of injection rate entries for the  VFPINJ keyword. | 0 |
 | 2 | MXMTHP | A positive integer that defines the maximum number of THP entries for the  VFPINJ keyword. | 0 |
 | 3 | MXVFPTAB | A positive integer that defines the maximum number of VFPINJ tables entered through the VFPINJ keyword. | 0 |

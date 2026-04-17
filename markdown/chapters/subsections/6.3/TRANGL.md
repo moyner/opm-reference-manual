@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | I1 | A positive integer that defines the LGR grid block in the I-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NX on the CARFIN keyword in the GRID section. | None |
 | 2 | J1 | A positive integer that defines the LGR grid block in the J-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NY on the CARFIN keyword in the GRID section. | None |

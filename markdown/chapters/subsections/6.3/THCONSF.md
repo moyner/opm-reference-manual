@@ -13,7 +13,7 @@ This keyword can only be used if the thermal option has been activated by the TH
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | THCONSF | THCONSF is an array of real positive numbers, greater than zero and less than or equal to one, that define the gas saturation dependent scaling factor that is applied to the THCONR data, entered via the THCONR keyword, to adjust the thermal conductivity of the reservoir cells in each grid block. Repeat counts may be used, for example 3000*0.15 | None |
 | dimensionless | dimensionless | dimensionless |  |
@@ -24,8 +24,8 @@ This keyword can only be used if the thermal option has been activated by the TH
 
 Note that there two ways to define the rock and in situ fluids thermal conductivity:
 
-    - Either by using the THCONR keyword to define the combined rock and fluid conductivity, and optionally the THCONSF keyword in the GRID section, or
-    - by specifying the rock and fluid conductivities individually using the THCROCK, THCOIL, THCGAS, and THCWATER keywords in the GRID section.
+- Either by using the THCONR keyword to define the combined rock and fluid conductivity, and optionally the THCONSF keyword in the GRID section, or
+- by specifying the rock and fluid conductivities individually using the THCROCK, THCOIL, THCGAS, and THCWATER keywords in the GRID section.
 
 Hence,  the THCROCK and THCONR keywords are mutually exclusive.
 

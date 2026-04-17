@@ -13,7 +13,7 @@ The keyword should only be used if both gas and water phases haves been activate
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding vaporized oil-gas ratio values, RVW | None |
 | feet | m | cm |  |

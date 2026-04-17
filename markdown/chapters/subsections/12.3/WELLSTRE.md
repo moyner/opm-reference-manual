@@ -18,7 +18,7 @@ This is an OPM Flow keyword used with OPM Flow’s CO2STORE and GASWAT keywords 
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | STREAM | STREAM is a character string of up to eight characters in length, representing the well stream name. The WELLDIMS(MXSTRMS) parameter in the RUNSPEC section determines the maximum number of well streams allowed in the model. | None |
 | 2 | ZCOMP | A row vector, with each item representing a compositional component mole fraction for a given component. In addition, the sum of the compositional component mole fractions must sum to one, otherwise an error will occur. Note that the number ZCOMP values, should be the same as that entered via the NCOMPS keyword in the PROPS section, and the COMPS keyword in the RUNSPEC section. However,  for a given ZCOMP component, the mole fraction may be defaulted with 1*, in which case the mole fraction is set to zero. Secondly, ZCOMP may be terminated early, in this case the undefined mole fractions will be set to zero. Finally, only the default value of two components are currently supported by OPM Flow. | None |

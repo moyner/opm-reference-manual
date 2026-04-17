@@ -22,7 +22,7 @@ This is an OPM Flow specific keyword for the simulator’s scripting facility us
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | PYINPUT | PYINPUT declares the start of a PYINPUT Definition Section.  This is then followed by any number Python commands. | Not Applicable |  |
 | 1-1 | PYTHON | A series of standard Python commands with one line per command. The active Parser objects are accessible as context.parser and the active Deck object is available as context.deck. |  |
 | PYEND | PYEND declares the end of a PYINPUT Definition Section.  The Python code between PYINPUT and PYEND is read and executed, and the simulator thenreturns to reading the normal simulation input deck. |  |  |

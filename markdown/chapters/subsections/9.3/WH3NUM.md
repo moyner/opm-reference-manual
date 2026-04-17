@@ -13,7 +13,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | WH3NUM | WH3NUM defines an array of positive integers assigning a grid cell to a particular saturation table region. The maximum number of WH3NUM regions is set by the NTSFUN variable on the TABDIMS keyword in the RUNSPEC section. | Taken from cell allocated SATNUM |
 | Notes: |  |  |  |
 

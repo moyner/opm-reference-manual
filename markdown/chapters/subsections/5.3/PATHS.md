@@ -11,7 +11,7 @@ PATHS allows the user to define alias directory filenames to avoid long filename
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | ALIAS | A character string enclosed in quotes defining the alias. | None |
 | 2 | DIRC | A character string enclosed in quotes defining the directory filename. | None |
 | Notes: |  |  |  |

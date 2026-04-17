@@ -11,7 +11,7 @@ The ROCKOPTS keyword defines various options with respect to rock compaction and
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | 1 | ROCKOPT1 | A defined character string that specifies how the overburden pressures supplied by the OVERBURD keyword are applied to the tabulated pressures in the ROCKTAB keywords: ROCKOPT1 should be set to PRESSURE if the OVERBURD is not used in the input deck. Only the default value of PRESSURE is supported. | PRESSURE |
 | 2 | ROCKOPT2 | A defined character string that sets the reference pressure option: Note that STORE option should not be used with the OVERBURD keywords as the OVERBURD data will be overwritten. | NOSTORE |
 | 3 | ROCKOPT3 | A defined character string that specifies which region array should be used to allocate the various ROCK and ROCKTAB property tables in the model: Only the PVTNUM and ROCKNUM options are currently supported. | PVTNUM |

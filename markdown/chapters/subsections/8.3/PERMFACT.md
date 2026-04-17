@@ -16,7 +16,7 @@ This is an OPM Flow specific keyword.
 
 
 | No. | Name | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | POROFAC | A real monotonically increasing positive columnar vector that defines the porosity ($\frac{ϕ}{{ϕ}_{0}}$) factor for the corresponding PERMFAC vector. In the simulator’s Salt Precipitation model, the maximum value of $ϕ$ is ${ϕ}_{0}$, implying a maximum value of one for POROFAC. | None |
 | dimensionless | dimensionless | dimensionless |  |
@@ -52,7 +52,7 @@ ${ϕ}_{c}$	=	the residual porosity at which permeability is zero, and
 $γ$	=	a positive exponent.
 
 
-See also Kozeny-Carment (extended) [J. Kozeny, "Ueber kapillare Leitung des Wassers im Boden." Sitzungsber Akad. Wiss., Wien, 136(2a): 271-306, 1927.],  [P.C. Carman, "Fluid flow through granular beds." Transactions, Institution of Chemical Engineers, London, 15: 150-166, 1937.] and  [P.C. Carman, "Flow of gases through porous media." Butterworths, London, 1956.] and Verma-Pruess [Verma, A., & Pruess, K. (1988). Thermohydrological conditions and silica redistribution near high-level nuclear wastes emplaced in saturated geological formations. Journal of Geophysical Research,93, 1159–1173.] for additional functional forms that can be used to derive the tabulated data that can be entered via the PERMFACT keyword.
+See also Kozeny-Carment (extended)^[J. Kozeny, "Ueber kapillare Leitung des Wassers im Boden." Sitzungsber Akad. Wiss., Wien, 136(2a): 271-306, 1927.], ^[P.C. Carman, "Fluid flow through granular beds." Transactions, Institution of Chemical Engineers, London, 15: 150-166, 1937.] and ^[P.C. Carman, "Flow of gases through porous media." Butterworths, London, 1956.] and Verma-Pruess^[Verma, A., & Pruess, K. (1988). Thermohydrological conditions and silica redistribution near high-level nuclear wastes emplaced in saturated geological formations. Journal of Geophysical Research,93, 1159–1173.] for additional functional forms that can be used to derive the tabulated data that can be entered via the PERMFACT keyword.
 
 
 #### Example

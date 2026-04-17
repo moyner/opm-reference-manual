@@ -75,9 +75,9 @@ If the second option is selected OPMRUN will display a dialog box that shows a l
 
 Alternatively one can use the:
 
-    - Edit OPM Flow Parameter menu option to edit the parameter file for a job.
-    - List OPM Flow Parameters menu option to list the commands in the parameter file for a job.
-    - Set OPM Flow Default Parameters to set the default parameters for all subsequent jobs added to the queue. This option allows the user to load a default set of parameters from (1) OPM Flow, (2) an OPM Flow Parameter File, or (3) an OPM Flow print file (*.PRT).
+- Edit OPM Flow Parameter menu option to edit the parameter file for a job.
+- List OPM Flow Parameters menu option to list the commands in the parameter file for a job.
+- Set OPM Flow Default Parameters to set the default parameters for all subsequent jobs added to the queue. This option allows the user to load a default set of parameters from (1) OPM Flow, (2) an OPM Flow Parameter File, or (3) an OPM Flow print file (*.PRT).
 
 One can also right-click on a job and select one of the available options.
 
