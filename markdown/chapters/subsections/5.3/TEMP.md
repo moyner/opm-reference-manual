@@ -1,7 +1,7 @@
-### TEMP – Activate the Temperature Modeling Option
+### TEMP – Activate the Temperature Modeling Option {#kw-TEMP}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -9,11 +9,11 @@
 
 This keyword activates the temperature modeling option.
 
-In OPM Flow's thermal model (THERMAL keyword) enthalpy is conserved and the energy equations are solved fully implicitly with the black-oil equations. Whereas, in OPM Flow's temperature model (TEMP keyword) internal energy is conserved (the work term is neglected and internal energy is equal to enthalpy) and the energy equations are solved sequentially after the black-oil equations. Note that the thermal model can be modified so that internal energy rather than enthalpy is conserved by setting the command line option --conserve-inner-energy-thermal=true (the default is false). If properties like density or viscosity "strongly" depend on temperature, the thermal model is recommended.
+In OPM Flow's thermal model ([THERMAL](#kw-THERMAL) keyword) enthalpy is conserved and the energy equations are solved fully implicitly with the black-oil equations. Whereas, in OPM Flow's temperature model (TEMP keyword) internal energy is conserved (the work term is neglected and internal energy is equal to enthalpy) and the energy equations are solved sequentially after the black-oil equations. Note that the thermal model can be modified so that internal energy rather than enthalpy is conserved by setting the command line option --conserve-inner-energy-thermal=true (the default is false). If properties like density or viscosity "strongly" depend on temperature, the thermal model is recommended.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 
-The temperature option (TEMP keyword) and the thermal option (THERMAL keyword) are two separate modeling facilities in the commercial simulator, although some keywords can be used by both options, for example the RTEMP keyword.  OPM Flow’s temperature model is not directly equivalent to either the commercial simulator’s black-oil TEMP or compositional THERMAL formulation.
+The temperature option (TEMP keyword) and the thermal option ([THERMAL](#kw-THERMAL) keyword) are two separate modeling facilities in the commercial simulator, although some keywords can be used by both options, for example the [RTEMP](#kw-RTEMP) keyword.  OPM Flow’s temperature model is not directly equivalent to either the commercial simulator’s black-oil TEMP or compositional [THERMAL](#kw-THERMAL) formulation.
 
 The energy black-oil implementation in OPM Flow uses a mixture of the commercial simulators black-oil and the commercial simulators “compositional thermal” keywords, as well as some OPM Flow specific keywords.
 

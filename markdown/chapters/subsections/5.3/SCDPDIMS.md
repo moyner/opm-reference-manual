@@ -1,7 +1,7 @@
-### SCDPDIMS – Define Scale Deposition and Damage Table Dimensions
+### SCDPDIMS – Define Scale Deposition and Damage Table Dimensions {#kw-SCDPDIMS}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -14,18 +14,15 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | NTSCDP | NTSCDP is a positive integer that defines the number of SCDPTAB scale deposition tables used in the Scale Deposition option. | 0 |
-| 2 | NPSCDP | NPSCDP is a positive integer that defines the maximum number of entries (or rows) in any one SCDPTAB scale deposition table defined in the input deck. | 0 |
-| 3 | NTSCDA | NTSCDA is a positive integer that defines the number of SCDATAB scale damage tables used in the Scale Deposition option. | 0 |
-| 4 | NPSCDA | NPSCDA is a positive integer that defines the maximum number of entries (or rows) in any one SCDATAB scale damage table defined in the input deck. | 0 |
+| 1 | NTSCDP | NTSCDP is a positive integer that defines the number of [SCDPTAB](#kw-SCDPTAB) scale deposition tables used in the Scale Deposition option. | 0 |
+| 2 | NPSCDP | NPSCDP is a positive integer that defines the maximum number of entries (or rows) in any one [SCDPTAB](#kw-SCDPTAB) scale deposition table defined in the input deck. | 0 |
+| 3 | NTSCDA | NTSCDA is a positive integer that defines the number of [SCDATAB](#kw-SCDATAB) scale damage tables used in the Scale Deposition option. | 0 |
+| 4 | NPSCDA | NPSCDA is a positive integer that defines the maximum number of entries (or rows) in any one [SCDATAB](#kw-SCDATAB) scale damage table defined in the input deck. | 0 |
 | 5 | Not Used |  | 1* |
 | 6 | Not Used |  | 1* |
-| 7 | NTSCDE | NTSCDE is a positive integer that defines the number of SCDETAB karst aquifer dissolution tables used in the Scale Deposition option. | 0 |
+| 7 | NTSCDE | NTSCDE is a positive integer that defines the number of [SCDETAB](#kw-SCDETAB) karst aquifer dissolution tables used in the Scale Deposition option. | 0 |
 | Notes: |  |  |  |
-
-*Table 5.41: SCDPDIMS Keyword Description*
-
-
+: SCDPDIMS Keyword Description {#tbl-5-41}
 #### Example
 
 
@@ -38,4 +35,4 @@ SCDPDIMS
 ```
 
 
-The above example defines the number of SCDPTAB scale deposition tables to be five with a maximum number of rows for each table set to 10, the maximum number of SCDATAB scale damage tables to be four with a maximum number of 10 rows per table, and the maximum number of SCDETAB karst aquifer dissolution tables to be three.
+The above example defines the number of [SCDPTAB](#kw-SCDPTAB) scale deposition tables to be five with a maximum number of rows for each table set to 10, the maximum number of [SCDATAB](#kw-SCDATAB) scale damage tables to be four with a maximum number of 10 rows per table, and the maximum number of [SCDETAB](#kw-SCDETAB) karst aquifer dissolution tables to be three.

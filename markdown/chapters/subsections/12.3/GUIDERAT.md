@@ -1,13 +1,13 @@
-### GUIDERAT – Define Group Guide Rate Formula
+### GUIDERAT – Define Group Guide Rate Formula {#kw-GUIDERAT}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword defines a general formulae used to define a group’s and well’s guide rate as a function of the their potential.  The default behavior, that is when this keyword is not invoked,  is to set the target control mode and rate via the GCONPROD keyword in the SCHEDULE section.  In this case the target rate is distributed between the group’s wells that are under group control using a well’s guide rate. If a well’s guide rate has not been defined, for example by this keyword, then the well potential of the group controlling phase at the beginning of the time step is used.  For example, if the group target rate and phase is oil, then the well’s under group control will have their oil rates determined by their oil rate potential^[Production and injection potentials are based on rates that are unrestricted. For wells this implies that well potential is calculated based on either the BHP or THP limit, which ever is the more constraining.]. The GUIDERAT keyword substitutes the potential calculation with a more general formulae in the aforementioned distribution and allocation of the rates:
+This keyword defines a general formulae used to define a group’s and well’s guide rate as a function of the their potential.  The default behavior, that is when this keyword is not invoked,  is to set the target control mode and rate via the [GCONPROD](#kw-GCONPROD) keyword in the [SCHEDULE](#kw-SCHEDULE) section.  In this case the target rate is distributed between the group’s wells that are under group control using a well’s guide rate. If a well’s guide rate has not been defined, for example by this keyword, then the well potential of the group controlling phase at the beginning of the time step is used.  For example, if the group target rate and phase is oil, then the well’s under group control will have their oil rates determined by their oil rate potential^[Production and injection potentials are based on rates that are unrestricted. For wells this implies that well potential is calculated based on either the BHP or THP limit, which ever is the more constraining.]. The GUIDERAT keyword substitutes the potential calculation with a more general formulae in the aforementioned distribution and allocation of the rates:
 
 
 $$
@@ -28,13 +28,13 @@ Potential Ratio2	= the potential phase ratio as defined by this keyword.
 The formulae can be used to control high water cut or high GOR wells in an oil field, such as the offending wells are given progressively smaller guide rates as they water out or gas out.
 
 
-Note that groups can only have potential guide rates if they are subordinate in another group and required to produce a proportion of the superior group’s target rate. In this case the GUIDERAT keyword can optionally be applied by setting GUIPHASE variable on the GCONPROD keyword in the SCHEDULE section.  Group potentials are the sum of the potentials of their subordinate open wells.
+Note that groups can only have potential guide rates if they are subordinate in another group and required to produce a proportion of the superior group’s target rate. In this case the GUIDERAT keyword can optionally be applied by setting GUIPHASE variable on the [GCONPROD](#kw-GCONPROD) keyword in the [SCHEDULE](#kw-SCHEDULE) section.  Group potentials are the sum of the potentials of their subordinate open wells.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | TSTEP | A real positive value that defines the minimum time interval to re-calculate the guide rates.  The guide rates are calculated at the start of a time step and the default value of zero means that the guide rates are calculated for each time step. A non-zero value for TSTEP resets the minimum interval, for example setting TSTEP equal to 30 would mean the guide rates are calculate every 30 days, or to the nearest associated time step. Calculating guide rates every time step may cause issues due to the rate dependent behavior, for example gas cusping or water coning causing the well rates to oscillate. In this case using a non-zero value of TSTEP may eliminate this oscillating behavior. | 0.0 |
+| 1 | [TSTEP](#kw-TSTEP) | A real positive value that defines the minimum time interval to re-calculate the guide rates.  The guide rates are calculated at the start of a time step and the default value of zero means that the guide rates are calculated for each time step. A non-zero value for [TSTEP](#kw-TSTEP) resets the minimum interval, for example setting [TSTEP](#kw-TSTEP) equal to 30 would mean the guide rates are calculate every 30 days, or to the nearest associated time step. Calculating guide rates every time step may cause issues due to the rate dependent behavior, for example gas cusping or water coning causing the well rates to oscillate. In this case using a non-zero value of [TSTEP](#kw-TSTEP) may eliminate this oscillating behavior. | 0.0 |
 | days | days | hours |  |
 | 2 | PHASE | A defined character string that sets the potential phase guide rate for the group and well, the resulting Phase Guide Rate in equation (12.28).  PHASE should be set to one of the following character strings: For reference, the units for the various options is given below . | None |
 | WOR: dimensionless WCT: dimensionless WGR: stb/Mscf | dimensionless dimensionless dimensionless | dimensionless dimensionless dimensionless |  |
@@ -50,14 +50,11 @@ Note that groups can only have potential guide rates if they are subordinate in 
 | 11 | GROPT03 | A defined character string that determines if “free” gas potential rates for the Potential Ratio2 variable in equation (12.28) should be used (YES), or if “free and associated” gas should be used (NO), and should be set to one of the following: | NO |
 | 12 | GROPT04 | A real positive value that sets the minimum potential guide rate. If the calculated potential guide is below this value it will be reset to GROPT04. The option is meant to avoid groups and wells being ignored due to the calculated potential guide rates being minuscule. | 1.0 x10-6 |
 | Notes: |  |  |  |
-
-*Table 12.47: GUIDERAT Keyword Description*
-
-
+: GUIDERAT Keyword Description {#tbl-12-47}
 Note that the GUIDERAT keyword only applies to production groups and wells. Injection groups and wells are still controlled by their potential guide rates.
 
 
-Finally, as mentioned previously, if the GUIDERAT or WGRUPCON keywords are not present in the input deck then the group and well potential guide rates will be calculated using the well’s potential rates. The WGRUPCON keyword in the SCHEDULE section can be used to set a constant potential guide rate for a well.
+Finally, as mentioned previously, if the GUIDERAT or [WGRUPCON](#kw-WGRUPCON) keywords are not present in the input deck then the group and well potential guide rates will be calculated using the well’s potential rates. The [WGRUPCON](#kw-WGRUPCON) keyword in the [SCHEDULE](#kw-SCHEDULE) section can be used to set a constant potential guide rate for a well.
 
 
 ::: {.callout-note}

@@ -1,23 +1,20 @@
-### ROCKNUM – Define Rock Compaction Table Region Numbers
+### ROCKNUM – Define Rock Compaction Table Region Numbers {#kw-ROCKNUM}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The ROCKNUM keyword defines the rock compaction table region numbers for each grid block, as such there must be one entry for each cell in the model. The region number specifies which set of rock compaction tables defined by the ROCKTAB keyword are used to calculate the rock compaction in a grid block.
+The ROCKNUM keyword defines the rock compaction table region numbers for each grid block, as such there must be one entry for each cell in the model. The region number specifies which set of rock compaction tables defined by the [ROCKTAB](#kw-ROCKTAB) keyword are used to calculate the rock compaction in a grid block.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | ROCKNUM | ROCKNUM defines an array of positive integers assigning a grid cell to a particular rock compaction table region. The maximum number of ROCKNUM regions is set by the NTROCC variable on the ROCKCOMP keyword in the RUNSPEC section. | 1 |
+| 1 | ROCKNUM | ROCKNUM defines an array of positive integers assigning a grid cell to a particular rock compaction table region. The maximum number of ROCKNUM regions is set by the NTROCC variable on the [ROCKCOMP](#kw-ROCKCOMP) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | 1 |
 | Notes: |  |  |  |
-
-*Table 9.19: ROCKNUM Keyword Description*
-
-
+: ROCKNUM Keyword Description {#tbl-9-19}
 #### Examples
 
 The example below sets three ROCKNUM regions for a 4 x 5 x 2 model.
@@ -33,7 +30,7 @@ ROCKNUM
 /
 ```
 
-Alternatively the EQUALS keyword could be employed to accomplish the same task, that is:
+Alternatively the [EQUALS](#kw-EQUALS) keyword could be employed to accomplish the same task, that is:
 
 
 ```

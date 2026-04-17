@@ -1,7 +1,7 @@
-### NETWORK – Activate the Extended Network Option and Define Parameters
+### NETWORK – Activate the Extended Network Option and Define Parameters {#kw-NETWORK}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,10 +16,7 @@ This keyword activates the Extended Network option and defines the maximum numbe
 | 2 | NBRMAX | NBRMAX is a positive integer that defines the maximum number of links in the Extended Network model. | None |
 | 3 | NBCMAX | NBCMAX is a positive integer that defines the maximum number of branches that can be connected to a node in the Extended Network model,  used in the commercial compositional simulator. The parameter is ignored by OPM Flow and should be defaulted or set to the default value of 20. | 20 |
 | Notes: |  |  |  |
-
-*Table 5.25: NETWORK Keyword Description*
-
-
+: NETWORK Keyword Description {#tbl-5-25}
 #### Example
 
 

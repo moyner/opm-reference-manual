@@ -1,7 +1,7 @@
-### ROCKFRAC – Define the Rock Volume to Bulk Volume Fraction for All the Cells
+### ROCKFRAC – Define the Rock Volume to Bulk Volume Fraction for All the Cells {#kw-ROCKFRAC}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -15,14 +15,11 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | ROCKFRAC | ROCKFRAC is an array of real numbers greater than or equal to zero and less than or equal to one, that are assigned the rock volume to bulk volume fraction values for each cell in the model. The number of entries should correspond to the NX x NY x NZ parameters on the DIMENS keyword. Repeat counts may be used, for example 200*0.850. | None |
+| 1 | ROCKFRAC | ROCKFRAC is an array of real numbers greater than or equal to zero and less than or equal to one, that are assigned the rock volume to bulk volume fraction values for each cell in the model. The number of entries should correspond to the NX x NY x NZ parameters on the [DIMENS](#kw-DIMENS) keyword. Repeat counts may be used, for example 200*0.850. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-
-*Table 6.115: NTG Keyword Description*
-
-
-See also the PORO, PERMX, PERMY, PERMZ and NTG keywords to fully define a grid’s properties.
+: NTG Keyword Description {#tbl-6-115}
+See also the [PORO](#kw-PORO), [PERMX](#kw-PERMX), [PERMY](#kw-PERMY), [PERMZ](#kw-PERMZ) and [NTG](#kw-NTG) keywords to fully define a grid’s properties.
 
 
 #### Example
@@ -37,7 +34,7 @@ ROCKFRAC
 
 ```
 
-The above example defines a constant ROCKFRAC of 1.00 for the first 100 cells, then 0.85 for the second 100 hundred cells, and finally 0.500 for the last 100 cell, for the 300 cells in the model as defined by the DIMENS keyword in the RUNSPEC section.
+The above example defines a constant ROCKFRAC of 1.00 for the first 100 cells, then 0.85 for the second 100 hundred cells, and finally 0.500 for the last 100 cell, for the 300 cells in the model as defined by the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 
 ```

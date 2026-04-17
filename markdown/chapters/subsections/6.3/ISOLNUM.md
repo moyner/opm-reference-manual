@@ -1,7 +1,7 @@
-### ISOLNUM – Define the Independent Reservoir Regions
+### ISOLNUM – Define the Independent Reservoir Regions {#kw-ISOLNUM}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -12,11 +12,9 @@ The ISOLNUM keyword defines areas of the grid that consists of isolated reservoi
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | ISOLNUM | ISOLNUM defines an array of positive integers assigning a grid cell to a particular isolated reservoir region. The maximum number of ISOLNUM regions is set by the NRFREG variable on the REGDIMS keyword in the RUNSPEC section. | 1 |
+| 1 | ISOLNUM | ISOLNUM defines an array of positive integers assigning a grid cell to a particular isolated reservoir region. The maximum number of ISOLNUM regions is set by the NRFREG variable on the [REGDIMS](#kw-REGDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | 1 |
 | Notes: |  |  |  |
-
-*Table 6.52: ISOLNUM Keyword Description*
-
+: ISOLNUM Keyword Description {#tbl-6-52}
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
 

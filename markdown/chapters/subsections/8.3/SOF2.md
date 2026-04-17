@@ -1,28 +1,25 @@
-### SOF2 – Oil Saturation Tables with Respect to Gas or Water (Format Type 2)
+### SOF2 – Oil Saturation Tables with Respect to Gas or Water (Format Type 2) {#kw-SOF2}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The SOF2 keyword defines the oil relative permeability versus oil saturation tables for when oil and gas or oil and water are present in the input deck.  The keyword is also used to define the relative permeability of the miscible hydrocarbon phase in SOLVENT runs. This keyword should only be used if oil is present in the run.
+The SOF2 keyword defines the oil relative permeability versus oil saturation tables for when oil and gas or oil and water are present in the input deck.  The keyword is also used to define the relative permeability of the miscible hydrocarbon phase in [SOLVENT](#kw-SOLVENT) runs. This keyword should only be used if oil is present in the run.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | SOIL | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the oil or the hydrocarbon solvent saturation. For two phase runs the oil saturation should be entered and for when the SOLVENT option has been activated in the RUNSPEC section the total hydrocarbon phase (including the solvent) should be entered, that is SOIL = So + Sg + Ss. | None |
+| 1 | [SOIL](#kw-SOIL) | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the oil or the hydrocarbon solvent saturation. For two phase runs the oil saturation should be entered and for when the [SOLVENT](#kw-SOLVENT) option has been activated in the [RUNSPEC](#kw-RUNSPEC) section the total hydrocarbon phase (including the solvent) should be entered, that is [SOIL](#kw-SOIL) = So + Sg + Ss. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 3 | KRO | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the oil relative permeability with respect to gas and connate water saturation. For two phase runs the oil relative permeability should be entered and for when the SOLVENT option has been activated in the RUNSPEC section the relative permeability of the miscible hydrocarbon phase with respect to water. The last value in the column should be zero. | None |
+| 3 | [KRO](#kw-KRO) | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the oil relative permeability with respect to gas and connate water saturation. For two phase runs the oil relative permeability should be entered and for when the [SOLVENT](#kw-SOLVENT) option has been activated in the [RUNSPEC](#kw-RUNSPEC) section the relative permeability of the miscible hydrocarbon phase with respect to water. The last value in the column should be zero. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-
-*Table 8.165: SOF2 Keyword Description*
-
-
-Note this keyword should only be used for when the SOLVENT keyword in the RUNSPEC section has been activated. It should not be use for two-phase oil-water runs.
+: SOF2 Keyword Description {#tbl-8-165}
+Note this keyword should only be used for when the [SOLVENT](#kw-SOLVENT) keyword in the [RUNSPEC](#kw-RUNSPEC) section has been activated. It should not be use for two-phase oil-water runs.
 
 
 #### Example

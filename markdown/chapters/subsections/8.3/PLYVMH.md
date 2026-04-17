@@ -1,7 +1,7 @@
-### PLYVMH – Polymer Molecular Weight Model Polymer Viscosity Constants
+### PLYVMH – Polymer Molecular Weight Model Polymer Viscosity Constants {#kw-PLYVMH}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -9,7 +9,7 @@
 
 This keyword, PLYVMH, defines the constants used to calculate viscosity of the polymer solution as a function of the polymer molecular weight and the polymer concentration, for the simulator's Polymer Molecular Weight Transport option, that uses the polymer molecular weight in calculating the polymer viscosity. The keyword consists of a series of row vectors, which each vector having four elements, that define the constants used in calculating the polymer viscosity
 
-This keyword should only be used if the POLYMER and POLYMW keywords in the RUNSPEC section are also activated.
+This keyword should only be used if the [POLYMER](#kw-POLYMER) and [POLYMW](#kw-POLYMW) keywords in the [RUNSPEC](#kw-RUNSPEC) section are also activated.
 
 
 ::: {.callout-note}
@@ -27,10 +27,7 @@ This is an OPM Flow specific keyword that employs an alternative polymer flood m
 | 3 | GAMMA | The ɣ intrinsic water-polymer viscosity constant in the Huggins equation, see equation (8.79). | None |
 | 4 | KAPPA | The κ intrinsic water-polymer viscosity constant in the Huggins equation, see equation (8.79). | None |
 | Notes: |  |  |  |
-
-*Table 8.109: PLYVMH Keyword Description*
-
-
+: PLYVMH Keyword Description {#tbl-8-109}
 The high molecular weight of polymers greatly increase the viscosity of the injected water in which they are dissolved, thus adjusting the mobility ration of the displacing phase. The increase in viscosity is caused by strong internal friction between the randomly coiled and swollen macro molecules and the surrounding water molecules.  And is dependent on both the nature of the polymer and the injected water acting as the solvent.  There are several formulations of viscosity associated with polymer rheology, namely:
 
 
@@ -105,13 +102,13 @@ where:
 
 $K$	=	is the polymer specific constant in the Mark-Houwink equation, the MHK
 
-parameter in  Table 8.109,
+parameter in  @tbl-8-109,
 
 ${M}_{w}$	= 	is the polymer molecular weight, and
 
 $a$	=	the exponent constant in the Mark-Houwink equation, the MHA parameter
 
-in  Table 8.109.
+in  @tbl-8-109.
 
 
 The Mark-Houwink parameters can be determined from a double logarithmic plot of intrinsic viscosity versus molecular weight which yields straight lines, that is:
@@ -131,9 +128,9 @@ $$ {#eq-8-79}
 
 where:
 
-$γ$	=	a user defined constant, GAMMA in Table 8.109, and
+$γ$	=	a user defined constant, GAMMA in @tbl-8-109, and
 
-$κ$	= 	a user defined constant, KAPPA in Table 8.109.
+$κ$	= 	a user defined constant, KAPPA in @tbl-8-109.
 
 
 Which can be used to calculate the zero-shear viscosity, η0,  based on the quadratic function in equation (8.79) time polymer concentration(Cp) and polymer intrinsic viscosity described in equation (8.77).
@@ -155,12 +152,12 @@ $$ {#eq-8-81}
 
 Note that the model does not account for non-Newtonian flow; the apparent viscosity is simply set equal to the zero-shear viscosity, and that the model only considers the full mixing between the polymer and water.
 
-See also the PLYMWINJ keyword in the PROPS section, that describes the relationship of the injected polymer molecular weight as a function of polymer throughput and polymer velocity.  Note that the standard polymer property data keywords: PLYROCK, PLYADS, PLYMAX, etc., are still required to fully describe the polymer fluid.
+See also the [PLYMWINJ](#kw-PLYMWINJ) keyword in the [PROPS](#kw-PROPS) section, that describes the relationship of the injected polymer molecular weight as a function of polymer throughput and polymer velocity.  Note that the standard polymer property data keywords: [PLYROCK](#kw-PLYROCK), [PLYADS](#kw-PLYADS), [PLYMAX](#kw-PLYMAX), etc., are still required to fully describe the polymer fluid.
 
 
 #### Example
 
-Given NPLYVMH equals two on the PINTDIMS keyword in the RUNSPEC section, then:
+Given NPLYVMH equals two on the [PINTDIMS](#kw-PINTDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, then:
 
 
 ```

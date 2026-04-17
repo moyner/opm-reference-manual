@@ -1,7 +1,7 @@
-### FILEUNIT – Activate Unit Consistency Checking
+### FILEUNIT – Activate Unit Consistency Checking {#kw-FILEUNIT}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -14,11 +14,8 @@ The FILEUNIT keyword defines the units of the data set, and is used to verify th
 | --- | --- | :------ | --- |
 | 1 | FILEUNIT | A character string that defines the units of the data set, and should be set to: | None |
 | Notes: |  |  |  |
-
-*Table 6.38: FILEUNIT Keyword Description*
-
-
-OPM Flow's behavior is controllable through the "UNIT_SYSTEM_MISMATCH" environment variable. The default behavior if the check fails (i.e., if one of the INCLUDE files has a unit system different from the main run specification) is to terminate the simulation with an error.
+: FILEUNIT Keyword Description {#tbl-6-38}
+OPM Flow's behavior is controllable through the "UNIT_SYSTEM_MISMATCH" environment variable. The default behavior if the check fails (i.e., if one of the [INCLUDE](#kw-INCLUDE) files has a unit system different from the main run specification) is to terminate the simulation with an error.
 
 
 #### Example
@@ -33,4 +30,4 @@ FILEUNIT
 ```
 
 
-The above example defines the data set units to be FIELD units.
+The above example defines the data set units to be [FIELD](#kw-FIELD) units.

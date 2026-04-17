@@ -1,5 +1,5 @@
-### MESSAGES – Define Message Print Limits and Stop Limits
+### MESSAGES – Define Message Print Limits and Stop Limits {#kw-MESSAGES}
 
-The MESSAGES keyword defines the print and stops levels for various messages. The “print limits” set the maximum number of messages that will be printed, after which no more messages will be printed and the “stop limits” terminate the run when these limits are exceeded. There are six levels of message that increase in severity from informative all the way to programming errors, as outlined in Table 4.5.
+The MESSAGES keyword defines the print and stops levels for various messages. The “print limits” set the maximum number of messages that will be printed, after which no more messages will be printed and the “stop limits” terminate the run when these limits are exceeded. There are six levels of message that increase in severity from informative all the way to programming errors, as outlined in @tbl-4-5.
 
 See MESSAGES – Define Message Print Limits and Stop Limits in the GLOBAL section for a full description.

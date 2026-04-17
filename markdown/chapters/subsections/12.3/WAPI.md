@@ -1,17 +1,17 @@
-### WAPI – Define Oil Well Injection API Gravity
+### WAPI – Define Oil Well Injection API Gravity {#kw-WAPI}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword defines an oil injection well’s API gravity for when API tracking has been made active via the API keyword in the RUNSPEC section. The American Petroleum Institute (API) classifies oils based on an API gravity (γAPI),  or degrees API (oAPI), the relationship between relative density (γo) of oil and API gravity (γAPI) is given by:
+This keyword defines an oil injection well’s [API](#kw-API) gravity for when [API](#kw-API) tracking has been made active via the [API](#kw-API) keyword in the [RUNSPEC](#kw-RUNSPEC) section. The American Petroleum Institute ([API](#kw-API)) classifies oils based on an [API](#kw-API) gravity (γ[API](#kw-API)),  or degrees [API](#kw-API) (oAPI), the relationship between relative density (γo) of oil and [API](#kw-API) gravity (γ[API](#kw-API)) is given by:
 
 
 $$
-{\mathrm{γ}}_{\mathit{API}} = \frac{141.5}{{\mathrm{γ}}_{o}} - 131.5
+{\mathrm{γ}}_{\mathit{[API](#kw-API)}} = \frac{141.5}{{\mathrm{γ}}_{o}} - 131.5
 $$ {#eq-12-33}
 
 

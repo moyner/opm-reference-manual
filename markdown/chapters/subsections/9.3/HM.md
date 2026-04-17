@@ -1,35 +1,33 @@
-### HM – History Match Region Gradient Parameters
+### HM – History Match Region Gradient Parameters {#kw-HM}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The HM series of keywords in the REGION section defines the history match gradient regions and sub-regions, for when the History Match Gradient option has been activated by the HMDIMS keyword in the RUNSPEC section.
+The HM series of keywords in the REGION section defines the history match gradient regions and sub-regions, for when the History Match Gradient option has been activated by the [HMDIMS](#kw-HMDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.
 
-For grid properties, the region name (or region property array) is based on the property arrays defined in Table 9.6.
+For grid properties, the region name (or region property array) is based on the property arrays defined in @tbl-9-6.
 
 
 | Property Array | Region Name | Grid Property Data  Desription |
 | --- | --- | --- |
-| PERMX | HMPERMX | Permeability multipliers in the x-direction. |
+| [PERMX](#kw-PERMX) | HMPERMX | Permeability multipliers in the x-direction. |
 | PERMXY | HMPRMXY | Permeability multipliers in the x-direction and y-direction |
 | pERMY | HMPERMY | Permeability multipliers in the y-direction. |
-| PERMZ | HMPERMZ | Permeability multipliers in the z-direction. |
-| PORV | HMPORV | Pore volume multiplier |
-| SIGMA | HMSIGMA | Dual porosity and/or dual permeability SIGMA multiplier |
-| TRANX | HMTRANX | Transmissibility multipliers in the x-direction. |
+| [PERMZ](#kw-PERMZ) | HMPERMZ | Permeability multipliers in the z-direction. |
+| [PORV](#kw-PORV) | HMPORV | Pore volume multiplier |
+| [SIGMA](#kw-SIGMA) | HMSIGMA | Dual porosity and/or dual permeability [SIGMA](#kw-SIGMA) multiplier |
+| [TRANX](#kw-TRANX) | HMTRANX | Transmissibility multipliers in the x-direction. |
 | TRANXY | HMTRNXY | Transmissibility multipliers in the x-direction and y-direction |
-| TRANY | HMTRANY | Transmissibility multipliers in the y-direction. |
-| TRANZ | HMTRANZ | Transmissibility multipliers in the z-direction. |
-
-*Table 9.6: HM Region Grid Gradient Parameter Keyword List*
-
-In addition, if the End-Point Scaling option has been activated by the ENDSCALE keyword in the RUNSPEC section, then the history match gradient regions and sub-regions for the end-point data can be specified. In this the keyword consists of the first two characters of “HM” followed by the end-point keyword (Table 9.7), for example, HMSWL.
+| [TRANY](#kw-TRANY) | HMTRANY | Transmissibility multipliers in the y-direction. |
+| [TRANZ](#kw-TRANZ) | HMTRANZ | Transmissibility multipliers in the z-direction. |
+: HM Region Grid Gradient Parameter Keyword List {#tbl-9-6}
+In addition, if the End-Point Scaling option has been activated by the [ENDSCALE](#kw-ENDSCALE) keyword in the [RUNSPEC](#kw-RUNSPEC) section, then the history match gradient regions and sub-regions for the end-point data can be specified. In this the keyword consists of the first two characters of “HM” followed by the end-point keyword (@tbl-9-7), for example, HMSWL.
 
 
 | Type | End-Point Keyword | Oil-Water End-Point Definitions |
@@ -50,5 +48,4 @@ In addition, if the End-Point Scaling option has been activated by the ENDSCALE 
 | HMKRGR | Relative permeability of gas at the residual oil saturation or the critical water saturation in a gas-water run. |  |
 | HMKRORG | Relative permeability of oil at the critical gas saturation. |  |
 | Capillary Pressure | HMSGLPC | Capillary pressure connate gas saturation, that is the smallest gas saturation in a gas saturation function table. |
-
-*Table 9.7: HM Region End-Point Gradient Parameter Keyword List*
+: HM Region End-Point Gradient Parameter Keyword List {#tbl-9-7}

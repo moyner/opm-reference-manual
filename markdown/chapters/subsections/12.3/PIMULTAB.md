@@ -1,4 +1,4 @@
-### Atgeirr Rasmussen
+### Atgeirr Rasmussen {#kw-Atgeirr}
       2017-09-20T14:53:08
       AFR
       Not supported. (But perhaps it should be!)
@@ -13,13 +13,13 @@
       – Define Well Productivity Index versus Water Cut Tables
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-PIMULTAB defines productivity index multiplier versus water cut tables that are used to scaled a well’s connection factors based on connection’s current producing water cut. The tables are used for modeling the productivity decline due to increasing water cut.  Allocation of the tables to a well is via the WPITAB keyword in the SCHEDULE section.
+PIMULTAB defines productivity index multiplier versus water cut tables that are used to scaled a well’s connection factors based on connection’s current producing water cut. The tables are used for modeling the productivity decline due to increasing water cut.  Allocation of the tables to a well is via the [WPITAB](#kw-WPITAB) keyword in the [SCHEDULE](#kw-SCHEDULE) section.
 
 
 | No. | Name | Description | Default |
@@ -30,18 +30,15 @@ PIMULTAB defines productivity index multiplier versus water cut tables that are 
 | 2 | PIMULT | A real positive decreasing columnar vector that defines the productivity index multiplier used to scale a well’s connection factors, for the corresponding WCUT vector. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-
-*Table 12.58: PIMULTAB Keyword Description*
-
-
-See also the WPITAB keyword that allocates the tables to the wells, and also the WPIMULT keyword that scales a well’s productivity index by a constant value, both of which are in the SCHEDULE section.
+: PIMULTAB Keyword Description {#tbl-12-58}
+See also the [WPITAB](#kw-WPITAB) keyword that allocates the tables to the wells, and also the [WPIMULT](#kw-WPIMULT) keyword that scales a well’s productivity index by a constant value, both of which are in the [SCHEDULE](#kw-SCHEDULE) section.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
 
 #### Examples
 
-Given NTPIMT equals two and NRPIMT equals four on PIMTDIMS keyword in the RUNSPEC section,  then:
+Given NTPIMT equals two and NRPIMT equals four on [PIMTDIMS](#kw-PIMTDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section,  then:
 
 
 ```
@@ -64,7 +61,7 @@ PIMULTAB
 ```
 
 
-The next example is summarized from the Norne model with NTPIMT equals one and NRPIMT equals to 51 on the PIMTDIMS keyword in the RUNSPEC section.
+The next example is summarized from the Norne model with NTPIMT equals one and NRPIMT equals to 51 on the [PIMTDIMS](#kw-PIMTDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 
 ```

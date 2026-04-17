@@ -1,13 +1,13 @@
-### ADDREG – Add a Constant to an Array based on a Region Number
+### ADDREG – Add a Constant to an Array based on a Region Number {#kw-ADDREG}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The ADDREG keyword adds a constant to a specified array or part of an array based on cells with a specific region number. The region number array can be FLUXNUM, MULTNUM or OPERNUM and these arrays must be defined and be available before the ADDREG keyword is read by the simulator. The constant can be an integer or real value depending on the array type; however, the arrays that can be operated on are dependent on which section the ADDREG keyword is being applied in.
+The ADDREG keyword adds a constant to a specified array or part of an array based on cells with a specific region number. The region number array can be [FLUXNUM](#kw-FLUXNUM), [MULTNUM](#kw-MULTNUM) or [OPERNUM](#kw-OPERNUM) and these arrays must be defined and be available before the ADDREG keyword is read by the simulator. The constant can be an integer or real value depending on the array type; however, the arrays that can be operated on are dependent on which section the ADDREG keyword is being applied in.
 
 
 | No. | Name | Description | Default |
@@ -17,44 +17,38 @@ The ADDREG keyword adds a constant to a specified array or part of an array base
 | 3 | REGION NUMBER | REGION NUMBER is a positive integer representing the region for which the CONSTANT in (2) should be applied. | None |
 | 4 | REGION ARRAY | The REGION ARRAY to use for applying the CONSTANT in (2) based on the REGION NUMBER in (3).  REGION ARRAY can have the following values: | M |
 | Notes: |  |  |  |
-
-*Table 6.5: ADDREG Keyword Description*
-
-
-Examples of the arrays most commonly operated on in each section are given in Table 6.6. Cells colored red indicate arrays that are not supported by OPM Flow operations.
+: ADDREG Keyword Description {#tbl-6-5}
+Examples of the arrays most commonly operated on in each section are given in @tbl-6-6. Cells colored red indicate arrays that are not supported by OPM Flow operations.
 
 
 | ADDREG Keyword and Variable Options by Section |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- |
-| GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
-| DX | DEPTH | SWL | ENDNUM | PRESSURE |  |  |
-| DY | PORV | SWCR | EQLNUM | SWAT |  |  |
-| DZ | TRANX | SWU | FIPNUM | SGAS |  |  |
-| PERMX | TRANY | SGL | IMBNUM | RV |  |  |
-| PERMY | TRANZ | SGCR | MISCNUM | RS |  |  |
-| PERMZ | DIFFX | SGU | PVTNUM | TBLK |  |  |
-| MULTX | DIFFY | KRW | ROCKNUM | GI |  |  |
-| MULTY | DIFFZ | KRO | SATNUM | OILAPI |  |  |
-| MULTZ | TRANR | KRG | WH2NUM | SALT |  |  |
-| DR | TRANTHT | PCG |  | GASCONC |  |  |
-| DTHETA | DIFFR | PCW |  | SOLVCONC |  |  |
-| PERMR | DIFFTHT |  |  | SOLVFRAC |  |  |
-| PERMTHT |  |  |  | SFOAM |  |  |
-| DZNET |  |  |  | SPOLY |  |  |
-| PORO |  |  |  |  |  |  |
-| NTG |  |  |  |  |  |  |
-| FLUXNUM |  |  |  |  |  |  |
-| MULTNUM |  |  |  |  |  |  |
-| MPFANUM |  |  |  |  |  |  |
-| DIFFX |  |  |  |  |  |  |
-| DIFFY |  |  |  |  |  |  |
-| DIFFZ |  |  |  |  |  |  |
-| DIFFR |  |  |  |  |  |  |
-| DIFFTHT |  |  |  |  |  |  |
-
-*Table 6.6: ADDREG Keyword Applicable Arrays by Section*
-
-
+| [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| [DX](#kw-DX) | [DEPTH](#kw-DEPTH) | [SWL](#kw-SWL) | [ENDNUM](#kw-ENDNUM) | [PRESSURE](#kw-PRESSURE) |  |  |
+| [DY](#kw-DY) | [PORV](#kw-PORV) | [SWCR](#kw-SWCR) | [EQLNUM](#kw-EQLNUM) | [SWAT](#kw-SWAT) |  |  |
+| [DZ](#kw-DZ) | [TRANX](#kw-TRANX) | [SWU](#kw-SWU) | [FIPNUM](#kw-FIPNUM) | [SGAS](#kw-SGAS) |  |  |
+| [PERMX](#kw-PERMX) | [TRANY](#kw-TRANY) | [SGL](#kw-SGL) | [IMBNUM](#kw-IMBNUM) | [RV](#kw-RV) |  |  |
+| [PERMY](#kw-PERMY) | [TRANZ](#kw-TRANZ) | [SGCR](#kw-SGCR) | [MISCNUM](#kw-MISCNUM) | [RS](#kw-RS) |  |  |
+| [PERMZ](#kw-PERMZ) | [DIFFX](#kw-DIFFX) | [SGU](#kw-SGU) | [PVTNUM](#kw-PVTNUM) | [TBLK](#kw-TBLK) |  |  |
+| [MULTX](#kw-MULTX) | [DIFFY](#kw-DIFFY) | [KRW](#kw-KRW) | [ROCKNUM](#kw-ROCKNUM) | [GI](#kw-GI) |  |  |
+| [MULTY](#kw-MULTY) | [DIFFZ](#kw-DIFFZ) | [KRO](#kw-KRO) | [SATNUM](#kw-SATNUM) | [OILAPI](#kw-OILAPI) |  |  |
+| [MULTZ](#kw-MULTZ) | [TRANR](#kw-TRANR) | [KRG](#kw-KRG) | [WH2NUM](#kw-WH2NUM) | [SALT](#kw-SALT) |  |  |
+| [DR](#kw-DR) | [TRANTHT](#kw-TRANTHT) | [PCG](#kw-PCG) |  | [GASCONC](#kw-GASCONC) |  |  |
+| [DTHETA](#kw-DTHETA) | [DIFFR](#kw-DIFFR) | [PCW](#kw-PCW) |  | [SOLVCONC](#kw-SOLVCONC) |  |  |
+| [PERMR](#kw-PERMR) | [DIFFTHT](#kw-DIFFTHT) |  |  | [SOLVFRAC](#kw-SOLVFRAC) |  |  |
+| [PERMTHT](#kw-PERMTHT) |  |  |  | [SFOAM](#kw-SFOAM) |  |  |
+| [DZNET](#kw-DZNET) |  |  |  | [SPOLY](#kw-SPOLY) |  |  |
+| [PORO](#kw-PORO) |  |  |  |  |  |  |
+| [NTG](#kw-NTG) |  |  |  |  |  |  |
+| [FLUXNUM](#kw-FLUXNUM) |  |  |  |  |  |  |
+| [MULTNUM](#kw-MULTNUM) |  |  |  |  |  |  |
+| [MPFANUM](#kw-MPFANUM) |  |  |  |  |  |  |
+| [DIFFX](#kw-DIFFX) |  |  |  |  |  |  |
+| [DIFFY](#kw-DIFFY) |  |  |  |  |  |  |
+| [DIFFZ](#kw-DIFFZ) |  |  |  |  |  |  |
+| [DIFFR](#kw-DIFFR) |  |  |  |  |  |  |
+| [DIFFTHT](#kw-DIFFTHT) |  |  |  |  |  |  |
+: ADDREG Keyword Applicable Arrays by Section {#tbl-6-6}
 #### Example
 
 
@@ -87,4 +81,4 @@ EQUALS
 /
 ```
 
-The example first defines the PORO and PERMX property arrays for the model and then sets the MULTNUM array to 1 for all cells in the model, after which selected areas of model are assigned various MULTNUM integer values. The ADDREG can then be invoked to add or subtract constant values from the PORO and PERMX arrays for the various MULTNUM regions.
+The example first defines the [PORO](#kw-PORO) and [PERMX](#kw-PERMX) property arrays for the model and then sets the [MULTNUM](#kw-MULTNUM) array to 1 for all cells in the model, after which selected areas of model are assigned various [MULTNUM](#kw-MULTNUM) integer values. The ADDREG can then be invoked to add or subtract constant values from the [PORO](#kw-PORO) and [PERMX](#kw-PERMX) arrays for the various [MULTNUM](#kw-MULTNUM) regions.

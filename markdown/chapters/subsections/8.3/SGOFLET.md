@@ -1,15 +1,15 @@
-### SGOFLET – Gas-Oil LET Relative Permeability Functions
+### SGOFLET – Gas-Oil LET Relative Permeability Functions {#kw-SGOFLET}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-SGOFLET defines the relative permeability and capillary pressure parameters for the gas-oil LET family of models. Both the gas and oil phases should be made active in the model via the GAS and OIL keywords in the RUNSPEC section. See section 8.2.6Saturation Table Generation - LET Functions and Lomeland et al.^[Lomeland F., Ebeltoft E. and Thomas W.H., 2005. A New Versatile Relative Permeability Correlation. Paper SCA2005-32 presented at the International Symposium of the Society of Core Analysts held in Toronto, Canada, 21-25 August, 2005.],^[Lomeland F. and Ebeltoft E., 2008. A New Versatile Capillary Pressure Correlation. Paper SCA2008-08 presented at the International Symposium of the Society of Core Analysts held in Abu Dhabi, UAE, 29 Oct. – 2 Nov., 2008.] ^[Lomeland F., Hasanov B., Ebeltoft E. and Berge M., 2012. A Versatile Representation of Up-scaled Relative Permeability for Field Applications. Paper SPE 154487-MS presented at the EAGE Annual Conference & Exhibition incorporating SPE Europec held in Copenhagen, Denmark, 4-7 June 2012.] and ^[Lomeland F., 2018.Overview Of The Let Family Of Versatile Correlations For Flow Functions. Paper SCA2018-056 presented at the International Symposium of the Society of Core Analysts held in Trondheim, Norway, 27-30 August 2018.] for further information on the model.
+SGOFLET defines the relative permeability and capillary pressure parameters for the gas-oil LET family of models. Both the gas and oil phases should be made active in the model via the [GAS](#kw-GAS) and [OIL](#kw-OIL) keywords in the [RUNSPEC](#kw-RUNSPEC) section. See section 8.2.6Saturation Table Generation - LET Functions and Lomeland et al.^[Lomeland F., Ebeltoft E. and Thomas W.H., 2005. A New Versatile Relative Permeability Correlation. Paper SCA2005-32 presented at the International Symposium of the Society of Core Analysts held in Toronto, Canada, 21-25 August, 2005.],^[Lomeland F. and Ebeltoft E., 2008. A New Versatile Capillary Pressure Correlation. Paper SCA2008-08 presented at the International Symposium of the Society of Core Analysts held in Abu Dhabi, UAE, 29 Oct. – 2 Nov., 2008.] ^[Lomeland F., Hasanov B., Ebeltoft E. and Berge M., 2012. A Versatile Representation of Up-scaled Relative Permeability for Field Applications. Paper SPE 154487-MS presented at the EAGE Annual Conference & Exhibition incorporating SPE Europec held in Copenhagen, Denmark, 4-7 June 2012.] and ^[Lomeland F., 2018.Overview Of The Let Family Of Versatile Correlations For Flow Functions. Paper SCA2018-056 presented at the International Symposium of the Society of Core Analysts held in Trondheim, Norway, 27-30 August 2018.] for further information on the model.
 
-The keyword is used as a replacement for the SGOF keyword for three-phase oil-gas-water systems, and the  LET series of keywords cannot be combined with the standard set of relative permeability keywords.
+The keyword is used as a replacement for the [SGOF](#kw-SGOF) keyword for three-phase oil-gas-water systems, and the  LET series of keywords cannot be combined with the standard set of relative permeability keywords.
 
 
 ::: {.callout-note}
@@ -20,9 +20,9 @@ This is an OPM Flow specific keyword and will therefore cause an error in the co
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | SGL | SGL is a real positive number less than one that defines the connate gas saturation, that is smallest gas saturation in the LET function. | 0,0 |
+| 1 | [SGL](#kw-SGL) | [SGL](#kw-SGL) is a real positive number less than one that defines the connate gas saturation, that is smallest gas saturation in the LET function. | 0,0 |
 | dimensionless | dimensionless | dimensionless |  |
-| 2 | SGCR | SGCR is a real positive number greater than or equal to SGL and less than one, that defines the critical gas saturation, that is the largest gas saturation for which the gas relative permeability is zero. | 0,0 |
+| 2 | [SGCR](#kw-SGCR) | [SGCR](#kw-SGCR) is a real positive number greater than or equal to [SGL](#kw-SGL) and less than one, that defines the critical gas saturation, that is the largest gas saturation for which the gas relative permeability is zero. | 0,0 |
 | dimensionless | dimensionless | dimensionless |  |
 | 3 | LGAS | LGAS is a real positive number that defines the LET Lower empirical parameter Lg for the gas phase with the associated oil phase in the LET relative permeability equation. | 1,0 |
 | dimensionless | dimensionless | dimensionless |  |
@@ -34,7 +34,7 @@ This is an OPM Flow specific keyword and will therefore cause an error in the co
 | dimensionless | dimensionless | dimensionless |  |
 | 7 | SORG | SORG is a real positive number less than one that defines the residual oil saturation in a gas-oil system in the LET equations. | 0,0 |
 | dimensionless | dimensionless | dimensionless |  |
-| 8 | SOGCR | SOGCR is a real positive number less than one that defines critical oil-in-gas saturation, that is the largest oil saturation for which the oil relative permeability is zero in a gas-oil system. | 0,0 |
+| 8 | [SOGCR](#kw-SOGCR) | [SOGCR](#kw-SOGCR) is a real positive number less than one that defines critical oil-in-gas saturation, that is the largest oil saturation for which the oil relative permeability is zero in a gas-oil system. | 0,0 |
 | dimensionless | dimensionless | dimensionless |  |
 | 9 | LOIL | LOIL is a real positive number that defines the LET Lower empirical parameter Lo for the oil phase with the associated gas phase in the LET relative permeability equation. | 1,0 |
 | dimensionless | dimensionless | dimensionless |  |
@@ -50,31 +50,28 @@ This is an OPM Flow specific keyword and will therefore cause an error in the co
 | dimensionless | dimensionless | dimensionless |  |
 | 15 | TPC | TPC is a real positive number that defines the gas-oil LET Top empirical parameter T in the LET capillary pressure equation. | 1,0 |
 | dimensionless | dimensionless | dimensionless |  |
-| 16 | PCIR | PCIR is a real positive number that defines the gas-oil capillary pressure at connate water saturation (SWL) in the LET capillary pressure equations. | 0,0 |
+| 16 | PCIR | PCIR is a real positive number that defines the gas-oil capillary pressure at connate water saturation ([SWL](#kw-SWL)) in the LET capillary pressure equations. | 0,0 |
 | psia | bars | atm |  |
 | 17 | PCIT | PCIT is a real positive number that defines the gas-oil threshold capillary pressure at the maximum water saturation in the LET capillary pressure equations. | 0,0 |
 | psia | bars | atm |  |
 | Notes: |  |  |  |
-
-*Table 8.152: SGOFLET Keyword Description*
-
-
+: SGOFLET Keyword Description {#tbl-8-152}
 Note there a two versions of the LET functions, LET232 for two-phase flowing conditions and LETx^[Lomeland F. and Ebeltoft E., 2013. Versatile Three-phase Correlations for Relative Permeability and Capillary Pressure. Paper SCA2013-034 presented at the International Symposium of the Society of Core Analysts held in Napa Valley, California, USA, 16-19 September, 2013.] for three-phase flowing conditions.  This keyword implements the LET version for a gas-oil system.
 
 The functions are dependent on the drainage and imbibition cycle of the wetting phase as well as drainage and inhibition cycle number, since a reservoir may undergo several flooding events. To account for this the system defines the flooding event using the three saturations: Sw, So, and Sg together with the state of the three saturations during the flooding event. The saturation state can be Increasing, Decreasing, or Constant, for a given flooding event cycle number (n). Thus, Sw(D), So(I), Sg(C)1or DIC1, means the water phase is decreasing, the oil phase is increasing and the gas phase is constant for the primary or first cycle (n equals one). This is case for when oil is migrating into the reservoir rock and displacing the initial water contained with the reservoir.
 
 
 ::: {.callout-note}
-All the LET parameters are dependent on the flooding event and flooding cycle, and thus are expected vary as such. To be clear, the values of SGCR, Lg, Lo etc. should be different for each flooding cycle.
+All the LET parameters are dependent on the flooding event and flooding cycle, and thus are expected vary as such. To be clear, the values of [SGCR](#kw-SGCR), Lg, Lo etc. should be different for each flooding cycle.
 :::
 
 
-See also the SGWFLET – Gas-Water LET Relative Permeability Functions, and SWOFLET – Water-Oil LET Relative Permeability Functions keywords in this section.
+See also the [SGWFLET](#kw-SGWFLET) – Gas-Water LET Relative Permeability Functions, and [SWOFLET](#kw-SWOFLET) – Water-Oil LET Relative Permeability Functions keywords in this section.
 
 
 #### Example
 
-The following example uses the SGOFLET keyword to define two relative gas-oil relative permeability tables, based on NTSFUN equals two on the TABDIMS keyword in the RUNSPEC section.
+The following example uses the SGOFLET keyword to define two relative gas-oil relative permeability tables, based on NTSFUN equals two on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 
 ```

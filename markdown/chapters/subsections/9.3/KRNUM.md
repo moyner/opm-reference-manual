@@ -1,32 +1,30 @@
-### KRNUM – Define the Directional Saturation Table Region Numbers
+### KRNUM – Define the Directional Saturation Table Region Numbers {#kw-KRNUM}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The KRNUM keyword defines the direction dependent saturation tables (relative permeability and capillary pressure tables) region numbers for each grid block face, as such there must be one entry for each cell in the model. The region number specifies which set of relative permeability tables (SGFN, SWFN, SOF2, SOF3, SOF32D, SGOF, SLGOF and SWOF) are used to calculate the relative permeability and capillary pressure in a grid block.  The keyword should only be used if Directional Dependent Saturation Function option has been activated by the DIRECT parameter on the SATOPTS keyword in the RUNSPEC section. Otherwise the standard none directional relative permeability curves should be assigned by the SATNUM keyword in the REGIONS section.
+The KRNUM keyword defines the direction dependent saturation tables (relative permeability and capillary pressure tables) region numbers for each grid block face, as such there must be one entry for each cell in the model. The region number specifies which set of relative permeability tables ([SGFN](#kw-SGFN), [SWFN](#kw-SWFN), [SOF2](#kw-SOF2), [SOF3](#kw-SOF3), [SOF32D](#kw-SOF32D), [SGOF](#kw-SGOF), [SLGOF](#kw-SLGOF) and [SWOF](#kw-SWOF)) are used to calculate the relative permeability and capillary pressure in a grid block.  The keyword should only be used if Directional Dependent Saturation Function option has been activated by the DIRECT parameter on the [SATOPTS](#kw-SATOPTS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Otherwise the standard none directional relative permeability curves should be assigned by the [SATNUM](#kw-SATNUM) keyword in the [REGIONS](#kw-REGIONS) section.
 
 This keyword is not in the standard keyword format due to the cell face (X, X-, Y, Y-, Z, and Z- for Cartesian grids and R, R-, T,  T-, Z, and Z- for radial grids) being concatenated to the end of the keyword KRNUM to fully define the keyword.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | KRNUM | KRNUM defines an array of positive integers assigning a grid cell to a particular saturation table region. The maximum number of KRNUM regions is set by the NTSFUN variable on the TABDIMS keyword in the RUNSPEC section. | 1 |
+| 1 | KRNUM | KRNUM defines an array of positive integers assigning a grid cell to a particular saturation table region. The maximum number of KRNUM regions is set by the NTSFUN variable on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | 1 |
 | Notes: |  |  |  |
-
-*Table 9.10: KRNUM Keyword Description*
-
-If the Directional Dependent Saturation Function option has been activated by the DIRECT parameter on the SATOPTS keyword in the RUNSPEC section, then the KRNUMX, KRNUMY and KRNUMZ versions of the keyword should be used for cartesian grids. Secondly, if the Non-Reversible End-Point Scaling option has also been activated by the IRREVERS parameter on the SATOPTS keyword in the RUNSPEC section, then the non-reversible versions of the KRNUM should be used, that is KRNUMX, KRNUMX-, KRNUMY, KRNUMY-, KRNUMZ and KRNUMZ-. For reference, see Table 5.40, that lists the various keywords that may be used with directional dependent relative permeability tables.
+: KRNUM Keyword Description {#tbl-9-10}
+If the Directional Dependent Saturation Function option has been activated by the DIRECT parameter on the [SATOPTS](#kw-SATOPTS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, then the KRNUMX, KRNUMY and KRNUMZ versions of the keyword should be used for cartesian grids. Secondly, if the Non-Reversible End-Point Scaling option has also been activated by the IRREVERS parameter on the [SATOPTS](#kw-SATOPTS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, then the non-reversible versions of the KRNUM should be used, that is KRNUMX, KRNUMX-, KRNUMY, KRNUMY-, KRNUMZ and KRNUMZ-. For reference, see @tbl-5-40, that lists the various keywords that may be used with directional dependent relative permeability tables.
 
 The keywords KRNUMX-, KRNUMY-, and KRNUMZ- are not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
 
 #### Example
 
-The example below sets the directional saturation tables in all three directions using the EQUALS keyword.
+The example below sets the directional saturation tables in all three directions using the [EQUALS](#kw-EQUALS) keyword.
 
 
 ```

@@ -1,7 +1,7 @@
-### DISGASW – Activate Dissolved Gas in the Water Phase in the Model
+### DISGASW – Activate Dissolved Gas in the Water Phase in the Model {#kw-DISGASW}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -17,7 +17,7 @@ This is an OPM Flow specific keyword for the simulator’s Dissolved Gas in Wate
 
 The activation of this phase may be used for modeling the production of gas from the water in gas fields, where gas has dissolved into the in situ water phase. Although this is always the case, the volumes are usually insignificant compared with the volumes in the hydrocarbon zones, and therefore in nearly all cases the dissolved gas volumes are usually ignored in terms of resource volumes. For gas fields, the interest is normally the amount of water in the gas phase, as this influences the liquid loading rate as the water is liberated from the gas as the fluid transverses up the wellbore.
 
-The second, and primary, application of this black-oil formulation is for CO2 storage, where injection of CO2 injection is being conducted in either depleted gas fields or in water filled aquifer zones. Activating the dissolved gas in the water phase under these circumstances will allow the CO2 to dissolve into the water phase based on the entered PVT properties in the PROPS section. In this case the CO2STORE keyword in the RUNSPEC section should also be present in the deck.
+The second, and primary, application of this black-oil formulation is for CO2 storage, where injection of CO2 injection is being conducted in either depleted gas fields or in water filled aquifer zones. Activating the dissolved gas in the water phase under these circumstances will allow the CO2 to dissolve into the water phase based on the entered PVT properties in the [PROPS](#kw-PROPS) section. In this case the [CO2STORE](#kw-CO2STORE) keyword in the [RUNSPEC](#kw-RUNSPEC) section should also be present in the deck.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 

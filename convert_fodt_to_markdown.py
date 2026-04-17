@@ -793,10 +793,10 @@ class FODTConverter:
         with open(img_path, "wb") as f:
             f.write(img_bytes)
 
-        # Return relative path for markdown
-        # Use a simple images/filename path - the Quarto build creates
-        # symlinks so this resolves correctly regardless of MD file depth
-        rel_path = f"images/{filename}"
+        # Return relative path from the markdown file's directory to the image
+        rel_path = os.path.relpath(img_path, self.md_dir)
+        # Use forward slashes for cross-platform compatibility
+        rel_path = rel_path.replace(os.sep, "/")
         alt_text = frame_name if frame_name else f"Image {self.image_counter}"
         return f"![{alt_text}]({rel_path})"
 

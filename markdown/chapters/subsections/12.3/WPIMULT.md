@@ -1,7 +1,7 @@
-### WPIMULT – Define Well Connection Multipliers
+### WPIMULT – Define Well Connection Multipliers {#kw-WPIMULT}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -13,30 +13,27 @@ The WPIMULT keyword defines a well connection factor multiplier that scales the 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well and well connection status data is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well and well connection status data is being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
 | 2 | PIMULT | A real positive value that will be used to scale the well connection factors defined by I, J, K, C1 and C2 below. | 1.0 |
 | 3 | I | An integer less than or equal to NX that defines the connection locations in the I-direction. | 1* |
 | 4 | J | An integer less than or equal to NY that defines the connection locations in the J-direction. | 1* |
 | 5 | K | An integer less than or equal to NZ that defines the connection locations in the K-direction. | 1* |
-| 6 | C1 | An integer value that defines the first completion number in the range. Connections are lumped into completions via the COMPLUMP keyword, and C1 refers to the first completion number, as defined by the COMPLUMP keyword, and all the connections contained within the C1 completion. | 1* |
-| 7 | C2 | An integer that defines the last completion in the range. Connections are lumped into completions via the COMPLUMP keyword, and C2 refers to the last completion number, as defined by the COMPLUMP keyword, and all the connections contained within the C2               completion. | 1* |
+| 6 | C1 | An integer value that defines the first completion number in the range. Connections are lumped into completions via the [COMPLUMP](#kw-COMPLUMP) keyword, and C1 refers to the first completion number, as defined by the [COMPLUMP](#kw-COMPLUMP) keyword, and all the connections contained within the C1 completion. | 1* |
+| 7 | C2 | An integer that defines the last completion in the range. Connections are lumped into completions via the [COMPLUMP](#kw-COMPLUMP) keyword, and C2 refers to the last completion number, as defined by the [COMPLUMP](#kw-COMPLUMP) keyword, and all the connections contained within the C2               completion. | 1* |
 | Notes: |  |  |  |
-
-*Table 12.110: WPIMULT Keyword Description*
-
-
+: WPIMULT Keyword Description {#tbl-12-110}
 If variables I, J, K, C1 and C2 are all negative values or defaulted with 1*, then PIMULT is applied to all the well connections in the well.
 
 If any of the variables I, J, K, C1 and C2 are set to zero (meaning any or all values), or a positive value then PIMULT is applied to the defined connections. The defined connections are those with the I, J, K variables in the specified location and a completion number in the range specified by C1 and C2.
 
 Note, that PIMULT is applied at the time the WPIMULT keyword is entered and is cumulative if applied to the same well connections, provided there are intervening report time steps between consecutive WPIMULT keywords. Consequently, if there are no intervening report time steps between consecutive WPIMULT keywords utilizing the same well connections, then only the last set is applied.
 
-See also the WELPI keyword to set a well’s productivity or injectivity index at the time the keyword is activated, and also the PIMULTAB keyword that defines productivity index multiplier versus water cut tables that are used to scaled a well’s connection factors based on a wells connection current producing water cut. Both keywords are documented in the SCHEDULE section.
+See also the [WELPI](#kw-WELPI) keyword to set a well’s productivity or injectivity index at the time the keyword is activated, and also the PIMULTAB keyword that defines productivity index multiplier versus water cut tables that are used to scaled a well’s connection factors based on a wells connection current producing water cut. Both keywords are documented in the [SCHEDULE](#kw-SCHEDULE) section.
 
 
 #### Example
 
-The following example defines three vertical oil wells using the WELSPECS keyword and their associated connection data.
+The following example defines three vertical oil wells using the [WELSPECS](#kw-WELSPECS) keyword and their associated connection data.
 
 
 ```

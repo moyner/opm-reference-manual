@@ -1,13 +1,13 @@
-### FOAMFSC – Define Foam Gas Mobility versus Surfactant Concentration Functions
+### FOAMFSC – Define Foam Gas Mobility versus Surfactant Concentration Functions {#kw-FOAMFSC}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The FOAMFSC keyword defines the reduction in gas mobility as a function of the foam surfactant concentration within a grid block. The Foam option must be activated by the FOAM keyword in the RUNSPEC section in order to use this keyword. In addition,  the FOAMOPT2 parameter on the FOAMOPTS keyword in the PROPS section must be set to the character string FUNC, in order to activate the functional form of the gas mobility reduction calculations.
+The FOAMFSC keyword defines the reduction in gas mobility as a function of the foam surfactant concentration within a grid block. The Foam option must be activated by the [FOAM](#kw-FOAM) keyword in the [RUNSPEC](#kw-RUNSPEC) section in order to use this keyword. In addition,  the FOAMOPT2 parameter on the [FOAMOPTS](#kw-FOAMOPTS) keyword in the [PROPS](#kw-PROPS) section must be set to the character string FUNC, in order to activate the functional form of the gas mobility reduction calculations.
 
 
 | No. | Name | Description | Default |
@@ -22,10 +22,7 @@ The FOAMFSC keyword defines the reduction in gas mobility as a function of the f
 | 4 | MINSWAT | MINSWAT is a real positive value less than 1.0 that sets the minimum water saturation below which foam has no effect.  The default value of 1 x 10-6 implies that there is no minimum. Note that this parameter is only used in the commercial simulator’s compositional simulator and is therefore not used by OPM Flow or the commercial simulators black-oil simulator. | Defined |
 | dimensionless 1 x 10-6 | dimensionless 1 x 10-6 | dimensionless 1 x 10-6 |  |
 | Notes: |  |  |  |
-
-*Table 8.35: FOAMFSC Keyword Description*
-
-
+: FOAMFSC Keyword Description {#tbl-8-35}
 The gas mobility reduction as a function of surfactant concentration is of the form:
 
 
@@ -59,28 +56,28 @@ $$ {#eq-8-52}
 
 Where:
 
-Mr	=	the reference mobility reduction factor, see the FOAMFRM keyword in the
+Mr	=	the reference mobility reduction factor, see the [FOAMFRM](#kw-FOAMFRM) keyword in the
 
-PROPS section,
+[PROPS](#kw-PROPS) section,
 
 Fs 	=	gas mobility reduction factor as a function of surfactant concentration, see
 
-the FOAMFSC keyword in the PROPS section,
+the FOAMFSC keyword in the [PROPS](#kw-PROPS) section,
 
 Fw	=	gas mobility reduction factor as a function of water saturation, see
 
-the FOAMFSW keyword in the PROPS section,
+the [FOAMFSW](#kw-FOAMFSW) keyword in the [PROPS](#kw-PROPS) section,
 
 Fo 	=	gas mobility reduction factor as a function of oil saturation, see
 
-the FOAMFSO keyword in the PROPS section, and
+the [FOAMFSO](#kw-FOAMFSO) keyword in the [PROPS](#kw-PROPS) section, and
 
 Fc 	=	gas mobility reduction factor as a function of capillary number, see
 
-the FOAMFCN keyword in the PROPS section.
+the [FOAMFCN](#kw-FOAMFCN) keyword in the [PROPS](#kw-PROPS) section.
 
 
-See also the FOAM keyword in the RUNSPEC section, the FOAMADS, FOAMMOB, FOAMOPTS and FOAMROCK keywords in the PROPS section.
+See also the [FOAM](#kw-FOAM) keyword in the [RUNSPEC](#kw-RUNSPEC) section, the [FOAMADS](#kw-FOAMADS), [FOAMMOB](#kw-FOAMMOB), [FOAMOPTS](#kw-FOAMOPTS) and [FOAMROCK](#kw-FOAMROCK) keywords in the [PROPS](#kw-PROPS) section.
 
 
 #### Example
@@ -103,4 +100,4 @@ FOAMFSC
 ```
 
 
-Here, NTSFUN equals six on the TABDIMS keyword in the RUNSPEC section and therefore six entries are required for the FOAMFSC keyword. Table number three is completed defaulted and will therefore use all the properties from the previous table, that is table number two.
+Here, NTSFUN equals six on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section and therefore six entries are required for the FOAMFSC keyword. Table number three is completed defaulted and will therefore use all the properties from the previous table, that is table number two.

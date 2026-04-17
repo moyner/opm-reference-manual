@@ -1,27 +1,24 @@
-### WPAVEDEP – Define Well Reference Depth for Pressure Calculations
+### WPAVEDEP – Define Well Reference Depth for Pressure Calculations {#kw-WPAVEDEP}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The WPAVEDEP keyword defines the reference depth to be used to calculate and report grid block average bottom-hole pressures for a well. This keyword can be used to override the values entered or defaulted on the WELSPECS keyword in the SCHEDULE section. The simulator corrects the grid block calculated pressures to a well’s reference depth using the hydrostatic well of the producing fluids.
+The WPAVEDEP keyword defines the reference depth to be used to calculate and report grid block average bottom-hole pressures for a well. This keyword can be used to override the values entered or defaulted on the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section. The simulator corrects the grid block calculated pressures to a well’s reference depth using the hydrostatic well of the producing fluids.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well and well connection status data is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
-| 2 | BHPREF | A real value that defines the reference depth for reporting the bottom-hole pressure for the well. Ideally this value should be set to the midpoint of the perforations as defined by the COMPDAT keyword in the SCHEDULE section. If defaulted by 1* or set to a value less than or equal to zero, then the mid-point of shallowest connection defined by the COMPDAT keyword will be used. | Mid-point of shallowest connection defined by the COMPDAT keyword |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well and well connection status data is being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
+| 2 | BHPREF | A real value that defines the reference depth for reporting the bottom-hole pressure for the well. Ideally this value should be set to the midpoint of the perforations as defined by the [COMPDAT](#kw-COMPDAT) keyword in the [SCHEDULE](#kw-SCHEDULE) section. If defaulted by 1* or set to a value less than or equal to zero, then the mid-point of shallowest connection defined by the [COMPDAT](#kw-COMPDAT) keyword will be used. | Mid-point of shallowest connection defined by the [COMPDAT](#kw-COMPDAT) keyword |
 | feet | m | cm |  |
 | Notes: |  |  |  |
-
-*Table 12.109: WPAVDEP Keyword Description*
-
-
-See also the WELSPECS keyword that defines a well, the COMPDAT keyword to define a well’s connections, and the WPAVE for defining how the average bottom-hole pressure should be calculated. All the aforementioned keywords are described in the SCHEDULE section.
+: WPAVDEP Keyword Description {#tbl-12-109}
+See also the [WELSPECS](#kw-WELSPECS) keyword that defines a well, the [COMPDAT](#kw-COMPDAT) keyword to define a well’s connections, and the WPAVE for defining how the average bottom-hole pressure should be calculated. All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
 
 
 ::: {.callout-note}

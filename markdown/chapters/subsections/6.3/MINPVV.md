@@ -1,7 +1,7 @@
-### MINPVV – Set a Minimum Grid Block Pore Volume Threshold for Individual Cells
+### MINPVV – Set a Minimum Grid Block Pore Volume Threshold for Individual Cells {#kw-MINPVV}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -9,7 +9,7 @@
 
 MINPVV is an array that defines the minimum threshold pore volume for each cell, that makes grid blocks whose pore volume is below this value inactive in the model (inactive cells are not used in OPM Flow calculations).
 
-Note this keyword is different to the MINPV and MINPORV keywords in the GRID section, that set a constant minimum threshold pore volume for all cells in the model.
+Note this keyword is different to the [MINPV](#kw-MINPV) and [MINPORV](#kw-MINPORV) keywords in the [GRID](#kw-GRID) section, that set a constant minimum threshold pore volume for all cells in the model.
 
 
 | No. | Name | Description | Default |
@@ -18,20 +18,17 @@ Note this keyword is different to the MINPV and MINPORV keywords in the GRID sec
 | 1 | MINPVV | MINPVV is an array of real positive numbers that defines the minimum pore volumes for each cell in the model in order for the cells to be active. | Defined |
 | rb 1.0e-6 | rm3 1.0e-6 | rcc 1.0e-6 |  |
 | Notes: |  |  |  |
-
-*Table 6.64: MINPVV Keyword Description*
-
-
-The MINPVV, MINPV, and MINPORV keywords only apply their minimum threshold pore volume values to active cells. Thus, cells that have been made inactive via setting their ACTNUM values to zero, remain inactive, even if their pore volume exceeds the values set by the MINPVV, MINPV, and MINPORV keywords.
+: MINPVV Keyword Description {#tbl-6-64}
+The MINPVV, [MINPV](#kw-MINPV), and [MINPORV](#kw-MINPORV) keywords only apply their minimum threshold pore volume values to active cells. Thus, cells that have been made inactive via setting their [ACTNUM](#kw-ACTNUM) values to zero, remain inactive, even if their pore volume exceeds the values set by the MINPVV, [MINPV](#kw-MINPV), and [MINPORV](#kw-MINPORV) keywords.
 
 Secondly, although the MINPVV keyword allows one to set a minimum threshold pore volume below the default value, this is not recommended, as cells with small pore volumes can cause significant numerical convergence errors.  Thus, in practice, values greater than the default values are normally applied to eliminate cells that have relatively small pore volumes. In addition, the simulator reports the total pore volume and the number of cells made inactive, as well as the pore volume reduction, when the keyword is invoked; allowing one to run some sensitivities to the minimum pore volume value.
 
-See also the PINCH keyword for the treatment of inactive grid cells and pinch-outs.
+See also the [PINCH](#kw-PINCH) keyword for the treatment of inactive grid cells and pinch-outs.
 
 
 #### Example
 
-The example below shows how to define 500 rb (or m3) as the minimum pore volume for all cells in layer 19 to be active in the model, and 750 rb (or m3) as the minimum pore volume for all cells in layer 20, by using the BOX keyword to set the portion of the grid of interest.
+The example below shows how to define 500 rb (or m3) as the minimum pore volume for all cells in layer 19 to be active in the model, and 750 rb (or m3) as the minimum pore volume for all cells in layer 20, by using the [BOX](#kw-BOX) keyword to set the portion of the grid of interest.
 
 
 ```
@@ -55,7 +52,7 @@ ENDBOX
 
 ```
 
-Although this will work in the commercial simulators, it does not currently work in OPM Flow, that is one cannot use the MINPVV keyword in conjunction with the BOX keyword, as shown in the aforementioned example.
+Although this will work in the commercial simulators, it does not currently work in OPM Flow, that is one cannot use the MINPVV keyword in conjunction with the [BOX](#kw-BOX) keyword, as shown in the aforementioned example.
 
 Instead one can use:
 

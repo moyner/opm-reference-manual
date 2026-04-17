@@ -1,7 +1,7 @@
-### MULTY – Multiply Cell Transmissibility in the +Y Direction
+### MULTY – Multiply Cell Transmissibility in the +Y Direction {#kw-MULTY}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -9,7 +9,7 @@
 
 MULTY multiples the transmissibility between two cell faces in the +Y direction for all the cells in the model via an array, that is the keyword sets the transmissibility multiplier of block (I, J, K) between the cells (I, J, K) and (I, J+1, K).
 
-An alternative to defining the complete array is to use the BOX keyword to define an area of the grid and then use the MULTY keyword to set the multipliers just for the area defined by the BOX keyword (see the example).
+An alternative to defining the complete array is to use the [BOX](#kw-BOX) keyword to define an area of the grid and then use the MULTY keyword to set the multipliers just for the area defined by the [BOX](#kw-BOX) keyword (see the example).
 
 The keyword can be used for all grid types, except for the Radial Grid geometry.
 
@@ -18,11 +18,8 @@ The keyword can be used for all grid types, except for the Radial Grid geometry.
 | --- | --- | :------ | --- |
 | 1 | MULTY+ | MULTY+ is an array of real positive numbers assigning the transmissibility multipliers in the +Y direction to each cell face in the model. Repeat counts may be used, for example 20*100.0. | 1.0 |
 | Notes: |  |  |  |
-
-*Table 6.84: MULTY Keyword Description*
-
-
-See also the MULTY-, MULTX, MULTX-, MULTZ and MULTZ- keywords for scaling transmissible between grid cells.
+: MULTY Keyword Description {#tbl-6-84}
+See also the [MULTY-](#kw-MULTY-), [MULTX](#kw-MULTX), [MULTX-](#kw-MULTX-), [MULTZ](#kw-MULTZ) and [MULTZ-](#kw-MULTZ-) keywords for scaling transmissible between grid cells.
 
 
 #### Example
@@ -48,4 +45,4 @@ ENDBOX
 ```
 
 
-The above example defines a 0.3 scaling multiplier for the 18 cells defined by the preceding BOX statement. The ENDBOX keyword resets the input box to the full grid.
+The above example defines a 0.3 scaling multiplier for the 18 cells defined by the preceding [BOX](#kw-BOX) statement. The [ENDBOX](#kw-ENDBOX) keyword resets the input box to the full grid.

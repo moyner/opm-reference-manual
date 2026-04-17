@@ -1,7 +1,7 @@
-### DZV – Define the Size of Grid Blocks in the Z Direction via a Vector
+### DZV – Define the Size of Grid Blocks in the Z Direction via a Vector {#kw-DZV}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,11 +16,8 @@ DZV defines the size of grid blocks in the Z direction via a vector as opposed t
 | 1 | DZV | DZV is a vector of real numbers describing the cell size for the grid blocks in the Z direction. Repeat counts may be used, for example 10*20.0. | None |
 | feet | m | cm |  |
 | Notes: |  |  |  |
-
-*Table 6.32: DZV Keyword Description*
-
-
-See also the DXV, DYV and TOPS keywords for a Cartesian Regular Grid and DRV, DTHETAV and TOPS keywords to fully define a Radial Grid model.
+: DZV Keyword Description {#tbl-6-32}
+See also the [DXV](#kw-DXV), [DYV](#kw-DYV) and [TOPS](#kw-TOPS) keywords for a Cartesian Regular Grid and [DRV](#kw-DRV), [DTHETAV](#kw-DTHETAV) and [TOPS](#kw-TOPS) keywords to fully define a Radial Grid model.
 
 
 #### Example
@@ -35,4 +32,4 @@ DZV
 ```
 
 
-The above example defines the size of the cells in the Z direction based on NZ equals 20 on the DIMENS keyword in the RUNSPEC section.
+The above example defines the size of the cells in the Z direction based on NZ equals 20 on the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.

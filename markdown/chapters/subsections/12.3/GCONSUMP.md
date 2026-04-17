@@ -1,7 +1,7 @@
-### GCONSUMP – Define Group Gas Consumption and Gas Import Targets
+### GCONSUMP – Define Group Gas Consumption and Gas Import Targets {#kw-GCONSUMP}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -15,18 +15,15 @@ In addition to defining gas consumption, the keyword can also be used to define 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group gas consumption is being defined. The group named FIELD is the top most group and should be used to set the fuel consumption for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
+| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group gas consumption is being defined. The group named [FIELD](#kw-FIELD) is the top most group and should be used to set the fuel consumption for the field. Note that the group hierarchy should be defined by the [GRUPTREE](#kw-GRUPTREE) keyword when there is more than one level of groups, otherwise all the groups will sit directly under the [FIELD](#kw-FIELD) group in the group tree hierarchy. | None |
 | 2 | GASFUEL | A real value that defines the gas consumption, that is the fuel gas consumed by the group, either defined as a volumetric rate or as a fraction of the group’s gas production.  The two options are implemented by: This value may be specified using a User Defined Argument (UDA). | 0.0 |
 | Mscf/d | sm3/day | scc/hour |  |
 | 3 | GASIMP | A real positive value greater than zero that defines the amount of gas to be imported into the group. This value may be specified using a User Defined Argument (UDA). This option is currently not supported by OPM Flow | 0.0 |
 | stb/d | sm3/day | scc/hour |  |
 | 4 | GASNODE | A character string of up to eight characters in length that defines the network node in the Extended Network Model, for which the fuel gas should be removed (GASFUEL) or the imported gas (GASIMP) assigned. This option is currently not supported by OPM Flow | None |
 | Notes: |  |  |  |
-
-*Table 12.33: GCONSUMP Keyword Description*
-
-
-If the group is acting under Group Gas Sales control via the GCONSALE keyword in the SCHEDULE section, then the sales gas is calculated by:
+: GCONSUMP Keyword Description {#tbl-12-33}
+If the group is acting under Group Gas Sales control via the [GCONSALE](#kw-GCONSALE) keyword in the [SCHEDULE](#kw-SCHEDULE) section, then the sales gas is calculated by:
 
 
 $$
@@ -34,7 +31,7 @@ $$
 $$ {#eq-12-24}
 
 
-If the group is acting under Group Gas Re-Injection control via the GCONINJE keyword in the SCHEDULE section, then the group gas injection rate calculated by:
+If the group is acting under Group Gas Re-Injection control via the [GCONINJE](#kw-GCONINJE) keyword in the [SCHEDULE](#kw-SCHEDULE) section, then the group gas injection rate calculated by:
 
 
 $$

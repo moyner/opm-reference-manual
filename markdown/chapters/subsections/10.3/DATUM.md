@@ -1,7 +1,7 @@
-### DATUM – Define the Datum Depth for the Model
+### DATUM – Define the Datum Depth for the Model {#kw-DATUM}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,11 +16,8 @@ The DATUM keyword defines the datum depth for the model. This allows for all gri
 | 1 | DATUM | DATUM is a single positive value that defines the datum depth for the model. | None |
 | feet | m | cm |  |
 | Notes: |  |  |  |
-
-*Table 10.11: DATUM Keyword Description*
-
-
-See also the DATUMR and DATUMRX keywords in the SOLUTION section that also define the datum depth for the model.
+: DATUM Keyword Description {#tbl-10-11}
+See also the [DATUMR](#kw-DATUMR) and [DATUMRX](#kw-DATUMRX) keywords in the [SOLUTION](#kw-SOLUTION) section that also define the datum depth for the model.
 
 
 #### Example

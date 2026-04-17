@@ -1,35 +1,32 @@
-### SALTVD – Equilibration Salt Concentration versus Depth Tables
+### SALTVD – Equilibration Salt Concentration versus Depth Tables {#kw-SALTVD}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The SALTVD keyword defines the initial salt concentration versus depth tables for each equilibration region for when the salt (brine) phase has been activated in the model via the BRINE keyword in the RUNSPEC section, and the EQLOPT1 variable has been set to a positive integer on the EQUIL keyword in the SOLUTION section.  Secondly, the keyword should also be used to set the initial salt concentration versus depth if OPM Flow’s PRECSALT keyword in the RUNSPEC section has been used to activate the simulators Salt Precipitation model.
+The SALTVD keyword defines the initial salt concentration versus depth tables for each equilibration region for when the salt (brine) phase has been activated in the model via the [BRINE](#kw-BRINE) keyword in the [RUNSPEC](#kw-RUNSPEC) section, and the EQLOPT1 variable has been set to a positive integer on the [EQUIL](#kw-EQUIL) keyword in the [SOLUTION](#kw-SOLUTION) section.  Secondly, the keyword should also be used to set the initial salt concentration versus depth if OPM Flow’s [PRECSALT](#kw-PRECSALT) keyword in the [RUNSPEC](#kw-RUNSPEC) section has been used to activate the simulators Salt Precipitation model.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth for corresponding salt concentrations SALTCON. | None |
+| 1 | [DEPTH](#kw-DEPTH) | A columnar vector of real monotonically increasing down the column   values that defines the depth for corresponding salt concentrations SALTCON. | None |
 | feet | m | cm |  |
-| 2 | SALTCON | A columnar vector of real monotonically increasing down the column values that defines the corresponding salt concentration within the water phase for the given depth. There should be one columnar vector for each type of salt. For the standard Brine Model there is only one salt type and therefore there should be only one columnar vector of SALTCON. However, if the BRINE keyword has been invoked with the ECLMC keyword in the RUNSPEC section, then there should one columnar SALTCON vector for each declared salt type. It is recommended to provide initial salt concentrations less then or equal to values provided by SALTSOL keyword in the PROPS section. | None |
+| 2 | SALTCON | A columnar vector of real monotonically increasing down the column values that defines the corresponding salt concentration within the water phase for the given depth. There should be one columnar vector for each type of salt. For the standard Brine Model there is only one salt type and therefore there should be only one columnar vector of SALTCON. However, if the [BRINE](#kw-BRINE) keyword has been invoked with the [ECLMC](#kw-ECLMC) keyword in the [RUNSPEC](#kw-RUNSPEC) section, then there should one columnar SALTCON vector for each declared salt type. It is recommended to provide initial salt concentrations less then or equal to values provided by [SALTSOL](#kw-SALTSOL) keyword in the [PROPS](#kw-PROPS) section. | None |
 | lb/stb | kg/sm3 | gm/scc |  |
 | Notes: |  |  |  |
-
-*Table 10.40: SALTVD Keyword Description*
-
-
+: SALTVD Keyword Description {#tbl-10-40}
 ::: {.callout-note}
-This is the initial salt concentration contained within the water phase, see the SALTPVD keyword in the SOLUTION section that defines the initial salt volume fraction that has been precipitated into the pore space.
+This is the initial salt concentration contained within the water phase, see the [SALTPVD](#kw-SALTPVD) keyword in the [SOLUTION](#kw-SOLUTION) section that defines the initial salt volume fraction that has been precipitated into the pore space.
 :::
 
 
 #### Examples
 
-The first example activates the standard Brine Tracking model using the BRINE keyword in the RUNSPEC section and sets the number of equilibrium regions to three (NTEQUIL set to 3 on the EQLDIMS keyword also in the RUNSPEC), that is:
+The first example activates the standard Brine Tracking model using the [BRINE](#kw-BRINE) keyword in the [RUNSPEC](#kw-RUNSPEC) section and sets the number of equilibrium regions to three (NTEQUIL set to 3 on the [EQLDIMS](#kw-EQLDIMS) keyword also in the [RUNSPEC](#kw-RUNSPEC)), that is:
 
 
 ```
@@ -51,7 +48,7 @@ BRINE
 ```
 
 
-Then in the SOLUTION section the SALTVD keyword would be of the form:
+Then in the [SOLUTION](#kw-SOLUTION) section the SALTVD keyword would be of the form:
 
 
 ```
@@ -77,7 +74,7 @@ SOLUTION
 
 ```
 
-The next example shows how the SALTVD keyword is entered when both the ECLMC and BRINE keywords have activated the Multi-Component Brine model in the RUNSPEC section, that is:
+The next example shows how the SALTVD keyword is entered when both the [ECLMC](#kw-ECLMC) and [BRINE](#kw-BRINE) keywords have activated the Multi-Component Brine model in the [RUNSPEC](#kw-RUNSPEC) section, that is:
 
 
 ```
@@ -131,7 +128,7 @@ SOLUTION
 ```
 
 
-In this case there are three data sets, on one for each equilibrium region and three SALTCON columnar vectors, one for each salt type (NACL, CACL and MGC03) declared via the BRINE keyword in the RUNSPEC section.
+In this case there are three data sets, on one for each equilibrium region and three SALTCON columnar vectors, one for each salt type (NACL, CACL and MGC03) declared via the [BRINE](#kw-BRINE) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 Note that the Multi-Component Brine model is not available in OPM Flow.
 

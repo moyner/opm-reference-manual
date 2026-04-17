@@ -1,13 +1,13 @@
-### IPCG – End-Point Scaling of Grid Cell Gas Capillary Pressure (Imbibition)
+### IPCG – End-Point Scaling of Grid Cell Gas Capillary Pressure (Imbibition) {#kw-IPCG}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-IPCG defines the maximum imbibition gas-oil capillary pressure values for all the cells in the model via an array.  The ENDSCALE keyword in the RUNSPEC section should be activated to enable end-point scaling and the use of this keyword. In addition, the HYSTER option on the SATOPTS keyword in the RUNSPEC section has to be activated to invoke the hysteresis option. The keyword can be used with all grid types.
+IPCG defines the maximum imbibition gas-oil capillary pressure values for all the cells in the model via an array.  The [ENDSCALE](#kw-ENDSCALE) keyword in the [RUNSPEC](#kw-RUNSPEC) section should be activated to enable end-point scaling and the use of this keyword. In addition, the HYSTER option on the [SATOPTS](#kw-SATOPTS) keyword in the [RUNSPEC](#kw-RUNSPEC) section has to be activated to invoke the hysteresis option. The keyword can be used with all grid types.
 
 
 | No. | Name | Description | Default |
@@ -16,10 +16,7 @@ IPCG defines the maximum imbibition gas-oil capillary pressure values for all th
 | 1 | IPCG | IPCG is an array of positive real numbers assigning the maximum imbibition gas capillary pressure values for each cell in the model. Repeat counts may be used, for example 30*100.0. | None |
 | psia | bars | atm |  |
 | Notes: |  |  |  |
-
-*Table 8.61: IPCG Keyword Description*
-
-
+: IPCG Keyword Description {#tbl-8-61}
 The capillary pressure for a grid block is scaled by:
 
 
@@ -42,7 +39,7 @@ ${P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}$	= 	the maximum capillary pressure in t
 allocated to the grid block at${S}_{g}=1-{S}_{\mathit{wco}}$.
 
 
-See also the PCG keyword for the equivalent drainage functionality.
+See also the [PCG](#kw-PCG) keyword for the equivalent drainage functionality.
 
 
 #### Example
@@ -57,4 +54,4 @@ IPCG
 
 ```
 
-The above example defines the IPCG for 300 cells in the model as defined by the DIMENS keyword in the RUNSPEC section.
+The above example defines the IPCG for 300 cells in the model as defined by the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.

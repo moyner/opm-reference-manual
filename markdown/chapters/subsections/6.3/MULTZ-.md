@@ -1,13 +1,13 @@
-### MULTZ- – Multiply Cell Transmissibility in the -Z Direction
+### MULTZ- – Multiply Cell Transmissibility in the -Z Direction {#kw-MULTZ-}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-MULTZ- multiples the transmissibility between two cell faces in the -Z direction for all the cells in the model via an array, that is the keyword sets the transmissibility multiplier of block (I, J, K) between the cells (1, J, K-1) and (I, J, K). An alternative to defining the complete array is to use the BOX keyword to define an area of the grid and then use the MULTZ- keyword to set the multipliers just for the area defined by the BOX keyword (see the example).
+MULTZ- multiples the transmissibility between two cell faces in the -Z direction for all the cells in the model via an array, that is the keyword sets the transmissibility multiplier of block (I, J, K) between the cells (1, J, K-1) and (I, J, K). An alternative to defining the complete array is to use the [BOX](#kw-BOX) keyword to define an area of the grid and then use the MULTZ- keyword to set the multipliers just for the area defined by the [BOX](#kw-BOX) keyword (see the example).
 
 The keyword can be used for all grid types, except for the Radial Grid geometry.
 
@@ -16,13 +16,10 @@ The keyword can be used for all grid types, except for the Radial Grid geometry.
 | --- | --- | :------ | --- |
 | 1 | MULTZ- | MULTZ- is an array of real positive numbers assigning the transmissibility multipliers in the -X direction to each cell face in the model. Repeat counts may be used, for example 20*100.0. | 1.0 |
 | Notes: |  |  |  |
+: MULTZ- Keyword Description {#tbl-6-87}
+Note that OPM Flow does not require the [GRIDOPTS](#kw-GRIDOPTS)(TRANMULT) parameter in the [RUNSPEC](#kw-RUNSPEC) section to be set to YES, in order to use this and other negative directional dependent multiplier keywords in the input deck. Whereas, the commercial simulator will terminate with an error if the keyword is present, and the [GRIDOPTS](#kw-GRIDOPTS)(TRANMULT) parameter has not been set to YES.
 
-*Table 6.87: MULTZ- Keyword Description*
-
-
-Note that OPM Flow does not require the GRIDOPTS(TRANMULT) parameter in the RUNSPEC section to be set to YES, in order to use this and other negative directional dependent multiplier keywords in the input deck. Whereas, the commercial simulator will terminate with an error if the keyword is present, and the GRIDOPTS(TRANMULT) parameter has not been set to YES.
-
-See also the MULTZ, MULTX, MULTX-, MULTY and MULTY- keywords for scaling transmissible between grid cells.
+See also the [MULTZ](#kw-MULTZ), [MULTX](#kw-MULTX), [MULTX-](#kw-MULTX-), [MULTY](#kw-MULTY) and [MULTY-](#kw-MULTY-) keywords for scaling transmissible between grid cells.
 
 
 #### Example
@@ -48,4 +45,4 @@ ENDBOX
 ```
 
 
-The above example defines a 0.5 scaling multiplier for the six cells defined by the preceding BOX statement. The ENDBOX keyword resets the input box to the full grid.
+The above example defines a 0.5 scaling multiplier for the six cells defined by the preceding [BOX](#kw-BOX) statement. The [ENDBOX](#kw-ENDBOX) keyword resets the input box to the full grid.

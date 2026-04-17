@@ -1,33 +1,30 @@
-### WGRUPCON – Define Well Guide Rates for Group Control
+### WGRUPCON – Define Well Guide Rates for Group Control {#kw-WGRUPCON}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The WGRUPCON keyword defines a well’s production or injection guide rate for when a well is under group control.  The guide rate is used to determine a well’s production target under group control in order to satisfy a group’s targets and constraints, including any higher level related groups as well as the FIELD group.
+The WGRUPCON keyword defines a well’s production or injection guide rate for when a well is under group control.  The guide rate is used to determine a well’s production target under group control in order to satisfy a group’s targets and constraints, including any higher level related groups as well as the [FIELD](#kw-FIELD) group.
 
-Wells must have been previously defined and allocated to a group by the WELSPECS keyword in the SCHEDULE section. Wells defined to be under group control will have their production rates controlled by the group to which they belong, in addition to any well constraints defined for the wells via the WCONPROD and WCONINJE keywords in the SCHEDULE section.
+Wells must have been previously defined and allocated to a group by the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section. Wells defined to be under group control will have their production rates controlled by the group to which they belong, in addition to any well constraints defined for the wells via the [WCONPROD](#kw-WCONPROD) and [WCONINJE](#kw-WCONINJE) keywords in the [SCHEDULE](#kw-SCHEDULE) section.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well production targets and constraints data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
-| 2 | STATUS | A defined character string that declares the status of the well to be under group control or not under group control. STATUS should be set to one of the following character strings: Note the default value of YES puts all wells under group control unless specified otherwise by the STATUS variable, or the TARGET variable on the WCONPROD and WCONINJE keywords in the SCHEDULE section. | YES |
-| 3 | GUIDERAT | A dimensionless real number that determines the well’s share of its group production (or injection) target rate. If GUIDERAT is a positive number then the guide rate for the well is fixed until modified by this keyword at a subsequent time. If TARGET variable on this keyword is not equal to the group’s controlling phase, then the GUIDERAT is converted into the groups’ controlling phase and is updated every time step. If GUIDERAT is less than or equal to zero then the well’s guide rate is based on the well’s potential (unrestricted flow) and the potential is calculated every time step. | -1.0 |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well production targets and constraints data are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
+| 2 | STATUS | A defined character string that declares the status of the well to be under group control or not under group control. STATUS should be set to one of the following character strings: Note the default value of YES puts all wells under group control unless specified otherwise by the STATUS variable, or the TARGET variable on the [WCONPROD](#kw-WCONPROD) and [WCONINJE](#kw-WCONINJE) keywords in the [SCHEDULE](#kw-SCHEDULE) section. | YES |
+| 3 | [GUIDERAT](#kw-GUIDERAT) | A dimensionless real number that determines the well’s share of its group production (or injection) target rate. If [GUIDERAT](#kw-GUIDERAT) is a positive number then the guide rate for the well is fixed until modified by this keyword at a subsequent time. If TARGET variable on this keyword is not equal to the group’s controlling phase, then the [GUIDERAT](#kw-GUIDERAT) is converted into the groups’ controlling phase and is updated every time step. If [GUIDERAT](#kw-GUIDERAT) is less than or equal to zero then the well’s guide rate is based on the well’s potential (unrestricted flow) and the potential is calculated every time step. | -1.0 |
 | dimensionless | dimensionless | dimensionless |  |
-| 4 | TARGET | A defined character string that sets the well’s guide rate phase that the  GUIDERAT value should be applied to. TARGET should be set to one of the following character strings: TARGET may be defaulted if GUIDERAT has been defaulted, either by 1* or a value less than or equal to zero. | None |
-| 5 | SCALE | A real value that is used to multiple the GUIDERAT or the calculated well potentials to determine the final GUIDERAT for the well. | 1.0 |
+| 4 | TARGET | A defined character string that sets the well’s guide rate phase that the  [GUIDERAT](#kw-GUIDERAT) value should be applied to. TARGET should be set to one of the following character strings: TARGET may be defaulted if [GUIDERAT](#kw-GUIDERAT) has been defaulted, either by 1* or a value less than or equal to zero. | None |
+| 5 | SCALE | A real value that is used to multiple the [GUIDERAT](#kw-GUIDERAT) or the calculated well potentials to determine the final [GUIDERAT](#kw-GUIDERAT) for the well. | 1.0 |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-
-*Table 12.96: WGRUPCON Keyword Description*
-
-
-See also the GCONPROD the GCONINJE keywords to define a group’s production and injection targets and constraints, and the WCONPROD and WCONINJE keyword to define a well’s production and injection characteristics. All the aforementioned keywords are described in the SCHEDULE section.
+: WGRUPCON Keyword Description {#tbl-12-96}
+See also the [GCONPROD](#kw-GCONPROD) the [GCONINJE](#kw-GCONINJE) keywords to define a group’s production and injection targets and constraints, and the [WCONPROD](#kw-WCONPROD) and [WCONINJE](#kw-WCONINJE) keyword to define a well’s production and injection characteristics. All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
 
 
 #### Example
@@ -48,4 +45,4 @@ WGRUPCON
 /
 ```
 
-Both the gas producers (‘GP*’) and injectors (‘GI’*) are under group control with their guide rates based on their potentials. The gas injectors are controlled based on their potential surface gas injection rates and the gas producers on their potential surface gas production rates. In comparison, the oil wells (OP*) are controlled by their own targets and constraints.
+Both the gas producers (‘GP*’) and injectors (‘[GI](#kw-GI)’*) are under group control with their guide rates based on their potentials. The gas injectors are controlled based on their potential surface gas injection rates and the gas producers on their potential surface gas production rates. In comparison, the oil wells (OP*) are controlled by their own targets and constraints.

@@ -1,13 +1,13 @@
-### GRAVDRM – Activate Alternative Gravity Drainage and Imbibition for Dual Porosity Model
+### GRAVDRM – Activate Alternative Gravity Drainage and Imbibition for Dual Porosity Model {#kw-GRAVDRM}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword switches on the alternative gravity drainage and imbibition modeling between the matrix and the fracture grid blocks in dual porosity and dual permeability runs.  Either the GRAVDRM or GRAVDR keywords should be used to activate this standard or alternative type of formulation.
+This keyword switches on the alternative gravity drainage and imbibition modeling between the matrix and the fracture grid blocks in dual porosity and dual permeability runs.  Either the GRAVDRM or [GRAVDR](#kw-GRAVDR) keywords should be used to activate this standard or alternative type of formulation.
 
 There is no data required for this keyword.
 
@@ -18,10 +18,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | --- | --- | :------ | --- |
 | 1 | OPTION1 | A defined character string that sets the matrix flow in and out of the matrix block option, and should be set to one of the following: | YES |
 | Notes: |  |  |  |
-
-*Table 5.17: GRAVDRM Keyword Description*
-
-
+: GRAVDRM Keyword Description {#tbl-5-17}
 #### Example
 
 

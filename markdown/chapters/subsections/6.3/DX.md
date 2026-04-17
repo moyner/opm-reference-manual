@@ -1,7 +1,7 @@
-### DX – Define the Size of Grid Blocks in the X Direction for All Cells
+### DX – Define the Size of Grid Blocks in the X Direction for All Cells {#kw-DX}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,11 +16,8 @@ DX defines the size of all grid blocks in the X direction via an array for each 
 | 1 | DX | DX is an array of real numbers describing the cell size in the X direction for each cell in the model. Repeat counts may be used, for example 10*100.0. | None |
 | feet | m | cm |  |
 | Notes: |  |  |  |
-
-*Table 6.26: DX Keyword Description*
-
-
-See also the DY, DZ and TOPS keywords to fully define a Cartesian Regular Grid.
+: DX Keyword Description {#tbl-6-26}
+See also the [DY](#kw-DY), [DZ](#kw-DZ) and [TOPS](#kw-TOPS) keywords to fully define a Cartesian Regular Grid.
 
 
 #### Example
@@ -35,4 +32,4 @@ DX
 
 ```
 
-The above example defines the size of the cells in the X direction based on 300 cells in the model as defined by the DIMENS keyword in the RUNSPEC section.
+The above example defines the size of the cells in the X direction based on 300 cells in the model as defined by the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.

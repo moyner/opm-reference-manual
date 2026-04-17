@@ -1,13 +1,13 @@
-### PVTG – Gas PVT Properties for Wet Gas with Vaporized Oil
+### PVTG – Gas PVT Properties for Wet Gas with Vaporized Oil {#kw-PVTG}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-PVTG defines the gas PVT properties for wet gas^[Natural gas that contains significant heavy hydrocarbons such as propane, butane and other liquid hydrocarbons is known as wet gas or rich gas. The general rule of thumb is if the gas contains less methane (typically less than 85% methane) and more ethane, and other more complex hydrocarbons, it is labeled as wet gas. Wet gas normally has GOR's less than 100,000 scf/stb or 18,000 Sm3/m3, with the condensate having a gravity greater than 50 oAPI.]. This keyword should be used when the VAPOIL keyword has be declared in the RUNSPEC section indicating that that vaporized oil (more commonly referred to as condensate) is present in the wet gas phase. The keyword may be used for gas-water and oil-water-gas input decks that contain the oil and gas phases.
+PVTG defines the gas PVT properties for wet gas^[Natural gas that contains significant heavy hydrocarbons such as propane, butane and other liquid hydrocarbons is known as wet gas or rich gas. The general rule of thumb is if the gas contains less methane (typically less than 85% methane) and more ethane, and other more complex hydrocarbons, it is labeled as wet gas. Wet gas normally has GOR's less than 100,000 scf/stb or 18,000 Sm3/m3, with the condensate having a gravity greater than 50 oAPI.]. This keyword should be used when the [VAPOIL](#kw-VAPOIL) keyword has be declared in the [RUNSPEC](#kw-RUNSPEC) section indicating that that vaporized oil (more commonly referred to as condensate) is present in the wet gas phase. The keyword may be used for gas-water and oil-water-gas input decks that contain the oil and gas phases.
 
 
 | No. | Name | Description | Default |  |
@@ -22,21 +22,18 @@ PVTG defines the gas PVT properties for wet gas^[Natural gas that contains signi
 | 4 | VISS | VISU | VISS a columnar vector of real increasing down the column values that defines the corresponding gas phase viscosity for a given pressure (PRESS) and for a given RVS. VISU a columnar vector of real decreasing from VISS down the column values that defines the corresponding gas phase viscosity for a given pressure (PRESS) and for a given RVU. | None |
 | cP | cP | cP |  |  |
 | Notes: |  |  |  |  |
-
-*Table 8.117: PVTG Keyword Description*
-
-
+: PVTG Keyword Description {#tbl-8-117}
 Note that provided the first table has been entered, subsequent tables may be defaulted, in this case the prior table is copied to the current table. See the second example for an illustration on how to use this feature.
 
 
 ::: {.callout-note}
-If the VAPWAT keyword in the RUNSPEC section is also present in the input deck, then the PVTG keyword in the PROPS section should be used to define the gas properties as function of pressure and RV, assuming water-saturated gas. Also, in this case, the PVTGW keyword, also in the PROPS section, should also be in the input deck. In this case, PVTGW defines the gas properties as function of pressure and RVW, assuming oil-saturated gas.
+If the [VAPWAT](#kw-VAPWAT) keyword in the [RUNSPEC](#kw-RUNSPEC) section is also present in the input deck, then the PVTG keyword in the [PROPS](#kw-PROPS) section should be used to define the gas properties as function of pressure and [RV](#kw-RV), assuming water-saturated gas. Also, in this case, the [PVTGW](#kw-PVTGW) keyword, also in the [PROPS](#kw-PROPS) section, should also be in the input deck. In this case, [PVTGW](#kw-PVTGW) defines the gas properties as function of pressure and [RVW](#kw-RVW), assuming oil-saturated gas.
 :::
 
 
 #### Example
 
-The first example defines two wet gas PVT tables assuming NTPVT equals two, NPPVT is greater than or equal to eight, and NRPVT greater than or equal to two on the TABDIMS keyword in the RUNSPEC section.
+The first example defines two wet gas PVT tables assuming NTPVT equals two, NPPVT is greater than or equal to eight, and NRPVT greater than or equal to two on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 
 ```
@@ -80,7 +77,7 @@ PVTG
 ```
 
 
-The second example defines four wet gas PVT tables assuming NTPVT equals four, NPPVT is greater than or equal to eight, and NRPVT greater than or equal to two on the TABDIMS keyword in the RUNSPEC section. Here table two defaults to table one, and table four defaults to table three.
+The second example defines four wet gas PVT tables assuming NTPVT equals four, NPPVT is greater than or equal to eight, and NRPVT greater than or equal to two on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Here table two defaults to table one, and table four defaults to table three.
 
 
 ```

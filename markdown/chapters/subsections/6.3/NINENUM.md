@@ -1,13 +1,13 @@
-### NINENUM – Define the Nine-Point Discretization Region
+### NINENUM – Define the Nine-Point Discretization Region {#kw-NINENUM}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The NINENUM keyword defines areas in the grid that should use the Nine-Point Discretization formulation by setting a grid block’s NINENUM value to one, or zero for the conventional standard five-point discretization formulation,  for when the Nine-Point Discretization formulation has been activated by the NINEPOIN keyword in the RUNSPEC section.   There should be a NINENUM value for each grid block in the model.  Note that if the if the NINEPOIN keyword in the RUNSPEC section has been invoked and the NINENUM keyword has not been used in the input deck, then all the grid will use the nine-point scheme.
+The NINENUM keyword defines areas in the grid that should use the Nine-Point Discretization formulation by setting a grid block’s NINENUM value to one, or zero for the conventional standard five-point discretization formulation,  for when the Nine-Point Discretization formulation has been activated by the [NINEPOIN](#kw-NINEPOIN) keyword in the [RUNSPEC](#kw-RUNSPEC) section.   There should be a NINENUM value for each grid block in the model.  Note that if the if the [NINEPOIN](#kw-NINEPOIN) keyword in the [RUNSPEC](#kw-RUNSPEC) section has been invoked and the NINENUM keyword has not been used in the input deck, then all the grid will use the nine-point scheme.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -16,11 +16,8 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | --- | --- | :------ | --- |
 | 1 | NINENUM | NINENUM defines an integer array of zeros and ones assigning a grid cell to a particular discretization region, a value of zero for five-point or a value of one for nine-point discretization. Note that the default value of one implies a cell is included in the Nine-Point Discretization region; thus, if a cell is to use the conventional standard five-point finite difference discretization formulation, then NINENUM must be explicitly set to zero. | 1 |
 | Notes: |  |  |  |
-
-*Table 6.88: NINENUM Keyword Description*
-
-
-The NINENUM keyword cannot be used in models with Local Grid Refinements (“LGR”) to set different discretization regions within the model, that is if LGRs are present in the model either all the grid uses nine-point discretization, if NINEPOIN is present in the RUNSPEC section, or five-point if NINEPOIN is absent.
+: NINENUM Keyword Description {#tbl-6-88}
+The NINENUM keyword cannot be used in models with Local Grid Refinements (“[LGR](#kw-LGR)”) to set different discretization regions within the model, that is if LGRs are present in the model either all the grid uses nine-point discretization, if [NINEPOIN](#kw-NINEPOIN) is present in the [RUNSPEC](#kw-RUNSPEC) section, or five-point if [NINEPOIN](#kw-NINEPOIN) is absent.
 
 
 #### Example

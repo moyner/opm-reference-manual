@@ -1,13 +1,13 @@
-### TRANZ – Define the Transmissibility in the Z Direction for All the Cells
+### TRANZ – Define the Transmissibility in the Z Direction for All the Cells {#kw-TRANZ}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-TRANX defines the transmissibility in the z direction for all the cells in the model via an array. The keyword can be used for all grid types, except for the Radial Grid geometry. The keyword effectively overwrites previously entered and calculated data. The transmissibility overwritten is the +Z face transmissibility of each grid block, that is for cell (I, J, K) the transmissibility between cells  (I, J, K)  and (I, J, K+1).
+[TRANX](#kw-TRANX) defines the transmissibility in the z direction for all the cells in the model via an array. The keyword can be used for all grid types, except for the Radial Grid geometry. The keyword effectively overwrites previously entered and calculated data. The transmissibility overwritten is the +Z face transmissibility of each grid block, that is for cell (I, J, K) the transmissibility between cells  (I, J, K)  and (I, J, K+1).
 
 
 | No. | Name | Description | Default |
@@ -16,11 +16,8 @@ TRANX defines the transmissibility in the z direction for all the cells in the m
 | 1 | TRANZ | TRANZ is an array of real positive numbers assigning the transmissibility in the Z direction to each cell in the model. Repeat counts may be used, for example 20*100.0. | None |
 | cP.rb/day/psia | cP.rm3/day/bars | cP.rcc/hr/atm |  |
 | Notes: |  |  |  |
-
-*Table 7.11: TRANZ Keyword Description*
-
-
-See also the TRANX and TRANY keywords to modify the transmissibilities in the other directions.
+: TRANZ Keyword Description {#tbl-7-11}
+See also the [TRANX](#kw-TRANX) and [TRANY](#kw-TRANY) keywords to modify the transmissibilities in the other directions.
 
 
 #### Example
@@ -46,4 +43,4 @@ ENDBOX
 ```
 
 
-Here the BOX statement is used to define the input grid for the TRANZ keyword, which overwrites the transmissibility previously calculated with transmissibility values of zero, resulting in a no-flow boundary in that part of the field between layers 20 and 21. The ENDBOX keyword resets the input box to the full grid.
+Here the [BOX](#kw-BOX) statement is used to define the input grid for the TRANZ keyword, which overwrites the transmissibility previously calculated with transmissibility values of zero, resulting in a no-flow boundary in that part of the field between layers 20 and 21. The [ENDBOX](#kw-ENDBOX) keyword resets the input box to the full grid.

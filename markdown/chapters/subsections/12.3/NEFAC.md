@@ -1,13 +1,13 @@
-### NEFAC – Node Efficiency Factors (Extended Network)
+### NEFAC – Node Efficiency Factors (Extended Network) {#kw-NEFAC}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The NEFAC keyword defines an extended network node’s efficiency factor, for when the Extended Network option has been activated by the NETWORK keyword in the RUNSPEC section.  See also the GEFAC keyword in the SCHEDULE section that can also be used with the Extended Network option.
+The NEFAC keyword defines an extended network node’s efficiency factor, for when the Extended Network option has been activated by the [NETWORK](#kw-NETWORK) keyword in the [RUNSPEC](#kw-RUNSPEC) section.  See also the [GEFAC](#kw-GEFAC) keyword in the [SCHEDULE](#kw-SCHEDULE) section that can also be used with the Extended Network option.
 
 
 | No. | Name | Description | Default |
@@ -17,8 +17,5 @@ The NEFAC keyword defines an extended network node’s efficiency factor, for wh
 | 2 | FACTOR | A real positive value that is less than or equal to one that defines the efficiency factor for the node. If a node’s down time is 5% then FACTOR should be set to 0.95 (1.0 – 0.05). | 1.0 |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-
-*Table 12.3.159.1: NEFAC Keyword Description*
-
-
-See also the WEFAC keyword in the SCHEDULE section to define a well’s’ efficiency factor.
+: NEFAC Keyword Description {#tbl-12-3-159-1}
+See also the [WEFAC](#kw-WEFAC) keyword in the [SCHEDULE](#kw-SCHEDULE) section to define a well’s’ efficiency factor.

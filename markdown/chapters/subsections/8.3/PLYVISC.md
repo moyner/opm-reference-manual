@@ -1,15 +1,15 @@
-### PLYVISC – Define Polymer Viscosity Scaling Factors
+### PLYVISC – Define Polymer Viscosity Scaling Factors {#kw-PLYVISC}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-PLYSVISC defines the polymer viscosity scaling factors used to determine the relationship of pure water viscosity with respect to increasing polymer concentration within a grid block. The polymer option must be activated by the POLYMER keyword in the RUNSPEC section in order to use this keyword.
+PLYSVISC defines the polymer viscosity scaling factors used to determine the relationship of pure water viscosity with respect to increasing polymer concentration within a grid block. The polymer option must be activated by the [POLYMER](#kw-POLYMER) keyword in the [RUNSPEC](#kw-RUNSPEC) section in order to use this keyword.
 
-The BRINE option in the RUNSPEC should be deactivated if this keyword is to be used.
+The [BRINE](#kw-BRINE) option in the [RUNSPEC](#kw-RUNSPEC) should be deactivated if this keyword is to be used.
 
 
 | No. | Name | Description | Default |
@@ -20,10 +20,7 @@ The BRINE option in the RUNSPEC should be deactivated if this keyword is to be u
 | 2 | VISFAC | A columnar vector of real increasing or equal values that defines a factor that scales the effective viscosity of the solution for the given POLCON entry. Normally VISFAC value for the first row in the table should be one. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-
-*Table 8.108: PLYVISC Keyword Description*
-
-
+: PLYVISC Keyword Description {#tbl-8-108}
 #### Example
 
 
@@ -52,4 +49,4 @@ PLYVISC
 ```
 
 
-The example defines two polymer viscosity scaling factor tables, based on the NTPVT variable on the TABDIMS keyword in the RUNSPEC section being equal to two and NPPVT variable on the same keyword being greater than or equal to six.
+The example defines two polymer viscosity scaling factor tables, based on the NTPVT variable on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section being equal to two and NPPVT variable on the same keyword being greater than or equal to six.

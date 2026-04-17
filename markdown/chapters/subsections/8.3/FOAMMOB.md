@@ -1,28 +1,25 @@
-### FOAMMOB – Define Foam Gas Mobility versus Foam Concentration Tables
+### FOAMMOB – Define Foam Gas Mobility versus Foam Concentration Tables {#kw-FOAMMOB}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The FOAMMOB keyword defines the reduction in gas mobility as a function of the foam concentration within a grid block. The Foam option must be activated by the FOAM keyword in the RUNSPEC section in order to use this keyword.   In addition,  this keyword must be supplied if the foam model is activated.
+The FOAMMOB keyword defines the reduction in gas mobility as a function of the foam concentration within a grid block. The Foam option must be activated by the [FOAM](#kw-FOAM) keyword in the [RUNSPEC](#kw-RUNSPEC) section in order to use this keyword.   In addition,  this keyword must be supplied if the foam model is activated.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | FOAMCON | A columnar vector of real monotonically increasing down the column values that defines the foam concentration for the corresponding gas mobility reduction factor (FOAMRATI). The first entry should be zero to define a no foam concentration data set. Units are dependent on the transport phase specified via the FOAMOPT1 variable on the FOAMOPTS keyword in the PROPS section. FOAMOPT1 should be set to either GAS or WATER. | None |
+| 1 | FOAMCON | A columnar vector of real monotonically increasing down the column values that defines the foam concentration for the corresponding gas mobility reduction factor (FOAMRATI). The first entry should be zero to define a no foam concentration data set. Units are dependent on the transport phase specified via the FOAMOPT1 variable on the [FOAMOPTS](#kw-FOAMOPTS) keyword in the [PROPS](#kw-PROPS) section. FOAMOPT1 should be set to either [GAS](#kw-GAS) or [WATER](#kw-WATER). | None |
 | Gas: lb/Mscf Water: lb/stb | Gas: kg/sm3 Water: kg/sm3 | Gas: gm/scc Water: gm/scc |  |
 | 2 | FOAMRATI | A columnar vector of real decreasing down the column values that defines  the corresponding gas mobility reduction factor for a given FOAMCON. The first table data set entry should be one to define a no foam concentration data set. Each FOAMCON/FOAMRATI data set should be terminated by a “/” | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-
-*Table 8.36: FOAMMOB Keyword Description*
-
-
-See also the FOAM keyword in the RUNSPEC section, the FOAMADS, FOAMOPTS and FOAMROCK keywords in the PROPS section.
+: FOAMMOB Keyword Description {#tbl-8-36}
+See also the [FOAM](#kw-FOAM) keyword in the [RUNSPEC](#kw-RUNSPEC) section, the [FOAMADS](#kw-FOAMADS), [FOAMOPTS](#kw-FOAMOPTS) and [FOAMROCK](#kw-FOAMROCK) keywords in the [PROPS](#kw-PROPS) section.
 
 
 #### Example
@@ -56,6 +53,6 @@ FOAMMOB
 ```
 
 
-Given NTPVT equals two and NPPVT is greater and or equal to eight on the TABDIMS keyword in the RUNSPEC section, the example defines the foam gas mobility versus foam concentration tables for two tables.
+Given NTPVT equals two and NPPVT is greater and or equal to eight on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, the example defines the foam gas mobility versus foam concentration tables for two tables.
 
 There is no terminating “/” for this keyword.

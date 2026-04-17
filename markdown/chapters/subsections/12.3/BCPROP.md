@@ -1,7 +1,7 @@
-### BCPROP – Define Boundary Conditions Properties
+### BCPROP – Define Boundary Conditions Properties {#kw-BCPROP}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -22,12 +22,12 @@ This is an OPM Flow specific keyword and will therefore cause an error in the co
 | Field | Metric | Laboratory |  |
 | 1 | INDEX | A positive integer that identifies the boundary condition. | None |
 | 2 | TYPE | A defined character string that defines the type of boundary condition to be applied, and should be set to one of the following character strings: | None |
-| 3 | COMPONENT | A defined character string that sets fluid type used in the boundary calculations, and should be set to one of the following character strings: COMPONENT must be declared and not equal to NONE if TYPE has been set to either DIRICHLET or RATE. MICR requires the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) or MICP keyword, and OXYG or UREA requires the MICP keyword. | NONE |
+| 3 | COMPONENT | A defined character string that sets fluid type used in the boundary calculations, and should be set to one of the following character strings: COMPONENT must be declared and not equal to NONE if TYPE has been set to either DIRICHLET or RATE. MICR requires the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) or [MICP](#kw-MICP) keyword, and OXYG or UREA requires the [MICP](#kw-MICP) keyword. | NONE |
 | 4 | RATE | A real value that defines the constant mass rate per unit area of the specified COMPONENT to be injected or withdrawn at the boundary,  when TYPE has been set to RATE. Note a negative value implies an influx rate, whereas, a positive value indicates an efflux. | 0.0 |
 | lb/day/ft2 | kg/day/m2 | gm/hour/cm2 |  |
-| 5 | PRESS | PRESS is a real positive value that defines the constant pressure boundary condition. PRESS should only be entered if TYPE has been set to DIRICHLET. If the pressure at the boundary is less than PRESS, then the fluid type declared via COMPONENT will flow across the boundary. The default value of 1* will use the simulator's calculated value based on data entered via the EQUIL keyword in the SOLUTION section. | 1* |
+| 5 | PRESS | PRESS is a real positive value that defines the constant pressure boundary condition. PRESS should only be entered if TYPE has been set to DIRICHLET. If the pressure at the boundary is less than PRESS, then the fluid type declared via COMPONENT will flow across the boundary. The default value of 1* will use the simulator's calculated value based on data entered via the [EQUIL](#kw-EQUIL) keyword in the [SOLUTION](#kw-SOLUTION) section. | 1* |
 | psia | barsa | atma |  |
-| 6 | TEMP | TEMP is a real positive number that defines the constant temperature boundary condition. TEMP should only be entered if TYPE has been set to DIRICHLET or THERMAL. The default value of 1* will use the simulator's calculated value based on data entered via one of the following reservoir temperature keywords: RTEMP, RTEMPA, RTEMPVD, TEMPI, or TEMPVD, in the SOLUTION section. Note that all of the aforementioned reservoir temperature keywords, except for TEMPI, may also be used in the PROPS section as well. | 1* |
+| 6 | [TEMP](#kw-TEMP) | [TEMP](#kw-TEMP) is a real positive number that defines the constant temperature boundary condition. [TEMP](#kw-TEMP) should only be entered if TYPE has been set to DIRICHLET or [THERMAL](#kw-THERMAL). The default value of 1* will use the simulator's calculated value based on data entered via one of the following reservoir temperature keywords: [RTEMP](#kw-RTEMP), [RTEMPA](#kw-RTEMPA), [RTEMPVD](#kw-RTEMPVD), [TEMPI](#kw-TEMPI), or [TEMPVD](#kw-TEMPVD), in the [SOLUTION](#kw-SOLUTION) section. Note that all of the aforementioned reservoir temperature keywords, except for [TEMPI](#kw-TEMPI), may also be used in the [PROPS](#kw-PROPS) section as well. | 1* |
 | oF | oC | oC |  |
 | 7 | MECHTYPE | A defined character string that defines the type of geo-mechanical boundary condition to be applied, and should be set to one of the following character strings: | NONE |
 | 8 | FIXEDX | A positive integer that identifies the whether the boundary is free or fixed in the x-direction. A value of 0 implies the boundary is free to move in the x-direction. A value > 0 implies the boundary is fixed in the x-direction with displacement defined by DISPX, | 1 |
@@ -46,16 +46,13 @@ This is an OPM Flow specific keyword and will therefore cause an error in the co
 |  | DISPZ | A real value that defines the z-direction displacement boundary condition. | 0 |
 | feet | m | cm |  |
 | Notes: |  |  |  |
-
-*Table 12.3.16.1: BCPROP Keyword Description*
-
-
-See also the AQUFLUX keyword that is supported by OPM Flow in both the SOLUTION and SCHEDULE sections, to define a constant flux analytical aquifer.
+: BCPROP Keyword Description {#tbl-12-3-16-1}
+See also the [AQUFLUX](#kw-AQUFLUX) keyword that is supported by OPM Flow in both the [SOLUTION](#kw-SOLUTION) and [SCHEDULE](#kw-SCHEDULE) sections, to define a constant flux analytical aquifer.
 
 
 If the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keywords are not present in the input deck, then the boundary conditions for the model are set to be no flow, which is the normal behavior in both OPM Flow and the commercial simulator.
 
-The BC keyword has been replaced by the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keywords.
+The [BC](#kw-BC) keyword has been replaced by the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keywords.
 
 
 #### Examples
@@ -86,9 +83,9 @@ BCPROP
 
 ```
 
-With this option it is only necessary to define the boundary cells and all the other parameters (COMPONENT, RATE, PRESS, and TEMP) can be defaulted, as they are ignored when TYPE equals FREE.
+With this option it is only necessary to define the boundary cells and all the other parameters (COMPONENT, RATE, PRESS, and [TEMP](#kw-TEMP)) can be defaulted, as they are ignored when TYPE equals FREE.
 
-The next example is based on NX, NY and NZ equal to 20, 1, 10 respectively, on the DIMENS keyword in the RUNSPEC section,  and shows how different boundary types can be assigned to different parts of the model.
+The next example is based on NX, NY and NZ equal to 20, 1, 10 respectively, on the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section,  and shows how different boundary types can be assigned to different parts of the model.
 
 
 ```

@@ -1,13 +1,13 @@
-### AQUCT – Define Carter-Tracy Analytical Aquifers
+### AQUCT – Define Carter-Tracy Analytical Aquifers {#kw-AQUCT}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The AQUCT keyword defines Carter-Tracy^[Carter, R. D. and Tracy, G. W. “An Improved Method for Calculating Water Influx,” Transactions of AIME (1960) 219, 215-417.] ^[Van Everdingen, A. & Hurst, W.,.The Application of the Laplace Transformation to Flow Problems in Reservoirs.  Petroleum Transactions, AIME (December,  1949).] analytical aquifers, the properties of the aquifer, including the Carter-Tracy aquifer influence function associated with the aquifer, defined by the AQUTAB keyword in the PROPS section.
+The AQUCT keyword defines Carter-Tracy^[Carter, R. D. and Tracy, G. W. “An Improved Method for Calculating Water Influx,” Transactions of AIME (1960) 219, 215-417.] ^[Van Everdingen, A. & Hurst, W.,.The Application of the Laplace Transformation to Flow Problems in Reservoirs.  Petroleum Transactions, AIME (December,  1949).] analytical aquifers, the properties of the aquifer, including the Carter-Tracy aquifer influence function associated with the aquifer, defined by the [AQUTAB](#kw-AQUTAB) keyword in the [PROPS](#kw-PROPS) section.
 
 Each row entry in the AQUCT keyword defines one Carter-Tracy aquifer.
 
@@ -15,45 +15,42 @@ Each row entry in the AQUCT keyword defines one Carter-Tracy aquifer.
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | AQUID | A positive integer greater than or equal to one and less than or equal to NANAQU on the AQUDIMS keyword in the RUNSPEC section, that defines the Carter-Tracy aquifer number. | 1 |
-| 2 | DATUM | DATUM is a single positive value that defines the Carter-Tracy reference datum depth for PRESS. | None |
+| 1 | AQUID | A positive integer greater than or equal to one and less than or equal to NANAQU on the [AQUDIMS](#kw-AQUDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, that defines the Carter-Tracy aquifer number. | 1 |
+| 2 | [DATUM](#kw-DATUM) | [DATUM](#kw-DATUM) is a single positive value that defines the Carter-Tracy reference datum depth for PRESS. | None |
 | feet | m | cm |  |
-| 3 | PRESS | PRESS is a single positive value that defines the aquifer pressure at DATUM. If PRESS is defaulted then the simulator will set the aquifer’s initial reservoir pressure to be in equilibrium with the cells the aquifer is contacted to. | 1* |
+| 3 | PRESS | PRESS is a single positive value that defines the aquifer pressure at [DATUM](#kw-DATUM). If PRESS is defaulted then the simulator will set the aquifer’s initial reservoir pressure to be in equilibrium with the cells the aquifer is contacted to. | 1* |
 | psia | barsa | atma |  |
 | 4 | PERM | PERM is a real positive number that assigns the permeability to the aquifer. | None |
 | mD | mD | mD |  |
-| 5 | PORO | PORO is a real positive number greater than zero and less than or equal to one that assigns the porosity to the aquifer. | None |
+| 5 | [PORO](#kw-PORO) | [PORO](#kw-PORO) is a real positive number greater than zero and less than or equal to one that assigns the porosity to the aquifer. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 6 | RCOMP | RCOMP is a real number defining the total (rock and water) compressibility (Ct) at the DATUM pressure. | None |
+| 6 | RCOMP | RCOMP is a real number defining the total (rock and water) compressibility (Ct) at the [DATUM](#kw-DATUM) pressure. | None |
 | 1/psia | 1/barsa | 1/atma |  |
 | 7 | RE | RE is a real positive number that defines the Carter-Tracy aquifer external radius. | None |
 | feet | m | cm |  |
-| 8 | DZ | DZ is a real positive number that defines the Carter-Tracy aquifer average net thickness. | None |
+| 8 | [DZ](#kw-DZ) | [DZ](#kw-DZ) is a real positive number that defines the Carter-Tracy aquifer average net thickness. | None |
 | feet | m | cm |  |
 | 9 | ANGLE | ANGLE is a real positive number that defines the angle of influence, that is the angular connection between the aquifer and the hydrocarbon reservoir. A value of 360o degrees, the default value, indicates that the aquifer completely surrounds the hydrocarbon reservoir. | 360.0 |
 | degrees | degrees | degrees |  |
-| 10 | PVTNUM | PVTNUM is positive integer greater than zero and less than the NTPVT variable on the TABDIMS keyword in the RUNSPEC section, that defines the PVTW table allocated to the Carter-Tracy aquifer. | 1 |
-| 11 | AQUTAB | AQUTAB is positive integer greater than zero and less than the NIFTBL variable as declared on the AQUDIMS keyword in the RUNSPEC section, that defines the AQUTAB table allocated to this Carter-Tracy aquifer. The default value of one sets the internal infinite acting Carter-Tracy aquifer influence table not the first table in the AQUTAB keyword in the PROPS section The first table in the AQUTAB keyword is considered to be table number two. The internal table, AQUTAB equal to one, is based on the Radial Flow, Constant Pressure and Constant Terminal Rate Cases for Infinite Reservoirs (Table I) in Van Everdingen and Hurst's ^[Van Everdingen, A. & Hurst, W.,.The Application of the Laplace Transformation to Flow Problems in Reservoirs.  Petroleum Transactions, AIME (December,  1949).] paper. | 1 |
-| 12 | SALTCON | SALTCON is a real positive number that defines the initial salt concentration in the aquifer, for when with simulator's Brine Model has been activated via the BRINE keyword in the RUNSPEC section. This variable is ignored by OPM Flow. | 0.0 |
+| 10 | [PVTNUM](#kw-PVTNUM) | [PVTNUM](#kw-PVTNUM) is positive integer greater than zero and less than the NTPVT variable on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, that defines the [PVTW](#kw-PVTW) table allocated to the Carter-Tracy aquifer. | 1 |
+| 11 | [AQUTAB](#kw-AQUTAB) | [AQUTAB](#kw-AQUTAB) is positive integer greater than zero and less than the NIFTBL variable as declared on the [AQUDIMS](#kw-AQUDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, that defines the [AQUTAB](#kw-AQUTAB) table allocated to this Carter-Tracy aquifer. The default value of one sets the internal infinite acting Carter-Tracy aquifer influence table not the first table in the [AQUTAB](#kw-AQUTAB) keyword in the [PROPS](#kw-PROPS) section The first table in the [AQUTAB](#kw-AQUTAB) keyword is considered to be table number two. The internal table, [AQUTAB](#kw-AQUTAB) equal to one, is based on the Radial Flow, Constant Pressure and Constant Terminal Rate Cases for Infinite Reservoirs (Table I) in Van Everdingen and Hurst's ^[Van Everdingen, A. & Hurst, W.,.The Application of the Laplace Transformation to Flow Problems in Reservoirs.  Petroleum Transactions, AIME (December,  1949).] paper. | 1 |
+| 12 | SALTCON | SALTCON is a real positive number that defines the initial salt concentration in the aquifer, for when with simulator's Brine Model has been activated via the [BRINE](#kw-BRINE) keyword in the [RUNSPEC](#kw-RUNSPEC) section. This variable is ignored by OPM Flow. | 0.0 |
 | lb/stb | kg/sm3 | gm/scc |  |
-| 13 | TEMP | TEMP is a real positive number that defines the initial temperature of the aquifer at DATUM for use with OPM Flow's thermal option. The THERMAL keyword in the RUNSPEC section must be activated to use this option. | 1* |
+| 13 | [TEMP](#kw-TEMP) | [TEMP](#kw-TEMP) is a real positive number that defines the initial temperature of the aquifer at [DATUM](#kw-DATUM) for use with OPM Flow's thermal option. The [THERMAL](#kw-THERMAL) keyword in the [RUNSPEC](#kw-RUNSPEC) section must be activated to use this option. | 1* |
 | oF | oC | oC |  |
 | Notes: |  |  |  |
-
-*Table 6.9: AQUCT Keyword Description*
-
-
+: AQUCT Keyword Description {#tbl-6-9}
 ::: {.callout-note}
-OPM Flow includes the infinite acting Carter-Tracy aquifer influence table as a default for table number one; thus data entered on AQUTAB keyword starts from table number two.
+OPM Flow includes the infinite acting Carter-Tracy aquifer influence table as a default for table number one; thus data entered on [AQUTAB](#kw-AQUTAB) keyword starts from table number two.
 :::
 
 
-In order to full define a Carter-Tracy aquifer one has to define the aquifer properties via the AQUCT keyword, the Carter-Tracy influence function via the AQUTAB keyword in the PROPS section (AQUTAB – Define Carter-Tracy Aquifer Influence Functions), if the default infinite acting table is not being employed, and finally, how the aquifer is connected to the reservoir using the AQUANCON keyword in the GRID or SOLUTION sections.
+In order to full define a Carter-Tracy aquifer one has to define the aquifer properties via the AQUCT keyword, the Carter-Tracy influence function via the [AQUTAB](#kw-AQUTAB) keyword in the [PROPS](#kw-PROPS) section ([AQUTAB](#kw-AQUTAB) – Define Carter-Tracy Aquifer Influence Functions), if the default infinite acting table is not being employed, and finally, how the aquifer is connected to the reservoir using the [AQUANCON](#kw-AQUANCON) keyword in the [GRID](#kw-GRID) or [SOLUTION](#kw-SOLUTION) sections.
 
 
 #### Example
 
-Given the following grid and aquifer dimensions in the RUNSPEC section:
+Given the following grid and aquifer dimensions in the [RUNSPEC](#kw-RUNSPEC) section:
 
 
 ```
@@ -70,7 +67,7 @@ AQUDIMS
 
 ```
 
-And the AQUTAB keyword in the PROPS section
+And the [AQUTAB](#kw-AQUTAB) keyword in the [PROPS](#kw-PROPS) section
 
 
 ```
@@ -122,7 +119,7 @@ AQUTAB
 
 ```
 
-The Carter-Tracy aquifer is defined in the GRID or SOLUTION sections as:
+The Carter-Tracy aquifer is defined in the [GRID](#kw-GRID) or [SOLUTION](#kw-SOLUTION) sections as:
 
 
 ```
@@ -144,7 +141,7 @@ AQUCT
 
 ```
 
-And the connection of the aquifer is set in the GRID or SOLUTION sections as:
+And the connection of the aquifer is set in the [GRID](#kw-GRID) or [SOLUTION](#kw-SOLUTION) sections as:
 
 
 ```

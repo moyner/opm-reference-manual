@@ -1,13 +1,13 @@
-### GRAVDRB – Activate Vertical Discretized Gravity Drainage and Imbibition for Dual Porosity Model
+### GRAVDRB – Activate Vertical Discretized Gravity Drainage and Imbibition for Dual Porosity Model {#kw-GRAVDRB}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword switches on vertical discretized gravity drainage and imbibition modeling between the matrix and the fracture grid blocks in dual porosity and dual permeability runs.  Note that the geometry of the matrix sub-cells should be set to VERTICAL on the NMATOPS keyword in the GRID section if this option is activated.
+This keyword switches on vertical discretized gravity drainage and imbibition modeling between the matrix and the fracture grid blocks in dual porosity and dual permeability runs.  Note that the geometry of the matrix sub-cells should be set to VERTICAL on the NMATOPS keyword in the [GRID](#kw-GRID) section if this option is activated.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 

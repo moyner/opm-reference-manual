@@ -1,13 +1,13 @@
-### PLYDHFLF – Define Polymer Thermal Degradation Half-Life Tables
+### PLYDHFLF – Define Polymer Thermal Degradation Half-Life Tables {#kw-PLYDHFLF}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The PLYDHFLF keyword defines the polymer thermal degradation half-life with respect to temperature functions for when the polymer option has been activated by the POLYMER keyword in the RUNSPEC section.
+The PLYDHFLF keyword defines the polymer thermal degradation half-life with respect to temperature functions for when the polymer option has been activated by the [POLYMER](#kw-POLYMER) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -15,15 +15,12 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | TEMP | A columnar vector of real monotonically increasing down the column values that defines the polymer thermal degradation temperature. | None |
+| 1 | [TEMP](#kw-TEMP) | A columnar vector of real monotonically increasing down the column values that defines the polymer thermal degradation temperature. | None |
 | oF | oC | oC |  |
 | 2 | POLHFLF | A columnar vector of real values that defines the corresponding polymer half-life. | None |
 | days | days | hours |  |
 | Notes: |  |  |  |
-
-*Table 8.102: PLYDHFLF Keyword Description*
-
-
+: PLYDHFLF Keyword Description {#tbl-8-102}
 #### Example
 
 
@@ -51,4 +48,4 @@ PLYDHFLF
 ```
 
 
-The example defines two polymer thermal degradation half-life tables, based on the NTPVT variable on the TABDIMS keyword in the RUNSPEC section being equal to two and NPPVT variable on the same keyword being greater than or equal to six.
+The example defines two polymer thermal degradation half-life tables, based on the NTPVT variable on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section being equal to two and NPPVT variable on the same keyword being greater than or equal to six.

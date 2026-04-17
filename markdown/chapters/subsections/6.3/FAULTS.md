@@ -1,13 +1,13 @@
-### FAULTS – Define Faults in the Grid Geometry
+### FAULTS – Define Faults in the Grid Geometry {#kw-FAULTS}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The FAULTS keyword defines the faults in the grid geometry and the keyword is normally exported with the grid geometry COORD and ZCORN data sets from static earth modeling software.  Note that the FAULTS keyword is not required to describe the structural geometry as this is already accounted for in the COORD and ZCORN data sets, but instead lists the fault traces with respect to the grid. Once the fault traces have been defined with the FAULTS keyword then the fault transmissibilities can be modified by the MULTFLT keyword. Note that without the FAULTS keyword one would still get proper cross-fault transmissibilities but they would not be modifiable using MULTFLT keyword.
+The FAULTS keyword defines the faults in the grid geometry and the keyword is normally exported with the grid geometry [COORD](#kw-COORD) and [ZCORN](#kw-ZCORN) data sets from static earth modeling software.  Note that the FAULTS keyword is not required to describe the structural geometry as this is already accounted for in the [COORD](#kw-COORD) and [ZCORN](#kw-ZCORN) data sets, but instead lists the fault traces with respect to the grid. Once the fault traces have been defined with the FAULTS keyword then the fault transmissibilities can be modified by the [MULTFLT](#kw-MULTFLT) keyword. Note that without the FAULTS keyword one would still get proper cross-fault transmissibilities but they would not be modifiable using [MULTFLT](#kw-MULTFLT) keyword.
 
 
 | No. | Name | Description | Default |
@@ -21,13 +21,10 @@ The FAULTS keyword defines the faults in the grid geometry and the keyword is no
 | 7 | K2 | The upper bound of the fault’s K-direction range must be greater than or equal to KI and less than or equal to NZ. | None |
 | 8 | FLTFACE | Unknown Author          2017-06-27T13:59:19          I am not able to review this properly, as I am not familiar enough with what is supposed to happen. I do not know if we support X-, Y-, Z- transmissibilities.         FLTFACE is a character string enclosed in quotes with a maximum length of two characters, that classifies the fault face. | None |
 | Notes: |  |  |  |
-
-*Table 6.37: FAULTS Keyword Description*
-
-
+: FAULTS Keyword Description {#tbl-6-37}
 #### Example
 
-The example below defines two fault traces, the first being the ‘M_WEST’ fault and the second the ‘BC’ fault trace.
+The example below defines two fault traces, the first being the ‘M_WEST’ fault and the second the ‘[BC](#kw-BC)’ fault trace.
 
 
 ```

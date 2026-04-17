@@ -1,7 +1,7 @@
-### MISCIBLE – Define Miscibility Todd-Longstaff Parameters
+### MISCIBLE – Define Miscibility Todd-Longstaff Parameters {#kw-MISCIBLE}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -12,14 +12,11 @@ The MISCIBLE keyword defines the options associated with the Todd-Longstaff^[M. 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | NTMISC | A positive integer value that declares the number miscible residual oil saturations versus water saturations tables for SORWMIS keyword and the number Todd-Longstaff mixing parameters entries on the TLMIXPAR keyword. | 1 |
-| 2 | NSMISC | A positive integer value that sets the maximum number of entries (or rows) for each SORWMIS table defined by the SORWMIS keyword. | 20 |
+| 1 | NTMISC | A positive integer value that declares the number miscible residual oil saturations versus water saturations tables for [SORWMIS](#kw-SORWMIS) keyword and the number Todd-Longstaff mixing parameters entries on the [TLMIXPAR](#kw-TLMIXPAR) keyword. | 1 |
+| 2 | NSMISC | A positive integer value that sets the maximum number of entries (or rows) for each [SORWMIS](#kw-SORWMIS) table defined by the [SORWMIS](#kw-SORWMIS) keyword. | 20 |
 | 3 | MISOPT | A character string that defines the numerical dispersion control options for the oil and gas relative permeability curves, set to either NONE or TWOPOINT: Only the default value of NONE is supported. | NONE |
 | Notes: |  |  |  |
-
-*Table 5.21: MISCIBLE Keyword Description*
-
-
+: MISCIBLE Keyword Description {#tbl-5-21}
 #### Example
 
 

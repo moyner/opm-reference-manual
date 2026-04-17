@@ -1,15 +1,15 @@
-### NEWTRAN – Activate Irregular Corner-Point Grid Transmissibilities
+### NEWTRAN – Activate Irregular Corner-Point Grid Transmissibilities {#kw-NEWTRAN}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword switches on Irregular Corner-Point Grid geometry transmissibility calculation, which is the default option for this type of grid. Grids defined with the COORD and ZCORN keywords will always invoke this option by default.
+This keyword switches on Irregular Corner-Point Grid geometry transmissibility calculation, which is the default option for this type of grid. Grids defined with the [COORD](#kw-COORD) and [ZCORN](#kw-ZCORN) keywords will always invoke this option by default.
 
-For Cartesian Regular Grids defined by the DX, DY, and DZ series of keywords the block center geometry transmissibility calculations should be activated via the OLDTRAN keyword. Again this is automatically invoked if this type of grid is being employed.
+For Cartesian Regular Grids defined by the [DX](#kw-DX), [DY](#kw-DY), and [DZ](#kw-DZ) series of keywords the block center geometry transmissibility calculations should be activated via the [OLDTRAN](#kw-OLDTRAN) keyword. Again this is automatically invoked if this type of grid is being employed.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 

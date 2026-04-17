@@ -1,7 +1,7 @@
-### GRAVCONS – Re-Define Gravity Constant
+### GRAVCONS – Re-Define Gravity Constant {#kw-GRAVCONS}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -18,10 +18,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | 1 | GRAVCONS | GRAVCONS is a positive real number number that defines the gravity constant used in various calculations. | Defined |
 | ft2psi/lb 0.00694 | m2bars/kg 0.0000981 | cm2atm/gm 0.000968 |  |
 | Notes: |  |  |  |
-
-*Table 8.42: GRAVCONS Keyword Description*
-
-
+: GRAVCONS Keyword Description {#tbl-8-42}
 #### Example
 
 

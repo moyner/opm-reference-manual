@@ -1,13 +1,13 @@
-### TUNINGS – Numerical Tuning Control for Individual LGRs
+### TUNINGS – Numerical Tuning Control for Individual LGRs {#kw-TUNINGS}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-TUNINGS defines the parameters used for controlling the commercial simulator’s numerical convergence parameters for individual Local Grid Refinements ("LGR"). The keyword is similar to the TUNINGL keyword in the SCHEDULE section that applies the tuning parameters to the all LGRs, except for an additional first record that includes the LGR name.
+TUNINGS defines the parameters used for controlling the commercial simulator’s numerical convergence parameters for individual Local Grid Refinements ("[LGR](#kw-LGR)"). The keyword is similar to the [TUNINGL](#kw-TUNINGL) keyword in the [SCHEDULE](#kw-SCHEDULE) section that applies the tuning parameters to the all LGRs, except for an additional first record that includes the [LGR](#kw-LGR) name.
 
 This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.
 
@@ -17,7 +17,7 @@ See section 2.2 Running OPM Flow 2023-04 From The Command Line on how to invoke 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 0-1 | LGRNAME | A character string of up to eight characters in length that defines the LGR name for which the tuning data is being being defined. | None |
+| 0-1 | LGRNAME | A character string of up to eight characters in length that defines the [LGR](#kw-LGR) name for which the tuning data is being being defined. | None |
 | 0-2 | / | Record terminated by a “/” | Not Applicable |
 | 1-1 | TSINIT | TSINT is a real positive value that defines the maximum length of the next time step. Note that whenever the keyword is used TSINIT is always set back to the default value of one, unless explicitly over written. | 1.0 |
 | days | days | hours |  |
@@ -87,18 +87,15 @@ See section 2.2 Running OPM Flow 2023-04 From The Command Line on how to invoke 
 | psia | barsa | atma |  |
 | 3-10 | XXXDPR | XXXDPR is a real positive value that stipulates the maximum tolerable pressure change within a time step. | 1.0 x 10-6 |
 | psia | barsa | atma |  |
-| 3-11 | MNWRFP | MNWRFP is a positive integer greater than one and less than NEWTMX that defines the minimum number of Newton iterations before invoking the bisection algorithm for when the polymer phase is active in the model via the POLYMER keyword in the RUNSPEC section. | 4 |
+| 3-11 | MNWRFP | MNWRFP is a positive integer greater than one and less than NEWTMX that defines the minimum number of Newton iterations before invoking the bisection algorithm for when the polymer phase is active in the model via the [POLYMER](#kw-POLYMER) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | 4 |
 | dimensionless | dimensionless | dimensionless |  |
 | 3-12 | / | Record terminated by a “/” | Not Applicable |
 | Notes: |  |  |  |
-
-*Table 12.70: TUNINGS Keyword Description*
-
-
-Note that for record number two (items 2-1 to 2-13) the maximum values should always be greater than the associated target value; for example, XXXCNV should be greater than TRGCNV.  Also note that the TUNING keyword is stored on the restart files (see RPTRST – Define Data to be Written to the RESTART File) enabling the parameters to be utilized in a restart run without re-specifying the keyword.
+: TUNINGS Keyword Description {#tbl-12-70}
+Note that for record number two (items 2-1 to 2-13) the maximum values should always be greater than the associated target value; for example, XXXCNV should be greater than TRGCNV.  Also note that the [TUNING](#kw-TUNING) keyword is stored on the restart files (see [RPTRST](#kw-RPTRST) – Define Data to be Written to the [RESTART](#kw-RESTART) File) enabling the parameters to be utilized in a restart run without re-specifying the keyword.
 
 
-See also the TUNINGL keyword in the SCHEDULE section that sets the tuning parameters for all LGRs.
+See also the [TUNINGL](#kw-TUNINGL) keyword in the [SCHEDULE](#kw-SCHEDULE) section that sets the tuning parameters for all LGRs.
 
 
 #### Example
@@ -116,7 +113,7 @@ OP01-LGR
 ```
 
 
-The above example explicitly sets the default parameters for the LGR named OP01-LGR
+The above example explicitly sets the default parameters for the [LGR](#kw-LGR) named OP01-[LGR](#kw-LGR)
 
 
 ```

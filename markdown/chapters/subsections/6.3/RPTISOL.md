@@ -1,13 +1,13 @@
-### RPTISOL – Activate Isolated Reservoir Number Reporting
+### RPTISOL – Activate Isolated Reservoir Number Reporting {#kw-RPTISOL}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The RPTISOL keyword activates the isolated reservoir report that generates an array of isolated region numbers that is printed in the debug file (*.DBG).  The main purpose of this facility is to use the generated array as input to the ISOLNUM keyword in the GRID section in conjunction with the Independent Reservoir Regions option. If the model can be divided into isolated reservoirs then the individual reservoirs may be solved independently, resulting in increased computational efficient, compared with solving the model as a whole.
+The RPTISOL keyword activates the isolated reservoir report that generates an array of isolated region numbers that is printed in the debug file (*.DBG).  The main purpose of this facility is to use the generated array as input to the [ISOLNUM](#kw-ISOLNUM) keyword in the [GRID](#kw-GRID) section in conjunction with the Independent Reservoir Regions option. If the model can be divided into isolated reservoirs then the individual reservoirs may be solved independently, resulting in increased computational efficient, compared with solving the model as a whole.
 
 This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.
 

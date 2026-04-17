@@ -1,7 +1,7 @@
-### THERMAL – Activate the Thermal Modeling Option
+### THERMAL – Activate the Thermal Modeling Option {#kw-THERMAL}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -9,59 +9,59 @@
 
 This keyword activates the thermal modeling option.
 
-In OPM Flow's thermal model (THERMAL keyword) enthalpy is conserved and the energy equations are solved fully implicitly with the black-oil equations. Whereas, in OPM Flow's temperature model (TEMP keyword) internal energy is conserved (the work term is neglected and internal energy is equal to enthalpy) and the energy equations are solved sequentially after the black-oil equations. Note that the thermal model can be modified so that internal energy rather than enthalpy is conserved by setting the command line option --conserve-inner-energy-thermal=true (the default is false). If properties like density or viscosity "strongly" depend on temperature, the thermal model is recommended.
+In OPM Flow's thermal model (THERMAL keyword) enthalpy is conserved and the energy equations are solved fully implicitly with the black-oil equations. Whereas, in OPM Flow's temperature model ([TEMP](#kw-TEMP) keyword) internal energy is conserved (the work term is neglected and internal energy is equal to enthalpy) and the energy equations are solved sequentially after the black-oil equations. Note that the thermal model can be modified so that internal energy rather than enthalpy is conserved by setting the command line option --conserve-inner-energy-thermal=true (the default is false). If properties like density or viscosity "strongly" depend on temperature, the thermal model is recommended.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 
-The temperature option (TEMP keyword) and the thermal option (THERMAL keyword) are two separate modeling facilities in the commercial simulator, although some keywords can be used by both options, for example the RTEMP keyword.  OPM Flow’s thermal model is not directly equivalent to either the commercial simulator’s black-oil TEMP or compositional THERMAL formulation.
+The temperature option ([TEMP](#kw-TEMP) keyword) and the thermal option (THERMAL keyword) are two separate modeling facilities in the commercial simulator, although some keywords can be used by both options, for example the [RTEMP](#kw-RTEMP) keyword.  OPM Flow’s thermal model is not directly equivalent to either the commercial simulator’s black-oil [TEMP](#kw-TEMP) or compositional THERMAL formulation.
 
-The energy black-oil implementation in OPM Flow uses a mixture of the commercial simulators black-oil and the commercial simulators “compositional thermal” keywords, as well as some OPM Flow specific keywords. Keywords specifically associated with both OPM Flow’s THERMAL and the commercial simulators TEMP and THERMAL options are listed in Table 5.46 for ease of reference.
+The energy black-oil implementation in OPM Flow uses a mixture of the commercial simulators black-oil and the commercial simulators “compositional thermal” keywords, as well as some OPM Flow specific keywords. Keywords specifically associated with both OPM Flow’s THERMAL and the commercial simulators [TEMP](#kw-TEMP) and THERMAL options are listed in Table 5.46 for ease of reference.
 
 
 | Section | Keyword | Function | OPM Flow | Commercial Simulator |  |
 | --- | --- | --- | --- | --- | --- |
-| THERMAL MODEL | TEMP MODEL | THERMAL MODEL |  |  |  |
-| RUNSPEC | ROCKDIMS | Thermal Rock Dimensions of Over and Underburden Rock Types |  |  |  |
-| TEMP | Activate the Temperature Modeling Option |  |  | Black-Oil |  |
+| THERMAL MODEL | [TEMP](#kw-TEMP) MODEL | THERMAL MODEL |  |  |  |
+| [RUNSPEC](#kw-RUNSPEC) | ROCKDIMS | Thermal Rock Dimensions of Over and Underburden Rock Types |  |  |  |
+| [TEMP](#kw-TEMP) | Activate the Temperature Modeling Option |  |  | Black-Oil |  |
 | THERMAL | Activate the Thermal Modeling Option |  |  |  |  |
-| GRID | ROCKCON | Thermal Rock Over and Underburden Connection Data |  |  |  |
+| [GRID](#kw-GRID) | ROCKCON | Thermal Rock Over and Underburden Connection Data |  |  |  |
 | ROCKPROP | Thermal Rock Over and Underburden Property Data |  |  |  |  |
-| HEATCR | Rock Heat Capacity. |  |  |  |  |
-| HEATCRT | Rock Heat Capacity Temperature. |  |  |  |  |
-| THCGAS | Gas Phase Thermal Conductivity. |  |  |  |  |
-| THCOIL | Oil Phase Thermal Conductivity. |  |  |  |  |
-| THCONR | Thermal Conductivity of liquids and reservoir rock. |  |  |  |  |
-| THCONSF | Thermal Conductivity of liquids and reservoir rock scaling factor applied to THCONR to account for gas saturation. |  |  |  |  |
-| THCROCK | Rock Thermal Conductivity. |  |  |  |  |
+| [HEATCR](#kw-HEATCR) | Rock Heat Capacity. |  |  |  |  |
+| [HEATCRT](#kw-HEATCRT) | Rock Heat Capacity Temperature. |  |  |  |  |
+| [THCGAS](#kw-THCGAS) | Gas Phase Thermal Conductivity. |  |  |  |  |
+| [THCOIL](#kw-THCOIL) | Oil Phase Thermal Conductivity. |  |  |  |  |
+| [THCONR](#kw-THCONR) | Thermal Conductivity of liquids and reservoir rock. |  |  |  |  |
+| [THCONSF](#kw-THCONSF) | Thermal Conductivity of liquids and reservoir rock scaling factor applied to [THCONR](#kw-THCONR) to account for gas saturation. |  |  |  |  |
+| [THCROCK](#kw-THCROCK) | Rock Thermal Conductivity. |  |  |  |  |
 | THCSOLID | Solid Phase Thermal Conductivity. |  |  |  |  |
-| THCWATER | Water Thermal Conductivity. |  |  |  |  |
-| PROPS | HEATVAP | Thermal Oil Component Heat of Vaporization |  |  |  |
-| GASDENT | Gas Density Temperature Coefficients (OPM Flow keyword). |  |  |  |  |
-| GASJT | Gas Joule-Thomson Coefficient (OPM Flow keyword). |  |  |  |  |
-| GASVISCT | Gas Viscosity versus Temperature Functions  (OPM Flow black-oil keyword). |  |  |  |  |
-| OILDENT | Oil Density Temperature Coefficients (OPM Flow keyword). |  |  |  |  |
-| OILJT | Oil Joule-Thomson Coefficient (OPM Flow keyword). |  |  |  |  |
-| OILVISCT | Oil Viscosity versus Temperature Functions  (OPM Flow black-oil keyword). |  |  |  |  |
-| RTEMP | Constant Initial Reservoir Temperature. |  |  |  |  |
-| RTEMPA | Constant Initial Reservoir Temperature. |  |  |  |  |
-| RTEMPVD | Initial Reservoir Temperature versus Depth. |  |  |  |  |
+| [THCWATER](#kw-THCWATER) | Water Thermal Conductivity. |  |  |  |  |
+| [PROPS](#kw-PROPS) | HEATVAP | Thermal Oil Component Heat of Vaporization |  |  |  |
+| [GASDENT](#kw-GASDENT) | Gas Density Temperature Coefficients (OPM Flow keyword). |  |  |  |  |
+| [GASJT](#kw-GASJT) | Gas Joule-Thomson Coefficient (OPM Flow keyword). |  |  |  |  |
+| [GASVISCT](#kw-GASVISCT) | Gas Viscosity versus Temperature Functions  (OPM Flow black-oil keyword). |  |  |  |  |
+| [OILDENT](#kw-OILDENT) | Oil Density Temperature Coefficients (OPM Flow keyword). |  |  |  |  |
+| [OILJT](#kw-OILJT) | Oil Joule-Thomson Coefficient (OPM Flow keyword). |  |  |  |  |
+| [OILVISCT](#kw-OILVISCT) | Oil Viscosity versus Temperature Functions  (OPM Flow black-oil keyword). |  |  |  |  |
+| [RTEMP](#kw-RTEMP) | Constant Initial Reservoir Temperature. |  |  |  |  |
+| [RTEMPA](#kw-RTEMPA) | Constant Initial Reservoir Temperature. |  |  |  |  |
+| [RTEMPVD](#kw-RTEMPVD) | Initial Reservoir Temperature versus Depth. |  |  |  |  |
 | SPECHA | Thermal Specific Heat of Oil Component |  |  |  |  |
-| SPECHEAT | Specific Heat of Oil, Water and Gas |  |  |  |  |
-| SPECROCK | Specific Heat of the Reservoir Rock |  |  |  |  |
-| TEMPVD | Initial Reservoir Temperature versus Depth. |  |  |  |  |
+| [SPECHEAT](#kw-SPECHEAT) | Specific Heat of Oil, Water and Gas |  |  |  |  |
+| [SPECROCK](#kw-SPECROCK) | Specific Heat of the Reservoir Rock |  |  |  |  |
+| [TEMPVD](#kw-TEMPVD) | Initial Reservoir Temperature versus Depth. |  |  |  |  |
 | THANALB | Activate Thermal Analytic Water Density Option |  |  |  |  |
 | THERMEX1 | Liquid Components Thermal Expansion Coefficient |  |  |  |  |
-| WATDENT | Oil Density Temperature Coefficients. |  |  |  |  |
-| WATJT | Water Joule-Thomson Coefficient (OPM Flow keyword). |  |  |  |  |
-| WATVISCT | Oil Viscosity versus Temperature Function. |  |  |  |  |
-| REGIONS | THERMNUM | Thermal Region Numbers. |  |  |  |
-| SOLUTION | RTEMP | Constant Initial Reservoir Temperature. |  |  |  |
-| RTEMPA | Constant Initial Reservoir Temperature. |  |  |  |  |
-| RTEMPVD | Initial Reservoir Temperature versus Depth. |  |  |  |  |
-| TEMPI | Initial Reservoir Temperature for All Cells. |  |  |  |  |
-| TEMPVD | Initial Reservoir Temperature versus Depth. |  |  |  |  |
-| SCHEDULE | WTEMP | Set An Injection Well’s Fluid Temperature |  |  |  |
-| WINJTEMP | Define Injection Fluid Thermal Properties |  |  |  |  |
+| [WATDENT](#kw-WATDENT) | Oil Density Temperature Coefficients. |  |  |  |  |
+| [WATJT](#kw-WATJT) | Water Joule-Thomson Coefficient (OPM Flow keyword). |  |  |  |  |
+| [WATVISCT](#kw-WATVISCT) | Oil Viscosity versus Temperature Function. |  |  |  |  |
+| [REGIONS](#kw-REGIONS) | THERMNUM | Thermal Region Numbers. |  |  |  |
+| [SOLUTION](#kw-SOLUTION) | [RTEMP](#kw-RTEMP) | Constant Initial Reservoir Temperature. |  |  |  |
+| [RTEMPA](#kw-RTEMPA) | Constant Initial Reservoir Temperature. |  |  |  |  |
+| [RTEMPVD](#kw-RTEMPVD) | Initial Reservoir Temperature versus Depth. |  |  |  |  |
+| [TEMPI](#kw-TEMPI) | Initial Reservoir Temperature for All Cells. |  |  |  |  |
+| [TEMPVD](#kw-TEMPVD) | Initial Reservoir Temperature versus Depth. |  |  |  |  |
+| [SCHEDULE](#kw-SCHEDULE) | [WTEMP](#kw-WTEMP) | Set An Injection Well’s Fluid Temperature |  |  |  |
+| [WINJTEMP](#kw-WINJTEMP) | Define Injection Fluid Thermal Properties |  |  |  |  |
 | Notes: |  |  |  |  |  |
 
 Table 5.46: OPM Flow’s THERMAL Option Associated Keywords
@@ -103,7 +103,7 @@ $ρ$	=	fluid density (kg/m3), and
 
 $c$	=	specific heat capacity (J/(K kg))
 
-(see the SPECHEAT keyword in the PROPS section).
+(see the [SPECHEAT](#kw-SPECHEAT) keyword in the [PROPS](#kw-PROPS) section).
 
 
 The current implementation makes use of the specific internal energy:

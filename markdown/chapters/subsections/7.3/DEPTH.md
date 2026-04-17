@@ -1,26 +1,23 @@
-### DEPTH –  Edits the Depth at the Center of Each Cell
+### DEPTH –  Edits the Depth at the Center of Each Cell {#kw-DEPTH}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The DEPTH keywords modifies the depth at the center of selected cells in the model. The cells DEPTH are calculated by OPM Flow at the end of the GRID section and this keyword allows the user to adjust the calculated depths in the EDIT section. The area to be modified can be defined via the various grid selection keywords, ADD, BOX, EQUALS, etc., and areas that are not selected remain unchanged.
+The DEPTH keywords modifies the depth at the center of selected cells in the model. The cells DEPTH are calculated by OPM Flow at the end of the [GRID](#kw-GRID) section and this keyword allows the user to adjust the calculated depths in the [EDIT](#kw-EDIT) section. The area to be modified can be defined via the various grid selection keywords, [ADD](#kw-ADD), [BOX](#kw-BOX), [EQUALS](#kw-EQUALS), etc., and areas that are not selected remain unchanged.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | DEPTH | DEPTH is an array of real numbers defining the depth at the center of each cell in the model.  Only the values in the currently defined input BOX needed be entered. Repeat counts may be used, for example 30*5201.0. | None |
+| 1 | DEPTH | DEPTH is an array of real numbers defining the depth at the center of each cell in the model.  Only the values in the currently defined input [BOX](#kw-BOX) needed be entered. Repeat counts may be used, for example 30*5201.0. | None |
 | feet | m | cm |  |
 | Notes: |  |  |  |
-
-*Table 7.2: Depth Keyword Description*
-
-
-See also the TOPS keyword to define the top structural depth for the cells.
+: Depth Keyword Description {#tbl-7-2}
+See also the [TOPS](#kw-TOPS) keyword to define the top structural depth for the cells.
 
 
 #### Examples
@@ -48,7 +45,7 @@ ENDBOX
 ```
 
 
-Alternatively the EQUALS keyword can be used to perform the same edit.
+Alternatively the [EQUALS](#kw-EQUALS) keyword can be used to perform the same edit.
 
 
 ```

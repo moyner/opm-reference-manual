@@ -1,7 +1,7 @@
-### MSGFILE – Activate or Deactivate Message File Output
+### MSGFILE – Activate or Deactivate Message File Output {#kw-MSGFILE}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,10 +16,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 | --- | --- | :------ | --- |
 | 1 | MSGOPT | A positive integer set to 0 for to deactivate message file output or 1 to activate message file output. | 1 |
 | Notes: |  |  |  |
-
-*Table 5.22: MSGFILE Keyword Description*
-
-
+: MSGFILE Keyword Description {#tbl-5-22}
 #### Example
 
 

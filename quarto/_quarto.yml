@@ -11,25 +11,43 @@ book:
   repo-url: https://github.com/OPM/opm-reference-manual
   chapters:
     - index.qmd
-    - chapters/01-introduction.qmd
-    - chapters/02-installation.qmd
-    - chapters/03-keyword-structure.qmd
-    - chapters/04-global-keywords.qmd
-    - chapters/05-runspec.qmd
-    - chapters/06-grid.qmd
-    - chapters/07-edit.qmd
-    - chapters/08-props.qmd
-    - chapters/09-regions.qmd
-    - chapters/10-solution.qmd
-    - chapters/11-summary.qmd
-    - chapters/12-schedule.qmd
+    - text: "Introduction"
+      href: chapters/01-introduction.qmd
+    - text: "Installing and Running Flow"
+      href: chapters/02-installation.qmd
+    - text: "Keyword Documentation Structure"
+      href: chapters/03-keyword-structure.qmd
+    - text: "Global Section Keywords"
+      href: chapters/04-global-keywords.qmd
+    - text: "RUNSPEC Section"
+      href: chapters/05-runspec.qmd
+    - text: "GRID Section"
+      href: chapters/06-grid.qmd
+    - text: "EDIT Section"
+      href: chapters/07-edit.qmd
+    - text: "PROPS Section"
+      href: chapters/08-props.qmd
+    - text: "REGIONS Section"
+      href: chapters/09-regions.qmd
+    - text: "SOLUTION Section"
+      href: chapters/10-solution.qmd
+    - text: "SUMMARY Section"
+      href: chapters/11-summary.qmd
+    - text: "SCHEDULE Section"
+      href: chapters/12-schedule.qmd
   appendices:
-    - appendices/A-keyword-summary.qmd
-    - appendices/B-release-notes.qmd
-    - appendices/C-opmrun.qmd
-    - appendices/D-python.qmd
-    - appendices/E-command-line.qmd
-    - appendices/F-output-formats.qmd
+    - text: "Keyword Summary"
+      href: appendices/A-keyword-summary.qmd
+    - text: "Release Notes"
+      href: appendices/B-release-notes.qmd
+    - text: "OPMRUN"
+      href: appendices/C-opmrun.qmd
+    - text: "Python Interface"
+      href: appendices/D-python.qmd
+    - text: "Command Line Options"
+      href: appendices/E-command-line.qmd
+    - text: "Output File Formats"
+      href: appendices/F-output-formats.qmd
 
 format:
   html:

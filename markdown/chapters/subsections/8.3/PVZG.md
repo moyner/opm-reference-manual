@@ -1,13 +1,13 @@
-### PVZG – Gas PVT Properties for Dry Gas (Z-Factor)
+### PVZG – Gas PVT Properties for Dry Gas (Z-Factor) {#kw-PVZG}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-PVZG defines the gas PVT properties for dry gas^[Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.] via the gas compressibility factor (z-factor), instead of the gas formation volume factor. If the gas has a constant and uniform vaporized oil concentration, Condensate-Gas Ratio (“CGR”), and if the reservoir pressure never drops below the saturation pressure (dew point pressure), then the model can be run more efficiently by omitting the OIL and VAPOIL keywords from the RUNSPEC section, treating the gas as a dry gas, and defining a constant Rv (CGR) value with keyword RVCONST or RVCONSTT in the PROPS section. This results in the model being run with as a dry gas problem with no active oil (condensate) phase. However, OPM Flow takes into account the constant Rv in the calculations and reporting.
+PVZG defines the gas PVT properties for dry gas^[Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.] via the gas compressibility factor (z-factor), instead of the gas formation volume factor. If the gas has a constant and uniform vaporized oil concentration, Condensate-Gas Ratio (“CGR”), and if the reservoir pressure never drops below the saturation pressure (dew point pressure), then the model can be run more efficiently by omitting the [OIL](#kw-OIL) and [VAPOIL](#kw-VAPOIL) keywords from the [RUNSPEC](#kw-RUNSPEC) section, treating the gas as a dry gas, and defining a constant Rv (CGR) value with keyword [RVCONST](#kw-RVCONST) or [RVCONSTT](#kw-RVCONSTT) in the [PROPS](#kw-PROPS) section. This results in the model being run with as a dry gas problem with no active oil (condensate) phase. However, OPM Flow takes into account the constant Rv in the calculations and reporting.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1-1 | RTEMP | Single real positive value that defines the reservoir temperature for the data in the following records. |  |
+| 1-1 | [RTEMP](#kw-RTEMP) | Single real positive value that defines the reservoir temperature for the data in the following records. |  |
 | oF | oC | oC |  |
 | 1-2 | / | Record terminated by a “/” | Not Applicable |
 | 2-1 | PRESS | A columnar vector of real monotonically increasing down the column   values that defines the gas phase pressure. | None |
@@ -26,10 +26,8 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | 2-3 | GVISC | A columnar vector of real increasing down the column values that defines the corresponding gas phase viscosity. | None |
 | cP | cP | cP |  |
 | Notes: |  |  |  |
-
-*Table 8.124: PVZG Keyword Description*
-
-See also the RVCONST and RVCONSTT keywords to define the constant Rv for dry gas.
+: PVZG Keyword Description {#tbl-8-124}
+See also the [RVCONST](#kw-RVCONST) and [RVCONSTT](#kw-RVCONSTT) keywords to define the constant Rv for dry gas.
 
 The ideal gas law provides a relationship between the pressure, the temperature and the specific volume of an ideal gas (pure component). This relationship is modified by use of a compressibility factor, Z^[Standing, M. B.:” Volumetric and Phase Behaviour of Oil Field Hydrocarbon Systems”, Renihold Publishing Corp., New York City (1952).], to account for deviations, from ideal, to the behavior of real gases.  The PVT relation for a real gas can be defined by:
 
@@ -100,7 +98,7 @@ $\mathit{Ti}$	= initial reservoir temperature (oR or K)
 $R$	= gas constant (10.73 or 8.314)
 
 
-RTEMP on this keyword is the $\mathit{Ti}$in the above equations and${P}_{i}$ is PRESS columnar vector.
+[RTEMP](#kw-RTEMP) on this keyword is the $\mathit{Ti}$in the above equations and${P}_{i}$ is PRESS columnar vector.
 
 
 #### Example
@@ -165,4 +163,4 @@ PVZG
 ```
 
 
-The above example defines two dry PVZG tables assuming NTPVT equals two and NPPVT is greater than or equal to 17 on the TABDIMS keyword in the RUNSPEC section. There is no terminating “/” for this keyword.
+The above example defines two dry PVZG tables assuming NTPVT equals two and NPPVT is greater than or equal to 17 on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. There is no terminating “/” for this keyword.

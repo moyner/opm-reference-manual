@@ -1,26 +1,23 @@
-### NNEWTF – Activate the Non-Newtonian Fluid Model
+### NNEWTF – Activate the Non-Newtonian Fluid Model {#kw-NNEWTF}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword activates the Non-Newtonian Fluid phase and model for when the polymer phase is present in the model, as indicated by the POLYMER keyword in the RUNSPEC section.
+This keyword activates the Non-Newtonian Fluid phase and model for when the polymer phase is present in the model, as indicated by the [POLYMER](#kw-POLYMER) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | NTHRBL | A positive integer that defines the maximum number of Herschel-Bulkley versus polymer concentration tables to be used with the polymer model, as entered via the FHERCHBL keyword in the PROPS section. The tables are allocated to different parts of the grid by the HBNUM keyword in the REGIONS section | NTPVT |
-| 2 | NLNHBL | A positive integer that defines the maximum number of rows for each table entered by the FHERCHBL keyword in the PROPS section. | 2 |
+| 1 | NTHRBL | A positive integer that defines the maximum number of Herschel-Bulkley versus polymer concentration tables to be used with the polymer model, as entered via the [FHERCHBL](#kw-FHERCHBL) keyword in the [PROPS](#kw-PROPS) section. The tables are allocated to different parts of the grid by the [HBNUM](#kw-HBNUM) keyword in the [REGIONS](#kw-REGIONS) section | NTPVT |
+| 2 | NLNHBL | A positive integer that defines the maximum number of rows for each table entered by the [FHERCHBL](#kw-FHERCHBL) keyword in the [PROPS](#kw-PROPS) section. | 2 |
 | Notes: |  |  |  |
-
-*Table 5.27: NNEWTF Keyword Description*
-
-
+: NNEWTF Keyword Description {#tbl-5-27}
 #### Example
 
 

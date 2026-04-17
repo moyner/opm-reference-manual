@@ -1,13 +1,13 @@
-### SCALC – Define The Initial Equilibration Calcite Volume Fraction For All Grid Blocks
+### SCALC – Define The Initial Equilibration Calcite Volume Fraction For All Grid Blocks {#kw-SCALC}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The SCALC keyword defines the initial equilibration calcite volume fraction for all grid cells in the model. The keyword should only be used if the MICP model has been activated in the RUNSPEC section.
+The SCALC keyword defines the initial equilibration calcite volume fraction for all grid cells in the model. The keyword should only be used if the [MICP](#kw-MICP) model has been activated in the [RUNSPEC](#kw-RUNSPEC) section.
 
 
 ::: {.callout-note}
@@ -21,11 +21,8 @@ This is an OPM Flow specific keyword.
 | 1 | SCALC | SCALC is an array of real numbers that are greater than or equal to zero and less than or equal to one assigning the initial equilibration  calcite volume fraction values to each cell in the model. Repeat counts may be used, for example 20*0.0010. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-
-*Table 10.42: SCALC Keyword Description*
-
-
-See also the SBIOF, SMICR, SOXYG and SUREA keywords to define the initial state of the model.
+: SCALC Keyword Description {#tbl-10-42}
+See also the [SBIOF](#kw-SBIOF), [SMICR](#kw-SMICR), [SOXYG](#kw-SOXYG) and [SUREA](#kw-SUREA) keywords to define the initial state of the model.
 
 
 #### Example

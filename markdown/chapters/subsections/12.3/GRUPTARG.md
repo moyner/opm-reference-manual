@@ -1,32 +1,29 @@
-### GRUPTARG – Modify Group Targets and Constraints Values
+### GRUPTARG – Modify Group Targets and Constraints Values {#kw-GRUPTARG}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The GRUPTARG keyword modifies the target and constraints values of both rates and pressures for previously defined groups without having to define all the variables on the group control keywords: GCONPROD or GCONPRI keywords. Variables not changed by the GRUPTARG keyword remain the same as those previously entered via the group control keywords or previously entered GRUPTARG keywords. Note that the group must still be initially be fully defined using the GCONPROD or GCONPRI keywords.  All the aforementioned keywords are described in the SCHEDULE section.
+The GRUPTARG keyword modifies the target and constraints values of both rates and pressures for previously defined groups without having to define all the variables on the group control keywords: [GCONPROD](#kw-GCONPROD) or [GCONPRI](#kw-GCONPRI) keywords. Variables not changed by the GRUPTARG keyword remain the same as those previously entered via the group control keywords or previously entered GRUPTARG keywords. Note that the group must still be initially be fully defined using the [GCONPROD](#kw-GCONPROD) or [GCONPRI](#kw-GCONPRI) keywords.  All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
-Note that wells are allocated to groups when the wells are specified by the WELSPECS keyword in the SCHEDULE section.  Wells defined to be under group control will have their production rates controlled by the group to which they belong, in addition to any well constraints defined for the wells.
+Note that wells are allocated to groups when the wells are specified by the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section.  Wells defined to be under group control will have their production rates controlled by the group to which they belong, in addition to any well constraints defined for the wells.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group target and constraints are being defined. The group named FIELD is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
+| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group target and constraints are being defined. The group named [FIELD](#kw-FIELD) is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the [GRUPTREE](#kw-GRUPTREE) keyword when there is more than one level of groups, otherwise all the groups will sit directly under the [FIELD](#kw-FIELD) group in the group tree hierarchy. | None |
 | 2 | TARGET | A defined character string that sets the item to be changed for the group the value of the item is set by item (3). | None |
 | 3 | VALUE Liquid Gas Res Vol Pressure | A real positive value that defines the value of the variable declared by TARGET | None |
 | stb/d Mscf/d rb/d psia | sm3/day sm3/day rm3/day barsa | scc/hour scc/hour rcc/hour atma |  |
 | Notes: |  |  |  |
-
-*Table 12.43: GRUPTARG Keyword Description*
-
-
-See also the WELTARG and WELCNTL keyword, in the SCHEDULE section that can be used to reset a well’s control mode, as well as a well’s target and constraints of both rates and pressures.
+: GRUPTARG Keyword Description {#tbl-12-43}
+See also the [WELTARG](#kw-WELTARG) and [WELCNTL](#kw-WELCNTL) keyword, in the [SCHEDULE](#kw-SCHEDULE) section that can be used to reset a well’s control mode, as well as a well’s target and constraints of both rates and pressures.
 
 
 #### Example

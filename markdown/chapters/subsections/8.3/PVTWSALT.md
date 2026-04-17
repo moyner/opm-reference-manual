@@ -1,15 +1,15 @@
-### PVTWSALT – Define Brine Water Fluid Properties for Various Regions
+### PVTWSALT – Define Brine Water Fluid Properties for Various Regions {#kw-PVTWSALT}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-PVTWSALT defines the brine water properties for various regions in the model, for when the brine phase has been activated by the BRINE keyword in the RUNSPEC section.  In this case PVTWSALT is used instead of PVTW in the input file.  However, if the ECLMC keyword has been entered in the RUNSPEC section to invoke the Multi-Component Brine model, the PVTW keyword should be used instead of PVTWSALT, as with this combination the salinity effect on the density is ignored.
+PVTWSALT defines the brine water properties for various regions in the model, for when the brine phase has been activated by the [BRINE](#kw-BRINE) keyword in the [RUNSPEC](#kw-RUNSPEC) section.  In this case PVTWSALT is used instead of [PVTW](#kw-PVTW) in the input file.  However, if the [ECLMC](#kw-ECLMC) keyword has been entered in the [RUNSPEC](#kw-RUNSPEC) section to invoke the Multi-Component Brine model, the [PVTW](#kw-PVTW) keyword should be used instead of PVTWSALT, as with this combination the salinity effect on the density is ignored.
 
-The number of PVTWSALT table data sets is defined by the NTPVT parameter on the TABDIMS keyword in the RUNSPEC section and the allocation of the PVTWSALT tables to different grid blocks in the model is done via the PVTNUM keyword in the REGION section.
+The number of PVTWSALT table data sets is defined by the NTPVT parameter on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section and the allocation of the PVTWSALT tables to different grid blocks in the model is done via the [PVTNUM](#kw-PVTNUM) keyword in the REGION section.
 
 
 | No. | Name | Description | Default |
@@ -34,10 +34,7 @@ The number of PVTWSALT table data sets is defined by the NTPVT parameter on the 
 | 1/psia | 1/barsa | 1/atma |  |
 | 2-6 | / | Table and record terminated by a “/” | Not Applicable |
 | Notes: |  |  |  |
-
-*Table 8.123: PVTWSALT Keyword Description*
-
-
+: PVTWSALT Keyword Description {#tbl-8-123}
 As mentioned above, the simulator first calculates the water properties as functions of the salt concentration at the previous time step by linear interpolation in salt concentration for water compressibility (Cw), water viscosibility (μwc), $\frac{1}{{B}_{w}}$and$\frac{1}{{B}_{w} {μ}_{w}}$.  It then calculates the values of${B}_{w}$and${B}_{w} {μ}_{w}$at the current time step using the current pressure P, using the following equations:
 
 
@@ -52,12 +49,12 @@ $$
 {B}_{w}(P,{C}_{s}) {\mathrm{μ}}_{w}(P,{C}_{s}) = \frac{{B}_{w}({P}_{\mathit{ref}},{C}_{s,\mathit{ref}}) {\mathrm{μ}}_{w}({P}_{\mathit{ref}},{C}_{s,\mathit{ref}})}{1 + ({C}_{w}- {\mathrm{μ}}_{\mathit{wc}})(P-{P}_{\mathit{ref}}) + \frac{{(({C}_{w}- {\mathrm{μ}}_{\mathit{wc}})(P-{P}_{\mathit{ref}}))}^{2}}{2}}
 $$ {#eq-8-83}
 
-See also the BDENSITY keyword in the PROPS section that defines the brine surface densities for the salt concentrations declared on the PVTWSALT keyword. Note that if the BDENSITY keyword is absent from the input file then the brine surface densities will be set to the water density values declared via the DENSITY keyword in the PROPS section. In this case there is no variation in brine surface density with respect to salt concentration.
+See also the [BDENSITY](#kw-BDENSITY) keyword in the [PROPS](#kw-PROPS) section that defines the brine surface densities for the salt concentrations declared on the PVTWSALT keyword. Note that if the [BDENSITY](#kw-BDENSITY) keyword is absent from the input file then the brine surface densities will be set to the water density values declared via the [DENSITY](#kw-DENSITY) keyword in the [PROPS](#kw-PROPS) section. In this case there is no variation in brine surface density with respect to salt concentration.
 
 
 #### Example
 
-The following shows the PVTWSALT keyword for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set equal to two and NPPVT is set to greater than four on the TABDIMS keyword.
+The following shows the PVTWSALT keyword for when NTPVT on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section is set equal to two and NPPVT is set to greater than four on the [TABDIMS](#kw-TABDIMS) keyword.
 
 
 ```

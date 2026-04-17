@@ -1,7 +1,7 @@
-### TRPLPORO – Activate the Triple Porosity Model Option
+### TRPLPORO – Activate the Triple Porosity Model Option {#kw-TRPLPORO}
 
 
-| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,11 +16,8 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | --- | --- | :------ | --- |
 | 1 | TRPLPORO | A positive integer value that specifies the number of matrix porosity systems in the model. TRPLPORO should be set to either: | 1 |
 | Notes: |  |  |  |
-
-*Table 5.49: TRPLPORO Keyword Description*
-
-
-Note the keyword cannot be used in conjunction with the NMATRIX keyword, which is also in the RUNSPEC section.
+: TRPLPORO Keyword Description {#tbl-5-49}
+Note the keyword cannot be used in conjunction with the [NMATRIX](#kw-NMATRIX) keyword, which is also in the [RUNSPEC](#kw-RUNSPEC) section.
 
 
 #### Example
