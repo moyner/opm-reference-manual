@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Appendix C — OPMRUN – OPM Flow Reference Manual</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../appendices/D-python.html" rel="next">
+<link href="../appendices/B-release-notes.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendices/A-keyword-summary.html">Appendices</a></li><li class="breadcrumb-item"><a href="../appendices/C-opmrun.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">OPMRUN</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">OPM Flow Reference Manual</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/OPM/opm-reference-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">OPM Flow Reference Manual</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">01-introduction.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">02-installation.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-keyword-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">03-keyword-structure.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-global-keywords.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-runspec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-grid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-edit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-props.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-regions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-solution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/A-keyword-summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Keyword Summary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/B-release-notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Release Notes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/C-opmrun.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">OPMRUN</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/D-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Python Interface</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/E-command-line.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Command Line Options</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/F-output-formats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Output File Formats</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendices/A-keyword-summary.html">Appendices</a></li><li class="breadcrumb-item"><a href="../appendices/C-opmrun.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">OPMRUN</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Appendix C — OPMRUN</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>OPMRUN is graphical user interface to Flow that has similar functionality to the commercial simulator’s ECLRUN program. Target audience are Reservoir Engineers in a production environment. Developers and experienced Linux users will already have compatible work flows. The application performs the following:</p>
+<ul>
+<li>Allows editing and management of OPM Flow’s run time parameters. Default parameters are automatically loaded from OPM Flow, and the user can reset the default parameter set either from a parameter or PRT file. Editing of a job’s parameter file is also available.</li>
+<li>Runs under Linux and Windows 10. For Windows 10 OPM Flow is run via the Windows Subsystem for Linux (“WSL”).</li>
+<li>Allows simulation jobs to be queued and run in either foreground (under OPMRUN), or in background in a xterm terminal session in Lunux or WSL under Windows 10. Jobs in the queue can be set to run in NOSIM mode or RUN mode.</li>
+<li>Foreground jobs can be killed from OPMRUN, with the option of killing all the jobs in the queue.</li>
+<li>Queues can be edited, saved and loaded.</li>
+</ul>
+<p>Various additional simulation input generation and conversion utilities are available including:</p>
+<ul>
+<li>Compressing a job to save space (DATA, and all OPM Flow output files) and uncompressing previously compressed jobs,</li>
+<li>Keywords, a keyword generator based on the Apache Velocity Template Language (“VTL”). The templates can therefore also be used with any editor that supports VTL, jEdit for example. There is one template per keyword, with the formatting the same as the OPM Flow manual. Over 450 templates are currently implemented. One can also customize the existing templates as well as creating User defined templates. The keywords are examples, one still has to edit the resulting deck with the actual required data, but the format with comments should make this a straight forward process.</li>
+<li>A Production Schedule application that takes a comma delimited CSV file containing historical production and injection data and converts the data to an OPM Flow SCHEDULE file using the WCONHIST series of keywords. Currently only production data is supported.</li>
+<li>Sensitivities application that generates sensitivity cases based on a “Base” case file. The Base file contains “Factors” (variable names), $X01, $X02, etc., that are substituted with user defined values using the data entered and the type of Sensitivity Scenario selected.</li>
+<li>A Well Specification application that uses the standard well export files from OPM ResInsight to reformat the data in a more user-friendly manner for the WELSPECS and COMPDAT keywords. Optionally, the application can generate the COMPLUMP keyword based on the OPM ResInsight layers file, with one completion per defined reservoir layer.</li>
+<li>Calling OPM ResInsight and loading the currently selected job into OPM ResInsight for viewing.</li>
+<li>A Well Trajectory Conversion application that converts a Schlumberger Petrel exported well trajectory file into an OPM ResInsight file, containing all the wells.</li>
+</ul>
+<p>The software can be downloaded from the following link:</p>
+<p><a href="https://github.com/OPM/opm-utilities/tree/master/opmrun">https://github.com/OPM/opm-utilities/tree/master/opmrun</a></p>
+<p>OPMRUN is written in Python 3 and tested under various Ubuntu distributions. Note that only Python 3 is supported and tested, Python2 support has been deprecated.</p>
+<p>The program requires the following standard module Python libraries:</p>
+<ul>
+<li>datetime, getpass, importlib, os, numpy, pkg_resources, pandas, pathlib, platform, psutil, sys, re, subprocess, and tkinter as tk.</li>
+</ul>
+<p>In addition, the following non-standard Python modules are required:</p>
+<ul>
+<li>airspeed, notify-py, pyDOE2, and PySimpleGUI.</li>
+</ul>
+<p>For some Linux systems the relevant package manager may have to be used to install tkinter as tk; whereas for Windows 10 users the tkinter package is pre-installed with Python.</p>
+<p>OPMRUN enables the editing and management of OPM Flow’s run time parameters, setting up job queues to run a series of simulation jobs sequentially, as well as the management of the job queues. Figure C.1shows the initial display.</p>
+<p><img src="images/Frame120_f5dfac27d930.png" class="img-fluid" alt="Frame120"> <img src="images/Image120_f5dfac27d930.png" class="img-fluid" alt="Image120"></p>
+<p>Upon launch the program runs OPM Flow to get a list of command line parameters from the current version of OPM Flow. These default parameters can be edited for each case, or alternative default parameter sets can be loaded from an existing parameter file from another job, or a *.PRT file from a completed simulation.</p>
+<p>As can be seen in Figure C.2 the program has upper and lower display elements. The upper element shows a list of simulation jobs that are in the job queue and the lower element consists of two elements, one for the OPM Flow Output (the terminal output from OPM Flow) and a second element (OPM Run Log) that is a session log of the jobs run by OPMRUN. Clicking the OPM Flow Output and OPM Run Log tabs switches the display on the lowered element between two display types.</p>
+<p>To add jobs to the queue use the Add Job button or load an existing job queue using the Load Queue button. Jobs can be edited or deleted from the queue using the Edit Job and Delete Job buttons, and a series of jobs can be saved as a job queue by using the Save Queue button. The Clear Queue button deletes all jobs from the queue.</p>
+<p>Pressing the Add Job button will display the following dialogue box:</p>
+<p><img src="images/Frame121_557019afb7dc.png" class="img-fluid" alt="Frame121"> <img src="images/Image121_557019afb7dc.png" class="img-fluid" alt="Image121"></p>
+<p>Use the Browse button to select the input file to add to the queue, then select the Run Parameters for this input file, then press the Submit button to add the input file to the job queue (Figure C.4).</p>
+<p>The Overwrite Parameter File Options allow for different default treatments of existing *.PARAM files, which is particularly useful when adding multiple jobs at the same time.</p>
+<p><img src="images/Frame75_c76ed472a410.png" class="img-fluid" alt="Frame75"> <img src="images/Image68_c76ed472a410.png" class="img-fluid" alt="Image68"></p>
+<p>The reason for this is because different versions of OPM Flow have different parameter sets and if a newer version of OPM Flow runs with a previous version’s *.PARAM file then the simulator will stop with an error message for the various invalid parameters for the current version of the simulator.</p>
+<p>Jobs in the queue can be edited by selecting the Edit Job button that will display two options (Figure C.5): one to edit the input file using the defined editor and the second to edit the OPM Flow Parameter File.</p>
+<p><img src="images/Frame76_2483217ee1aa.png" class="img-fluid" alt="Frame76"> <img src="images/Image69_2483217ee1aa.png" class="img-fluid" alt="Image69"></p>
+<p>If the second option is selected OPMRUN will display a dialog box that shows a list of the OPM Flow command line parameters together with the parameter help information Figure C.7). Selecting a parameter from the list and selecting the Edit button will display the setting for the selected parameter (alternatively one can double click the required entry). One can then edit the parameter as required. Use the Save button to save the change and use the Exit button to save all the changes to the parameter file. The Cancel button will cancel all changes to the parameter file.</p>
+<p><img src="images/Frame122_30b2cadad0e0.png" class="img-fluid" alt="Frame122"> <img src="images/Image122_30b2cadad0e0.png" class="img-fluid" alt="Image122"></p>
+<p>Alternatively one can use the:</p>
+<ul>
+<li>Edit OPM Flow Parameter menu option to edit the parameter file for a job.</li>
+<li>List OPM Flow Parameters menu option to list the commands in the parameter file for a job.</li>
+<li>Set OPM Flow Default Parameters to set the default parameters for all subsequent jobs added to the queue. This option allows the user to load a default set of parameters from (1) OPM Flow, (2) an OPM Flow Parameter File, or (3) an OPM Flow print file (*.PRT).</li>
+</ul>
+<p>One can also right-click on a job and select one of the available options.</p>
+<p>To load a previously saved job queue, press the Load Queue button this will display a dialog box allowing the user to select a queue file (*.que), after pressing the OK button the jobs will be displayed in the Job List Element as illustrated in Figure C.7.</p>
+<p><img src="images/Frame77_0d01d65c6763.png" class="img-fluid" alt="Frame77"> <img src="images/Image70_0d01d65c6763.png" class="img-fluid" alt="Image70"></p>
+<p>Queue files allow for various jobs to be load efficiently, especially for ensemble and sensitivity cases and may contain a large number of cases.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When running under Windows 10 the Job names will follow the Windows 10 file naming convention and OPMRUN automatically handles the file names for running the jobs under the Window Subsystem for Linux. However, care is needed for any “included” file in the input deck. In this case the PATHS – Define Filename Directory Path Aliases keyword in the RUNSPEC section may be of use.</p>
+</div>
+</div>
+<p>Reset Job Queue Parameters allows jobs run under Windows 10 WSL to be renamed for running under Linux, and changing jobs from serial to parallel and vice versa.</p>
+<p><img src="images/Frame78_eaf810db0798.png" class="img-fluid" alt="Frame78"> <img src="images/Image71_eaf810db0798.png" class="img-fluid" alt="Image71"></p>
+<p>The application will attempt to list or Linux mount points and Windows drives depending on the host operating system, once the two systems mount and drive points have been selected then the files in the queue will be renamed from the previous host system to the current host system. This is only performed for the *.DATA files, included files in the input deck are currently not converted.</p>
+<p><img src="images/Frame123_29f24db28c27.png" class="img-fluid" alt="Frame123"> <img src="images/Image123_29f24db28c27.png" class="img-fluid" alt="Image123"></p>
+<p>As previously mentioned, one can also change the queue run time parameters from serial to parallel or vice versa.</p>
+<p>Selecting the Run Jobs button displays the Select Run Option dialog box shown in Figure C.10 and Figure C.11.</p>
+<p><img src="images/Frame113_601e0d9ae485.png" class="img-fluid" alt="Frame113"> <img src="images/Image72_601e0d9ae485.png" class="img-fluid" alt="Image72"></p>
+<p>On the Select Run Dialog, the Run in No Simulation Mode option is equivalent to setting the NOSIM option in the input deck for all jobs in the queue (see section 5.3.96 NOSIM – Activate the No Simulation Mode for Data File Checking and the –enable-dry-run command line parameter in Table 2.1 in section 2.2 Running OPM Flow From The Command Line). This allows for checking all the jobs at once.</p>
+<p><img src="images/Frame24_e58f1a43b3ac.png" class="img-fluid" alt="Frame24"> <img src="images/Image22_e58f1a43b3ac.png" class="img-fluid" alt="Image22"></p>
+<p>Selecting Run in Standard Simulation Mode will run all the jobs in the queue sequentially, with the OPM Flow terminal output directed to OPM Flow Output Element, as shown in Figure C.12. The terminal output is also directed to a *.LOG file as well, similar to what the commercial simulator does.</p>
+<p><img src="images/Frame114_7d770e7418a7.png" class="img-fluid" alt="Frame114"> <img src="images/Image73_7d770e7418a7.png" class="img-fluid" alt="Image73"></p>
+<p>Clicking the OPM Run Log tab displays the OPMRUN’s session log file that records the time and date of the major events that have occurred, including the start and end times of each run. Notice also how OPMRUN deletes all the existing output files for a given job, if they exists, before running OPM Flow. as well as creating a Schedule Log for tracking progress (Figure C.13).</p>
+<p><img src="images/Frame115_6dee5c16282c.png" class="img-fluid" alt="Frame115"> <img src="images/Image74_6dee5c16282c.png" class="img-fluid" alt="Image74"></p>
+<p>The Kill button will ask the user if the current running job should be killed, and if the job is to killed, the application will prompt as whether or not all the jobs in the queue should be killed.</p>
+<p>The Clear clears the OPM Flow Output Element from the currently displayed tab (Output or Log) and the Copy button copies the data to the clipboard.</p>
+<section id="file-menu-options" class="level4" data-number="C.0.0.1">
+<h4 data-number="C.0.0.1" class="anchored" data-anchor-id="file-menu-options"><span class="header-section-number">C.0.0.1</span> File Menu Options</h4>
+<p>Enables open and saving the job queue, switching projects and listing OPMRUN’s user properties.</p>
+</section>
+<section id="edit-menu-options" class="level4" data-number="C.0.0.2">
+<h4 data-number="C.0.0.2" class="anchored" data-anchor-id="edit-menu-options"><span class="header-section-number">C.0.0.2</span> Edit Menu Options</h4>
+<p>Lets one add jobs, add jobs recursively (all jobs in the selected directory and below), edit the data file (Figure C.14) and the parameter file for the selected job,(see section C.2.2 Edit Job Data and Parameter File) edit, list and set the default parameters for running jobs that will be added to the queue, set OPMRUN options, and set the project’s project directories.</p>
+<p><img src="images/Frame116_d38791aed54c.png" class="img-fluid" alt="Frame116"> <img src="images/Image77_d38791aed54c.png" class="img-fluid" alt="Image77"> <img src="images/Image76_5bb837d10094.png" class="img-fluid" alt="Image76"></p>
+<p>The options are also available by right-clicking a job in the Job List Element</p>
+<p>The Edit Parameters, List Parameters and Set Parameters relate to the default parameter set, not the parameter set for a particular job. When a new job is added to the queue the application checks if a *.PARAM file exists for the job, if not then the default parameter set is used for the job. Editing the default parameter set is the same as editing a job parameter set (see section C.2.2 Edit Job Data and Parameter File for more information).</p>
+<p>One can also define the default parameter set by using the OPM Flow default values, which is the set created when OPMRUN is first initialized. In addition, one can load an existing parameter set from an existing <em>.PARAM file or from an OPM Flow </em>.PRT file (Figure C.15).</p>
+<p><img src="images/Frame118_c77302b21bac.png" class="img-fluid" alt="Frame118"> <img src="images/Image79_c77302b21bac.png" class="img-fluid" alt="Image79"></p>
+<p>OPMRUN has several configuration options that can be set via the Edit/Options menu option as illustrated in Figure C.16. These include setting:</p>
+<ul>
+<li>The location of the OPM Flow manual.</li>
+<li>The Keyword Generator Template Directory, one of tools supplied with OPMRUN, see section C.3.2 OPMRUN Tools: Simulator Input/Keywords for further information on this application.</li>
+<li>The location of the ResInsight program, for loading the results of a simulation run for viewing.</li>
+<li>The editor command to used to edit the input deck and view the resulting simulator output files.</li>
+<li>The terminal console to be be used for background jobs. WSL (“Windows Subsystem for Linux) should be selected if OPMRUN is running under Windows 10 to enable jobs to be submitted to the installed Linux distribution.</li>
+<li>The User Information series of fields are used by various supplied tools and in some templates used by the Keyword Generator application (see C.3.2 OPMRUN Tools: Simulator Input/Keywords for more information on this application). Note if a User Information” field is not defined then the template variable will be output instead – this can easily be deleted in the application.</li>
+<li>One can also define the main OPMRUN windows configuration parameters define: input (Job List Element) and output panel’s (OPM Flow Output Element) size, font and font size.</li>
+</ul>
+<p><img src="images/Frame119_19e55a063cf3.png" class="img-fluid" alt="Frame119"> <img src="images/Image80_19e55a063cf3.png" class="img-fluid" alt="Image80"></p>
+<p>In addition to the aforementioned options, the Edit/Projects menu item enables the setting of project directories that allows the user to set a default directory for loading and saving files within OPMRUN and the auxiliary applications (Figure C.17).</p>
+<p><img src="images/Frame117_adea6795ab92.png" class="img-fluid" alt="Frame117"> <img src="images/Image81_adea6795ab92.png" class="img-fluid" alt="Image81"></p>
+</section>
+<section id="view-menu-options." class="level4" data-number="C.0.0.3">
+<h4 data-number="C.0.0.3" class="anchored" data-anchor-id="view-menu-options."><span class="header-section-number">C.0.0.3</span> View Menu Options.</h4>
+<p>Allows the user to view the results of an OPM Flow simulation run using the default editor. The options are also available by right-clicking a job in the Job List Element.</p>
+</section>
+<section id="tools-menu-options" class="level4" data-number="C.0.0.4">
+<h4 data-number="C.0.0.4" class="anchored" data-anchor-id="tools-menu-options"><span class="header-section-number">C.0.0.4</span> Tools Menu Options</h4>
+<p>Contains various tool that may be useful in building a simulation model.</p>
+<p><img src="images/Image84_fc144c3ce032.png" class="img-fluid" alt="Image84"> <img src="images/Image83_155309479934.png" class="img-fluid" alt="Image83"></p>
+<p>See the section C.3 OPMRUN Tools for further details on the available tools.</p>
+<p>Help Menu Options</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Image85_9d7215479111.png" class="img-fluid figure-img"></p>
+<figcaption>Image85</figcaption>
+</figure>
+</div>
+<p>Use the Edit / Options menu option to select the location of the OPM Flow Manual.</p>
+<p>Simulation input and output files can be extremely large, especially for large full field models. Running multiple cases in these circumstances can easily use up all available disk space, especially if multiple users are running multiple cases. The Tools/Compression Jobs option allows the user to compress a series of jobs into individual zip files (one zip file per job), as well as uncompressing previously zip job files.</p>
+<p><img src="images/Frame92_155309479934.png" class="img-fluid" alt="Frame92"> <img src="images/Image86_155309479934.png" class="img-fluid" alt="Image86"></p>
+<p><img src="images/Frame93_2ddce23345cf.png" class="img-fluid" alt="Frame93"> <img src="images/Image87_2ddce23345cf.png" class="img-fluid" alt="Image87"></p>
+<p>Note there is a similar application for uncompressing zip files and that the tool uses the Linux zip and unzip programs both on Linux host systems and Windows 10 systems using WSL.</p>
+<p>The OPMRUN Keyword generator is an application that generates OPM Flow keywords that can be cut and pasted into any editor or saved to a separate file to form the basis of a new input deck (*.DATA files). The application utilizes templates based on the Apache Velocity Template Language (“VTL”), a commonly used template language used by software engineers. The templates can therefore also be used with any editor that supports VTL, jEdit for example, a popular open source Java based editor and PyCharm, a Python integrated development environment used in computer programming, specifically for the Python language.</p>
+<p>There is one template per keyword, with formatting of the keywords being the same as the OPM Flow manual. Currently there are over 450 templates implemented and the intention is for additional keywords to be added as the their usage is implemented within the simulator and documented within the manual. The application allows one to customize the existing templates as well as creating user defined templates by including the templates in the template directory and following the VTL language syntax. One still has to edit the resulting keywords to match the data require, but the structure and comments are provided by the application.</p>
+<p>The application is accessed via the Tool/Simulator Input/Keywords menu item and the tool can generate specific keywords, as well as complete sections (Figure C.20)</p>
+<p><img src="images/Frame94_c3ec4b8e078d.png" class="img-fluid" alt="Frame94"> <img src="images/Image88_c3ec4b8e078d.png" class="img-fluid" alt="Image88"></p>
+<p>The application consists of several elements, a conventional menu system at the top, a Deck Element Area that will contain the resulting generated keywords, a Keyword Element Area for the user to select the keyword, data, models or user templates, and finally a series of buttons, HEADER, GLOBAL, etc., that are used to select the keywords in a OPM Flow section, specific data sets, models or user defined templates. The selection will appear in the Keyword Element Area.</p>
+<p>Clicking on an item in the Keyword Element Area will generate the data for the item in the Deck Element Area, as shown below for the OPM Flow copyright header in Figure C.21.</p>
+<p><img src="images/Frame79_dd0a15097acd.png" class="img-fluid" alt="Frame79"> <img src="images/Image89_dd0a15097acd.png" class="img-fluid" alt="Image89"></p>
+<p>The Deck Element Area is editable by simply clicking anywhere in the element and making changes. Use the Clear button to clear the Deck Element Area display, the Copy button to copy the Deck Element Area data to the clipboard, and the Save button to save the data to a file. The Load button allows one to load an existing file into the Deck Element Area for additional editing.</p>
+<p>Note that the HEADER section is not an OPM Flow section, but a list of various comment block headers used to make the deck more readable.</p>
+</section>
+<section id="keywords-menu-options" class="level4" data-number="C.0.0.5">
+<h4 data-number="C.0.0.5" class="anchored" data-anchor-id="keywords-menu-options"><span class="header-section-number">C.0.0.5</span> Keywords: Menu Options</h4>
+<p>The various menu options include the File Menu</p>
+<p><img src="images/Frame95_23f062fbd2e6.png" class="img-fluid" alt="Frame95"> <img src="images/Image90_23f062fbd2e6.png" class="img-fluid" alt="Image90"></p>
+<p>Where the Open and Save options load and save a file, and the Properties displays OPMRUN’s properties.</p>
+<p><img src="images/Frame96_5a8b0dbf9da5.png" class="img-fluid" alt="Frame96"> <img src="images/Image91_5a8b0dbf9da5.png" class="img-fluid" alt="Image91"></p>
+<p>The Edit Menu provides some basic standard editing facilities</p>
+<p><img src="images/Frame97_b575b69a5512.png" class="img-fluid" alt="Frame97"> <img src="images/Image92_b575b69a5512.png" class="img-fluid" alt="Image92"></p>
+<p>Next, the Generate Menu options allows one to generate a complete section of keywords, as described below. These options are equivalent to selecting the equivalent section keyword (RUNSPEC, GRID, etc.) in the Keyword Element Area.</p>
+<p><img src="images/Frame98_e1811c16b086.png" class="img-fluid" alt="Frame98"> <img src="images/Image93_e1811c16b086.png" class="img-fluid" alt="Image93"></p>
+<p>Finally, the Help Menu option display the Keyword Help information (Figure C.26):</p>
+<p><img src="images/Frame99_b2f2dd5a5681.png" class="img-fluid" alt="Frame99"> <img src="images/Image94_b2f2dd5a5681.png" class="img-fluid" alt="Image94"></p>
+<p>And the Velocity Template Help (Figure C.27).</p>
+<p><img src="images/Frame100_517ee8307d51.png" class="img-fluid" alt="Frame100"> <img src="images/Image95_517ee8307d51.png" class="img-fluid" alt="Image95"></p>
+<p>As mentioned previously, the tool uses the Apache Velocity Template Language (“VTL”) for the templates, and therefore the templates can also be used directly with an editor, provided the editor supports VTL.</p>
+</section>
+<section id="keywords-file-imports" class="level4" data-number="C.0.0.6">
+<h4 data-number="C.0.0.6" class="anchored" data-anchor-id="keywords-file-imports"><span class="header-section-number">C.0.0.6</span> Keywords: File Imports</h4>
+<p>If a keyword requires a file, for example, the INCLUDE and LOAD keywords, then a dialog box is presented to enable the file to be selected. The application will also allow one to select the file name format, after the file has been selected.</p>
+<p><img src="images/Frame101_ce729ab5152b.png" class="img-fluid" alt="Frame101"> <img src="images/Image96_ce729ab5152b.png" class="img-fluid" alt="Image96"></p>
+<p>Note that COMMENT template is not an actual keyword, but a comment block to make the deck more readable for the user.</p>
+</section>
+<section id="keywords-section-standard-set-of-keywords" class="level4" data-number="C.0.0.7">
+<h4 data-number="C.0.0.7" class="anchored" data-anchor-id="keywords-section-standard-set-of-keywords"><span class="header-section-number">C.0.0.7</span> Keywords: Section Standard Set of Keywords</h4>
+<p>Selecting a Generate Menu option or a Section keyword (RUNSPEC, GRID, EDIT, PROPS, SOLUTION, SUMMARY, and SCHEDULE) in the Keyword Element Area will give an option to generate a representative set of keywords for that section, as per the RUNSPEC example in Figure C.29.</p>
+<p><img src="images/Frame102_ab2ed7a58bcd.png" class="img-fluid" alt="Frame102"> <img src="images/Image97_ab2ed7a58bcd.png" class="img-fluid" alt="Image97"></p>
+<p>One can therefore generate a complete input deck in a matter of minutes; however, you still have to edit the generated input deck with your actual data.</p>
+</section>
+<section id="keywords-summary-section-variables" class="level4" data-number="C.0.0.8">
+<h4 data-number="C.0.0.8" class="anchored" data-anchor-id="keywords-summary-section-variables"><span class="header-section-number">C.0.0.8</span> Keywords: SUMMARY Section Variables</h4>
+<p>For the SUMMARY section keyword, one can also generate various sets of summary variables based on the options being used in the model. Note that not all the variables are currently available in OPM Flow, but additional variables are added at each release.</p>
+<p><img src="images/Frame103_c72bf3b63b70.png" class="img-fluid" alt="Frame103"> <img src="images/Image98_c72bf3b63b70.png" class="img-fluid" alt="Image98"></p>
+<p>For SUMMARY variables not recognized by OPM Flow, the simulator will issue a warning message and ignore those variables not implemented.</p>
+</section>
+<section id="keywords-schedule-section-keywords-and-date-schedule" class="level4" data-number="C.0.0.9">
+<h4 data-number="C.0.0.9" class="anchored" data-anchor-id="keywords-schedule-section-keywords-and-date-schedule"><span class="header-section-number">C.0.0.9</span> Keywords: SCHEDULE Section Keywords and Date Schedule</h4>
+<p>For the SCHEDULE Section keyword, one can also generate a representative set of SCHEDULE keywords, plus a date schedule from a start year to an end year, using Annual, Quarterly, or Monthly time steps.</p>
+<p><img src="images/Frame104_6da10d143395.png" class="img-fluid" alt="Frame104"> <img src="images/Image99_6da10d143395.png" class="img-fluid" alt="Image99"></p>
+<p>This option also writes a standard report using the RPTSCHED keyword at the beginning of each year which is subsequently switch off for the intermediate Quarterly and Monthly time steps. A final report is written at the end of the run.</p>
+</section>
+<section id="keywords-data-sets-option" class="level4" data-number="C.0.0.10">
+<h4 data-number="C.0.0.10" class="anchored" data-anchor-id="keywords-data-sets-option"><span class="header-section-number">C.0.0.10</span> Keywords: DATA (Sets) Option</h4>
+<p>There is also a DATA option which is not an OPM Flow section, but a series of data sets, as shown in Figure C.32.</p>
+<p><img src="images/Frame105_15944593cc79.png" class="img-fluid" alt="Frame105"> <img src="images/Image100_15944593cc79.png" class="img-fluid" alt="Image100"></p>
+<p>The data sets are complete examples for a given type of data used in OPM Flow, for example a PVT data set for a wet gas reservoir, or three phase relative permeability data set. The data sets are intended to be used as a guide for generating ones own keyword input, or for building models for testing.</p>
+<p>The intention is to expand the collection of data sets over time as more data becomes available.</p>
+</section>
+<section id="keywords-model-option" class="level4" data-number="C.0.0.11">
+<h4 data-number="C.0.0.11" class="anchored" data-anchor-id="keywords-model-option"><span class="header-section-number">C.0.0.11</span> Keywords: MODEL Option</h4>
+<p>Like the DATA option, the MODEL option is not an OPM Flow section, but is instead a collection of working models, as illustrated in Figure C.33.</p>
+<p>The purpose of the models is to illustrate the functionality of various features implemented in OPM Flow and to act as guide for users in building their own models.</p>
+<p><img src="images/Frame106_df5522b4bbe3.png" class="img-fluid" alt="Frame106"> <img src="images/Image101_df5522b4bbe3.png" class="img-fluid" alt="Image101"></p>
+<p>Additional models will be added when available.</p>
+</section>
+<section id="keywords-user-templates-option" class="level4" data-number="C.0.0.12">
+<h4 data-number="C.0.0.12" class="anchored" data-anchor-id="keywords-user-templates-option"><span class="header-section-number">C.0.0.12</span> Keywords: USER Templates Option</h4>
+<p>Finally, the USER option is where users can store their own templates. USER templates with the “vm” extension will automatically be listed by the USER button. To use this feature, after selecting a keyword, right clicking on the keyword allows one to load the actual template for the keyword. One can then edit the template and save the changes back to the same template or another template using the Save button.</p>
+<p><img src="images/Frame107_92c3f14cad63.png" class="img-fluid" alt="Frame107"> <img src="images/Image102_92c3f14cad63.png" class="img-fluid" alt="Image102"></p>
+<p>The Template Help option displays a brief introduction to VTL for further reference.</p>
+<p>The Tools/Simulator Input/Production Schedule application takes a comma delimited CSV file containing historical production and injection data and converts the data to an OPM Flow SCHEDULE file using the WCONHIST series of keywords. An example input file is shown below:</p>
+<p><img src="images/Frame108_8e4aef9b7c61.png" class="img-fluid" alt="Frame108"> <img src="images/Image103_8e4aef9b7c61.png" class="img-fluid" alt="Image103"></p>
+<p>The first row in the input file is a header row that declares the data type for a column, the example shows typical Oil Field Manager (“OFM”) header variable names, but various variable names can be used to define the data type.</p>
+<p>The tool can convert daily production data to a: daily production schedule, monthly average, or monthly on-stream average production schedule, as shown below:</p>
+<p><img src="images/Frame109_5ccfa8fa22e8.png" class="img-fluid" alt="Frame109"> <img src="images/Image104_5ccfa8fa22e8.png" class="img-fluid" alt="Image104"></p>
+<p>Notice that the application checks various variable names for the column headers. For example for the BHP data, the column names can be: bhp, bottom-hole pressure, BHP, or BOTTOM-HOLE PRESSURE.</p>
+<p>A sample of the generated output file is shown in Figure C.37.</p>
+<p><img src="images/Frame110_e1ad4ec6e910.png" class="img-fluid" alt="Frame110"> <img src="images/Image105_e1ad4ec6e910.png" class="img-fluid" alt="Image105"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note the current release only support production data via the WCONHIST keyword, injection data via WCONINJH keyword is not supported.</p>
+</div>
+</div>
+<p>The Tools/Simulator Input/Sensitivities option generates sensitivity cases based on a “Base” case file. The Base file contains “Factors” (variable names), $X01, $X02, etc., that are substituted with user defined values using the data entered and the type of Sensitivity Scenario selected. Thus, the first step is to configure the Base file in a text editor by replacing actual values by the variable names, previously mentioned.</p>
+<p><img src="images/Frame111_543ef82c00ed.png" class="img-fluid" alt="Frame111"> <img src="images/Image106_543ef82c00ed.png" class="img-fluid" alt="Image106"></p>
+<p>After editing the Base file, the next step is to load the Base file into the application using the Base button, which will prompt the user for the file to load and then display the file in the Base tab, as shown in Figure C.39</p>
+<p><img src="images/Frame80_dcc9bd1c4244.png" class="img-fluid" alt="Frame80"> <img src="images/Image107_dcc9bd1c4244.png" class="img-fluid" alt="Image107"></p>
+<p>Limited editing of the Base file is supported on the above screen.</p>
+<p>The next step is to define the “Factors” and the factor values. A total of 20 factors are available and each factor consist of a Low, Best and High estimates. Note it is not necessary to enter all three estimates, if one wishes just to generate a limited sensitivity case. For example, if on wishes to only run a Low Scenario sensitivity then it is only necessary to enter data for the Low factor values.</p>
+<p>Previously saved factor data can be loaded via the Load button, as shown below:</p>
+<p><img src="images/Frame81_1bd085a6a12f.png" class="img-fluid" alt="Frame81"> <img src="images/Image108_1bd085a6a12f.png" class="img-fluid" alt="Image108"></p>
+<p>Selecting a Factor Description row allows one to define a description for the factor variable, so for $X01 in the above figure the description is GRID - PERMX. When selecting a Factor Description, a popup dialog will be displayed to enter the data, and if one right-clicks on the popup’s Factor Description field one can select a description for one of the pre-defined descriptions as illustrated in the next figure.</p>
+<p><img src="images/Frame82_8ef499b5c7ea.png" class="img-fluid" alt="Frame82"> <img src="images/Image109_8ef499b5c7ea.png" class="img-fluid" alt="Image109"></p>
+<p>After the Sensitivity Factors have been entered one can then select the Sensitivity Scenario that one wishes to use generate the sensitivity cases. In the example in figure Figure C.42 the Factorial: Low, Best and High Box-Behnken DOE (Design of Experiments) has been selected. Selecting the Generate button, runs a series of checks, and if there are no errors the program will inquire if you wish to generate the set of cases (Figure C.42).</p>
+<p><img src="images/Frame83_b3269ce01e60.png" class="img-fluid" alt="Frame83"> <img src="images/Image110_b3269ce01e60.png" class="img-fluid" alt="Image110"></p>
+<p>If the Yes option is selected then the cases will be generated and the application will ask for the name of OPMRUN Queue file to write the jobs to, as depicted in</p>
+<p><img src="images/Frame112_15ae4dea63b4.png" class="img-fluid" alt="Frame112"> <img src="images/Image111_15ae4dea63b4.png" class="img-fluid" alt="Image111"></p>
+<p>This allows the user to load the queue file into OPMRUN and to run all the jobs.</p>
+<p>This tool, Tools/Simulator Input/Well Specification, uses the standard well export files from OPM ResInsight to reformat the data in a more user-friendly manner for the WELSPECS and COMPDAT keywords. Optionally, the application can generate the COMPLUMP keyword based on the OPM ResInsight layers file, with one completion per defined reservoir layer.</p>
+<p>An example OPM ResInsight Exported Well Completion File Format(*.exp) is shown in Figure C.44</p>
+<p><img src="images/Frame84_c3e08ebf4dd4.png" class="img-fluid" alt="Frame84"> <img src="images/Image112_c3e08ebf4dd4.png" class="img-fluid" alt="Image112"></p>
+<p>And an OPM ResInsight Imported Formation Layer File (.Lyr) example is illustrated in Figure C.45</p>
+<p><img src="images/Frame85_5b63ed26d33a.png" class="img-fluid" alt="Frame85"> <img src="images/Image113_5b63ed26d33a.png" class="img-fluid" alt="Image113"></p>
+<p>The application also can generate a well a OPM ResInsight perforation file with the formation names for cross-checking the perforations.</p>
+<p>The application user interface is shown in Figure C.46. Note that in Figure C.46 the Output Header options are used for comments only, no unit conversion is performed.</p>
+<p><img src="images/Frame86_0088f772bfbe.png" class="img-fluid" alt="Frame86"> <img src="images/Image114_0088f772bfbe.png" class="img-fluid" alt="Image114"></p>
+<p>In terms of output, the next figure shows the resulting well completion file to be used with OPM Flow, showing the WELSPECS and COMPDAT keywords (the COMPLUMP keyword is not shown in this example)</p>
+<p><img src="images/Frame87_fa267410371c.png" class="img-fluid" alt="Frame87"> <img src="images/Image115_fa267410371c.png" class="img-fluid" alt="Image115"></p>
+<p>The final figure for this tool shows the resulting generated OPM ResInsight perforation file.</p>
+<p><img src="images/Frame88_9b039e8d5921.png" class="img-fluid" alt="Frame88"> <img src="images/Image116_9b039e8d5921.png" class="img-fluid" alt="Image116"></p>
+<p>This option, Tools/ResInsight, loads the currently selected job into OPM ResInsight for viewing, this done via a Python sub-process call in OPMRUN, rather than using OPM ResInsight’s Python API.</p>
+<p>OPM ResInsight can read well trajectories in a given format into the program, the Tools/Well Trajectory Conversion option converts a Schlumberger Petrel exported well trajectory file, as shown Figure C.49, into a OPM ResInsight well trajectory file containing all the wells.</p>
+<p><img src="images/Frame89_21aee4be8c4f.png" class="img-fluid" alt="Frame89"> <img src="images/Image117_21aee4be8c4f.png" class="img-fluid" alt="Image117"></p>
+<p>The utility allows for the multiple wells to be converted at once and for conversion of units.</p>
+<p>Note in some areas of the world it is not uncommon for the areal units to be in UTM and the depth to be in feet. This configuration is also handled by the application.</p>
+<p><img src="images/Frame90_46df760852cd.png" class="img-fluid" alt="Frame90"> <img src="images/Image118_46df760852cd.png" class="img-fluid" alt="Image118"></p>
+<p>An example output file is shown in Figure C.51</p>
+<p><img src="images/Frame91_9025a30f6d3d.png" class="img-fluid" alt="Frame91"> <img src="images/Image119_9025a30f6d3d.png" class="img-fluid" alt="Image119"></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../appendices/B-release-notes.html" class="pagination-link" aria-label="Release Notes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Release Notes</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../appendices/D-python.html" class="pagination-link" aria-label="Python Interface">
+        <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Python Interface</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

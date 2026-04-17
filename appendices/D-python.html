@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Appendix D — Python Interface – OPM Flow Reference Manual</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../appendices/E-command-line.html" rel="next">
+<link href="../appendices/C-opmrun.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendices/A-keyword-summary.html">Appendices</a></li><li class="breadcrumb-item"><a href="../appendices/D-python.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Python Interface</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">OPM Flow Reference Manual</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/OPM/opm-reference-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">OPM Flow Reference Manual</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">01-introduction.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">02-installation.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-keyword-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">03-keyword-structure.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-global-keywords.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-runspec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-grid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-edit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-props.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-regions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-solution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Keyword Definitions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/A-keyword-summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Keyword Summary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/B-release-notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Release Notes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/C-opmrun.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">OPMRUN</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/D-python.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Python Interface</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/E-command-line.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Command Line Options</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/F-output-formats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Output File Formats</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendices/A-keyword-summary.html">Appendices</a></li><li class="breadcrumb-item"><a href="../appendices/D-python.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Python Interface</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Appendix D — Python Interface</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Some of the C++ code in OPM Flow has been “wrapped” in Python which means that one can invoke the simulator’s C++ code from one’s own Python programs. At the moment the wrappers for the input layer and the code for working with the result files is quite complete and usable. For a python class documentation and for further documentation and examples, please refer to the <a href="https://opm.github.io/opm-python-documentation/index.html">OPM Online Python Documentation</a>. There is also the option to interact with running simulations from within Python using the PYACTION keyword.</p>
+<p>The goal is for the Python code to be structured like a native Python API, but some design decisions are certainly influenced by the underlying C++ implementation, and to get a deeper understanding of what is possible and how to achieve specialized tasks one might need to consult the simulator’s C++ code.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Observe that the Python bindings described here are not very mature. The API might change in future releases. It is in general quite simple to expose new functionality to Python.</p>
+</div>
+</div>
+<p>The reading of the input deck in OPM Flow is a two step process, first a data structure called a “Deck” is created - the “Deck” is essentially a collection of keywords where all elements have been converted to the correct type and default values have been injected into the keyword. The “Deck” is a quite low level data structure, and the actual simulation is based on higher level data structures where the origin in “keywords” from a *.DATA file is no longer so apparent. The most notable high level objects are the “EclipseState” and “Schedule” classes. Large parts of this functionality is available from Python.</p>
+<p>The initial building block in the parsing process is the “Parser” object which knows how to interpret the input keywords and create data structures. Virtually all scripts working with the input files will start with creating a Parser object:</p>
+<pre><code>#!/usr/bin/env python3
+from opm.io.parser import Parser
+# Create a parser object which can be used to parse a string or input files
+parser = Parser()</code></pre>
+<p>In most cases one will just create a default parser object and be done with it, but it is possible to both add your own keyword definitions to the parser and alternatively create a custom parser which only accepts a subset of keywords. These features will be demonstrated briefly in section Special Parsing.</p>
+<p>The “Deck” data structure is essentially a list of keywords which have been loaded as “DeckKeyword” instances. The Deck can either be loaded from an input data file or from a string. The following example shows how to load two SCHEDULE section keywords: WELSPECS and COMPDAT:</p>
+<pre><code>#!/usr/bin/env python3
+from opm.io.parser import Parser
+deck_string = """
+WELSPECS
+   'W1'  'G1'   19    4      1*   WATER   1*   1*   SHUT  1*  1*    1*      /
+/
+COMPDAT
+  'W1'   11   3    1    5   OPEN   1*   1*   0.216   1*   0    1*   Z    1* /
+/
+"""
+parser = Parser()
+deck = parser.parseString( deck_string )</code></pre>
+<p>After running this small script the deck variable will contain the two keywords WELSPECS and COMPDAT. For these keywords the ’*’ have been replaced with the correct default value and the items have been converted to the correct type. In addition, all numerical values have been converted to SI units, more about units can be found in section Units. Alternatively you can use the Parser.parseFile() method to parse an entire input file. In this case INCLUDE and IMPORT keywords will be resolved and everything will be coalesced into one large “DeckKeyword” data structure:</p>
+<pre><code>#!/usr/bin/env python3
+ import os.path
+ import sys
+ from opm.io.parser import Parser
+ data_file = sys.argv[1]
+ print(f"Loading deck from {data_file}")
+ parser = Parser()
+ deck = parser.parseFile( data_file )
+
+</code></pre>
+<p>The code above loads a *.DATA file given by calling the Python script. For example, if the name of the input deck, that may contain a complete input deck or just a selection of keywords, is called NORNE.DATA, and the name of the above script is LoadDeck.py, then:</p>
+<pre><code>python LoadDeck NORNE.DATA</code></pre>
+<p>would load the NORNE.DATA into the simulator.</p>
+<p>Internally in OPM Flow all quantities are managed as SI units, whereas input decks use the unit systems METRIC, FIELD, or LAB (laboratory). The METRIC unit system is comparable to SI units, the most notable difference is that time is expressed in days instead of seconds, the FIELD unit system is based on historical units like barrels of oil (stb) and feet for length.</p>
+<p>The important point is that when you access the elements in the Deck the values you will get are in SI units, whereas the input you provided has been in one of other set of units. Consider the example:</p>
+<pre><code>#!/usr/bin/env python3
+from opm.io.parser import Parser
+deck_string = """
+WCONPROD
+ 'W1'  'OPEN'   'ORAT'  86400 /
+/
+"""
+parser = Parser()
+deck = parser.parseString( deck_string )
+kw = deck[0]
+record0 = kw[0]
+orat = record0["ORAT"].value
+well = record0["WELL"].value
+print("==&gt; The Oil rate in well:{} is {} m3/s".format(orat, well))</code></pre>
+<p>When this script is run it will print:</p>
+<pre><code>==&gt; The Oil rate in well:W1 is 1.0 m3/s</code></pre>
+<p>because the input value of 86,400 m3/day is internally converted to 1.0 m3/second.</p>
+<p>The default input unit system is METRIC, that means that if the input is to be interpreted in either FIELD or LAB units, then one needs to add a keyword to declare the units before entering the data. Thus, to interpret the WCONPROD keyword’s oil rate as stb/d in the previous example, the FIELD keyword needs to be added to the example, that is:</p>
+<pre><code>#!/usr/bin/env python3
+   from opm.io.parser import Parser
+   deck_string = """
+
+   FIELD
+
+   WCONPROD
+    'W1'  'OPEN'   'ORAT'  86400 /
+   /
+   """</code></pre>
+<p>After you have loaded a Deck you can query it with normal Python functions:</p>
+<pre><code># Check if deck has keyword:
+if "GRID" in deck:
+    print("Deck contains 'GRID' keyword")
+else
+    print("Deck does not have 'GRID' keyword")
+
+# Loop through all the keywords:
+for kw in deck:
+    print("kw: {}".format(kw.name)</code></pre>
+<p>To get a keyword from the deck you can access it with index, name, or a combination of name and occurrence index:</p>
+<pre><code># Get keyword 10
+kw10 = deck[10]
+
+# Get the last DATES keyword
+last_dates = deck["DATES"]
+
+# Get the third WELSPECS keyword
+welspecs3 = deck[("WELSPECS", 3)]</code></pre>
+<p>A deck keyword is composed of “records”, which are again composed of “items”. The example below shows how one can iterate through the wells in a WELSPECS keyword:</p>
+<pre><code>kw = deck["WELSPECS"]
+print(f"Keyword has {len(kw)} records")
+for record in kw:
+    well = record["WELL"].get_str()
+    group = record[1].get_str()
+
+    print(f"Well {num}: {well} is part of group{group})
+</code></pre>
+<p>The keywords that OPM Flow recognizes are configured via JSON files which are embedded in the source distribution. The JSON keywords for the simulator are in the following public GitHub repository:</p>
+<p><a href="https://github.com/OPM/opm-common/tree/master/opm/input/eclipse/share/keywords">https://github.com/OPM/opm-common/tree/master/opm/input/eclipse/share/keywords</a></p>
+<p>By default the Parser class will recognize all the keywords which are known to OPM Flow, but one can create your own custom parser with only a subset of keywords:</p>
+<pre><code>from opm.io.parser import Builtin
+# Create a special parser which only recognizes the corner point grid               # keywords
+parser = Parser(add_default = False)
+builtin = Builtin()
+parser.add_keyword( builtin.COORD )
+parser.add_keyword( builtin.ZCORN )
+parser.add_keyword( builtin.ACTNUM )</code></pre>
+<p>The opposite is also possible, here is how one can add a special keyword GCLOSE which could be used to close all the wells in the group:</p>
+<pre><code># Create a fictitious home mode keyword GCLOSE:
+GCLOSE = {"name" : "GCLOSE",
+          "sections" : ["SCHEDULE"],
+          "items" : [
+             {"name" : "GROUP", "value_type" : "STRING"}
+           ]}
+
+parser = Parser()
+# Add the keyword description via a JSON string
+parser.add_keyword(json.dumps(GCLOSE))</code></pre>
+<p>By default the parser used in OPM Flow is quite strict - a tad stricter than the one used by the commercial simulator. However, one can configure how the parser should react to certain error conditions. By default the parser will fail with an exception if an INCLUDE file is not found, but one can for instance change this behavior to ignore that error condition, for example:</p>
+<pre><code>parse_context = ParseContext([('PARSE_MISSING_INCLUDE',
+                                opm.io.action.ignore)])
+parser = Parser()
+deck = parser.parseFile(self.norne_fname, parse_context)
+</code></pre>
+<p>The “Deck” is a quite raw structure and not very user friendly. Before actually used in the simulator the properties from the “Deck” are coalesced to a form more easily usable format. Consider, for example the PORO array configured below where the configuration is given in three steps:</p>
+<pre><code>-- GRID Dimensions 10 x 10 x 3
+DIMENS
+  10 10 3 /
+--
+-- Set A Global Value 0.10 For All Of The Grid
+--
+PORO
+   300*0.10 /
+--
+-- Set A Value Of 0.15 For All The Cells In The Middle Layer
+--
+BOX
+   1 10 1 10 2 2 /
+PORO
+   100*0.15 /
+ENDBOX
+--
+-- Scale The Bottom Layer By A Factor OF Two
+--
+MULTIPLY
+   PORO 2 1 10 1 10 3 3 /
+/</code></pre>
+<p>In the deck representation this will be a collection of five different keywords: {“PORO”, “BOX”, “PORO”, “ENDBOX”, “MULTIPLY”}, whereas in the “EclipseState” this will be one property “PORO” where all the modifications have been completed. In addition to the grid properties like “PERMX” and “PORO” the “EclipseState” object contains numerous other objects like the fault properties, PVT tables, and more.</p>
+<pre><code>#!/usr/bin/env python3
+import syshe
+form opm.io.parser import Parser
+from opm.io.ecl_state import EclipseState
+parser = Parser()
+data_file = sys.argv[1]
+deck = parser.parseFile( data_file )
+es = EclipseState( deck )
+#
+# Get the FieldPropsManager from the EclipseState. The FieldPropsManager
+# is then used to query and look up grid properties like PERMX and PORO.
+# Observe that the properties you get from the FieldPropsManager only have
+# the active cells only.
+#
+fp = es.field_props()
+poro = fp["PORO"]
+satnum = fp["SATNUM"]
+#
+# Get the input grid from the EclipseState:
+#
+grid = es.grid()
+# Get a manager for all the tables
+tables = es.tables()</code></pre>
+<p>The Schedule object contains all the dynamic information in the model, in particular that includes all information about wells and groups. The Schedule object is constructed from the “Deck” and the “EclipseState” objects.:</p>
+<pre><code>#!/usr/bin/env python3
+import sys
+from opm.io.parser import Parser
+from opm.io.ecl_state import EclipseState
+parser = Parser()
+data_file = sys.argv[1]
+deck = parser.parseFile( data_file )
+es = EclipseState( deck )
+schedule = Schedule(deck, es)
+print(f"Schedule file has {len(schedule)} report steps")'
+print("List of wells")
+for well in schedule.well_names():
+    print(well)</code></pre>
+<p>The example above prints the number of report time steps and all the well names in the SCHEDULE section.</p>
+<p>In addition to the functionality to load and inspect the input deck, OPM Flow also has a Python interface to load and inspect the various result files, SUMMARY and RESTART files. There is also some functionality to create files with the correct formatting.</p>
+<p>Using the class “EclipseGrid” one can load a grid representation from a *.EGRID file on disk:</p>
+<pre><code>#!/usr/bin/env python3
+import sys
+from opm.io.ecl import EGrid
+grid_file = sys.argv[1]
+grid = EGrid(grid_file)</code></pre>
+<p>The return value from “EclipseState.ecl_grid()” is also of this type.</p>
+<p>Using the class “ESMry” one can load the Extended SUMMARY file for a simulations that contains all the SUMMARY vectors.</p>
+<pre><code>#!/usr/bin/env python3
+import sys
+from opm.io.ecl import ESMry
+case = sys.argv[1]
+summary = Esmry(case)
+</code></pre>
+<p>Finally, one load the solution arrays stored in the *.RESTART file using the Erst class, as shown below.</p>
+<pre><code>#!/usr/bin/env python
+import sys
+from opm.io.ecl import ERst
+
+rst_file = sys.argv[1]
+rst = Erst(rst_file)
+</code></pre>
+<p>Note that a restart file can be large, so care must be taken on how these type of files are loaded into Python.</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../appendices/C-opmrun.html" class="pagination-link" aria-label="OPMRUN">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">OPMRUN</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../appendices/E-command-line.html" class="pagination-link" aria-label="Command Line Options">
+        <span class="nav-page-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Command Line Options</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
