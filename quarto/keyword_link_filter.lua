@@ -1,9 +1,28 @@
-local json_file = io.open("keyword_map.json", "r")
-local keyword_map = {}
-if json_file then
-  keyword_map = quarto.json.decode(json_file:read("*a")) or {}
-  json_file:close()
+local input_file = (PANDOC_STATE.input_files and PANDOC_STATE.input_files[1]) or ""
+local quarto_dir = input_file:match("^(.*)/chapters/[^/]+%.qmd$")
+  or input_file:match("^(.*)/appendices/[^/]+%.qmd$")
+  or input_file:match("^(.*)/index%.qmd$")
+  or "."
+
+local function read_keyword_map()
+  local candidates = {
+    quarto_dir .. "/keyword_map.json",
+    "keyword_map.json",
+    "quarto/keyword_map.json"
+  }
+
+  for _, path in ipairs(candidates) do
+    local handle = io.open(path, "r")
+    if handle then
+      local parsed = quarto.json.decode(handle:read("*a")) or {}
+      handle:close()
+      return parsed
+    end
+  end
+  return {}
 end
+
+local keyword_map = read_keyword_map()
 
 local section_chapters = {
   RUNSPEC = "05-runspec",
@@ -21,7 +40,6 @@ local location_headers = {
   "RUNSPEC", "GRID", "EDIT", "PROPS", "REGIONS", "SOLUTION", "SUMMARY", "SCHEDULE"
 }
 
-local input_file = (PANDOC_STATE.input_files and PANDOC_STATE.input_files[1]) or ""
 local current_dir = ""
 local current_slug = ""
 
@@ -52,6 +70,10 @@ local function chapter_target(slug, anchor)
   return path
 end
 
+local function trim(text)
+  return text:gsub("^%s+", ""):gsub("%s+$", "")
+end
+
 local function is_location_table(tbl)
   if not tbl.head or not tbl.head.rows or #tbl.head.rows == 0 then
     return false
@@ -61,7 +83,7 @@ local function is_location_table(tbl)
     return false
   end
   for i, expected in ipairs(location_headers) do
-    local text = pandoc.utils.stringify(cells[i]):gsub("^%s+", ""):gsub("%s+$", "")
+    local text = trim(pandoc.utils.stringify(cells[i]))
     if text ~= expected then
       return false
     end
