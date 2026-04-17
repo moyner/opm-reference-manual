@@ -11,6 +11,7 @@ import hashlib
 import os
 import re
 import sys
+import textwrap
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -535,9 +536,11 @@ class FODTConverter:
         """Flush accumulated code lines as a fenced code block."""
         if not code_block:
             return
+        # Strip common leading whitespace from the code block
+        dedented = textwrap.dedent("\n".join(code_block))
         self.lines.append("")
         self.lines.append("```")
-        for line in code_block:
+        for line in dedented.split("\n"):
             self.lines.append(line)
         self.lines.append("```")
         self.lines.append("")
@@ -631,7 +634,7 @@ class FODTConverter:
         if set(resolved_style) & NOTE_STYLES:
             text = extract_text(elem, self.style_map).strip()
             if text:
-                return f"> {text}"
+                return f"::: {{.callout-note}}\n{text}\n:::\n"
             return None
 
         # Regular paragraph
@@ -806,13 +809,49 @@ class FODTConverter:
         # Check if this looks like a "Note" table (single cell with note content)
         if max_cols <= 2 and len(rows) >= 1:
             first_cell = rows[0][0].strip().lower() if rows[0] else ""
-            if first_cell in ("note", "notes", "warning", "caution", "tip"):
-                # Render as blockquote
+            callout_map = {
+                "note": "note",
+                "notes": "note",
+                "warning": "warning",
+                "caution": "caution",
+                "tip": "tip",
+            }
+            if first_cell in callout_map:
+                callout_type = callout_map[first_cell]
                 self.lines.append("")
+                self.lines.append(f"::: {{.callout-{callout_type}}}")
                 for row in rows:
                     for cell in row:
-                        if cell.strip():
-                            self.lines.append(f"> {cell.strip()}")
+                        cell_stripped = cell.strip()
+                        if cell_stripped and cell_stripped.lower() not in callout_map:
+                            self.lines.append(cell_stripped)
+                self.lines.append(":::")
+                self.lines.append("")
+                return
+
+        # Check if this looks like an equation table:
+        # 1 data row, 2 cells, first cell is $...$, second is (X.Y) style number
+        non_empty_rows = [r for r in rows if any(c.strip() for c in r)]
+        if (
+            len(non_empty_rows) == 1
+            and len(non_empty_rows[0]) >= 2
+        ):
+            eq_cell = non_empty_rows[0][0].strip()
+            num_cell = non_empty_rows[0][-1].strip()
+            eq_num_match = re.match(r"^\((\d+(?:\.\d+)*)\)$", num_cell)
+            if (
+                eq_cell.startswith("$")
+                and eq_cell.endswith("$")
+                and eq_num_match
+            ):
+                # Extract equation content without outer $ delimiters
+                eq_content = eq_cell[1:-1]
+                # Build label from equation number: dots → dashes
+                eq_label = eq_num_match.group(1).replace(".", "-")
+                self.lines.append("")
+                self.lines.append("$$")
+                self.lines.append(eq_content)
+                self.lines.append(f"$$ {{#eq-{eq_label}}}")
                 self.lines.append("")
                 return
 
