@@ -1,15 +1,15 @@
 ### GECONT – Group Tracer Economic Criteria for Production Groups
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [GECONT](#__RefHeading___Toc299954_156692946) keyword defines tracer economic criteria for production groups, including the field level group [FIELD](#__RefHeading___Toc71850_2267116897), that have previously been defined by the [GCONPROD](#__RefHeading___Toc146746_4203985108) keywords in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section, for tracers define by the [TRACER](#__RefHeading___Toc121485_83452205) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section.
+The GECONT keyword defines tracer economic criteria for production groups, including the field level group FIELD, that have previously been defined by the GCONPROD keywords in the SCHEDULE section, for tracers define by the TRACER keyword in the PROPS section.
 
-Note that wells are allocated to a group when they are specified by the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword and wells can also have economic controls. Wells under group control are therefore subject to the economic criteria set via the [GCONPROD](#__RefHeading___Toc146746_4203985108) and [CECON](#__RefHeading___Toc27331_3671211675) keywords in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section and the controls specified by the [WECON](#__RefHeading___Toc134884_2055188184) keyword.
+Note that wells are allocated to a group when they are specified by the WELSPECS keyword and wells can also have economic controls. Wells under group control are therefore subject to the economic criteria set via the GCONPROD and CECON keywords in the SCHEDULE section and the controls specified by the WECON keyword.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -17,9 +17,9 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1-1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group target and constraints are being defined. The group named FIELD is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the [GRUPTREE](#__RefHeading___Toc118321_1596574740) keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
-| 1-2 | [ACTION](#__RefHeading___Toc148342_63720426) | A defined character string that defines the action to be taken if the economic WCUT, GOR, or WGR limits are violated. [ACTION](#__RefHeading___Toc148342_63720426) should be set to one of the following character strings: The corrective action takes places at the end of the time step in which the constraint is violated. | None |
-| 1-3 | [END](#__RefHeading___Toc46631_2479612490) | A defined character string that defines if the simulation should terminate if  all the producing wells in the group, including the FIELD group, are shut or stopped. [END](#__RefHeading___Toc46631_2479612490) should be set to one of the following character strings: | NO |
+| 1-1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group target and constraints are being defined. The group named FIELD is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
+| 1-2 | ACTION | A defined character string that defines the action to be taken if the economic WCUT, GOR, or WGR limits are violated. ACTION should be set to one of the following character strings: The corrective action takes places at the end of the time step in which the constraint is violated. | None |
+| 1-3 | END | A defined character string that defines if the simulation should terminate if  all the producing wells in the group, including the FIELD group, are shut or stopped. END should be set to one of the following character strings: | NO |
 | 1-4 | MXWELS | A positive integer defining the maximum number of producing and injecting wells for this group and any subordinate groups. The default value of zero implies that there is no limit to the number of wells. | 0 |
 | 1-5 | / | Record one terminated by a “/” | Not Applicable |
 | 2-1 | NAME | A three letter character string defining the tracer’s name. Note it is best to void names beginning with the letters F, S, and T as these names may create naming issues in post-processing software. | None |
@@ -36,7 +36,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 *Table 12.37: GECONT Keyword Description*
 
 
-See also the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword to define a wells shut-in or stop options, [GCONPROD](#__RefHeading___Toc146746_4203985108) for group controls, and [WECON](#__RefHeading___Toc134884_2055188184) for setting a well’s economic criteria. All the aforementioned keywords are described in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section.
+See also the WELSPECS keyword to define a wells shut-in or stop options, GCONPROD for group controls, and WECON for setting a well’s economic criteria. All the aforementioned keywords are described in the SCHEDULE section.
 
 
 #### Example

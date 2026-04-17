@@ -1,19 +1,19 @@
 ### WELOPEN – Define Well and Well Connection Flowing Status
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [WELOPEN](#__RefHeading___Toc268461_1366622701) keyword defines the status of wells and well connections, and is used to open and shut previously defined wells and well connections without having to re-specify all the data on the well control keywords: [WCONPROD](#__RefHeading___Toc146754_4203985108), [WCONHIST](#__RefHeading___Toc134880_2055188184), [WCONINJE](#__RefHeading___Toc146750_4203985108), or [WCONINJH](#__RefHeading___Toc146752_4203985108) keywords.  Note that the well must still be initially fully defined using the [WCONPROD](#__RefHeading___Toc146754_4203985108) or [WCONINJE](#__RefHeading___Toc146750_4203985108) keywords.  All the aforementioned keywords are described in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section.
+The WELOPEN keyword defines the status of wells and well connections, and is used to open and shut previously defined wells and well connections without having to re-specify all the data on the well control keywords: WCONPROD, WCONHIST, WCONINJE, or WCONINJH keywords.  Note that the well must still be initially fully defined using the WCONPROD or WCONINJE keywords.  All the aforementioned keywords are described in the SCHEDULE section.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well or well connection status data are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section, otherwise an error may occur. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well or well connection status data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | STATUS | A defined character string of length four that defines the well or well connection operational status, STATUS should be set to one of the following character strings: | OPEN |
 | 3 | I | An integer less than or equal to NX that defines the connection location in the I-direction. | Negative |
 | 4 | J | An integer less than or equal to NY that defines the connection location in the J-direction. | Negative |
@@ -29,12 +29,12 @@ If variables I, J, K, C1 and C2 are all set to a negative number or defaulted wi
 
 If any of the variables I, J, K, C1 and C2 are set to zero or a positive value then STATUS is applied to the defined well connections and the well status remains unchanged. The defined well connections are those with the specified I, J, K locations and that are in the completion number range specified by C1 and C2. If a zero or negative value is specified for I, J or K then this matches any value for that index. If a zero or negative value is specified for C1 or C2 respectively then no lower or upper bound is applied to the completion range.
 
-See also the [COMPDAT](#__RefHeading___Toc97651_3261743917) keyword to define a well’s connections, the [COMPLUMP](#__RefHeading___Toc97655_3261743917) keyword to group well connections into well completions, the [WCONPROD](#__RefHeading___Toc146754_4203985108) and [WCONINJE](#__RefHeading___Toc146750_4203985108) keywords to define a well’s production and injections targets and constraints. All the aforementioned keywords are described in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section.
+See also the COMPDAT keyword to define a well’s connections, the COMPLUMP keyword to group well connections into well completions, the WCONPROD and WCONINJE keywords to define a well’s production and injections targets and constraints. All the aforementioned keywords are described in the SCHEDULE section.
 
 
 #### Examples
 
-The following example defines two vertical oil wells using the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword and their associated connection data.
+The following example defines two vertical oil wells using the WELSPECS keyword and their associated connection data.
 
 
 ```
@@ -81,9 +81,9 @@ OP02     OPEN     0   0    0                               /
 ```
 
 
-In this example the first record for each well in the [WELOPEN](#__RefHeading___Toc268461_1366622701) keyword changes the well status from shut (as per the [WCONPROD](#__RefHeading___Toc146754_4203985108) keyword) to open. Then for well OP01 well connections in layers one to four are opened for flow and all the connections for well OP02 are opened, that is the connections in layers one to ten.
+In this example the first record for each well in the WELOPEN keyword changes the well status from shut (as per the WCONPROD keyword) to open. Then for well OP01 well connections in layers one to four are opened for flow and all the connections for well OP02 are opened, that is the connections in layers one to ten.
 
-The next example shows the use of the [COMPLUMP](#__RefHeading___Toc97655_3261743917) keyword to group the well connections into well completions for wells OP01, OP02 and OP03, and then use the [WELOPEN](#__RefHeading___Toc268461_1366622701) keyword to open the well and the well completions.
+The next example shows the use of the COMPLUMP keyword to group the well connections into well completions for wells OP01, OP02 and OP03, and then use the WELOPEN keyword to open the well and the well completions.
 
 
 ```
@@ -117,7 +117,7 @@ OP03     OPEN     0   0    0     0     0                   /
 ```
 
 
-Again, the first record of each well [WELOPEN](#__RefHeading___Toc268461_1366622701) keyword changes the well status from shut (as per the [WCONPROD](#__RefHeading___Toc146754_4203985108) keyword) to open. Then for well OP01 well completion number three is opened (connections 35 to 90), completion two (connections 15 to 30) for well OP02 and completion numbers one to three (all the connections) for well OP03. Note that there is no completion number two for OP03 so connections 15 to 30 will not be opened.
+Again, the first record of each well WELOPEN keyword changes the well status from shut (as per the WCONPROD keyword) to open. Then for well OP01 well completion number three is opened (connections 35 to 90), completion two (connections 15 to 30) for well OP02 and completion numbers one to three (all the connections) for well OP03. Note that there is no completion number two for OP03 so connections 15 to 30 will not be opened.
 
 Note the last completion number for well OP03 was named completion number three, but it could have been named number two as well. The reason why it was named number three instead of two was because it was assumed (for the example) that layers 35 to 90 represent a particular reservoir, and therefore allowing for the tracking of completions for individual reservoirs, as shown in the example.
 

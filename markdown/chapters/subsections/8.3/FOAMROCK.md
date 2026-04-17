@@ -1,13 +1,13 @@
 ### FOAMROCK – Define Foam Rock Properties
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [FOAMROCK](#__RefHeading___Toc224980_3519154785) keyword defines the foam rock properties for when the Foam option has been activated by the [FOAM](#__RefHeading___Toc171586_289573908) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The FOAMROCK keyword defines the foam rock properties for when the Foam option has been activated by the FOAM keyword in the RUNSPEC section.
 
 The keyword is recognized by the input deck parser and simulator support is available in the experimental "ebos" simulator.
 
@@ -17,14 +17,14 @@ The keyword is recognized by the input deck parser and simulator support is avai
 | Field | Metric | Laboratory |  |
 | 1 | ADINDX | A positive integer of 1 or 2 that defines foam desorption option, as per: Only the default value of 1 is supported by OPM Flow. | Defined |
 | dimensionless 1 | dimensionless 1 | dimensionless 1 |  |
-| 2 | [DENSITY](#__RefHeading___Toc45799_719036256) | A real value that defines the rock in situ density, that is at reservoir conditions. | None |
+| 2 | DENSITY | A real value that defines the rock in situ density, that is at reservoir conditions. | None |
 | lb/rb | kg/rm3 | gm/rcc |  |
 | Notes: |  |  |  |
 
 *Table 8.38: FOAMROCK Keyword Description*
 
 
-| Note In the commercial simulator if the [POLYMER](#__RefHeading___Toc38609_2267116897) and [SURFACT](#__RefHeading___Toc863854_4250154414) phases have been activated in conjunction with the [FOAM](#__RefHeading___Toc171586_289573908) phase then the mass density of rock will be set by the [PLYROCK](#__RefHeading___Toc110216_2939291539), [SURFROCK](#__RefHeading___Toc903548_4250154414), or the [FOAMROCK](#__RefHeading___Toc224980_3519154785) keywords depending on the order entered in the run deck. This is not the case for OPM Flow. OPM Flow’s [FOAM](#__RefHeading___Toc171586_289573908) phase is a standalone implementation and cannot be used in conjunction with the either the [POLYMER](#__RefHeading___Toc38609_2267116897) or [SURFACT](#__RefHeading___Toc863854_4250154414) phases. |
+| Note In the commercial simulator if the POLYMER and SURFACT phases have been activated in conjunction with the FOAM phase then the mass density of rock will be set by the PLYROCK, SURFROCK, or the FOAMROCK keywords depending on the order entered in the run deck. This is not the case for OPM Flow. OPM Flow’s FOAM phase is a standalone implementation and cannot be used in conjunction with the either the POLYMER or SURFACT phases. |
 | --- |
 
 
@@ -45,6 +45,6 @@ FOAMROCK
 
 ```
 
-The above example defines three foam-rock tables, based on the NTSFUN variable on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section being equal to three.
+The above example defines three foam-rock tables, based on the NTSFUN variable on the TABDIMS keyword in the RUNSPEC section being equal to three.
 
 There is no terminating “/” for this keyword.

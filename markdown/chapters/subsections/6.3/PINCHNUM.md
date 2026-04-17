@@ -1,20 +1,20 @@
 ### PINCHNUM – Define Pinch-Out Regions for the PINCHREG Keyword
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [PINCHNUM](#__RefHeading___Toc74565_718313858) keyword defines the pinch-out region numbers for each grid block, as such there must be one entry for each cell in the model. The array is used with the [PINCHREG](#__RefHeading___Toc74567_718313858) keyword to set the pinch-out options and threshold thickness for each region.
+The PINCHNUM keyword defines the pinch-out region numbers for each grid block, as such there must be one entry for each cell in the model. The array is used with the PINCHREG keyword to set the pinch-out options and threshold thickness for each region.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
-| 1 | [PINCHNUM](#__RefHeading___Toc74565_718313858) | [PINCHNUM](#__RefHeading___Toc74565_718313858) defines an array of positive integers assigning a grid cell to a particular [PINCHNUM](#__RefHeading___Toc74565_718313858) region. The maximum number of [PINCHNUM](#__RefHeading___Toc74565_718313858) regions is set by the NRPINC variable on the [GRIDOPTS](#__RefHeading___Toc45741_719036256) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. | 1 |
+| 1 | PINCHNUM | PINCHNUM defines an array of positive integers assigning a grid cell to a particular PINCHNUM region. The maximum number of PINCHNUM regions is set by the NRPINC variable on the GRIDOPTS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 
 *Table 6.109: PINCHNUM Keyword Description*
@@ -22,7 +22,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 #### Example
 
-The example below sets defines three [PINCHNUM](#__RefHeading___Toc74565_718313858) regions for various layers in a model based on the model’s layering.
+The example below sets defines three PINCHNUM regions for various layers in a model based on the model’s layering.
 
 
 ```
@@ -53,4 +53,4 @@ PINCHREG
 ```
 
 
-The above example sets the default pinch-out criteria for grid blocks defined as region one via the [PINCHNUM](#__RefHeading___Toc74565_718313858) array and different criteria for regions two and three.
+The above example sets the default pinch-out criteria for grid blocks defined as region one via the PINCHNUM array and different criteria for regions two and three.

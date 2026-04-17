@@ -1,31 +1,31 @@
 ### PVCO – Oil PVT Properties for Live Oil
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-[PVCO](#__RefHeading___Toc325700_501926209) defines the oil PVT properties for live [“Live” oil is oil that contains gas in solution, which is normally the case for most conventional oil reservoirs. However, for oil reservoirs classified as heavy oil reservoirs, the in situ dissolved gas may be negligible and oil would then be classified as gas-free oil which is commonly referred to as “dead” oil.] and the keyword should only be used if the there is both oil and gas phases in the model. This keyword should be used when the [DISGAS](#__RefHeading___Toc39767_2267116897) keyword has be declared in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section indicating that dissolved gas (more commonly referred to as solution gas) is present in the oil. The keyword may be used for oil-water and oil-water-gas input decks. This is an alternative keyword to the [PVTO](#__RefHeading___Toc104062_57619843) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section that also enables entering live oil PVT data. Here, the [PVCO](#__RefHeading___Toc325700_501926209) keyword assumes that for the undersaturated oil with a given Gas-Oil Ratio (“GOR” or “Rs”), the oil compressibility is independent of the pressure. Hence, is not necessary to enter the undersaturated oil formation volume factor versus pressure data. Similarly, the viscosity of the same type of oil is assumed to have a pressure independent “viscosibility” derivative, and therefore it is not necessary to enter undersaturated viscosity versus pressure data.
+PVCO defines the oil PVT properties for live [“Live” oil is oil that contains gas in solution, which is normally the case for most conventional oil reservoirs. However, for oil reservoirs classified as heavy oil reservoirs, the in situ dissolved gas may be negligible and oil would then be classified as gas-free oil which is commonly referred to as “dead” oil.] and the keyword should only be used if the there is both oil and gas phases in the model. This keyword should be used when the DISGAS keyword has be declared in the RUNSPEC section indicating that dissolved gas (more commonly referred to as solution gas) is present in the oil. The keyword may be used for oil-water and oil-water-gas input decks. This is an alternative keyword to the PVTO keyword in the PROPS section that also enables entering live oil PVT data. Here, the PVCO keyword assumes that for the undersaturated oil with a given Gas-Oil Ratio (“GOR” or “Rs”), the oil compressibility is independent of the pressure. Hence, is not necessary to enter the undersaturated oil formation volume factor versus pressure data. Similarly, the viscosity of the same type of oil is assumed to have a pressure independent “viscosibility” derivative, and therefore it is not necessary to enter undersaturated viscosity versus pressure data.
 
-This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped; however, the [PVTO](#__RefHeading___Toc104062_57619843) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section may be used to enter live oil PVT data instead.
+This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped; however, the PVTO keyword in the PROPS section may be used to enter live oil PVT data instead.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | PRESS | PRESS is a real columnar vector of real monotonically increasing down the column values that defines the oil phase saturation pressure (bubble-point pressure), that defines the [RS](#__RefHeading___Toc137361_1317547213), oil formation volume factor and the oil viscosity at PRESS. | None |
+| 1 | PRESS | PRESS is a real columnar vector of real monotonically increasing down the column values that defines the oil phase saturation pressure (bubble-point pressure), that defines the RS, oil formation volume factor and the oil viscosity at PRESS. | None |
 | psia | barsa | atma |  |
-| 2 | [RS](#__RefHeading___Toc137361_1317547213) | [RS](#__RefHeading___Toc137361_1317547213) is a real monotonically increasing down the column values that defines the saturated gas-oil ratio (“GOR”) or Rs,  for the given value of PRESS. | 1* |
+| 2 | RS | RS is a real monotonically increasing down the column values that defines the saturated gas-oil ratio (“GOR”) or Rs,  for the given value of PRESS. | 1* |
 | Mscf/stb | sm3/sm3 | scc/scc |  |
 | 3 | OFVF | OFVF is a real positive value defining the oil saturated formation volume factor (Bo) at the saturation pressure PRESS. | None |
 | rb/stb | rm3/sm3 | rcc/scc |  |
 | 4 | OVISC | OVISC is a real positive value defining the oil viscosity (µo) at the oil saturated reference pressure, PRESS. | 1* |
 | cP | cP | cP |  |
-| 5 | OCOMP | OCOMP is a real positive value defining the oil compressibility (Co) at the saturated oil reference pressure and is defined as: | 1* |
+| 5 | OCOMP | OCOMP is a real positive value defining the oil compressibility (Co) at the saturated oil reference pressure and is defined as: ${C}_{o} = -\frac{1}{{B}_{o}}\left(\frac{{\mathit{dB}}_{o}}{\mathit{dP}}\right)$ | 1* |
 | 1/psia | 1/barsa | 1/atma |  |
-| 6 | OVISCOMP | OVISCOMP is a real positive value defining the oil viiscosibility (µoc) at the saturated oil reference pressure with the given [RS](#__RefHeading___Toc137361_1317547213), where (µoc) is defined as: | 1* |
+| 6 | OVISCOMP | OVISCOMP is a real positive value defining the oil viiscosibility (µoc) at the saturated oil reference pressure with the given RS, where (µoc) is defined as: ${\mathrm{μ}}_{\mathit{oc}} = -\frac{1}{{\mathrm{μ}}_{o}}\left(\frac{d{\mathrm{μ}}_{o}}{\mathit{dP}}\right)$ | 1* |
 | 1/psia | 1/barsa | 1/atma |  |
 | Notes: |  |  |  |
 
@@ -75,4 +75,4 @@ PVCO
           5500.0    1.6060   1.85020  0.2980  1*       1*    / TABLE NO. 02
 ```
 
-The example defines two live oil PVT tables with constant compressibility above the saturation pressure, and assumes that NTPVT equals two on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The example defines two live oil PVT tables with constant compressibility above the saturation pressure, and assumes that NTPVT equals two on the TABDIMS keyword in the RUNSPEC section.

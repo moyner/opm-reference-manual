@@ -1,7 +1,7 @@
 ### BCCON – Define Boundary Conditions Connections
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -32,12 +32,12 @@ Together the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWO
 *Table 6.3.12.1: BCCON Keyword Description*
 
 
-See also the [AQUFLUX](#__RefHeading___Toc202105_1310555686) keyword that is supported by OPM Flow in both the [SOLUTION](#__RefHeading___Toc43947_784232322) and [SCHEDULE](#__RefHeading___Toc43945_784232322) sections, to define a constant flux analytical aquifer.
+See also the AQUFLUX keyword that is supported by OPM Flow in both the SOLUTION and SCHEDULE sections, to define a constant flux analytical aquifer.
 
 
 If the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keywords are not present in the input deck, then the boundary conditions for the model are set to be no flow, which is the normal behavior in both OPM Flow and the commercial simulator.
 
-The [BC](#__RefHeading___Toc42110_36712116751) keyword has been replaced by the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keywords.
+The BC keyword has been replaced by the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keywords.
 
 
 #### Examples
@@ -70,7 +70,7 @@ BCPROP
 
 With this option it is only necessary to define the boundary cells and all the other parameters (COMPONENT, RATE, PRESS, and TEMP) can be defaulted, as they are ignored when TYPE equals FREE.
 
-The next example is based on NX, NY and NZ equal to 20, 1, 10 respectively, on the [DIMENS](#__RefHeading___Toc20387_2267116897) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section,  and shows how different boundary types can be assigned to different parts of the model.
+The next example is based on NX, NY and NZ equal to 20, 1, 10 respectively, on the DIMENS keyword in the RUNSPEC section,  and shows how different boundary types can be assigned to different parts of the model.
 
 
 ```

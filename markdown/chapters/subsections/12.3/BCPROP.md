@@ -1,7 +1,7 @@
 ### BCPROP – Define Boundary Conditions Properties
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -21,22 +21,22 @@ Together the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWO
 | Field | Metric | Laboratory |  |
 | 1 | INDEX | A positive integer that identifies the boundary condition. | None |
 | 2 | TYPE | A defined character string that defines the type of boundary condition to be applied, and should be set to one of the following character strings: | None |
-| 3 | COMPONENT | A defined character string that sets fluid type used in the boundary calculations, and should be set to one of the following character strings: COMPONENT must be declared and not equal to NONE if TYPE has been set to either DIRICHLET or RATE. MICR requires the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) or [MICP](#__RefHeading___Toc383375_111689907) keyword, and OXYG or UREA requires the [MICP](#__RefHeading___Toc383375_111689907) keyword. | NONE |
+| 3 | COMPONENT | A defined character string that sets fluid type used in the boundary calculations, and should be set to one of the following character strings: COMPONENT must be declared and not equal to NONE if TYPE has been set to either DIRICHLET or RATE. MICR requires the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) or MICP keyword, and OXYG or UREA requires the MICP keyword. | NONE |
 | 4 | RATE | A real value that defines the constant mass rate per unit area of the specified COMPONENT to be injected or withdrawn at the boundary,  when TYPE has been set to RATE. Note a negative value implies an influx rate, whereas, a positive value indicates an efflux. | 0.0 |
 | lb/day/ft2 | kg/day/m2 | gm/hour/cm2 |  |
-| 5 | PRESS | PRESS is a real positive value that defines the constant pressure boundary condition. PRESS should only be entered if TYPE has been set to DIRICHLET. If the pressure at the boundary is less than PRESS, then the fluid type declared via COMPONENT will flow across the boundary. The default value of 1* will use the simulator's calculated value based on data entered via the [EQUIL](#__RefHeading___Toc135617_1317547213) keyword in the [SOLUTION](#__RefHeading___Toc43947_784232322) section. | 1* |
+| 5 | PRESS | PRESS is a real positive value that defines the constant pressure boundary condition. PRESS should only be entered if TYPE has been set to DIRICHLET. If the pressure at the boundary is less than PRESS, then the fluid type declared via COMPONENT will flow across the boundary. The default value of 1* will use the simulator's calculated value based on data entered via the EQUIL keyword in the SOLUTION section. | 1* |
 | psia | barsa | atma |  |
-| 6 | TEMP | TEMP is a real positive number that defines the constant temperature boundary condition. TEMP should only be entered if TYPE has been set to DIRICHLET or THERMAL. The default value of 1* will use the simulator's calculated value based on data entered via one of the following reservoir temperature keywords: [RTEMP](#__RefHeading___Toc111816_2939291539), [RTEMPA](#__RefHeading___Toc111818_2939291539), [RTEMPVD](#__RefHeading___Toc108628_29392915391), [TEMPI](#__RefHeading___Toc117385_650382403), or [TEMPVD](#__RefHeading___Toc108626_29392915392), in the [SOLUTION](#__RefHeading___Toc43947_784232322) section. Note that all of the aforementioned reservoir temperature keywords, except for [TEMPI](#__RefHeading___Toc117385_650382403), may also be used in the [PROPS](#__RefHeading___Toc39329_784232322) section as well. | 1* |
+| 6 | TEMP | TEMP is a real positive number that defines the constant temperature boundary condition. TEMP should only be entered if TYPE has been set to DIRICHLET or THERMAL. The default value of 1* will use the simulator's calculated value based on data entered via one of the following reservoir temperature keywords: RTEMP, RTEMPA, RTEMPVD, TEMPI, or TEMPVD, in the SOLUTION section. Note that all of the aforementioned reservoir temperature keywords, except for TEMPI, may also be used in the PROPS section as well. | 1* |
 | oF | oC | oC |  |
 | 7 | MECHTYPE | A defined character string that defines the type of geo-mechanical boundary condition to be applied, and should be set to one of the following character strings: | NONE |
 | 8 | FIXEDX | A positive integer that identifies the whether the boundary is free or fixed in the x-direction. A value of 0 implies the boundary is free to move in the x-direction. A value > 0 implies the boundary is fixed in the x-direction with displacement defined by DISPX, | 1 |
 | 9 | FIXEDY | A positive integer that identifies the whether the boundary is free or fixed in the y-direction. A value of 0 implies the boundary is free to move in the y-direction. A value > 0 implies the boundary is fixed in the y-direction with displacement defined by DISPY, | 1 |
 | 10 | FIXEDZ | A positive integer that identifies the whether the boundary is free or fixed in the z-direction. A value of 0 implies the boundary is free to move in the z-direction. A value > 0 implies the boundary is fixed in the z-direction with displacement defined by DISPZ, | 1 |
-|  | STRESSXX | A real value that defines the diagonal component  of the stress tensor. | 0 |
+|  | STRESSXX | A real value that defines the diagonal component ${σ}_{\mathit{xx}}$ of the stress tensor. | 0 |
 | psia | barsa | atma |  |
-|  | STRESSYY | A real value that defines the diagonal component  of the stress tensor. | 0 |
+|  | STRESSYY | A real value that defines the diagonal component ${σ}_{\mathit{yy}}$ of the stress tensor. | 0 |
 | psia | barsa | atma |  |
-|  | STRESSZZ | A real value that defines the diagonal component  of the stress tensor. | 0 |
+|  | STRESSZZ | A real value that defines the diagonal component ${σ}_{\mathit{zz}}$ of the stress tensor. | 0 |
 | psia | barsa | atma |  |
 |  | DISPX | A real value that defines the x-direction displacement boundary condition. | 0 |
 | feet | m | cm |  |
@@ -49,12 +49,12 @@ Together the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWO
 *Table 12.3.16.1: BCPROP Keyword Description*
 
 
-See also the [AQUFLUX](#__RefHeading___Toc202105_1310555686) keyword that is supported by OPM Flow in both the [SOLUTION](#__RefHeading___Toc43947_784232322) and [SCHEDULE](#__RefHeading___Toc43945_784232322) sections, to define a constant flux analytical aquifer.
+See also the AQUFLUX keyword that is supported by OPM Flow in both the SOLUTION and SCHEDULE sections, to define a constant flux analytical aquifer.
 
 
 If the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keywords are not present in the input deck, then the boundary conditions for the model are set to be no flow, which is the normal behavior in both OPM Flow and the commercial simulator.
 
-The [BC](#__RefHeading___Toc42110_36712116751) keyword has been replaced by the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keywords.
+The BC keyword has been replaced by the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keywords.
 
 
 #### Examples
@@ -87,7 +87,7 @@ BCPROP
 
 With this option it is only necessary to define the boundary cells and all the other parameters (COMPONENT, RATE, PRESS, and TEMP) can be defaulted, as they are ignored when TYPE equals FREE.
 
-The next example is based on NX, NY and NZ equal to 20, 1, 10 respectively, on the [DIMENS](#__RefHeading___Toc20387_2267116897) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section,  and shows how different boundary types can be assigned to different parts of the model.
+The next example is based on NX, NY and NZ equal to 20, 1, 10 respectively, on the DIMENS keyword in the RUNSPEC section,  and shows how different boundary types can be assigned to different parts of the model.
 
 
 ```

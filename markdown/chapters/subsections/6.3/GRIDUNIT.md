@@ -1,19 +1,19 @@
 ### GRIDUNIT – Define the Grid Units
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [GRIDUNIT](#__RefHeading___Toc41568_2479612490) keyword defines the units of the grid data. It is usually output by pre-processing software when exporting the grid geometry. The data is not used by OPM Flow intrinsically, but is merely written to the output EGRID file, as specified by the [GRIDFILE](#__RefHeading___Toc45785_719036256) keyword, for the use of post-processing software like OPM ResInsight.
+The GRIDUNIT keyword defines the units of the grid data. It is usually output by pre-processing software when exporting the grid geometry. The data is not used by OPM Flow intrinsically, but is merely written to the output EGRID file, as specified by the GRIDFILE keyword, for the use of post-processing software like OPM ResInsight.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
-| 1 | [GRIDUNIT](#__RefHeading___Toc41568_2479612490) | A character string that defines the units of the coordinates stated on the [MAPAXES](#__RefHeading___Toc39960_2479612490) keyword, and should be set to: | METRES |
-| 2 | MAPOPT | A character string that defines if the grid data are measured relative to the map, or relative to the origin as stated on the [MAPAXES](#__RefHeading___Toc39960_2479612490) keyword. MAPOPT should either be left blank (the default) indicating the origin is relative to the origin on the [MAPAXES](#__RefHeading___Toc39960_2479612490) keyword, or set equal to MAP measured relative to the map. | 1* |
+| 1 | GRIDUNIT | A character string that defines the units of the coordinates stated on the MAPAXES keyword, and should be set to: | METRES |
+| 2 | MAPOPT | A character string that defines if the grid data are measured relative to the map, or relative to the origin as stated on the MAPAXES keyword. MAPOPT should either be left blank (the default) indicating the origin is relative to the origin on the MAPAXES keyword, or set equal to MAP measured relative to the map. | 1* |
 | Notes: |  |  |  |
 
 *Table 6.42: GRIDUNIT Keyword Description*
@@ -31,4 +31,4 @@ GRIDUNIT
 ```
 
 
-The above example defines that the [GRID](#__RefHeading___Toc38674_784232322) units to be metric.
+The above example defines that the GRID units to be metric.

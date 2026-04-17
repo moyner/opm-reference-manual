@@ -1,13 +1,13 @@
 ### TRANTHT – Define the Transmissibility in the +Theta Direction for All the Cells
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-[TRANTHT](#__RefHeading___Toc1306690_4250154414) defines the transmissibility in the +Theta direction for all the cells in the model via an array. The keyword can only be used with Radial Grid geometry grids. The keyword effectively overwrites previously entered and calculated data. The transmissibility overwritten is the +Theta face transmissibility of each grid block, that is for cell (I, J, K) the transmissibility between cells  (I, J, K)  and (I, J+1, K).
+TRANTHT defines the transmissibility in the +Theta direction for all the cells in the model via an array. The keyword can only be used with Radial Grid geometry grids. The keyword effectively overwrites previously entered and calculated data. The transmissibility overwritten is the +Theta face transmissibility of each grid block, that is for cell (I, J, K) the transmissibility between cells  (I, J, K)  and (I, J+1, K).
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -15,14 +15,14 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [TRANTHT](#__RefHeading___Toc1306690_4250154414) | [TRANTHT](#__RefHeading___Toc1306690_4250154414) is an array of real positive numbers assigning the transmissibility in the +Theta direction to each cell in the model. Repeat counts may be used, for example 20*100.0. | None |
+| 1 | TRANTHT | TRANTHT is an array of real positive numbers assigning the transmissibility in the +Theta direction to each cell in the model. Repeat counts may be used, for example 20*100.0. | None |
 | cP.rb/day/psia | cP.rm3/day/bars | cP.rcc/hr/atm |  |
 | Notes: |  |  |  |
 
-*Table 7.8: [TRANR](#__RefHeading___Toc1306688_4250154414) Keyword Description*
+*Table 7.8: TRANR Keyword Description*
 
 
-See also the [TRANR](#__RefHeading___Toc1306688_4250154414) and TRANYZ keywords to modify the transmissibilities in the other directions.
+See also the TRANR and TRANYZ keywords to modify the transmissibilities in the other directions.
 
 
 #### Example
@@ -47,4 +47,4 @@ TRANTHT
 ENDBOX
 ```
 
-Here the [BOX](#__RefHeading___Toc42110_3671211675) statement is used to define the input grid for the [TRANTHT](#__RefHeading___Toc1306690_4250154414) keyword, which overwrites the transmissibility previously calculated with transmissibility values of zero, resulting in a no-flow boundary in that part of the grid. The [ENDBOX](#__RefHeading___Toc88719_1778172979) keyword resets the input box to the full grid.
+Here the BOX statement is used to define the input grid for the TRANTHT keyword, which overwrites the transmissibility previously calculated with transmissibility values of zero, resulting in a no-flow boundary in that part of the grid. The ENDBOX keyword resets the input box to the full grid.

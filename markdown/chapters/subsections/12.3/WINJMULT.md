@@ -1,19 +1,19 @@
 ### WINJMULT – Define Well Pressure Dependent Injectivity Multipliers
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [WINJMULT](#__RefHeading___Toc121402_332691817) keyword defines pressure dependent injectivity multipliers for injection wells and can be used to approximate the increase or decrease in a well’s injectivity due to hydraulic fracturing in water injection wells. Only injection wells are processed by this keyword, even if production wells have been entered by the keyword.
+The WINJMULT keyword defines pressure dependent injectivity multipliers for injection wells and can be used to approximate the increase or decrease in a well’s injectivity due to hydraulic fracturing in water injection wells. Only injection wells are processed by this keyword, even if production wells have been entered by the keyword.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section, otherwise an error may occur. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | FRACPRES | FRACPRES is the fracture opening pressure (Pfractue) used in equation 12.3.296.1. | None |
 | psia | barsa | atma |  |
 | 3 | ALPHA | ALPHA is the multiplier gradient, α, in equation 12.3.296.1. | Defined |
@@ -30,7 +30,7 @@ The [WINJMULT](#__RefHeading___Toc121402_332691817) keyword defines pressure dep
 The methodology for applying the well pressure dependent injectivity multipliers is outlined in equation 12.3.296.1.
 
 
-|  | (12.3.296.1) |
+| $\begin{matrix}\mathit{Multiplier}= & 1.0 + α \left({P}_{\mathit{WBHP}} - {P}_{\mathit{fracture}}\right) & \text{ for }{P}_{\mathit{WBHP}} > {P}_{\mathit{fracture}} \\ \mathit{Multiplier}= & 1.0 & \text{ for }{P}_{\mathit{WBHP}} < {P}_{\mathit{fracture}}\end{matrix}$ | (12.3.296.1) |
 | --- | --- |
 
 where:
@@ -55,7 +55,7 @@ The equation is applied every time there is a calculation to determine a well’
 
 #### Example
 
-The example below show the [WINJMULT](#__RefHeading___Toc121402_332691817) keyword for three water injection wells.
+The example below show the WINJMULT keyword for three water injection wells.
 
 
 ```

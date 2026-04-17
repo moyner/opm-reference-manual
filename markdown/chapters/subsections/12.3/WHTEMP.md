@@ -1,15 +1,15 @@
 ### WHTEMP – Define Well Tubing Head Temperature Parameters
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword, [WHTEMP](#__RefHeading___Toc1074811_487874538),  sets the parameters for the Tubing Head Temperature calculation, which can either be a constant value, or from a table lookup using a [VFPPROD](#__RefHeading___Toc121919_2556401936) table, via the [VFPPROD](#__RefHeading___Toc121919_2556401936) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section, containing tubing head temperature data.
+This keyword, WHTEMP,  sets the parameters for the Tubing Head Temperature calculation, which can either be a constant value, or from a table lookup using a VFPPROD table, via the VFPPROD keyword in the SCHEDULE section, containing tubing head temperature data.
 
-This keyword can only be used if the thermal option has been activated by the [THERMAL](#__RefHeading___Toc137276_650382403) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. Note this is different to the commercial simulator that uses the [TEMP](#__RefHeading___Toc146397_3544483072) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section to activate the black-oil thermal model.
+This keyword can only be used if the thermal option has been activated by the THERMAL keyword in the RUNSPEC section. Note this is different to the commercial simulator that uses the TEMP keyword in the RUNSPEC section to activate the black-oil thermal model.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -17,22 +17,22 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well production targets and constraints data are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section, otherwise an error may occur. | None |
-| 2 | VFPTAB | A positive integer greater than or equal to zero that references the production vertical lift performance table ([VFPPROD](#__RefHeading___Toc121919_2556401936)), containing the tubing head temperature data for the well. Note, a well must have both a [VFPPROD](#__RefHeading___Toc121919_2556401936) pressure and a [VFPPROD](#__RefHeading___Toc121919_2556401936) temperature table, if the tubing head temperatures are to be calculated. Alternatively, if a constant tubing head temperature for a production well is to be defined via the [TEMP](#__RefHeading___Toc146397_3544483072) parameter, then VFPTAB should be defaulted with 1* instead. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well production targets and constraints data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
+| 2 | VFPTAB | A positive integer greater than or equal to zero that references the production vertical lift performance table (VFPPROD), containing the tubing head temperature data for the well. Note, a well must have both a VFPPROD pressure and a VFPPROD temperature table, if the tubing head temperatures are to be calculated. Alternatively, if a constant tubing head temperature for a production well is to be defined via the TEMP parameter, then VFPTAB should be defaulted with 1* instead. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 3 | [TEMP](#__RefHeading___Toc146397_3544483072) | A real positive value greater than zero that defines a constant tubing head temperature for a production well. In this case the VFPTAB parameter should be defaulted with 1* if a constant tubing head temperature for a production well. | None |
+| 3 | TEMP | A real positive value greater than zero that defines a constant tubing head temperature for a production well. In this case the VFPTAB parameter should be defaulted with 1* if a constant tubing head temperature for a production well. | None |
 | oF | oC | oC |  |
 | Notes: |  |  |  |
 
 *Table 12.99: WHTEMP Keyword Description*
 
 
-See also the [VFPPROD](#__RefHeading___Toc121919_2556401936) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section.
+See also the VFPPROD keyword in the SCHEDULE section.
 
 
 #### Example
 
-The following example defines three wells tubing head temperature parameters using the [WHTEMP](#__RefHeading___Toc1074811_487874538) keyword
+The following example defines three wells tubing head temperature parameters using the WHTEMP keyword
 
 
 ```
@@ -49,4 +49,4 @@ OP03     5                                                                     /
 ```
 
 
-Here, well OP01 and OP03 used [VFPPROD](#__RefHeading___Toc121919_2556401936) table number five to calculate the tubing head temperature,  and well OP02’s uses a constant 150o tubing head temperature.
+Here, well OP01 and OP03 used VFPPROD table number five to calculate the tubing head temperature,  and well OP02’s uses a constant 150o tubing head temperature.

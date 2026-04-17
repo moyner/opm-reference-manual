@@ -1,18 +1,18 @@
 ### ROCKNUM – Define Rock Compaction Table Region Numbers
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [ROCKNUM](#__RefHeading___Toc118210_2939291539) keyword defines the rock compaction table region numbers for each grid block, as such there must be one entry for each cell in the model. The region number specifies which set of rock compaction tables defined by the [ROCKTAB](#__RefHeading___Toc107256_3812137098) keyword are used to calculate the rock compaction in a grid block.
+The ROCKNUM keyword defines the rock compaction table region numbers for each grid block, as such there must be one entry for each cell in the model. The region number specifies which set of rock compaction tables defined by the ROCKTAB keyword are used to calculate the rock compaction in a grid block.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
-| 1 | [ROCKNUM](#__RefHeading___Toc118210_2939291539) | [ROCKNUM](#__RefHeading___Toc118210_2939291539) defines an array of positive integers assigning a grid cell to a particular rock compaction table region. The maximum number of [ROCKNUM](#__RefHeading___Toc118210_2939291539) regions is set by the NTROCC variable on the [ROCKCOMP](#__RefHeading___Toc55593_1778172979) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. | 1 |
+| 1 | ROCKNUM | ROCKNUM defines an array of positive integers assigning a grid cell to a particular rock compaction table region. The maximum number of ROCKNUM regions is set by the NTROCC variable on the ROCKCOMP keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 
 *Table 9.19: ROCKNUM Keyword Description*
@@ -20,7 +20,7 @@ The [ROCKNUM](#__RefHeading___Toc118210_2939291539) keyword defines the rock com
 
 #### Examples
 
-The example below sets three [ROCKNUM](#__RefHeading___Toc118210_2939291539) regions for a 4 x 5 x 2 model.
+The example below sets three ROCKNUM regions for a 4 x 5 x 2 model.
 
 
 ```
@@ -33,7 +33,7 @@ ROCKNUM
 /
 ```
 
-Alternatively the [EQUALS](#__RefHeading___Toc296597_1576177388) keyword could be employed to accomplish the same task, that is:
+Alternatively the EQUALS keyword could be employed to accomplish the same task, that is:
 
 
 ```

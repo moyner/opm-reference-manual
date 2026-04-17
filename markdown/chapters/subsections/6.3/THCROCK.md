@@ -1,21 +1,21 @@
 ### THCROCK – Define Reservoir Rock Thermal Conductivity for All Cells
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [THCROCK](#__RefHeading___Toc124825_650382403) keyword defines the reservoir rock thermal conductivity for when the thermal calculation is activated by the [THERMAL](#__RefHeading___Toc137276_650382403) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The THCROCK keyword defines the reservoir rock thermal conductivity for when the thermal calculation is activated by the THERMAL keyword in the RUNSPEC section.
 
-This keyword can only be used if the thermal option has been activated by the [THERMAL](#__RefHeading___Toc137276_650382403) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. Note this is different to the commercial simulator that uses the [TEMP](#__RefHeading___Toc146397_3544483072) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section to activate the black-oil thermal model.
+This keyword can only be used if the thermal option has been activated by the THERMAL keyword in the RUNSPEC section. Note this is different to the commercial simulator that uses the TEMP keyword in the RUNSPEC section to activate the black-oil thermal model.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [THCROCK](#__RefHeading___Toc124825_650382403) | [THCROCK](#__RefHeading___Toc124825_650382403) is an array of real positive numbers that define the thermal conductivity of the reservoir rock in each grid block. Repeat counts may be used, for example 3000*20.0 | None |
+| 1 | THCROCK | THCROCK is an array of real positive numbers that define the thermal conductivity of the reservoir rock in each grid block. Repeat counts may be used, for example 3000*20.0 | None |
 | Btu/ft/day/°R | kJ/m/day/K | J/cm/hr/K |  |
 | Notes: |  |  |  |
 
@@ -24,19 +24,19 @@ This keyword can only be used if the thermal option has been activated by the [T
 
 Note that there two ways to define the rock and in situ fluids thermal conductivity:
 
-    - Either by using the [THCONR](#__RefHeading___Toc132284_650382403) keyword to define the combined rock and fluid conductivity, and optionally the [THCONSF](#__RefHeading___Toc132286_650382403) keyword in the [GRID](#__RefHeading___Toc38674_784232322) section, or
-    - by specifying the rock and fluid conductivities individually using the [THCROCK](#__RefHeading___Toc124825_650382403), [THCOIL](#__RefHeading___Toc119871_650382403), [THCGAS](#__RefHeading___Toc93091_718313858), and [THCWATER](#__RefHeading___Toc323954_1728001293) keywords in the [GRID](#__RefHeading___Toc38674_784232322) section.
+    - Either by using the THCONR keyword to define the combined rock and fluid conductivity, and optionally the THCONSF keyword in the GRID section, or
+    - by specifying the rock and fluid conductivities individually using the THCROCK, THCOIL, THCGAS, and THCWATER keywords in the GRID section.
 
-Hence,  the [THCROCK](#__RefHeading___Toc124825_650382403) and [THCONR](#__RefHeading___Toc132284_650382403) keywords are mutually exclusive.
+Hence,  the THCROCK and THCONR keywords are mutually exclusive.
 
-Here, the [THCROCK](#__RefHeading___Toc124825_650382403) keyword is used in conjunction with the other thermal conductivity arrays to calculate the porosity weighted thermal conductivity of a grid block using:
+Here, the THCROCK keyword is used in conjunction with the other thermal conductivity arrays to calculate the porosity weighted thermal conductivity of a grid block using:
 
 
-|  | (6.22) |
+| $\text{Average Thermal Conductivity}=\frac{\mathit{PORO}\times \left(\mathit{THCOIL}+\mathit{THCGAS}+\mathit{THCWATER}+\mathit{THCSOLID}\right)}{\text{        NUMBER OF PHASES IN THE MODEL}}\times \left(1-\mathit{PORO}\right)\times \mathit{THCROCK}$ | (6.22) |
 | --- | --- |
 
 
-See also the [THCOIL](#__RefHeading___Toc119871_650382403), and [THCGAS](#__RefHeading___Toc93091_718313858), and [THCWATER](#__RefHeading___Toc323954_1728001293) keywords in the [GRID](#__RefHeading___Toc38674_784232322) section. The commercial compositional simulator's THCSOLID keyword is not supported or required by OPM Flow.
+See also the THCOIL, and THCGAS, and THCWATER keywords in the GRID section. The commercial compositional simulator's THCSOLID keyword is not supported or required by OPM Flow.
 
 
 #### Example
@@ -52,4 +52,4 @@ THCROCK
 ```
 
 
-The above example defines the reservoir rock thermal conductivity of 20.0 for each cell in the 300 grid block model, as defined by the [DIMENS](#__RefHeading___Toc20387_2267116897) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The above example defines the reservoir rock thermal conductivity of 20.0 for each cell in the 300 grid block model, as defined by the DIMENS keyword in the RUNSPEC section.

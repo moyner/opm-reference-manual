@@ -1,18 +1,18 @@
 ### EQLNUM – Define the Equilibration Region Numbers
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [EQLNUM](#__RefHeading___Toc73734_2752266063) keyword defines the equilibration region numbers for each grid block. The equilibration data for various regions are defined in the [SOLUTION](#__RefHeading___Toc43947_784232322) section. For example, the [EQUIL](#__RefHeading___Toc135617_1317547213) keyword in the [SOLUTION](#__RefHeading___Toc43947_784232322) section defines the initial pressures and fluid contacts for each equilibration region identified by the [EQLNUM](#__RefHeading___Toc73734_2752266063) region array.
+The EQLNUM keyword defines the equilibration region numbers for each grid block. The equilibration data for various regions are defined in the SOLUTION section. For example, the EQUIL keyword in the SOLUTION section defines the initial pressures and fluid contacts for each equilibration region identified by the EQLNUM region array.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
-| 1 | [EQLNUM](#__RefHeading___Toc73734_2752266063) | [EQLNUM](#__RefHeading___Toc73734_2752266063) defines an array of positive integers assigning a grid cell to a particular equilibration region. The maximum number of [EQLNUM](#__RefHeading___Toc73734_2752266063) regions is set by the NTEQUL variable on the [EQLDIMS](#__RefHeading___Toc60335_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. | 1 |
+| 1 | EQLNUM | EQLNUM defines an array of positive integers assigning a grid cell to a particular equilibration region. The maximum number of EQLNUM regions is set by the NTEQUL variable on the EQLDIMS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 
 *Table 9.3: EQLNUM Keyword Description*
@@ -20,7 +20,7 @@ The [EQLNUM](#__RefHeading___Toc73734_2752266063) keyword defines the equilibrat
 
 #### Examples
 
-The example below sets three [EQLNUM](#__RefHeading___Toc73734_2752266063) regions for a 4 x 5 x 2 model.
+The example below sets three EQLNUM regions for a 4 x 5 x 2 model.
 
 
 ```
@@ -34,7 +34,7 @@ EQLNUM
 
 ```
 
-Alternatively the [EQUALS](#__RefHeading___Toc296597_1576177388) keyword could be employed to accomplish the same task, that is:
+Alternatively the EQUALS keyword could be employed to accomplish the same task, that is:
 
 
 ```

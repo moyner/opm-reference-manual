@@ -1,13 +1,13 @@
 ### PVTGW – Gas PVT Properties for Dry Gas with Vaporized Water
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-[PVTGW](#__RefHeading___Toc355649_3149455253) defines the gas PVT properties for dry gas [Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.] with vaporized water. This keyword should be used when the [VAPWAT](#__RefHeading___Toc317543_3149455253) keyword has be declared in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section indicating that that vaporized water is present in the dry gas phase. The keyword may be used for gas-water and oil-water-gas input decks that contain the dry gas and vaporized water phases.
+PVTGW defines the gas PVT properties for dry gas [Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.] with vaporized water. This keyword should be used when the VAPWAT keyword has be declared in the RUNSPEC section indicating that that vaporized water is present in the dry gas phase. The keyword may be used for gas-water and oil-water-gas input decks that contain the dry gas and vaporized water phases.
 
 
 | Note This is an OPM Flow specific keyword for the simulator’s Water Vaporization Model that is activated by declaring that vaporized water is present in the run. |
@@ -33,11 +33,11 @@
 Note that provided the first table has been entered, subsequent tables may be defaulted, in this case the prior table is copied to the current table.
 
 
-| Note If both the [VAPWAT](#__RefHeading___Toc317543_3149455253) and [VAPOIL](#__RefHeading___Toc56610_2267116897) keywords have been declared in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section indicating that both vaporized water and vaporized oil are present in the wet gas, then the [PVTGW](#__RefHeading___Toc355649_3149455253) keyword should be used along with the [PVTG](#__RefHeading___Toc104060_57619843) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section to fully define the wet gas PVT properties. The [PVTGW](#__RefHeading___Toc355649_3149455253) keyword should be used to define the gas properties as a function of pressure and water-gas ratio ([RVW](#__RefHeading___Toc537756_4287353749)), assuming oil-saturated gas. The [PVTG](#__RefHeading___Toc104060_57619843) keyword should be used to define the gas properties as a function of pressure and oil-gas ratio ([RV](#__RefHeading___Toc137365_1317547213)), assuming water-saturated gas. Alternatively, the [PVTGWO](#__RefHeading___Toc356776_4176551521) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section may be used instead of the [PVTGW](#__RefHeading___Toc355649_3149455253) and [PVTG](#__RefHeading___Toc104060_57619843) keywords to fully define the wet gas PVT properties. |
+| Note If both the VAPWAT and VAPOIL keywords have been declared in the RUNSPEC section indicating that both vaporized water and vaporized oil are present in the wet gas, then the PVTGW keyword should be used along with the PVTG keyword in the PROPS section to fully define the wet gas PVT properties. The PVTGW keyword should be used to define the gas properties as a function of pressure and water-gas ratio (RVW), assuming oil-saturated gas. The PVTG keyword should be used to define the gas properties as a function of pressure and oil-gas ratio (RV), assuming water-saturated gas. Alternatively, the PVTGWO keyword in the PROPS section may be used instead of the PVTGW and PVTG keywords to fully define the wet gas PVT properties. |
 | --- |
 
 
-See also the [PVTG](#__RefHeading___Toc104060_57619843) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section that defines the wet gas PVT for when vaporized oil is present in the gas phase.  Alternatively, the [PVTGWO](#__RefHeading___Toc356776_4176551521) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section may be utilized instead of [PVTG](#__RefHeading___Toc104060_57619843) and [PVTGW](#__RefHeading___Toc355649_3149455253) to fully define the wet gas PVT properties, for when both vaporized oil and water are present in the gas phase.
+See also the PVTG keyword in the PROPS section that defines the wet gas PVT for when vaporized oil is present in the gas phase.  Alternatively, the PVTGWO keyword in the PROPS section may be utilized instead of PVTG and PVTGW to fully define the wet gas PVT properties, for when both vaporized oil and water are present in the gas phase.
 
 
 #### Example
@@ -83,6 +83,6 @@ PVTGW
 ```
 
 
-The above example defines two dry gas PVT tables assuming NTPVT equals two and NPPVT is greater than or equal to eight on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The above example defines two dry gas PVT tables assuming NTPVT equals two and NPPVT is greater than or equal to eight on the TABDIMS keyword in the RUNSPEC section.
 
 Notice that there is no terminating “/” for this keyword only for a table and a sub table.

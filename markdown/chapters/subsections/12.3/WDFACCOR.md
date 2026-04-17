@@ -1,19 +1,19 @@
 ### WDFACCOR – Gas Flow Dependent Skin Factor (Correlation)
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-[WDFACCOR](#__RefHeading___Toc48144_327352552) keyword defines the parameters to calculate a gas well’s connection D-factors (flow dependent skin factor) for each connection based on a correlation for the coefficient of inertial resistance, usually known as β, in Forchheimer’s flow equation [Dake, L.P. Fundamentals of Reservoir Engineering, Amsterdam, The Netherlands, Elsevier Science BV (1978)  Chapter 8.6, pages 252-257.], [Geertsma, J., 1974. Estimating the Coefficient of Inertial Resistance in Fluid Flow Through Porous Media. Soc.Pet.Eng.J., October: 445-450.],  [Gewers, C.W.W. and Nichol, L.R., 1969. Gas Turbulence Factor in a Microvugular Carbonate. J.Can.Pet.Tech., April.] and  [Wong, S.W., 1970. Effects of Liquid Saturation on Turbulence Factors for Gas Liquid Systems. J.Can.Pet.Tech., October]. This keyword uses Dake’s correlation to calculate the D-factor.
+WDFACCOR keyword defines the parameters to calculate a gas well’s connection D-factors (flow dependent skin factor) for each connection based on a correlation for the coefficient of inertial resistance, usually known as β, in Forchheimer’s flow equation [Dake, L.P. Fundamentals of Reservoir Engineering, Amsterdam, The Netherlands, Elsevier Science BV (1978)  Chapter 8.6, pages 252-257.], [Geertsma, J., 1974. Estimating the Coefficient of Inertial Resistance in Fluid Flow Through Porous Media. Soc.Pet.Eng.J., October: 445-450.],  [Gewers, C.W.W. and Nichol, L.R., 1969. Gas Turbulence Factor in a Microvugular Carbonate. J.Can.Pet.Tech., April.] and  [Wong, S.W., 1970. Effects of Liquid Saturation on Turbulence Factors for Gas Liquid Systems. J.Can.Pet.Tech., October]. This keyword uses Dake’s correlation to calculate the D-factor.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well D-factor correlation is being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well D-factor correlation is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section. | None |
 | 2 | A | A real value greater than or equal to zero that defines the coefficient A in the D-factor correlation. | 0.0 |
 | cP.day.ft2/mD/Mscf | cP.day.m2/mD/sm3 | cP.hour.cm2/mD/scc |  |
 | 3 | B | A real value that defines the exponent B of the grid block permeability in the D-factor correlation. | 0.0 |
@@ -28,27 +28,27 @@
 The simulator evaluates the connection D-factors using the following expression based on Dake’s correlation:
 
 
-|  | (12.3.260.1) |
+| $D = A{K}_{e}^{B}{ϕ}^{C}\frac{{K}_{e}}{h}\frac{1}{{r}_{w}}\frac{{γ}_{g}}{{μ}_{g}}$ | (12.3.260.1) |
 | --- | --- |
 
 Where:
 
-	= effective permeability of the grid block,
+${K}_{e}$	= effective permeability of the grid block,
 
-	= porosity of the grid block,
+$ϕ$	= porosity of the grid block,
 
-	= connection length,
+$h$	= connection length,
 
-	= wellbore radius,
+${r}_{w}$	= wellbore radius,
 
-	= gas gravity at surface conditions,
+${γ}_{g}$	= gas gravity at surface conditions,
 
-	= gas viscosity at bottom hole conditions.
+${μ}_{g}$	= gas viscosity at bottom hole conditions.
 
 
-Note that since  is dependent on pressure the D-factor will also vary with pressure.
+Note that since ${μ}_{g}$ is dependent on pressure the D-factor will also vary with pressure.
 
-See also the [WDFAC](#__RefHeading___Toc442057_2026549522) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section that can be used to specify the well D-factor; and the [COMPDAT](#__RefHeading___Toc97651_3261743917) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section that can be used to specify the connection D-factors directly.
+See also the WDFAC keyword in the SCHEDULE section that can be used to specify the well D-factor; and the COMPDAT keyword in the SCHEDULE section that can be used to specify the connection D-factors directly.
 
 
 #### Examples

@@ -1,17 +1,17 @@
 ### VISCAQA – Specify Ezrokhi Coefficients for Aqueous Viscosity
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [VISCAQA](#REF_HEADING_KEYWORD_VISCAQA_8_3) keyword specifies the three Ezrokhi coefficients for each compositional component and for each equation of state that are used to calculate the aqueous phase viscosity. The keyword should only be used if the compositional mode has been requested using the [COMPS](#__RefHeading___Toc27871_3671211675 Copy 1) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The [VISCAQA](#REF_HEADING_KEYWORD_VISCAQA_8_3) keyword specifies the three Ezrokhi coefficients for each compositional component and for each equation of state that are used to calculate the aqueous phase viscosity. The keyword should only be used if the compositional mode has been requested using the COMPS keyword in the RUNSPEC section.
 
 OPM Flow does not currently support the general compositional modeling formulation.
 
-This keyword is only supported by OPM Flow when the two phase gas-water CO2 storage model has been activated using the [CO2STORE](#__RefHeading___Toc387968_1616145207) keyword and either the [GASWAT](#__RefHeading___Toc38607_2267116897 Copy 1) or the [GAS](#__RefHeading___Toc38607_2267116897) and [WATER](#__RefHeading___Toc38611_2267116897) keywords in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. The component names "H2O", "CO2" and "NACL" (water, CO2 and salt respectively) must be specified using the [CNAMES](#__RefHeading___Toc27871_3671211675 Copy 1 Copy 1 Copy 1) keyword.
+This keyword is only supported by OPM Flow when the two phase gas-water CO2 storage model has been activated using the CO2STORE keyword and either the GASWAT or the GAS and WATER keywords in the RUNSPEC section. The component names "H2O", "CO2" and "NACL" (water, CO2 and salt respectively) must be specified using the CNAMES keyword.
 
 
 | No. | Name | Description | Default |

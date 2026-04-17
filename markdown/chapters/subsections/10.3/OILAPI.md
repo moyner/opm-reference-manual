@@ -1,28 +1,28 @@
 ### OILAPI – Define the Initial Equilibration Oil API for All Grid Blocks
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [OILAPI](#__RefHeading___Toc240796_2928331029) keyword defines the initial equilibration oil [API](#__RefHeading___Toc4422_421927891) gravity pressures for all grid cells in the model, for when the Oil [API](#__RefHeading___Toc4422_421927891) Tracking option as been invoked by the [API](#__RefHeading___Toc4422_421927891) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. The keyword should be used in conjunction with the [PBUB](#__RefHeading___Toc135619_1317547213), [PDEW](#__RefHeading___Toc135623_1317547213), [PRESSURE](#__RefHeading___Toc135627_1317547213), [RS](#__RefHeading___Toc137361_1317547213), [RV](#__RefHeading___Toc137365_1317547213), [SGAS](#__RefHeading___Toc137369_1317547213), [SOIL](#__RefHeading___Toc137371_1317547213) and [SWAT](#__RefHeading___Toc137373_1317547213) keywords etc., to fully describe the initial state of the model.
+The OILAPI keyword defines the initial equilibration oil API gravity pressures for all grid cells in the model, for when the Oil API Tracking option as been invoked by the API keyword in the RUNSPEC section. The keyword should be used in conjunction with the PBUB, PDEW, PRESSURE, RS, RV, SGAS, SOIL and SWAT keywords etc., to fully describe the initial state of the model.
 
-The keyword is used by the Enumeration Initialization method to initialize the model, as opposed to the Equilibration Initialization method that utilizes the [EQUIL](#__RefHeading___Toc135617_1317547213) keyword in the [SOLUTION](#__RefHeading___Toc43947_784232322) section. This is the non-standard formulation to initialize the model and is seldom employed in the industry.  The standard methodology is for OPM Flow to initialize a model using the parameters on the [EQUIL](#__RefHeading___Toc135617_1317547213) keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
+The keyword is used by the Enumeration Initialization method to initialize the model, as opposed to the Equilibration Initialization method that utilizes the EQUIL keyword in the SOLUTION section. This is the non-standard formulation to initialize the model and is seldom employed in the industry.  The standard methodology is for OPM Flow to initialize a model using the parameters on the EQUIL keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [OILAPI](#__RefHeading___Toc240796_2928331029) | [OILAPI](#__RefHeading___Toc240796_2928331029) is an array of real positive numbers assigning the initial equilibration oil [API](#__RefHeading___Toc4422_421927891) gravity to each cell in the model. The American Petroleum Institute (“API”) classifies oils based on an [API](#__RefHeading___Toc4422_421927891) gravity (γ[API](#__RefHeading___Toc4422_421927891)),  or degrees [API](#__RefHeading___Toc4422_421927891) (o[API](#__RefHeading___Toc4422_421927891)), the relationship between relative density (γo) of oil and [API](#__RefHeading___Toc4422_421927891) gravity (γ[API](#__RefHeading___Toc4422_421927891)) is given by: Repeat counts may be used, for example 20*38.5 | None |
-| o[API](#__RefHeading___Toc4422_421927891) | o[API](#__RefHeading___Toc4422_421927891) | o[API](#__RefHeading___Toc4422_421927891) |  |
+| 1 | OILAPI | OILAPI is an array of real positive numbers assigning the initial equilibration oil API gravity to each cell in the model. The American Petroleum Institute (“API”) classifies oils based on an API gravity (γAPI),  or degrees API (oAPI), the relationship between relative density (γo) of oil and API gravity (γAPI) is given by: ${\mathrm{γ}}_{\mathit{API}} = \frac{141.5}{{\mathrm{γ}}_{o}} - 131.5$ Repeat counts may be used, for example 20*38.5 | None |
+| oAPI | oAPI | oAPI |  |
 | Notes: |  |  |  |
 
 *Table 10.18: OILAPI Keyword Description*
 
 
-See also the [PBUB](#__RefHeading___Toc135619_1317547213), [PDEW](#__RefHeading___Toc135623_1317547213), [PRESSURE](#__RefHeading___Toc135627_1317547213), [RS](#__RefHeading___Toc137361_1317547213), [RV](#__RefHeading___Toc137365_1317547213), [SGAS](#__RefHeading___Toc137369_1317547213), [SOIL](#__RefHeading___Toc137371_1317547213) and [SWAT](#__RefHeading___Toc137373_1317547213) keywords to fully define the initial state of the model.
+See also the PBUB, PDEW, PRESSURE, RS, RV, SGAS, SOIL and SWAT keywords to fully define the initial state of the model.
 
 
 #### Example
@@ -38,4 +38,4 @@ OILAPI
 
 ```
 
-The above example defines the initial equilibration oil [API](#__RefHeading___Toc4422_421927891) gravity to be 40.2 for all the cells in the first layer, 39.5 for all the cells in the second layer, and finally 38.2 for all the cells in the third layer.
+The above example defines the initial equilibration oil API gravity to be 40.2 for all the cells in the first layer, 39.5 for all the cells in the second layer, and finally 38.2 for all the cells in the third layer.

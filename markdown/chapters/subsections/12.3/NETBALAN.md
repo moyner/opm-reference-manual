@@ -1,13 +1,13 @@
 ### NETBALAN – Network Balancing Parameters
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-[NETBALAN](#__RefHeading___Toc117627_2179381650) keyword causes the simulator to perform a network balancing operation at the next time step. In addition, the keyword defines the network balancing parameters used to control how network balancing is performed on a network, as well as the frequency of the network balancing calculations. If any of the parameters on the keyword are defaulted, then either the previously entered values are used, or if there are no previously entered values, then the keyword default values are employed.
+NETBALAN keyword causes the simulator to perform a network balancing operation at the next time step. In addition, the keyword defines the network balancing parameters used to control how network balancing is performed on a network, as well as the frequency of the network balancing calculations. If any of the parameters on the keyword are defaulted, then either the previously entered values are used, or if there are no previously entered values, then the keyword default values are employed.
 
 
 | No. | Name | Description | Default |
@@ -19,7 +19,7 @@
 | psia 1.45 | barsa 0.10 | atma 0.09869 |  |
 | 3 | NMXITER | A positive integer value that defines the maximum number of network balancing operations that may be performed during a network balancing  computation. | 10 |
 | dimensionless | dimensionless | dimensionless |  |
-| 4 | GRPCNV | GRPCNV is a real positive value less than one that sets the group tolerance criteria used to define if convergence has been satisfied for: In both cases GRPCNV is an acceptable fraction of the group’s rate target. Thus, the default value 0.01 means that network balance calculated rate must be within 0.01 (or 1.0%) of the groups’ production target. Note that this criteria may not be satisfied if the number of Newton iterations used in updating the well targets, as set by the [NUPCOL](#__RefHeading___Toc86969_4106839650) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section, or the NUPCOL parameter on the [GCONTOL](#__RefHeading___Toc202994_156692946) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section, is exceeded. Group convergence criteria can also be set by the GRPCNV parameter on the [GCONTOL](#__RefHeading___Toc202994_156692946) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section. If both values of GRPCNV have been entered, then the minimum of the two is used. | 0.01 |
+| 4 | GRPCNV | GRPCNV is a real positive value less than one that sets the group tolerance criteria used to define if convergence has been satisfied for: In both cases GRPCNV is an acceptable fraction of the group’s rate target. Thus, the default value 0.01 means that network balance calculated rate must be within 0.01 (or 1.0%) of the groups’ production target. Note that this criteria may not be satisfied if the number of Newton iterations used in updating the well targets, as set by the NUPCOL keyword in the RUNSPEC section, or the NUPCOL parameter on the GCONTOL keyword in the SCHEDULE section, is exceeded. Group convergence criteria can also be set by the GRPCNV parameter on the GCONTOL keyword in the SCHEDULE section. If both values of GRPCNV have been entered, then the minimum of the two is used. | 0.01 |
 | dimensionless | dimensionless | dimensionless |  |
 | 5 | THPMXITE | A positive integer value that defines the maximum number of well THP iterations for wells in subsea completion.anifold groups under rate control. There is no equivalent iteration maximum for automatic chokes in groups under rate control, as the pressure drop across the chokes is automatically calculated in the network balancing calculation. Thus, NMXITER is used for these calculations. | 10 |
 | dimensionless | dimensionless | dimensionless |  |
@@ -27,7 +27,7 @@
 | psia | barsa | atma |  |
 | 7 | NMAXERR | A real positive value that stipulates the maximum branch error in a network balance calculation, at the end of the time step. Again, NMAXERR is compared against the branch error (Error), where Error is the difference between the pressure drop along the branch from the previous network balance and the current calculation, at the end of the time step. If Error is greater than NMAXERR then the simulator will enforce a time step chop. Time step chops are computationally expensive and should therefore be minimized.  Hence, care should be used in setting this value, which should be significantly greater than NTRGERR. The default value of 1.0 x 1020  means that this parameter has no effect in the selection of the time step size. | 1.0 x 1020 |
 | psia | barsa | atma |  |
-| 8 | NTSMIN | NTSMIN is a real positive value that sets the minimum time step size for when NTRGERR and NMAXERR have values. Large network balancing errors (Error) can take place for various reasons, a common occurrence is for wells producing near their operating limit which may shut in during a network balance operation. If NTRGERR and NMAXERR have values, then this will result in the simulator enforcing time step chops to perhaps very small time steps.  NTSMIN can therefore be used to set the minimum time step size under, and only, these circumstances. The default value, TSMINZ, is taken from TSMINZ parameter on the [TUNING](#__RefHeading___Toc146744_4203985108) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section. | TSMINZ |
+| 8 | NTSMIN | NTSMIN is a real positive value that sets the minimum time step size for when NTRGERR and NMAXERR have values. Large network balancing errors (Error) can take place for various reasons, a common occurrence is for wells producing near their operating limit which may shut in during a network balance operation. If NTRGERR and NMAXERR have values, then this will result in the simulator enforcing time step chops to perhaps very small time steps.  NTSMIN can therefore be used to set the minimum time step size under, and only, these circumstances. The default value, TSMINZ, is taken from TSMINZ parameter on the TUNING keyword in the SCHEDULE section. | TSMINZ |
 | days | days | hour |  |
 | Notes: |  |  |  |
 
@@ -50,7 +50,7 @@ NETBALAN
 ```
 
 
-The next example sets network balancing to occur for the first [NUPCOL](#__RefHeading___Toc86969_4106839650) Newton iterations for each time step. All the other parameters are defaulted.
+The next example sets network balancing to occur for the first NUPCOL Newton iterations for each time step. All the other parameters are defaulted.
 
 
 ```

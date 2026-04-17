@@ -169,7 +169,11 @@ def extract_text(elem, style_map, in_code=False):
             href = child.get(f'{{{NS["xlink"]}}}href', "")
             link_text = extract_text(child, style_map, in_code)
             if href and link_text and not in_code:
-                parts.append(f"[{link_text}]({href})")
+                # Strip FODT-internal links (outline anchors and __RefHeading__ anchors)
+                if "|outline" in href or href.startswith("#__RefHeading__"):
+                    parts.append(link_text)
+                else:
+                    parts.append(f"[{link_text}]({href})")
             else:
                 parts.append(link_text)
         elif local == "note":
@@ -208,9 +212,219 @@ def extract_text(elem, style_map, in_code=False):
     return "".join(parts)
 
 
+def mathml_to_latex(elem):
+    """Recursively convert a MathML element to a LaTeX string."""
+    tag = elem.tag
+    if "}" in tag:
+        tag = tag.split("}")[1]
+
+    # Operators that need special LaTeX commands
+    MO_MAP = {
+        "∂": r"\partial ",
+        "∇": r"\nabla ",
+        "·": r"\cdot ",
+        "×": r"\times ",
+        "±": r"\pm ",
+        "∓": r"\mp ",
+        "∞": r"\infty ",
+        "≤": r"\leq ",
+        "≥": r"\geq ",
+        "≠": r"\neq ",
+        "≈": r"\approx ",
+        "→": r"\rightarrow ",
+        "⟨": r"\langle ",
+        "⟩": r"\rangle ",
+        "∑": r"\sum ",
+        "∏": r"\prod ",
+        "∫": r"\int ",
+        "√": r"\sqrt ",
+        "∈": r"\in ",
+        "−": "-",
+        "˙": r"\dot",
+    }
+
+    if tag == "math":
+        sem = elem.find(f'{{{NS["math"]}}}semantics')
+        if sem is not None:
+            return mathml_to_latex(sem)
+        return "".join(mathml_to_latex(c) for c in elem)
+
+    elif tag == "semantics":
+        # First non-annotation child is the math content
+        for child in elem:
+            ctag = child.tag.split("}")[1] if "}" in child.tag else child.tag
+            if ctag not in ("annotation", "annotation-xml"):
+                return mathml_to_latex(child)
+        return ""
+
+    elif tag in ("mrow", "mpadded", "mphantom"):
+        return "".join(mathml_to_latex(c) for c in elem)
+
+    elif tag == "mi":
+        text = elem.text or ""
+        variant = elem.get("mathvariant", "")
+        if variant == "italic" and len(text) > 1:
+            return r"\mathit{" + text + "}"
+        if variant == "normal":
+            return r"\mathrm{" + text + "}"
+        return text
+
+    elif tag == "mn":
+        return elem.text or ""
+
+    elif tag == "mo":
+        text = elem.text or ""
+        result = MO_MAP.get(text, text)
+        fence = elem.get("fence", "false")
+        stretchy = elem.get("stretchy", "false")
+        if fence == "true" and stretchy == "true":
+            form = elem.get("form", "")
+            if text in ("(", "[", "{", "|"):
+                result = r"\left" + text
+            elif text in (")", "]", "}", "|"):
+                result = r"\right" + text
+        return result
+
+    elif tag == "mfrac":
+        children = list(elem)
+        if len(children) >= 2:
+            num = mathml_to_latex(children[0])
+            den = mathml_to_latex(children[1])
+            return r"\frac{" + num + "}{" + den + "}"
+        return ""
+
+    elif tag == "msup":
+        children = list(elem)
+        if len(children) >= 2:
+            base = mathml_to_latex(children[0])
+            sup = mathml_to_latex(children[1])
+            return "{" + base + "}^{" + sup + "}"
+        return ""
+
+    elif tag == "msub":
+        children = list(elem)
+        if len(children) >= 2:
+            base = mathml_to_latex(children[0])
+            sub = mathml_to_latex(children[1])
+            return "{" + base + "}_{" + sub + "}"
+        return ""
+
+    elif tag == "msubsup":
+        children = list(elem)
+        if len(children) >= 3:
+            base = mathml_to_latex(children[0])
+            sub = mathml_to_latex(children[1])
+            sup = mathml_to_latex(children[2])
+            return "{" + base + "}_{" + sub + "}^{" + sup + "}"
+        return ""
+
+    elif tag == "mtext":
+        text = elem.text or ""
+        if text.strip():
+            return r"\text{" + text + "}"
+        return text
+
+    elif tag == "mstyle":
+        variant = elem.get("mathvariant", "")
+        content = "".join(mathml_to_latex(c) for c in elem)
+        if variant == "bold":
+            return r"\mathbf{" + content + "}"
+        if variant == "normal":
+            return r"\mathrm{" + content + "}"
+        return content
+
+    elif tag == "msqrt":
+        content = "".join(mathml_to_latex(c) for c in elem)
+        return r"\sqrt{" + content + "}"
+
+    elif tag == "mroot":
+        children = list(elem)
+        if len(children) >= 2:
+            base = mathml_to_latex(children[0])
+            index = mathml_to_latex(children[1])
+            return r"\sqrt[" + index + "]{" + base + "}"
+        return ""
+
+    elif tag == "mover":
+        children = list(elem)
+        if len(children) >= 2:
+            base = mathml_to_latex(children[0])
+            over = mathml_to_latex(children[1])
+            over_map = {
+                "^": r"\hat",
+                "→": r"\vec",
+                "¯": r"\bar",
+                "˙": r"\dot",
+                "¨": r"\ddot",
+            }
+            over_cmd = over_map.get(over.strip())
+            if over_cmd:
+                return over_cmd + "{" + base + "}"
+            return r"\overset{" + over + "}{" + base + "}"
+        return ""
+
+    elif tag == "munder":
+        children = list(elem)
+        if len(children) >= 2:
+            base = mathml_to_latex(children[0])
+            under = mathml_to_latex(children[1])
+            return r"\underset{" + under + "}{" + base + "}"
+        return ""
+
+    elif tag == "munderover":
+        children = list(elem)
+        if len(children) >= 3:
+            base = mathml_to_latex(children[0])
+            under = mathml_to_latex(children[1])
+            over = mathml_to_latex(children[2])
+            return "{" + base + "}_{" + under + "}^{" + over + "}"
+        return ""
+
+    elif tag == "mspace":
+        return " "
+
+    elif tag == "mtable":
+        rows = []
+        for row in elem:
+            rtag = row.tag.split("}")[1] if "}" in row.tag else row.tag
+            if rtag == "mtr":
+                cells = []
+                for cell in row:
+                    ctag = cell.tag.split("}")[1] if "}" in cell.tag else cell.tag
+                    if ctag == "mtd":
+                        cells.append("".join(mathml_to_latex(c) for c in cell))
+                rows.append(" & ".join(cells))
+        return r"\begin{matrix}" + r" \\ ".join(rows) + r"\end{matrix}"
+
+    elif tag in ("annotation", "annotation-xml"):
+        return ""
+
+    else:
+        # Fallback: concatenate children text
+        parts = []
+        if elem.text:
+            parts.append(elem.text)
+        for child in elem:
+            parts.append(mathml_to_latex(child))
+            if child.tail:
+                parts.append(child.tail)
+        return "".join(parts)
+
+
 def extract_frame(frame_elem):
-    """Extract content from a draw:frame element (images or objects)."""
-    # Look for draw:image with binary data
+    """Extract content from a draw:frame element (images or objects).
+
+    Always returns inline notation ($...$) for math; block formatting ($$...$$)
+    is the caller's responsibility when the frame is the sole content of a paragraph.
+    """
+    # Prefer MathML objects over rasterized images
+    for obj in frame_elem:
+        if tag_local(obj) == "object":
+            math_elem = obj.find(f'{{{NS["math"]}}}math')
+            if math_elem is not None:
+                latex = mathml_to_latex(math_elem)
+                return f"${latex}$"
+    # Fall back to image placeholder
     for image in frame_elem.iter(f'{{{NS["draw"]}}}image'):
         binary = image.find(f'{{{NS["office"]}}}binary-data')
         if binary is not None and binary.text:
@@ -329,27 +543,75 @@ class FODTConverter:
         self.lines.append("")
         code_block.clear()
 
+    def _get_sole_math_frame(self, elem):
+        """Return the MathML element if the paragraph is purely a standalone equation.
+
+        A paragraph is considered a block equation when its only direct children are
+        a single draw:frame containing a math object (plus any soft-page-break elements).
+        Any other children (spans with text, etc.) mean it is mixed content.
+        """
+        if elem.text and elem.text.strip():
+            return None
+        children = list(elem)
+        math_elems = []
+        for child in children:
+            local = tag_local(child)
+            if local == "frame":
+                found_math = False
+                for obj in child:
+                    if tag_local(obj) == "object":
+                        math_elem = obj.find(f'{{{NS["math"]}}}math')
+                        if math_elem is not None:
+                            math_elems.append(math_elem)
+                            found_math = True
+                            break
+                if not found_math:
+                    return None  # Regular image frame, not a math block
+            elif local == "soft-page-break":
+                pass
+            else:
+                return None  # Non-frame child → mixed content
+            if child.tail and child.tail.strip():
+                return None  # Text after a child → mixed content
+        return math_elems[0] if len(math_elems) == 1 else None
+
     def _process_paragraph(self, elem, style):
         """Process a paragraph element and return markdown text."""
-        # Check for embedded images
-        images = list(elem.iter(f'{{{NS["draw"]}}}image'))
-        frames = list(elem.iter(f'{{{NS["draw"]}}}frame'))
-
         resolved_style = self.style_map.get(style, [style])
 
-        # Handle image paragraphs
-        if images:
+        # --- Case 1: purely a standalone block equation ---
+        math_elem = self._get_sole_math_frame(elem)
+        if math_elem is not None:
+            latex = mathml_to_latex(math_elem)
+            return f"$$\n{latex}\n$$\n"
+
+        # --- Case 2: paragraph contains any math frames (inline or mixed) ---
+        # extract_text handles these as inline $...$ via extract_frame().
+        all_frames = list(elem.iter(f'{{{NS["draw"]}}}frame'))
+        has_any_math = any(
+            any(
+                tag_local(obj) == "object"
+                and obj.find(f'{{{NS["math"]}}}math') is not None
+                for obj in frame
+            )
+            for frame in all_frames
+        )
+        if has_any_math:
+            text = extract_text(elem, self.style_map).strip()
+            if not text:
+                return ""
+            return text + "\n"
+
+        # --- Case 3: image-only frames (no math) ---
+        if all_frames:
             result_parts = []
-            # Extract any text before/around images
-            for frame in frames:
+            for frame in all_frames:
                 for image in frame.iter(f'{{{NS["draw"]}}}image'):
                     img_md = self._extract_and_save_image(image, frame)
                     if img_md:
                         result_parts.append(img_md)
 
-            # Also get text content
             text = extract_text(elem, self.style_map).strip()
-            # Remove the base64 placeholder markers
             text = re.sub(r"<<IMAGE:base64:[^>]+>>", "", text).strip()
 
             if result_parts:

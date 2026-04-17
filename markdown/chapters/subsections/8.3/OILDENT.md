@@ -1,21 +1,21 @@
 ### OILDENT – Define Oil Density Temperature Coefficients
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-[OILDENT](#__RefHeading___Toc125713_2509125675) defines the oil density as a function of temperature coefficients for when OPM Flow’s thermal option has been activated by the [THERMAL](#__RefHeading___Toc137276_650382403) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979). Note this is an OPM Flow keyword used with OPM Flow’s black-oil thermal model that is not available in the commercial simulator’s black-oil thermal formulation.
+OILDENT defines the oil density as a function of temperature coefficients for when OPM Flow’s thermal option has been activated by the THERMAL keyword in the RUNSPEC. Note this is an OPM Flow keyword used with OPM Flow’s black-oil thermal model that is not available in the commercial simulator’s black-oil thermal formulation.
 
-This keyword can only be used if OPM Flow’s thermal option has been activated by the [THERMAL](#__RefHeading___Toc137276_650382403) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. Note this is different to the commercial simulator that uses the [TEMP](#__RefHeading___Toc146397_3544483072) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section to activate the black-oil thermal model.
+This keyword can only be used if OPM Flow’s thermal option has been activated by the THERMAL keyword in the RUNSPEC section. Note this is different to the commercial simulator that uses the TEMP keyword in the RUNSPEC section to activate the black-oil thermal model.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [TEMP](#__RefHeading___Toc146397_3544483072) | [TEMP](#__RefHeading___Toc146397_3544483072) is a real positive value greater than zero that defines the absolute reference temperature used with TEXP1 and TEXP2 to estimate the change in oil density with respect to temperature. | Defined |
+| 1 | TEMP | TEMP is a real positive value greater than zero that defines the absolute reference temperature used with TEXP1 and TEXP2 to estimate the change in oil density with respect to temperature. | Defined |
 | oR 527.67 | K 293.15 | K 293.15 |  |
 | 2 | TEXP1 | TEXP1 is a real positive value greater than zero that defines the oil thermal expansion coefficient of the first order. | Defined |
 | 1/oR 1.67 x 10-4 | 1/K 3.0 x 10-4 | 1/K 3.0 x 10-4 |  |
@@ -29,36 +29,36 @@ This keyword can only be used if OPM Flow’s thermal option has been activated 
 The oil density at a given pressure and temperature is calculated from its value at surface conditions and the oil shrinkage factor (the reciprocal of the oil formation volume factor) as shown in the following equation:
 
 
-|  | (8.3.186.1) |
+| ${ρ}_{o}(p,T)={ρ}_{o}({p}_{s},{T}_{s}){b}_{o}(p,T)$ | (8.3.186.1) |
 | --- | --- |
 
 
 Where the temperature dependence of the oil shrinkage factor relative to its value at the reference temperature is calculated as shown in the following equation:
 
 
-|  | (8.3.186.2) |
+| ${b}_{o}(p,T)=\frac{{b}_{o}(p,{T}_{\mathit{ref}})}{1+{c}_{1}(T-{T}_{\mathit{ref}})+{c}_{2}{(T-{T}_{\mathit{ref}})}^{2}}$ | (8.3.186.2) |
 | --- | --- |
 
 Where:
 
-	= oil density
+${ρ}_{o}$	= oil density
 
-	= oil shrinkage factor
+${b}_{o}$	= oil shrinkage factor
 
-	= pressure
+$p$	= pressure
 
-	= temperature
+$T$	= temperature
 
-	= thermal expansion coefficients to first and second order
+${c}_{1},{c}_{2}$	= thermal expansion coefficients to first and second order
 
-	= subscript indicating surface conditions
+$s$	= subscript indicating surface conditions
 
-	= subscript indicating reference conditions
+$\mathit{ref}$	= subscript indicating reference conditions
 
 
 #### Example
 
-The following example shows the [OILDENT](#__RefHeading___Toc125713_2509125675) keyword using the default values, for when the thermal option has been activated by the [THERMAL](#__RefHeading___Toc137276_650382403) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section and for when NTPVT on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section is set to two.
+The following example shows the OILDENT keyword using the default values, for when the thermal option has been activated by the THERMAL keyword in the RUNSPEC section and for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to two.
 
 
 ```

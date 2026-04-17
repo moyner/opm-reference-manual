@@ -1,13 +1,13 @@
 ### SURFROCK – Define Surfactant-Rock Properties
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [SURFROCK](#__RefHeading___Toc903548_4250154414) keyword defines rock properties for when the Surfactant option has been activated by the SURFACTANT keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The SURFROCK keyword defines rock properties for when the Surfactant option has been activated by the SURFACTANT keyword in the RUNSPEC section.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -17,7 +17,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | Field | Metric | Laboratory |  |
 | 1 | ADINDX | A positive integer of 1 or 2 that defines the surfactant desorption option. | Defined |
 | dimensionless 1 | dimensionless 1 | dimensionless 1 |  |
-| 2 | [DENSITY](#__RefHeading___Toc45799_719036256) | A real value that defines the rock in-situ density, that is at reservoir conditions. | None |
+| 2 | DENSITY | A real value that defines the rock in-situ density, that is at reservoir conditions. | None |
 | lb/rtb | kg/rm3 | gm/rcc |  |
 | Notes: |  |  |  |
 
@@ -41,6 +41,6 @@ SURFROCK
 ```
 
 
-The above example defines three surfactant-rock tables, based on the NTSFUN variable on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section being equal to three.
+The above example defines three surfactant-rock tables, based on the NTSFUN variable on the TABDIMS keyword in the RUNSPEC section being equal to three.
 
 There is no terminating “/” for this keyword.

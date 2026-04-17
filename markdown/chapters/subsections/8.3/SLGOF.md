@@ -1,23 +1,23 @@
 ### SLGOF – Gas-Oil Saturation Tables versus Gas (Format Type 1)
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [SLGOF](#__RefHeading___Toc106874_335817223) keyword defines the oil and gas relative permeability and oil-gas capillary pressure versus liquid saturation tables for when oil and gas are present in the input deck.  This keyword should only be used if both oil and gas are present in the run.
+The SLGOF keyword defines the oil and gas relative permeability and oil-gas capillary pressure versus liquid saturation tables for when oil and gas are present in the input deck.  This keyword should only be used if both oil and gas are present in the run.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | SLIQ | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the liquid  saturation, that is the connate water saturation ([SWL](#__RefHeading___Toc22881_7842323221)) plus the oil saturation. The first entry should correspond to residual liquid, that is Swc + Sorg and the last entry should be 1.0 to correspond to a gas saturation of zero. | None |
+| 1 | SLIQ | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the liquid  saturation, that is the connate water saturation (SWL) plus the oil saturation. The first entry should correspond to residual liquid, that is Swc + Sorg and the last entry should be 1.0 to correspond to a gas saturation of zero. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 2 | [KRG](#__RefHeading___Toc97393_621662414) | A columnar vector of real values that are either equal or decreasing down the column and that are greater than or equal to zero and less than or equal to one that defines the gas relative permeability.. | None |
+| 2 | KRG | A columnar vector of real values that are either equal or decreasing down the column and that are greater than or equal to zero and less than or equal to one that defines the gas relative permeability.. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 3 | [KRO](#__RefHeading___Toc97395_621662414) | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the oil relative permeability with respect to gas and connate water saturation. When water is active in the run, the last entry the column, that is at krog(Sg = 0), must be the same as the first entry in the corresponding [SWOF](#__RefHeading___Toc45811_7190362561)  table, that is at krow(So = 1 - Swco). The first value in the column should be zero. | None |
+| 3 | KRO | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the oil relative permeability with respect to gas and connate water saturation. When water is active in the run, the last entry the column, that is at krog(Sg = 0), must be the same as the first entry in the corresponding SWOF  table, that is at krow(So = 1 - Swco). The first value in the column should be zero. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | 4 | PCOG | A columnar vector of real values that are either equal or decreasing down the column that defines the oil-gas relative capillary pressure. | None |
 | psia | bars | atm |  |
@@ -72,4 +72,4 @@ SLGOF
 
 ```
 
-The example defines two [SLGOF](#__RefHeading___Toc106874_335817223) tables for use when oil, gas and water are present in the run.
+The example defines two SLGOF tables for use when oil, gas and water are present in the run.

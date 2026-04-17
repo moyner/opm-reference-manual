@@ -1,13 +1,13 @@
 ### ROCK – Define the Rock Compressibility for Various Regions
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-[ROCK](#__RefHeading___Toc45809_719036256) defines the rock compressibility for various regions in the model. The number of [ROCK](#__RefHeading___Toc45809_719036256) vector data sets is defined by the NTPVT parameter on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section and the allocation of the [ROCK](#__RefHeading___Toc45809_719036256) tables to different grid blocks in the model is done via the [PVTNUM](#__RefHeading___Toc68366_2752266063) keyword in the [REGIONS](#__RefHeading___Toc40648_784232322) section. One data set consists of one record or line which is terminated by a “/”.
+ROCK defines the rock compressibility for various regions in the model. The number of ROCK vector data sets is defined by the NTPVT parameter on the TABDIMS keyword in the RUNSPEC section and the allocation of the ROCK tables to different grid blocks in the model is done via the PVTNUM keyword in the REGIONS section. One data set consists of one record or line which is terminated by a “/”.
 
 This keyword must be defined in the OPM Flow input deck.
 
@@ -17,9 +17,9 @@ This keyword must be defined in the OPM Flow input deck.
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | PRESS is a real number defining the rock reference pressure for the other parameters for this data set. | Default |
 | psia 14.7 | barsa 1.0132 | atma 1.0 |  |
-| 2 | RCOMP | RCOMP is a real number defining the rock compressibility (cf) at the rock reference pressure and is defined as: | Defined |
+| 2 | RCOMP | RCOMP is a real number defining the rock compressibility (cf) at the rock reference pressure and is defined as: ${c}_{f} = -\frac{1}{V}\left(\frac{\mathit{dV}}{\mathit{dP}}\right)$ | Defined |
 | 1/psia 0.0 | 1/barsa 0.0 | 1/atma 0.0 |  |
-| Notes: Note, however, that if [ROCKOPTS](#__RefHeading___Toc111814_2939291539)(ROCKOPT3) parameter has been used to set the allocation of the [ROCK](#__RefHeading___Toc45809_719036256) data via the [ROCKNUM](#__RefHeading___Toc118210_2939291539) array, then the number of [ROCK](#__RefHeading___Toc45809_719036256) vectors should correspond to the value entered on [TABDIMS](#__RefHeading___Toc89327_327352552)(NTROCC) in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. Similarly, if the [ROCKOPTS](#__RefHeading___Toc111814_2939291539)(ROCKOPT3) has been used to set the assignment of the [ROCK](#__RefHeading___Toc45809_719036256) data via the [SATNUM](#__RefHeading___Toc71136_2752266063) array, then the number of vectors should correspond to the value entered via the [TABDIMS](#__RefHeading___Toc89327_327352552)(NTSFUN) parameter, since the tables will be allocated via the [SATNUM](#__RefHeading___Toc71136_2752266063) array. |  |  |  |
+| Notes: Note, however, that if ROCKOPTS(ROCKOPT3) parameter has been used to set the allocation of the ROCK data via the ROCKNUM array, then the number of ROCK vectors should correspond to the value entered on TABDIMS(NTROCC) in the RUNSPEC section. Similarly, if the ROCKOPTS(ROCKOPT3) has been used to set the assignment of the ROCK data via the SATNUM array, then the number of vectors should correspond to the value entered via the TABDIMS(NTSFUN) parameter, since the tables will be allocated via the SATNUM array. |  |  |  |
 
 *Table 8.125: ROCK Keyword Description*
 
@@ -27,32 +27,32 @@ This keyword must be defined in the OPM Flow input deck.
 The simulator adjusts the pore volume based on the reference pressure (PRESS), that is:
 
 
-|  | (8.91) |
+| $V({P}_{i}) = V({P}_{r})\left(1 + {c}_{f}\left({P}_{i} - {P}_{r}\right) + \frac{{\left({c}_{f}({P}_{i} - {P}_{r})\right)}^{2}}{2}\right)$ | (8.91) |
 | --- | --- |
 
 where:
 
-	=	rock compressibility (RCOMP) at the reference pressure (PRESS),
+${c}_{f}$	=	rock compressibility (RCOMP) at the reference pressure (PRESS),
 
- 	=	initial grid cell pressure,
+${P}_{i}$ 	=	initial grid cell pressure,
 
-	=	reference pressure (PRESS),
+${P}_{r}$	=	reference pressure (PRESS),
 
-	=	pore volume at initial conditions, and
+$V({P}_{i})$	=	pore volume at initial conditions, and
 
-	=	pore volume at at the reference pressure.
+$V({P}_{r})$	=	pore volume at at the reference pressure.
 
 
-| Note If the Rock Compaction option has been activated via the [ROCKCOMP](#__RefHeading___Toc55593_1778172979) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section, then the [ROCKTAB](#__RefHeading___Toc107256_3812137098) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section should be used instead of [ROCK](#__RefHeading___Toc45809_719036256) keyword. |
+| Note If the Rock Compaction option has been activated via the ROCKCOMP keyword in the RUNSPEC section, then the ROCKTAB keyword in the PROPS section should be used instead of ROCK keyword. |
 | --- |
 
 
-See also the [ROCKOPTS](#__RefHeading___Toc111814_2939291539) and [ROCKTAB](#__RefHeading___Toc107256_3812137098) keywords in the [PROPS](#__RefHeading___Toc39329_784232322) section.
+See also the ROCKOPTS and ROCKTAB keywords in the PROPS section.
 
 
 #### Examples
 
-The following shows the [ROCK](#__RefHeading___Toc45809_719036256) keyword for when NTPVT on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section is set to one.
+The following shows the ROCK keyword for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to one.
 
 
 ```
@@ -72,7 +72,7 @@ ROCK
 ```
 
 
-The next example shows the [ROCK](#__RefHeading___Toc45809_719036256) keyword for when NTPVT on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section is set to three.
+The next example shows the ROCK keyword for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to three.
 
 
 ```
@@ -94,6 +94,6 @@ ROCK
 ```
 
 
-The above example defines three [ROCK](#__RefHeading___Toc45809_719036256) tables and assumes that NTPVT equals three on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The above example defines three ROCK tables and assumes that NTPVT equals three on the TABDIMS keyword in the RUNSPEC section.
 
-There is no terminating “/” for this keyword, and thus the number entries must match the value entered via the [TABDIMS](#__RefHeading___Toc89327_327352552)(NTPVT), [TABDIMS](#__RefHeading___Toc89327_327352552)(NTROCC), or [TABDIMS](#__RefHeading___Toc89327_327352552)(NTSFUN) parameters, depending on the option selected via the [ROCKOPTS](#__RefHeading___Toc111814_2939291539) keyword.
+There is no terminating “/” for this keyword, and thus the number entries must match the value entered via the TABDIMS(NTPVT), TABDIMS(NTROCC), or TABDIMS(NTSFUN) parameters, depending on the option selected via the ROCKOPTS keyword.

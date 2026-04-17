@@ -1,13 +1,13 @@
 ### COORDSYS – Define Coordinate Grid Options
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword sets various options for when multiple grid systems are being used, as declared by the [NUMRES](#__RefHeading___Toc81021_4106839650) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. OPM Flow does not support multiple grid systems. The keyword is also used to stipulate for radial grids if the completion of the circle in the THETA direction should be implemented using non-neighbor connections.
+This keyword sets various options for when multiple grid systems are being used, as declared by the NUMRES keyword in the RUNSPEC section. OPM Flow does not support multiple grid systems. The keyword is also used to stipulate for radial grids if the completion of the circle in the THETA direction should be implemented using non-neighbor connections.
 
 This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.
 
@@ -17,7 +17,7 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 | 1 | K1 | A positive integer that defines the lower bound of the array in the K-direction for the given grid system. | None |
 | 2 | K2 | A positive integer that defines the upper bound of the array in the K-direction for the given grid system. | None |
 | 3 | COMPLETE | COMPLETE is a defined character string that determines for radial grids if the circle should be completed in THETA direction, and should be set to COMP to complete the circle, or INCOMP for not completing the circle. | INCOMP |
-| 4 | CONNECT | A defined character string that declares how the reservoir below should be connected to the given reservoir, and should be set to JOIN to connect the two reservoirs by calculating the inter-reservoir transmissibilities, or [SEPARATE](#__RefHeading___Toc210158_2884651453) to isolate the reservoirs. | [SEPARATE](#__RefHeading___Toc210158_2884651453) |
+| 4 | CONNECT | A defined character string that declares how the reservoir below should be connected to the given reservoir, and should be set to JOIN to connect the two reservoirs by calculating the inter-reservoir transmissibilities, or SEPARATE to isolate the reservoirs. | SEPARATE |
 | 5 | R1 | R1 is a positive integer defining the lower reservoir unit that is is connected to the given reservoir unit. | Current Reservoir Record |
 | 6 | R2 | R2 is a positive integer defining the upper reservoir unit that is is connected to the given reservoir unit. |  |
 | Notes: |  |  |  |
@@ -40,4 +40,4 @@ COORDSYS
 
 ```
 
-The above example connects the circle in the THETA direction for the [RADIAL](#__RefHeading___Toc51752_2905512151) model, for when the number of grids have been set to one via the [NUMRES](#__RefHeading___Toc81021_4106839650) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section.
+The above example connects the circle in the THETA direction for the RADIAL model, for when the number of grids have been set to one via the NUMRES keyword in the SCHEDULE section.

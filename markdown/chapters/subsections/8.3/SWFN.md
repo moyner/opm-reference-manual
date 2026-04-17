@@ -1,23 +1,23 @@
 ### SWFN – Water Saturation Tables (Format Type 2)
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [SWFN](#__RefHeading___Toc106882_335817223) keyword defines the water relative permeability and water-oil capillary pressure data versus water saturation tables for when water is present in the input deck.  This keyword should only be used if water is present in the run.
+The SWFN keyword defines the water relative permeability and water-oil capillary pressure data versus water saturation tables for when water is present in the input deck.  This keyword should only be used if water is present in the run.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [SWAT](#__RefHeading___Toc137373_1317547213) | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating at one, that defines the water  saturation. | None |
+| 1 | SWAT | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating at one, that defines the water  saturation. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 2 | [KRW](#__RefHeading___Toc97397_621662414) | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the water relative permeability with respect to gas saturation. The first value in the column should be zero. | None |
+| 2 | KRW | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the water relative permeability with respect to gas saturation. The first value in the column should be zero. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 3 | PCWO | A columnar vector of real values that are either equal or increasing down the column that defines the water-oil relative capillary pressure. If the [SWATINIT](#__RefHeading___Toc323952_1728001293) keyword has been used to initialize the model then columnar vector has to be strictly monotonically increasing. | None |
+| 3 | PCWO | A columnar vector of real values that are either equal or increasing down the column that defines the water-oil relative capillary pressure. If the SWATINIT keyword has been used to initialize the model then columnar vector has to be strictly monotonically increasing. | None |
 | psia | bars | atm |  |
 | Notes: |  |  |  |
 
@@ -75,4 +75,4 @@ SWFN
 ```
 
 
-The example defines two [SWFN](#__RefHeading___Toc106882_335817223) tables for use when water is present in the run.
+The example defines two SWFN tables for use when water is present in the run.

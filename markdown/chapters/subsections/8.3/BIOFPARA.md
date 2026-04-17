@@ -1,13 +1,13 @@
 ### BIOFPARA – Define Properties for Models with Biofilms
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [BIOFPARA](#REF_HEADING_KEYWORD_BIOFPARA) keyword defines parameters for models including biofilms. For the parameters, biomass means both suspended microbes in the water phase (labeled as microbial) and biofilm. Currently the two available models with biofilm effects are the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) and the [MICP](#__RefHeading___Toc383375_111689907) model. See Landa-Marbán et al [Landa-Marbán, D., Tveit, S., Kumar, K., Gasda, S.E., 2021. Practical approaches to study microbially induced calcite precipitation at the field scale. Int. J. Greenh. Gas Control 106, 103256. https://doi.org/10.1016/j.ijggc.2021.103256.] and  [Landa-Marbán, D., Kumar, K., Tveit, S., Gasda, S.E., 2021. Numerical studies of CO2 leakage remediation by micp-based plugging technology. In: Røkke, N.A. and Knuutila, H.K. (Eds) Short Papers from the 11th International Trondheim CCS conference, ISBN: 978-82-536-1714-5, 284-290.] for further information on the [MICP](#__RefHeading___Toc383375_111689907) model parameters, which are also used in the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) model.
+The [BIOFPARA](#REF_HEADING_KEYWORD_BIOFPARA) keyword defines parameters for models including biofilms. For the parameters, biomass means both suspended microbes in the water phase (labeled as microbial) and biofilm. Currently the two available models with biofilm effects are the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) and the MICP model. See Landa-Marbán et al [Landa-Marbán, D., Tveit, S., Kumar, K., Gasda, S.E., 2021. Practical approaches to study microbially induced calcite precipitation at the field scale. Int. J. Greenh. Gas Control 106, 103256. https://doi.org/10.1016/j.ijggc.2021.103256.] and  [Landa-Marbán, D., Kumar, K., Tveit, S., Gasda, S.E., 2021. Numerical studies of CO2 leakage remediation by micp-based plugging technology. In: Røkke, N.A. and Knuutila, H.K. (Eds) Short Papers from the 11th International Trondheim CCS conference, ISBN: 978-82-536-1714-5, 284-290.] for further information on the MICP model parameters, which are also used in the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) model.
 
 
 | No. | Name | Description | Default |
@@ -50,7 +50,7 @@ The [BIOFPARA](#REF_HEADING_KEYWORD_BIOFPARA) keyword defines parameters for mod
 
 #### Example
 
-The example below is based on metric units, with NTSFUN equal to two on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword.
+The example below is based on metric units, with NTSFUN equal to two on the TABDIMS keyword.
 
 
 ```
