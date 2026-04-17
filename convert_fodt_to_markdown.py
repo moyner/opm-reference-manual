@@ -259,6 +259,21 @@ def mathml_to_latex(elem):
         return ""
 
     elif tag in ("mrow", "mpadded", "mphantom"):
+        children = list(elem)
+        # Detect piecewise function: mrow with opening { fence followed by mtable
+        # This should become \begin{cases}...\end{cases}
+        if len(children) >= 2:
+            first = children[0]
+            first_tag = first.tag.split("}")[1] if "}" in first.tag else first.tag
+            if (first_tag == "mo" and first.text == "{"
+                    and first.get("fence", "false") == "true"):
+                # Check if there's an mtable somewhere in the remaining children
+                rest_text = "".join(mathml_to_latex(c) for c in children[1:])
+                if r"\begin{matrix}" in rest_text:
+                    # Replace \begin{matrix}...\end{matrix} with cases env
+                    rest_text = rest_text.replace(r"\begin{matrix}", r"\begin{cases}")
+                    rest_text = rest_text.replace(r"\end{matrix}", r"\end{cases}")
+                    return rest_text
         return "".join(mathml_to_latex(c) for c in elem)
 
     elif tag == "mi":
