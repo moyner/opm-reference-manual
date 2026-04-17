@@ -34,8 +34,9 @@ Note that not all these variables are available in OPM Flow; however, the simula
 *Table 11.31: Simulator Performance Summary Variables (Numerical Performance)*
 
 
-| Note If the summary vector data is unavailable then zeros are written at each time step to the SUMMARY and RSM file. |
-| --- |
+::: {.callout-note}
+If the summary vector data is unavailable then zeros are written at each time step to the SUMMARY and RSM file.
+:::
 
 
 #### Example

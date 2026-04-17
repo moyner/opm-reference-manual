@@ -10,8 +10,9 @@
 The PRIORITY keyword activates the Well Priority option and defines the coefficients in the well priority equation. Wells under group control are ranked based on their well potential in order to satisfy group controls. For example if a group’s oil target is exceeded, then the group may shut-in the lease productive oil wells based on their well potential.   The Priority option is an alternative form of ranking the wells based on the following equation:
 
 
-| $\text{Priority} = \frac{{a}_{1} + {a}_{2}{Q}_{\mathit{oil}} +{a}_{3}{Q}_{\mathit{water}} +{a}_{4}{Q}_{\mathit{gas}}}{{b}_{1} + {b}_{2}{Q}_{\mathit{oil}} +{b}_{3}{Q}_{\mathit{water}} +{b}_{4}{Q}_{\mathit{gas}}}$ | (12.31) |
-| --- | --- |
+$$
+\text{Priority} = \frac{{a}_{1} + {a}_{2}{Q}_{\mathit{oil}} +{a}_{3}{Q}_{\mathit{water}} +{a}_{4}{Q}_{\mathit{gas}}}{{b}_{1} + {b}_{2}{Q}_{\mathit{oil}} +{b}_{3}{Q}_{\mathit{water}} +{b}_{4}{Q}_{\mathit{gas}}}
+$$ {#eq-12-31}
 
 
 Where:

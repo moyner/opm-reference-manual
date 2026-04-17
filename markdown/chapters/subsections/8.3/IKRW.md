@@ -27,8 +27,9 @@ IKRW defines the scaling parameter at the maximum imbibition water relative perm
 For the two point scaling option and for the IKRWR water relative permeability array NOT present in the input deck the krw value for a grid block is scaled by:
 
 
-| ${k}_{\mathit{rw}} = {k}_{{\mathit{rw}}_{ \mathit{TABLE}}}\left(\frac{\mathit{IKRW}}{{k}_{{\mathit{rw}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.58) |
-| --- | --- |
+$$
+{k}_{\mathit{rw}} = {k}_{{\mathit{rw}}_{ \mathit{TABLE}}}\left(\frac{\mathit{IKRW}}{{k}_{{\mathit{rw}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)
+$$ {#eq-8-58}
 
 Where:
 

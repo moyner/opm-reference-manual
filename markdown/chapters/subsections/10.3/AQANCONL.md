@@ -34,8 +34,9 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 *Table 10.6: AQANCONL Keyword Description*
 
 
-| Note If the AQANCONL keyword has been utilized in the run deck then OPM Flow will write the  AQUIFERA array to the *.INIT file in order to visualize the aquifer connections in OPM ResInsight. This is accomplished by setting the AQUIFERA value to 2(AQUID-1) for cells connected to aquifer AQUID. If a cell is connected to multiple analytical aquifers then AQUIFERA is summed for all aquifers connected to a cell. Note that connecting cells to multiple aquifers is best avoided. |
-| --- |
+::: {.callout-note}
+If the AQANCONL keyword has been utilized in the run deck then OPM Flow will write the  AQUIFERA array to the *.INIT file in order to visualize the aquifer connections in OPM ResInsight. This is accomplished by setting the AQUIFERA value to 2(AQUID-1) for cells connected to aquifer AQUID. If a cell is connected to multiple analytical aquifers then AQUIFERA is summed for all aquifers connected to a cell. Note that connecting cells to multiple aquifers is best avoided.
+:::
 
 
 #### Example

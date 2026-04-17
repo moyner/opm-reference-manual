@@ -24,8 +24,9 @@ The WELPI keyword is used to define a well’s productivity or injectivity index
 Note that only a well’s currently opened connection factors, as entered via the COMPDAT keyword, are re-scaled to match the required productivity and injectivity index. See section Well Productivity on well productivity for further information on well productivity.
 
 
-| Note One should not modify the productivity and injectivity index of gas wells that use: |
-| --- |
+::: {.callout-note}
+One should not modify the productivity and injectivity index of gas wells that use:
+:::
 
 
 See also the WPIMULT keyword in the SCHEDULE section to set the productivity and injectivity index for a well by scaling the current index by a scaling factor.

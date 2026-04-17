@@ -10,8 +10,9 @@
 The MINNPCOL keyword defines the minimum number of Newton iterations within a time step where the well production and injection targets may be updated, after which the well targets will be frozen until the time step calculations have converged and the time step is complete.
 
 
-| Note This is an OPM Flow specific keyword that sets the minimum number of Newton iterations, as opposed to the NUPCOL keyword that defines the maximum number of Newton iterations within a time step, after which well targets are frozen. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword that sets the minimum number of Newton iterations, as opposed to the NUPCOL keyword that defines the maximum number of Newton iterations within a time step, after which well targets are frozen.
+:::
 
 
 The MINNPCOL keyword has been deprecated and the NUPCOL keyword should be used instead.

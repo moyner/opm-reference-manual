@@ -37,8 +37,9 @@ The AQUFETP keyword defines Fetkovich [Fetkovich, M. J. “A Simplified Approach
 Note this keyword should only be used in equilibration and enumerated initialize runs, that is it should be omitted from RESTART runs.
 
 
-| Note If the model is unstable then this may be due to an aquifer not being in equilibrium with the connecting reservoir blocks, for example if the aquifer is connected to some hydrocarbon reservoir cells. Try commenting out the aquifer and see if this resolves the instabilities, and if so amend the aquifer connections accordingly. |
-| --- |
+::: {.callout-note}
+If the model is unstable then this may be due to an aquifer not being in equilibrium with the connecting reservoir blocks, for example if the aquifer is connected to some hydrocarbon reservoir cells. Try commenting out the aquifer and see if this resolves the instabilities, and if so amend the aquifer connections accordingly.
+:::
 
 
 #### Example

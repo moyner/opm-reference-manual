@@ -1,43 +1,39 @@
----
-title: "Global Section Keywords"
----
+{{< include ../../markdown/chapters/4.md >}}
 
-{{< include ../markdown/chapters/4.md >}}
-
-{{< include ../markdown/chapters/sections/4/2.md >}}
+{{< include ../../markdown/chapters/sections/4/2.md >}}
 
 ## Keyword Definitions
 
-{{< include ../markdown/chapters/subsections/4.3/COLUMNS.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/COLUMNS.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/DEBUG.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/DEBUG.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/ECHO.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/ECHO.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/END.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/END.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/ENDINC.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/ENDINC.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/ENDSKIP.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/ENDSKIP.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/EXTRAPMS.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/EXTRAPMS.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/FORMFEED.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/FORMFEED.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/INCLUDE.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/INCLUDE.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/MESSAGE.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/MESSAGE.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/MESSAGES.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/MESSAGES.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/NOECHO.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/NOECHO.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/NOWARN.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/NOWARN.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/SKIP.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/SKIP.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/SKIP100.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/SKIP100.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/SKIP300.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/SKIP300.md >}}
 
-{{< include ../markdown/chapters/subsections/4.3/WARN.md >}}
+{{< include ../../markdown/chapters/subsections/4.3/WARN.md >}}

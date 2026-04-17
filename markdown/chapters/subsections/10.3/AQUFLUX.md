@@ -29,8 +29,9 @@ The AQUFLUX keyword defines the properties of Constant Flux Analytical Aquifers,
 The water flow rate into a connected grid cell for this type of aquifer, is calculated from:
 
 
-| ${q}_{w} = \mathit{AQUFLUX}(\mathit{AQFLUX}) \times  {A}_{(i,j,k)} \times  \mathit{AQUANCON}(\mathit{AQUCOEF})$ | (10.14) |
-| --- | --- |
+$$
+{q}_{w} = \mathit{AQUFLUX}(\mathit{AQFLUX}) \times  {A}_{(i,j,k)} \times  \mathit{AQUANCON}(\mathit{AQUCOEF})
+$$ {#eq-10-14}
 
 Where:
 

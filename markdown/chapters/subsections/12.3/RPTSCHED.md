@@ -27,8 +27,9 @@ This keyword defines the data in the SCHEDULE section that is to be printed to t
 Development is current progressing on developing reports in a similar format to the commercial simulator and this section will be updated as additional reports are added to OPM Flow’s functionality.
 
 
-| Note Unlike the other reporting keywords in the RUNSPEC, GRID, EDIT, PROPS and SOLUTION keywords, the requested reports on the this keyword remain in effect until they are switched off by this keyword, that is, the reports are written out every report time step until requested to stop. Use the ‘NOTHING’ parameter to switch off all reporting. |
-| --- |
+::: {.callout-note}
+Unlike the other reporting keywords in the RUNSPEC, GRID, EDIT, PROPS and SOLUTION keywords, the requested reports on the this keyword remain in effect until they are switched off by this keyword, that is, the reports are written out every report time step until requested to stop. Use the ‘NOTHING’ parameter to switch off all reporting.
+:::
 
 
 An example FIP report is shown in Figure 12.6 from the Norne field, note only the field and the first two region reports are shown.
@@ -42,8 +43,9 @@ Figure 12.7 illustrates the reservoir volumes in-place report for the first two 
 ![Image65](images/Image65_6cf6993cfc73.png)
 
 
-| Note Note that the “PORV” quantity in the FIP (Balance) Report, as shown in Figure 12.6, is reported at reference conditions, meaning there is no pressure dependence involved. However, the “TOTAL PORE VOLUME” values in the Reservoir Volumes Report (Figure 12.7) are pressure dependent pore volumes.  Thus, for region one the “PORV” value is 44,729,956 rm3 (Figure 12.6) and the “TOTAL PORE VOLUME” (Figure 12.7) is 44,719,142 rm3. This is the same as the commercial simulator. |
-| --- |
+::: {.callout-note}
+Note that the “PORV” quantity in the FIP (Balance) Report, as shown in Figure 12.6, is reported at reference conditions, meaning there is no pressure dependence involved. However, the “TOTAL PORE VOLUME” values in the Reservoir Volumes Report (Figure 12.7) are pressure dependent pore volumes.  Thus, for region one the “PORV” value is 44,729,956 rm3 (Figure 12.6) and the “TOTAL PORE VOLUME” (Figure 12.7) is 44,719,142 rm3. This is the same as the commercial simulator.
+:::
 
 
 The WELLS report consists of several sub-reports depending on the selected option for this report type. Figure 12.8 and Figure 12.9 show example Injection and Production sub-reports

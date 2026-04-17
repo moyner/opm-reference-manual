@@ -10,8 +10,9 @@
 This keyword indicates that dissolved gas is present in the water phase in the model. The keyword may only be used for gas-water input decks that contain just the gas and the water phases, which must also be declared. The keyword will also invoke data input file checking to ensure that all the required gas and water phase input parameters are defined in the input deck.
 
 
-| Note This is an OPM Flow specific keyword for the simulator’s Dissolved Gas in Water Model that is activated by declaring that this phase is present in the run. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword for the simulator’s Dissolved Gas in Water Model that is activated by declaring that this phase is present in the run.
+:::
 
 
 The activation of this phase may be used for modeling the production of gas from the water in gas fields, where gas has dissolved into the in situ water phase. Although this is always the case, the volumes are usually insignificant compared with the volumes in the hydrocarbon zones, and therefore in nearly all cases the dissolved gas volumes are usually ignored in terms of resource volumes. For gas fields, the interest is normally the amount of water in the gas phase, as this influences the liquid loading rate as the water is liberated from the gas as the fluid transverses up the wellbore.

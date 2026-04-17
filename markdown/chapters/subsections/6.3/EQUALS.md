@@ -59,8 +59,9 @@ Examples of the arrays most commonly operated on in each section are given in Ta
 *Table 6.36: EQUALS Keyword Applicable Arrays by Section*
 
 
-| Note Unlike the commercial simulator, using the EQUALS keyword to setup the structure of the grid using the DX, DY, DZ and TOPS keywords should be avoided as it may cause OPM Flow to prematurely fail during the initialization. See the second example on the correct way to setup this type of grid. |
-| --- |
+::: {.callout-note}
+Unlike the commercial simulator, using the EQUALS keyword to setup the structure of the grid using the DX, DY, DZ and TOPS keywords should be avoided as it may cause OPM Flow to prematurely fail during the initialization. See the second example on the correct way to setup this type of grid.
+:::
 
 
 #### Examples

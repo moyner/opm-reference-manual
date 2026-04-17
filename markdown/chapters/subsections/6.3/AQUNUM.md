@@ -46,8 +46,9 @@ The values entered on the AQUNUM keyword are used to calculate the aquifer's por
 In order to fully define a numerical aquifer one has to define the aquifer properties via the AQUNUM keyword, and how the aquifer is connected to the reservoir using the AQUCON keyword in the GRID or SOLUTION sections.
 
 
-| Note If the AQUCON keyword has been utilized in the run deck then OPM Flow will write the AQUIFERN array to the *.INIT file in order to visualize the aquifer connections in OPM ResInsight. This is accomplished by setting the AQUIFERN value to 2^(AQUID-1) for cells connected to aquifer AQUID. If a cell is connected to multiple numerical aquifers then AQUIFERN is summed for all aquifers connected to a cell. Note that connecting cells to multiple aquifers is best avoided. Finally for cells representing the numerical aquifers themselves,  AQUIFERN is set to minus AQUID. |
-| --- |
+::: {.callout-note}
+If the AQUCON keyword has been utilized in the run deck then OPM Flow will write the AQUIFERN array to the *.INIT file in order to visualize the aquifer connections in OPM ResInsight. This is accomplished by setting the AQUIFERN value to 2^(AQUID-1) for cells connected to aquifer AQUID. If a cell is connected to multiple numerical aquifers then AQUIFERN is summed for all aquifers connected to a cell. Note that connecting cells to multiple aquifers is best avoided. Finally for cells representing the numerical aquifers themselves,  AQUIFERN is set to minus AQUID.
+:::
 
 
 Using one aquifer cell should generally be sufficient, provided the aquifer properties are constant. However,  employing multiple cells may be appropriate if the aquifer properties vary with distance or depth, which is not uncommon. Secondly, having multiple cells may help to minimize throughput-related convergence problems by increasing the pore volumes exponentially away from the reservoir cells. Typically, three to five aquifer cells are employed under theses circumstances.

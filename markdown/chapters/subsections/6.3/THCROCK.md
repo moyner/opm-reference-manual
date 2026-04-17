@@ -32,8 +32,9 @@ Hence,  the THCROCK and THCONR keywords are mutually exclusive.
 Here, the THCROCK keyword is used in conjunction with the other thermal conductivity arrays to calculate the porosity weighted thermal conductivity of a grid block using:
 
 
-| $\text{Average Thermal Conductivity}=\frac{\mathit{PORO}\times \left(\mathit{THCOIL}+\mathit{THCGAS}+\mathit{THCWATER}+\mathit{THCSOLID}\right)}{\text{        NUMBER OF PHASES IN THE MODEL}}\times \left(1-\mathit{PORO}\right)\times \mathit{THCROCK}$ | (6.22) |
-| --- | --- |
+$$
+\text{Average Thermal Conductivity}=\frac{\mathit{PORO}\times \left(\mathit{THCOIL}+\mathit{THCGAS}+\mathit{THCWATER}+\mathit{THCSOLID}\right)}{\text{        NUMBER OF PHASES IN THE MODEL}}\times \left(1-\mathit{PORO}\right)\times \mathit{THCROCK}
+$$ {#eq-6-22}
 
 
 See also the THCOIL, and THCGAS, and THCWATER keywords in the GRID section. The commercial compositional simulator's THCSOLID keyword is not supported or required by OPM Flow.

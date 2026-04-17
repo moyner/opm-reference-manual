@@ -23,8 +23,9 @@ IPCW defines the maximum imbibition water-oil or water-gas capillary pressure va
 The capillary pressure for a grid block is scaled by:
 
 
-| ${P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{IPCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.60) |
-| --- | --- |
+$$
+{P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{IPCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)
+$$ {#eq-8-60}
 
 Where:
 

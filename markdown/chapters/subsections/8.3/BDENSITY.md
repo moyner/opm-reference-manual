@@ -24,8 +24,9 @@ The keyword is used in conjunction with the PVTWSALT keyword in the PROPS sectio
 *Table 8.24: BDENSITY Keyword Description*
 
 
-| Note In OPM Flow the tracer equations are solved decoupled from the reservoir equations at the end of a time step. For each tracer an implicit system is solved, however,  the tracer equations are linear, resulting in converge in two iterations.  However, the Brine phase is solved fully implicitly and is fully coupled with the other flow equations. This is different to the commercial simulator,  where the tracer equations are solved explicitly after the flow equations have converged at the end of a time step. This can lead to numerical instabilities if there are large variations in brine densities. |
-| --- |
+::: {.callout-note}
+In OPM Flow the tracer equations are solved decoupled from the reservoir equations at the end of a time step. For each tracer an implicit system is solved, however,  the tracer equations are linear, resulting in converge in two iterations.  However, the Brine phase is solved fully implicitly and is fully coupled with the other flow equations. This is different to the commercial simulator,  where the tracer equations are solved explicitly after the flow equations have converged at the end of a time step. This can lead to numerical instabilities if there are large variations in brine densities.
+:::
 
 
 #### Example

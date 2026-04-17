@@ -16,8 +16,9 @@ The keyword should only be used if the CO2STORE or [H2STORE](#REF_HEADING_KEYWOR
 See also the DIFFCGAS and DIFFCWAT keywords that assume the standard mole fraction formulation for diffusion rather than the mass fraction formulation assumed by the [DIFFAGAS](#REF_HEADING_KEYWORD_DIFFAGAS_8_3) and [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) keywords. The [DIFFAGAS](#REF_HEADING_KEYWORD_DIFFAGAS_8_3) and [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) keywords cannot be used in combination with the DIFFCGAS and DIFFCWAT keywords.
 
 
-| Note This is an OPM Flow keyword used with OPM Flow’s CO2STORE or [H2STORE](#REF_HEADING_KEYWORD_H2STORE) and GASWAT keywords in the RUNSPEC section, and should not be confused with the version of the [DIFFAGAS](#REF_HEADING_KEYWORD_DIFFAGAS_8_3) keyword used in the commercial compositional simulator that defines activity corrected diffusion coefficients. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow keyword used with OPM Flow’s CO2STORE or [H2STORE](#REF_HEADING_KEYWORD_H2STORE) and GASWAT keywords in the RUNSPEC section, and should not be confused with the version of the [DIFFAGAS](#REF_HEADING_KEYWORD_DIFFAGAS_8_3) keyword used in the commercial compositional simulator that defines activity corrected diffusion coefficients.
+:::
 
 
 | No. | Name | Description | Default |
@@ -32,8 +33,9 @@ See also the DIFFCGAS and DIFFCWAT keywords that assume the standard mole fracti
 *Table 8.3.31.1: DIFFAGAS Keyword Description*
 
 
-| Note The option has been tested in combination with the CO2STORE keyword, but not for the general case at this point. |
-| --- |
+::: {.callout-note}
+The option has been tested in combination with the CO2STORE keyword, but not for the general case at this point.
+:::
 
 
 See also the DIFFUSE keyword in the RUNSPEC section to activate the Molecular Diffusion option and the [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) keyword in the PROPS section that defines the water diffusion coefficients for each compositional component in the model and for each PVT region. Finally, for gas-oil systems the DIFFC keyword in the PROPS section should be used.

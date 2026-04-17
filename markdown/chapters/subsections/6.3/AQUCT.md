@@ -43,8 +43,9 @@ Each row entry in the AQUCT keyword defines one Carter-Tracy aquifer.
 *Table 6.9: AQUCT Keyword Description*
 
 
-| Note OPM Flow includes the infinite acting Carter-Tracy aquifer influence table as a default for table number one; thus data entered on AQUTAB keyword starts from table number two. |
-| --- |
+::: {.callout-note}
+OPM Flow includes the infinite acting Carter-Tracy aquifer influence table as a default for table number one; thus data entered on AQUTAB keyword starts from table number two.
+:::
 
 
 In order to full define a Carter-Tracy aquifer one has to define the aquifer properties via the AQUCT keyword, the Carter-Tracy influence function via the AQUTAB keyword in the PROPS section (AQUTAB – Define Carter-Tracy Aquifer Influence Functions), if the default infinite acting table is not being employed, and finally, how the aquifer is connected to the reservoir using the AQUANCON keyword in the GRID or SOLUTION sections.

@@ -12,8 +12,9 @@ This keyword activates OPM Flow's Polymer Molecular Weight Transport option that
 In the PROPS section the PLYVMH, PLYMWINJ, SKPRWAT and SKPRPOLY keywords are used to define the  additional polymer and water properties for the model.  And the SPOLYMW keyword in the SOLUTION section may be used to set the initial molecular weight for each grid block in the model, in order to initialize the model. In the SCHEDULE section, the WPMITAB keyword should be used to associate a water injection well with the appropriate PLYMWINJ table. Finally, the WSKPTAB keyword, also in the SCHEDULE section, may be used to define the SKPRPOLY and SKPRWAT tables associated with the skin pressure for polymer and water injection.  All the aforementioned keywords are OPM Flow specific keywords, that are not available in the commercial simulator.
 
 
-| Note This is an OPM Flow specific keyword that employs an alternative polymer flood model based on a Polymer Molecular Weight Transport equation, that is not available in the commercial simulator. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword that employs an alternative polymer flood model based on a Polymer Molecular Weight Transport equation, that is not available in the commercial simulator.
+:::
 
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.

@@ -12,8 +12,9 @@ The WMICP keyword defines a water injection well's microbial, growth, and cement
 Note the keyword should only be used for wells declared as water injection wells via the WCONINJE keyword in the SCHEDULE section.
 
 
-| Note This is an OPM Flow specific keyword. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword.
+:::
 
 
 | No. | Name | Description | Default |

@@ -41,14 +41,16 @@ The number of PVTWSALT table data sets is defined by the NTPVT parameter on the 
 As mentioned above, the simulator first calculates the water properties as functions of the salt concentration at the previous time step by linear interpolation in salt concentration for water compressibility (Cw), water viscosibility (μwc), $\frac{1}{{B}_{w}}$and$\frac{1}{{B}_{w} {μ}_{w}}$.  It then calculates the values of${B}_{w}$and${B}_{w} {μ}_{w}$at the current time step using the current pressure P, using the following equations:
 
 
-| ${B}_{w}(P,{C}_{s}) = \frac{{B}_{w}({P}_{\mathit{ref}},{C}_{s,\mathit{ref}})}{1 + {C}_{w}(P-{P}_{\mathit{ref}}) + \frac{{\left({C}_{w}(P-{P}_{\mathit{ref}})\right)}^{2}}{2}}$ | (8.82) |
-| --- | --- |
+$$
+{B}_{w}(P,{C}_{s}) = \frac{{B}_{w}({P}_{\mathit{ref}},{C}_{s,\mathit{ref}})}{1 + {C}_{w}(P-{P}_{\mathit{ref}}) + \frac{{\left({C}_{w}(P-{P}_{\mathit{ref}})\right)}^{2}}{2}}
+$$ {#eq-8-82}
 
 and
 
 
-| ${B}_{w}(P,{C}_{s}) {\mathrm{μ}}_{w}(P,{C}_{s}) = \frac{{B}_{w}({P}_{\mathit{ref}},{C}_{s,\mathit{ref}}) {\mathrm{μ}}_{w}({P}_{\mathit{ref}},{C}_{s,\mathit{ref}})}{1 + ({C}_{w}- {\mathrm{μ}}_{\mathit{wc}})(P-{P}_{\mathit{ref}}) + \frac{{\left(({C}_{w}- {\mathrm{μ}}_{\mathit{wc}})(P-{P}_{\mathit{ref}})\right)}^{2}}{2}}$ | (8.83) |
-| --- | --- |
+$$
+{B}_{w}(P,{C}_{s}) {\mathrm{μ}}_{w}(P,{C}_{s}) = \frac{{B}_{w}({P}_{\mathit{ref}},{C}_{s,\mathit{ref}}) {\mathrm{μ}}_{w}({P}_{\mathit{ref}},{C}_{s,\mathit{ref}})}{1 + ({C}_{w}- {\mathrm{μ}}_{\mathit{wc}})(P-{P}_{\mathit{ref}}) + \frac{{\left(({C}_{w}- {\mathrm{μ}}_{\mathit{wc}})(P-{P}_{\mathit{ref}})\right)}^{2}}{2}}
+$$ {#eq-8-83}
 
 See also the BDENSITY keyword in the PROPS section that defines the brine surface densities for the salt concentrations declared on the PVTWSALT keyword. Note that if the BDENSITY keyword is absent from the input file then the brine surface densities will be set to the water density values declared via the DENSITY keyword in the PROPS section. In this case there is no variation in brine surface density with respect to salt concentration.
 

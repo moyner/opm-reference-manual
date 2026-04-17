@@ -10,8 +10,9 @@
 The SALTPVD keyword defines the initial precipitated salt volume fraction versus depth tables for each equilibration region for when OPM Flow’s Salt Precipitation Model has been activated in the input deck via the PRECSALT keyword in the RUNSPEC section. The keyword defines the initial deposited salt as a volume fraction (Ss), that is solid salt saturation.
 
 
-| Note This is an OPM Flow specific keyword for the simulator’s Salt Precipitation Model that is activated by the PRECSALT keyword and declaring that vaporized water is present in the run via the VAPWAT in the RUNSPEC section. This is the initial precipitated salt volume fraction contained within the pore space, see SALTVD in the SOLUTION section that defines the initial salt concentration within the water phase. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword for the simulator’s Salt Precipitation Model that is activated by the PRECSALT keyword and declaring that vaporized water is present in the run via the VAPWAT in the RUNSPEC section. This is the initial precipitated salt volume fraction contained within the pore space, see SALTVD in the SOLUTION section that defines the initial salt concentration within the water phase.
+:::
 
 
 | No. | Name | Description | Default |

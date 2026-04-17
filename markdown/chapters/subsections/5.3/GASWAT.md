@@ -10,8 +10,9 @@
 This keyword activates the two-phase Gas-Water model, as such it is equivalent to using both the GAS and WATER keywords in the RUNSPEC section..
 
 
-| Note This is an OPM Flow keyword, and should not be confused with the more general version of the GASWAT keyword used in the commercial compositional simulator. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow keyword, and should not be confused with the more general version of the GASWAT keyword used in the commercial compositional simulator.
+:::
 
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.

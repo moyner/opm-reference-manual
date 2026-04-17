@@ -50,8 +50,9 @@ The total number of wells should be defined via the WELLDIMS keyword and the num
 The equations used to calculate the pressure drop across the ICD are given below and illustrate how the pressure reduction is dependent on the density and viscosity of the fluid flowing through the device.
 
 
-| $\mathrm{Δ}P = {\left(\frac{{\mathrm{ρ}}_{\mathit{calibrated}}}{{\mathrm{ρ}}_{\mathit{mixture}}}⋅\frac{{\mathrm{μ}}_{\mathit{mixture}}}{{\mathrm{μ}}_{\mathit{calibrated}}}\right)}^{\frac{1}{4}}⋅ \frac{{\mathrm{ρ}}_{\mathit{mixture}}}{{\mathrm{ρ}}_{\mathit{calibrated}}} ⋅ \mathrm{β} ⋅ {q}^{2}$ | (12.39) |
-| --- | --- |
+$$
+\mathrm{Δ}P = {\left(\frac{{\mathrm{ρ}}_{\mathit{calibrated}}}{{\mathrm{ρ}}_{\mathit{mixture}}}⋅\frac{{\mathrm{μ}}_{\mathit{mixture}}}{{\mathrm{μ}}_{\mathit{calibrated}}}\right)}^{\frac{1}{4}}⋅ \frac{{\mathrm{ρ}}_{\mathit{mixture}}}{{\mathrm{ρ}}_{\mathit{calibrated}}} ⋅ \mathrm{β} ⋅ {q}^{2}
+$$ {#eq-12-39}
 
 Where:
 
@@ -60,8 +61,9 @@ Where:
 ρmixture	=  the density of the mixture, as per:
 
 
-| ${\mathrm{ρ}}_{\mathit{mixture}} = \left({\mathrm{α}}_{\mathit{oil}} ⋅ {\mathrm{ρ}}_{\mathit{oil}}\right) + \left({\mathrm{α}}_{\mathit{wat}} ⋅ {\mathrm{ρ}}_{\mathit{wat}}\right) + \left({\mathrm{α}}_{\mathit{gas}} ⋅ {\mathrm{ρ}}_{\mathit{gas}}\right)$ | (12.40) |
-| --- | --- |
+$$
+{\mathrm{ρ}}_{\mathit{mixture}} = \left({\mathrm{α}}_{\mathit{oil}} ⋅ {\mathrm{ρ}}_{\mathit{oil}}\right) + \left({\mathrm{α}}_{\mathit{wat}} ⋅ {\mathrm{ρ}}_{\mathit{wat}}\right) + \left({\mathrm{α}}_{\mathit{gas}} ⋅ {\mathrm{ρ}}_{\mathit{gas}}\right)
+$$ {#eq-12-40}
 
 
 ρcalibrated	=  CALDEN, the density of the calibrating fluid at surface conditions.
@@ -71,8 +73,9 @@ Where:
 μmixture	=  the viscosity of the mixture, as per:
 
 
-| ${\mathrm{μ}}_{\mathit{mixture}} = \left({\mathrm{α}}_{\mathit{oil}} + {\mathrm{α}}_{\mathit{wat}}\right) ⋅ {\mathrm{μ}}_{\mathit{emulsion}} + \left({\mathrm{α}}_{\mathit{gas}} ⋅ {\mathrm{μ}}_{\mathit{gas}}\right)$ | (12.41) |
-| --- | --- |
+$$
+{\mathrm{μ}}_{\mathit{mixture}} = \left({\mathrm{α}}_{\mathit{oil}} + {\mathrm{α}}_{\mathit{wat}}\right) ⋅ {\mathrm{μ}}_{\mathit{emulsion}} + \left({\mathrm{α}}_{\mathit{gas}} ⋅ {\mathrm{μ}}_{\mathit{gas}}\right)
+$$ {#eq-12-41}
 
 
 μemulsion	=  the viscosity of the oil-water emulsion at local conditions.

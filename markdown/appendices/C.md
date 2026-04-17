@@ -90,8 +90,9 @@ To load a previously saved job queue, press the Load Queue button this will disp
 Queue files allow for various jobs to be load efficiently, especially for ensemble and sensitivity cases and may contain a large number of cases.
 
 
-| Note When running under Windows 10 the Job names will follow the Windows 10 file naming convention and OPMRUN automatically handles the file names for running the jobs under the Window Subsystem for Linux. However, care is needed for any “included” file in the input deck. In this case the PATHS – Define Filename Directory Path Aliases keyword in the RUNSPEC section may be of use. |
-| --- |
+::: {.callout-note}
+When running under Windows 10 the Job names will follow the Windows 10 file naming convention and OPMRUN automatically handles the file names for running the jobs under the Window Subsystem for Linux. However, care is needed for any “included” file in the input deck. In this case the PATHS – Define Filename Directory Path Aliases keyword in the RUNSPEC section may be of use.
+:::
 
 
 Reset Job Queue Parameters allows jobs run under Windows 10 WSL to be renamed for running under Linux, and changing jobs from serial to parallel and vice versa.
@@ -358,8 +359,9 @@ A sample of the generated output file is shown in Figure C.37.
 ![Image105](images/Image105_e1ad4ec6e910.png)
 
 
-| Note Note the current release only support production data via the WCONHIST keyword, injection data via WCONINJH keyword is not supported. |
-| --- |
+::: {.callout-note}
+Note the current release only support production data via the WCONHIST keyword, injection data via WCONINJH keyword is not supported.
+:::
 
 
 The Tools/Simulator Input/Sensitivities option generates sensitivity cases based on a "Base" case file. The Base file contains "Factors" (variable names), $X01, $X02, etc., that are substituted with user defined values using the data entered and the type of Sensitivity Scenario selected. Thus, the first step is to configure the Base file in a text editor by replacing actual values by the variable names, previously mentioned.

@@ -22,8 +22,9 @@ The AQUTAB keyword defines additional Carter-Tracy [Carter, R. D., and Tracy, G.
 *Table 8.18: AQUTAB Keyword Description*
 
 
-| Note OPM Flow includes the infinite acting Carter-Tracy aquifer influence table as a default for table number one; thus data entered on this keyword starts from table number two. |
-| --- |
+::: {.callout-note}
+OPM Flow includes the infinite acting Carter-Tracy aquifer influence table as a default for table number one; thus data entered on this keyword starts from table number two.
+:::
 
 
 Table 8.19 to Table 8.22 outline the standard finite tables derived by van Everdingen and Hurst that are used for the Carter-Tracy analytical aquifers and are taken from Bradely [Bradley Howard B., et al., Petroleum Engineering Handbook, Society of Petroleum Engineers (June 1989), ISBN:9781555630102.] table 38-6 on page 38-12. In the tables rD is defined as the ratio of the aquifer external radius divided by hydrocarbon radius, that is:${r}_{D} = \frac{{r}_{e}}{{r}_{o}}$.

@@ -10,8 +10,9 @@
 PERMFACT defines the permeability multiplication factor due to a change in porosity. The keyword is used in conjunction with OPM Flow’s Salt Precipitation model, in which the pore space is reduced due to salt precipitating in the pore space, causing a reduction in porosity and an associated reduction in permeability. This keyword is also used for the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) and MICP model, where the pore space is reduced due to biofilm formation, and for the MICP model, also due to calcite precipitation.
 
 
-| Note This is an OPM Flow specific keyword. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword.
+:::
 
 
 | No. | Name | Description | Default |
@@ -29,14 +30,16 @@ PERMFACT defines the permeability multiplication factor due to a change in poros
 The porosity reduction can be written as a function proportional to the initial porosity, e.g., considering the volume fraction of salt (${s}_{s}$) precipitated out of the vaporized water phase, that is:
 
 
-| $\mathrm{ϕ} = (1 - {s}_{s}){\mathrm{ϕ}}_{o}$ | (8.71) |
-| --- | --- |
+$$
+\mathrm{ϕ} = (1 - {s}_{s}){\mathrm{ϕ}}_{o}
+$$ {#eq-8-71}
 
 The porosity and associated permeability factor data can be calculated using a permeability-porosity relationship, for example:
 
 
-| $\frac{k}{{k}_{o}} = {\left(\frac{\mathrm{ϕ}-{\mathrm{ϕ}}_{c}}{{\mathrm{ϕ}}_{o}-{\mathrm{ϕ}}_{c}}\right)}^{\mathrm{γ}}$ | (8.72) |
-| --- | --- |
+$$
+\frac{k}{{k}_{o}} = {\left(\frac{\mathrm{ϕ}-{\mathrm{ϕ}}_{c}}{{\mathrm{ϕ}}_{o}-{\mathrm{ϕ}}_{c}}\right)}^{\mathrm{γ}}
+$$ {#eq-8-72}
 
 Where:
 

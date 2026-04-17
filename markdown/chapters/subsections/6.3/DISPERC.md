@@ -20,8 +20,9 @@ The [DISPERC](#REF_HEADING_KEYWORD_DISPERC_6_3) keyword defines the mechanical d
 *Table 6.3.39.1: [DISPERC](#REF_HEADING_KEYWORD_DISPERC_6_3) Keyword Description*
 
 
-| Note The option has been tested in combination with the CO2STORE, [H2STORE](#REF_HEADING_KEYWORD_H2STORE), [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM), or MICP keywords, but not for the general case at this point. |
-| --- |
+::: {.callout-note}
+The option has been tested in combination with the CO2STORE, [H2STORE](#REF_HEADING_KEYWORD_H2STORE), [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM), or MICP keywords, but not for the general case at this point.
+:::
 
 
 See also the CO2STORE and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) keywords in the RUNSPEC section that active OPM Flow’s CO2 and H2 storage models respectively.

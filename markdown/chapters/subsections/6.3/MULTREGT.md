@@ -23,8 +23,9 @@ The MULTREGT keyword multiplies the transmissibility between two regions by a co
 *Table 6.79: MULTREGT Keyword Description*
 
 
-| Note Note if the MULTREGT keyword is used in the EDIT section, OPM Flow will always apply the changes irrespective, of if the TRANX, TRANY and TRANZ transmissibility arrays have been entered or not in the EDIT section. This behavior is different to the commercial simulator that only applies the keyword if the transmissibility arrays have been entered in the EDIT section. |
-| --- |
+::: {.callout-note}
+Note if the MULTREGT keyword is used in the EDIT section, OPM Flow will always apply the changes irrespective, of if the TRANX, TRANY and TRANZ transmissibility arrays have been entered or not in the EDIT section. This behavior is different to the commercial simulator that only applies the keyword if the transmissibility arrays have been entered in the EDIT section.
+:::
 
 
 #### Example

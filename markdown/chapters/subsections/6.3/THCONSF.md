@@ -34,8 +34,9 @@ Here, the THCONSF keyword defines a scaling factor which is a function of the ga
 Thus, THCONSF scales the THCONR values via a multiplier Ω, by:
 
 
-| ${\mathrm{Ω}}_{i,j,k} = {\left(1-\text{THCONSF x Gas Saturation}\right)}_{i,j,k}$ | (6.21) |
-| --- | --- |
+$$
+{\mathrm{Ω}}_{i,j,k} = {\left(1-\text{THCONSF x Gas Saturation}\right)}_{i,j,k}
+$$ {#eq-6-21}
 
 
 See also the THCGAS, THCOIL, THCWATER and THROCK keywords in the GRID section, for an alternative way to enter the thermal conductivity properties. However,  the THCONSF keyword cannot be used with the THCGAS, THCOIL, THCWATER and THCROCK keywords. Secondly, the commercial compositional simulator's THCSOLID keyword is not supported or required by OPM Flow.

@@ -10,8 +10,9 @@
 This keyword confirms the maximum number of compositional components in the model, as such it should have the same number of components as that declared via the COMPS keyword in the RUNSPEC section. The keyword should only be used if the CO2STORE keyword and either the GASWAT or the GAS and WATER keywords in the RUNSPEC section, have also be activated for the gas-water two component model.
 
 
-| Note This is an OPM Flow keyword used with OPM Flow’s CO2STORE and GASWAT keywords in the RUNSPEC section, and should not be confused with the more general version of the NCOMPS keyword used in the commercial compositional simulator. Secondly, although OPM Flow parses the keyword, the simulator currently ignores the data for this keyword. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow keyword used with OPM Flow’s CO2STORE and GASWAT keywords in the RUNSPEC section, and should not be confused with the more general version of the NCOMPS keyword used in the commercial compositional simulator. Secondly, although OPM Flow parses the keyword, the simulator currently ignores the data for this keyword.
+:::
 
 
 | No. | Name | Description | Default |

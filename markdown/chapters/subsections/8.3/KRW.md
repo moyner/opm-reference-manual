@@ -27,8 +27,9 @@ KRW defines the scaling parameter at the maximum drainage water relative permeab
 For the two point scaling option and for the KRWR water relative permeability array NOT present in the input deck the krw value for a grid block is scaled by:
 
 
-| ${k}_{\mathit{rw}} = {k}_{{\mathit{rw}}_{ \mathit{TABLE}}}\left(\frac{\mathit{KRW}}{{k}_{{\mathit{rw}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.63) |
-| --- | --- |
+$$
+{k}_{\mathit{rw}} = {k}_{{\mathit{rw}}_{ \mathit{TABLE}}}\left(\frac{\mathit{KRW}}{{k}_{{\mathit{rw}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)
+$$ {#eq-8-63}
 
 Where:
 

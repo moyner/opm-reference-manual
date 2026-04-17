@@ -64,8 +64,9 @@ Double precision and integer work arrays may also be used to hold temporary valu
 Note that care should be exercised when performing operations on integer array data as all transforms are performed using floating point arithmetic operations. In addition, operations on any of the transmissibility arrays (TRANX, TRANX-, TRANY, TRANY-, TRANZ, and TRANZ-) may result in unintended consequences as these arrays have zero values on the boundary of the grid. In this use OPM ResInsight to verify and visually inspect the results.
 
 
-| Note The OPERATER and OPERATE keywords allow for great flexibility in generating or modifying the simulator’s input arrays. In addition, OPM Flow also has a Python facility to manipulate and calculate data that offers even greater flexibility, but note that this feature is not compatible with the commercial simulator. Finally, OPM ResInsight, the post-processing plotting software, has both Octave and Python scripting facilities that enable both data generation and visual inspection of the results. The resulting calculated arrays can then be exported from OPM ResInsight and “included”  back into OPM Flow, thus maintaining compatibility with the commercial simulator. |
-| --- |
+::: {.callout-note}
+The OPERATER and OPERATE keywords allow for great flexibility in generating or modifying the simulator’s input arrays. In addition, OPM Flow also has a Python facility to manipulate and calculate data that offers even greater flexibility, but note that this feature is not compatible with the commercial simulator. Finally, OPM ResInsight, the post-processing plotting software, has both Octave and Python scripting facilities that enable both data generation and visual inspection of the results. The resulting calculated arrays can then be exported from OPM ResInsight and “included”  back into OPM Flow, thus maintaining compatibility with the commercial simulator.
+:::
 
 
 #### Example

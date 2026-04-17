@@ -27,8 +27,9 @@ See also the IPCW keyword for the equivalent imbibition functionality.
 The capillary pressure for a grid block is scaled by:
 
 
-| ${P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{PCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.70) |
-| --- | --- |
+$$
+{P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{PCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)
+$$ {#eq-8-70}
 
 Where:
 

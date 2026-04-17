@@ -1,5 +1,1 @@
----
-title: "Keyword Documentation Structure"
----
-
-{{< include ../markdown/chapters/3.md >}}
+{{< include ../../markdown/chapters/3.md >}}

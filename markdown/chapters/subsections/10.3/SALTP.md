@@ -25,8 +25,9 @@ This is the non-standard method to initialize the model via enumeration and is s
 See also the PBUB, PDEW, PRESSURE, RS, RV, SGAS, SOIL and SWAT keywords to fully define the initial state of the model.
 
 
-| Note This is an OPM Flow specific keyword for the simulator’s Salt Precipitation Model that is activated by the PRECSALT keyword and declaring that vaporized water is present in the run via the VAPWAT in the RUNSPEC section. This keyword defines the initial precipitated salt volume fraction contained within the pore space. See SALT in the SOLUTION section that defines the initial salt concentration within the water phase. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword for the simulator’s Salt Precipitation Model that is activated by the PRECSALT keyword and declaring that vaporized water is present in the run via the VAPWAT in the RUNSPEC section. This keyword defines the initial precipitated salt volume fraction contained within the pore space. See SALT in the SOLUTION section that defines the initial salt concentration within the water phase.
+:::
 
 
 #### Example

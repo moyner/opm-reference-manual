@@ -808,7 +808,8 @@ class FODTConverter:
 
         # Check if this looks like a "Note" table (single cell with note content)
         if max_cols <= 2 and len(rows) >= 1:
-            first_cell = rows[0][0].strip().lower() if rows[0] else ""
+            first_cell = rows[0][0].strip() if rows[0] else ""
+            first_cell_lower = first_cell.lower()
             callout_map = {
                 "note": "note",
                 "notes": "note",
@@ -816,14 +817,32 @@ class FODTConverter:
                 "caution": "caution",
                 "tip": "tip",
             }
-            if first_cell in callout_map:
-                callout_type = callout_map[first_cell]
+            # Match either exact keyword or text starting with "Note ..." etc.
+            matched_type = None
+            if first_cell_lower in callout_map:
+                matched_type = callout_map[first_cell_lower]
+            else:
+                for prefix, ctype in callout_map.items():
+                    if first_cell_lower.startswith(prefix + " "):
+                        matched_type = ctype
+                        break
+            if matched_type is not None:
                 self.lines.append("")
-                self.lines.append(f"::: {{.callout-{callout_type}}}")
+                self.lines.append(f"::: {{.callout-{matched_type}}}")
                 for row in rows:
                     for cell in row:
                         cell_stripped = cell.strip()
-                        if cell_stripped and cell_stripped.lower() not in callout_map:
+                        if not cell_stripped:
+                            continue
+                        # Remove the leading "Note"/"Warning"/etc. prefix from first cell
+                        cell_lower = cell_stripped.lower()
+                        if cell_lower in callout_map:
+                            continue
+                        for prefix in callout_map:
+                            if cell_lower.startswith(prefix + " "):
+                                cell_stripped = cell_stripped[len(prefix):].strip()
+                                break
+                        if cell_stripped:
                             self.lines.append(cell_stripped)
                 self.lines.append(":::")
                 self.lines.append("")

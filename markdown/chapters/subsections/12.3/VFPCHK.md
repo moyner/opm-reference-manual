@@ -24,8 +24,9 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 *Table 12.73: VFPCHK Keyword Description*
 
 
-| Note One reason for external programs generating crossing VFP curves is that the curves have been generated with too much resolution. For example, if the GOR entries has been generated with values of 100, 150, 200, 250, 300, 350, 400, 450 and 500,  then use a geometric spacing instead to generated the VFP table, that is: 100, 300, 900.  This will enable the simulator to interpolate the curves consistently and avoid crossing VFP curves. |
-| --- |
+::: {.callout-note}
+One reason for external programs generating crossing VFP curves is that the curves have been generated with too much resolution. For example, if the GOR entries has been generated with values of 100, 150, 200, 250, 300, 350, 400, 450 and 500,  then use a geometric spacing instead to generated the VFP table, that is: 100, 300, 900.  This will enable the simulator to interpolate the curves consistently and avoid crossing VFP curves.
+:::
 
 
 #### Example

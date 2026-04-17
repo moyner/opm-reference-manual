@@ -44,8 +44,9 @@ The [BIOFPARA](#REF_HEADING_KEYWORD_BIOFPARA) keyword defines parameters for mod
 *Table 8.87: BIOFPARA Keyword Description*
 
 
-| Note This is an OPM Flow specific keyword. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword.
+:::
 
 
 #### Example

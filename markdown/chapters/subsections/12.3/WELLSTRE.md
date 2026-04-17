@@ -12,8 +12,9 @@ The WELLSTRE keyword defines a well stream together with the compositional compo
 The keyword should only be used if the CO2STORE and GASWAT keywords in the RUNSPEC section have also be activated for the gas-water two component model.
 
 
-| Note This is an OPM Flow keyword used with OPM Flow’s CO2STORE and GASWAT keywords in the RUNSPEC section, and should not be confused with the more general version of the WELLSTRE keyword used in the commercial compositional simulator. Secondly, although OPM Flow parses the keyword, the simulator currently ignores the data for this keyword. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow keyword used with OPM Flow’s CO2STORE and GASWAT keywords in the RUNSPEC section, and should not be confused with the more general version of the WELLSTRE keyword used in the commercial compositional simulator. Secondly, although OPM Flow parses the keyword, the simulator currently ignores the data for this keyword.
+:::
 
 
 | No. | Name | Description | Default |

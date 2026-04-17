@@ -10,8 +10,9 @@
 The [DIFFMICP](#REF_HEADING_KEYWORD_DIFFMICP_8_3) keyword defines the diffusion coefficients assuming the mass concentration formulation for each component dissolved in water and for each PVT region, for when the molecular diffusion option has been activated by the DIFFUSE keyword in the RUNSPEC section. The keyword should only be used if either the MICP or [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) model has been activated in the RUNSPEC section.
 
 
-| Note This is an OPM Flow specific keyword. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword.
+:::
 
 
 | No. | Name | Description | Default |

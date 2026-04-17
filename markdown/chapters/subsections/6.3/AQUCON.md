@@ -33,8 +33,9 @@ AQUCON keyword defines how numerical aquifers are connected to the simulation gr
 *Table 6.8: AQUCON Keyword Description*
 
 
-| Note If the AQUCON keyword has been utilized in the run deck then OPM Flow will write the AQUIFERN array to the *.INIT file in order to visualize the aquifer connections in OPM ResInsight. This is accomplished by setting the AQUIFERN value to 2^(AQUID-1) for cells connected to aquifer AQUID. If a cell is connected to multiple numerical aquifers then AQUIFERN is summed for all aquifers connected to a cell. Note that connecting cells to multiple aquifers is best avoided. Finally, for cells representing the numerical aquifers themselves,  AQUIFERN is set to minus AQUID. |
-| --- |
+::: {.callout-note}
+If the AQUCON keyword has been utilized in the run deck then OPM Flow will write the AQUIFERN array to the *.INIT file in order to visualize the aquifer connections in OPM ResInsight. This is accomplished by setting the AQUIFERN value to 2^(AQUID-1) for cells connected to aquifer AQUID. If a cell is connected to multiple numerical aquifers then AQUIFERN is summed for all aquifers connected to a cell. Note that connecting cells to multiple aquifers is best avoided. Finally, for cells representing the numerical aquifers themselves,  AQUIFERN is set to minus AQUID.
+:::
 
 
 #### Example

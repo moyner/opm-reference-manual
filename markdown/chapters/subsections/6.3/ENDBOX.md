@@ -39,5 +39,6 @@ ENDBOX
 The above example defines a subset of the grid and sets the cells PERMZ values to 0.01 for that area. After which the ENDBOX keyword resets the input to be the full grid.
 
 
-| Note It is good practice to always use the ENDBOX keyword to reset the input back to the full grid when all the modifications for a sub-grid have been completed. |
-| --- |
+::: {.callout-note}
+It is good practice to always use the ENDBOX keyword to reset the input back to the full grid when all the modifications for a sub-grid have been completed.
+:::

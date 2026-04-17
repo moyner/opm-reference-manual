@@ -27,8 +27,9 @@ Note that wells are allocated to a group when they are specified by the WELSPECS
 See also the GEFAC keyword in the SCHEDULE section to set the efficiency at the group level, as opposed to applying the efficiency to individual wells.
 
 
-| Note One can also apply plant efficiencies through the GEFAC keyword in the SCHEDULE section. If all the wells in a group are flowing through a facility that has an overall efficiency factor, then it is more appropriate to apply the efficiency factor at the group level.  This of course does not preclude applying additional well efficiencies to individual wells. For example, subsea wells (wet trees) may have additional  down time compared to platform wells (dry trees) even though both sets of well are flowing through the same platform.  Another example would be gas lift wells and wells using electrical submersible pumps, as their artificial lift mechanisms. |
-| --- |
+::: {.callout-note}
+One can also apply plant efficiencies through the GEFAC keyword in the SCHEDULE section. If all the wells in a group are flowing through a facility that has an overall efficiency factor, then it is more appropriate to apply the efficiency factor at the group level.  This of course does not preclude applying additional well efficiencies to individual wells. For example, subsea wells (wet trees) may have additional  down time compared to platform wells (dry trees) even though both sets of well are flowing through the same platform.  Another example would be gas lift wells and wells using electrical submersible pumps, as their artificial lift mechanisms.
+:::
 
 
 #### Example

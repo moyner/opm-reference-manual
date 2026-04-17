@@ -91,5 +91,6 @@ SATOPTS
 In this case the drainage relative permeability curves are allocated by the KRNUMX, KRNUMY, KRNUMZ, KRNUMX-, KRNUMY-, KRNUMZ- keywords, and the imbibition relative permeability curves are allocated  by the IMBNUMX, IMBNUMY, IMBNUMZ, IMBNUMX-, IMBNUMY-, IMBNUMZ- keywords.
 
 
-| Note This keyword activates how relative permeability curves are assigned in the model. The ENDSCALE keyword allows the end-point scaling also to vary with direction, flow direction and hysteresis process, resulting in a great deal of flexibility. Whether or not all these features should be used though is another question. |
-| --- |
+::: {.callout-note}
+This keyword activates how relative permeability curves are assigned in the model. The ENDSCALE keyword allows the end-point scaling also to vary with direction, flow direction and hysteresis process, resulting in a great deal of flexibility. Whether or not all these features should be used though is another question.
+:::

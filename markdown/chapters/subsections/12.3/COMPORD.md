@@ -23,8 +23,9 @@ The COMPORD keyword defines how the well connection data entered on the COMPDAT 
 See also the COMPDAT keyword in the SCHEDULE section.
 
 
-| Note If visual inspection of the well trajectories in the model indicate problematic or unrealistic well connections, the options on this keyword may be useful in correcting the issue. |
-| --- |
+::: {.callout-note}
+If visual inspection of the well trajectories in the model indicate problematic or unrealistic well connections, the options on this keyword may be useful in correcting the issue.
+:::
 
 
 #### Example

@@ -34,8 +34,9 @@ The DIFFC keyword defines the molecular weight of the fluids and diffusion coeff
 *Table 8.27: DIFFC Keyword Description*
 
 
-| Note The option has been tested in combination with the CO2STORE keyword, but not for the general case at this point. |
-| --- |
+::: {.callout-note}
+The option has been tested in combination with the CO2STORE keyword, but not for the general case at this point.
+:::
 
 
 See also the DIFFUSE keyword in the RUNSPEC section to activate the Molecular Diffusion option.

@@ -1,5 +1,1 @@
----
-title: "Introduction"
----
-
-{{< include ../markdown/chapters/1.md >}}
+{{< include ../../markdown/chapters/1.md >}}

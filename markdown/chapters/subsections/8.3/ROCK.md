@@ -27,8 +27,9 @@ This keyword must be defined in the OPM Flow input deck.
 The simulator adjusts the pore volume based on the reference pressure (PRESS), that is:
 
 
-| $V({P}_{i}) = V({P}_{r})\left(1 + {c}_{f}\left({P}_{i} - {P}_{r}\right) + \frac{{\left({c}_{f}({P}_{i} - {P}_{r})\right)}^{2}}{2}\right)$ | (8.91) |
-| --- | --- |
+$$
+V({P}_{i}) = V({P}_{r})\left(1 + {c}_{f}\left({P}_{i} - {P}_{r}\right) + \frac{{\left({c}_{f}({P}_{i} - {P}_{r})\right)}^{2}}{2}\right)
+$$ {#eq-8-91}
 
 where:
 
@@ -43,8 +44,9 @@ $V({P}_{i})$	=	pore volume at initial conditions, and
 $V({P}_{r})$	=	pore volume at at the reference pressure.
 
 
-| Note If the Rock Compaction option has been activated via the ROCKCOMP keyword in the RUNSPEC section, then the ROCKTAB keyword in the PROPS section should be used instead of ROCK keyword. |
-| --- |
+::: {.callout-note}
+If the Rock Compaction option has been activated via the ROCKCOMP keyword in the RUNSPEC section, then the ROCKTAB keyword in the PROPS section should be used instead of ROCK keyword.
+:::
 
 
 See also the ROCKOPTS and ROCKTAB keywords in the PROPS section.

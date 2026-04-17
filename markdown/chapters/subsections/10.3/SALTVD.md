@@ -22,8 +22,9 @@ The SALTVD keyword defines the initial salt concentration versus depth tables fo
 *Table 10.40: SALTVD Keyword Description*
 
 
-| Note This is the initial salt concentration contained within the water phase, see the SALTPVD keyword in the SOLUTION section that defines the initial salt volume fraction that has been precipitated into the pore space. |
-| --- |
+::: {.callout-note}
+This is the initial salt concentration contained within the water phase, see the SALTPVD keyword in the SOLUTION section that defines the initial salt volume fraction that has been precipitated into the pore space.
+:::
 
 
 #### Examples

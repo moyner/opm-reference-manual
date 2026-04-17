@@ -24,8 +24,9 @@ The keyword is recognized by the input deck parser and simulator support is avai
 *Table 8.38: FOAMROCK Keyword Description*
 
 
-| Note In the commercial simulator if the POLYMER and SURFACT phases have been activated in conjunction with the FOAM phase then the mass density of rock will be set by the PLYROCK, SURFROCK, or the FOAMROCK keywords depending on the order entered in the run deck. This is not the case for OPM Flow. OPM Flow’s FOAM phase is a standalone implementation and cannot be used in conjunction with the either the POLYMER or SURFACT phases. |
-| --- |
+::: {.callout-note}
+In the commercial simulator if the POLYMER and SURFACT phases have been activated in conjunction with the FOAM phase then the mass density of rock will be set by the PLYROCK, SURFROCK, or the FOAMROCK keywords depending on the order entered in the run deck. This is not the case for OPM Flow. OPM Flow’s FOAM phase is a standalone implementation and cannot be used in conjunction with the either the POLYMER or SURFACT phases.
+:::
 
 
 #### Example

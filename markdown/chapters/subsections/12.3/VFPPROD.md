@@ -63,8 +63,9 @@ Note that for equivalent two phase runs:
     - Gas-water models with only the GAS and WATER keywords in the RUNSPEC section, or models that only have dry gas [Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.] with a constant condensate-gas ratio defined by the RVCONST keyword in the PROPS section, then the FLO parameter in Table 12.75 must be set to GAS, WFR to WGR, and GFR to OGR.
 
 
-| Note It is possible to have only the OIL and WATER keywords in the RUNSPEC section and to use gas lift for the wells, without declaring the GAS phase in the RUNSPEC section. In this case,  the FLO parameter in Table 12.75 must be set to either OIL or LIQ, WFR to either WCT or WOR, and GFR to GOR.  In this case the ALQ parameter is optional, but if present must set to GRAT.  If the ALQ and ALQ-DATA parameters are absent then the GFR-DATA will be used based on the flowing GOR plus the stipulated gas lift gas. |
-| --- |
+::: {.callout-note}
+It is possible to have only the OIL and WATER keywords in the RUNSPEC section and to use gas lift for the wells, without declaring the GAS phase in the RUNSPEC section. In this case,  the FLO parameter in Table 12.75 must be set to either OIL or LIQ, WFR to either WCT or WOR, and GFR to GOR.  In this case the ALQ parameter is optional, but if present must set to GRAT.  If the ALQ and ALQ-DATA parameters are absent then the GFR-DATA will be used based on the flowing GOR plus the stipulated gas lift gas.
+:::
 
 
 See also the WELSPECS keyword to define wells and the WCONPROD keyword that is used to allocate the VFPPROD tables to specific wells.  Note that one VFPPROD table can be allocated to one or more wells, provided the wells in question have a similar trajectory and similar flow characteristics, for example vertical oil wells producing from the same reservoir, or different reservoirs with similar PVT properties.

@@ -29,8 +29,9 @@ This option must be activated by THPRES variable on EQLOPTS keyword in the RUNSP
 See also the MULTREGT keyword in the GRID section that uses the transmissibility between the MULTNUM, FLUXNUM or OPERNUM region arrays to control the flow between various regions within the model.
 
 
-| Note Care should be taken that cells in different EQLNUM regions are not in communication, as this will result in an unstable initial equilibration. |
-| --- |
+::: {.callout-note}
+Care should be taken that cells in different EQLNUM regions are not in communication, as this will result in an unstable initial equilibration.
+:::
 
 
 #### Examples

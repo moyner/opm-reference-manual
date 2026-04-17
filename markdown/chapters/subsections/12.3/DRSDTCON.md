@@ -39,8 +39,9 @@ Mykkeltvedt et al. describe four regimes that characterise the evolution of the 
 In the Initial phase a near instantaneous jump in dissolved CO2 is assumed if the control volume spans the CO2-brine interface (otherwise the solution gas-oil ratio is zero). The initial jump comes from the capillary transition zone, the height of which depends on the capillary pressure function. Capillary equilibrium happens almost immediately and therefore the CO2 solution gas-oil ratio is allowed to increase at unlimited rate until capillary equilibrium is reached. Capillary equilibrium is assumed when:
 
 
-| ${R}_{s} > {R}_{s,\mathit{sat}}{S}_{o}$ | (12.3.53.1) |
-| --- | --- |
+$$
+{R}_{s} > {R}_{s,\mathit{sat}}{S}_{o}
+$$ {#eq-12-3-53-1}
 
 Where:
 
@@ -54,8 +55,9 @@ So 	=	oil saturation.
 This is followed by the Linear phase where the finger speed is assumed to be relatively constant and therefore it is reasonable to assume that the CO2 gas-oil ratio will increase at a constant rate (Linear regime). The maximum dissolution rate, as per the DRSDT keyword in the SCHEDULE section during the Linear regime (Flin) is given by:
 
 
-| ${F}_{\mathit{lin}} = χ\left(\frac{{R}_{s,\mathit{sat}}{K}_{z}\mathrm{Δ}{ρ}_{c}g}{{μ}_{o}{S}_{o} {D}_{z}ϕ}\right)$ | (12.3.53.2) |
-| --- | --- |
+$$
+{F}_{\mathit{lin}} = χ\left(\frac{{R}_{s,\mathit{sat}}{K}_{z}\mathrm{Δ}{ρ}_{c}g}{{μ}_{o}{S}_{o} {D}_{z}ϕ}\right)
+$$ {#eq-12-3-53-2}
 
 Where:
 
@@ -79,8 +81,9 @@ So	= 	the oil (brine) saturation.
 The third phase is characterised by a change in slope of the rate of dissolution as the system transitions from linear build-up to quasi-steady state (Steady-State regime). The parameter PSI defines the normalised gas-oil ratio at the transition from the Linear to the Steady-State regime, where the normalised gas-oil ratio is given by:
 
 
-| $\overset{~}{X} = \frac{{R}_{s}-{R}_{s,\mathit{sat}}{S}_{g}}{{R}_{s,\mathit{sat}}(1-{S}_{g})}$ | (12.3.53.3) |
-| --- | --- |
+$$
+\overset{~}{X} = \frac{{R}_{s}-{R}_{s,\mathit{sat}}{S}_{g}}{{R}_{s,\mathit{sat}}(1-{S}_{g})}
+$$ {#eq-12-3-53-3}
 
 
 The rate of dissolution during the Steady-State regime is defined by the parameter OMEGA.
@@ -90,8 +93,9 @@ The final Decline phase occurs when the CO2 has been completely dissolved in the
 The values of CHI, PSI and OMEGA can either be estimated from fine-scale simulation, historical data, or from laboratory tests [Taheri, A., Torsæter, O., Lindeberg, E., Hadia, N. J., & Wessel-Berg, D. (2018). Qualitative and quantitative experimental study of convective mixing process during storage of CO2 in heterogeneous saline aquifers. International Journal of Greenhouse Gas Control, 71, 212-226.]. Analysis of fine-scale simulation results by Mykkeltvedt et al indicates that 0.04 +/-0.01 is a reasonable value for CHI. Elenius et al. [Elenius, M. T., Nordbotten, J. M., & Kalisch, H. (2014). Convective mixing influenced by the capillary transition zone. Computational Geosciences, 18(3-4), 417-431] also state that 0.04 is a reasonable value for CHI for the Utsira formation.
 
 
-| Note In the commercial simulator a constant or regional value for DRSDT can be given as an input parameter.  This can be used to include the effect of convective mixing as shown by Thibeau and Dutin [Thibeau, S., & Dutin, A. (2011). Large scale CO2 storage in unstructured aquifers: Modeling study of the ultimate CO2 migration distance. Energy Procedia, 4, 4230-4237.]. OPM Flow’s approach differs from this in that the DRSDT value is computed internally and is dependent on both the static and dynamic cell properties. |
-| --- |
+::: {.callout-note}
+In the commercial simulator a constant or regional value for DRSDT can be given as an input parameter.  This can be used to include the effect of convective mixing as shown by Thibeau and Dutin [Thibeau, S., & Dutin, A. (2011). Large scale CO2 storage in unstructured aquifers: Modeling study of the ultimate CO2 migration distance. Energy Procedia, 4, 4230-4237.]. OPM Flow’s approach differs from this in that the DRSDT value is computed internally and is dependent on both the static and dynamic cell properties.
+:::
 
 
 #### Example

@@ -25,8 +25,9 @@ This is the non-standard method to initialize the model via enumeration and is s
 See also the PBUB, PDEW, PRESSURE, RV, SGAS, SOIL and SWAT keywords to fully define the initial state of the model.
 
 
-| Note This is an OPM Flow specific keyword for the simulator’s Water Vaporization Model that is activated by declaring that vaporized water is present in the run using the VAPWAT keyword in the RUNSPEC section. Use the command line option --enable-opm-rst-file=true to output the RVW data to the RESTART file. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword for the simulator’s Water Vaporization Model that is activated by declaring that vaporized water is present in the run using the VAPWAT keyword in the RUNSPEC section. Use the command line option --enable-opm-rst-file=true to output the RVW data to the RESTART file.
+:::
 
 
 #### Example

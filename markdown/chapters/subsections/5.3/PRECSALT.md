@@ -10,8 +10,9 @@
 This keyword activates the OPM Flow Salt Precipitation model that accounts for salt precipitating out of the water phase when the water is being vaporized into the gas phase and the dissolved salt reaches the solubility limit as the pressure in the reservoir is being depleted (see the VAPWAT keyword in the RUNSPEC section). This facility is an extension to the standard Brine model, and as such the BRINE keyword in the RUNSPEC must also be present in the input deck. In general, if the PRECSALT keyword has been activated in the input deck then the VAPWAT keyword should also be activated. The keyword should only be used if  both water and gas phases are active in the model.
 
 
-| Note This is an OPM Flow specific keyword for the simulator’s Salt Precipitation model, note that this is an extension to the commercial simulator’s Brine model. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword for the simulator’s Salt Precipitation model, note that this is an extension to the commercial simulator’s Brine model.
+:::
 
 
 If the keyword is present in the input deck then the SALTSOL keyword in the PROPS section also needs to be present in the input deck to define the salt solubility.  In addition, either the SALTPVD or SALTP keywords in the SOLUTION section should be used to define the initial salt precipitated saturation.

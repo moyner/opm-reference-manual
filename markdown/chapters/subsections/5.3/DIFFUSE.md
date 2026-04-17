@@ -12,8 +12,9 @@ The DIFFUSE keyword activates OPM Flow’s Molecular Diffusion option based on f
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 
 
-| Note The option has been tested in combination with the CO2STORE keyword, but not for the general case at this point. |
-| --- |
+::: {.callout-note}
+The option has been tested in combination with the CO2STORE keyword, but not for the general case at this point.
+:::
 
 
 #### Example

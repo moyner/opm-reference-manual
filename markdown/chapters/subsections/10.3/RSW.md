@@ -25,8 +25,9 @@ This is the non-standard method to initialize the model via enumeration and is s
 See also the PBUB, PDEW, PRESSURE, RS, SGAS, SOIL and SWAT keywords to fully define the initial state of the model.
 
 
-| Note This is an OPM Flow specific keyword for the simulator’s Dissolved Gas in Water Model that is activated by declaring that dissolved gas in water is present in the run using the DISGASW keyword in the RUNSPEC section. Use the command line option --enable-opm-rst-file=true to output the [RSW](#REF_HEADING_KEYWORD_RSW_10_3) data to the RESTART file. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword for the simulator’s Dissolved Gas in Water Model that is activated by declaring that dissolved gas in water is present in the run using the DISGASW keyword in the RUNSPEC section. Use the command line option --enable-opm-rst-file=true to output the [RSW](#REF_HEADING_KEYWORD_RSW_10_3) data to the RESTART file.
+:::
 
 
 #### Example

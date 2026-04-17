@@ -72,5 +72,6 @@ EQUALS
 ```
 
 
-| Note It is good practice to always use the ENDBOX keyword to reset the input back to the full grid when all the modifications for a sub-grid have been completed. |
-| --- |
+::: {.callout-note}
+It is good practice to always use the ENDBOX keyword to reset the input back to the full grid when all the modifications for a sub-grid have been completed.
+:::

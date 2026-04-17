@@ -10,8 +10,9 @@
 The WSKPTAB keyword assigns the well polymer molecular water and polymer skin tables to water injection wells in OPM Flow's Polymer Molecular Weight Transport option, that uses the polymer molecular weight in calculating the polymer viscosity, as well as accounting for formation damage due to the water and polymer injection, by adjusting the wellbore skin pressure. This keyword should only be used if the POLYMER and POLYMW keywords in the RUNSPEC section are also activated. The keyword assigns the water SKPRWAT tables, that are defined via the SKPRWAT keyword in the PROPS section, that are used to calculable the wellbore skin pressure during water injection. As well as the polymer SKPRPOLY tables, that are defined via the SKPRPOLY keyword in the PROPS section, that are used to calculable the wellbore skin pressure during polymer injection.
 
 
-| Note This is an OPM Flow specific keyword that employs an alternative polymer flood model based on a Polymer Molecular Weight Transport equation, that is not available in the commercial simulator. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword that employs an alternative polymer flood model based on a Polymer Molecular Weight Transport equation, that is not available in the commercial simulator.
+:::
 
 
 | No. | Name | Description | Default |

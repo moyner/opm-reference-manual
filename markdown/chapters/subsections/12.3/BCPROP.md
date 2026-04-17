@@ -12,8 +12,9 @@ The [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keyword defines the type and propertie
 Together the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keywords define the boundary conditions for the model, and can be used to set boundary conditions for when external influx or efflux volumes are influencing the reservoir pressure and production history. For example, when the average reservoir pressure remains constant throughout the production period due to water influx, or gas migration from an external source.
 
 
-| Note This is an OPM Flow specific keyword and will therefore cause an error in the commercial simulator. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword and will therefore cause an error in the commercial simulator.
+:::
 
 
 | No. | Name | Description | Default |

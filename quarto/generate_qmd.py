@@ -87,14 +87,10 @@ def has_data_requirements(chapter_num: int) -> bool:
 
 def generate_chapter_qmd(chapter_num: int) -> str:
     """Generate the content of a chapter .qmd file."""
-    title = CHAPTER_TITLES[chapter_num]
-    include_base = "../markdown/chapters"
+    # Include paths are relative to the .qmd file location (quarto/chapters/)
+    include_base = "../../markdown/chapters"
 
     lines = [
-        "---",
-        f'title: "{title}"',
-        "---",
-        "",
         f"{{{{< include {include_base}/{chapter_num}.md >}}}}",
         "",
     ]
@@ -124,7 +120,8 @@ def generate_chapter_qmd(chapter_num: int) -> str:
 def generate_appendix_qmd(letter: str) -> str:
     """Generate the content of an appendix .qmd file."""
     title = APPENDIX_TITLES[letter]
-    include_path = f"../markdown/appendices/{letter}.md"
+    # Include paths are relative to the .qmd file location (quarto/appendices/)
+    include_path = f"../../markdown/appendices/{letter}.md"
 
     lines = [
         "---",

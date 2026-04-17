@@ -2,4 +2,4 @@
 title: "Keyword Summary"
 ---
 
-{{< include ../markdown/appendices/A.md >}}
+{{< include ../../markdown/appendices/A.md >}}

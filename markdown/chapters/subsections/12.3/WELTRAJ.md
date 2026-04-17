@@ -12,8 +12,9 @@ The WELTRAJ keyword defines a trajectory well together with the well trajectory 
 Although WELTRAJ and COMPTRAJ keywords are sufficient to define the wellbore path and connections to the grid, it is still necessary to defined the general well specification parameters using the WELSPECS keyword in the SCHEDULE section.  In this case, the wellhead location parameters, WELSPECS(I, J), should be defaulted with 1*.
 
 
-| Note This is an OPM Flow specific keyword and will therefore cause an error in the commercial simulator. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword and will therefore cause an error in the commercial simulator.
+:::
 
 
 | No. | Name | Description | Default |

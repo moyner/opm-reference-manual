@@ -27,8 +27,9 @@ KRG defines the scaling parameter at the maximum drainage gas relative permeabil
 For the two point scaling option and for the KRGR gas relative permeability array NOT present in the input deck the krg value for a grid block is scaled by:
 
 
-| ${k}_{\mathit{rg}} = {k}_{{\mathit{rg}}_{ \mathit{TABLE}}}\left(\frac{\mathit{KRG}}{{k}_{{\mathit{rg}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.61) |
-| --- | --- |
+$$
+{k}_{\mathit{rg}} = {k}_{{\mathit{rg}}_{ \mathit{TABLE}}}\left(\frac{\mathit{KRG}}{{k}_{{\mathit{rg}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)
+$$ {#eq-8-61}
 
 Where:
 

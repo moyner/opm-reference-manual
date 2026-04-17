@@ -12,8 +12,9 @@ The CNAMES keyword defines the names for each of the compositional components ac
 OPM Flow does not currently support the general compositional modeling formulation.
 
 
-| Note This keyword is only supported by OPM Flow when the two phase gas-water CO2 storage model has been activated using the CO2STORE keyword and either the GASWAT or the GAS and WATER keywords in the RUNSPEC section. Only the component names "H2O", "CO2" and "NACL" (water, CO2 and salt respectively) are recognized when the CNAMES keyword is used with the CO2STORE keyword; any other component names are ignored. |
-| --- |
+::: {.callout-note}
+This keyword is only supported by OPM Flow when the two phase gas-water CO2 storage model has been activated using the CO2STORE keyword and either the GASWAT or the GAS and WATER keywords in the RUNSPEC section. Only the component names "H2O", "CO2" and "NACL" (water, CO2 and salt respectively) are recognized when the CNAMES keyword is used with the CO2STORE keyword; any other component names are ignored.
+:::
 
 
 | No. | Name | Description | Default |

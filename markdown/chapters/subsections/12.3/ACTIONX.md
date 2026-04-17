@@ -89,8 +89,9 @@ Although most SCHEDULE keywords should work with the ACTIONX keyword, Table 12.8
 As mentioned previously, the UDQ keyword stipulates the variables and operations used to access the User Defined Quantities features in OPM Flow. UDQ variables can be constants, SUMMARY variables, as defined in the SUMMARY section, or a formula using various mathematical functions together with constants and SUMMARY variables.
 
 
-| Note Within an ACTIONX Definition Section any UDQ variables utilizing group and well variables, must have their associated groups and wells previously fully defined in the commercial simulator, otherwise an error will occur. For example, if a well’s GOR is being used as part of a UDQ definition, then the well must be fully characterized prior to declaring the UDQ definition. This restriction does not apply to OPM Flow; however, it should be considered if the same deck is to be run with both simulators. |
-| --- |
+::: {.callout-note}
+Within an ACTIONX Definition Section any UDQ variables utilizing group and well variables, must have their associated groups and wells previously fully defined in the commercial simulator, otherwise an error will occur. For example, if a well’s GOR is being used as part of a UDQ definition, then the well must be fully characterized prior to declaring the UDQ definition. This restriction does not apply to OPM Flow; however, it should be considered if the same deck is to be run with both simulators.
+:::
 
 
 User Defined Quantities can also be used as User Defined Arguments (“UDA”) in the SCHEDULE section with various group, well, and connection keywords. In this case, the UDA variables are used to replace numerical values on these keywords by UDA variables that have been defined by the UDQ keyword.  For example, if we wish to make the oil rate for certain wells to be a function of their water cut, then one can define the function using the UDQ keyword that results in a UDQ variable, WU_OPR say, and then use WU_OPR as a UDA variable on the WCONPROD keyword for the ORAT parameter.  See Table 12.76 for a list of keywords that can be used with UDA variables in the UDQ - Declare User Define Quantities (“UDQ”) keyword section.

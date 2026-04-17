@@ -34,42 +34,49 @@ See also the RVCONST and RVCONSTT keywords to define the constant Rv for dry gas
 The ideal gas law provides a relationship between the pressure, the temperature and the specific volume of an ideal gas (pure component). This relationship is modified by use of a compressibility factor, Z [Standing, M. B.:” Volumetric and Phase Behaviour of Oil Field Hydrocarbon Systems”, Renihold Publishing Corp., New York City (1952).], to account for deviations, from ideal, to the behavior of real gases.  The PVT relation for a real gas can be defined by:
 
 
-| $\mathit{PV} = \mathit{ZnRT}$ | (8.84) |
-| --- | --- |
+$$
+\mathit{PV} = \mathit{ZnRT}
+$$ {#eq-8-84}
 
 As the gas formation volume factor is used to relate the volume of gas, as measured at reservoir conditions, to the volume of gas as measured at standard conditions (60 oF and 14.7 psia, or 15 oC and 101.325 kPa). This gas property is then defined as the actual volume occupied by a certain amount of gas at a specified pressure and temperature, divided by the same amount of gas at standard conditions.  Thus, using the above equation one can obtain the gas volumes at reservoir and standard conditions, i.e.
 
 
-| ${V}_{\mathit{sc}} = \frac{{Z}_{\mathit{sc}}{\mathit{nRT}}_{\mathit{sc}}}{{P}_{\mathit{sc}}}$ | (8.85) |
-| --- | --- |
+$$
+{V}_{\mathit{sc}} = \frac{{Z}_{\mathit{sc}}{\mathit{nRT}}_{\mathit{sc}}}{{P}_{\mathit{sc}}}
+$$ {#eq-8-85}
 
 
-| ${V}_{i} = \frac{{Z}_{i}n{\mathit{RT}}_{i}}{{P}_{i}}$ | (8.86) |
-| --- | --- |
+$$
+{V}_{i} = \frac{{Z}_{i}n{\mathit{RT}}_{i}}{{P}_{i}}
+$$ {#eq-8-86}
 
 Thus the gas formation volume factor can be expressed as:
 
 
-| $E = \frac{{V}_{\mathit{sc}}}{{V}_{i}}$ | (8.87) |
-| --- | --- |
+$$
+E = \frac{{V}_{\mathit{sc}}}{{V}_{i}}
+$$ {#eq-8-87}
 
 And substituting equation (8.85) and (8.86) into (8.87) we obtain
 
 
-| $E = \left(\frac{{P}_{i}}{{P}_{\mathit{sc}}}\right) \left(\frac{{T}_{\mathit{sc}}}{{T}_{i}}\right) \left(\frac{1}{{Z}_{i}}\right)$ | (8.88) |
-| --- | --- |
+$$
+E = \left(\frac{{P}_{i}}{{P}_{\mathit{sc}}}\right) \left(\frac{{T}_{\mathit{sc}}}{{T}_{i}}\right) \left(\frac{1}{{Z}_{i}}\right)
+$$ {#eq-8-88}
 
 Incorporating standard pressure and temperature values gives in SI units:
 
 
-| $E = \left(\frac{{P}_{i}}{101.325}\right) \left(\frac{273.15 + 15}{{T}_{i}}\right) \left(\frac{1}{{Z}_{i}}\right) = 2.84 \left(\frac{{P}_{i}}{{Z}_{i}{T}_{i}}\right)$ | (8.89) |
-| --- | --- |
+$$
+E = \left(\frac{{P}_{i}}{101.325}\right) \left(\frac{273.15 + 15}{{T}_{i}}\right) \left(\frac{1}{{Z}_{i}}\right) = 2.84 \left(\frac{{P}_{i}}{{Z}_{i}{T}_{i}}\right)
+$$ {#eq-8-89}
 
 or in field units:
 
 
-| $E = \left(\frac{{P}_{i}}{14.7}\right) \left(\frac{460 + 60}{{T}_{i}}\right) \left(\frac{1}{{Z}_{i}}\right) = 35.37 \left(\frac{{P}_{i}}{{Z}_{i}{T}_{i}}\right)$ | (8.90) |
-| --- | --- |
+$$
+E = \left(\frac{{P}_{i}}{14.7}\right) \left(\frac{460 + 60}{{T}_{i}}\right) \left(\frac{1}{{Z}_{i}}\right) = 35.37 \left(\frac{{P}_{i}}{{Z}_{i}{T}_{i}}\right)
+$$ {#eq-8-90}
 
 
 Where,

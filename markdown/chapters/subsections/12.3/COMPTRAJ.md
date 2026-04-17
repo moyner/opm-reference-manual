@@ -10,8 +10,9 @@
 The COMPTRAJ keyword defines how a well that has been declared as a trajectory well, using the WELTRAJ keyword in the SCHEDULE section, is connected to the reservoir model by defining or modifying existing well perforation depths. The keyword can only be used for wells defined by the WELTRAJ keyword, and WELTRAJ defined wells must use the COMPTRAJ keyword to define the connections to the grid, that is one cannot use COMPDAT for these type of wells.
 
 
-| Note This is an OPM Flow specific keyword and will therefore cause an error in the commercial simulator. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword and will therefore cause an error in the commercial simulator.
+:::
 
 
 | No. | Name | Description | Default |
@@ -45,8 +46,9 @@ The COMPTRAJ keyword defines how a well that has been declared as a trajectory w
 Using the WELTRAJ and COMPTRAJ keywords to define wells and how they are connected to grid, offers several advantages compared to the conventional approach based on the (I, J, K) co-ordinates of the grid. The approach allows for the wells to be independent of the grid, which is particularly useful when running ensemble cases, as the well connections are no longer required to be re-calculated for each ensemble case. In addition, quality control of the model is improved by using consistent perforation data in both the static and dynamic models.
 
 
-| Note The term well connection is used to describe individual connections from the wellbore to the reservoir grid, as opposed to well completions. A well completion is used to describe a set of connections, for example, a well may consist of several completions with each completion consisting of multiple connections. For wells defined using the WELTRAJ and COMPTRAJ keywords, the WELTRAJ keyword defines the trajectory of the well within the model, and the COMPTRAJ defines the perforation intervals in the well.  A perforation interval will automatically generate various well connections to the grid, and in addition multiple perforation intervals may be grouped into a completion. |
-| --- |
+::: {.callout-note}
+The term well connection is used to describe individual connections from the wellbore to the reservoir grid, as opposed to well completions. A well completion is used to describe a set of connections, for example, a well may consist of several completions with each completion consisting of multiple connections. For wells defined using the WELTRAJ and COMPTRAJ keywords, the WELTRAJ keyword defines the trajectory of the well within the model, and the COMPTRAJ defines the perforation intervals in the well.  A perforation interval will automatically generate various well connections to the grid, and in addition multiple perforation intervals may be grouped into a completion.
+:::
 
 
 #### Example

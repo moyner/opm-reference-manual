@@ -42,8 +42,9 @@ This keyword defines the parameters used to initialize the model for when equili
 *Table 10.14: EQUIL Keyword Description*
 
 
-| Note A common method to initialize a model is by using the SWATINIT property array to set the initial water saturation for each cell in the model. This property is normally exported from a static model, where Saturation Height Functions (“SHF”) have been used to describe the water saturation profile with depth.  In the dynamic model capillary pressure functions are used to described the water profile versus depth. Note that if the SWATINIT array has been used to initialize the model then the fine grid block initialization via the EQLOPT3 variable, should not normally be used, and should be defaulted or set equal to zero; otherwise, the resulting water saturation will not strictly honor the SWATINIT array. |
-| --- |
+::: {.callout-note}
+A common method to initialize a model is by using the SWATINIT property array to set the initial water saturation for each cell in the model. This property is normally exported from a static model, where Saturation Height Functions (“SHF”) have been used to describe the water saturation profile with depth.  In the dynamic model capillary pressure functions are used to described the water profile versus depth. Note that if the SWATINIT array has been used to initialize the model then the fine grid block initialization via the EQLOPT3 variable, should not normally be used, and should be defaulted or set equal to zero; otherwise, the resulting water saturation will not strictly honor the SWATINIT array.
+:::
 
 
 See also the PRESSURE, SGAS, SOIL and SWAT keywords in the SOLUTION section to initialize the model using the non-standard formulation of entering the pressures and saturations for each grid cell.

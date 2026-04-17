@@ -10,8 +10,9 @@
 [PCFACT](#REF_HEADING_KEYWORD_PCFACT_8_3) defines the capillary pressure multiplication factor due to a change in porosity. Currently the keyword is used in conjunction with OPM Flow’s Salt Precipitation model, in which the pore space is reduced due to salt precipitating in the pore space, causing a reduction in porosity and an associated increase in capillary pressure.
 
 
-| Note This is an OPM Flow specific keyword for the simulator’s Salt Precipitation model that is activated by the BRINE and PRECSALT keywords and declaring that vaporized water is present in the run via the VAPWAT keyword. All three keywords are in the RUNSPEC section. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword for the simulator’s Salt Precipitation model that is activated by the BRINE and PRECSALT keywords and declaring that vaporized water is present in the run via the VAPWAT keyword. All three keywords are in the RUNSPEC section.
+:::
 
 
 | No. | Name | Description | Default |
@@ -29,14 +30,16 @@
 The porosity reduction is a function of the volume fraction of salt (${s}_{s}$) precipitated out of the vaporized water phase, that is:
 
 
-| $ϕ = (1 - {s}_{s}){ϕ}_{0}$ | (8.3.199.1) |
-| --- | --- |
+$$
+ϕ = (1 - {s}_{s}){ϕ}_{0}
+$$ {#eq-8-3-199-1}
 
 The capillary pressure factor data can be estimated from the permeability and porosity factors defined by the PERMFACT keyword in the PROPS section using the Leverett J-function, for example:
 
 
-| $\frac{{p}_{c}}{{p}_{c0}} = {\left(\frac{ϕ}{{ϕ}_{0}}\frac{{k}_{0}}{k}\right)}^{\frac{1}{2}}$ | (8.3.199.2) |
-| --- | --- |
+$$
+\frac{{p}_{c}}{{p}_{c0}} = {\left(\frac{ϕ}{{ϕ}_{0}}\frac{{k}_{0}}{k}\right)}^{\frac{1}{2}}
+$$ {#eq-8-3-199-2}
 
 Where:
 

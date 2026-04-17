@@ -1,153 +1,149 @@
----
-title: "EDIT Section"
----
+{{< include ../../markdown/chapters/7.md >}}
 
-{{< include ../markdown/chapters/7.md >}}
-
-{{< include ../markdown/chapters/sections/7/2.md >}}
+{{< include ../../markdown/chapters/sections/7/2.md >}}
 
 ## Keyword Definitions
 
-{{< include ../markdown/chapters/subsections/7.3/ADD.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/ADD.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/ADDREG.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/ADDREG.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/BOUNDARY.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/BOUNDARY.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/BOX.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/BOX.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/COLUMNS.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/COLUMNS.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/COPY.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/COPY.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/COPYREG.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/COPYREG.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/DEBUG.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/DEBUG.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/DEPTH.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/DEPTH.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/DIFFR.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/DIFFR.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/DIFFTHT.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/DIFFTHT.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/DIFFX.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/DIFFX.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/DIFFY.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/DIFFY.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/DIFFZ.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/DIFFZ.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/ECHO.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/ECHO.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/EDIT.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/EDIT.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/EDITNNC.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/EDITNNC.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/EDITNNCR.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/EDITNNCR.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/END.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/END.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/ENDBOX.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/ENDBOX.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/ENDFIN.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/ENDFIN.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/ENDINC.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/ENDINC.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/ENDSKIP.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/ENDSKIP.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/EQUALREG.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/EQUALREG.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/EQUALS.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/EQUALS.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/EXTRAPMS.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/EXTRAPMS.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/FILEUNIT.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/FILEUNIT.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/FORMFEED.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/FORMFEED.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/GETDATA.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/GETDATA.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/HMMULT.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/HMMULT.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/IMPORT.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/IMPORT.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/INCLUDE.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/INCLUDE.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/LGRCOPY.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/LGRCOPY.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MAXVALUE.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MAXVALUE.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MESSAGE.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MESSAGE.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MESSAGES.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MESSAGES.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MINVALUE.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MINVALUE.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTFLT.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTFLT.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTIPLY.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTIPLY.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTIREG.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTIREG.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTPV.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTPV.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTR-.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTR-.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTR.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTR.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTREGD.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTREGD.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTREGH.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTREGH.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTREGP.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTREGP.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTREGT.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTREGT.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTTHT-.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTTHT-.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTTHT.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTTHT.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTX-.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTX-.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTX.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTX.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTY-.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTY-.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTY.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTY.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTZ-.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTZ-.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/MULTZ.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/MULTZ.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/NOECHO.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/NOECHO.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/NOWARN.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/NOWARN.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/OPERATE.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/OPERATE.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/OPERATER.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/OPERATER.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/PORV.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/PORV.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/PYEND.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/PYEND.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/PYINPUT.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/PYINPUT.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/REFINE.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/REFINE.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/SKIP.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/SKIP.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/SKIP100.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/SKIP100.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/SKIP300.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/SKIP300.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/TRANR.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/TRANR.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/TRANTHT.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/TRANTHT.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/TRANX.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/TRANX.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/TRANY.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/TRANY.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/TRANZ.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/TRANZ.md >}}
 
-{{< include ../markdown/chapters/subsections/7.3/WARN.md >}}
+{{< include ../../markdown/chapters/subsections/7.3/WARN.md >}}

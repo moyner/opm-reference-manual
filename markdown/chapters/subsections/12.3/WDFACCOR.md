@@ -28,8 +28,9 @@ WDFACCOR keyword defines the parameters to calculate a gas well’s connection D
 The simulator evaluates the connection D-factors using the following expression based on Dake’s correlation:
 
 
-| $D = A{K}_{e}^{B}{ϕ}^{C}\frac{{K}_{e}}{h}\frac{1}{{r}_{w}}\frac{{γ}_{g}}{{μ}_{g}}$ | (12.3.260.1) |
-| --- | --- |
+$$
+D = A{K}_{e}^{B}{ϕ}^{C}\frac{{K}_{e}}{h}\frac{1}{{r}_{w}}\frac{{γ}_{g}}{{μ}_{g}}
+$$ {#eq-12-3-260-1}
 
 Where:
 

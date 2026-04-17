@@ -31,8 +31,9 @@ The keyword should only be used if end-point scaling is switched on using the EN
 Just like the relative permeability data capillary pressure data are measured on core plugs with varying quality and perhaps from different reservoirs. It is therefore necessary to determine averaged data, before employing the data in engineering calculations. This is commonly done by using the Leverett J-function [Leverett, M. C.; “Capillary Behaviour in Porous Solids”, Trans. AIME (1941) 142, 152-168.], which is defined as:
 
 
-| $J ({S}_{w}) = \frac{{P}_{c,\mathit{res}}({S}_{w}) \sqrt{\frac{k}{φ}}}{σ}$ | (6.4) |
-| --- | --- |
+$$
+J ({S}_{w}) = \frac{{P}_{c,\mathit{res}}({S}_{w}) \sqrt{\frac{k}{φ}}}{σ}
+$$ {#eq-6-4}
 
 Where:
 
@@ -52,22 +53,25 @@ k	=	permeability, (m2)
 Sometimes the equation is stated with the cos θ term included, that is:
 
 
-| $J ({S}_{w}) = \frac{{P}_{c,\mathit{res}}({S}_{w}) \sqrt{\frac{k}{φ}}}{σ cos Θ}$ | (6.5) |
-| --- | --- |
+$$
+J ({S}_{w}) = \frac{{P}_{c,\mathit{res}}({S}_{w}) \sqrt{\frac{k}{φ}}}{σ cos Θ}
+$$ {#eq-6-5}
 
 
 Since the above function is just a normalizing function, then units are not important, as long as when we de-normalize the average curve we use the same unit set. Secondly, if all the capillary pressure data has been converted to reservoir conditions, we actually ignore the denominator as it is a constant, and we can therefore just use:
 
 
-| $J ({S}_{w}) = {P}_{c,\mathit{res}}({S}_{w}) \sqrt{\frac{k}{φ}}$ | (6.6) |
-| --- | --- |
+$$
+J ({S}_{w}) = {P}_{c,\mathit{res}}({S}_{w}) \sqrt{\frac{k}{φ}}
+$$ {#eq-6-6}
 
 
 However, in the simulator it is necessary to use the formal definition as outlined in equation (6.4). In addition to the standard the equation the keyword allows for de-normalizing the curve to use alternative power functions instead of the standard 0.5 used in equation (6.4), that is:
 
 
-| $J ({S}_{w}) = \frac{{P}_{c,\mathit{res}}({S}_{w}) \left(\frac{{k}^{\mathrm{β}}}{{φ}^{\mathrm{α}}}\right)}{σ}$ | (6.7) |
-| --- | --- |
+$$
+J ({S}_{w}) = \frac{{P}_{c,\mathit{res}}({S}_{w}) \left(\frac{{k}^{\mathrm{β}}}{{φ}^{\mathrm{α}}}\right)}{σ}
+$$ {#eq-6-7}
 
 Where:
 
@@ -91,8 +95,9 @@ k	=	permeability, (m2)
 The JFUNC keyword allows the data entered as capillary pressure in the saturation tables, for example, by using the SGFN and SWFN keywords in the PROPS section to be treated as J-functions instead, and to de-normalize these curves for each active cell in the model using the options and values defined with the JFUNC keyword combined with a cells porosity and permeability values.
 
 
-| Note If either the JFUNC or JFUNCR keywords are used to activate J-Function scaling then the ENDSCALE keyword in the RUNSPEC section must also be present in the input deck, in order for the dimensionless J-function values entered on the SWFN, SGFN or the SWOF, SGOF, SLGOF keywords to be re-scaled to capillary pressure data. Note if the ENDSCALE keyword is absent, then like the commercial simulator,  J-Function scaling is not performed, and the values entered on the SWFN, SGFN or the SWOF, SGOF, SLGOF keywords are used as entered. |
-| --- |
+::: {.callout-note}
+If either the JFUNC or JFUNCR keywords are used to activate J-Function scaling then the ENDSCALE keyword in the RUNSPEC section must also be present in the input deck, in order for the dimensionless J-function values entered on the SWFN, SGFN or the SWOF, SGOF, SLGOF keywords to be re-scaled to capillary pressure data. Note if the ENDSCALE keyword is absent, then like the commercial simulator,  J-Function scaling is not performed, and the values entered on the SWFN, SGFN or the SWOF, SGOF, SLGOF keywords are used as entered.
+:::
 
 
 See also the JFUNCR keyword in the GRID section that performs similar calculations based on the J-Function parameters being declared by saturation table number.

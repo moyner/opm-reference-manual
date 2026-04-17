@@ -24,8 +24,9 @@ Note that the total number of FIP and FIPNUM regions must be defined by the NMFI
 The keyword behaves the same as the FIPNUM keyword except the full name of the keyword, including the concatenated characters, are used as the property region name. For example, if we wish define a fluid in-place region name called UNIT, then the keyword would be FIPUNIT.
 
 
-| Note The commercial simulator prints out a fluid in-place report if the FIP option on the RPTSCHED keyword is set equal to three, that is: FIP=3. This option is currently not available in OPM Flow. |
-| --- |
+::: {.callout-note}
+The commercial simulator prints out a fluid in-place report if the FIP option on the RPTSCHED keyword is set equal to three, that is: FIP=3. This option is currently not available in OPM Flow.
+:::
 
 The region property data for FIP arrays can be written to the SUMMARY file, and the RSM file if requested, similar to the FIPNUM regions, with some caveats:
 

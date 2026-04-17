@@ -10,8 +10,9 @@
 The WSF keyword defines the water relative permeability data versus water saturation tables for when only gas and water are present in the input deck.  This keyword should only be used if the gas and water phases are present in the run, and can therefore also be used with the CO2STORE and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) models. In addition, the keyword must be used in conjunction with the GSF keyword in the PROPS section, that defines the gas relative permeability and gas-water capillary pressure data versus gas saturation for gas-water systems.
 
 
-| Note WSF is a compositional keyword in the commercial compositional simulator, and will therefore cause an error in the commercial black-oil simulator. Currently, both the GSF and WSF keywords can only be used with the CO2STORE and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) models. |
-| --- |
+::: {.callout-note}
+WSF is a compositional keyword in the commercial compositional simulator, and will therefore cause an error in the commercial black-oil simulator. Currently, both the GSF and WSF keywords can only be used with the CO2STORE and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) models.
+:::
 
 
 | No. | Name | Description | Default |

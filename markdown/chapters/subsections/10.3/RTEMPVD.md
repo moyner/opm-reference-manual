@@ -29,8 +29,9 @@ The initial reservoir temperature should be defined when OPM Flow’s CO2 or H2 
 See also the RTEMP keyword in the PROPS section for an alternative way to define a uniform initial reservoir temperature.
 
 
-| Note The keyword is documented here in the SOLUTION section, the same as the commercial simulator, but it can also be used in the PROPS section by OPM Flow. |
-| --- |
+::: {.callout-note}
+The keyword is documented here in the SOLUTION section, the same as the commercial simulator, but it can also be used in the PROPS section by OPM Flow.
+:::
 
 
 #### Example

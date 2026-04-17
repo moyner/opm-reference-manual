@@ -2,4 +2,4 @@
 title: "Python Interface"
 ---
 
-{{< include ../markdown/appendices/D.md >}}
+{{< include ../../markdown/appendices/D.md >}}

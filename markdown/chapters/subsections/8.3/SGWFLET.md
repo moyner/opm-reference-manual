@@ -12,8 +12,9 @@ SWGFLET defines the relative permeability and capillary pressure parameters for 
 The keyword is used as a replacement for the SGWFN keyword for two-phase gas-water systems, and the LET series of keywords cannot be combined with the standard set of relative permeability keywords.
 
 
-| Note This is an OPM Flow specific keyword and will therefore cause an error in the commercial simulator. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword and will therefore cause an error in the commercial simulator.
+:::
 
 
 | No. | Name | Description | Default |
@@ -63,8 +64,9 @@ Note there a two versions of the LET functions, LET237 for two-phase flowing con
 The functions are dependent on the drainage and imbibition cycle of the wetting phase as well as drainage and inhibition cycle number, since a reservoir may undergo several flooding events. To account for this the system defines the flooding event using the three saturations: Sw, So, and Sg together with the state of the three saturations during the flooding event. The saturation state can be Increasing, Decreasing, or Constant, for a given flooding event cycle number (n). Thus, Sw(D), So(C), Sg(I), or DCI1, means the water phase is decreasing, the oil phase is constant and the gas phase is increasing for the primary or first cycle (n equals one). This is case for when gas is migrating into the reservoir rock and displacing the initial water contained with the reservoir.
 
 
-| Note All the LET parameters are dependent on the flooding event and flooding cycle, and thus are expected vary as such. To be clear, the values of SWCR, Lg, Lw etc. should be different for each flooding cycle. |
-| --- |
+::: {.callout-note}
+All the LET parameters are dependent on the flooding event and flooding cycle, and thus are expected vary as such. To be clear, the values of SWCR, Lg, Lw etc. should be different for each flooding cycle.
+:::
 
 
 See also the SGOFLET– Gas-Oil LET Relative Permeability Functions, and SWOFLET – Water-Oil LET Relative Permeability Functions keywords in this section, that may be used for three-phase systems.

@@ -35,8 +35,9 @@ This keyword is used to import additional fluid streams into the model from othe
 See also the GSATINJE and GRUPTREE keywords to define satellite injection rates and the group hierarchy, respectively. For non-satellite groups see the GCONINJE and GCONPROD keywords. All the aforementioned keywords are in the SCHEDULE section.
 
 
-| Note Once a group has been defined to be a satellite group, via the GSATINJE and GSATPROD keywords, then the equivalent modeled group keywords, GCONINJE and GCONPROD in the SCHEDULE section, cannot be used to set the operating conditions for satellite groups, only the GSATINJE and GSATPROD keywords may be used. |
-| --- |
+::: {.callout-note}
+Once a group has been defined to be a satellite group, via the GSATINJE and GSATPROD keywords, then the equivalent modeled group keywords, GCONINJE and GCONPROD in the SCHEDULE section, cannot be used to set the operating conditions for satellite groups, only the GSATINJE and GSATPROD keywords may be used.
+:::
 
 
 #### Example

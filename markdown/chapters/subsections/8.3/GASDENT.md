@@ -29,15 +29,17 @@ This keyword can only be used if OPM Flow’s thermal option has been activated 
 The gas density at a given pressure and temperature is calculated from its value at surface conditions and the gas expansion factor (the reciprocal of the gas formation volume factor) as shown in the following equation:
 
 
-| ${ρ}_{g}(p,T)={ρ}_{g}({p}_{s},{T}_{s}){b}_{g}(p,T)$ | (8.3.73.1) |
-| --- | --- |
+$$
+{ρ}_{g}(p,T)={ρ}_{g}({p}_{s},{T}_{s}){b}_{g}(p,T)
+$$ {#eq-8-3-73-1}
 
 
 Where the temperature dependence of the gas expansion factor relative to its value at the reference temperature is calculated as shown in the following equation:
 
 
-| ${b}_{g}(p,T)=\frac{{b}_{g}(p,{T}_{\mathit{ref}})}{1+{c}_{1}(T-{T}_{\mathit{ref}})+{c}_{2}{(T-{T}_{\mathit{ref}})}^{2}}$ | (8.3.73.2) |
-| --- | --- |
+$$
+{b}_{g}(p,T)=\frac{{b}_{g}(p,{T}_{\mathit{ref}})}{1+{c}_{1}(T-{T}_{\mathit{ref}})+{c}_{2}{(T-{T}_{\mathit{ref}})}^{2}}
+$$ {#eq-8-3-73-2}
 
 Where:
 

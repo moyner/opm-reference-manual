@@ -3,8 +3,9 @@ Some of the C++ code in OPM Flow has been “wrapped” in Python which means th
 The goal is for the Python code to be structured like a native Python API, but some design decisions are certainly influenced by the underlying C++ implementation, and to get a deeper understanding of what is possible and how to achieve specialized tasks one might need to consult the simulator’s C++ code.
 
 
-| Note Observe that the Python bindings described here are not very mature. The API might change in future releases. It is in general quite simple to expose new functionality to Python. |
-| --- |
+::: {.callout-note}
+Observe that the Python bindings described here are not very mature. The API might change in future releases. It is in general quite simple to expose new functionality to Python.
+:::
 
 
 The reading of the input deck in OPM Flow is a two step process, first a data structure called a “Deck” is created - the “Deck” is essentially a collection of keywords where all elements have been converted to the correct type and default values have been injected into the keyword. The “Deck” is a quite low level data structure, and the actual simulation is based on higher level data structures where the origin in “keywords” from a *.DATA file is no longer so apparent. The most notable high level objects are the “EclipseState” and “Schedule” classes. Large parts of this functionality is available from Python.
@@ -14,10 +15,10 @@ The initial building block in the parsing process is the “Parser” object whi
 
 
 ```
-   #!/usr/bin/env python3
-   from opm.io.parser import Parser
-   # Create a parser object which can be used to parse a string or input files
-   parser = Parser()
+#!/usr/bin/env python3
+from opm.io.parser import Parser
+# Create a parser object which can be used to parse a string or input files
+parser = Parser()
 ```
 
 
@@ -28,18 +29,18 @@ The “Deck” data structure is essentially a list of keywords which have been 
 
 
 ```
-   #!/usr/bin/env python3
-   from opm.io.parser import Parser
-   deck_string = """
-   WELSPECS
-      'W1'  'G1'   19    4      1*   WATER   1*   1*   SHUT  1*  1*    1*      /
-   /
-   COMPDAT
-     'W1'   11   3    1    5   OPEN   1*   1*   0.216   1*   0    1*   Z    1* /
-   /
-   """
-   parser = Parser()
-   deck = parser.parseString( deck_string )
+#!/usr/bin/env python3
+from opm.io.parser import Parser
+deck_string = """
+WELSPECS
+   'W1'  'G1'   19    4      1*   WATER   1*   1*   SHUT  1*  1*    1*      /
+/
+COMPDAT
+  'W1'   11   3    1    5   OPEN   1*   1*   0.216   1*   0    1*   Z    1* /
+/
+"""
+parser = Parser()
+deck = parser.parseString( deck_string )
 ```
 
 
@@ -47,14 +48,14 @@ After running this small script the deck variable will contain the two keywords 
 
 
 ```
-  #!/usr/bin/env python3
-   import os.path
-   import sys
-   from opm.io.parser import Parser
-   data_file = sys.argv[1]
-   print(f"Loading deck from {data_file}")
-   parser = Parser()
-   deck = parser.parseFile( data_file )
+#!/usr/bin/env python3
+ import os.path
+ import sys
+ from opm.io.parser import Parser
+ data_file = sys.argv[1]
+ print(f"Loading deck from {data_file}")
+ parser = Parser()
+ deck = parser.parseFile( data_file )
 
 
 ```
@@ -76,20 +77,20 @@ The important point is that when you access the elements in the Deck the values 
 
 
 ```
-   #!/usr/bin/env python3
-   from opm.io.parser import Parser
-   deck_string = """
-   WCONPROD
-    'W1'  'OPEN'   'ORAT'  86400 /
-   /
-   """
-   parser = Parser()
-   deck = parser.parseString( deck_string )
-   kw = deck[0]
-   record0 = kw[0]
-   orat = record0["ORAT"].value
-   well = record0["WELL"].value
-   print("==> The Oil rate in well:{} is {} m3/s".format(orat, well))
+#!/usr/bin/env python3
+from opm.io.parser import Parser
+deck_string = """
+WCONPROD
+ 'W1'  'OPEN'   'ORAT'  86400 /
+/
+"""
+parser = Parser()
+deck = parser.parseString( deck_string )
+kw = deck[0]
+record0 = kw[0]
+orat = record0["ORAT"].value
+well = record0["WELL"].value
+print("==> The Oil rate in well:{} is {} m3/s".format(orat, well))
 ```
 
 
@@ -97,7 +98,7 @@ When this script is run it will print:
 
 
 ```
-   ==> The Oil rate in well:W1 is 1.0 m3/s
+==> The Oil rate in well:W1 is 1.0 m3/s
 ```
 
 
@@ -124,15 +125,15 @@ After you have loaded a Deck you can query it with normal Python functions:
 
 
 ```
-   # Check if deck has keyword:
-   if "GRID" in deck:
-       print("Deck contains 'GRID' keyword")
-   else
-       print("Deck does not have 'GRID' keyword")
+# Check if deck has keyword:
+if "GRID" in deck:
+    print("Deck contains 'GRID' keyword")
+else
+    print("Deck does not have 'GRID' keyword")
 
-   # Loop through all the keywords:
-   for kw in deck:
-       print("kw: {}".format(kw.name)
+# Loop through all the keywords:
+for kw in deck:
+    print("kw: {}".format(kw.name)
 ```
 
 
@@ -140,14 +141,14 @@ To get a keyword from the deck you can access it with index, name, or a combinat
 
 
 ```
-   # Get keyword 10
-   kw10 = deck[10]
+# Get keyword 10
+kw10 = deck[10]
 
-   # Get the last DATES keyword
-   last_dates = deck["DATES"]
+# Get the last DATES keyword
+last_dates = deck["DATES"]
 
-   # Get the third WELSPECS keyword
-   welspecs3 = deck[("WELSPECS", 3)]
+# Get the third WELSPECS keyword
+welspecs3 = deck[("WELSPECS", 3)]
 ```
 
 
@@ -155,13 +156,13 @@ A deck keyword is composed of “records”, which are again composed of “item
 
 
 ```
-   kw = deck["WELSPECS"]
-   print(f"Keyword has {len(kw)} records")
-   for record in kw:
-       well = record["WELL"].get_str()
-       group = record[1].get_str()
+kw = deck["WELSPECS"]
+print(f"Keyword has {len(kw)} records")
+for record in kw:
+    well = record["WELL"].get_str()
+    group = record[1].get_str()
 
-       print(f"Well {num}: {well} is part of group{group})
+    print(f"Well {num}: {well} is part of group{group})
 
 ```
 
@@ -174,13 +175,13 @@ By default the Parser class will recognize all the keywords which are known to O
 
 
 ```
-    from opm.io.parser import Builtin
-    # Create a special parser which only recognizes the corner point grid 				# keywords
-    parser = Parser(add_default = False)
-    builtin = Builtin()
-    parser.add_keyword( builtin.COORD )
-    parser.add_keyword( builtin.ZCORN )
-    parser.add_keyword( builtin.ACTNUM )
+from opm.io.parser import Builtin
+# Create a special parser which only recognizes the corner point grid 				# keywords
+parser = Parser(add_default = False)
+builtin = Builtin()
+parser.add_keyword( builtin.COORD )
+parser.add_keyword( builtin.ZCORN )
+parser.add_keyword( builtin.ACTNUM )
 ```
 
 
@@ -188,16 +189,16 @@ The opposite is also possible, here is how one can add a special keyword GCLOSE 
 
 
 ```
-    # Create a fictitious home mode keyword GCLOSE:
-    GCLOSE = {"name" : "GCLOSE",
-              "sections" : ["SCHEDULE"],
-              "items" : [
-                 {"name" : "GROUP", "value_type" : "STRING"}
-               ]}
+# Create a fictitious home mode keyword GCLOSE:
+GCLOSE = {"name" : "GCLOSE",
+          "sections" : ["SCHEDULE"],
+          "items" : [
+             {"name" : "GROUP", "value_type" : "STRING"}
+           ]}
 
-    parser = Parser()
-    # Add the keyword description via a JSON string
-    parser.add_keyword(json.dumps(GCLOSE))
+parser = Parser()
+# Add the keyword description via a JSON string
+parser.add_keyword(json.dumps(GCLOSE))
 ```
 
 
@@ -205,10 +206,10 @@ By default the parser used in OPM Flow is quite strict - a tad stricter than the
 
 
 ```
-    parse_context = ParseContext([('PARSE_MISSING_INCLUDE',
-                                    opm.io.action.ignore)])
-    parser = Parser()
-    deck = parser.parseFile(self.norne_fname, parse_context)
+parse_context = ParseContext([('PARSE_MISSING_INCLUDE',
+                                opm.io.action.ignore)])
+parser = Parser()
+deck = parser.parseFile(self.norne_fname, parse_context)
 
 ```
 
@@ -217,57 +218,57 @@ The “Deck” is a quite raw structure and not very user friendly. Before actua
 
 
 ```
-  -- GRID Dimensions 10 x 10 x 3
-  DIMENS
-    10 10 3 /
-  --
-  -- Set A Global Value 0.10 For All Of The Grid
-  --
-  PORO
-     300*0.10 /
-  --
-  -- Set A Value Of 0.15 For All The Cells In The Middle Layer
-  --
-  BOX
-     1 10 1 10 2 2 /
-  PORO
-     100*0.15 /
-  ENDBOX
-  --
-  -- Scale The Bottom Layer By A Factor OF Two
-  --
-  MULTIPLY
-     PORO 2 1 10 1 10 3 3 /
-  /
+-- GRID Dimensions 10 x 10 x 3
+DIMENS
+  10 10 3 /
+--
+-- Set A Global Value 0.10 For All Of The Grid
+--
+PORO
+   300*0.10 /
+--
+-- Set A Value Of 0.15 For All The Cells In The Middle Layer
+--
+BOX
+   1 10 1 10 2 2 /
+PORO
+   100*0.15 /
+ENDBOX
+--
+-- Scale The Bottom Layer By A Factor OF Two
+--
+MULTIPLY
+   PORO 2 1 10 1 10 3 3 /
+/
 ```
 
 In the deck representation this will be a collection of five different keywords: {"PORO", "BOX", "PORO", "ENDBOX", "MULTIPLY"}, whereas in the “EclipseState” this will be one property "PORO" where all the modifications have been completed. In addition to the grid properties like "PERMX" and "PORO" the “EclipseState” object contains numerous other objects like the fault properties, PVT tables, and more.
 
 
 ```
-   #!/usr/bin/env python3
-   import syshe
-   form opm.io.parser import Parser
-   from opm.io.ecl_state import EclipseState
-   parser = Parser()
-   data_file = sys.argv[1]
-   deck = parser.parseFile( data_file )
-   es = EclipseState( deck )
-   #
-   # Get the FieldPropsManager from the EclipseState. The FieldPropsManager
-   # is then used to query and look up grid properties like PERMX and PORO.
-   # Observe that the properties you get from the FieldPropsManager only have
-   # the active cells only.
-   #
-   fp = es.field_props()
-   poro = fp["PORO"]
-   satnum = fp["SATNUM"]
-   #
-   # Get the input grid from the EclipseState:
-   #
-   grid = es.grid()
-   # Get a manager for all the tables
-   tables = es.tables()
+#!/usr/bin/env python3
+import syshe
+form opm.io.parser import Parser
+from opm.io.ecl_state import EclipseState
+parser = Parser()
+data_file = sys.argv[1]
+deck = parser.parseFile( data_file )
+es = EclipseState( deck )
+#
+# Get the FieldPropsManager from the EclipseState. The FieldPropsManager
+# is then used to query and look up grid properties like PERMX and PORO.
+# Observe that the properties you get from the FieldPropsManager only have
+# the active cells only.
+#
+fp = es.field_props()
+poro = fp["PORO"]
+satnum = fp["SATNUM"]
+#
+# Get the input grid from the EclipseState:
+#
+grid = es.grid()
+# Get a manager for all the tables
+tables = es.tables()
 ```
 
 
@@ -275,19 +276,19 @@ The Schedule object contains all the dynamic information in the model, in partic
 
 
 ```
-   #!/usr/bin/env python3
-   import sys
-   from opm.io.parser import Parser
-   from opm.io.ecl_state import EclipseState
-   parser = Parser()
-   data_file = sys.argv[1]
-   deck = parser.parseFile( data_file )
-   es = EclipseState( deck )
-   schedule = Schedule(deck, es)
-   print(f"Schedule file has {len(schedule)} report steps")'
-   print("List of wells")
-   for well in schedule.well_names():
-       print(well)
+#!/usr/bin/env python3
+import sys
+from opm.io.parser import Parser
+from opm.io.ecl_state import EclipseState
+parser = Parser()
+data_file = sys.argv[1]
+deck = parser.parseFile( data_file )
+es = EclipseState( deck )
+schedule = Schedule(deck, es)
+print(f"Schedule file has {len(schedule)} report steps")'
+print("List of wells")
+for well in schedule.well_names():
+    print(well)
 ```
 
 
@@ -301,11 +302,11 @@ Using the class “EclipseGrid” one can load a grid representation from a *.EG
 
 
 ```
-   #!/usr/bin/env python3
-   import sys
-   from opm.io.ecl import EGrid
-   grid_file = sys.argv[1]
-   grid = EGrid(grid_file)
+#!/usr/bin/env python3
+import sys
+from opm.io.ecl import EGrid
+grid_file = sys.argv[1]
+grid = EGrid(grid_file)
 ```
 
 
@@ -316,11 +317,11 @@ Using the class “ESMry” one can load the Extended SUMMARY file for a simulat
 
 
 ```
-   #!/usr/bin/env python3
-   import sys
-   from opm.io.ecl import ESMry
-   case = sys.argv[1]
-   summary = Esmry(case)
+#!/usr/bin/env python3
+import sys
+from opm.io.ecl import ESMry
+case = sys.argv[1]
+summary = Esmry(case)
 
 ```
 
@@ -329,12 +330,12 @@ Finally, one load the solution arrays stored in the *.RESTART file using the Ers
 
 
 ```
-   #!/usr/bin/env python
-   import sys
-   from opm.io.ecl import ERst
+#!/usr/bin/env python
+import sys
+from opm.io.ecl import ERst
 
-   rst_file = sys.argv[1]
-   rst = Erst(rst_file)
+rst_file = sys.argv[1]
+rst = Erst(rst_file)
 
 ```
 

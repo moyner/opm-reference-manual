@@ -3,7 +3,7 @@ The command line syntax for running OPM Flow is:
 
 ```
 
-			flow [OPTIONS] CASENAME
+flow [OPTIONS] CASENAME
 ```
 
 
@@ -12,7 +12,7 @@ and typing the following command from your terminal:
 
 ```
 
-			flow CASENAME
+flow CASENAME
 ```
 
 
@@ -23,7 +23,7 @@ OPM Flow accepts command line options to control various aspects of the simulato
 
 ```
 
-			flow --parameter-file=CASENAME.param
+flow --parameter-file=CASENAME.param
 ```
 
 
@@ -252,7 +252,7 @@ The command line syntax for running OPM Flow is:
 
 ```
 
-			flow [OPTIONS] CASENAME
+flow [OPTIONS] CASENAME
 ```
 
 
@@ -261,7 +261,7 @@ and typing the following command from your terminal:
 
 ```
 
-			flow CASENAME
+flow CASENAME
 ```
 
 
@@ -272,7 +272,7 @@ OPM Flow accepts command line options to control various aspects of the simulato
 
 ```
 
-			flow --parameter-file=CASENAME.param
+flow --parameter-file=CASENAME.param
 ```
 
 
@@ -484,7 +484,7 @@ to instruct OPM Flow to read the parameter file.
 
 ```
 
-			flow [OPTIONS] CASENAME
+flow [OPTIONS] CASENAME
 ```
 
 
@@ -493,7 +493,7 @@ and typing the following command from your terminal:
 
 ```
 
-			flow CASENAME
+flow CASENAME
 ```
 
 
@@ -504,7 +504,7 @@ OPM Flow accepts command line options to control various aspects of the simulato
 
 ```
 
-			flow --parameter-file=CASENAME.param
+flow --parameter-file=CASENAME.param
 ```
 
 
@@ -703,7 +703,7 @@ to instruct OPM Flow to read the parameter file.
 
 ```
 
-			flow [OPTIONS] CASENAME
+flow [OPTIONS] CASENAME
 ```
 
 
@@ -712,7 +712,7 @@ and typing the following command from your terminal:
 
 ```
 
-			flow CASENAME
+flow CASENAME
 ```
 
 
@@ -723,7 +723,7 @@ OPM Flow accepts command line options to control various aspects of the simulato
 
 ```
 
-			flow --parameter-file=CASENAME.param
+flow --parameter-file=CASENAME.param
 ```
 
 

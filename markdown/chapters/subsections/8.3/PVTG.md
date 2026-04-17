@@ -29,8 +29,9 @@ PVTG defines the gas PVT properties for wet gas [Natural gas that contains signi
 Note that provided the first table has been entered, subsequent tables may be defaulted, in this case the prior table is copied to the current table. See the second example for an illustration on how to use this feature.
 
 
-| Note If the VAPWAT keyword in the RUNSPEC section is also present in the input deck, then the PVTG keyword in the PROPS section should be used to define the gas properties as function of pressure and RV, assuming water-saturated gas. Also, in this case, the PVTGW keyword, also in the PROPS section, should also be in the input deck. In this case, PVTGW defines the gas properties as function of pressure and RVW, assuming oil-saturated gas. |
-| --- |
+::: {.callout-note}
+If the VAPWAT keyword in the RUNSPEC section is also present in the input deck, then the PVTG keyword in the PROPS section should be used to define the gas properties as function of pressure and RV, assuming water-saturated gas. Also, in this case, the PVTGW keyword, also in the PROPS section, should also be in the input deck. In this case, PVTGW defines the gas properties as function of pressure and RVW, assuming oil-saturated gas.
+:::
 
 
 #### Example

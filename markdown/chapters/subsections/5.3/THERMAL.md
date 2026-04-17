@@ -70,14 +70,16 @@ Table 5.46: OPM Flow’s THERMAL Option Associated Keywords
 In thermal runs a producing well’s bottom-hole temperature is calculated based on a weighted average of the temperature in the grid cell connections open to flow in the producing well, that is the reported bottom-hole temperature, TBHT, is calculated as:
 
 
-| ${T}_{\mathit{BHT}} = \frac{{\sum }_{i=1}^{M}{W}_{i}{T}_{i}}{{\sum }_{i=1}^{M}{W}_{i}}$ | (5.1) |
-| --- | --- |
+$$
+{T}_{\mathit{BHT}} = \frac{{\sum }_{i=1}^{M}{W}_{i}{T}_{i}}{{\sum }_{i=1}^{M}{W}_{i}}
+$$ {#eq-5-1}
 
 with
 
 
-| ${W}_{i} = {\sum }_{p}^{N}\left({{ρ}^{r}}_{\mathit{pi}}\right) \left({{q}^{r}}_{\mathit{pi}}\right) {c}_{p}$ | (5.2) |
-| --- | --- |
+$$
+{W}_{i} = {\sum }_{p}^{N}\left({{ρ}^{r}}_{\mathit{pi}}\right) \left({{q}^{r}}_{\mathit{pi}}\right) {c}_{p}
+$$ {#eq-5-2}
 
 The term $\left({{ρ}^{r}}_{\mathit{pi}}\right) \left({{q}^{r}}_{\mathit{pi}}\right) {c}_{p}$is the energy rate density (J/(K s)) of phase p,
 
@@ -107,28 +109,32 @@ $c$	=	specific heat capacity (J/(K kg))
 The current implementation makes use of the specific internal energy:
 
 
-| ${e}_{\mathit{pi}} = {c}_{p} ⋅ {T}_{i}$ | (5.3) |
-| --- | --- |
+$$
+{e}_{\mathit{pi}} = {c}_{p} ⋅ {T}_{i}
+$$ {#eq-5-3}
 
 derived from the specific enthalpy, hpi
 
 
-| ${e}_{\mathit{pi}} = {h}_{\mathit{pi}} - \frac{{P}_{\mathit{pi}}}{{{ρ}^{r}}_{\mathit{pi}}}$ | (5.4) |
-| --- | --- |
+$$
+{e}_{\mathit{pi}} = {h}_{\mathit{pi}} - \frac{{P}_{\mathit{pi}}}{{{ρ}^{r}}_{\mathit{pi}}}
+$$ {#eq-5-4}
 
 where ${P}_{\mathit{pi}}$ is connection grid block pressure of phase p.
 
 The phase rates at surface conditions$\left({{q}^{s}}_{pi}\right)$are converted to reservoir in situ rates$\left({{q}^{r}}_{pi}\right)$using the phase formation volume factor, Bpi, via:
 
 
-| ${{q}^{r}}_{\mathit{pi}} = \frac{{{q}^{s}}_{\mathit{pi}} }{{{B}^{-1}}_{\mathit{pi}}}$ | (5.5) |
-| --- | --- |
+$$
+{{q}^{r}}_{\mathit{pi}} = \frac{{{q}^{s}}_{\mathit{pi}} }{{{B}^{-1}}_{\mathit{pi}}}
+$$ {#eq-5-5}
 
 And thus equation (5.2) can be simplified to:
 
 
-| ${W}_{i} = {\sum }_{p}^{N}\left({{ρ}^{r}}_{\mathit{pi}}\right) \left(\frac{{{q}^{s}}_{\mathit{pi}} {e}_{\mathit{pi}}}{{{B}^{-1}}_{\mathit{pi}} ⋅ {T}_{i}}\right)$ | (5.6) |
-| --- | --- |
+$$
+{W}_{i} = {\sum }_{p}^{N}\left({{ρ}^{r}}_{\mathit{pi}}\right) \left(\frac{{{q}^{s}}_{\mathit{pi}} {e}_{\mathit{pi}}}{{{B}^{-1}}_{\mathit{pi}} ⋅ {T}_{i}}\right)
+$$ {#eq-5-6}
 
 
 #### Example

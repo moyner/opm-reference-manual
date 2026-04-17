@@ -21,8 +21,9 @@ The PPCWMAX keyword defines the maximum capillary pressure allowed when scaling 
 *Table 8.111: PPCWMAX Keyword Description*
 
 
-| Note Using this keyword to limit the re-scaled grid block capillary pressure values will effect the fluids in-place when the simulator has to re-calculate values due to the capillary pressure limit being exceeded. In addition, the high grid block capillary pressures may be indicative of an inconsistency between the tabular SATNUM capillary pressure values and the provided SWATINIT array water saturations. This inconsistency may be a result of the SWATINIT array being derived using a saturation height function, as is customary in static modeling software, and the numerical models tabulated capillary pressure. Rather than resetting the maximum calculated capillary pressure using the PPCWMAX keyword,  it may be more appropriate to investigate the reason for the high capillary pressures values first, prior to applying the keyword. |
-| --- |
+::: {.callout-note}
+Using this keyword to limit the re-scaled grid block capillary pressure values will effect the fluids in-place when the simulator has to re-calculate values due to the capillary pressure limit being exceeded. In addition, the high grid block capillary pressures may be indicative of an inconsistency between the tabular SATNUM capillary pressure values and the provided SWATINIT array water saturations. This inconsistency may be a result of the SWATINIT array being derived using a saturation height function, as is customary in static modeling software, and the numerical models tabulated capillary pressure. Rather than resetting the maximum calculated capillary pressure using the PPCWMAX keyword,  it may be more appropriate to investigate the reason for the high capillary pressures values first, prior to applying the keyword.
+:::
 
 
 #### Example

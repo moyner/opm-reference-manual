@@ -36,5 +36,6 @@ And the next example shows how to commented out the NOSIM activation keyword so 
 ```
 
 
-| Note Simulation input decks are complex and are therefore prone to typing errors, thus before submitting a run that will take over 15 minutes or so, it is a good idea to run the model with the NOSIM option. If no errors are found then the NOSIM keyword should be commented out by placing “--” before the keyword, and then re-running the model. Alternatively, one could use OPMRUN to run all the jobs in the queue in NOSIM mode and have the software re-run jobs in simulation mode if there are no errors. |
-| --- |
+::: {.callout-note}
+Simulation input decks are complex and are therefore prone to typing errors, thus before submitting a run that will take over 15 minutes or so, it is a good idea to run the model with the NOSIM option. If no errors are found then the NOSIM keyword should be commented out by placing “--” before the keyword, and then re-running the model. Alternatively, one could use OPMRUN to run all the jobs in the queue in NOSIM mode and have the software re-run jobs in simulation mode if there are no errors.
+:::

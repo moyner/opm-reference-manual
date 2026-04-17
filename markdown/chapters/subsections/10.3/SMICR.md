@@ -10,8 +10,9 @@
 The SMICR keyword defines the initial equilibration microbial concentration values for all grid cells in the model. The keyword should only be used if either the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) or MICP model has been activated in the RUNSPEC section.
 
 
-| Note This is an OPM Flow specific keyword. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword.
+:::
 
 
 | No. | Name | Description | Default |

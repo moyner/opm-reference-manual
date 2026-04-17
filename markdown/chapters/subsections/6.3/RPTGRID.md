@@ -24,8 +24,9 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 *Table 6.116: RPTGRID Keyword Description*
 
 
-| Note This keyword has the potential to produce very large print files that some text editors may have difficulty loading, coupled with the fact that reviewing the data in this format is very cumbersome. A more efficient solution is to load the *.INIT file into OPM ResInsight to view the data graphically, this also has the benefit of being able to filter the grid based on I, J, K ranges and grid properties. |
-| --- |
+::: {.callout-note}
+This keyword has the potential to produce very large print files that some text editors may have difficulty loading, coupled with the fact that reviewing the data in this format is very cumbersome. A more efficient solution is to load the *.INIT file into OPM ResInsight to view the data graphically, this also has the benefit of being able to filter the grid based on I, J, K ranges and grid properties.
+:::
 
 
 #### Examples

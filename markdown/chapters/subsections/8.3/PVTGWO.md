@@ -12,8 +12,9 @@ PVTGWO defines the gas PVT properties for wet gas [Natural gas that contains sig
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
 
-| Note This is an OPM Flow specific keyword for the simulator’s Water Vaporization Model that is activated by declaring that vaporized water is present in the run. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow specific keyword for the simulator’s Water Vaporization Model that is activated by declaring that vaporized water is present in the run.
+:::
 
 
 | No. | Name | Description | Default |  |

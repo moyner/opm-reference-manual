@@ -43,8 +43,9 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 Note this keyword should only be used in equilibration and enumerated initialize runs, that is it should be omitted from RESTART runs.
 
 
-| Note If the model is unstable then this may be due to an aquifer not being in equilibrium with the connecting reservoir blocks, for example the aquifer is connected to only hydrocarbon reservoir cells. Try commenting out the aquifer and see if this resolves the instabilities. |
-| --- |
+::: {.callout-note}
+If the model is unstable then this may be due to an aquifer not being in equilibrium with the connecting reservoir blocks, for example the aquifer is connected to only hydrocarbon reservoir cells. Try commenting out the aquifer and see if this resolves the instabilities.
+:::
 
 
 #### Example

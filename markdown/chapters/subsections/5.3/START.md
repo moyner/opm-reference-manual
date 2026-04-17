@@ -35,5 +35,6 @@ START
 The above example sets the start date for the run to be January 1, 2014.
 
 
-| Note Whenever possible it is a good idea to always set the start date to be at the beginning of the year as per the example.  As like most simulators, OPM Flow reports are always stated at the number of days from the start date (and sometimes at a given date). If the start date is at the beginning of the year, then calculating the actual date is relatively straight forward and simple. |
-| --- |
+::: {.callout-note}
+Whenever possible it is a good idea to always set the start date to be at the beginning of the year as per the example.  As like most simulators, OPM Flow reports are always stated at the number of days from the start date (and sometimes at a given date). If the start date is at the beginning of the year, then calculating the actual date is relatively straight forward and simple.
+:::

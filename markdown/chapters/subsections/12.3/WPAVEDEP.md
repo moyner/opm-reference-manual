@@ -24,8 +24,9 @@ The WPAVEDEP keyword defines the reference depth to be used to calculate and rep
 See also the WELSPECS keyword that defines a well, the COMPDAT keyword to define a well’s connections, and the WPAVE for defining how the average bottom-hole pressure should be calculated. All the aforementioned keywords are described in the SCHEDULE section.
 
 
-| Note The keyword is normally used to reset a well’s bottom-hole pressure depth to match the pressure gauge depth for when observed pressure is available, for example when conducting a history match for a well test, or when attempting to match static bottom-hole surveys conducted on a well. |
-| --- |
+::: {.callout-note}
+The keyword is normally used to reset a well’s bottom-hole pressure depth to match the pressure gauge depth for when observed pressure is available, for example when conducting a history match for a well test, or when attempting to match static bottom-hole surveys conducted on a well.
+:::
 
 
 #### Example

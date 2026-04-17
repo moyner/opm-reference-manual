@@ -100,5 +100,6 @@ VFPINJ
 The example shows the first two and the last two records of the fourth kind, as the data is too voluminous to be included.
 
 
-| Note The VFPTAB variable defines the table number of the VFPINJ data set; if more then one VFPINJ keyword is entered with the same VFPTAB number then the VFPINJ data set will be overwritten by the last VFPINJ keyword with the same VFPTAB number. The same comment is also applicable to the VFPPROD keyword. |
-| --- |
+::: {.callout-note}
+The VFPTAB variable defines the table number of the VFPINJ data set; if more then one VFPINJ keyword is entered with the same VFPTAB number then the VFPINJ data set will be overwritten by the last VFPINJ keyword with the same VFPTAB number. The same comment is also applicable to the VFPPROD keyword.
+:::

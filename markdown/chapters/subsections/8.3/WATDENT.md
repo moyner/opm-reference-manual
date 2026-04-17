@@ -29,15 +29,17 @@ This keyword can only be used if OPM Flow’s thermal option has been activated 
 The water density at a given pressure and temperature is calculated from its value at surface conditions and the water shrinkage factor (the reciprocal of the water formation volume factor) as shown in the following equation:
 
 
-| ${ρ}_{w}(p,T)={ρ}_{w}({p}_{s},{T}_{s}){b}_{w}(p,T)$ | (8.3.366.1) |
-| --- | --- |
+$$
+{ρ}_{w}(p,T)={ρ}_{w}({p}_{s},{T}_{s}){b}_{w}(p,T)
+$$ {#eq-8-3-366-1}
 
 
 Where the temperature dependence of the water shrinkage factor relative to its value at the reference temperature is calculated as shown in the following equation:
 
 
-| ${b}_{w}(p,T)=\frac{{b}_{w}(p,{T}_{\mathit{ref}})}{1+{c}_{1}(T-{T}_{\mathit{ref}})+{c}_{2}{(T-{T}_{\mathit{ref}})}^{2}}$ | (8.3.366.2) |
-| --- | --- |
+$$
+{b}_{w}(p,T)=\frac{{b}_{w}(p,{T}_{\mathit{ref}})}{1+{c}_{1}(T-{T}_{\mathit{ref}})+{c}_{2}{(T-{T}_{\mathit{ref}})}^{2}}
+$$ {#eq-8-3-366-2}
 
 Where:
 

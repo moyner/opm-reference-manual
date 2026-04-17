@@ -23,8 +23,9 @@ KRO defines the scaling parameter for the drainage oil relative permeability val
 For the two point scaling option and for the KRORW or KRORG oil relative permeability arrays NOT being present in the input deck the kro value for a grid block is scaled by:
 
 
-| ${k}_{\mathit{ro}} = {k}_{{\mathit{ro}}_{ \mathit{TABLE}}}\left(\frac{\mathit{KRO}}{{k}_{{\mathit{ro}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.62) |
-| --- | --- |
+$$
+{k}_{\mathit{ro}} = {k}_{{\mathit{ro}}_{ \mathit{TABLE}}}\left(\frac{\mathit{KRO}}{{k}_{{\mathit{ro}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)
+$$ {#eq-8-62}
 
 Where:
 

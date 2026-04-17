@@ -29,19 +29,22 @@ In addition to defining gas consumption, the keyword can also be used to define 
 If the group is acting under Group Gas Sales control via the GCONSALE keyword in the SCHEDULE section, then the sales gas is calculated by:
 
 
-| $\begin{matrix}\text{Gas Sales Rate} = \text{Total Group Gas Production Rate} \\  - \text{Group Gas Injection Rate} \\  + \text{Total Group Gas Import Rate} \\  - \text{Total Group Gas Consumption}\end{matrix}$ | (12.24) |
-| --- | --- |
+$$
+\begin{matrix}\text{Gas Sales Rate} = \text{Total Group Gas Production Rate} \\  - \text{Group Gas Injection Rate} \\  + \text{Total Group Gas Import Rate} \\  - \text{Total Group Gas Consumption}\end{matrix}
+$$ {#eq-12-24}
 
 
 If the group is acting under Group Gas Re-Injection control via the GCONINJE keyword in the SCHEDULE section, then the group gas injection rate calculated by:
 
 
-| $\begin{matrix}\text{Group Gas Injection Rate} = \text{Group Gas Injection Rate} \times  \text{Group Re-Injection Fraction} \\  + \text{Total Group Gas Import Rate} \\  - \text{Total Group Gas Consumption}\end{matrix}$ | (12.25) |
-| --- | --- |
+$$
+\begin{matrix}\text{Group Gas Injection Rate} = \text{Group Gas Injection Rate} \times  \text{Group Re-Injection Fraction} \\  + \text{Total Group Gas Import Rate} \\  - \text{Total Group Gas Consumption}\end{matrix}
+$$ {#eq-12-25}
 
 
-| Note In oil fields with no gas compression typical values of fuel gas range from three to five percent. |
-| --- |
+::: {.callout-note}
+In oil fields with no gas compression typical values of fuel gas range from three to five percent.
+:::
 
 
 #### Example

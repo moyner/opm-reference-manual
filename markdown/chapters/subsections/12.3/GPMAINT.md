@@ -33,8 +33,9 @@ The GPMAINT keyword defines the groups under pressure maintenance control, the a
 The GPMAINT keyword utilizes control theory [John Doyle, Bruce Francis, Allen Tannenbaum, Feedback Control Theory, Macmillan Publishing Co., 1990.],  [Karl J. Åström; Richard M. Murray (2008). Feedback Systems: An Introduction for Scientists and Engineers. Princeton University Press. ISBN 978-0-691-13576-2.],  [Andrei, Neculai (2005)., Modern Control Theory – A Historical Perspective, Research Institute for Informatics,  Center for Advanced Modeling and Optimization,8-10, Averescu Avenue, Bucharest 1, Romania.] and  [Sontag, Eduardo (1998). Mathematical Control Theory: Deterministic Finite Dimensional Systems. Second Edition,  Springer. ISBN 978-0-387-98489-6.] to calculate the required injection and production rates to ensure some stability in the behavior of the average hydrocarbon pore volume reservoir pressure for a given region and the injection rates over time.  For example, if the group’s flow control (GRPCNTL) is set to one of the in situ reservoir volume injection rates (GINJ, OINJ or WINJ), say Q, then the group’s flow injection rates for each time step is calculated by:
 
 
-| $Q = {Q}_{i} + \mathrm{α} \left(\left({P}_{\mathit{TARGET}} - {P}_{i-1}\right) + \frac{{\sum }_{i=1}^{i-1}\left({P}_{\mathit{TARGET}} - {P}_{i-1}\right)\times \mathrm{Δ}{t}_{i}}{\mathrm{β}}\right)$ | (12.26) |
-| --- | --- |
+$$
+Q = {Q}_{i} + \mathrm{α} \left(\left({P}_{\mathit{TARGET}} - {P}_{i-1}\right) + \frac{{\sum }_{i=1}^{i-1}\left({P}_{\mathit{TARGET}} - {P}_{i-1}\right)\times \mathrm{Δ}{t}_{i}}{\mathrm{β}}\right)
+$$ {#eq-12-26}
 
 Where:
 

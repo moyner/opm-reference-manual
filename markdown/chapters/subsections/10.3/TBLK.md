@@ -24,8 +24,9 @@ TBLK keyword defines the initial tracer concentration for all or selected cells 
 See also the TRACERS keyword in the RUNSPEC section to declared the maximum number of tracers for each phase, the TRACER keyword in the PROPS section to define the tracer, and the WTRACER keyword in the SCHEDULE section that defines the wells injecting the tracer.
 
 
-| Note Currently, one cannot initialize tracers using the EQUALS keyword. Instead use the array format, that is the keyword followed by the required number of values, or the TVDP keyword in the SOLUTION section to set the initial tracer concentrations as a function of depth. |
-| --- |
+::: {.callout-note}
+Currently, one cannot initialize tracers using the EQUALS keyword. Instead use the array format, that is the keyword followed by the required number of values, or the TVDP keyword in the SOLUTION section to set the initial tracer concentrations as a function of depth.
+:::
 
 
 #### Example

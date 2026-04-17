@@ -23,8 +23,9 @@ IPCG defines the maximum imbibition gas-oil capillary pressure values for all th
 The capillary pressure for a grid block is scaled by:
 
 
-| ${P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{IPCG}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.59) |
-| --- | --- |
+$$
+{P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{IPCG}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)
+$$ {#eq-8-59}
 
 Where:
 

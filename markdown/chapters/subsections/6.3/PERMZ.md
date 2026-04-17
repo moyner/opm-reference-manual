@@ -20,8 +20,9 @@ PERMZ defines the permeability in the Z direction for all the cells in the model
 *Table 6.107: PERMZ Keyword Description*
 
 
-| Note Although PERMX and PERMY are commonly set to be equal, PERMZ is typically not equal to either PERMX or PERMY. Normally PERMZ is set as a fraction of PERMX with typical values ranging from 0.1 to 0.5 times PERMX. |
-| --- |
+::: {.callout-note}
+Although PERMX and PERMY are commonly set to be equal, PERMZ is typically not equal to either PERMX or PERMY. Normally PERMZ is set as a fraction of PERMX with typical values ranging from 0.1 to 0.5 times PERMX.
+:::
 
 
 See also the PERMX and PERMY keywords to fully define the permeability for the model.

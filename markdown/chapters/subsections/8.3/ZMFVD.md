@@ -10,8 +10,9 @@
 The ZMFVD keyword defines the compositional component mole fractions, for each component, as a function of depth, as such the keyword should have the same number of component columnar vectors as that declared via the COMPS keyword in the RUNSPEC section, and the NCOMPS keyword in the PROPS section. The keyword should only be used if the CO2STORE and GASWAT keywords in the RUNSPEC section have also be activated for the gas-water two component model.
 
 
-| Note This is an OPM Flow keyword used with OPM Flow’s CO2STORE and GASWAT keywords in the RUNSPEC section, and should not be confused with the more general version of the ZMFVD keyword used in the commercial compositional simulator. |
-| --- |
+::: {.callout-note}
+This is an OPM Flow keyword used with OPM Flow’s CO2STORE and GASWAT keywords in the RUNSPEC section, and should not be confused with the more general version of the ZMFVD keyword used in the commercial compositional simulator.
+:::
 
 
 | No. | Name | Description | Default |
