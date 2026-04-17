@@ -1,13 +1,13 @@
 ### MULTREGT – Multiply Transmissibilities Between Regions
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [MULTREGT](#__RefHeading___Toc296621_1576177388) keyword multiplies the transmissibility between two regions by a constant. The region number array can be [FLUXNUM](#__RefHeading___Toc45781_719036256), [MULTNUM](#__RefHeading___Toc61329_2752266063) or [OPERNUM](#__RefHeading___Toc67857_718313858) and these arrays must be defined and be available before the [MULTREGT](#__RefHeading___Toc296621_1576177388) keyword is read by the simulator. The constant should be a real number.
+The MULTREGT keyword multiplies the transmissibility between two regions by a constant. The region number array can be FLUXNUM, MULTNUM or OPERNUM and these arrays must be defined and be available before the MULTREGT keyword is read by the simulator. The constant should be a real number.
 
 
 | No. | Name | Description | Default |
@@ -16,14 +16,14 @@ The [MULTREGT](#__RefHeading___Toc296621_1576177388) keyword multiplies the tran
 | 2 | REGION2 | A positive integer value that defines the to REGION number for which the CONSTANT in (3) should be applied. | None |
 | 3 | CONSTANT | A real positive value to multiply the transmissibility between REGION1 and REGION2. | 1 |
 | 4 | DIR | A character string that defines the direction to apply the transmissibility multiplier between the two regions, should be set to one of the following X, Y, Z, XY, XZ, YZ, or XYZ. | XYZ |
-| 5 | TYPE | A character string that defines the type of connections the transmissibility multiplier should be applied to, should be one of the following: | [ALL](#__RefHeading___Toc4420_421927891) |
+| 5 | TYPE | A character string that defines the type of connections the transmissibility multiplier should be applied to, should be one of the following: | ALL |
 | 6 | REGION ARRAY | A single character that defines the REGION ARRAY that is used to specify the regions identified by REGION1 and REGION2.  REGION ARRAY can have the following values: | M |
 | Notes: |  |  |  |
 
 *Table 6.79: MULTREGT Keyword Description*
 
 
-| Note Note if the [MULTREGT](#__RefHeading___Toc296621_1576177388) keyword is used in the [EDIT](#__RefHeading___Toc40641_784232322) section, OPM Flow will always apply the changes irrespective, of if the [TRANX](#__RefHeading___Toc93085_718313858), [TRANY](#__RefHeading___Toc93087_718313858) and [TRANZ](#__RefHeading___Toc93089_718313858) transmissibility arrays have been entered or not in the [EDIT](#__RefHeading___Toc40641_784232322) section. This behavior is different to the commercial simulator that only applies the keyword if the transmissibility arrays have been entered in the [EDIT](#__RefHeading___Toc40641_784232322) section. |
+| Note Note if the MULTREGT keyword is used in the EDIT section, OPM Flow will always apply the changes irrespective, of if the TRANX, TRANY and TRANZ transmissibility arrays have been entered or not in the EDIT section. This behavior is different to the commercial simulator that only applies the keyword if the transmissibility arrays have been entered in the EDIT section. |
 | --- |
 
 
@@ -42,4 +42,4 @@ MULTREGT
 
 ```
 
-The above example isolates all regions from one another by setting the transmissibility for the [MULTNUM](#__RefHeading___Toc61329_2752266063) regions to zero in all directions and for all connections types.
+The above example isolates all regions from one another by setting the transmissibility for the MULTNUM regions to zero in all directions and for all connections types.

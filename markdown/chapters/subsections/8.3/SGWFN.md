@@ -1,23 +1,23 @@
 ### SGWFN – Gas-Water Saturation Tables (Format Type 2)
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [SGWFN](#__RefHeading___Toc106872_335817223) keyword defines the gas and water relative permeability and gas-water capillary pressure data versus gas saturation tables for when gas and water are present in the input deck.  This keyword should only be used if gas and water are present in the run.
+The SGWFN keyword defines the gas and water relative permeability and gas-water capillary pressure data versus gas saturation tables for when gas and water are present in the input deck.  This keyword should only be used if gas and water are present in the run.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [SGAS](#__RefHeading___Toc137369_1317547213) | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating at one, that defines the gas  saturation. | None |
+| 1 | SGAS | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating at one, that defines the gas  saturation. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 2 | [KRG](#__RefHeading___Toc97393_621662414) | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the gas relative permeability. Note that the first entry in the column must be zero. | None |
+| 2 | KRG | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the gas relative permeability. Note that the first entry in the column must be zero. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 3 | [KRW](#__RefHeading___Toc97397_621662414) | A columnar vector of real values that are either equal or decreasing down the column and that are greater than or equal to zero and less than or equal to one that defines the water relative permeability with respect to gas saturation. The last value in the column should be zero. | None |
+| 3 | KRW | A columnar vector of real values that are either equal or decreasing down the column and that are greater than or equal to zero and less than or equal to one that defines the water relative permeability with respect to gas saturation. The last value in the column should be zero. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | 4 | PCGW | A columnar vector of real values that are either equal or increasing down the column that defines the gas-water relative capillary pressure. | None |
 | psia | bars | atm |  |
@@ -68,4 +68,4 @@ SGWFN
 
 ```
 
-The example defines two [SGWFN](#__RefHeading___Toc106872_335817223) tables for use when gas and water are present in the run.
+The example defines two SGWFN tables for use when gas and water are present in the run.

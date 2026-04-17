@@ -1,13 +1,13 @@
 ### WSEGAICD – Define Multi-Segment Well Autonomous ICD Connections
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [WSEGAICD](#__RefHeading___Toc971419_4263943340) keyword defines a multi-segment well segment to be an autonomous Inflow Control Device (“ICD”) as part of a completion for a multi-segment well. Note that the well must have been previously defined by the [WELSPECS](#__RefHeading___Toc268463_1366622701) and [WELSEGS](#__RefHeading___Toc97661_3261743917) keywords in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section and that the data for the keyword should be repeated for each multi-segment completion that contains an autonomous ICD.
+The WSEGAICD keyword defines a multi-segment well segment to be an autonomous Inflow Control Device (“ICD”) as part of a completion for a multi-segment well. Note that the well must have been previously defined by the WELSPECS and WELSEGS keywords in the SCHEDULE section and that the data for the keyword should be repeated for each multi-segment completion that contains an autonomous ICD.
 
 An ICD is a well completion component usually installed along the producing section of a well to minimize the unwanted water and gas breakthrough in an oil well, or early water production in a gas well, due to an uneven inflow profile over the completed interval.  Permeability variations over the producing interval cause the high permeability zones to produce higher quantities of fluids than the lower permeability zones and this uneven producing fluid profile may result in bypassed hydrocarbons. Secondly, for horizontal wells, the pressure loss from the “toe” to the “heel” of the well again results in an uneven fluid profile over the producing interval. In order to rectify this ICDs can be installed so that the well fluids have to flow through an ICD before entering the tubing; thus, creating an additional “designed” pressure loss.
 
@@ -17,9 +17,9 @@ An autonomous ICD inhibits the production of high-mobility fluids such as water 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which a multi-segment well is being defined. Note that the well name (WELNAME) must have been declared previously using both the [WELSPECS](#__RefHeading___Toc268463_1366622701) and [WELSEGS](#__RefHeading___Toc97661_3261743917) keywords in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section, otherwise an error may occur. | None |
-| 2 | ISEG1 | An integer greater than or equal to two and less than or equal to MXSEGS on the [WSEGDIMS](#__RefHeading___Toc104259_3115110868) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section that defines the start of the segment range. | None |
-| 3 | ISEG2 | An integer greater than or equal to two and not less then ISEG1 on this record and less than or equal to MXSEGS on the [WSEGDIMS](#__RefHeading___Toc104259_3115110868) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section, that defines the end of the segment range. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which a multi-segment well is being defined. Note that the well name (WELNAME) must have been declared previously using both the WELSPECS and WELSEGS keywords in the SCHEDULE section, otherwise an error may occur. | None |
+| 2 | ISEG1 | An integer greater than or equal to two and less than or equal to MXSEGS on the WSEGDIMS keyword in the RUNSPEC section that defines the start of the segment range. | None |
+| 3 | ISEG2 | An integer greater than or equal to two and not less then ISEG1 on this record and less than or equal to MXSEGS on the WSEGDIMS keyword in the RUNSPEC section, that defines the end of the segment range. | None |
 | 4 | ICDSTREN | A positive real value that defines an empirical constant for the strength of the given ICD as determined from measurements using the calibrated fluid. | None |
 | psi/((lb/ft3)(rft3/day)2) | bars/((kg/m3)(rm3/day)2) | atm/((gm/cc)(rcc/hr)2) |  |
 | 5 | ICDLEN | A real value that defines the length of the ICD used in conjunction with NSCALFAC to calculate a scaling factor to be applied to the reservoir flow to adjust the flow through each ICD, that is: NSCALFAC explicitly sets which of the above three options is used. If NSCALFAC is defaulted, then option 1) is used whenever ICDLEN is positive and option 2) when ICDLEN is negative. | Defined |
@@ -43,12 +43,12 @@ An autonomous ICD inhibits the production of high-mobility fluids such as water 
 | 14 | VISCEXP | A real value that defines the viscosity exponent in equation (12.35). | None |
 | dimensionless | dimensionless | dimensionless |  |
 | 15 | STATUS | A defined character string that specifies the ICD’s operational status, STATUS should be set to one of the following character strings: | OPEN |
-| 16 | A1 | A real value that defines the density mixture [OIL](#__RefHeading___Toc97439_1778172979) flowing fraction exponent in equation (12.36) | 1.0 |
-| 17 | A2 | A real value that defines the density mixture [WATER](#__RefHeading___Toc38611_2267116897) flowing fraction exponent in equation (12.36) | 1.0 |
-| 18 | A3 | A real value that defines the density mixture [GAS](#__RefHeading___Toc38607_2267116897) flowing fraction exponent in equation (12.36) | 1.0 |
-| 19 | B1 | A real value that defines the viscosity mixture [OIL](#__RefHeading___Toc97439_1778172979) flowing fraction exponent in equation (12.37) | 1.0 |
-| 20 | B2 | A real value that defines the viscosity mixture [WATER](#__RefHeading___Toc38611_2267116897) flowing fraction exponent in equation (12.37) | 1.0 |
-| 21 | B3 | A real value that defines the viscosity mixture [GAS](#__RefHeading___Toc38607_2267116897) flowing fraction exponent in equation (12.37) | 1.0 |
+| 16 | A1 | A real value that defines the density mixture OIL flowing fraction exponent in equation (12.36) | 1.0 |
+| 17 | A2 | A real value that defines the density mixture WATER flowing fraction exponent in equation (12.36) | 1.0 |
+| 18 | A3 | A real value that defines the density mixture GAS flowing fraction exponent in equation (12.36) | 1.0 |
+| 19 | B1 | A real value that defines the viscosity mixture OIL flowing fraction exponent in equation (12.37) | 1.0 |
+| 20 | B2 | A real value that defines the viscosity mixture WATER flowing fraction exponent in equation (12.37) | 1.0 |
+| 21 | B3 | A real value that defines the viscosity mixture GAS flowing fraction exponent in equation (12.37) | 1.0 |
 | 22 | DENEXP | A real value that defines the density exponent in equation (12.35). | 1.0 |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
@@ -56,12 +56,12 @@ An autonomous ICD inhibits the production of high-mobility fluids such as water 
 *Table 12.118: WSEGAICD Keyword Description*
 
 
-The total number of wells should be defined via the [WELLDIMS](#__RefHeading___Toc82886_327352552) keyword and the number of multi-segment wells should be declared on the [WSEGDIMS](#__RefHeading___Toc104259_3115110868) keyword, both keywords are in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. In addition, the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword should be used to define wells, the [COMPDAT](#__RefHeading___Toc97651_3261743917) keyword to define the well completions for both standard wells and multi-segment wells, and the [COMPSEGS](#__RefHeading___Toc316604_3519154785) keyword to define a multi-segment well segment completions.  Finally, the [WSEGSICD](#__RefHeading___Toc124296_23127940) keyword can be used to define spiral ICD connections for the well.  All the aforementioned keywords are described in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section.
+The total number of wells should be defined via the WELLDIMS keyword and the number of multi-segment wells should be declared on the WSEGDIMS keyword, both keywords are in the RUNSPEC section. In addition, the WELSPECS keyword should be used to define wells, the COMPDAT keyword to define the well completions for both standard wells and multi-segment wells, and the COMPSEGS keyword to define a multi-segment well segment completions.  Finally, the WSEGSICD keyword can be used to define spiral ICD connections for the well.  All the aforementioned keywords are described in the SCHEDULE section.
 
 The equations used to calculate the pressure drop across the ICD are given below and illustrate how the pressure reduction is dependent on the density and viscosity of the fluid flowing through the device.
 
 
-|  | (12.35) |
+| $$ \mathrm{Δ}P = \left(\frac{{\mathrm{ρ}}_{\mathit{mixture}}}{{\mathrm{ρ}}_{\mathit{calibrated}}}\right){\mathrm{ρ}}_{exp}⋅{\left(\frac{{\mathrm{μ}}_{\mathit{calibrated}}}{{\mathrm{μ}}_{\mathit{mixture}}}\right)}^{{\mathrm{μ}}_{exp}}⋅ {\mathrm{ρ}}_{\mathit{mixture}} ⋅ \mathrm{β} ⋅ {\left(\frac{q}{{q}_{\mathit{calibrated}}}\right)}^{({Q}_{exp}- 2)} ⋅ {q}^{2} $$ | (12.35) |
 | --- | --- |
 
 Where:
@@ -71,7 +71,7 @@ Where:
 ρmixture	=  the density of the mixture, as per:
 
 
-|  | (12.36) |
+| $$ {\mathrm{ρ}}_{\mathit{mixture}} = \left({\mathrm{α}}_{\mathit{oil}}^{{a}_{1}}⋅{\mathrm{ρ}}_{\mathit{oil}}\right) + \left({\mathrm{α}}_{\mathit{wat}}^{{a}_{2}}⋅{\mathrm{ρ}}_{\mathit{wat}}\right) + \left({\mathrm{α}}_{\mathit{gas}}^{{a}_{3}}⋅{\mathrm{ρ}}_{\mathit{gas}}\right) $$ | (12.36) |
 | --- | --- |
 
 
@@ -82,7 +82,7 @@ Where:
 μmixture	=  the viscosity of the mixture, as per:
 
 
-|  | (12.37) |
+| $$ {\mathrm{μ}}_{\mathit{mixture}} = \left({\mathrm{α}}_{\mathit{oil}}^{{b}_{1}}⋅{\mathrm{μ}}_{\mathit{oil}}\right) + \left({\mathrm{α}}_{\mathit{wat}}^{{b}_{2}}⋅{\mathrm{μ}}_{\mathit{wat}}\right) + \left({\mathrm{α}}_{\mathit{gas}}^{{b}_{3}}⋅{\mathrm{μ}}_{\mathit{gas}}\right) $$ | (12.37) |
 | --- | --- |
 
 
@@ -105,12 +105,12 @@ Qexp	=  RATEXP,  the flow rate exponent in Table 12.118.
 
 In equation (12.8) αi represent the volume fractions of oil, water and gas at local conditions and ai the density exponents of the three phases (A1, A2 and A3 in Table 12.118). Similarity for equation (12.37), αi represent the volume fractions of oil, water and gas at local conditions and bi the viscosity exponents of the three phases (B1, B2 and B3 in Table 12.118).
 
-See also the [WSEGSICD](#__RefHeading___Toc124296_23127940) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section for spiral ICDs, that operate in a similar fashion to autonomous ICDs.
+See also the WSEGSICD keyword in the SCHEDULE section for spiral ICDs, that operate in a similar fashion to autonomous ICDs.
 
 
 #### Example
 
-The following example defines a multi-segment oil production well (OP01) using the [WELSPECS](#__RefHeading___Toc268463_1366622701), [WELSEGS](#__RefHeading___Toc97661_3261743917) [COMPDAT](#__RefHeading___Toc97651_3261743917) and [COMPSEGS](#__RefHeading___Toc316604_3519154785) keywords, followed by the [WSEGAICD](#__RefHeading___Toc971419_4263943340) keyword to define the autonomous inflow control devices for the well.
+The following example defines a multi-segment oil production well (OP01) using the WELSPECS, WELSEGS COMPDAT and COMPSEGS keywords, followed by the WSEGAICD keyword to define the autonomous inflow control devices for the well.
 
 
 ```
@@ -240,7 +240,7 @@ OP01    29   29  7.5e-5 -0.064414 1020 0.48 0.7  1*   1*  1*   1*  2.2  0.5  7* 
 
 ```
 
-The [WSEGAICD](#__RefHeading___Toc971419_4263943340) keyword defines the autonomous ICD over segments 16 to 29 using the default value for NSCALFAC of -1, which sets the scale factor equal to the absolute value of ICDLEN, as all the ICDLEN values are negative.  Note that the [WSEGAICD](#__RefHeading___Toc971419_4263943340) should be repeated for each multi-segment well that has this type of ICD. So for example for two wells one would have:
+The WSEGAICD keyword defines the autonomous ICD over segments 16 to 29 using the default value for NSCALFAC of -1, which sets the scale factor equal to the absolute value of ICDLEN, as all the ICDLEN values are negative.  Note that the WSEGAICD should be repeated for each multi-segment well that has this type of ICD. So for example for two wells one would have:
 
 
 ```

@@ -1,13 +1,13 @@
 ### WAGHYSTR – Define Water-Alternating-Gas Hysteresis Parameters
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword defines the parameters for the Water-Alternating-Gas (“WAG”) hysteresis option, for when the hysteresis option has been activated by the [WAGHYSTR](#__RefHeading___Toc207827_2026549522) variable on the [SATOPTS](#__RefHeading___Toc37029_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+This keyword defines the parameters for the Water-Alternating-Gas (“WAG”) hysteresis option, for when the hysteresis option has been activated by the WAGHYSTR variable on the SATOPTS keyword in the RUNSPEC section.
 
 The WAG recovery mechanism is an Enhanced Oil Recovery (“EOR”) process to optimize oil recovery by improving volumetric sweep efficiency. It was originally proposed as a method to improve the sweep efficiency of gas by using water to control the mobility ratio and to stabilize the front (Caudle and Dyes, 1958 [Caudle, B. H., & Dyes, A. B. (1958, January 1). Improving Miscible Displacement by Gas-Water Injection. Society of Petroleum Engineers.]; Christensen et al., 1998 [Christensen, J. R., Stenby, E. H., & Skauge, A. (1998, January 1). Review of WAG Field Experience. Society of Petroleum Engineers. doi:10.2118/39883-MS.]; and Christensen et al., 2001 [Christensen, J. R., Stenby, E. H., & Skauge, A. (2001, April 1). Review of WAG Field Experience. Society of Petroleum Engineers. doi:10.2118/71203-PA.]). WAG injection can lead to improved oil recovery by combining better mobility control and contacting upswept zones, and by leading to improved microscopic displacement. Although initially the injected gas was immiscible with respect to the oil (WAG Immiscible) the more common process is WAG Miscible, with alternating different types of hydrocarbon gases and non-hydrocarbon gases, such as N2 and CO2 Gases.  WAG flooding has been successfully applied to various fields worldwide.
 
@@ -17,7 +17,7 @@ Only the gas phase relative permeability WAG hysteresis model has been implement
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | LANDS_PARAMETER | A real value greater than zero that defines Land’s parameter, . The Land’s parameter controls how the trapped gas saturation depends on the maximum gas saturation attained and the critical gas saturation; and the shape of the imbibition curve. where,  is the trapped gas saturation,  is the maximum gas saturation attained, and  is the critical gas saturation. Values of the Land’s parameter that are too small give a trapped gas saturation close to the maximum gas saturation attained. This results in an unphysical steep relative permeability curve giving potential convergence problems. | None |
+| 1 | LANDS_PARAMETER | A real value greater than zero that defines Land’s parameter,   $$ C $$  . The Land’s parameter controls how the trapped gas saturation depends on the maximum gas saturation attained and the critical gas saturation; and the shape of the imbibition curve. $$ {s}_{\mathit{gtrap}}={s}_{\mathit{gcr}}+\frac{({s}_{\mathit{gm}}-{s}_{\mathit{gcr}})}{(1+C({s}_{\mathit{gm}}-{s}_{\mathit{gcr}}))} $$ where,   $$ {s}_{\mathit{gtrap}} $$   is the trapped gas saturation,   $$ {s}_{\mathit{gm}} $$   is the maximum gas saturation attained, and   $$ {s}_{\mathit{gcr}} $$   is the critical gas saturation. Values of the Land’s parameter that are too small give a trapped gas saturation close to the maximum gas saturation attained. This results in an unphysical steep relative permeability curve giving potential convergence problems. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | 2 | SECONDARY_DRAINAGE_REDUCTION | A real value greater than or equal to zero that defines the secondary drainage reduction factor, alpha. As alpha increases the reduction in gas mobility on secondary drainage increases. | 0.0 |
 | dimensionless | dimensionless | dimensionless |  |
@@ -28,7 +28,7 @@ Only the gas phase relative permeability WAG hysteresis model has been implement
 | dimensionless | dimensionless | dimensionless |  |
 | 7 | THREEPHASE_SAT_LIMIT | A real value between zero and one that defines the three-phase model threshold saturation. When the water saturation exceeds this threshold above the connate water saturation the gas (non-wetting) phase hysteresis switches from the two-phase model to the three-phase model. In the two-phase model a secondary drainage process follows the imbibition curve. However, if the water saturation exceeds the connate saturation by the given threshold, at the beginning of the secondary drainage process a three-phase secondary drainage curve is followed. This value also defines the minimum percentage change in gas saturation to allow switching from drainage to imbibition curve and vice-versa. This threshold allows better control of the numerical sensitivity of the system, preventing it from being too unstable. | 0.001 |
 | dimensionless | dimensionless | dimensionless |  |
-| 8 | RES_OIL_MOD_FRACTION | A real value between zero and one that defines the residual oil modification fraction. This is the fraction of the trapped gas saturation subtracted from the residual oil (SOM) in the [STONE](#__RefHeading___Toc157687_1371377330) 1 three-phase oil relative permeability model. This is not supported and will be ignored by the simulator. | 1.0 |
+| 8 | RES_OIL_MOD_FRACTION | A real value between zero and one that defines the residual oil modification fraction. This is the fraction of the trapped gas saturation subtracted from the residual oil (SOM) in the STONE 1 three-phase oil relative permeability model. This is not supported and will be ignored by the simulator. | 1.0 |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
 
@@ -37,7 +37,7 @@ Only the gas phase relative permeability WAG hysteresis model has been implement
 
 #### Example
 
-The following example defines the WAG hysteresis model parameters using the [WAGHYSTR](#__RefHeading___Toc207827_2026549522) keyword for a case with three saturation table regions
+The following example defines the WAG hysteresis model parameters using the WAGHYSTR keyword for a case with three saturation table regions
 
 
 ```

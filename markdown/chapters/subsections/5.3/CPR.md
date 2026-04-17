@@ -1,13 +1,13 @@
 ### CPR – Activate Constrained Pressure Residual (“CPR”) Linear Solver
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-Turns on the Constrained Pressure Residual (“CPR”) [Wallis, J. R., Little, T. E., and Nolen, J. S.: "Constrained Residual Acceleration of Conjugate Residual Methods," paper SPE 13536 presented at the SPE Reservoir Simulation Symposium, Dallas, Texas, USA (February 10-13, 1985).],  [R. Scheichl, M. Roland, J. Wendebourg, Decoupling and block preconditioning for sedimentary basin simulations, Computational Geosciences 7 (2003) 295{318.] and  [Klemetsdal, Ø.S., Møyner, O. & Lie, KA. Accelerating multiscale simulation of complex geomodels by use of dynamically adapted basis functions. Comput Geosci 24, 459–476 (2020). https://doi.org/10.1007/s10596-019-9827-z.] preconditioner linear solver option, and declares how the solver should be applied.  The keyword is equivalent to using the OPM Flow command line parameter  --linear-solver= “cprw”. Note that if the command line has been used, then this will take precedence over the [CPR](#__RefHeading___Toc27871_3671211675) keyword.
+Turns on the Constrained Pressure Residual (“CPR”) [Wallis, J. R., Little, T. E., and Nolen, J. S.: "Constrained Residual Acceleration of Conjugate Residual Methods," paper SPE 13536 presented at the SPE Reservoir Simulation Symposium, Dallas, Texas, USA (February 10-13, 1985).],  [R. Scheichl, M. Roland, J. Wendebourg, Decoupling and block preconditioning for sedimentary basin simulations, Computational Geosciences 7 (2003) 295{318.] and  [Klemetsdal, Ø.S., Møyner, O. & Lie, KA. Accelerating multiscale simulation of complex geomodels by use of dynamically adapted basis functions. Comput Geosci 24, 459–476 (2020). https://doi.org/10.1007/s10596-019-9827-z.] preconditioner linear solver option, and declares how the solver should be applied.  The keyword is equivalent to using the OPM Flow command line parameter  --linear-solver= “cprw”. Note that if the command line has been used, then this will take precedence over the CPR keyword.
 
 
 | No. | Name | Description | Default |
@@ -18,7 +18,7 @@ Turns on the Constrained Pressure Residual (“CPR”) [Wallis, J. R., Little, T
 *Table 5.8: CPR Keyword Description*
 
 
-See section [2.2](#2.2.Running OPM Flow 2018-10 |outline)[ ](#2.2.Running OPM Flow 2018-10 |outline)[Running OPM Flow 2023-04 From The Command Line](#2.2.Running OPM Flow 2018-10 |outline) on how to invoke various numerical schemes via the OPM Flow command line interface.
+See section 2.2 Running OPM Flow 2023-04 From The Command Line on how to invoke various numerical schemes via the OPM Flow command line interface.
 
 
 #### Example

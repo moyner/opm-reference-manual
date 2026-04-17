@@ -1,15 +1,15 @@
 ### BC – Define Boundary Conditions
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [BC](#__RefHeading___Toc42110_36712116751) keyword defines the boundary conditions for the model, and can be used to set boundary conditions for when external influx or efflux volumes are influencing the reservoir pressure and production history. For example, when the average reservoir pressure remains constant throughout the production period due to water influx, or gas migration from an external source.
+The BC keyword defines the boundary conditions for the model, and can be used to set boundary conditions for when external influx or efflux volumes are influencing the reservoir pressure and production history. For example, when the average reservoir pressure remains constant throughout the production period due to water influx, or gas migration from an external source.
 
-The [BC](#__RefHeading___Toc42110_36712116751) keyword has been replaced by the [BCCON](#REF_HEADING_KEYWORD_BCCON) keyword in the [GRID](#__RefHeading___Toc38674_784232322) section that defines the boundary condition connections and the [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section that defines the boundary condition properties.
+The BC keyword has been replaced by the [BCCON](#REF_HEADING_KEYWORD_BCCON) keyword in the GRID section that defines the boundary condition connections and the [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keyword in the SCHEDULE section that defines the boundary condition properties.
 
 
 | Note This is an OPM Flow specific keyword and will therefore cause an error in the commercial simulator. |
@@ -30,19 +30,19 @@ The [BC](#__RefHeading___Toc42110_36712116751) keyword has been replaced by the 
 | 9 | PHASE | A defined character string that sets fluid type used in the boundary calculations, and should be set to one of the following character strings: | None |
 | 10 | RATE | A real value that defines the constant surface oil, gas or water rate to be injected or withdrawn at the boundary, for when TYPE has been set to RATE. Note a negative value implies an injection rate, whereas, a positive value indicates a withdrawal rate. | 0,0 |
 | Liquid: stb/day Gas: Mscf/day | Liquid: sm3/day Gas: sm3/day | Liquid: scc/hr Gas: scc/hr |  |
-| 11 | PRESS | PRESS is a real positive value that defines the constant pressure boundary condition.  PRESS should only be entered if TYPE has been set to DIRICHLET. If the pressure at the boundary is less than PRESS, then the fluid type declared via PHASE will flow across the boundary. The default value of 1* will use the simulator's calculated value based on data entered via the [EQUIL](#__RefHeading___Toc135617_1317547213) keyword in the [SOLUTION](#__RefHeading___Toc43947_784232322) section. | 1* |
+| 11 | PRESS | PRESS is a real positive value that defines the constant pressure boundary condition.  PRESS should only be entered if TYPE has been set to DIRICHLET. If the pressure at the boundary is less than PRESS, then the fluid type declared via PHASE will flow across the boundary. The default value of 1* will use the simulator's calculated value based on data entered via the EQUIL keyword in the SOLUTION section. | 1* |
 | psia | barsa | atma |  |
-| 12 | TEMP | TEMP is a real positive number that defines the constant temperature boundary condition. TEMP should only be entered if TYPE has been set to DIRICHLET. The default value of 1* will use the simulator's calculated value based on data entered via one of the following reservoir temperature keywords: [RTEMP](#__RefHeading___Toc111816_2939291539), [RTEMPA](#__RefHeading___Toc111818_2939291539), [RTEMPVD](#__RefHeading___Toc108628_29392915391), [TEMPI](#__RefHeading___Toc117385_650382403), or [TEMPVD](#__RefHeading___Toc108626_29392915392), in the [SOLUTION](#__RefHeading___Toc43947_784232322) section. Note that all of the aforementioned reservoir temperature keywords, except for [TEMPI](#__RefHeading___Toc117385_650382403), may also be used in the [PROPS](#__RefHeading___Toc39329_784232322) section as well. | 1* |
+| 12 | TEMP | TEMP is a real positive number that defines the constant temperature boundary condition. TEMP should only be entered if TYPE has been set to DIRICHLET. The default value of 1* will use the simulator's calculated value based on data entered via one of the following reservoir temperature keywords: RTEMP, RTEMPA, RTEMPVD, TEMPI, or TEMPVD, in the SOLUTION section. Note that all of the aforementioned reservoir temperature keywords, except for TEMPI, may also be used in the PROPS section as well. | 1* |
 | oF | oC | oC |  |
 | Notes: |  |  |  |
 
 *Table 10.10: BC Keyword Description*
 
 
-See also the [AQUFLUX - Define Constant Flux Analytical Aquifer](#10.3.12.AQUFLUX - Define Constant Flux Analytical Aquifer|outline) keyword that is supported by OPM Flow in both the [SOLUTION](#__RefHeading___Toc43947_784232322) and [SCHEDULE](#__RefHeading___Toc43945_784232322) sections, to define the aquifer influx with greater flexibility.
+See also the AQUFLUX - Define Constant Flux Analytical Aquifer keyword that is supported by OPM Flow in both the SOLUTION and SCHEDULE sections, to define the aquifer influx with greater flexibility.
 
 
-If the [BC](#__RefHeading___Toc42110_36712116751) keyword is not present in the input deck, then the boundary conditions for the model are set to be no flow, which is the normal behavior in both OPM Flow and the commercial simulator.
+If the BC keyword is not present in the input deck, then the boundary conditions for the model are set to be no flow, which is the normal behavior in both OPM Flow and the commercial simulator.
 
 
 #### Examples
@@ -65,7 +65,7 @@ BC
 
 With this option it is only necessary to define the boundary cells and all the other parameters (PHASE, RATE, PRESS, and TEMP) can be defaulted, as they are ignored for when TYPE equals FREE.
 
-The next example is based on NX, NY and NZ equal to 20, 1, 10 respectively, on the [DIMENS](#__RefHeading___Toc20387_2267116897) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section,  and shows how different boundary types can be assigned to different parts of the model.
+The next example is based on NX, NY and NZ equal to 20, 1, 10 respectively, on the DIMENS keyword in the RUNSPEC section,  and shows how different boundary types can be assigned to different parts of the model.
 
 
 ```

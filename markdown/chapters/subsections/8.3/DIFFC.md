@@ -1,13 +1,13 @@
 ### DIFFC – Define PVT Region Molecular Diffusion Tables
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [DIFFC](#__RefHeading___Toc314077_1539708736) keyword defines the molecular weight of the fluids and diffusion coefficients between phases for each PVT region, for when the Molecular Diffusion option has been activated by the [DIFFUSE](#__RefHeading___Toc349951_1539708736) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. This keyword is optional as OPM Flow will automatically calculate the coefficients, as described by Sandve et al. [Tor Harald Sandve1, Sarah E. Gasda, Atgeirr Rasmussen, and Alf Birger Rustad. Convective dissolution in field scale CO2 storage simulation using the OPM Flow simulator. Submitted to TCCS 11 – Trondheim Conference on CO2 Capture, Transport and Storage Trondheim, Norway – June 21-23, 2021.], if the [DIFFC](#__RefHeading___Toc314077_1539708736) keyword is absent from the input deck.  The keyword thus allows one to overwrite the automatically calculated values.
+The DIFFC keyword defines the molecular weight of the fluids and diffusion coefficients between phases for each PVT region, for when the Molecular Diffusion option has been activated by the DIFFUSE keyword in the RUNSPEC section. This keyword is optional as OPM Flow will automatically calculate the coefficients, as described by Sandve et al. [Tor Harald Sandve1, Sarah E. Gasda, Atgeirr Rasmussen, and Alf Birger Rustad. Convective dissolution in field scale CO2 storage simulation using the OPM Flow simulator. Submitted to TCCS 11 – Trondheim Conference on CO2 Capture, Transport and Storage Trondheim, Norway – June 21-23, 2021.], if the DIFFC keyword is absent from the input deck.  The keyword thus allows one to overwrite the automatically calculated values.
 
 
 | No. | Name | Description | Default |
@@ -34,16 +34,16 @@ The [DIFFC](#__RefHeading___Toc314077_1539708736) keyword defines the molecular 
 *Table 8.27: DIFFC Keyword Description*
 
 
-| Note The option has been tested in combination with the [CO2STORE](#__RefHeading___Toc387968_1616145207) keyword, but not for the general case at this point. |
+| Note The option has been tested in combination with the CO2STORE keyword, but not for the general case at this point. |
 | --- |
 
 
-See also the [DIFFUSE](#__RefHeading___Toc349951_1539708736) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section to activate the Molecular Diffusion option.
+See also the DIFFUSE keyword in the RUNSPEC section to activate the Molecular Diffusion option.
 
 
 #### Example
 
-The example below is based on field units, with NTPVT equal to three on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword.
+The example below is based on field units, with NTPVT equal to three on the TABDIMS keyword.
 
 
 ```

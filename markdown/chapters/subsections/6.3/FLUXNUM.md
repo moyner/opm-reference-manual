@@ -1,18 +1,18 @@
 ### FLUXNUM – Define the Flux Regions
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [FLUXNUM](#__RefHeading___Toc45781_719036256) keyword defines the flux region numbers for each grid block, as such there must be one entry for each cell in the model.  The array is used with the Flux Boundary option to define the various flux regions; however, the Flux Boundary option has not been implemented in OPM Flow. In addition, the array can be used with the [EQUALREG](#__RefHeading___Toc296593_1576177388), [ADDREG](#__RefHeading___Toc4414_421927891), [COPYREG](#__RefHeading___Toc296589_1576177388), [MULTIREG](#__RefHeading___Toc296613_1576177388), [MULTREGP](#__RefHeading___Toc296617_1576177388) and [MULTREGT](#__RefHeading___Toc296621_1576177388) keywords in calculating various grid properties in the [GRID](#__RefHeading___Toc38674_784232322) section. This facility has been implemented in OPM Flow.
+The FLUXNUM keyword defines the flux region numbers for each grid block, as such there must be one entry for each cell in the model.  The array is used with the Flux Boundary option to define the various flux regions; however, the Flux Boundary option has not been implemented in OPM Flow. In addition, the array can be used with the EQUALREG, ADDREG, COPYREG, MULTIREG, MULTREGP and MULTREGT keywords in calculating various grid properties in the GRID section. This facility has been implemented in OPM Flow.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
-| 1 | [FLUXNUM](#__RefHeading___Toc45781_719036256) | [FLUXNUM](#__RefHeading___Toc45781_719036256) defines an array of positive integers assigning a grid cell to a particular flux region. The maximum number of flux regions is set by the MXNFLX variable on the [REGDIMS](#__RefHeading___Toc70161_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. | 1 |
+| 1 | FLUXNUM | FLUXNUM defines an array of positive integers assigning a grid cell to a particular flux region. The maximum number of flux regions is set by the MXNFLX variable on the REGDIMS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 
 *Table 6.39: FLUXNUM Keyword Description*
@@ -20,7 +20,7 @@ The [FLUXNUM](#__RefHeading___Toc45781_719036256) keyword defines the flux regio
 
 #### Examples
 
-The example below sets three [FLUXNUM](#__RefHeading___Toc45781_719036256) regions for a 4 x 5 x 2 model.
+The example below sets three FLUXNUM regions for a 4 x 5 x 2 model.
 
 
 ```
@@ -34,7 +34,7 @@ FLUXNUM
 
 ```
 
-Alternatively the [EQUALS](#__RefHeading___Toc296597_1576177388) keyword could be employed to accomplish the same task, that is:
+Alternatively the EQUALS keyword could be employed to accomplish the same task, that is:
 
 
 ```

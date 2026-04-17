@@ -1,13 +1,13 @@
 ### PVDS – Solvent PVT Properties for the Solvent Model
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-[PVDS](#__RefHeading___Toc104058_57619843) defines the solvent PVT properties for use with [SOLVENT](#__RefHeading___Toc62787_1778172979) option. The solvent is treated as an additional dry gas phase within the model. This keyword should only be used if the [SOLVENT](#__RefHeading___Toc62787_1778172979) model has been invoked in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+PVDS defines the solvent PVT properties for use with SOLVENT option. The solvent is treated as an additional dry gas phase within the model. This keyword should only be used if the SOLVENT model has been invoked in the RUNSPEC section.
 
 
 | No. | Name | Description | Default |
@@ -74,6 +74,6 @@ PVDS
 ```
 
 
-The above example defines two solvent PVT tables assuming NTPVT equals two and NPPVT is greater than or equal to 16 on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The above example defines two solvent PVT tables assuming NTPVT equals two and NPPVT is greater than or equal to 16 on the TABDIMS keyword in the RUNSPEC section.
 
 There is no terminating “/” for this keyword.

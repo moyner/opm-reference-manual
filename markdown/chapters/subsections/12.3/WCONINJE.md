@@ -1,19 +1,19 @@
 ### WCONINJE – Well Injection Targets and Constraints
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [WCONINJE](#__RefHeading___Toc146750_4203985108) keyword defines injection targets and constraints for wells that have previously been defined by the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section. Note that wells can be allocated to a group  when they are specified by the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword.  Wells defined to be under group control will have their injection rates controlled by the group to which they belong, in addition to any well constraints defined for the wells using this keyword.
+The WCONINJE keyword defines injection targets and constraints for wells that have previously been defined by the WELSPECS keyword in the SCHEDULE section. Note that wells can be allocated to a group  when they are specified by the WELSPECS keyword.  Wells defined to be under group control will have their injection rates controlled by the group to which they belong, in addition to any well constraints defined for the wells using this keyword.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well injection targets and constraints data are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section, otherwise an error may occur. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well injection targets and constraints data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | TYPE | A defined character string that defines the type of injection well. TYPE should be set to one of the following character strings: | None |
 | 3 | STATUS | A defined character string that declares the status of the well. STATUS should be set to one of the following character strings: Note a well’s STATUS should always be set either STOP or SHUT if the well’s injection is to be set to zero. Just setting a well’s injection rate to zero means that the well is open for injection with a zero rate, this will cause numerical issues especially for wells under THP control. | OPEN |
 | 4 | TARGET | A defined character string that sets the target injection control mode for the well. TARGET should be set to one of the following character strings: | None |
@@ -25,7 +25,7 @@ The [WCONINJE](#__RefHeading___Toc146750_4203985108) keyword defines injection t
 | psia 10,0000 | barsa 6,895 | atma 6,803 |  |
 | 8 | THP | A real positive value that defines the maximum tubing head pressure target or constraint. This value may be specified using a User Defined Argument (UDA). | None |
 | psia | barsa | atma |  |
-| 9 | VFPTAB | A positive integer greater than or equal to zero that defines the vertical lift performance tables to be used for calculating the tubing head pressure for the well. If a non-zero value is entered then the vertical lift performance tables must be entered via the [VFPINJ](#__RefHeading___Toc121917_2556401936) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section and allocated to the well via this item. The default value of zero implies no vertical lift performance tables and in this case TARGET cannot be set to THP and in addition item (10) should be defaulted or set to zero. | 0 |
+| 9 | VFPTAB | A positive integer greater than or equal to zero that defines the vertical lift performance tables to be used for calculating the tubing head pressure for the well. If a non-zero value is entered then the vertical lift performance tables must be entered via the VFPINJ keyword in the SCHEDULE section and allocated to the well via this item. The default value of zero implies no vertical lift performance tables and in this case TARGET cannot be set to THP and in addition item (10) should be defaulted or set to zero. | 0 |
 | 10 | RSRVINJ | The dissolved gas-oil ratio in the injected oil, or the vaporized oil-gas ratio in the injected gas. | 0.0 |
 | Gas Injection: stb/Mscf Oil Injection: Mscf/stb | Gas Injection: sm3/sm3 Oil Injection: sm3/sm3 | Gas Injection: scc/scc Oil Injection: scc/scc |  |
 | 11 | RSSTEAM | Thermal/Temperature gas-steam ratio for steam-gas injectors. The parameter is ignored by OPM Flow and should be defaulted or set to the default value of zero. | 0.0 |
@@ -38,7 +38,7 @@ The [WCONINJE](#__RefHeading___Toc146750_4203985108) keyword defines injection t
 *Table 12.78: WCONINJE Keyword Description*
 
 
-See also the [GCONPROD](#__RefHeading___Toc146746_4203985108) and the [GCONINJE](#__RefHeading___Toc134874_2055188184) keywords to define a group’s production and injection targets and constraints, and the [WCONPROD](#__RefHeading___Toc146754_4203985108) keyword to define a production well’s targets and constraints. All the aforementioned keywords are described in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section.
+See also the GCONPROD and the GCONINJE keywords to define a group’s production and injection targets and constraints, and the WCONPROD keyword to define a production well’s targets and constraints. All the aforementioned keywords are described in the SCHEDULE section.
 
 
 #### Example

@@ -1,20 +1,20 @@
 ### WATJT – Define Water Joule-Thomson Coefficient
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-[WATJT](#__RefHeading___Toc163486_254534176112) activates the water Joule-Thomson effect [The Joule–Thomson coefficient is defined as the change in temperature with respect to an increase in pressure at constant enthalpy.] in temperature calculations, and defines the water Joule-Thomson Coefficient (“JTC”) at a given reference pressure, for when OPM Flow’s thermal option has been activated by the [THERMAL](#__RefHeading___Toc137276_650382403) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979).
+WATJT activates the water Joule-Thomson effect [The Joule–Thomson coefficient is defined as the change in temperature with respect to an increase in pressure at constant enthalpy.] in temperature calculations, and defines the water Joule-Thomson Coefficient (“JTC”) at a given reference pressure, for when OPM Flow’s thermal option has been activated by the THERMAL keyword in the RUNSPEC.
 
 
 | Note This is an OPM Flow keyword used with OPM Flow’s black-oil thermal model, that is not available in the commercial simulator’s black-oil thermal formulation. |
 | --- |
 
 
-This keyword can only be used if OPM Flow’s thermal option has been activated by the [THERMAL](#__RefHeading___Toc137276_650382403) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. Note this is different to the commercial simulator that uses the [TEMP](#__RefHeading___Toc146397_3544483072) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section to activate the black-oil thermal model, and does not include the Joule-Thomson effect in temperature calculations.
+This keyword can only be used if OPM Flow’s thermal option has been activated by the THERMAL keyword in the RUNSPEC section. Note this is different to the commercial simulator that uses the TEMP keyword in the RUNSPEC section to activate the black-oil thermal model, and does not include the Joule-Thomson effect in temperature calculations.
 
 
 | No. | Name | Description | Default |
@@ -22,7 +22,7 @@ This keyword can only be used if OPM Flow’s thermal option has been activated 
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | A real positive value that defines the reference pressure for the corresponding Joule-Thomson Coefficient, WATJTC. | None |
 | psia | barsa | atma |  |
-| 2 | WATJTC | WATJTC is a real positive or negative value that defines the water phase Joule-Thomson Coefficient. If the value is defaulted (1*) or set to 0, then WATJTC is internally calculated using thermal water density data on the WATSDENT keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section. If a non-zero value is specified, then the WATJTC is assumed to be constant and equal to that value. | 0 |
+| 2 | WATJTC | WATJTC is a real positive or negative value that defines the water phase Joule-Thomson Coefficient. If the value is defaulted (1*) or set to 0, then WATJTC is internally calculated using thermal water density data on the WATSDENT keyword in the PROPS section. If a non-zero value is specified, then the WATJTC is assumed to be constant and equal to that value. | 0 |
 | oF/psia | oC/barsa | oC/atma |  |
 | Notes: |  |  |  |
 
@@ -34,42 +34,58 @@ The Joule–Thomson effect is when a real gas, as oppose to an ideal gas, expand
 Thermodynamically, the Joule–Thomson coefficient is defined as the isenthalpic [An isenthalpic process or isoenthalpic process, is a process that proceeds without any change in enthalpy, H; or specific enthalpy, h.] change in temperature in a fluid caused by a unitary pressure drop, as shown in the following equation:
 
 
-|  | (8.98) |
+| $$ \mathrm{η} = \left(\frac{\partial T}{\partial P}\right) $$ | (8.98) |
 | --- | --- |
 
 
 Which can also express as [Pippard, A.B.: Elements of Classical Thermodynamics: For Advanced Students of Physics. Cambridge University Press, Cambridge, UK (1957)]:
 
 
-|  | (8.99) |
+| $$ \mathrm{η} = \left(T\mathrm{α} - 1\right)\frac{1}{(\mathrm{ρ}{C}_{p})} - {\left(\frac{g}{{C}_{p}}\frac{\mathit{dp}}{\mathit{dz}}\right)}^{-1} $$ | (8.99) |
 | --- | --- |
 
-Setting the gravity term, , to zero we have:
+$$
+g
+$$
 
 
-|  | (8.100) |
+| $$ \mathrm{η} = \left(T\mathrm{α} - 1\right)\frac{1}{(\mathrm{ρ}{C}_{b})} $$ | (8.100) |
 | --- | --- |
 
 Where:
 
-	=	Joule–Thomson coefficient (oC/Pa),
+$$
+η
+$$
 
-	=	thermal expansivity at constant pressure (1/oC),
+$$
+α
+$$
 
-	= 	specific heat at constant pressure (J/kg oC),
+$$
+{C}_{p}
+$$
 
-	= 	gravitational acceleration (m/s2)
+$$
+g
+$$
 
-	= 	pressure (Pa),
+$$
+P
+$$
 
- 	= 	temperature (oC), and
+$$
+T
+$$
 
- 	= 	height (m).
+$$
+z
+$$
 
 
 #### Example
 
-The following example shows the [WATJT](#__RefHeading___Toc163486_254534176112) keyword for when the thermal option has been activated by the [THERMAL](#__RefHeading___Toc137276_650382403) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section, and for when NTPVT on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section is set equal to two.
+The following example shows the WATJT keyword for when the thermal option has been activated by the THERMAL keyword in the RUNSPEC section, and for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set equal to two.
 
 
 ```
@@ -85,6 +101,6 @@ WATJT
 ```
 
 
-Here the first entry is defaulted, and the simulator will therefore calculate the water JTC internally using the data on the [WATDENT](#__RefHeading___Toc173954_2545341761) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section.
+Here the first entry is defaulted, and the simulator will therefore calculate the water JTC internally using the data on the WATDENT keyword in the PROPS section.
 
 There is no terminating “/” for this keyword.

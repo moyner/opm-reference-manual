@@ -1,13 +1,13 @@
 ### GSATPROD – Define Group Satellite Production Rates
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [GSATPROD](#__RefHeading___Toc202038_870710203) keyword defines a satellite group’s oil, water and gas production rates in the model. Satellite groups are not connected to the reservoir model and therefore have no wells or subordinate groups associated with them, they are nevertheless connected to other higher level groups and higher level groups  within a network model (if activated). They provide a means to “add-in” outside injection and production to the model without modeling the “add-in” reservoirs.
+The GSATPROD keyword defines a satellite group’s oil, water and gas production rates in the model. Satellite groups are not connected to the reservoir model and therefore have no wells or subordinate groups associated with them, they are nevertheless connected to other higher level groups and higher level groups  within a network model (if activated). They provide a means to “add-in” outside injection and production to the model without modeling the “add-in” reservoirs.
 
 This keyword is used to import additional fluid streams into the model from other sources (fields, reservoirs, etc.) that are not defined in the current run. For example, if Fields A, B and C are supplying gas to a power plant, but only Field A is being modeled in the current input deck, then production from Fields B and C can be incorporated into model in order to meet the plant demand. Note in this case the import gas rates from Fields B and C are fixed, and therefore Field A acts like a “swing” producer to match the gas demand target.
 
@@ -15,7 +15,7 @@ This keyword is used to import additional fluid streams into the model from othe
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | GRPNAME | A character string of up to eight characters in length that defines the satellite group name for which the group production import rates are being defined. The group named FIELD is the top most group and should not be used with this keyword. Note that the group hierarchy should be defined by the [GRUPTREE](#__RefHeading___Toc118321_1596574740) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. Note that a satellite group cannot have subordinate groups or wells. | None |
+| 1 | GRPNAME | A character string of up to eight characters in length that defines the satellite group name for which the group production import rates are being defined. The group named FIELD is the top most group and should not be used with this keyword. Note that the group hierarchy should be defined by the GRUPTREE keyword in the SCHEDULE section when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. Note that a satellite group cannot have subordinate groups or wells. | None |
 | 2 | ORAT | A real value, greater than or equal to zero, that defines the satellite’s surface oil production rate to be imported into the model. This value may be specified using a User Defined Argument (UDA). | 0.0 |
 | stb/d | sm3/day | scc/hour |  |
 | 3 | WRAT | A real value, greater than or equal to zero, that defines the satellite’s surface water production rate to be imported into the model. This value may be specified using a User Defined Argument (UDA). | 0.0 |
@@ -32,10 +32,10 @@ This keyword is used to import additional fluid streams into the model from othe
 *Table 12.46: GSATPROD Keyword Description*
 
 
-See also the [GSATINJE](#__RefHeading___Toc116596_332691817) and [GRUPTREE](#__RefHeading___Toc118321_1596574740) keywords to define satellite injection rates and the group hierarchy, respectively. For non-satellite groups see the [GCONINJE](#__RefHeading___Toc134874_2055188184) and [GCONPROD](#__RefHeading___Toc146746_4203985108) keywords. All the aforementioned keywords are in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section.
+See also the GSATINJE and GRUPTREE keywords to define satellite injection rates and the group hierarchy, respectively. For non-satellite groups see the GCONINJE and GCONPROD keywords. All the aforementioned keywords are in the SCHEDULE section.
 
 
-| Note Once a group has been defined to be a satellite group, via the [GSATINJE](#__RefHeading___Toc116596_332691817) and [GSATPROD](#__RefHeading___Toc202038_870710203) keywords, then the equivalent modeled group keywords, [GCONINJE](#__RefHeading___Toc134874_2055188184) and [GCONPROD](#__RefHeading___Toc146746_4203985108) in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section, cannot be used to set the operating conditions for satellite groups, only the [GSATINJE](#__RefHeading___Toc116596_332691817) and [GSATPROD](#__RefHeading___Toc202038_870710203) keywords may be used. |
+| Note Once a group has been defined to be a satellite group, via the GSATINJE and GSATPROD keywords, then the equivalent modeled group keywords, GCONINJE and GCONPROD in the SCHEDULE section, cannot be used to set the operating conditions for satellite groups, only the GSATINJE and GSATPROD keywords may be used. |
 | --- |
 
 
@@ -103,4 +103,4 @@ FLD-C    20.0   9.00   20E3   0.0    1*                    /
 
 ```
 
-Since the field gas rate is set to 450 MMscf/d and the satellite production is 50 MMscf/d, then FLD-A will produce only 400 MMscf/d and not the stipulated 450 MMscf/d on the [GCONPROD](#__RefHeading___Toc146746_4203985108) keyword.
+Since the field gas rate is set to 450 MMscf/d and the satellite production is 50 MMscf/d, then FLD-A will produce only 400 MMscf/d and not the stipulated 450 MMscf/d on the GCONPROD keyword.

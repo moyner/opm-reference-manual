@@ -1,22 +1,22 @@
 ### GRAVITY – Define the Surface Oil, Water Gas Gravities for the Fluids
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-[GRAVITY](#__RefHeading___Toc45801_719036256) defines the oil [API](#__RefHeading___Toc4422_421927891) gravity and water and gas surface specific gravities for the fluids for various regions in the model. The number of [GRAVITY](#__RefHeading___Toc45801_719036256) vector data sets is defined by the NTPVT parameter on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section and the allocation of the [GRAVITY](#__RefHeading___Toc45801_719036256) data sets to different grid blocks in the model is done via the [PVTNUM](#__RefHeading___Toc68366_2752266063) keyword in the REGION section. One data set consists of one record or line which is terminated by a “/”.
+GRAVITY defines the oil API gravity and water and gas surface specific gravities for the fluids for various regions in the model. The number of GRAVITY vector data sets is defined by the NTPVT parameter on the TABDIMS keyword in the RUNSPEC section and the allocation of the GRAVITY data sets to different grid blocks in the model is done via the PVTNUM keyword in the REGION section. One data set consists of one record or line which is terminated by a “/”.
 
-This surface density or gravity must be entered using either the [DENSITY](#__RefHeading___Toc45799_719036256) or [GRAVITY](#__RefHeading___Toc45801_719036256) keywords irrespective of which phases are active in the model.
+This surface density or gravity must be entered using either the DENSITY or GRAVITY keywords irrespective of which phases are active in the model.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [OILAPI](#__RefHeading___Toc240796_2928331029) | [OILAPI](#__RefHeading___Toc240796_2928331029) is a real number defining the [API](#__RefHeading___Toc4422_421927891) gravity of the oil phase at surface conditions. The American Petroleum Institute (“API”) classifies oils based on an [API](#__RefHeading___Toc4422_421927891) gravity (γ[API](#__RefHeading___Toc4422_421927891)),  or degrees [API](#__RefHeading___Toc4422_421927891) (o[API](#__RefHeading___Toc4422_421927891)), the relationship between relative density (γo) of oil and [API](#__RefHeading___Toc4422_421927891) gravity (γ[API](#__RefHeading___Toc4422_421927891)) is given by: | None |
-| o[API](#__RefHeading___Toc4422_421927891) | o[API](#__RefHeading___Toc4422_421927891) | o[API](#__RefHeading___Toc4422_421927891) |  |
+| 1 | OILAPI | OILAPI is a real number defining the API gravity of the oil phase at surface conditions. The American Petroleum Institute (“API”) classifies oils based on an API gravity (γAPI),  or degrees API (oAPI), the relationship between relative density (γo) of oil and API gravity (γAPI) is given by: $$ {\mathrm{γ}}_{\mathit{API}} = \frac{141.5}{{\mathrm{γ}}_{o}} - 131.5 $$ | None |
+| oAPI | oAPI | oAPI |  |
 | 2 | WATGRAV | WATGRAV is a real number defining the specific gravity of the water phase relative to pure water at surface conditions. | Defined |
 | (water =1.0) 0.7773 | (water =1.0) 0.7773 | (water =1.0) 0.7773 |  |
 | 3 | GASGRAV | GASGRAV is a real number defining the specific gravity of the gas phase relative to air at surface conditions. | Defined |
@@ -30,12 +30,12 @@ According to the SPE SI standard [The SI Metric System of Units and SPE Metric S
 
 Note that provided the first table has been entered, subsequent tables may be defaulted, in this case the prior table is copied to the current table. See the third example for an illustration on how to use this feature.
 
-See also the [DENSITY](#__RefHeading___Toc45799_719036256) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section.
+See also the DENSITY keyword in the PROPS section.
 
 
 #### Examples
 
-The following shows the [GRAVITY](#__RefHeading___Toc45801_719036256) keyword for when NTPVT on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section is set to one.
+The following shows the GRAVITY keyword for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to one.
 
 
 ```
@@ -48,7 +48,7 @@ GRAVITY
 ```
 
 
-The next example shows the [GRAVITY](#__RefHeading___Toc45801_719036256) keyword for when NTPVT on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section is set to three.
+The next example shows the GRAVITY keyword for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to three.
 
 
 ```
@@ -63,7 +63,7 @@ GRAVITY
 
 ```
 
-The third and final example shows the [GRAVITY](#__RefHeading___Toc45801_719036256) keyword for when NTPVT on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section is set to four. Here table two defaults to table one, and table four defaults to table three.
+The third and final example shows the GRAVITY keyword for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to four. Here table two defaults to table one, and table four defaults to table three.
 
 
 ```

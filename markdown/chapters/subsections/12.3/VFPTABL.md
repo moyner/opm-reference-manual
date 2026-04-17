@@ -1,13 +1,13 @@
 ### VFPTABL – Define Production Vertical Flow Performance ALQ Interpolation
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [VFPTABL](#__RefHeading___Toc647382_487874538) keyword defines the interpolation method for production Vertical Flow Performance (“VFP”) tables for the Artificial Lift Quantity (“ALQ”).  Production VFP data is entered via the [VFPPROD](#__RefHeading___Toc121919_2556401936) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section. By default the simulator interpolates all the variables in the VFP tables using linear interpolation, including the ALQ quantity. However, if the ALQ values represent gas lift, then linear interpolation may not be insufficient, as the gradient change between the tabulated ALQ values may result in sudden changes. This is particularly important in gas lift optimization studies where the available gas lift gas is being allocated to a group of wells in order to maximize oil production rates. To overcome this issue the [VFPTABL](#__RefHeading___Toc647382_487874538) keyword allows the ALQ values to be interpolated using cubic spline interpolation, and results in a smother transition between the various ALQ entries.
+The VFPTABL keyword defines the interpolation method for production Vertical Flow Performance (“VFP”) tables for the Artificial Lift Quantity (“ALQ”).  Production VFP data is entered via the VFPPROD keyword in the SCHEDULE section. By default the simulator interpolates all the variables in the VFP tables using linear interpolation, including the ALQ quantity. However, if the ALQ values represent gas lift, then linear interpolation may not be insufficient, as the gradient change between the tabulated ALQ values may result in sudden changes. This is particularly important in gas lift optimization studies where the available gas lift gas is being allocated to a group of wells in order to maximize oil production rates. To overcome this issue the VFPTABL keyword allows the ALQ values to be interpolated using cubic spline interpolation, and results in a smother transition between the various ALQ entries.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [VFPTABL](#__RefHeading___Toc647382_487874538) | [VFPTABL](#__RefHeading___Toc647382_487874538) is a defined positive integer that specifies the interpolation method to be used with the ALQ quantity in the VFP production tables, and should be set to one of the following: | 1 |
+| 1 | VFPTABL | VFPTABL is a defined positive integer that specifies the interpolation method to be used with the ALQ quantity in the VFP production tables, and should be set to one of the following: | 1 |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
 
@@ -24,7 +24,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 #### Example
 
-The example sets cubic spline interpolation for the ALQ quantity in the [VFPPROD](#__RefHeading___Toc121919_2556401936) tables, with linear interpolation used for all the variables.
+The example sets cubic spline interpolation for the ALQ quantity in the VFPPROD tables, with linear interpolation used for all the variables.
 
 
 ```

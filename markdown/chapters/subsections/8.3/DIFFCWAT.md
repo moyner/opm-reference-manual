@@ -1,22 +1,22 @@
 ### DIFFCWAT – Define PVT Region Water Component Diffusion Coefficients
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [DIFFCWAT](#__RefHeading___Toc314077_1539708736 Copy 1 Copy 1) keyword defines the water diffusion coefficients assuming the standard mole fraction formulation for each compositional component in the model and for each PVT region, for when the Molecular Diffusion option has been activated by the [DIFFUSE](#__RefHeading___Toc349951_1539708736) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The DIFFCWAT keyword defines the water diffusion coefficients assuming the standard mole fraction formulation for each compositional component in the model and for each PVT region, for when the Molecular Diffusion option has been activated by the DIFFUSE keyword in the RUNSPEC section.
 
-This keyword is optional as OPM Flow will automatically calculate the coefficients assuming the mole fraction formulation, as described by Sandve et al. [Tor Harald Sandve, Sarah E. Gasda, Atgeirr Rasmussen, and Alf Birger Rustad. Convective dissolution in field scale CO2 storage simulation using the OPM Flow simulator. Submitted to TCCS 11 – Trondheim Conference on CO2 Capture, Transport and Storage Trondheim, Norway – June 21-23, 2021.], if the [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) and [DIFFCWAT](#__RefHeading___Toc314077_1539708736 Copy 1 Copy 1) keywords are absent from the input deck.  The keyword thus allows one to overwrite the automatically calculated values.
+This keyword is optional as OPM Flow will automatically calculate the coefficients assuming the mole fraction formulation, as described by Sandve et al. [Tor Harald Sandve, Sarah E. Gasda, Atgeirr Rasmussen, and Alf Birger Rustad. Convective dissolution in field scale CO2 storage simulation using the OPM Flow simulator. Submitted to TCCS 11 – Trondheim Conference on CO2 Capture, Transport and Storage Trondheim, Norway – June 21-23, 2021.], if the [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) and DIFFCWAT keywords are absent from the input deck.  The keyword thus allows one to overwrite the automatically calculated values.
 
-The keyword should only be used if the [CO2STORE](#__RefHeading___Toc387968_1616145207) or [H2STORE](#REF_HEADING_KEYWORD_H2STORE) keyword and either the [GASWAT](#__RefHeading___Toc38607_2267116897 Copy 1) or the [GAS](#__RefHeading___Toc38607_2267116897) and [WATER](#__RefHeading___Toc38611_2267116897) keywords in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section, have also been activated for the gas-water two component model.
+The keyword should only be used if the CO2STORE or [H2STORE](#REF_HEADING_KEYWORD_H2STORE) keyword and either the GASWAT or the GAS and WATER keywords in the RUNSPEC section, have also been activated for the gas-water two component model.
 
-See also the [DIFFAGAS](#REF_HEADING_KEYWORD_DIFFAGAS_8_3) and [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) keywords that assume a mass fraction formulation for diffusion rather than the standard mole fraction formulation assumed by the [DIFFCGAS](#__RefHeading___Toc314077_1539708736 Copy 1) and [DIFFCWAT](#__RefHeading___Toc314077_1539708736 Copy 1 Copy 1) keywords. The [DIFFAGAS](#REF_HEADING_KEYWORD_DIFFAGAS_8_3) and [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) keywords cannot be used in combination with the [DIFFCGAS](#__RefHeading___Toc314077_1539708736 Copy 1) and [DIFFCWAT](#__RefHeading___Toc314077_1539708736 Copy 1 Copy 1) keywords.
+See also the [DIFFAGAS](#REF_HEADING_KEYWORD_DIFFAGAS_8_3) and [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) keywords that assume a mass fraction formulation for diffusion rather than the standard mole fraction formulation assumed by the DIFFCGAS and DIFFCWAT keywords. The [DIFFAGAS](#REF_HEADING_KEYWORD_DIFFAGAS_8_3) and [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) keywords cannot be used in combination with the DIFFCGAS and DIFFCWAT keywords.
 
 
-| Note This is an OPM Flow keyword used with OPM Flow’s [CO2STORE](#__RefHeading___Toc387968_1616145207) or [H2STORE](#REF_HEADING_KEYWORD_H2STORE) and [GASWAT](#__RefHeading___Toc38607_2267116897 Copy 1) keywords in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section, and should not be confused with the more general version of the [DIFFCWAT](#__RefHeading___Toc314077_1539708736 Copy 1 Copy 1) keyword used in the commercial compositional simulator. |
+| Note This is an OPM Flow keyword used with OPM Flow’s CO2STORE or [H2STORE](#REF_HEADING_KEYWORD_H2STORE) and GASWAT keywords in the RUNSPEC section, and should not be confused with the more general version of the DIFFCWAT keyword used in the commercial compositional simulator. |
 | --- |
 
 
@@ -32,11 +32,11 @@ See also the [DIFFAGAS](#REF_HEADING_KEYWORD_DIFFAGAS_8_3) and [DIFFAWAT](#REF_H
 *Table 8.30: DIFFCWAT Keyword Description*
 
 
-| Note The option has been tested in combination with the [CO2STORE](#__RefHeading___Toc387968_1616145207) keyword, but not for the general case at this point. |
+| Note The option has been tested in combination with the CO2STORE keyword, but not for the general case at this point. |
 | --- |
 
 
-See also the [DIFFUSE](#__RefHeading___Toc349951_1539708736) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section to activate the Molecular Diffusion option and the [DIFFCGAS](#__RefHeading___Toc314077_1539708736 Copy 1) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section that defines the gas diffusion coefficients for each compositional component in the model and for each PVT region. Finally, for gas-oil systems the [DIFFC](#__RefHeading___Toc314077_1539708736) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section should be used.
+See also the DIFFUSE keyword in the RUNSPEC section to activate the Molecular Diffusion option and the DIFFCGAS keyword in the PROPS section that defines the gas diffusion coefficients for each compositional component in the model and for each PVT region. Finally, for gas-oil systems the DIFFC keyword in the PROPS section should be used.
 
 Normally diffusion coefficients are measured in laboratory units, that is cm2/s, for ease of use Table 8.31 outlines the conversion factors for converting the laboratory measured diffusion coefficients to those used by the simulator.
 
@@ -53,7 +53,7 @@ Normally diffusion coefficients are measured in laboratory units, that is cm2/s,
 
 #### Example
 
-The example below is based on field units, with NTPVT equal to three on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword.
+The example below is based on field units, with NTPVT equal to three on the TABDIMS keyword.
 
 
 ```

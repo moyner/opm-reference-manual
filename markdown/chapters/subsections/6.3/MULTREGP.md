@@ -1,13 +1,13 @@
 ### MULTREGP – Multiply Pore Volumes Based On Region Number
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [MULTREGP](#__RefHeading___Toc296617_1576177388) keyword multiplies the pore volume of a cell by a constant for all cells with a specific region number. The region number array can be [FLUXNUM](#__RefHeading___Toc45781_719036256), [MULTNUM](#__RefHeading___Toc61329_2752266063) or [OPERNUM](#__RefHeading___Toc67857_718313858) and these arrays must be defined and be available before the [MULTREGP](#__RefHeading___Toc296617_1576177388) keyword is read by the simulator. The constant should be a real number.
+The MULTREGP keyword multiplies the pore volume of a cell by a constant for all cells with a specific region number. The region number array can be FLUXNUM, MULTNUM or OPERNUM and these arrays must be defined and be available before the MULTREGP keyword is read by the simulator. The constant should be a real number.
 
 
 | No. | Name | Description | Default |
@@ -38,4 +38,4 @@ MULTREGP
 
 ```
 
-The above example re-scales the pore volumes for [MULTNUM](#__RefHeading___Toc61329_2752266063) regions one and three and makes regions two and four inactive by setting their pore volumes to zero.
+The above example re-scales the pore volumes for MULTNUM regions one and three and makes regions two and four inactive by setting their pore volumes to zero.

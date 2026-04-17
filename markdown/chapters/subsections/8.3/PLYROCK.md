@@ -1,13 +1,13 @@
 ### PLYROCK – Define Polymer-Rock Properties
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [PLYROCK](#__RefHeading___Toc110216_2939291539) keyword defines rock properties for when the Polymer option has been activated by the [POLYMER](#__RefHeading___Toc38609_2267116897) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The PLYROCK keyword defines rock properties for when the Polymer option has been activated by the POLYMER keyword in the RUNSPEC section.
 
 
 | No. | Name | Description | Default |
@@ -17,7 +17,7 @@ The [PLYROCK](#__RefHeading___Toc110216_2939291539) keyword defines rock propert
 | dimensionless | dimensionless | dimensionless |  |
 | 2 | PERMFAC | A real positive value that is greater than or equal to one that defines decrease in the rock permeability to the water phase when the maximum amount of polymer has been adsorbed. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 3 | [DENSITY](#__RefHeading___Toc45799_719036256) | A real value that defines the rock in-situ density, that is at reservoir conditions. | None |
+| 3 | DENSITY | A real value that defines the rock in-situ density, that is at reservoir conditions. | None |
 | lb/rb | kg/rm3 | gm/rcc |  |
 | 4 | ADINDX | A positive integer of 1 or 2 that defines the polymer desorption option. | Defined |
 | dimensionless 1 | dimensionless 1 | dimensionless 1 |  |
@@ -45,6 +45,6 @@ PLYROCK
 ```
 
 
-The above example defines three polymer-rock tables, based on the NTSFUN variable on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section being equal to three.
+The above example defines three polymer-rock tables, based on the NTSFUN variable on the TABDIMS keyword in the RUNSPEC section being equal to three.
 
 There is no terminating “/” for this keyword.

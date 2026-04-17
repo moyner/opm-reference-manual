@@ -1,13 +1,13 @@
 ### ACTNUM – Set the Status of a Grid Block To Active or Inactive
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [ACTNUM](#__RefHeading___Toc4410_421927891) keyword specifies which grid blocks are either active or inactive. A grid block is automatically set to inactive if its pore volume is less than the value entered using the [MINPV](#__RefHeading___Toc569208_3181922006) keyword. The [ACTNUM](#__RefHeading___Toc4410_421927891) keyword can be used to also make blocks with pore volumes greater than [MINPV](#__RefHeading___Toc569208_3181922006) inactive.
+The ACTNUM keyword specifies which grid blocks are either active or inactive. A grid block is automatically set to inactive if its pore volume is less than the value entered using the MINPV keyword. The ACTNUM keyword can be used to also make blocks with pore volumes greater than MINPV inactive.
 
 
 | No. | Name | Description | Default |
@@ -41,7 +41,7 @@ ACTNUM
 
 ```
 
-Alternatively the [EQUALS](#__RefHeading___Toc296597_1576177388) keyword could be employed to accomplish the same task, that is:
+Alternatively the EQUALS keyword could be employed to accomplish the same task, that is:
 
 
 ```

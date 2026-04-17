@@ -1,31 +1,39 @@
 ### LPCW – End-Point Scaling of Grid Cell Water Capillary Pressure (Low Salinity and Oil Wet)
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-[LPCW](#__RefHeading___Toc332422_2843394514) defines the maximum oil-water pressure values for all the cells in the model via an array, for when the Low Salt option and the End-point Scaling options has been activated by the [LOWSALT](#__RefHeading___Toc331072_2843394514) and the [ENDSCALE](#__RefHeading___Toc68146_2267116897) keywords in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. The keyword re-scales the oil-water capillary pressure in the low salinity oil wet capillary saturation tables from a cell’s assigned saturation function by the grid block’s [LPCW](#__RefHeading___Toc332422_2843394514) value.
+LPCW defines the maximum oil-water pressure values for all the cells in the model via an array, for when the Low Salt option and the End-point Scaling options has been activated by the LOWSALT and the ENDSCALE keywords in the RUNSPEC section. The keyword re-scales the oil-water capillary pressure in the low salinity oil wet capillary saturation tables from a cell’s assigned saturation function by the grid block’s LPCW value.
 
 The capillary pressure for a grid block is scaled by:
 
 
-|  | (8.64) |
+| $$ {P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{LPCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right) $$ | (8.64) |
 | --- | --- |
 
 Where:
 
-	=	the resulting low salt oil wet water capillary pressure for a grid cell.
+$$
+{P}_{c}
+$$
 
-	= 	the maximum capillary pressure from the [LPCW](#__RefHeading___Toc332422_2843394514) array for a given cell.
+$$
+\mathit{LPCW}
+$$
 
-	= 	the capillary pressure in the low salt oil wet capillary pressure table
+$$
+{P}_{{c}_{\mathit{TABLE}}}
+$$
 
 allocated to the grid block.
 
-	= 	the maximum capillary pressure in the low salt oil capillary pressure table
+$$
+{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}
+$$
 
 allocated to the grid block (that is at the connate water saturation).
 

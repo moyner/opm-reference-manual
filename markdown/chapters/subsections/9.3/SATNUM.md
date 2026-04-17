@@ -1,18 +1,18 @@
 ### SATNUM – Define the Saturation Table Region Numbers
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [SATNUM](#__RefHeading___Toc71136_2752266063) keyword defines the saturation tables (relative permeability and capillary pressure tables) region numbers for each grid block, as such there must be one entry for each cell in the model. The region number specifies which set of relative permeability tables ([SGFN](#__RefHeading___Toc106868_335817223), [SWFN](#__RefHeading___Toc106882_335817223), [SOF2](#__RefHeading___Toc106876_335817223), [SOF3](#__RefHeading___Toc106878_335817223), [SOF32D](#__RefHeading___Toc765497_4250154414), [SGOF](#__RefHeading___Toc106870_335817223), [SLGOF](#__RefHeading___Toc106874_335817223) and [SWOF](#__RefHeading___Toc45811_7190362561)) are used to calculate the relative permeability and capillary pressure in a grid block.
+The SATNUM keyword defines the saturation tables (relative permeability and capillary pressure tables) region numbers for each grid block, as such there must be one entry for each cell in the model. The region number specifies which set of relative permeability tables (SGFN, SWFN, SOF2, SOF3, SOF32D, SGOF, SLGOF and SWOF) are used to calculate the relative permeability and capillary pressure in a grid block.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
-| 1 | [SATNUM](#__RefHeading___Toc71136_2752266063) | [SATNUM](#__RefHeading___Toc71136_2752266063) defines an array of positive integers assigning a grid cell to a particular saturation table region. The maximum number of [SATNUM](#__RefHeading___Toc71136_2752266063) regions is set by the NTSFUN variable on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. | 1 |
+| 1 | SATNUM | SATNUM defines an array of positive integers assigning a grid cell to a particular saturation table region. The maximum number of SATNUM regions is set by the NTSFUN variable on the TABDIMS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 
 *Table 9.21: SATNUM Keyword Description*
@@ -20,7 +20,7 @@ The [SATNUM](#__RefHeading___Toc71136_2752266063) keyword defines the saturation
 
 #### Examples
 
-The example below sets three [SATNUM](#__RefHeading___Toc71136_2752266063) regions for a 4 x 5 x 2 model.
+The example below sets three SATNUM regions for a 4 x 5 x 2 model.
 
 
 ```
@@ -33,7 +33,7 @@ SATNUM
 /
 ```
 
-Alternatively the [EQUALS](#__RefHeading___Toc296597_1576177388) keyword could be employed to accomplish the same task, that is:
+Alternatively the EQUALS keyword could be employed to accomplish the same task, that is:
 
 
 ```

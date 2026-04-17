@@ -1,21 +1,21 @@
 ### SGFN – Gas Saturation Tables (Format Type 2)
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [SGFN](#__RefHeading___Toc106868_335817223) keyword defines the gas relative permeability and oil-gas capillary pressure data versus gas saturation tables for when gas is present in the input deck.  This keyword should only be used if the gas is present in the run.
+The SGFN keyword defines the gas relative permeability and oil-gas capillary pressure data versus gas saturation tables for when gas is present in the input deck.  This keyword should only be used if the gas is present in the run.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [SGAS](#__RefHeading___Toc137369_1317547213) | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating at one, that defines the gas saturation. | None |
+| 1 | SGAS | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating at one, that defines the gas saturation. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 2 | [KRG](#__RefHeading___Toc97393_621662414) | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the gas relative permeability. | None |
+| 2 | KRG | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the gas relative permeability. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | 3 | PCOG | A columnar vector of real values that are either equal or increasing down the column that defines the oil-gas capillary pressure. | None |
 | psia | bars | atm |  |
@@ -24,7 +24,7 @@ The [SGFN](#__RefHeading___Toc106868_335817223) keyword defines the gas relative
 *Table 8.148: SGFN Keyword Description*
 
 
-See also the [GSF - Gas Saturation Tables versus Gas Saturation (Gas-Water and CO2STORE Systems)](#8.3.78.GSF - Gas Saturation Tables versus Gas Saturation (Gas-Water and CO2STORE Systems)|outline) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section, that defines the gas relative permeability and gas-water capillary pressure data as a function of gas saturation, for when only the gas and water phases are present in the model. Note that the [GSF](#__RefHeading___Toc524656_3603161511) keyword must be used in conjunction with the [WSF - Water Saturation Tables versus Water Saturation (Gas-Water and CO2STORE Systems)](#8.3.365.WSF - Water Saturation Tables versus Water Saturation (Gas-Water and CO2STORE Systems)|outline) keyword, also in the [PROPS](#__RefHeading___Toc39329_784232322) section. [WSF](#__RefHeading___Toc524656_3603161511 Copy 1) defines the water saturation as a function of water saturation for when only the gas and water phases are present in the model.
+See also the GSF - Gas Saturation Tables versus Gas Saturation (Gas-Water and CO2STORE Systems) keyword in the PROPS section, that defines the gas relative permeability and gas-water capillary pressure data as a function of gas saturation, for when only the gas and water phases are present in the model. Note that the GSF keyword must be used in conjunction with the WSF - Water Saturation Tables versus Water Saturation (Gas-Water and CO2STORE Systems) keyword, also in the PROPS section. WSF defines the water saturation as a function of water saturation for when only the gas and water phases are present in the model.
 
 
 #### Example
@@ -80,4 +80,4 @@ SGFN
 ```
 
 
-The example defines two [SGFN](#__RefHeading___Toc106868_335817223) tables for when gas is present in the input deck.
+The example defines two SGFN tables for when gas is present in the input deck.

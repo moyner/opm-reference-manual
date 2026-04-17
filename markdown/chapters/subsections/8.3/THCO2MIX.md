@@ -1,7 +1,7 @@
 ### THCO2MIX – Specify Thermal Mixing Models
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -9,7 +9,7 @@
 
 The [THCO2MIX](#REF_HEADING_KEYWORD_THCO2MIX_8_3) keyword specifies the thermal mixing models for salt in the water phase, CO2 in the liquid phase and vaporized water in gas phase.
 
-This is an OPM Flow specific keyword that should only be used if the [CO2STORE](#__RefHeading___Toc387968_1616145207) keyword has been specified in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+This is an OPM Flow specific keyword that should only be used if the CO2STORE keyword has been specified in the RUNSPEC section.
 
 
 | No. | Name | Description | Default |

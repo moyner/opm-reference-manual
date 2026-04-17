@@ -1,7 +1,7 @@
 ### WINJCLN – Clean a Fraction of a Deposited Filter Cake
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -13,7 +13,7 @@ The [WINJCLN](#REF_HEADING_KEYWORD_WINJCLN) keyword signals that a filter cake s
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the filter cake properties are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section, otherwise an error may occur. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the filter cake properties are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | FCLNFRAC | A real positive value between 0 and 1 that defines the fraction of filter cake permeability (skin factor) to be removed. The accumulated filter cake skin factor for matching connections will be multiplied by (1 – FCLNFRAC), so the default value of 1 will completely clean the filter cake. | 1 |
 | dimensionless | dimensionless | dimensionless |  |
 | 3 | I | An integer that defines the matching connection location in the I-direction. If set to < 1 then all connections in the I-direction that also satisfy J and K criteria are selected. | -1 |
@@ -24,7 +24,7 @@ The [WINJCLN](#REF_HEADING_KEYWORD_WINJCLN) keyword signals that a filter cake s
 *Table 12.3.295.1: WINJCLN Keyword Description*
 
 
-See also the WINJDAN keyword to define the filter cake properties and the [WINJFCNC](#REF_HEADING_KEYWORD_WINJFCNC) keyword to define a well’s injected filtrate concentration. All the aforementioned keywords are described in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section.
+See also the WINJDAN keyword to define the filter cake properties and the [WINJFCNC](#REF_HEADING_KEYWORD_WINJFCNC) keyword to define a well’s injected filtrate concentration. All the aforementioned keywords are described in the SCHEDULE section.
 
 
 #### Example

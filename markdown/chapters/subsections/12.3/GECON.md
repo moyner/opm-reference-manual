@@ -1,26 +1,26 @@
 ### GECON – Group Economic Criteria for Production Groups
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [GECON](#__RefHeading___Toc134876_2055188184) keyword defines economic criteria for production groups, including the top level FIELD group, that have been created by having wells assigned to them via the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section.
+The GECON keyword defines economic criteria for production groups, including the top level FIELD group, that have been created by having wells assigned to them via the WELSPECS keyword in the SCHEDULE section.
 
-Note that wells are allocated to a group when they are specified by the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword and wells can also have well level economic controls. Wells under group control are therefore subject to the economic criteria set via the [GECON](#__RefHeading___Toc134876_2055188184) and [WECON](#__RefHeading___Toc134884_2055188184) keywords and the controls specified by the [GCONPROD](#__RefHeading___Toc146746_4203985108) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section.
+Note that wells are allocated to a group when they are specified by the WELSPECS keyword and wells can also have well level economic controls. Wells under group control are therefore subject to the economic criteria set via the GECON and WECON keywords and the controls specified by the GCONPROD keyword in the SCHEDULE section.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group target and constraints are being defined. The group named FIELD is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the [GRUPTREE](#__RefHeading___Toc118321_1596574740) keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
-| 2 | ORAT | A real positive value that defines the minimum economic surface oil production rate, below which an economic action of shutting in or stopping all the wells in the group, as requested by the AUTO variable item (9) of the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword. This value may be specified using a User Defined Argument (UDA). A value less than or equal to zero switches off this criteria. | 0.0 |
+| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group target and constraints are being defined. The group named FIELD is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
+| 2 | ORAT | A real positive value that defines the minimum economic surface oil production rate, below which an economic action of shutting in or stopping all the wells in the group, as requested by the AUTO variable item (9) of the WELSPECS keyword. This value may be specified using a User Defined Argument (UDA). A value less than or equal to zero switches off this criteria. | 0.0 |
 | stb/d | sm3/day | scc/hour |  |
-| 3 | GRAT | A real positive value that defines the minimum economic surface gas production rate, below which an economic action of shutting in or stopping all the wells in the group, as requested by the AUTO variable item (9) of the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword. This value may be specified using a User Defined Argument (UDA). A value less than or equal to zero switches off this criteria, | 0.0 |
+| 3 | GRAT | A real positive value that defines the minimum economic surface gas production rate, below which an economic action of shutting in or stopping all the wells in the group, as requested by the AUTO variable item (9) of the WELSPECS keyword. This value may be specified using a User Defined Argument (UDA). A value less than or equal to zero switches off this criteria, | 0.0 |
 | Mscf/d | sm3/day | scc/hour |  |
-| 4 | WCUT | A real positive value that defines the maximum economic surface water cut, above which an economic action will take place. This value may be specified using a User Defined Argument (UDA). Water cut is defined as:, and the various actions that are available if the water cut limit is exceeded are described in item (7). A value less than or equal to zero switches off this criteria. | 0.0 |
+| 4 | WCUT | A real positive value that defines the maximum economic surface water cut, above which an economic action will take place. This value may be specified using a User Defined Argument (UDA). Water cut is defined as:  $$ {f}_{w} = \frac{{q}_{w}}{{q}_{w} + {q}_{o}} $$  , and the various actions that are available if the water cut limit is exceeded are described in item (7). A value less than or equal to zero switches off this criteria. | 0.0 |
 | dimensionless | dimensionless | dimensionless |  |
 | 5 | GOR | A real positive value that defines the maximum economic surface gas-oil ratio, above which an economic action will take place, as defined by item (7). This value may be specified using a User Defined Argument (UDA). A value less than or equal to zero switches off this criteria. | 0.0 |
 | Mscf/stb | sm3/sm3 | scc/scc |  |
@@ -34,7 +34,7 @@ Note that wells are allocated to a group when they are specified by the [WELSPEC
 *Table 12.3.98.1: GECON Keyword Description*
 
 
-See also the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword to define a well’s shut-in or stop options, [GCONPROD](#__RefHeading___Toc146746_4203985108) for group controls, and [WECON](#__RefHeading___Toc134884_2055188184) for setting a well’s economic criteria. All the aforementioned keywords are described in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section.
+See also the WELSPECS keyword to define a well’s shut-in or stop options, GCONPROD for group controls, and WECON for setting a well’s economic criteria. All the aforementioned keywords are described in the SCHEDULE section.
 
 
 #### Example

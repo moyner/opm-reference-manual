@@ -1,7 +1,7 @@
 ### WRFT – Activate Well RFT Reporting to the RFT File
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -15,13 +15,13 @@ The RFT tool is an open hole device which is an updated version of the Formation
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A columnar vector of character strings of up to eight characters in length for each item,  that defines the well name for which the RFT data should be written to the RFT file. Note that the WELNAME must have been declared previously using the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section, otherwise an error may occur. If the WELNAME is left blank then the data is written out for all wells at the time they are first opened to flow. If the WELNAME is given, then the RFT data for the well at the time step the keyword is invoked is written out. | None |
+| 1 | WELNAME | A columnar vector of character strings of up to eight characters in length for each item,  that defines the well name for which the RFT data should be written to the RFT file. Note that the WELNAME must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. If the WELNAME is left blank then the data is written out for all wells at the time they are first opened to flow. If the WELNAME is given, then the RFT data for the well at the time step the keyword is invoked is written out. | None |
 | Notes: |  |  |  |
 
 *Table 12.115: WRFT Keyword Description*
 
 
-See also the [WRFTPLT](#__RefHeading___Toc268469_1366622701) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section that has more flexible reporting options.
+See also the WRFTPLT keyword in the SCHEDULE section that has more flexible reporting options.
 
 
 #### Examples
@@ -40,7 +40,7 @@ WRFT
 
 ```
 
-Ideally, this version of the keyword should be place at the beginning of the [SCHEDULE](#__RefHeading___Toc43945_784232322) section to obtain the data for the wells in the run before they are opened up through time.
+Ideally, this version of the keyword should be place at the beginning of the SCHEDULE section to obtain the data for the wells in the run before they are opened up through time.
 
 The next example shows how to use the keyword to request the output for several wells at different reporting time steps.
 

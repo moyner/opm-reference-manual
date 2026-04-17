@@ -1,13 +1,13 @@
 ### PVZG – Gas PVT Properties for Dry Gas (Z-Factor)
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-[PVZG](#__RefHeading___Toc350298_501926209) defines the gas PVT properties for dry gas [Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.] via the gas compressibility factor (z-factor), instead of the gas formation volume factor. If the gas has a constant and uniform vaporized oil concentration, Condensate-Gas Ratio (“CGR”), and if the reservoir pressure never drops below the saturation pressure (dew point pressure), then the model can be run more efficiently by omitting the [OIL](#__RefHeading___Toc97439_1778172979) and [VAPOIL](#__RefHeading___Toc56610_2267116897) keywords from the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section, treating the gas as a dry gas, and defining a constant Rv (CGR) value with keyword [RVCONST](#__RefHeading___Toc329587_516898843) or [RVCONSTT](#__RefHeading___Toc138400_3326918171) in the [PROPS](#__RefHeading___Toc39329_784232322) section. This results in the model being run with as a dry gas problem with no active oil (condensate) phase. However, OPM Flow takes into account the constant Rv in the calculations and reporting.
+PVZG defines the gas PVT properties for dry gas [Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.] via the gas compressibility factor (z-factor), instead of the gas formation volume factor. If the gas has a constant and uniform vaporized oil concentration, Condensate-Gas Ratio (“CGR”), and if the reservoir pressure never drops below the saturation pressure (dew point pressure), then the model can be run more efficiently by omitting the OIL and VAPOIL keywords from the RUNSPEC section, treating the gas as a dry gas, and defining a constant Rv (CGR) value with keyword RVCONST or RVCONSTT in the PROPS section. This results in the model being run with as a dry gas problem with no active oil (condensate) phase. However, OPM Flow takes into account the constant Rv in the calculations and reporting.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -15,7 +15,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1-1 | [RTEMP](#__RefHeading___Toc111816_2939291539) | Single real positive value that defines the reservoir temperature for the data in the following records. |  |
+| 1-1 | RTEMP | Single real positive value that defines the reservoir temperature for the data in the following records. |  |
 | oF | oC | oC |  |
 | 1-2 | / | Record terminated by a “/” | Not Applicable |
 | 2-1 | PRESS | A columnar vector of real monotonically increasing down the column   values that defines the gas phase pressure. | None |
@@ -29,71 +29,95 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 
 *Table 8.124: PVZG Keyword Description*
 
-See also the [RVCONST](#__RefHeading___Toc329587_516898843) and [RVCONSTT](#__RefHeading___Toc138400_3326918171) keywords to define the constant Rv for dry gas.
+See also the RVCONST and RVCONSTT keywords to define the constant Rv for dry gas.
 
 The ideal gas law provides a relationship between the pressure, the temperature and the specific volume of an ideal gas (pure component). This relationship is modified by use of a compressibility factor, Z [Standing, M. B.:” Volumetric and Phase Behaviour of Oil Field Hydrocarbon Systems”, Renihold Publishing Corp., New York City (1952).], to account for deviations, from ideal, to the behavior of real gases.  The PVT relation for a real gas can be defined by:
 
 
-|  | (8.84) |
+| $$ \mathit{PV} = \mathit{ZnRT} $$ | (8.84) |
 | --- | --- |
 
 As the gas formation volume factor is used to relate the volume of gas, as measured at reservoir conditions, to the volume of gas as measured at standard conditions (60 oF and 14.7 psia, or 15 oC and 101.325 kPa). This gas property is then defined as the actual volume occupied by a certain amount of gas at a specified pressure and temperature, divided by the same amount of gas at standard conditions.  Thus, using the above equation one can obtain the gas volumes at reservoir and standard conditions, i.e.
 
 
-|  | (8.85) |
+| $$ {V}_{\mathit{sc}} = \frac{{Z}_{\mathit{sc}}{\mathit{nRT}}_{\mathit{sc}}}{{P}_{\mathit{sc}}} $$ | (8.85) |
 | --- | --- |
 
 
-|  | (8.86) |
+| $$ {V}_{i} = \frac{{Z}_{i}n{\mathit{RT}}_{i}}{{P}_{i}} $$ | (8.86) |
 | --- | --- |
 
 Thus the gas formation volume factor can be expressed as:
 
 
-|  | (8.87) |
+| $$ E = \frac{{V}_{\mathit{sc}}}{{V}_{i}} $$ | (8.87) |
 | --- | --- |
 
 And substituting equation (8.85) and (8.86) into (8.87) we obtain
 
 
-|  | (8.88) |
+| $$ E = \left(\frac{{P}_{i}}{{P}_{\mathit{sc}}}\right) \left(\frac{{T}_{\mathit{sc}}}{{T}_{i}}\right) \left(\frac{1}{{Z}_{i}}\right) $$ | (8.88) |
 | --- | --- |
 
 Incorporating standard pressure and temperature values gives in SI units:
 
 
-|  | (8.89) |
+| $$ E = \left(\frac{{P}_{i}}{101.325}\right) \left(\frac{273.15 + 15}{{T}_{i}}\right) \left(\frac{1}{{Z}_{i}}\right) = 2.84 \left(\frac{{P}_{i}}{{Z}_{i}{T}_{i}}\right) $$ | (8.89) |
 | --- | --- |
 
 or in field units:
 
 
-|  | (8.90) |
+| $$ E = \left(\frac{{P}_{i}}{14.7}\right) \left(\frac{460 + 60}{{T}_{i}}\right) \left(\frac{1}{{Z}_{i}}\right) = 35.37 \left(\frac{{P}_{i}}{{Z}_{i}{T}_{i}}\right) $$ | (8.90) |
 | --- | --- |
 
 
 Where,
 
-	= gas formation volume factor (scf /rcft or Sm3/m3)
+$$
+E
+$$
 
-	= pressure (psia or kPa)
+$$
+P
+$$
 
-	= pressure standard conditions (psia or kPa )
+$$
+\mathit{Psc}
+$$
 
-	= initial reservoir pressure (psia or kPa)
+$$
+\mathit{Pi}
+$$
 
-	= volume (ft3 or m3)
+$$
+V
+$$
 
-	= absolute temperature (oR or K)
+$$
+T
+$$
 
-	= temperature at standard conditions (oR or K)
+$$
+\mathit{Tsc}
+$$
 
-	= initial reservoir temperature (oR or K)
+$$
+\mathit{Ti}
+$$
 
-	= gas constant (10.73 or 8.314)
+$$
+R
+$$
 
 
-R[TEMP](#__RefHeading___Toc146397_3544483072) on this keyword is the in the above equations and is PRESS columnar vector.
+$$
+\mathit{Ti}
+$$
+
+$$
+{P}_{i}
+$$
 
 
 #### Example
@@ -158,4 +182,4 @@ PVZG
 ```
 
 
-The above example defines two dry [PVZG](#__RefHeading___Toc350298_501926209) tables assuming NTPVT equals two and NPPVT is greater than or equal to 17 on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. There is no terminating “/” for this keyword.
+The above example defines two dry PVZG tables assuming NTPVT equals two and NPPVT is greater than or equal to 17 on the TABDIMS keyword in the RUNSPEC section. There is no terminating “/” for this keyword.

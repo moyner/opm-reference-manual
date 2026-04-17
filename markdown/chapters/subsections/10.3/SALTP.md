@@ -1,37 +1,37 @@
 ### SALTP – Define the Initial Precipitated Salt Volume Fraction for All Grid Blocks
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [SALTP](#__RefHeading___Toc486358_4287353749) keyword defines the initial equilibration precipitated salt volume fraction values for all grid cells in the model and should be used in conjunction with the [PBUB](#__RefHeading___Toc135619_1317547213), [PDEW](#__RefHeading___Toc135623_1317547213), [PRESSURE](#__RefHeading___Toc135627_1317547213), [RS](#__RefHeading___Toc137361_1317547213), [RV](#__RefHeading___Toc137365_1317547213), [SGAS](#__RefHeading___Toc137369_1317547213), [SOIL](#__RefHeading___Toc137371_1317547213) and [SWAT](#__RefHeading___Toc137373_1317547213) keywords etc., to fully describe the initial state of the model. The keyword should only be used if the salt (brine) phase has been activated in the model via the [BRINE](#__RefHeading___Toc162083_289573908) keyword, and the [PRECSALT](#__RefHeading___Toc332782_3149455253) keyword to activate OPM Flow’s Salt Precipitation Model. Both keywords are in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The SALTP keyword defines the initial equilibration precipitated salt volume fraction values for all grid cells in the model and should be used in conjunction with the PBUB, PDEW, PRESSURE, RS, RV, SGAS, SOIL and SWAT keywords etc., to fully describe the initial state of the model. The keyword should only be used if the salt (brine) phase has been activated in the model via the BRINE keyword, and the PRECSALT keyword to activate OPM Flow’s Salt Precipitation Model. Both keywords are in the RUNSPEC section.
 
-This is the non-standard method to initialize the model via enumeration and is seldom employed in the industry. The standard methodology is for OPM Flow to initialize a model using the parameters on the [EQUIL](#__RefHeading___Toc135617_1317547213) keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
+This is the non-standard method to initialize the model via enumeration and is seldom employed in the industry. The standard methodology is for OPM Flow to initialize a model using the parameters on the EQUIL keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [SALTP](#__RefHeading___Toc486358_4287353749) | [SALTP](#__RefHeading___Toc486358_4287353749) is an array of real positive numbers that are greater than or equal to zero and less than or equal to one, that define the initial equilibration salt volume fraction values to each cell in the model. Repeat counts may be used, for example 20*0.15. | None |
+| 1 | SALTP | SALTP is an array of real positive numbers that are greater than or equal to zero and less than or equal to one, that define the initial equilibration salt volume fraction values to each cell in the model. Repeat counts may be used, for example 20*0.15. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
 
 *Table 10.37: SALTP Keyword Description*
 
 
-See also the [PBUB](#__RefHeading___Toc135619_1317547213), [PDEW](#__RefHeading___Toc135623_1317547213), [PRESSURE](#__RefHeading___Toc135627_1317547213), [RS](#__RefHeading___Toc137361_1317547213), [RV](#__RefHeading___Toc137365_1317547213), [SGAS](#__RefHeading___Toc137369_1317547213), [SOIL](#__RefHeading___Toc137371_1317547213) and [SWAT](#__RefHeading___Toc137373_1317547213) keywords to fully define the initial state of the model.
+See also the PBUB, PDEW, PRESSURE, RS, RV, SGAS, SOIL and SWAT keywords to fully define the initial state of the model.
 
 
-| Note This is an OPM Flow specific keyword for the simulator’s Salt Precipitation Model that is activated by the [PRECSALT](#__RefHeading___Toc332782_3149455253) keyword and declaring that vaporized water is present in the run via the [VAPWAT](#__RefHeading___Toc317543_3149455253) in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. This keyword defines the initial precipitated salt volume fraction contained within the pore space. See [SALT](#__RefHeading___Toc593214_516898843) in the [SOLUTION](#__RefHeading___Toc43947_784232322) section that defines the initial salt concentration within the water phase. |
+| Note This is an OPM Flow specific keyword for the simulator’s Salt Precipitation Model that is activated by the PRECSALT keyword and declaring that vaporized water is present in the run via the VAPWAT in the RUNSPEC section. This keyword defines the initial precipitated salt volume fraction contained within the pore space. See SALT in the SOLUTION section that defines the initial salt concentration within the water phase. |
 | --- |
 
 
 #### Example
 
-The example activates the standard Brine Tracking model using the [BRINE](#__RefHeading___Toc162083_289573908) keyword, OPM Flow’s Salt Precipitation model using the [PRECSALT](#__RefHeading___Toc332782_3149455253) keyword, and OPM Flow’s vaporized water phase with the [VAPWAT](#__RefHeading___Toc317543_3149455253) keyword; all three keywords are in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The example activates the standard Brine Tracking model using the BRINE keyword, OPM Flow’s Salt Precipitation model using the PRECSALT keyword, and OPM Flow’s vaporized water phase with the VAPWAT keyword; all three keywords are in the RUNSPEC section.
 
 
 ```
@@ -61,7 +61,7 @@ VAPWAT
 
 ```
 
-Then in the [SOLUTION](#__RefHeading___Toc43947_784232322) section the [SALTP](#__RefHeading___Toc486358_4287353749) keyword would be of the form:
+Then in the SOLUTION section the SALTP keyword would be of the form:
 
 
 ```

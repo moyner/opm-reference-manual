@@ -1,7 +1,7 @@
 ### SOURCE – Define Source Term
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -20,19 +20,19 @@ This is an OPM Flow specific keyword that is not supported by the commercial sim
 | 1 | I | A positive integer greater than zero and less than or equal to NX that defines the location of the source term in the I-direction. | None |
 | 2 | J | A positive integer greater than zero and less than or equal to NY that defines the location of the source term in the J-direction. | None |
 | 3 | K | A positive integer greater than zero and less than or equal to NZ that defines the location of the source term in the K-direction. | None |
-| 4 | COMP | A defined character string that defines the pseudo component to be injected by the source term, COMP should be set to one of the following character strings: The [SOLVENT](#__RefHeading___Toc62787_1778172979) or [POLYMER](#__RefHeading___Toc38609_2267116897) option should only be specified if the solvent or polymer model has been activated by the [SOLVENT](#__RefHeading___Toc62787_1778172979) or [POLYMER](#__RefHeading___Toc38609_2267116897) keyword respectively in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. MICR, OXYG, or UREA requires the [MICP](#__RefHeading___Toc383375_111689907) keyword. A pseudo component must be specified if the mass injection rate is non-zero. | NONE |
+| 4 | COMP | A defined character string that defines the pseudo component to be injected by the source term, COMP should be set to one of the following character strings: The SOLVENT or POLYMER option should only be specified if the solvent or polymer model has been activated by the SOLVENT or POLYMER keyword respectively in the RUNSPEC section. MICR, OXYG, or UREA requires the MICP keyword. A pseudo component must be specified if the mass injection rate is non-zero. | NONE |
 | 5 | RATE | A real value that defines the source term’s mass injection rate of the specified component COMP. | 0.0 |
 | lb/day | kg/day | gm/hour |  |
-| 6 | HRATE | A real value that defines the source term’s heat injection rate1. The heat injection rate should only be specified if the thermal model has been activated by the [THERMAL](#__RefHeading___Toc137276_650382403) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. | 0.0 |
+| 6 | HRATE | A real value that defines the source term’s heat injection rate1. The heat injection rate should only be specified if the thermal model has been activated by the THERMAL keyword in the RUNSPEC section. | 0.0 |
 | Btu/day | kJ/day | J/hour |  |
-| 7 | [TEMP](#__RefHeading___Toc146397_3544483072) | A real value that defines the temperature of the injected component1. The temperature of the source term should only be specified if the thermal model has been activated by the [THERMAL](#__RefHeading___Toc137276_650382403) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. | None |
+| 7 | TEMP | A real value that defines the temperature of the injected component1. The temperature of the source term should only be specified if the thermal model has been activated by the THERMAL keyword in the RUNSPEC section. | None |
 | °F | °C | °C |  |
 | Notes: |  |  |  |
 
 *Table 12.3.223.1: SOURCE Keyword Description*
 
 
-See also the [BCCON](#REF_HEADING_KEYWORD_BCCON) keyword in the [GRID](#__RefHeading___Toc38674_784232322) section and the [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section that can be used to specify boundary conditions.
+See also the [BCCON](#REF_HEADING_KEYWORD_BCCON) keyword in the GRID section and the [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keyword in the SCHEDULE section that can be used to specify boundary conditions.
 
 
 #### Example

@@ -1,13 +1,13 @@
 ### FAULTS – Define Faults in the Grid Geometry
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [FAULTS](#__RefHeading___Toc45779_719036256) keyword defines the faults in the grid geometry and the keyword is normally exported with the grid geometry [COORD](#__RefHeading___Toc45757_719036256) and [ZCORN](#__RefHeading___Toc45757_7190362561) data sets from static earth modeling software.  Note that the [FAULTS](#__RefHeading___Toc45779_719036256) keyword is not required to describe the structural geometry as this is already accounted for in the [COORD](#__RefHeading___Toc45757_719036256) and [ZCORN](#__RefHeading___Toc45757_7190362561) data sets, but instead lists the fault traces with respect to the grid. Once the fault traces have been defined with the [FAULTS](#__RefHeading___Toc45779_719036256) keyword then the fault transmissibilities can be modified by the [MULTFLT](#__RefHeading___Toc90875_3218818441) keyword. Note that without the [FAULTS](#__RefHeading___Toc45779_719036256) keyword one would still get proper cross-fault transmissibilities but they would not be modifiable using [MULTFLT](#__RefHeading___Toc90875_3218818441) keyword.
+The FAULTS keyword defines the faults in the grid geometry and the keyword is normally exported with the grid geometry COORD and ZCORN data sets from static earth modeling software.  Note that the FAULTS keyword is not required to describe the structural geometry as this is already accounted for in the COORD and ZCORN data sets, but instead lists the fault traces with respect to the grid. Once the fault traces have been defined with the FAULTS keyword then the fault transmissibilities can be modified by the MULTFLT keyword. Note that without the FAULTS keyword one would still get proper cross-fault transmissibilities but they would not be modifiable using MULTFLT keyword.
 
 
 | No. | Name | Description | Default |

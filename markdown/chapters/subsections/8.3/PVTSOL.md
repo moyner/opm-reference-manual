@@ -1,15 +1,15 @@
 ### PVTSOL – Oil PVT Properties for Live Oil versus CO2 Mass Fraction
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-[PVTSOL](#__RefHeading___Toc414279_1093985484) defines the live oil PVT properties as a function of CO2 mass fraction. The keyword automatically invokes the simulator’s CO2 Dynamic EOR Model [T. H. Sandve, O. Sævareid and I. Aavatsmark: “Improved Extended Blackoil Formulation --  for CO2 EOR Simulations.” in ECMOR XVII – The 17th European Conference on the -- Mathematics of Oil Recovery,  September 2020.], that uses a fourth component to model the injected CO2., for use in evaluating CO2 Enhanced Oil Recovery (“EOR”) projects. Normally CO2 EOR projects are evaluated via compositional simulators to account for the mass transfer of the various components and phases. Unfortunately, compositional models are computationally expensive compared to the black-oil approach, which for field studies is challenging, especially if an ensemble approach is being used to capture the uncertainties. Previous extended black-oil formulations often poorly represent the PVT properties of the oil-CO2 mixtures, resulting in poor agreement with the compositional formulation.
+PVTSOL defines the live oil PVT properties as a function of CO2 mass fraction. The keyword automatically invokes the simulator’s CO2 Dynamic EOR Model [T. H. Sandve, O. Sævareid and I. Aavatsmark: “Improved Extended Blackoil Formulation --  for CO2 EOR Simulations.” in ECMOR XVII – The 17th European Conference on the -- Mathematics of Oil Recovery,  September 2020.], that uses a fourth component to model the injected CO2., for use in evaluating CO2 Enhanced Oil Recovery (“EOR”) projects. Normally CO2 EOR projects are evaluated via compositional simulators to account for the mass transfer of the various components and phases. Unfortunately, compositional models are computationally expensive compared to the black-oil approach, which for field studies is challenging, especially if an ensemble approach is being used to capture the uncertainties. Previous extended black-oil formulations often poorly represent the PVT properties of the oil-CO2 mixtures, resulting in poor agreement with the compositional formulation.
 
-To overcome the limitations of the standard four component black-oil formulation, OPM Flow uses an improved extended black-oil formulation, the CO2 Dynamic EOR Model, with the black-oil properties dependent on the fraction of CO2 in the cell, as described by the [PVTSOL](#__RefHeading___Toc414279_1093985484) keyword. This approach models the oil-CO2 mixture more accurately and thus give results closer to the compositional simulator. Data for the keyword should normally be derived from laboratory or numerical slim-tube experiments based on one-dimensional compositional Equation Of State (“EOS”) simulations.
+To overcome the limitations of the standard four component black-oil formulation, OPM Flow uses an improved extended black-oil formulation, the CO2 Dynamic EOR Model, with the black-oil properties dependent on the fraction of CO2 in the cell, as described by the PVTSOL keyword. This approach models the oil-CO2 mixture more accurately and thus give results closer to the compositional simulator. Data for the keyword should normally be derived from laboratory or numerical slim-tube experiments based on one-dimensional compositional Equation Of State (“EOS”) simulations.
 
 Note, if this keyword is absent from the input deck then the CO2 Standard EOR Model is used instead.
 
@@ -25,13 +25,13 @@ Note, if this keyword is absent from the input deck then the CO2 Standard EOR Mo
 | rb/stb | rm3/sm3 | rcc/scc |  |  |
 | 4 |  | GFVF | GFVF is a columnar vector of real decreasing down the column values that defines the corresponding gas phase saturated formation volume factor for a given pressure (PRESS) and for a given saturated value of CO2. | None |
 | rb/Mscf | rm3/sm3 | rcc/scc |  |  |
-| 5 |  | [RS](#__RefHeading___Toc137361_1317547213) | [RS](#__RefHeading___Toc137361_1317547213) is a real monotonically increasing down the column values that defines the saturated gas-oil ratio (“GOR”) or Rs,  for the given value of PRESS and for a given saturated value of CO2. | None |
+| 5 |  | RS | RS is a real monotonically increasing down the column values that defines the saturated gas-oil ratio (“GOR”) or Rs,  for the given value of PRESS and for a given saturated value of CO2. | None |
 | Mscf/stb | sm3/sm3 | scc/scc |  |  |
-| 6 |  | [RV](#__RefHeading___Toc137365_1317547213) | [RV](#__RefHeading___Toc137365_1317547213) is a real monotonically increasing down the column values that defines the saturated condensate-gas ratio (“CGR”) or Rv,  for the given value of PRESS and for a given saturated value of CO2. | None |
+| 6 |  | RV | RV is a real monotonically increasing down the column values that defines the saturated condensate-gas ratio (“CGR”) or Rv,  for the given value of PRESS and for a given saturated value of CO2. | None |
 | stb/Mscf | sm3/sm3 | scc/scc |  |  |
-| 7 |  | XVOL | XVOL is a real positive value greater than or equal to zero and less than or equal to one, that stipulates the volumetric fraction of CO2 in the oil phase, that is: where: Volume oil (CO2) is the surface volume of CO2 in the oil phase, Volume oil (Gas) is the surface volume of gas in the oil phase,  and Volume oil (Oil)  is the surface volume of oil in the oil phase. | None |
+| 7 |  | XVOL | XVOL is a real positive value greater than or equal to zero and less than or equal to one, that stipulates the volumetric fraction of CO2 in the oil phase, that is: $$ \mathit{XVOL} = \frac{{\mathit{Volume}}_{\mathit{oil}}({\mathit{CO}}_{2})}{{\mathit{Volume}}_{\mathit{oil}}({\mathit{CO}}_{2}) + {\mathit{Volume}}_{\mathit{oil}}(\mathit{Gas}) + {\mathit{Volume}}_{\mathit{oil}}(\mathit{Oil})} $$ where: Volume oil (CO2) is the surface volume of CO2 in the oil phase, Volume oil (Gas) is the surface volume of gas in the oil phase,  and Volume oil (Oil)  is the surface volume of oil in the oil phase. | None |
 | dimensionless | dimensionless | dimensionless |  |  |
-| 8 |  | YVOL | YVOL is a real positive value greater than or equal to zero and less than or equal to one, that defines the volumetric fraction of CO2 in the gas phase, that is: where: Volume gas (CO2) is the surface volume of CO2 in the gas phase, Volume gas (Gas) is the surface volume of gas in the gas phase, and Volume gas (Oil)  is the surface volume of oil in the gas phase. | None |
+| 8 |  | YVOL | YVOL is a real positive value greater than or equal to zero and less than or equal to one, that defines the volumetric fraction of CO2 in the gas phase, that is: $$ \mathit{YVOL} = \frac{{\mathit{Volume}}_{\mathit{gas}}({\mathit{CO}}_{2})}{{\mathit{Volume}}_{\mathit{gas}}({\mathit{CO}}_{2}) + {\mathit{Volume}}_{\mathit{gas}}(\mathit{Gas}) + {\mathit{Volume}}_{\mathit{gas}}(\mathit{Oil})} $$ where: Volume gas (CO2) is the surface volume of CO2 in the gas phase, Volume gas (Gas) is the surface volume of gas in the gas phase, and Volume gas (Oil)  is the surface volume of oil in the gas phase. | None |
 | dimensionless | dimensionless | dimensionless |  |  |
 | 9 |  | OVISC | OVISC is a columnar vector of real decreasing down the column values that defines the corresponding oil phase saturated viscosity for a given pressure (PRESS)  and for a given saturated value of CO2. | None |
 | cP | cP | cP |  |  |
@@ -42,10 +42,10 @@ Note, if this keyword is absent from the input deck then the CO2 Standard EOR Mo
 *Table 8.121: PVTSOL Keyword Description*
 
 
-See also the [PVDS](#__RefHeading___Toc104058_57619843) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section that can also be used to model CO2 injection, using the [SOLVENT](#__RefHeading___Toc62787_1778172979) model (CO2 Standard EOR), this is the conventional approach, and does not take into account black-oil properties being dependent on the fraction of CO2.
+See also the PVDS keyword in the PROPS section that can also be used to model CO2 injection, using the SOLVENT model (CO2 Standard EOR), this is the conventional approach, and does not take into account black-oil properties being dependent on the fraction of CO2.
 
 
-| Note In the CO2 Dynamic EOR Model the oil properties within a cell are dependent on the CO2 saturation in the cell. However, the model is not restricted to just CO2 utilization, as long as the appropriate oil-injection-gas dependent properties are entered in the model via the [PVTSOL](#__RefHeading___Toc414279_1093985484) keyword. Thus, N2 or other miscible gases may be used instead of CO2, provided due care is taken in generating the required data for the [PVTSOL](#__RefHeading___Toc414279_1093985484) keyword. Another example would be a gas-condensate re-cycling project where the produced gas is stripped of the liquids and then re-injected back into the reservoir in order to maintain the reservoir pressure. Here, the CO2 fraction in the [PVTSOL](#__RefHeading___Toc414279_1093985484) keyword would be replaced by the lean injected gas fraction. Again the other properties would be derived from laboratory or numerical slim-tube experiments based on one-dimensional compositional [EOS](#REF_HEADING_KEYWORD_EOS_5_3) simulations. |
+| Note In the CO2 Dynamic EOR Model the oil properties within a cell are dependent on the CO2 saturation in the cell. However, the model is not restricted to just CO2 utilization, as long as the appropriate oil-injection-gas dependent properties are entered in the model via the PVTSOL keyword. Thus, N2 or other miscible gases may be used instead of CO2, provided due care is taken in generating the required data for the PVTSOL keyword. Another example would be a gas-condensate re-cycling project where the produced gas is stripped of the liquids and then re-injected back into the reservoir in order to maintain the reservoir pressure. Here, the CO2 fraction in the PVTSOL keyword would be replaced by the lean injected gas fraction. Again the other properties would be derived from laboratory or numerical slim-tube experiments based on one-dimensional compositional [EOS](#REF_HEADING_KEYWORD_EOS_5_3) simulations. |
 | --- |
 
 
@@ -132,4 +132,4 @@ PVTSOL
 /
 ```
 
-The above example defines one oil PVT Properties for Live Oil versus CO2 Mass Fraction table, and assumes that NTPVT equals one the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The above example defines one oil PVT Properties for Live Oil versus CO2 Mass Fraction table, and assumes that NTPVT equals one the TABDIMS keyword in the RUNSPEC section.

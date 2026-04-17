@@ -1,43 +1,43 @@
 ### ACTIONW – Define Action Conditions and Command Processing (Wells)
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword starts the definition of an [ACTIONW](#__RefHeading___Toc152225_2992482751) section that stipulates the Boolean conditions to test the nominated well parameters, and the resulting [SCHEDULE](#__RefHeading___Toc43945_784232322) keywords to be executed, if the Boolean condition evaluates to true.  An [ACTIONW](#__RefHeading___Toc152225_2992482751) Definition Section is terminated by an [ENDACTIO](#__RefHeading___Toc109407_332691817) keyword on a separate line.  Here, the keyword defines a series of conditions applied to wells only, that invoke run time processing of [ACTION](#__RefHeading___Toc148342_63720426) functions, and is similar to executing a run time script for conditions and variables at the well level.  The [ACTION](#__RefHeading___Toc148342_63720426) series of keywords ([ACTION](#__RefHeading___Toc148342_63720426), [ACTIONG](#__RefHeading___Toc152219_2992482751), [ACTIONR](#__RefHeading___Toc152221_2992482751), [ACTIONS](#__RefHeading___Toc152223_2992482751) and [ACTIONW](#__RefHeading___Toc152225_2992482751)) can apply Boolean conditional tests to variables at the field, group, region, well segment and well levels.
+This keyword starts the definition of an ACTIONW section that stipulates the Boolean conditions to test the nominated well parameters, and the resulting SCHEDULE keywords to be executed, if the Boolean condition evaluates to true.  An ACTIONW Definition Section is terminated by an ENDACTIO keyword on a separate line.  Here, the keyword defines a series of conditions applied to wells only, that invoke run time processing of ACTION functions, and is similar to executing a run time script for conditions and variables at the well level.  The ACTION series of keywords (ACTION, ACTIONG, ACTIONR, ACTIONS and ACTIONW) can apply Boolean conditional tests to variables at the field, group, region, well segment and well levels.
 
-Note that one should use caution when using this facility as it may result in the simulator aborting, because the [ACTIONW](#__RefHeading___Toc152225_2992482751) keyword enables the user to implement complex functionality and therefore it is advisable to start with simple expressions before adding the desired complexity.
+Note that one should use caution when using this facility as it may result in the simulator aborting, because the ACTIONW keyword enables the user to implement complex functionality and therefore it is advisable to start with simple expressions before adding the desired complexity.
 
-See also the [PYACTION](#__RefHeading___Toc393199_4211536922) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) that implements OPM Flow’s Python scripting facility using the Python scripting language.
+See also the PYACTION keyword in the SCHEDULE that implements OPM Flow’s Python scripting facility using the Python scripting language.
 
-This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped; use the [ACTIONX](#__RefHeading___Toc152227_2992482751) keyword instead.
+This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped; use the ACTIONX keyword instead.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
-| [ACTIONW](#__RefHeading___Toc152225_2992482751) | Defines the start of an [ACTIONW](#__RefHeading___Toc152225_2992482751) Definition Section.  This is followed on a new line by the [ACTIONW](#__RefHeading___Toc152225_2992482751) record that stipulates the conditions for which the defined action will be executed, and then this is followed by the various operations to be performed if the condition is satisfied. |  |  |
-| 1-1 | ACTNAME | A character sting of up to eight characters in length that defines the name of this action definition. If ACTNAME has previously been used by any [ACTION](#__RefHeading___Toc148342_63720426) series keyword, then the previous [ACTION](#__RefHeading___Toc148342_63720426) definitions will be replaced by the definition declared by this [ACTIONW](#__RefHeading___Toc152225_2992482751) Definition Section. | None |
-| 1-2 | ACTWELL | A character string of up to eight characters in length that defines the well name for which the [ACTIONW](#__RefHeading___Toc152225_2992482751) Definition Section is being defined. Note that the well name (ACTWELL) must have been declared previously using the [WELSPECS](#__RefHeading___Toc268463_1366622701) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section, otherwise an error may occur. | None |
-| 1-3 | ACTLHS | A character string of up to eight characters in length that stipulates a well [SUMMARY](#__RefHeading___Toc43949_784232322) variable on the left hand side of a Boolean conditional test. For example, WOPR that stands for the Well Oil Production Rate. In addition, ACTLHS can also be a well User Defined Quantity (“UDQ”) defined by the [UDQ - Declare User Define Quantities (“UDQ”)](#12.3.59.UDQ - Declare User Define Quantities (“UDQ”)\|outline) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section. In this case, the first two characters of ACTLHS must be set to WU and the [UDQ](#__RefHeading___Toc161095_2932703077) variable must have previously been declared with the [UDQ](#__RefHeading___Toc161095_2932703077) keyword. A complete list of well [SUMMARY](#__RefHeading___Toc43949_784232322) vectors that can be used with [ACTIONW](#__RefHeading___Toc152225_2992482751) keyword by OPM Flow and the commercial black-oil simulator is summarized in Table 12.5. | Not Applicable |
+| ACTIONW | Defines the start of an ACTIONW Definition Section.  This is followed on a new line by the ACTIONW record that stipulates the conditions for which the defined action will be executed, and then this is followed by the various operations to be performed if the condition is satisfied. |  |  |
+| 1-1 | ACTNAME | A character sting of up to eight characters in length that defines the name of this action definition. If ACTNAME has previously been used by any ACTION series keyword, then the previous ACTION definitions will be replaced by the definition declared by this ACTIONW Definition Section. | None |
+| 1-2 | ACTWELL | A character string of up to eight characters in length that defines the well name for which the ACTIONW Definition Section is being defined. Note that the well name (ACTWELL) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
+| 1-3 | ACTLHS | A character string of up to eight characters in length that stipulates a well SUMMARY variable on the left hand side of a Boolean conditional test. For example, WOPR that stands for the Well Oil Production Rate. In addition, ACTLHS can also be a well User Defined Quantity (“UDQ”) defined by the UDQ - Declare User Define Quantities (“UDQ”) keyword in the SCHEDULE section. In this case, the first two characters of ACTLHS must be set to WU and the UDQ variable must have previously been declared with the UDQ keyword. A complete list of well SUMMARY vectors that can be used with ACTIONW keyword by OPM Flow and the commercial black-oil simulator is summarized in Table 12.5. | Not Applicable |
 | 1-4 | ACTTEST | A defined character string that the defines the Boolean operator and must be set to one of the following Boolean conditionals: Note that the OPM Flow implementation of ACTTEST has been enhanced to support all of the above conditions. Whereas, the commercial simulator only supports (1) and (2). Thus, one should be mindful of this fact if the input deck is to be run by both OPM Flow and the commercial simulator. | Not Applicable |
 | 1-5 | ACTRHS | A numeric value that defines the constant on the right hand side of the Boolean conditional test. The set of wells for which the Boolean condition is true, is captured and can be used as a general "well list" with the symbol '?' in subsequent well keywords.  For example, to shut wells with a gas production rate less than 5 MMscf/d, one would use: ACTIONW ACT01 'GP*'  WGPR < 5000.0 10000  / WELOPEN '?'     SHUT                       / / ... ENDACTIO | Not Applicable |
-| 1-6 | ACTNSTEP | A positive integer that defines the maximum number times that the ACTNAME action is to be executed. The [ACTIONW](#__RefHeading___Toc152225_2992482751) action is excuted at the end of each time step if at least one well satisfies the Boolean condition until the action has been executed the specified number of times. The default value of one means that the definition will be executed only once. One can use a large value, for example 10,000 for the definition to be executed at every time step. Note that the counter only affects successful evaluations; i.e. if ACTNSTEP is set equal to one (the default), then the simulator will test the action at the end of every time step until it evaluates to true. | 1 |
+| 1-6 | ACTNSTEP | A positive integer that defines the maximum number times that the ACTNAME action is to be executed. The ACTIONW action is excuted at the end of each time step if at least one well satisfies the Boolean condition until the action has been executed the specified number of times. The default value of one means that the definition will be executed only once. One can use a large value, for example 10,000 for the definition to be executed at every time step. Note that the counter only affects successful evaluations; i.e. if ACTNSTEP is set equal to one (the default), then the simulator will test the action at the end of every time step until it evaluates to true. | 1 |
 | 1-3 | ACTINCR | ACTINCR is a real negative or positive value that specifies a value to increment ACTRHS every time the Boolean condition evaluates to true. For example, if ACTINCR is set to 500.0: ACTIONW ACT02 'GP*'  WGPR < 5000.0 10000  500.0 / WELOPEN '?'     SHUT                             / / ... ENDACTIO Then after the third time the Boolean conditional has evaluated to true, the condition would effectively be: ACTIONW ACT02 'GP*'  WGPR < 6500.0 10000  500.0 / ... ENDACTIO | 0.0 |
 | 1-4 | / | Record terminated by a “/” | Not Applicable |
-|  |  | The next section contains any number of standard [SCHEDULE](#__RefHeading___Toc43945_784232322) keywords that will be executed if the Boolean expression evaluates to true.  For example, to reduce the tubing head pressure constraint when any of the oil producers’ oil rate drop below 100 stb/d then one could use: ACTIONW ACT03 'OP*'  WOPR < 100.0 10000   / -- -- FLOW WELLS THROUGH LOW PRESSURE SEPARATOR -- --  WELL    WELL   TARGET --  NAME    TARG   VALUE WELTARG 'OP*'       THP     150            / / ENDACTIO In theory, most [SCHEDULE](#__RefHeading___Toc43945_784232322) keywords can be used in an [ACTIONW](#__RefHeading___Toc152225_2992482751) Definition Section here, except for the time stepping keywords, i.e, [TSTEP](#__RefHeading___Toc118323_1596574740) and [DATES](#__RefHeading___Toc117621_2179381650). See the [ACTIONX](#__RefHeading___Toc152227_2992482751) keyword for a list of the [SCHEDULE](#__RefHeading___Toc43945_784232322) keywords that are known to work with the [ACTION](#__RefHeading___Toc148342_63720426) series of keywords. | Not Applicable |
-| [ENDACTIO](#__RefHeading___Toc109407_332691817) | Define the end of [ACTIONW](#__RefHeading___Toc152225_2992482751) Definition Section. | Not Applicable |  |
+|  |  | The next section contains any number of standard SCHEDULE keywords that will be executed if the Boolean expression evaluates to true.  For example, to reduce the tubing head pressure constraint when any of the oil producers’ oil rate drop below 100 stb/d then one could use: ACTIONW ACT03 'OP*'  WOPR < 100.0 10000   / -- -- FLOW WELLS THROUGH LOW PRESSURE SEPARATOR -- --  WELL    WELL   TARGET --  NAME    TARG   VALUE WELTARG 'OP*'       THP     150            / / ENDACTIO In theory, most SCHEDULE keywords can be used in an ACTIONW Definition Section here, except for the time stepping keywords, i.e, TSTEP and DATES. See the ACTIONX keyword for a list of the SCHEDULE keywords that are known to work with the ACTION series of keywords. | Not Applicable |
+| ENDACTIO | Define the end of ACTIONW Definition Section. | Not Applicable |  |
 | Notes: |  |  |  |
 
 *Table 12.4: ACTIONW Keyword Description*
 
 
-The well [SUMMARY](#__RefHeading___Toc43949_784232322) vectors that can be used with the [ACTIONW](#__RefHeading___Toc152225_2992482751) keyword by OPM Flow and the  commercial black-oil simulator are outlined in Table 12.5.
+The well SUMMARY vectors that can be used with the ACTIONW keyword by OPM Flow and the  commercial black-oil simulator are outlined in Table 12.5.
 
 
-| No. | Well [SUMMARY](#__RefHeading___Toc43949_784232322) Vector Description | [SUMMARY](#__RefHeading___Toc43949_784232322) Mnemonic |
+| No. | Well SUMMARY Vector Description | SUMMARY Mnemonic |
 | --- | --- | --- |
 | 1 | Bottom-Hole Pressure | WBHP |
 | 2 | Gas Injection Rate | WGIR |
@@ -73,26 +73,26 @@ The well [SUMMARY](#__RefHeading___Toc43949_784232322) vectors that can be used 
 | 32 | User Defined Quantity | WUXXXXXX |
 | Notes: |  |  |
 
-*Table 12.5: [ACTIONW](#__RefHeading___Toc152225_2992482751) Supported Well [SUMMARY](#__RefHeading___Toc43949_784232322) Variables*
+*Table 12.5: ACTIONW Supported Well SUMMARY Variables*
 
 
-See also the [ACTDIMS](#__RefHeading___Toc4408_421927891) and [UDADIMS](#__RefHeading___Toc65914_1778172979) keywords in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section to define the dimensions for the [ACTION](#__RefHeading___Toc148342_63720426) series of keywords and associated variables. In addition, the [EXIT](#__RefHeading___Toc627737_1466963378) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section that allows for terminating the simulation for when a condition within an [ACTIONW](#__RefHeading___Toc152225_2992482751) definition is satisfied
+See also the ACTDIMS and UDADIMS keywords in the RUNSPEC section to define the dimensions for the ACTION series of keywords and associated variables. In addition, the EXIT keyword in the SCHEDULE section that allows for terminating the simulation for when a condition within an ACTIONW definition is satisfied
 
-Although most [SCHEDULE](#__RefHeading___Toc43945_784232322) section keywords should work with the [ACTIONW](#__RefHeading___Toc152225_2992482751) keyword, Table 12.8 under the description of [ACTIONX – Define Action Conditions and Command Processing](#12.3.6.ACTIONX – Define ACTION Conditions and Command Processing|outline) shows the status of keywords that have been tested and known to work, together with keywords that are currently planned to be implemented.
+Although most SCHEDULE section keywords should work with the ACTIONW keyword, Table 12.8 under the description of ACTIONX – Define Action Conditions and Command Processing shows the status of keywords that have been tested and known to work, together with keywords that are currently planned to be implemented.
 
-As mentioned previously, the [UDQ](#__RefHeading___Toc161095_2932703077) keyword stipulates the variables and operations used to access the User Defined Quantities features in OPM Flow. [UDQ](#__RefHeading___Toc161095_2932703077) variables can be constants, [SUMMARY](#__RefHeading___Toc43949_784232322) variables, as defined in the [SUMMARY](#__RefHeading___Toc43949_784232322) section, or a formula using various mathematical functions together with constants and [SUMMARY](#__RefHeading___Toc43949_784232322) variables.
+As mentioned previously, the UDQ keyword stipulates the variables and operations used to access the User Defined Quantities features in OPM Flow. UDQ variables can be constants, SUMMARY variables, as defined in the SUMMARY section, or a formula using various mathematical functions together with constants and SUMMARY variables.
 
 
-| Note Within an [ACTIONW](#__RefHeading___Toc152225_2992482751) Definition Section any [UDQ](#__RefHeading___Toc161095_2932703077) variables utilizing well variables, must have their associated wells previously fully defined in the commercial simulator, otherwise an error will occur. For example, if a well’s GOR is being used as part of a [UDQ](#__RefHeading___Toc161095_2932703077) definition, then the well must be fully characterized prior to declaring the [UDQ](#__RefHeading___Toc161095_2932703077) definition. This restriction does not apply to OPM Flow; however, it should be considered if the same deck is to be run with both simulators. |
+| Note Within an ACTIONW Definition Section any UDQ variables utilizing well variables, must have their associated wells previously fully defined in the commercial simulator, otherwise an error will occur. For example, if a well’s GOR is being used as part of a UDQ definition, then the well must be fully characterized prior to declaring the UDQ definition. This restriction does not apply to OPM Flow; however, it should be considered if the same deck is to be run with both simulators. |
 | --- |
 
 
-User Defined Quantities can also be used as User Defined Arguments (“UDA”) in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section with various group, well, and connection keywords. In this case, the UDA variables are used to replace numerical values on these keywords by UDA variables that have been defined by the [UDQ](#__RefHeading___Toc161095_2932703077) keyword.  For example, if we wish to make the oil rate for certain wells to be a function of their water cut, then one can define the function using the [UDQ](#__RefHeading___Toc161095_2932703077) keyword that results in a [UDQ](#__RefHeading___Toc161095_2932703077) variable, WU_WOPR say, and then use WU_WOPR as a UDA variable on the [WCONPROD](#__RefHeading___Toc146754_4203985108) keyword for the ORAT parameter. See Table 12.76 for a list of keywords that can be used with UDA variables in the [UDQ - Declare User Define Quantities (“UDQ”)](#12.3.59.UDQ - Declare User Define Quantities (“UDQ”)|outline) keyword section.
+User Defined Quantities can also be used as User Defined Arguments (“UDA”) in the SCHEDULE section with various group, well, and connection keywords. In this case, the UDA variables are used to replace numerical values on these keywords by UDA variables that have been defined by the UDQ keyword.  For example, if we wish to make the oil rate for certain wells to be a function of their water cut, then one can define the function using the UDQ keyword that results in a UDQ variable, WU_WOPR say, and then use WU_WOPR as a UDA variable on the WCONPROD keyword for the ORAT parameter. See Table 12.76 for a list of keywords that can be used with UDA variables in the UDQ - Declare User Define Quantities (“UDQ”) keyword section.
 
 
 #### Examples
 
-The first example uses the [ACTIONW](#__RefHeading___Toc152225_2992482751) keyword to re-complete a gas injection well, GI01, when the well’s bottom-hole pressure exceeds the fracture pressure of the formation, and to open up a structurally higher zone in the well. The keyword [NEXTSTEP](#__RefHeading___Toc323446_1841740821) is used to set the next step to 0.1 days to avoid convergence issues due to a well event.
+The first example uses the ACTIONW keyword to re-complete a gas injection well, GI01, when the well’s bottom-hole pressure exceeds the fracture pressure of the formation, and to open up a structurally higher zone in the well. The keyword NEXTSTEP is used to set the next step to 0.1 days to avoid convergence issues due to a well event.
 
 
 ```
@@ -150,7 +150,7 @@ ENDACTIO
 ```
 
 
-The final example is similar to the previous example, and shows how to nest [ACTIONW](#__RefHeading___Toc152225_2992482751) blocks and how to apply [ACTIONW](#__RefHeading___Toc152225_2992482751) to all the oil producers when the Boolean condition are satisfied.
+The final example is similar to the previous example, and shows how to nest ACTIONW blocks and how to apply ACTIONW to all the oil producers when the Boolean condition are satisfied.
 
 
 ```
@@ -184,7 +184,7 @@ ENDACTIO
 
 ```
 
-In this case the outer [ACTIONW](#__RefHeading___Toc152225_2992482751) checks if the liquid production for each OP* well is great than the calculated ACTRHS constant, if it is, then inner [ACTIONW](#__RefHeading___Toc152225_2992482751) reduces all the selected wells’ productivity indices by 2%, provided the well’s productivity index is greater than five.
+In this case the outer ACTIONW checks if the liquid production for each OP* well is great than the calculated ACTRHS constant, if it is, then inner ACTIONW reduces all the selected wells’ productivity indices by 2%, provided the well’s productivity index is greater than five.
 
 
 ```

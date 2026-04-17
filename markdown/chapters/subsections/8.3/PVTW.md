@@ -1,13 +1,13 @@
 ### PVTW –  Define Water Fluid Properties for Various Regions
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-[PVTW](#__RefHeading___Toc2086106_3315222525) defines the water properties for various regions in the model. The number of [PVTW](#__RefHeading___Toc2086106_3315222525) vector data sets is defined by the NTPVT parameter on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section and the allocation of the [PVTW](#__RefHeading___Toc2086106_3315222525) tables to different grid blocks in the model is done via the [PVTNUM](#__RefHeading___Toc68366_2752266063) keyword in the [REGIONS](#__RefHeading___Toc40648_784232322) section. One data set consists of one record or line which is terminated by a “/”. If the water phase is active in the model, which is normally the case, then this keyword must be defined in the OPM Flow input deck.
+PVTW defines the water properties for various regions in the model. The number of PVTW vector data sets is defined by the NTPVT parameter on the TABDIMS keyword in the RUNSPEC section and the allocation of the PVTW tables to different grid blocks in the model is done via the PVTNUM keyword in the REGIONS section. One data set consists of one record or line which is terminated by a “/”. If the water phase is active in the model, which is normally the case, then this keyword must be defined in the OPM Flow input deck.
 
 
 | No. | Name | Description | Default |
@@ -17,11 +17,11 @@
 | psia | barsa | atma |  |
 | 2 | WFVF | WFVF is a real number defining the water formation volume factor (Bw) at the water reference pressure. | Defined |
 | rb/stb 1.0 | rm3/sm3 1.0 | rcc/scc 1.0 |  |
-| 3 | WCOMP | WCOMP is a real number defining the water compressibility (Cw) at the water reference pressure and is defined as: | Defined |
+| 3 | WCOMP | WCOMP is a real number defining the water compressibility (Cw) at the water reference pressure and is defined as: $$ {C}_{w} = -\frac{1}{{B}_{w}}\left(\frac{{\mathit{dB}}_{w}}{\mathit{dP}}\right) $$ | Defined |
 | 1/psia 0.00004 | 1/barsa 0.00004 | 1/atma 0.00004 |  |
 | 4 | WVISC | WVISC is a real number defining the water viscosity (µw) at the water reference pressure. | Defined |
 | cP 0.50 | cP 0.50 | cP 0.50 |  |
-| 5 | WVISCOMP | WVISCOMP is a real number defining the water viscosibility (µwc) at the water reference pressure, µwc(Pref) and is defined as: | Defined |
+| 5 | WVISCOMP | WVISCOMP is a real number defining the water viscosibility (µwc) at the water reference pressure, µwc(Pref) and is defined as: $$ {\mathrm{μ}}_{\mathit{wc}} = -\frac{1}{{\mathrm{μ}}_{w}}\left(\frac{d{\mathrm{μ}}_{w}}{\mathit{dP}}\right) $$ | Defined |
 | 1/psia 0.0 | 1/barsa 0.0 | 1/atma 0.0 |  |
 | Notes: |  |  |  |
 
@@ -33,7 +33,7 @@ Note that provided the first table has been entered, subsequent tables may be de
 
 #### Examples
 
-The following shows the [PVTW](#__RefHeading___Toc2086106_3315222525) keyword for when NTPVT on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section is set to one.
+The following shows the PVTW keyword for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to one.
 
 
 ```
@@ -48,7 +48,7 @@ PVTW
 ```
 
 
-The next example shows the [PVTW](#__RefHeading___Toc2086106_3315222525) keyword for when NTPVT on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section is set to three.
+The next example shows the PVTW keyword for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to three.
 
 
 ```
@@ -65,10 +65,10 @@ PVTW
 ```
 
 
-The above example defines three water PVT tables and assumes that NTPVT equals three on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The above example defines three water PVT tables and assumes that NTPVT equals three on the TABDIMS keyword in the RUNSPEC section.
 
 
-The third, and final example, shows the [PVTW](#__RefHeading___Toc2086106_3315222525) keyword for when NTPVT on the [TABDIMS](#__RefHeading___Toc89327_327352552) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section is set to four. Here table two defaults to table one, and table four defaults to table three
+The third, and final example, shows the PVTW keyword for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to four. Here table two defaults to table one, and table four defaults to table three
 
 
 ```

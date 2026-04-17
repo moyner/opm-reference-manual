@@ -1,7 +1,7 @@
 ### THERMAL – Activate the Thermal Modeling Option
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -9,59 +9,59 @@
 
 This keyword activates the thermal modeling option.
 
-In OPM Flow's thermal model ([THERMAL](#__RefHeading___Toc137276_650382403) keyword) enthalpy is conserved and the energy equations are solved fully implicitly with the black-oil equations. Whereas, in OPM Flow's temperature model ([TEMP](#__RefHeading___Toc146397_3544483072) keyword) internal energy is conserved (the work term is neglected and internal energy is equal to enthalpy) and the energy equations are solved sequentially after the black-oil equations. Note that the thermal model can be modified so that internal energy rather than enthalpy is conserved by setting the command line option --conserve-inner-energy-thermal=true (the default is false). If properties like density or viscosity "strongly" depend on temperature, the thermal model is recommended.
+In OPM Flow's thermal model (THERMAL keyword) enthalpy is conserved and the energy equations are solved fully implicitly with the black-oil equations. Whereas, in OPM Flow's temperature model (TEMP keyword) internal energy is conserved (the work term is neglected and internal energy is equal to enthalpy) and the energy equations are solved sequentially after the black-oil equations. Note that the thermal model can be modified so that internal energy rather than enthalpy is conserved by setting the command line option --conserve-inner-energy-thermal=true (the default is false). If properties like density or viscosity "strongly" depend on temperature, the thermal model is recommended.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 
-The temperature option ([TEMP](#__RefHeading___Toc146397_3544483072) keyword) and the thermal option ([THERMAL](#__RefHeading___Toc137276_650382403) keyword) are two separate modeling facilities in the commercial simulator, although some keywords can be used by both options, for example the [RTEMP](#__RefHeading___Toc111816_2939291539) keyword.  OPM Flow’s thermal model is not directly equivalent to either the commercial simulator’s black-oil [TEMP](#__RefHeading___Toc146397_3544483072) or compositional [THERMAL](#__RefHeading___Toc137276_650382403) formulation.
+The temperature option (TEMP keyword) and the thermal option (THERMAL keyword) are two separate modeling facilities in the commercial simulator, although some keywords can be used by both options, for example the RTEMP keyword.  OPM Flow’s thermal model is not directly equivalent to either the commercial simulator’s black-oil TEMP or compositional THERMAL formulation.
 
-The energy black-oil implementation in OPM Flow uses a mixture of the commercial simulators black-oil and the commercial simulators “compositional thermal” keywords, as well as some OPM Flow specific keywords. Keywords specifically associated with both OPM Flow’s [THERMAL](#__RefHeading___Toc137276_650382403) and the commercial simulators [TEMP](#__RefHeading___Toc146397_3544483072) and [THERMAL](#__RefHeading___Toc137276_650382403) options are listed in Table 5.46 for ease of reference.
+The energy black-oil implementation in OPM Flow uses a mixture of the commercial simulators black-oil and the commercial simulators “compositional thermal” keywords, as well as some OPM Flow specific keywords. Keywords specifically associated with both OPM Flow’s THERMAL and the commercial simulators TEMP and THERMAL options are listed in Table 5.46 for ease of reference.
 
 
 | Section | Keyword | Function | OPM Flow | Commercial Simulator |  |
 | --- | --- | --- | --- | --- | --- |
-| [THERMAL](#__RefHeading___Toc137276_650382403) MODEL | [TEMP](#__RefHeading___Toc146397_3544483072) MODEL | [THERMAL](#__RefHeading___Toc137276_650382403) MODEL |  |  |  |
-| [RUNSPEC](#__RefHeading___Toc55591_1778172979) | ROCKDIMS | Thermal Rock Dimensions of Over and Underburden Rock Types |  |  |  |
-| [TEMP](#__RefHeading___Toc146397_3544483072) | Activate the Temperature Modeling Option |  |  | Black-Oil |  |
-| [THERMAL](#__RefHeading___Toc137276_650382403) | Activate the Thermal Modeling Option |  |  |  |  |
-| [GRID](#__RefHeading___Toc38674_784232322) | ROCKCON | Thermal Rock Over and Underburden Connection Data |  |  |  |
+| THERMAL MODEL | TEMP MODEL | THERMAL MODEL |  |  |  |
+| RUNSPEC | ROCKDIMS | Thermal Rock Dimensions of Over and Underburden Rock Types |  |  |  |
+| TEMP | Activate the Temperature Modeling Option |  |  | Black-Oil |  |
+| THERMAL | Activate the Thermal Modeling Option |  |  |  |  |
+| GRID | ROCKCON | Thermal Rock Over and Underburden Connection Data |  |  |  |
 | ROCKPROP | Thermal Rock Over and Underburden Property Data |  |  |  |  |
-| [HEATCR](#__RefHeading___Toc128353_2509125675) | Rock Heat Capacity. |  |  |  |  |
-| [HEATCRT](#__RefHeading___Toc138899_2509125675) | Rock Heat Capacity Temperature. |  |  |  |  |
-| [THCGAS](#__RefHeading___Toc93091_718313858) | Gas Phase Thermal Conductivity. |  |  |  |  |
-| [THCOIL](#__RefHeading___Toc119871_650382403) | Oil Phase Thermal Conductivity. |  |  |  |  |
-| [THCONR](#__RefHeading___Toc132284_650382403) | Thermal Conductivity of liquids and reservoir rock. |  |  |  |  |
-| [THCONSF](#__RefHeading___Toc132286_650382403) | Thermal Conductivity of liquids and reservoir rock scaling factor applied to [THCONR](#__RefHeading___Toc132284_650382403) to account for gas saturation. |  |  |  |  |
-| [THCROCK](#__RefHeading___Toc124825_650382403) | Rock Thermal Conductivity. |  |  |  |  |
+| HEATCR | Rock Heat Capacity. |  |  |  |  |
+| HEATCRT | Rock Heat Capacity Temperature. |  |  |  |  |
+| THCGAS | Gas Phase Thermal Conductivity. |  |  |  |  |
+| THCOIL | Oil Phase Thermal Conductivity. |  |  |  |  |
+| THCONR | Thermal Conductivity of liquids and reservoir rock. |  |  |  |  |
+| THCONSF | Thermal Conductivity of liquids and reservoir rock scaling factor applied to THCONR to account for gas saturation. |  |  |  |  |
+| THCROCK | Rock Thermal Conductivity. |  |  |  |  |
 | THCSOLID | Solid Phase Thermal Conductivity. |  |  |  |  |
-| [THCWATER](#__RefHeading___Toc323954_1728001293) | Water Thermal Conductivity. |  |  |  |  |
-| [PROPS](#__RefHeading___Toc39329_784232322) | HEATVAP | Thermal Oil Component Heat of Vaporization |  |  |  |
-| [GASDENT](#__RefHeading___Toc123086_2509125675) | Gas Density Temperature Coefficients (OPM Flow keyword). |  |  |  |  |
-| [GASJT](#__RefHeading___Toc163486_2545341761) | Gas Joule-Thomson Coefficient (OPM Flow keyword). |  |  |  |  |
-| [GASVISCT](#__RefHeading___Toc163486_254534176111) | Gas Viscosity versus Temperature Functions  (OPM Flow black-oil keyword). |  |  |  |  |
-| [OILDENT](#__RefHeading___Toc125713_2509125675) | Oil Density Temperature Coefficients (OPM Flow keyword). |  |  |  |  |
-| [OILJT](#__RefHeading___Toc163486_25453417611) | Oil Joule-Thomson Coefficient (OPM Flow keyword). |  |  |  |  |
-| [OILVISCT](#__RefHeading___Toc107282_57619843) | Oil Viscosity versus Temperature Functions  (OPM Flow black-oil keyword). |  |  |  |  |
-| [RTEMP](#__RefHeading___Toc111816_2939291539) | Constant Initial Reservoir Temperature. |  |  |  |  |
-| [RTEMPA](#__RefHeading___Toc111818_2939291539) | Constant Initial Reservoir Temperature. |  |  |  |  |
-| [RTEMPVD](#__RefHeading___Toc108628_29392915391) | Initial Reservoir Temperature versus Depth. |  |  |  |  |
+| THCWATER | Water Thermal Conductivity. |  |  |  |  |
+| PROPS | HEATVAP | Thermal Oil Component Heat of Vaporization |  |  |  |
+| GASDENT | Gas Density Temperature Coefficients (OPM Flow keyword). |  |  |  |  |
+| GASJT | Gas Joule-Thomson Coefficient (OPM Flow keyword). |  |  |  |  |
+| GASVISCT | Gas Viscosity versus Temperature Functions  (OPM Flow black-oil keyword). |  |  |  |  |
+| OILDENT | Oil Density Temperature Coefficients (OPM Flow keyword). |  |  |  |  |
+| OILJT | Oil Joule-Thomson Coefficient (OPM Flow keyword). |  |  |  |  |
+| OILVISCT | Oil Viscosity versus Temperature Functions  (OPM Flow black-oil keyword). |  |  |  |  |
+| RTEMP | Constant Initial Reservoir Temperature. |  |  |  |  |
+| RTEMPA | Constant Initial Reservoir Temperature. |  |  |  |  |
+| RTEMPVD | Initial Reservoir Temperature versus Depth. |  |  |  |  |
 | SPECHA | Thermal Specific Heat of Oil Component |  |  |  |  |
-| [SPECHEAT](#__RefHeading___Toc121479_83452205) | Specific Heat of Oil, Water and Gas |  |  |  |  |
-| [SPECROCK](#__RefHeading___Toc121481_83452205) | Specific Heat of the Reservoir Rock |  |  |  |  |
-| [TEMPVD](#__RefHeading___Toc108626_29392915392) | Initial Reservoir Temperature versus Depth. |  |  |  |  |
+| SPECHEAT | Specific Heat of Oil, Water and Gas |  |  |  |  |
+| SPECROCK | Specific Heat of the Reservoir Rock |  |  |  |  |
+| TEMPVD | Initial Reservoir Temperature versus Depth. |  |  |  |  |
 | THANALB | Activate Thermal Analytic Water Density Option |  |  |  |  |
 | THERMEX1 | Liquid Components Thermal Expansion Coefficient |  |  |  |  |
-| [WATDENT](#__RefHeading___Toc173954_2545341761) | Oil Density Temperature Coefficients. |  |  |  |  |
-| [WATJT](#__RefHeading___Toc163486_254534176112) | Water Joule-Thomson Coefficient (OPM Flow keyword). |  |  |  |  |
-| [WATVISCT](#__RefHeading___Toc121489_83452205) | Oil Viscosity versus Temperature Function. |  |  |  |  |
-| [REGIONS](#__RefHeading___Toc40648_784232322) | THERMNUM | Thermal Region Numbers. |  |  |  |
-| [SOLUTION](#__RefHeading___Toc43947_784232322) | [RTEMP](#__RefHeading___Toc111816_2939291539) | Constant Initial Reservoir Temperature. |  |  |  |
-| [RTEMPA](#__RefHeading___Toc111818_2939291539) | Constant Initial Reservoir Temperature. |  |  |  |  |
-| [RTEMPVD](#__RefHeading___Toc108628_29392915391) | Initial Reservoir Temperature versus Depth. |  |  |  |  |
-| [TEMPI](#__RefHeading___Toc117385_650382403) | Initial Reservoir Temperature for All Cells. |  |  |  |  |
-| [TEMPVD](#__RefHeading___Toc108626_29392915392) | Initial Reservoir Temperature versus Depth. |  |  |  |  |
-| [SCHEDULE](#__RefHeading___Toc43945_784232322) | [WTEMP](#__RefHeading___Toc192631_213178337) | Set An Injection Well’s Fluid Temperature |  |  |  |
-| [WINJTEMP](#__RefHeading___Toc152097_2509125675) | Define Injection Fluid Thermal Properties |  |  |  |  |
+| WATDENT | Oil Density Temperature Coefficients. |  |  |  |  |
+| WATJT | Water Joule-Thomson Coefficient (OPM Flow keyword). |  |  |  |  |
+| WATVISCT | Oil Viscosity versus Temperature Function. |  |  |  |  |
+| REGIONS | THERMNUM | Thermal Region Numbers. |  |  |  |
+| SOLUTION | RTEMP | Constant Initial Reservoir Temperature. |  |  |  |
+| RTEMPA | Constant Initial Reservoir Temperature. |  |  |  |  |
+| RTEMPVD | Initial Reservoir Temperature versus Depth. |  |  |  |  |
+| TEMPI | Initial Reservoir Temperature for All Cells. |  |  |  |  |
+| TEMPVD | Initial Reservoir Temperature versus Depth. |  |  |  |  |
+| SCHEDULE | WTEMP | Set An Injection Well’s Fluid Temperature |  |  |  |
+| WINJTEMP | Define Injection Fluid Thermal Properties |  |  |  |  |
 | Notes: |  |  |  |  |  |
 
 Table 5.46: OPM Flow’s THERMAL Option Associated Keywords
@@ -70,64 +70,92 @@ Table 5.46: OPM Flow’s THERMAL Option Associated Keywords
 In thermal runs a producing well’s bottom-hole temperature is calculated based on a weighted average of the temperature in the grid cell connections open to flow in the producing well, that is the reported bottom-hole temperature, TBHT, is calculated as:
 
 
-|  | (5.1) |
+| $$ {T}_{\mathit{BHT}} = \frac{{\sum }_{i=1}^{M}{W}_{i}{T}_{i}}{{\sum }_{i=1}^{M}{W}_{i}} $$ | (5.1) |
 | --- | --- |
 
 with
 
 
-|  | (5.2) |
+| $$ {W}_{i} = {\sum }_{p}^{N}\left({{ρ}^{r}}_{\mathit{pi}}\right) \left({{q}^{r}}_{\mathit{pi}}\right) {c}_{p} $$ | (5.2) |
 | --- | --- |
 
-The term is the energy rate density (J/(K s)) of phase p,
+$$
+\left({{ρ}^{r}}_{\mathit{pi}}\right) \left({{q}^{r}}_{\mathit{pi}}\right) {c}_{p}
+$$
 
 where:
 
-	=	number of phases,
+$$
+N
+$$
 
-	=	number of open connections in the well,
+$$
+M
+$$
 
-	=	the open connection index,
+$$
+i
+$$
 
-	= 	the phase index, oil, water and gas.
+$$
+p
+$$
 
-	= 	indicating that the parameter is evaluated at reservoir conditions,
+$$
+r
+$$
 
- 	=	temperature (K),
+$$
+T
+$$
 
-	=	connection flow rate (m3/s),
+$$
+q
+$$
 
-	=	fluid density (kg/m3), and
+$$
+ρ
+$$
 
-	=	specific heat capacity (J/(K kg))
+$$
+c
+$$
 
-(see the [SPECHEAT](#__RefHeading___Toc121479_83452205) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section).
+(see the SPECHEAT keyword in the PROPS section).
 
 
 The current implementation makes use of the specific internal energy:
 
 
-|  | (5.3) |
+| $$ {e}_{\mathit{pi}} = {c}_{p} ⋅ {T}_{i} $$ | (5.3) |
 | --- | --- |
 
 derived from the specific enthalpy, hpi
 
 
-|  | (5.4) |
+| $$ {e}_{\mathit{pi}} = {h}_{\mathit{pi}} - \frac{{P}_{\mathit{pi}}}{{{ρ}^{r}}_{\mathit{pi}}} $$ | (5.4) |
 | --- | --- |
 
-where  is connection grid block pressure of phase p.
+$$
+{P}_{\mathit{pi}}
+$$
 
-The phase rates at surface conditionsare converted to reservoir in situ ratesusing the phase formation volume factor, Bpi, via:
+$$
+\left({{q}^{s}}_{pi}\right)
+$$
+
+$$
+\left({{q}^{r}}_{pi}\right)
+$$
 
 
-|  | (5.5) |
+| $$ {{q}^{r}}_{\mathit{pi}} = \frac{{{q}^{s}}_{\mathit{pi}} }{{{B}^{-1}}_{\mathit{pi}}} $$ | (5.5) |
 | --- | --- |
 
 And thus equation (5.2) can be simplified to:
 
 
-|  | (5.6) |
+| $$ {W}_{i} = {\sum }_{p}^{N}\left({{ρ}^{r}}_{\mathit{pi}}\right) \left(\frac{{{q}^{s}}_{\mathit{pi}} {e}_{\mathit{pi}}}{{{B}^{-1}}_{\mathit{pi}} ⋅ {T}_{i}}\right) $$ | (5.6) |
 | --- | --- |
 
 

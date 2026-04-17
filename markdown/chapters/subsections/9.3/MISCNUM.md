@@ -1,31 +1,31 @@
 ### MISCNUM – Define the Miscibility Region Numbers
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [MISCNUM](#__RefHeading___Toc129667_83452205) keyword defines the miscibility region number mixing tables as defined by the [TLMIXPAR](#__RefHeading___Toc121483_83452205) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section, for when the miscibility option has been activated by the [MISCIBLE](#__RefHeading___Toc61978_4106839650) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. [MISCNUM](#__RefHeading___Toc129667_83452205) also allocates miscible residual oil saturation versus water saturation tables ([SORWMIS](#__RefHeading___Toc121477_83452205) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section) used to calculate the relative permeability and PVT properties for a grid cell.
+The MISCNUM keyword defines the miscibility region number mixing tables as defined by the TLMIXPAR keyword in the PROPS section, for when the miscibility option has been activated by the MISCIBLE keyword in the RUNSPEC section. MISCNUM also allocates miscible residual oil saturation versus water saturation tables (SORWMIS keyword in the PROPS section) used to calculate the relative permeability and PVT properties for a grid cell.
 
-Note that although this keyword can only be used when the miscibility option is active, it is not necessary to use this keyword even if the [MISCIBLE](#__RefHeading___Toc61978_4106839650) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) has been activated as the default value of one will be applied to all grid blocks. Secondly, a value of zero for a grid cell results in immiscible fluids in that grid cell.
+Note that although this keyword can only be used when the miscibility option is active, it is not necessary to use this keyword even if the MISCIBLE keyword in the RUNSPEC has been activated as the default value of one will be applied to all grid blocks. Secondly, a value of zero for a grid cell results in immiscible fluids in that grid cell.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
-| 1 | [MISCNUM](#__RefHeading___Toc129667_83452205) | [MISCNUM](#__RefHeading___Toc129667_83452205) defines an array of positive integers greater than or equal to zero, that assign a grid cell to a particular table of mixing parameters as defined by the [TLMIXPAR](#__RefHeading___Toc121483_83452205) and [SORWMIS](#__RefHeading___Toc121477_83452205) keywords. A value of zero sets the fluids within a grid cell to be immiscible. The maximum number of [MISCNUM](#__RefHeading___Toc129667_83452205) regions is set by the NTMIS variable on the [MISCIBLE](#__RefHeading___Toc61978_4106839650) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. | 1 |
+| 1 | MISCNUM | MISCNUM defines an array of positive integers greater than or equal to zero, that assign a grid cell to a particular table of mixing parameters as defined by the TLMIXPAR and SORWMIS keywords. A value of zero sets the fluids within a grid cell to be immiscible. The maximum number of MISCNUM regions is set by the NTMIS variable on the MISCIBLE keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
 
 *Table 9.15: MISCNUM Keyword Description*
 
 
-See also the [TLMIXPAR](#__RefHeading___Toc121483_83452205) and [SORWMIS](#__RefHeading___Toc121477_83452205) keyword in the [PROPS](#__RefHeading___Toc39329_784232322) section.
+See also the TLMIXPAR and SORWMIS keyword in the PROPS section.
 
 
 #### Example
 
-The example below sets three [MISCNUM](#__RefHeading___Toc129667_83452205) regions in the model on a layer by layer basis, using the [EQUALS](#__RefHeading___Toc296597_1576177388) keyword.
+The example below sets three MISCNUM regions in the model on a layer by layer basis, using the EQUALS keyword.
 
 
 ```

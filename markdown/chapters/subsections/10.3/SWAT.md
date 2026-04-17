@@ -1,31 +1,31 @@
 ### SWAT – Define the Initial Equilibration Water Saturation for All Grid Blocks
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [SWAT](#__RefHeading___Toc137373_1317547213) keyword defines the initial equilibration water saturation values for all grid cells in the model and should be used in conjunction with the [PBUB](#__RefHeading___Toc135619_1317547213), [PDEW](#__RefHeading___Toc135623_1317547213), [PRESSURE](#__RefHeading___Toc135627_1317547213), [RS](#__RefHeading___Toc137361_1317547213), [RV](#__RefHeading___Toc137365_1317547213), [SGAS](#__RefHeading___Toc137369_1317547213) and [SOIL](#__RefHeading___Toc137371_1317547213) keywords etc., to fully describe the initial state of the model. The keyword should only be used if the water phase has been activated in the model via the [WATER](#__RefHeading___Toc38611_2267116897) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The SWAT keyword defines the initial equilibration water saturation values for all grid cells in the model and should be used in conjunction with the PBUB, PDEW, PRESSURE, RS, RV, SGAS and SOIL keywords etc., to fully describe the initial state of the model. The keyword should only be used if the water phase has been activated in the model via the WATER keyword in the RUNSPEC section.
 
-This is the non-standard method to initialize the model via enumeration and is seldom employed in the industry. The standard methodology is for OPM Flow to initialize a model using the parameters on the [EQUIL](#__RefHeading___Toc135617_1317547213) keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
+This is the non-standard method to initialize the model via enumeration and is seldom employed in the industry. The standard methodology is for OPM Flow to initialize a model using the parameters on the EQUIL keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [SWAT](#__RefHeading___Toc137373_1317547213) | [SWAT](#__RefHeading___Toc137373_1317547213) is an array of real positive numbers that are greater than or equal to zero and less than or equal to one assigning the initial equilibration water saturation values to each cell in the model. Repeat counts may be used, for example 20*0.300. | None |
+| 1 | SWAT | SWAT is an array of real positive numbers that are greater than or equal to zero and less than or equal to one assigning the initial equilibration water saturation values to each cell in the model. Repeat counts may be used, for example 20*0.300. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
 
 *Table 10.56: SWAT Keyword Description*
 
 
-Note for two phase runs it is only necessary to enter one saturation array of one of the phases present in the run ([SGAS](#__RefHeading___Toc137369_1317547213), [SOIL](#__RefHeading___Toc137371_1317547213), or [SWAT](#__RefHeading___Toc137373_1317547213)), as the simulator will calculate the other phases by difference. Similarly for three phase runs it is only necessary to enter the array data for two of the phases, as the third saturation will again be calculated by the simulator.
+Note for two phase runs it is only necessary to enter one saturation array of one of the phases present in the run (SGAS, SOIL, or SWAT), as the simulator will calculate the other phases by difference. Similarly for three phase runs it is only necessary to enter the array data for two of the phases, as the third saturation will again be calculated by the simulator.
 
 
-See also the [PBUB](#__RefHeading___Toc135619_1317547213), [PDEW](#__RefHeading___Toc135623_1317547213), [PRESSURE](#__RefHeading___Toc135627_1317547213), [RS](#__RefHeading___Toc137361_1317547213), [RV](#__RefHeading___Toc137365_1317547213), [SGAS](#__RefHeading___Toc137369_1317547213) and [SOIL](#__RefHeading___Toc137371_1317547213) keywords to fully define the initial state of the model.
+See also the PBUB, PDEW, PRESSURE, RS, RV, SGAS and SOIL keywords to fully define the initial state of the model.
 
 
 #### Example

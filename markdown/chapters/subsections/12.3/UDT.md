@@ -1,25 +1,25 @@
 ### UDT – Declare User Define Tables (“UDT”)
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [UDT](#__RefHeading___Toc1674916_4250154414) keyword defines a single multi-dimensional User Defined Table (“UDT”).
+The UDT keyword defines a single multi-dimensional User Defined Table (“UDT”).
 
-User Defined Quantities (“UDQ”) defined using the [UDQ](#__RefHeading___Toc161095_2932703077) keyword in the [SCHEDULE](#__RefHeading___Toc43945_784232322) section can be assigned values by looking up a [UDT](#__RefHeading___Toc1674916_4250154414).
+User Defined Quantities (“UDQ”) defined using the UDQ keyword in the SCHEDULE section can be assigned values by looking up a UDT.
 
 This keyword is partially supported by OPM Flow; only one-dimensional lookup tables are supported.
 
-Each User Defined Table must be defined with a separate [UDT](#__RefHeading___Toc1674916_4250154414) keyword that consists of a number of records defining the table name and dimensions; the interpolation type and interpolation points for each dimension; and the table values for each set of interpolation points. The total number of records depends on the table dimensions and the number of interpolation points.
+Each User Defined Table must be defined with a separate UDT keyword that consists of a number of records defining the table name and dimensions; the interpolation type and interpolation points for each dimension; and the table values for each set of interpolation points. The total number of records depends on the table dimensions and the number of interpolation points.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | 1-1 | NAME | A character string of up to eight characters in length beginning with ‘TU’ that defines the table name. | None |
-| 1-2 | NDIMS | An integer value between one and MXDIMS that defines the number of dimensions for the table. MXDIMS is the maximum number of [UDT](#__RefHeading___Toc1674916_4250154414) table dimensions defined using the [UDTDIMS](#__RefHeading___Toc1681728_4250154414) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. OPM Flow only supports one-dimensional tables (NDIMS = 1). | None |
+| 1-2 | NDIMS | An integer value between one and MXDIMS that defines the number of dimensions for the table. MXDIMS is the maximum number of UDT table dimensions defined using the UDTDIMS keyword in the RUNSPEC section. OPM Flow only supports one-dimensional tables (NDIMS = 1). | None |
 | 1-3 | / | Record terminated by a “/” | Not Applicable |
 | 2-1 | TYPE | A defined character string that defines the type of interpolation for this dimension and must one of the following: | None |
 | 2-2 | POINTS | A monotonically increasing vector of real values that defines the numerical value of the interpolation points for this dimension if the specified type of interpolation TYPE is either ‘NV’, ‘LC’ or ‘LL’. Otherwise, a vector of character strings of up to eight characters in length defining the ‘ID’. | None |
@@ -241,4 +241,4 @@ WCONPROD
 
 ```
 
-In the example above, the [UDT](#__RefHeading___Toc1674916_4250154414) specifies how the bottom hole pressure limit should reduce as the field oil production rate decreases (note the interpolation point values must be monotone increasing). The User Defined Quantity FU_WBHP uses a lookup value from the [UDT](#__RefHeading___Toc1674916_4250154414) in the form TU_BHP[FOPR].
+In the example above, the UDT specifies how the bottom hole pressure limit should reduce as the field oil production rate decreases (note the interpolation point values must be monotone increasing). The User Defined Quantity FU_WBHP uses a lookup value from the UDT in the form TU_BHP[FOPR].

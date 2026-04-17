@@ -1,35 +1,35 @@
 ### PERMZ – Define the Permeability in the Z Direction for All the Cells
 
 
-| [RUNSPEC](#3.RUNSPEC SECTION\|outline) | [GRID](#4.GRID SECTION\|outline) | [EDIT](#5.EDIT SECTION\|outline) | [PROPS](#6.PROPS SECTION\|outline) | [REGIONS](#7.REGIONS SECTION\|outline) | [SOLUTION](#8.SOLUTION SECTION\|outline) | [SUMMARY](#9.SUMMARY SECTION\|outline) | [SCHEDULE](#10.SCHEDULE SECTION\|outline) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-[PERMZ](#__RefHeading___Toc45795_719036256) defines the permeability in the Z direction for all the cells in the model via an array. The keyword can be used for all grid types, except for the Radial Grid geometry.
+PERMZ defines the permeability in the Z direction for all the cells in the model via an array. The keyword can be used for all grid types, except for the Radial Grid geometry.
 
 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [PERMZ](#__RefHeading___Toc45795_719036256) | [PERMZ](#__RefHeading___Toc45795_719036256) is an array of real positive numbers assigning the permeability in the Z direction to each cell in the model. Repeat counts may be used, for example 200*50.0. | None |
+| 1 | PERMZ | PERMZ is an array of real positive numbers assigning the permeability in the Z direction to each cell in the model. Repeat counts may be used, for example 200*50.0. | None |
 | mD | mD | mD |  |
 | Notes: |  |  |  |
 
 *Table 6.107: PERMZ Keyword Description*
 
 
-| Note Although [PERMX](#__RefHeading___Toc45791_719036256) and [PERMY](#__RefHeading___Toc45793_719036256) are commonly set to be equal, [PERMZ](#__RefHeading___Toc45795_719036256) is typically not equal to either [PERMX](#__RefHeading___Toc45791_719036256) or [PERMY](#__RefHeading___Toc45793_719036256). Normally [PERMZ](#__RefHeading___Toc45795_719036256) is set as a fraction of [PERMX](#__RefHeading___Toc45791_719036256) with typical values ranging from 0.1 to 0.5 times [PERMX](#__RefHeading___Toc45791_719036256). |
+| Note Although PERMX and PERMY are commonly set to be equal, PERMZ is typically not equal to either PERMX or PERMY. Normally PERMZ is set as a fraction of PERMX with typical values ranging from 0.1 to 0.5 times PERMX. |
 | --- |
 
 
-See also the [PERMX](#__RefHeading___Toc45791_719036256) and [PERMY](#__RefHeading___Toc45793_719036256) keywords to fully define the permeability for the model.
+See also the PERMX and PERMY keywords to fully define the permeability for the model.
 
 
 #### Example
 
-The example below defines the [PERMZ](#__RefHeading___Toc45795_719036256) to be 50.0, 5.0, and 20.0 for the first, second and third layers in the model for all 300 cells, as defined by the [DIMENS](#__RefHeading___Toc20387_2267116897) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section.
+The example below defines the PERMZ to be 50.0, 5.0, and 20.0 for the first, second and third layers in the model for all 300 cells, as defined by the DIMENS keyword in the RUNSPEC section.
 
 
 ```
@@ -42,7 +42,7 @@ PERMZ
 ```
 
 
-The next example sets [PERMX](#__RefHeading___Toc45791_719036256) to be 500.0, 50.0, and 200.0 for the first, second and third layers in the model for all 300 cells, as defined by the [DIMENS](#__RefHeading___Toc20387_2267116897) keyword in the [RUNSPEC](#__RefHeading___Toc55591_1778172979) section. It then copies the [PERMX](#__RefHeading___Toc45791_719036256) values to the [PERMY](#__RefHeading___Toc45793_719036256) and [PERMZ](#__RefHeading___Toc45795_719036256) arrays, and finally multiplies [PERMZ](#__RefHeading___Toc45795_719036256) by 0.1 times to get the final values for [PERMZ](#__RefHeading___Toc45795_719036256).
+The next example sets PERMX to be 500.0, 50.0, and 200.0 for the first, second and third layers in the model for all 300 cells, as defined by the DIMENS keyword in the RUNSPEC section. It then copies the PERMX values to the PERMY and PERMZ arrays, and finally multiplies PERMZ by 0.1 times to get the final values for PERMZ.
 
 
 ```
@@ -67,4 +67,4 @@ MULTIPLY
 
 ```
 
-The above sequence of keywords is quite common in input decks, that is copying the [PERMX](#__RefHeading___Toc45791_719036256) data to the [PERMY](#__RefHeading___Toc45793_719036256) and [PERMZ](#__RefHeading___Toc45795_719036256) arrays and then adjusting the [PERMY](#__RefHeading___Toc45793_719036256) and [PERMZ](#__RefHeading___Toc45795_719036256) arrays as required using the [MULTIPLY](#__RefHeading___Toc296609_1576177388) keyword.
+The above sequence of keywords is quite common in input decks, that is copying the PERMX data to the PERMY and PERMZ arrays and then adjusting the PERMY and PERMZ arrays as required using the MULTIPLY keyword.
