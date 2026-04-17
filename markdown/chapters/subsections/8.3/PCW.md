@@ -27,28 +27,20 @@ See also the IPCW keyword for the equivalent imbibition functionality.
 The capillary pressure for a grid block is scaled by:
 
 
-| $$ {P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{PCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right) $$ | (8.70) |
+| ${P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{PCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.70) |
 | --- | --- |
 
 Where:
 
-$$
-{P}_{c}
-$$
+${P}_{c}$	=	the resulting drainage water capillary pressure for a grid cell.
 
-$$
-\mathit{PCW}
-$$
+$\mathit{PCW}$	=	the maximum capillary pressure from the PCW array for a given cell.
 
-$$
-{P}_{{c}_{\mathit{TABLE}}}
-$$
+${P}_{{c}_{\mathit{TABLE}}}$	=	the capillary pressure in the drainage capillary pressure table allocated
 
 to the grid block.
 
-$$
-{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}
-$$
+${P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}$	=	the maximum capillary pressure in the drainage capillary pressure table
 
 allocated to the grid block (that is at the connate water saturation).
 

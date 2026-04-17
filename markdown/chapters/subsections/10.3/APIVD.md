@@ -17,7 +17,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | Field | Metric | Laboratory |  |
 | 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding API gravity    values,  API. | None |
 | feet | m | cm |  |
-| 2 | API | A columnar vector of real values that defines the API gravity at the corresponding DEPTH. The American Petroleum Institute (“API”) classifies oils based on an API gravity (γAPI),  or degrees API (oAPI), the relationship between relative density (γo) of oil and API gravity (γAPI) is given by: $$ {\mathrm{γ}}_{\mathit{API}} = \frac{141.5}{{\mathrm{γ}}_{o}} - 131.5 $$ | None |
+| 2 | API | A columnar vector of real values that defines the API gravity at the corresponding DEPTH. The American Petroleum Institute (“API”) classifies oils based on an API gravity (γAPI),  or degrees API (oAPI), the relationship between relative density (γo) of oil and API gravity (γAPI) is given by: ${\mathrm{γ}}_{\mathit{API}} = \frac{141.5}{{\mathrm{γ}}_{o}} - 131.5$ | None |
 | oAPI | oAPI | oAPI |  |
 | Notes: |  |  |  |
 

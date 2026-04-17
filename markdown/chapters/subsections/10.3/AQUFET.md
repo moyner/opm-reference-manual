@@ -21,7 +21,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | psia | barsa | atma |  |
 | 3 | PORV |  | None |
 | stb | sm3 | scc |  |
-| 4 | COMP | COMP is a real number defining the total compressibility (Ct) of the aquifer, that is the rock compressibility (Cf) plus the water compressibility (Cw) at the aquifer datum pressure (DATUM) and is defined as: $$ {C}_{t} = {C}_{f} + {C}_{w} $$ | None |
+| 4 | COMP | COMP is a real number defining the total compressibility (Ct) of the aquifer, that is the rock compressibility (Cf) plus the water compressibility (Cw) at the aquifer datum pressure (DATUM) and is defined as: ${C}_{t} = {C}_{f} + {C}_{w}$ | None |
 | 1/psia | 1/barsa | 1/atma |  |
 | 5 | PI | A real positive number that defines the aquifer productivity index based on the aquifer influx rate per unit pressure drop. | None |
 | stb/d/psia | sm3/barsa | scc/hr/atma |  |

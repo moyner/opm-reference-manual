@@ -34,41 +34,29 @@ The Joule–Thomson effect is when a real gas, as oppose to an ideal gas, expand
 Thermodynamically, the Joule–Thomson coefficient is defined as the isenthalpic [An isenthalpic process or isoenthalpic process, is a process that proceeds without any change in enthalpy, H; or specific enthalpy, h.] change in temperature in a fluid caused by a unitary pressure drop, as shown in the following equation:
 
 
-| $$ \mathrm{η} = \left(\frac{\partial T}{\partial P}\right) $$ | (8.53) |
+| $\mathrm{η} = \left(\frac{\partial T}{\partial P}\right)$ | (8.53) |
 | --- | --- |
 
 
 One can also express enthalpy changes in terms of pressure, temperature and volume changes:
 
 
-| $$ \mathrm{η} = \frac{{\mathit{RT}}^{2}}{{\mathit{Pc}}_{p}}{\left(\frac{\partial Z}{\partial T}\right)}_{P} $$ | (8.54) |
+| $\mathrm{η} = \frac{{\mathit{RT}}^{2}}{{\mathit{Pc}}_{p}}{\left(\frac{\partial Z}{\partial T}\right)}_{P}$ | (8.54) |
 | --- | --- |
 
 Where:
 
-$$
-η
-$$
+$η$	=	Joule–Thomson coefficient,
 
-$$
-{C}_{g}
-$$
+${C}_{g}$	= 	specific heat at constant pressure,
 
-$$
-P
-$$
+$P$	= 	pressure,
 
-$$
-R
-$$
+$R$	=	gas constant,
 
-$$
-T
-$$
+$T$	= 	temperature, and
 
-$$
-Z
-$$
+$Z$	= 	gas compressibility factor.
 
 
 #### Example

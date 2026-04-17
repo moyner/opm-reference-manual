@@ -34,53 +34,37 @@ The Joule–Thomson effect is when a real gas, as oppose to an ideal gas, expand
 Thermodynamically, the Joule–Thomson coefficient is defined as the isenthalpic [An isenthalpic process or isoenthalpic process, is a process that proceeds without any change in enthalpy, H; or specific enthalpy, h.] change in temperature in a fluid caused by a unitary pressure drop, as shown in the following equation:
 
 
-| $$ \mathrm{η} = \left(\frac{\partial T}{\partial P}\right) $$ | (8.98) |
+| $\mathrm{η} = \left(\frac{\partial T}{\partial P}\right)$ | (8.98) |
 | --- | --- |
 
 
 Which can also express as [Pippard, A.B.: Elements of Classical Thermodynamics: For Advanced Students of Physics. Cambridge University Press, Cambridge, UK (1957)]:
 
 
-| $$ \mathrm{η} = \left(T\mathrm{α} - 1\right)\frac{1}{(\mathrm{ρ}{C}_{p})} - {\left(\frac{g}{{C}_{p}}\frac{\mathit{dp}}{\mathit{dz}}\right)}^{-1} $$ | (8.99) |
+| $\mathrm{η} = \left(T\mathrm{α} - 1\right)\frac{1}{(\mathrm{ρ}{C}_{p})} - {\left(\frac{g}{{C}_{p}}\frac{\mathit{dp}}{\mathit{dz}}\right)}^{-1}$ | (8.99) |
 | --- | --- |
 
-$$
-g
-$$
+Setting the gravity term, $g$, to zero we have:
 
 
-| $$ \mathrm{η} = \left(T\mathrm{α} - 1\right)\frac{1}{(\mathrm{ρ}{C}_{b})} $$ | (8.100) |
+| $\mathrm{η} = \left(T\mathrm{α} - 1\right)\frac{1}{(\mathrm{ρ}{C}_{b})}$ | (8.100) |
 | --- | --- |
 
 Where:
 
-$$
-η
-$$
+$η$	=	Joule–Thomson coefficient (oC/Pa),
 
-$$
-α
-$$
+$α$	=	thermal expansivity at constant pressure (1/oC),
 
-$$
-{C}_{p}
-$$
+${C}_{p}$	= 	specific heat at constant pressure (J/kg oC),
 
-$$
-g
-$$
+$g$	= 	gravitational acceleration (m/s2)
 
-$$
-P
-$$
+$P$	= 	pressure (Pa),
 
-$$
-T
-$$
+$T$ 	= 	temperature (oC), and
 
-$$
-z
-$$
+$z$ 	= 	height (m).
 
 
 #### Example

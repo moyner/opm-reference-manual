@@ -29,45 +29,31 @@ This keyword can only be used if OPM Flow’s thermal option has been activated 
 The oil density at a given pressure and temperature is calculated from its value at surface conditions and the oil shrinkage factor (the reciprocal of the oil formation volume factor) as shown in the following equation:
 
 
-| $$ {ρ}_{o}(p,T)={ρ}_{o}({p}_{s},{T}_{s}){b}_{o}(p,T) $$ | (8.3.186.1) |
+| ${ρ}_{o}(p,T)={ρ}_{o}({p}_{s},{T}_{s}){b}_{o}(p,T)$ | (8.3.186.1) |
 | --- | --- |
 
 
 Where the temperature dependence of the oil shrinkage factor relative to its value at the reference temperature is calculated as shown in the following equation:
 
 
-| $$ {b}_{o}(p,T)=\frac{{b}_{o}(p,{T}_{\mathit{ref}})}{1+{c}_{1}(T-{T}_{\mathit{ref}})+{c}_{2}{(T-{T}_{\mathit{ref}})}^{2}} $$ | (8.3.186.2) |
+| ${b}_{o}(p,T)=\frac{{b}_{o}(p,{T}_{\mathit{ref}})}{1+{c}_{1}(T-{T}_{\mathit{ref}})+{c}_{2}{(T-{T}_{\mathit{ref}})}^{2}}$ | (8.3.186.2) |
 | --- | --- |
 
 Where:
 
-$$
-{ρ}_{o}
-$$
+${ρ}_{o}$	= oil density
 
-$$
-{b}_{o}
-$$
+${b}_{o}$	= oil shrinkage factor
 
-$$
-p
-$$
+$p$	= pressure
 
-$$
-T
-$$
+$T$	= temperature
 
-$$
-{c}_{1},{c}_{2}
-$$
+${c}_{1},{c}_{2}$	= thermal expansion coefficients to first and second order
 
-$$
-s
-$$
+$s$	= subscript indicating surface conditions
 
-$$
-\mathit{ref}
-$$
+$\mathit{ref}$	= subscript indicating reference conditions
 
 
 #### Example

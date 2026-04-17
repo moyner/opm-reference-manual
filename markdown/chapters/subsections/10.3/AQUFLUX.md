@@ -29,7 +29,7 @@ The AQUFLUX keyword defines the properties of Constant Flux Analytical Aquifers,
 The water flow rate into a connected grid cell for this type of aquifer, is calculated from:
 
 
-| $$ {q}_{w} = \mathit{AQUFLUX}(\mathit{AQFLUX}) \times  {A}_{(i,j,k)} \times  \mathit{AQUANCON}(\mathit{AQUCOEF}) $$ | (10.14) |
+| ${q}_{w} = \mathit{AQUFLUX}(\mathit{AQFLUX}) \times  {A}_{(i,j,k)} \times  \mathit{AQUANCON}(\mathit{AQUCOEF})$ | (10.14) |
 | --- | --- |
 
 Where:
@@ -39,9 +39,7 @@ AQUFLUX(AQFLUX)		= the AQFLUX parameter on the AQUFLUX keyword,
 AQUANCON(AQUCOEF)	= the AQUCOEF parameter on the AQUANCON keyword
 
 
-$$
-{A}_{(i,j,k)}
-$$
+Note that ${A}_{(i,j,k)}$is calculated from the connected cell geometry, and thus the AQUANCON(AQUFLUX) and the AQUANCONL(AQUFLUX) parameters are ignored for this type of aquifer.
 
 The AQUFLUX keyword should only be used in runs that have been initialized by equilibration or with enumerated values, and should not be used in RESTART runs.
 

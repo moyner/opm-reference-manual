@@ -29,7 +29,7 @@ NNC enables Non-Neighbor Connections (“NNC”) to be manually defined. This ke
 | 13 | FACE2 | FACE2 is a character string that defines the face associated with flow from the second grid block to the first grid block, where FACE2 can have values of: X+, X-, Y+, Y-, Z+,  or Z-. | None |
 | 14 | DIFFNNC | DIFFNNC is a positive real number that defines the diffusivity between the first grid block (I1, J1, K1) and the second grid block (I2, J2, K2). | 0.0 |
 | feet | meters | cm |  |
-| 15 | DISPNNC | DISPNNC s a positive real number that defines the dispersion coefficient   $$ \frac{1}{(\mathit{Area}x\mathit{Porosity})} $$  between the first grid block (I1, J1, K1) and the second grid block (I2, J2, K2), used with the DISPERSE option. | 0.0 |
+| 15 | DISPNNC | DISPNNC s a positive real number that defines the dispersion coefficient $\frac{1}{(\mathit{Area}x\mathit{Porosity})}$between the first grid block (I1, J1, K1) and the second grid block (I2, J2, K2), used with the DISPERSE option. | 0.0 |
 | ft-2 | m-2 | cm-2 |  |
 | 16 | AREANNC | AREANNC is a positive real number that defines the area  associated with the connection between the first grid block (I1, J1, K1) and the second grid block (I2, J2, K2). | None |
 | ft2 | m2 | cm2 |  |

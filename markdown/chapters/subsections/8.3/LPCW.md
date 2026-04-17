@@ -12,28 +12,20 @@ LPCW defines the maximum oil-water pressure values for all the cells in the mode
 The capillary pressure for a grid block is scaled by:
 
 
-| $$ {P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{LPCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right) $$ | (8.64) |
+| ${P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{LPCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.64) |
 | --- | --- |
 
 Where:
 
-$$
-{P}_{c}
-$$
+${P}_{c}$	=	the resulting low salt oil wet water capillary pressure for a grid cell.
 
-$$
-\mathit{LPCW}
-$$
+$\mathit{LPCW}$	= 	the maximum capillary pressure from the LPCW array for a given cell.
 
-$$
-{P}_{{c}_{\mathit{TABLE}}}
-$$
+${P}_{{c}_{\mathit{TABLE}}}$	= 	the capillary pressure in the low salt oil wet capillary pressure table
 
 allocated to the grid block.
 
-$$
-{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}
-$$
+${P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}$	= 	the maximum capillary pressure in the low salt oil capillary pressure table
 
 allocated to the grid block (that is at the connate water saturation).
 

@@ -26,9 +26,7 @@ The AQUTAB keyword defines additional Carter-Tracy [Carter, R. D., and Tracy, G.
 | --- |
 
 
-$$
-{r}_{D} = \frac{{r}_{e}}{{r}_{o}}
-$$
+Table 8.19 to Table 8.22 outline the standard finite tables derived by van Everdingen and Hurst that are used for the Carter-Tracy analytical aquifers and are taken from Bradely [Bradley Howard B., et al., Petroleum Engineering Handbook, Society of Petroleum Engineers (June 1989), ISBN:9781555630102.] table 38-6 on page 38-12. In the tables rD is defined as the ratio of the aquifer external radius divided by hydrocarbon radius, that is:${r}_{D} = \frac{{r}_{e}}{{r}_{o}}$.
 
 
 | Carter-Tracy Aquifer Influence Functions |  |  |  |  |  |  |  |  |
@@ -168,9 +166,7 @@ $$
 *Table 8.22: Carter-Tracy Aquifer Influence Functions (RD =10 and Finite Linear)*
 
 
-$$
- = \frac{360\times \mathit{Width}}{(2\times π\times \mathit{Length})}
-$$
+For the finite linear Carter-Tracy influence function in Table 8.22 set the inner radius of the aquifer to the length of linear aquifer and the angle of influence to$ = \frac{360\times \mathit{Width}}{(2\times π\times \mathit{Length})}$on the AQUCT keyword in the grid section.
 
 For reference, Table 8.23 outlines the content terminal rate case for an infinite aquifer derived by van Everdingen and Hurst, that is the default table number one used for the Carter-Tracy analytical aquifers, as implemented in OPM Flow.
 

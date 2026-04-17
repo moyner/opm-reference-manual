@@ -23,30 +23,22 @@ IKRO defines the scaling parameter for the imbibition oil relative permeability 
 For the two point scaling option and for the IKRORW or IKRORG oil imbibition relative permeability arrays NOT being present in the input deck the kro value for a grid block is scaled by:
 
 
-| $$ {k}_{\mathit{ro}} = {k}_{{\mathit{ro}}_{ \mathit{TABLE}}}\left(\frac{\mathit{IKRO}}{{k}_{{\mathit{ro}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right) $$ | (8.57) |
+| ${k}_{\mathit{ro}} = {k}_{{\mathit{ro}}_{ \mathit{TABLE}}}\left(\frac{\mathit{IKRO}}{{k}_{{\mathit{ro}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.57) |
 | --- | --- |
 
 Where:
 
-$$
-\mathit{kro}
-$$
+$\mathit{kro}$	=	the resulting kro value for a grid cell.
 
-$$
-\mathit{IKRO}
-$$
+$\mathit{IKRO}$	=	the scaling oil relative permeability value from the IKRO array for a given
 
 cell.
 
-$$
-{k}_{{\mathit{ro}}_{ \mathit{TABLE}}}
-$$
+${k}_{{\mathit{ro}}_{ \mathit{TABLE}}}$	=	the oil relative permeability from a grid block’s oil relative permeability
 
 table at the grid blocks oil saturation.
 
-$$
-{k}_{{\mathit{ro}}_{ \mathit{TABLE}-\mathit{MAX}}}
-$$
+${k}_{{\mathit{ro}}_{ \mathit{TABLE}-\mathit{MAX}}}$	=	the maximum oil relative permeability from a grid block’s oil relative table,
 
 that is at the critical water saturation (Swcr).
 

@@ -20,7 +20,7 @@ The AQUFETP keyword defines Fetkovich [Fetkovich, M. J. “A Simplified Approach
 | psia | barsa | atma |  |
 | 4 | PORV | A real positive value that defines the initial water volume of the aquifer. | None |
 | stb | sm3 | scc |  |
-| 5 | COMP | COMP is a real number defining the total compressibility (Ct) of the aquifer, that is the rock compressibility (Cf) plus the water compressibility (Cw) at the aquifer datum pressure (DATUM) and is defined as: $$ {C}_{t} = {C}_{f} + {C}_{w} $$ | None |
+| 5 | COMP | COMP is a real number defining the total compressibility (Ct) of the aquifer, that is the rock compressibility (Cf) plus the water compressibility (Cw) at the aquifer datum pressure (DATUM) and is defined as: ${C}_{t} = {C}_{f} + {C}_{w}$ | None |
 | 1/psia | 1/barsa | 1/atma |  |
 | 6 | PI | A real positive number that defines the aquifer productivity index based on the aquifer influx rate per unit pressure drop. | None |
 | stb/d/psia | sm3/d/barsa | scc/hr/atma |  |

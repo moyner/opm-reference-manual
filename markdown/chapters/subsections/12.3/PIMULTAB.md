@@ -25,7 +25,7 @@ PIMULTAB defines productivity index multiplier versus water cut tables that are 
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WCUT | A real monotonically increasing positive columnar vector that defines the maximum surface water cut for the corresponding PIMULT vector. Water cut is defined as  $$ {f}_{w} = \frac{{q}_{w}}{{q}_{w} + {q}_{o}} $$  . | None |
+| 1 | WCUT | A real monotonically increasing positive columnar vector that defines the maximum surface water cut for the corresponding PIMULT vector. Water cut is defined as${f}_{w} = \frac{{q}_{w}}{{q}_{w} + {q}_{o}}$. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | 2 | PIMULT | A real positive decreasing columnar vector that defines the productivity index multiplier used to scale a well’s connection factors, for the corresponding WCUT vector. | None |
 | dimensionless | dimensionless | dimensionless |  |

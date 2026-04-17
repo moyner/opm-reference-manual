@@ -29,7 +29,7 @@ The FOAMFSC keyword defines the reduction in gas mobility as a function of the f
 The gas mobility reduction as a function of surfactant concentration is of the form:
 
 
-| $$ {F}_{s} = {\left(\frac{{C}_{s}}{{C}_{s}^{r}}\right)}^{{e}_{s}} $$ | (8.51) |
+| ${F}_{s} = {\left(\frac{{C}_{s}}{{C}_{s}^{r}}\right)}^{{e}_{s}}$ | (8.51) |
 | --- | --- |
 
 Where:
@@ -52,7 +52,7 @@ gas mobility due to foam (FAOAMEXP).
 The functional form of the reduction in gas mobility factor (Mrf) is:
 
 
-| $$ {M}_{\mathit{rf}} = \frac{1}{1 + \left({M}_{r} \times  {F}_{s} \times  {F}_{w} \times  {F}_{o} \times  {F}_{c}\right)} $$ | (8.52) |
+| ${M}_{\mathit{rf}} = \frac{1}{1 + \left({M}_{r} \times  {F}_{s} \times  {F}_{w} \times  {F}_{o} \times  {F}_{c}\right)}$ | (8.52) |
 | --- | --- |
 
 Where:

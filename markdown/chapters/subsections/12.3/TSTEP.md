@@ -50,9 +50,7 @@ TSTEP
 /
 ```
 
-$$
-\frac{365.25}{4}=91.3125
-$$
+The second example is similar to the previous example but with quarterly reporting time steps used instead based on $\frac{365.25}{4}=91.3125$days per quarter
 
 
 ```

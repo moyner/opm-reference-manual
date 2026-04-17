@@ -27,7 +27,7 @@ IKRG defines the imbibition scaling parameter at the maximum gas relative permea
 For the two point scaling option and for the IKRGR gas relative permeability array NOT present in the input deck the krg value for a grid block is scaled by:
 
 
-| $$ {k}_{\mathit{rg}} = {k}_{{\mathit{rg}}_{ \mathit{TABLE}}}\left(\frac{\mathit{IKRG}}{{k}_{{\mathit{rg}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right) $$ | (8.56) |
+| ${k}_{\mathit{rg}} = {k}_{{\mathit{rg}}_{ \mathit{TABLE}}}\left(\frac{\mathit{IKRG}}{{k}_{{\mathit{rg}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.56) |
 | --- | --- |
 
 Where:
@@ -38,15 +38,11 @@ IKRG	=	the scaling gas relative permeability value from the IKRG array for a giv
 
 cell.
 
-$$
-{k}_{{\mathit{rg}}_{ \mathit{TABLE}}}
-$$
+${k}_{{\mathit{rg}}_{ \mathit{TABLE}}}$	= 	the gas relative permeability from a grid block’s gas-oil table at the grid
 
 blocks gas saturation.
 
-$$
-{k}_{{\mathit{rg}}_{ \mathit{TABLE}-\mathit{MAX}}}
-$$
+${k}_{{\mathit{rg}}_{ \mathit{TABLE}-\mathit{MAX}}}$	= 	the maximum gas relative permeability from a grid block’s gas-oil table, that
 
 is at the connate water saturation (Swc).
 

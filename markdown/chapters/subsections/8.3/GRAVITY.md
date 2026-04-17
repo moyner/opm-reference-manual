@@ -15,7 +15,7 @@ This surface density or gravity must be entered using either the DENSITY or GRAV
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | OILAPI | OILAPI is a real number defining the API gravity of the oil phase at surface conditions. The American Petroleum Institute (“API”) classifies oils based on an API gravity (γAPI),  or degrees API (oAPI), the relationship between relative density (γo) of oil and API gravity (γAPI) is given by: $$ {\mathrm{γ}}_{\mathit{API}} = \frac{141.5}{{\mathrm{γ}}_{o}} - 131.5 $$ | None |
+| 1 | OILAPI | OILAPI is a real number defining the API gravity of the oil phase at surface conditions. The American Petroleum Institute (“API”) classifies oils based on an API gravity (γAPI),  or degrees API (oAPI), the relationship between relative density (γo) of oil and API gravity (γAPI) is given by: ${\mathrm{γ}}_{\mathit{API}} = \frac{141.5}{{\mathrm{γ}}_{o}} - 131.5$ | None |
 | oAPI | oAPI | oAPI |  |
 | 2 | WATGRAV | WATGRAV is a real number defining the specific gravity of the water phase relative to pure water at surface conditions. | Defined |
 | (water =1.0) 0.7773 | (water =1.0) 0.7773 | (water =1.0) 0.7773 |  |

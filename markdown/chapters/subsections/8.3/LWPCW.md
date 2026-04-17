@@ -12,28 +12,20 @@ LWPCW defines the maximum water-oil pressure values for all the cells in the mod
 The capillary pressure for a grid block is scaled by:
 
 
-| $$ {P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{HWPCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right) $$ | (8.65) |
+| ${P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{HWPCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.65) |
 | --- | --- |
 
 Where:
 
-$$
-{P}_{c}
-$$
+${P}_{c}$	=	the resulting high salinity water wet water capillary pressure for a grid cell.
 
-$$
-\mathit{HWPCW}
-$$
+$\mathit{HWPCW}$	= 	the maximum capillary pressure from the HWPCW array for a given cell.
 
-$$
-{P}_{{c}_{\mathit{TABLE}}}
-$$
+${P}_{{c}_{\mathit{TABLE}}}$	= 	the capillary pressure in the high salinity water wet water capillary pressure
 
 table allocated to the grid block.
 
-$$
-{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}
-$$
+${P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}$	= 	the maximum capillary pressure in the high salinity water wet water
 
 capillary pressure table allocated to the grid block (that is at the connate
 

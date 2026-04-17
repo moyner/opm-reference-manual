@@ -61,7 +61,7 @@ The total number of wells should be defined via the WELLDIMS keyword and the num
 The equations used to calculate the pressure drop across the ICD are given below and illustrate how the pressure reduction is dependent on the density and viscosity of the fluid flowing through the device.
 
 
-| $$ \mathrm{Δ}P = \left(\frac{{\mathrm{ρ}}_{\mathit{mixture}}}{{\mathrm{ρ}}_{\mathit{calibrated}}}\right){\mathrm{ρ}}_{exp}⋅{\left(\frac{{\mathrm{μ}}_{\mathit{calibrated}}}{{\mathrm{μ}}_{\mathit{mixture}}}\right)}^{{\mathrm{μ}}_{exp}}⋅ {\mathrm{ρ}}_{\mathit{mixture}} ⋅ \mathrm{β} ⋅ {\left(\frac{q}{{q}_{\mathit{calibrated}}}\right)}^{({Q}_{exp}- 2)} ⋅ {q}^{2} $$ | (12.35) |
+| $\mathrm{Δ}P = \left(\frac{{\mathrm{ρ}}_{\mathit{mixture}}}{{\mathrm{ρ}}_{\mathit{calibrated}}}\right){\mathrm{ρ}}_{exp}⋅{\left(\frac{{\mathrm{μ}}_{\mathit{calibrated}}}{{\mathrm{μ}}_{\mathit{mixture}}}\right)}^{{\mathrm{μ}}_{exp}}⋅ {\mathrm{ρ}}_{\mathit{mixture}} ⋅ \mathrm{β} ⋅ {\left(\frac{q}{{q}_{\mathit{calibrated}}}\right)}^{({Q}_{exp}- 2)} ⋅ {q}^{2}$ | (12.35) |
 | --- | --- |
 
 Where:
@@ -71,7 +71,7 @@ Where:
 ρmixture	=  the density of the mixture, as per:
 
 
-| $$ {\mathrm{ρ}}_{\mathit{mixture}} = \left({\mathrm{α}}_{\mathit{oil}}^{{a}_{1}}⋅{\mathrm{ρ}}_{\mathit{oil}}\right) + \left({\mathrm{α}}_{\mathit{wat}}^{{a}_{2}}⋅{\mathrm{ρ}}_{\mathit{wat}}\right) + \left({\mathrm{α}}_{\mathit{gas}}^{{a}_{3}}⋅{\mathrm{ρ}}_{\mathit{gas}}\right) $$ | (12.36) |
+| ${\mathrm{ρ}}_{\mathit{mixture}} = \left({\mathrm{α}}_{\mathit{oil}}^{{a}_{1}}⋅{\mathrm{ρ}}_{\mathit{oil}}\right) + \left({\mathrm{α}}_{\mathit{wat}}^{{a}_{2}}⋅{\mathrm{ρ}}_{\mathit{wat}}\right) + \left({\mathrm{α}}_{\mathit{gas}}^{{a}_{3}}⋅{\mathrm{ρ}}_{\mathit{gas}}\right)$ | (12.36) |
 | --- | --- |
 
 
@@ -82,7 +82,7 @@ Where:
 μmixture	=  the viscosity of the mixture, as per:
 
 
-| $$ {\mathrm{μ}}_{\mathit{mixture}} = \left({\mathrm{α}}_{\mathit{oil}}^{{b}_{1}}⋅{\mathrm{μ}}_{\mathit{oil}}\right) + \left({\mathrm{α}}_{\mathit{wat}}^{{b}_{2}}⋅{\mathrm{μ}}_{\mathit{wat}}\right) + \left({\mathrm{α}}_{\mathit{gas}}^{{b}_{3}}⋅{\mathrm{μ}}_{\mathit{gas}}\right) $$ | (12.37) |
+| ${\mathrm{μ}}_{\mathit{mixture}} = \left({\mathrm{α}}_{\mathit{oil}}^{{b}_{1}}⋅{\mathrm{μ}}_{\mathit{oil}}\right) + \left({\mathrm{α}}_{\mathit{wat}}^{{b}_{2}}⋅{\mathrm{μ}}_{\mathit{wat}}\right) + \left({\mathrm{α}}_{\mathit{gas}}^{{b}_{3}}⋅{\mathrm{μ}}_{\mathit{gas}}\right)$ | (12.37) |
 | --- | --- |
 
 

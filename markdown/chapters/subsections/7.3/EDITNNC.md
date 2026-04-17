@@ -7,9 +7,7 @@
 
 #### Description
 
-$$
-{T}_{\mathit{new}} =C x {T}_{\mathit{old}}
-$$
+EDITNNC enables Non-Neighbor Connections (“NNC”), entered via the NNC keyword or calculated by the simulator, to be multiplied (re-scaled) by a constant.  For example, if the existing transmissibility between non-neighbor connections is Told and the multiplier is C, then the resulting transmissibility, Tnew, will be ${T}_{\mathit{new}} =C x {T}_{\mathit{old}}$.  Only previously defined NNC’s entered via the NNC keyword or calculated by the simulator can be edited, otherwise a warning message will be printed.
 
 
 | No. | Name | Description | Default |

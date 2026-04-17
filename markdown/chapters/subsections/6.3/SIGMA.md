@@ -10,7 +10,7 @@
 The SIGMA keyword defines the dual porosity matrix to fracture transmissibility multiplier, sigma, that is applied to all cells, for when the Dual Porosity model has been activated by either the DUALPORO or the DUALPERM keywords in the RUNSPEC section. Sigma (σ) takes into account the matrix-fracture interface area per unit volume and was defined by Kazemi et al [Kazemi, H., Merrill JR., L. S., Porterfield, K. L., and Zeman, P. R. “Numerical Simulation of Water-Oil Flow in Naturally Fractured Reservoirs,” paper SPE 5719, Society of Petroleum Engineers Journal (1976) 16, No. 6, 317-326.] to be:
 
 
-| $$ \mathrm{σ} = 4\left(\frac{1}{{{l}_{x}}^{2}} +\frac{1}{{{l}_{y}}^{2}} +\frac{1}{{{l}_{z}}^{2}} \right) $$ | (6.15) |
+| $\mathrm{σ} = 4\left(\frac{1}{{{l}_{x}}^{2}} +\frac{1}{{{l}_{y}}^{2}} +\frac{1}{{{l}_{z}}^{2}} \right)$ | (6.15) |
 | --- | --- |
 
 Where lx, ly and lz are not the grid block dimensions in the model in the respective directions, but the dimensions of the blocks of the matrix material. In practice,  σ is used as a tuning parameter in dual porosity runs to match reservoir and well performance.

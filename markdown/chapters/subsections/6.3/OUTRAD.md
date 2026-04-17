@@ -27,19 +27,19 @@ Note that the SPIDER keyword activates OPM Flow’s radial grid geometry option 
 The keyword allows for an alternative method of entering the size of the R direction grid cells instead of entering the data using the DR or DRV keywords in the GRID section. Given the internal radius set by the INRAD keyword, the external radius set by the OUTRAD keyword and the number of grid cells in the R direction set by the NX variable on the DIMENS keyword in the RUNSPEC section, the R direction cells sizes are computed automatically on a geometric spacing, as defined by:
 
 
-| $$ \frac{{R}_{i}}{{R}_{i-1}} = \left(\frac{\mathit{OUTRAD}}{{R}_{{i}_{j}-1}}\right){ }^{\frac{1}{\left(\mathit{NX} - {i}_{j} + 1\right)}} $$ | (6.12) |
+| $\frac{{R}_{i}}{{R}_{i-1}} = \left(\frac{\mathit{OUTRAD}}{{R}_{{i}_{j}-1}}\right){ }^{\frac{1}{\left(\mathit{NX} - {i}_{j} + 1\right)}}$ | (6.12) |
 | --- | --- |
 
 or
 
 
-| $$ {R}_{i} = \left({R}_{{i}_{j}-1}\right)\left(\frac{\mathit{OUTRAD}}{{R}_{{i}_{j}-1}}\right){ }^{\frac{\left(i - {i}_{j} +1 \right)}{\left(\mathit{NX} - {i}_{j} + 1\right)}} $$ | (6.13) |
+| ${R}_{i} = \left({R}_{{i}_{j}-1}\right)\left(\frac{\mathit{OUTRAD}}{{R}_{{i}_{j}-1}}\right){ }^{\frac{\left(i - {i}_{j} +1 \right)}{\left(\mathit{NX} - {i}_{j} + 1\right)}}$ | (6.13) |
 | --- | --- |
 
 and the DR value for the ith cell, that is the value that can also be manually entered on the DR keyword in the GRID section, is given by:
 
 
-| $$ {\mathit{DR}}_{i} = {R}_{i} - {R}_{i - 1} $$ | (6.14) |
+| ${\mathit{DR}}_{i} = {R}_{i} - {R}_{i - 1}$ | (6.14) |
 | --- | --- |
 
 Where:

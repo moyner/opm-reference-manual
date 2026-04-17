@@ -23,32 +23,22 @@ IPCG defines the maximum imbibition gas-oil capillary pressure values for all th
 The capillary pressure for a grid block is scaled by:
 
 
-| $$ {P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{IPCG}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right) $$ | (8.59) |
+| ${P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{IPCG}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.59) |
 | --- | --- |
 
 Where:
 
-$$
-\mathit{Pc}
-$$
+$\mathit{Pc}$	= 	the resulting imbibition gas-oil capillary pressure for a grid cell.
 
-$$
-\mathit{IPCG}
-$$
+$\mathit{IPCG}$	= 	the maximum capillary pressure from the IPCG array for a given cell.
 
-$$
-{P}_{{c}_{\mathit{TABLE}}}
-$$
+${P}_{{c}_{\mathit{TABLE}}}$	= 	the capillary pressure in the imbibition capillary pressure table
 
 allocated to the grid block.
 
-$$
-{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}
-$$
+${P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}$	= 	the maximum capillary pressure in the imbibition capillary pressure table
 
-$$
-{S}_{g}=1-{S}_{\mathit{wco}}
-$$
+allocated to the grid block at${S}_{g}=1-{S}_{\mathit{wco}}$.
 
 
 See also the PCG keyword for the equivalent drainage functionality.

@@ -19,7 +19,7 @@ The DRSDTCON keyword is an OPM Flow specific keyword.
 | Field | Metric | Laboratory |  |
 | 1 | CHI | A real positive value () that defines the proportionality constant related to the maximum rate of increase of CO2 solution gas-oil ratio (Rs) in the Linear regime. A value of zero means that convective dissolution of CO2 into in-situ brine does not occur and free CO2 cannot dissolve into the brine.  Alternatively, a non-zero value of CHI allows convective dissolution of CO2. Note if the CO2STORE keyword is present but the DRSDTCON keyword is absent from the input deck, then this results in instantaneous dissolution of CO2 into the available undersaturated in-situ brine. | 0.04 |
 | dimensionless | dimensionless | dimensionless |  |
-| 1 | PSI | A real positive value () that defines the normalised CO2 solution gas-oil ratio (  $$ \overset{~}{X} $$  ) at the transition between the Linear and the Steady-State regimes. | 0.34 |
+| 1 | PSI | A real positive value () that defines the normalised CO2 solution gas-oil ratio ($\overset{~}{X}$) at the transition between the Linear and the Steady-State regimes. | 0.34 |
 | dimensionless | dimensionless | dimensionless |  |
 | 1 | OMEGA | A real positive value () that defines the maximum rate of increase in CO2 solution gas-oil ratio (Rs) in the Steady-State regime. | 3.0e-9 |
 | 1/s | 1/s | 1/s |  |
@@ -39,7 +39,7 @@ Mykkeltvedt et al. describe four regimes that characterise the evolution of the 
 In the Initial phase a near instantaneous jump in dissolved CO2 is assumed if the control volume spans the CO2-brine interface (otherwise the solution gas-oil ratio is zero). The initial jump comes from the capillary transition zone, the height of which depends on the capillary pressure function. Capillary equilibrium happens almost immediately and therefore the CO2 solution gas-oil ratio is allowed to increase at unlimited rate until capillary equilibrium is reached. Capillary equilibrium is assumed when:
 
 
-| $$ {R}_{s} > {R}_{s,\mathit{sat}}{S}_{o} $$ | (12.3.53.1) |
+| ${R}_{s} > {R}_{s,\mathit{sat}}{S}_{o}$ | (12.3.53.1) |
 | --- | --- |
 
 Where:
@@ -54,7 +54,7 @@ So 	=	oil saturation.
 This is followed by the Linear phase where the finger speed is assumed to be relatively constant and therefore it is reasonable to assume that the CO2 gas-oil ratio will increase at a constant rate (Linear regime). The maximum dissolution rate, as per the DRSDT keyword in the SCHEDULE section during the Linear regime (Flin) is given by:
 
 
-| $$ {F}_{\mathit{lin}} = χ\left(\frac{{R}_{s,\mathit{sat}}{K}_{z}\mathrm{Δ}{ρ}_{c}g}{{μ}_{o}{S}_{o} {D}_{z}ϕ}\right) $$ | (12.3.53.2) |
+| ${F}_{\mathit{lin}} = χ\left(\frac{{R}_{s,\mathit{sat}}{K}_{z}\mathrm{Δ}{ρ}_{c}g}{{μ}_{o}{S}_{o} {D}_{z}ϕ}\right)$ | (12.3.53.2) |
 | --- | --- |
 
 Where:
@@ -79,7 +79,7 @@ So	= 	the oil (brine) saturation.
 The third phase is characterised by a change in slope of the rate of dissolution as the system transitions from linear build-up to quasi-steady state (Steady-State regime). The parameter PSI defines the normalised gas-oil ratio at the transition from the Linear to the Steady-State regime, where the normalised gas-oil ratio is given by:
 
 
-| $$ \overset{~}{X} = \frac{{R}_{s}-{R}_{s,\mathit{sat}}{S}_{g}}{{R}_{s,\mathit{sat}}(1-{S}_{g})} $$ | (12.3.53.3) |
+| $\overset{~}{X} = \frac{{R}_{s}-{R}_{s,\mathit{sat}}{S}_{g}}{{R}_{s,\mathit{sat}}(1-{S}_{g})}$ | (12.3.53.3) |
 | --- | --- |
 
 

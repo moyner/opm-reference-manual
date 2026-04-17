@@ -24,32 +24,22 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 The capillary pressure for a grid block is scaled by:
 
 
-| $$ {P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{PCG}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right) $$ | (8.69) |
+| ${P}_{c} = {P}_{{c}_{\mathit{TABLE}}}\left(\frac{\mathit{PCG}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.69) |
 | --- | --- |
 
 Where:
 
-$$
-{P}_{c}
-$$
+${P}_{c}$	=	the resulting drainage gas-oil capillary pressure for a grid cell.
 
-$$
-\mathit{PCG}
-$$
+$\mathit{PCG}$	=	the maximum capillary pressure from the PCG array for a given cell.
 
-$$
-{P}_{{c}_{\mathit{TABLE}}}
-$$
+${P}_{{c}_{\mathit{TABLE}}}$	=	the capillary pressure in the drainage capillary pressure table
 
 allocated to the grid block.
 
-$$
-{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}
-$$
+${P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}$	=	the maximum capillary pressure in the drainage capillary pressure table
 
-$$
-{S}_{g}=1-{S}_{\mathit{wco}}
-$$
+allocated to the grid block at ${S}_{g}=1-{S}_{\mathit{wco}}$.
 
 
 #### Example

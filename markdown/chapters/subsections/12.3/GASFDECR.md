@@ -12,7 +12,7 @@ This keyword, GASFDECR, defines the field’s monthly reduction in the gas sales
 Thus, the DCQ must be calculated first over a contract period, where the contract period is commonly   contract years, or in some instances contract quarters.  This is performed by the simulator using the current DCQ and checking to see if the (DCQ x Swing Factor) can be satisfied throughout the current contract period, if not the DCQ is re-calculated so that the (DCQ x Swing Factor) condition is satisfied. Once this condition is met, the second and final pass uses the calculated DCQ in conjunction with the monthly scaling profile data to set the monthly gas rate for the field:
 
 
-| $$ {Q}_{\mathit{month}} = \mathit{DCQ}\times {\mathit{SWINGFAC}}_{\mathit{month}} $$ | (12.19) |
+| ${Q}_{\mathit{month}} = \mathit{DCQ}\times {\mathit{SWINGFAC}}_{\mathit{month}}$ | (12.19) |
 | --- | --- |
 
 Where:
@@ -27,7 +27,7 @@ SWINGFACmonth	=	monthly rate scaling factor that takes into account seasonal dem
 Here the GASFDECR keyword allows for a reduction in the calculated final pass monthly gas rates and thus equation (12.19) become:
 
 
-| $$ {Q}_{\mathit{month}} = \left(\mathit{DCQ}\times {\mathit{SWINGFAC}}_{\mathit{month}}\right) - {\mathit{GASFDECR}}_{\mathit{month}} $$ | (12.20) |
+| ${Q}_{\mathit{month}} = \left(\mathit{DCQ}\times {\mathit{SWINGFAC}}_{\mathit{month}}\right) - {\mathit{GASFDECR}}_{\mathit{month}}$ | (12.20) |
 | --- | --- |
 
 Where:

@@ -27,30 +27,22 @@ KRG defines the scaling parameter at the maximum drainage gas relative permeabil
 For the two point scaling option and for the KRGR gas relative permeability array NOT present in the input deck the krg value for a grid block is scaled by:
 
 
-| $$ {k}_{\mathit{rg}} = {k}_{{\mathit{rg}}_{ \mathit{TABLE}}}\left(\frac{\mathit{KRG}}{{k}_{{\mathit{rg}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right) $$ | (8.61) |
+| ${k}_{\mathit{rg}} = {k}_{{\mathit{rg}}_{ \mathit{TABLE}}}\left(\frac{\mathit{KRG}}{{k}_{{\mathit{rg}}_{ \mathit{TABLE}-\mathit{MAX}}}}\right)$ | (8.61) |
 | --- | --- |
 
 Where:
 
-$$
-\mathit{krg}
-$$
+$\mathit{krg}$	=	the resulting krg value for a grid cell.
 
-$$
-\mathit{KRG}
-$$
+$\mathit{KRG}$	=	the scaling gas relative permeability value from the KRG array for a given
 
 cell.
 
-$$
-{k}_{{\mathit{rg}}_{ \mathit{TABLE}}}
-$$
+${k}_{{\mathit{rg}}_{ \mathit{TABLE}}}$	= 	the gas relative permeability from a grid block’s gas-oil table at the grid
 
 blocks gas saturation.
 
-$$
-{k}_{{\mathit{rg}}_{ \mathit{TABLE}-\mathit{MAX}}}
-$$
+${k}_{{\mathit{rg}}_{ \mathit{TABLE}-\mathit{MAX}}}$	= 	the maximum gas relative permeability from a grid block’s gas-oil table, that
 
 is at the connate water saturation (Swc).
 

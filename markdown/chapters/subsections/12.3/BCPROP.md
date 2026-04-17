@@ -32,11 +32,11 @@ Together the [BCCON](#REF_HEADING_KEYWORD_BCCON) and [BCPROP](#REF_HEADING_KEYWO
 | 8 | FIXEDX | A positive integer that identifies the whether the boundary is free or fixed in the x-direction. A value of 0 implies the boundary is free to move in the x-direction. A value > 0 implies the boundary is fixed in the x-direction with displacement defined by DISPX, | 1 |
 | 9 | FIXEDY | A positive integer that identifies the whether the boundary is free or fixed in the y-direction. A value of 0 implies the boundary is free to move in the y-direction. A value > 0 implies the boundary is fixed in the y-direction with displacement defined by DISPY, | 1 |
 | 10 | FIXEDZ | A positive integer that identifies the whether the boundary is free or fixed in the z-direction. A value of 0 implies the boundary is free to move in the z-direction. A value > 0 implies the boundary is fixed in the z-direction with displacement defined by DISPZ, | 1 |
-|  | STRESSXX | A real value that defines the diagonal component   $$ {σ}_{\mathit{xx}} $$   of the stress tensor. | 0 |
+|  | STRESSXX | A real value that defines the diagonal component ${σ}_{\mathit{xx}}$ of the stress tensor. | 0 |
 | psia | barsa | atma |  |
-|  | STRESSYY | A real value that defines the diagonal component   $$ {σ}_{\mathit{yy}} $$   of the stress tensor. | 0 |
+|  | STRESSYY | A real value that defines the diagonal component ${σ}_{\mathit{yy}}$ of the stress tensor. | 0 |
 | psia | barsa | atma |  |
-|  | STRESSZZ | A real value that defines the diagonal component   $$ {σ}_{\mathit{zz}} $$   of the stress tensor. | 0 |
+|  | STRESSZZ | A real value that defines the diagonal component ${σ}_{\mathit{zz}}$ of the stress tensor. | 0 |
 | psia | barsa | atma |  |
 |  | DISPX | A real value that defines the x-direction displacement boundary condition. | 0 |
 | feet | m | cm |  |

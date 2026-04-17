@@ -17,54 +17,34 @@
 | No. | Name | Description | Default |
 | --- | --- | --- | --- |
 | Field | Metric | Laboratory |  |
-| 1 | POROFAC | A real monotonically increasing positive columnar vector that defines the porosity factor (  $$ \frac{ϕ}{{ϕ}_{0}} $$  ) for the corresponding PCFAC vector. In the simulator’s Salt Precipitation model, the maximum value of   $$ ϕ $$   is   $$ {ϕ}_{0} $$  , implying a maximum value of one for POROFAC. | None |
+| 1 | POROFAC | A real monotonically increasing positive columnar vector that defines the porosity factor ($\frac{ϕ}{{ϕ}_{0}}$) for the corresponding PCFAC vector. In the simulator’s Salt Precipitation model, the maximum value of $ϕ$ is ${ϕ}_{0}$, implying a maximum value of one for POROFAC. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 2 | PCFAC | A real positive monotonically decreasing columnar vector that defines the capillary pressure (  $$ {p}_{c} $$  ) multiplier associated with POROFAC and used to scale a grid block's capillary pressure due to the reduction in pore volume caused by salt precipitation.  Where: $$ \begin{matrix}\mathit{PCFAC} = m\left(\frac{ϕ}{{ϕ}_{0}}\right) \\ \mathit{with} {p}_{c} = m\left(\frac{ϕ}{{ϕ}_{0}}\right){p}_{c0}\end{matrix} $$ | None |
+| 2 | PCFAC | A real positive monotonically decreasing columnar vector that defines the capillary pressure (${p}_{c}$) multiplier associated with POROFAC and used to scale a grid block's capillary pressure due to the reduction in pore volume caused by salt precipitation.  Where: $\begin{matrix}\mathit{PCFAC} = m\left(\frac{ϕ}{{ϕ}_{0}}\right) \\ \mathit{with} {p}_{c} = m\left(\frac{ϕ}{{ϕ}_{0}}\right){p}_{c0}\end{matrix}$ | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
 
 *Table 8.3.199.1: PCFACT Keyword Description*
 
 
-$$
-{s}_{s}
-$$
+The porosity reduction is a function of the volume fraction of salt (${s}_{s}$) precipitated out of the vaporized water phase, that is:
 
 
-| $$ ϕ = (1 - {s}_{s}){ϕ}_{0} $$ | (8.3.199.1) |
+| $ϕ = (1 - {s}_{s}){ϕ}_{0}$ | (8.3.199.1) |
 | --- | --- |
 
 The capillary pressure factor data can be estimated from the permeability and porosity factors defined by the PERMFACT keyword in the PROPS section using the Leverett J-function, for example:
 
 
-| $$ \frac{{p}_{c}}{{p}_{c0}} = {\left(\frac{ϕ}{{ϕ}_{0}}\frac{{k}_{0}}{k}\right)}^{\frac{1}{2}} $$ | (8.3.199.2) |
+| $\frac{{p}_{c}}{{p}_{c0}} = {\left(\frac{ϕ}{{ϕ}_{0}}\frac{{k}_{0}}{k}\right)}^{\frac{1}{2}}$ | (8.3.199.2) |
 | --- | --- |
 
 Where:
 
-$$
-{ϕ}_{0}
-$$
+${ϕ}_{0}$, $ϕ$ 	=	the initial and scaled porosity,
 
-$$
-ϕ
-$$
+${k}_{0}$, $k$ 	=	the initial and scaled permeability, and
 
-$$
-{k}_{0}
-$$
-
-$$
-k
-$$
-
-$$
-{p}_{c0}
-$$
-
-$$
-{p}_{c}
-$$
+${p}_{c0}$, ${p}_{c}$ 	=	the initial and scaled capillary pressure.
 
 
 #### Example

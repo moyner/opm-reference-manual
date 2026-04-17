@@ -9,9 +9,7 @@
 
 The OVERBURD keyword defines the overburden pressures versus depth relationship to be applied for when the rock compaction option has been invoked by the ROCKCOMP keyword in the RUNSPEC section.
 
-$$
-{P}_{(\mathit{effective})} = {P}_{(\mathit{Pressure})} - {P}_{(\mathit{overburden})}
-$$
+The rock compaction pore volume and transmissibility multipliers, entered via the ROCKTAB, ROCK2D and  ROCK2DTR keywords, are applied to the pore pressure, unless the OVERBURD keyword is included in the input deck.  When the OVERBURD keyword is present the multipliers are applied to the effective pore volume pressure, that is ${P}_{(\mathit{effective})} = {P}_{(\mathit{Pressure})} - {P}_{(\mathit{overburden})}$. If the keyword is not present in the input deck then the overburden pressure is set to zero.
 
 This keyword should only be used if compaction option has been enabled.
 

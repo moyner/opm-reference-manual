@@ -412,16 +412,17 @@ def mathml_to_latex(elem):
 
 
 def extract_frame(frame_elem):
-    """Extract content from a draw:frame element (images or objects)."""
+    """Extract content from a draw:frame element (images or objects).
+
+    Always returns inline notation ($...$) for math; block formatting ($$...$$)
+    is the caller's responsibility when the frame is the sole content of a paragraph.
+    """
     # Prefer MathML objects over rasterized images
     for obj in frame_elem:
         if tag_local(obj) == "object":
             math_elem = obj.find(f'{{{NS["math"]}}}math')
             if math_elem is not None:
                 latex = mathml_to_latex(math_elem)
-                display = math_elem.get("display", "inline")
-                if display == "block":
-                    return f"\n\n$$\n{latex}\n$$\n\n"
                 return f"${latex}$"
     # Fall back to image placeholder
     for image in frame_elem.iter(f'{{{NS["draw"]}}}image'):
@@ -542,53 +543,82 @@ class FODTConverter:
         self.lines.append("")
         code_block.clear()
 
-    def _process_paragraph(self, elem, style):
-        """Process a paragraph element and return markdown text."""
-        # Check for embedded frames (images or math objects)
-        frames = list(elem.iter(f'{{{NS["draw"]}}}frame'))
+    def _get_sole_math_frame(self, elem):
+        """Return the MathML element if the paragraph is purely a standalone equation.
 
-        resolved_style = self.style_map.get(style, [style])
-
-        # Handle frames (math objects take priority over rasterized images)
-        if frames:
-            result_parts = []
-            has_math = False
-            for frame in frames:
-                # Check for MathML object first
-                for obj in frame:
+        A paragraph is considered a block equation when its only direct children are
+        a single draw:frame containing a math object (plus any soft-page-break elements).
+        Any other children (spans with text, etc.) mean it is mixed content.
+        """
+        if elem.text and elem.text.strip():
+            return None
+        children = list(elem)
+        math_elems = []
+        for child in children:
+            local = tag_local(child)
+            if local == "frame":
+                found_math = False
+                for obj in child:
                     if tag_local(obj) == "object":
                         math_elem = obj.find(f'{{{NS["math"]}}}math')
                         if math_elem is not None:
-                            latex = mathml_to_latex(math_elem)
-                            display = math_elem.get("display", "inline")
-                            if display == "block":
-                                result_parts.append(f"$$\n{latex}\n$$")
-                            else:
-                                result_parts.append(f"${latex}$")
-                            has_math = True
+                            math_elems.append(math_elem)
+                            found_math = True
+                            break
+                if not found_math:
+                    return None  # Regular image frame, not a math block
+            elif local == "soft-page-break":
+                pass
+            else:
+                return None  # Non-frame child → mixed content
+            if child.tail and child.tail.strip():
+                return None  # Text after a child → mixed content
+        return math_elems[0] if len(math_elems) == 1 else None
 
-            if has_math:
-                return "\n\n".join(result_parts) + "\n"
+    def _process_paragraph(self, elem, style):
+        """Process a paragraph element and return markdown text."""
+        resolved_style = self.style_map.get(style, [style])
 
-            # No math objects — handle as image paragraph
-            images = list(elem.iter(f'{{{NS["draw"]}}}image'))
-            if images:
-                for frame in frames:
-                    for image in frame.iter(f'{{{NS["draw"]}}}image'):
-                        img_md = self._extract_and_save_image(image, frame)
-                        if img_md:
-                            result_parts.append(img_md)
+        # --- Case 1: purely a standalone block equation ---
+        math_elem = self._get_sole_math_frame(elem)
+        if math_elem is not None:
+            latex = mathml_to_latex(math_elem)
+            return f"$$\n{latex}\n$$\n"
 
-                # Also get text content
-                text = extract_text(elem, self.style_map).strip()
-                # Remove the base64 placeholder markers
-                text = re.sub(r"<<IMAGE:base64:[^>]+>>", "", text).strip()
+        # --- Case 2: paragraph contains any math frames (inline or mixed) ---
+        # extract_text handles these as inline $...$ via extract_frame().
+        all_frames = list(elem.iter(f'{{{NS["draw"]}}}frame'))
+        has_any_math = any(
+            any(
+                tag_local(obj) == "object"
+                and obj.find(f'{{{NS["math"]}}}math') is not None
+                for obj in frame
+            )
+            for frame in all_frames
+        )
+        if has_any_math:
+            text = extract_text(elem, self.style_map).strip()
+            if not text:
+                return ""
+            return text + "\n"
 
-                if result_parts:
-                    result = "\n".join(result_parts)
-                    if text:
-                        result += f"\n\n{text}"
-                    return result + "\n"
+        # --- Case 3: image-only frames (no math) ---
+        if all_frames:
+            result_parts = []
+            for frame in all_frames:
+                for image in frame.iter(f'{{{NS["draw"]}}}image'):
+                    img_md = self._extract_and_save_image(image, frame)
+                    if img_md:
+                        result_parts.append(img_md)
+
+            text = extract_text(elem, self.style_map).strip()
+            text = re.sub(r"<<IMAGE:base64:[^>]+>>", "", text).strip()
+
+            if result_parts:
+                result = "\n".join(result_parts)
+                if text:
+                    result += f"\n\n{text}"
+                return result + "\n"
 
         # Handle captions
         if set(resolved_style) & TABLE_CAPTION_STYLES:

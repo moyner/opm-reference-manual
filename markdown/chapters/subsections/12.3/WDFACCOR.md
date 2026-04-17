@@ -28,39 +28,25 @@ WDFACCOR keyword defines the parameters to calculate a gas well’s connection D
 The simulator evaluates the connection D-factors using the following expression based on Dake’s correlation:
 
 
-| $$ D = A{K}_{e}^{B}{ϕ}^{C}\frac{{K}_{e}}{h}\frac{1}{{r}_{w}}\frac{{γ}_{g}}{{μ}_{g}} $$ | (12.3.260.1) |
+| $D = A{K}_{e}^{B}{ϕ}^{C}\frac{{K}_{e}}{h}\frac{1}{{r}_{w}}\frac{{γ}_{g}}{{μ}_{g}}$ | (12.3.260.1) |
 | --- | --- |
 
 Where:
 
-$$
-{K}_{e}
-$$
+${K}_{e}$	= effective permeability of the grid block,
 
-$$
-ϕ
-$$
+$ϕ$	= porosity of the grid block,
 
-$$
-h
-$$
+$h$	= connection length,
 
-$$
-{r}_{w}
-$$
+${r}_{w}$	= wellbore radius,
 
-$$
-{γ}_{g}
-$$
+${γ}_{g}$	= gas gravity at surface conditions,
 
-$$
-{μ}_{g}
-$$
+${μ}_{g}$	= gas viscosity at bottom hole conditions.
 
 
-$$
-{μ}_{g}
-$$
+Note that since ${μ}_{g}$ is dependent on pressure the D-factor will also vary with pressure.
 
 See also the WDFAC keyword in the SCHEDULE section that can be used to specify the well D-factor; and the COMPDAT keyword in the SCHEDULE section that can be used to specify the connection D-factors directly.
 

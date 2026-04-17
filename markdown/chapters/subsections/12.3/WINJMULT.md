@@ -30,7 +30,7 @@ The WINJMULT keyword defines pressure dependent injectivity multipliers for inje
 The methodology for applying the well pressure dependent injectivity multipliers is outlined in equation 12.3.296.1.
 
 
-| $$ \begin{matrix}\mathit{Multiplier}= & 1.0 + α \left({P}_{\mathit{WBHP}} - {P}_{\mathit{fracture}}\right) & \text{ for }{P}_{\mathit{WBHP}} > {P}_{\mathit{fracture}} \\ \mathit{Multiplier}= & 1.0 & \text{ for }{P}_{\mathit{WBHP}} < {P}_{\mathit{fracture}}\end{matrix} $$ | (12.3.296.1) |
+| $\begin{matrix}\mathit{Multiplier}= & 1.0 + α \left({P}_{\mathit{WBHP}} - {P}_{\mathit{fracture}}\right) & \text{ for }{P}_{\mathit{WBHP}} > {P}_{\mathit{fracture}} \\ \mathit{Multiplier}= & 1.0 & \text{ for }{P}_{\mathit{WBHP}} < {P}_{\mathit{fracture}}\end{matrix}$ | (12.3.296.1) |
 | --- | --- |
 
 where:

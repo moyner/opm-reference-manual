@@ -17,7 +17,7 @@ This keyword must be defined in the OPM Flow input deck.
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | PRESS is a real number defining the rock reference pressure for the other parameters for this data set. | Default |
 | psia 14.7 | barsa 1.0132 | atma 1.0 |  |
-| 2 | RCOMP | RCOMP is a real number defining the rock compressibility (cf) at the rock reference pressure and is defined as: $$ {c}_{f} = -\frac{1}{V}\left(\frac{\mathit{dV}}{\mathit{dP}}\right) $$ | Defined |
+| 2 | RCOMP | RCOMP is a real number defining the rock compressibility (cf) at the rock reference pressure and is defined as: ${c}_{f} = -\frac{1}{V}\left(\frac{\mathit{dV}}{\mathit{dP}}\right)$ | Defined |
 | 1/psia 0.0 | 1/barsa 0.0 | 1/atma 0.0 |  |
 | Notes: Note, however, that if ROCKOPTS(ROCKOPT3) parameter has been used to set the allocation of the ROCK data via the ROCKNUM array, then the number of ROCK vectors should correspond to the value entered on TABDIMS(NTROCC) in the RUNSPEC section. Similarly, if the ROCKOPTS(ROCKOPT3) has been used to set the assignment of the ROCK data via the SATNUM array, then the number of vectors should correspond to the value entered via the TABDIMS(NTSFUN) parameter, since the tables will be allocated via the SATNUM array. |  |  |  |
 
@@ -27,30 +27,20 @@ This keyword must be defined in the OPM Flow input deck.
 The simulator adjusts the pore volume based on the reference pressure (PRESS), that is:
 
 
-| $$ V({P}_{i}) = V({P}_{r})\left(1 + {c}_{f}\left({P}_{i} - {P}_{r}\right) + \frac{{\left({c}_{f}({P}_{i} - {P}_{r})\right)}^{2}}{2}\right) $$ | (8.91) |
+| $V({P}_{i}) = V({P}_{r})\left(1 + {c}_{f}\left({P}_{i} - {P}_{r}\right) + \frac{{\left({c}_{f}({P}_{i} - {P}_{r})\right)}^{2}}{2}\right)$ | (8.91) |
 | --- | --- |
 
 where:
 
-$$
-{c}_{f}
-$$
+${c}_{f}$	=	rock compressibility (RCOMP) at the reference pressure (PRESS),
 
-$$
-{P}_{i}
-$$
+${P}_{i}$ 	=	initial grid cell pressure,
 
-$$
-{P}_{r}
-$$
+${P}_{r}$	=	reference pressure (PRESS),
 
-$$
-V({P}_{i})
-$$
+$V({P}_{i})$	=	pore volume at initial conditions, and
 
-$$
-V({P}_{r})
-$$
+$V({P}_{r})$	=	pore volume at at the reference pressure.
 
 
 | Note If the Rock Compaction option has been activated via the ROCKCOMP keyword in the RUNSPEC section, then the ROCKTAB keyword in the PROPS section should be used instead of ROCK keyword. |

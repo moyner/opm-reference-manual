@@ -12,7 +12,7 @@ GCONSALE defines group sales gas production targets and constraints for when the
 Note that the keyword should not be used to control sales gas for a gas field group, as the gas injection rate is used to control the sales gas production with this keyword, that is:
 
 
-| $$ \begin{matrix}\text{Gas Sales Rate} = \text{Total Group Gas Production Rate} \\  - \text{Group Gas Injection Rate} \\  + \text{Total Group Gas Import Rate} \\  - \text{Total Group Gas Consumption}\end{matrix} $$ | (12.23) |
+| $\begin{matrix}\text{Gas Sales Rate} = \text{Total Group Gas Production Rate} \\  - \text{Group Gas Injection Rate} \\  + \text{Total Group Gas Import Rate} \\  - \text{Total Group Gas Consumption}\end{matrix}$ | (12.23) |
 | --- | --- |
 
 

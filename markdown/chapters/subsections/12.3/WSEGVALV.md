@@ -25,7 +25,7 @@ A sub-critical valve ICD is a type of frictional ICD that adds an additional pre
 | ft2 | m2 | cm2 |  |
 | 5 | SEGLEN | A real positive value greater than or equal to zero that defines the additional pipe length for the frictional pressure drop (L). If set to zero then there is no additional pressure loss due to friction, whereas,  if set to the default (1*), then the segment pipe length is calculated from the corresponding WELSEGS keyword. | Defined |
 | ft | m | cm |  |
-| 6 | ID | A real positive value that defines the pipe internal diameter of the segment used to calculate the pressure drop due to friction (D). The value is used to replace the segment pipe internal diameter defined on the WELSEGS keyword in record 2-7, also named ID.  If ID is defaulted on this keyword then the equivalent value on the WELSEGS keyword will be used instead. Note for non-circular pipe segments use the equivalent diameter instead, that is: $$ \mathit{Equivalent}\mathit{ID} = \frac{4.0\times (\mathit{Cross}-\mathit{Sectional}\mathit{Area})}{\mathit{Perimeter}} $$ | Defined |
+| 6 | ID | A real positive value that defines the pipe internal diameter of the segment used to calculate the pressure drop due to friction (D). The value is used to replace the segment pipe internal diameter defined on the WELSEGS keyword in record 2-7, also named ID.  If ID is defaulted on this keyword then the equivalent value on the WELSEGS keyword will be used instead. Note for non-circular pipe segments use the equivalent diameter instead, that is: $\mathit{Equivalent}\mathit{ID} = \frac{4.0\times (\mathit{Cross}-\mathit{Sectional}\mathit{Area})}{\mathit{Perimeter}}$ | Defined |
 | feet | m | cm |  |
 | 7 | EPSILON | A real positive value that defines the pipe absolute roughness for this segment. The value is used to replace the segment pipe absolute roughness defined on the WELSEGS keyword in record 2-8, also named EPSILON.  If EPSILON is defaulted on this keyword then the equivalent value on the WELSEGS keyword will be used instead. | Defined |
 | feet | m | cm |  |
@@ -41,16 +41,10 @@ A sub-critical valve ICD is a type of frictional ICD that adds an additional pre
 
 The total number of wells should be defined via the WELLDIMS keyword and the number of multi-segment wells should be declared on the WSEGDIMS keyword, both keywords are in the RUNSPEC section. In addition, the WELSPECS keyword should be used to define wells, the COMPDAT keyword to define the well completions for both ordinary wells and multi-segment wells, and the COMPSEGS keyword to define a multi-segment segment completions. Finally, the WSEGVALV keyword can then be use to define ICD connections for the well.  All the aforementioned keywords are described in the SCHEDULE section.
 
-$$
-δ{P}_{\mathit{restriction}}
-$$
-
-$$
-δ{P}_{\mathit{friction}}
-$$
+OPM flow calculates the pressure drop across the ICD using a homogeneous sub-critical flow through a constriction model. The model consists of two variables, the pressure drop due to the constriction,$δ{P}_{\mathit{restriction}}$, and the pressure drop due to friction,$δ{P}_{\mathit{friction}}$, as shown in equation (12.42).
 
 
-| $$ \begin{matrix}\mathrm{δ}P = \mathrm{δ}{P}_{\mathit{restriction}} + \mathrm{δ}{P}_{\mathit{friction}} \\  \\ \mathit{where} \\ \mathrm{δ}{P}_{\mathit{restriction}} = {C}_{1}\frac{\mathrm{ρ}{{\mathrm{υ}}^{2}}_{r}}{{2{C}_{v}}^{2}} \\  \\ \mathrm{δ}{P}_{\mathit{friction}} = 2{C}_{2}f\frac{L}{D}{\mathrm{υ}}_{p}^{2}\end{matrix} $$ | (12.42) |
+| $\begin{matrix}\mathrm{δ}P = \mathrm{δ}{P}_{\mathit{restriction}} + \mathrm{δ}{P}_{\mathit{friction}} \\  \\ \mathit{where} \\ \mathrm{δ}{P}_{\mathit{restriction}} = {C}_{1}\frac{\mathrm{ρ}{{\mathrm{υ}}^{2}}_{r}}{{2{C}_{v}}^{2}} \\  \\ \mathrm{δ}{P}_{\mathit{friction}} = 2{C}_{2}f\frac{L}{D}{\mathrm{υ}}_{p}^{2}\end{matrix}$ | (12.42) |
 | --- | --- |
 
 Where:
@@ -88,16 +82,14 @@ L	=	Segment pipe length.
 In addition as both υr and υp are dependent on their respective cross-section areas then the volumetric flow (q) through the device requires that:
 
 
-| $$ q = {\mathrm{υ}}_{r}{A}_{r} = {\mathrm{υ}}_{p}{A}_{p} $$ | (12.43) |
+| $q = {\mathrm{υ}}_{r}{A}_{r} = {\mathrm{υ}}_{p}{A}_{p}$ | (12.43) |
 | --- | --- |
 
 
-$$
-δ{P}_{\mathit{restriction}}
-$$
+Substituting equation (12.43) for$δ{P}_{\mathit{restriction}}$in equation (12.42) one obtains:
 
 
-| $$ \mathrm{δ}{P}_{\mathit{restriction}} = {C}_{2}\frac{\mathrm{ρ}{q}^{2}}{{2{C}_{v}}^{2}{A}_{r}^{2}} $$ | (12.44) |
+| $\mathrm{δ}{P}_{\mathit{restriction}} = {C}_{2}\frac{\mathrm{ρ}{q}^{2}}{{2{C}_{v}}^{2}{A}_{r}^{2}}$ | (12.44) |
 | --- | --- |
 
 Where:
@@ -116,7 +108,7 @@ q	= 	Volumetric flow rate.
 The base strength of the device, K is defined using equation (12.44) as follows:
 
 
-| $$ K = \frac{ {C}_{2}}{{2{C}_{v}}^{2}{A}_{r}^{2}} $$ | (12.45) |
+| $K = \frac{ {C}_{2}}{{2{C}_{v}}^{2}{A}_{r}^{2}}$ | (12.45) |
 | --- | --- |
 
 
@@ -125,7 +117,7 @@ Note if K is greater than 0.1 then the device will be shut.
 The setting of the device, that is how open the device is, is related to the restricted area and the maximum restricted area of the device as follows:
 
 
-| $$ \mathit{Seting}\mathit{of}\mathit{Device} = \frac{{A}_{r}}{{A}_{\mathit{max}}} $$ | (12.46) |
+| $\mathit{Seting}\mathit{of}\mathit{Device} = \frac{{A}_{r}}{{A}_{\mathit{max}}}$ | (12.46) |
 | --- | --- |
 
 Where:

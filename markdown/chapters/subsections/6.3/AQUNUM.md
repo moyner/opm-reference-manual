@@ -40,13 +40,7 @@ Numerical aquifers are modeled as one-dimensional, with aquifer flow assumed to 
 
 The values entered on the AQUNUM keyword are used to calculate the aquifer's pore volume and the transmissibility between the aquifer and the connected cell faces defined on the AQUCON keyword. Thus:
 
-    - The aquifer’s pore volume is always calculated from the data entered on the AQUNUM keyword using
-
-$$
-\mathit{Pore} \mathit{Volume}=\mathit{AREA}\times \mathit{LENGTH}\times \mathit{PORO}
-$$
-
-and any modifications to the host cell values performed in either the GRID or EDIT sections are always ignored for cells declared as numerical aquifers cells.
+    - The aquifer’s pore volume is always calculated from the data entered on the AQUNUM keyword using$\mathit{Pore} \mathit{Volume}=\mathit{AREA}\times \mathit{LENGTH}\times \mathit{PORO}$and any modifications to the host cell values performed in either the GRID or EDIT sections are always ignored for cells declared as numerical aquifers cells.
     - For the transmissibility calculation either the cross-sectional area (AREA) defined on the AQUNUM keyword may be used or the connecting cell cross-sectional area by setting the AQUOPT1 variable on the AQUCON keyword.
 
 In order to fully define a numerical aquifer one has to define the aquifer properties via the AQUNUM keyword, and how the aquifer is connected to the reservoir using the AQUCON keyword in the GRID or SOLUTION sections.

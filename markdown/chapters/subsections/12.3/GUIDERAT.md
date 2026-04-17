@@ -10,7 +10,7 @@
 This keyword defines a general formulae used to define a group’s and well’s guide rate as a function of the their potential.  The default behavior, that is when this keyword is not invoked,  is to set the target control mode and rate via the GCONPROD keyword in the SCHEDULE section.  In this case the target rate is distributed between the group’s wells that are under group control using a well’s guide rate. If a well’s guide rate has not been defined, for example by this keyword, then the well potential of the group controlling phase at the beginning of the time step is used.  For example, if the group target rate and phase is oil, then the well’s under group control will have their oil rates determined by their oil rate potential [Production and injection potentials are based on rates that are unrestricted. For wells this implies that well potential is calculated based on either the BHP or THP limit, which ever is the more constraining.]. The GUIDERAT keyword substitutes the potential calculation with a more general formulae in the aforementioned distribution and allocation of the rates:
 
 
-| $$ \mathit{Phase}\mathit{Guide}\mathit{Rate} =\frac{{({\mathit{Potential}}_{\mathit{Phase}})}^{A}}{B + C{(\mathit{Potential}{\mathit{Ratio}}_{1})}^{D} + E{(\mathit{Potential}{\mathit{Ratio}}_{2})}^{F}} $$ | (12.28) |
+| $\mathit{Phase}\mathit{Guide}\mathit{Rate} =\frac{{({\mathit{Potential}}_{\mathit{Phase}})}^{A}}{B + C{(\mathit{Potential}{\mathit{Ratio}}_{1})}^{D} + E{(\mathit{Potential}{\mathit{Ratio}}_{2})}^{F}}$ | (12.28) |
 | --- | --- |
 
 Where:
@@ -45,7 +45,7 @@ Note that groups can only have potential guide rates if they are subordinate in 
 | 7 | E | E is a real value that defines coefficient E in equation (12.28). | 0.0 |
 | 8 | F | F is a real value greater than or equal to -3 and less than or equal to 3, that defines coefficient F in equation (12.28). | 0.0 |
 | 9 | GROPT01 | A defined character string that determines if calculated phase guide rates should be allowed to increase (YES) or not (NO), and should be set to one of the following: Note only the default value is currently supported by OPM Flow. | YES |
-| 10 | GROPT02 | A real positive value greater than or equal to zero and less than or equal to one that “dampens” the calculated phase guide rate based on the following formula: $$ \begin{matrix}{(\mathit{Phase} \mathit{Guide} \mathit{Rate})}_{t}^{\mathit{new}} = \mathit{GROPT}02\times {(\mathit{Phase} \mathit{Guide} \mathit{Rate})}_{t} +  \\ (1 - \mathit{GROPT}02)\times {(\mathit{Phase} \mathit{Guide} \mathit{Rate})}_{(t-1)}\end{matrix} $$ The option is intended to have a similar effect as the GROPT01 NO option to reduce oscillations as a result of either the water cut or GOR being rate dependent. Values approaching one allows the calculated phase guide rates to change instantaneously with the phase potentials, whereas values approaching zero dampen the potential guide rates towards the previously calculated values, thereby reducing the potential for oscillating behavior. | 1.0 |
+| 10 | GROPT02 | A real positive value greater than or equal to zero and less than or equal to one that “dampens” the calculated phase guide rate based on the following formula: $\begin{matrix}{(\mathit{Phase} \mathit{Guide} \mathit{Rate})}_{t}^{\mathit{new}} = \mathit{GROPT}02\times {(\mathit{Phase} \mathit{Guide} \mathit{Rate})}_{t} +  \\ (1 - \mathit{GROPT}02)\times {(\mathit{Phase} \mathit{Guide} \mathit{Rate})}_{(t-1)}\end{matrix}$ The option is intended to have a similar effect as the GROPT01 NO option to reduce oscillations as a result of either the water cut or GOR being rate dependent. Values approaching one allows the calculated phase guide rates to change instantaneously with the phase potentials, whereas values approaching zero dampen the potential guide rates towards the previously calculated values, thereby reducing the potential for oscillating behavior. | 1.0 |
 | 11 | GROPT03 | A defined character string that determines if “free” gas potential rates for the Potential Ratio2 variable in equation (12.28) should be used (YES), or if “free and associated” gas should be used (NO), and should be set to one of the following: | NO |
 | 12 | GROPT04 | A real positive value that sets the minimum potential guide rate. If the calculated potential guide is below this value it will be reset to GROPT04. The option is meant to avoid groups and wells being ignored due to the calculated potential guide rates being minuscule. | 1.0 x10-6 |
 | Notes: |  |  |  |
@@ -68,7 +68,7 @@ Finally, as mentioned previously, if the GUIDERAT or WGRUPCON keywords are not p
 The first example sets the guide phase to oil and the resulting Phase Guide Rate based on oil potential based on setting the A and B coefficients to to one, that is:
 
 
-| $$ \begin{matrix}\mathit{Phase}\mathit{Guide}\mathit{Rate} =\frac{{({\mathit{Potental}}_{\mathit{Phase}})}^{A}}{B + C{(\mathit{Potential}{\mathit{Ratio}}_{1})}^{D} + E{(\mathit{Potential}{\mathit{Ratio}}_{2})}^{F}} \\  \\  = \frac{\mathit{Oil}{\mathit{Potential}}^{1.0}}{1.0}\end{matrix} $$ | (12.29) |
+| $\begin{matrix}\mathit{Phase}\mathit{Guide}\mathit{Rate} =\frac{{({\mathit{Potental}}_{\mathit{Phase}})}^{A}}{B + C{(\mathit{Potential}{\mathit{Ratio}}_{1})}^{D} + E{(\mathit{Potential}{\mathit{Ratio}}_{2})}^{F}} \\  \\  = \frac{\mathit{Oil}{\mathit{Potential}}^{1.0}}{1.0}\end{matrix}$ | (12.29) |
 | --- | --- |
 
 
@@ -89,7 +89,7 @@ GUIDERAT
 The next example sets the Phase Guide Rate to the reservoir fluid volume rate, with preference given to low GOR wells and with high GOR wells penalized, based on setting A and B to one, C and D to zero, E equal to 10 and F equal to two, that is:
 
 
-| $$ \begin{matrix}\mathit{Phase}\mathit{Guide}\mathit{Rate} =\frac{{({\mathit{Potental}}_{\mathit{Phase}})}^{A}}{B + C{(\mathit{Potential}{\mathit{Ratio}}_{1})}^{D} + E{(\mathit{Potential}{\mathit{Ratio}}_{2})}^{F}}  \\  \\  = \frac{\mathit{Reservoir} \mathit{Fluid} \mathit{Volume} {\mathit{Potential}}^{1.0}}{1.0 + 10\times {(\mathit{GOR})}^{2}}\end{matrix} $$ | (12.30) |
+| $\begin{matrix}\mathit{Phase}\mathit{Guide}\mathit{Rate} =\frac{{({\mathit{Potental}}_{\mathit{Phase}})}^{A}}{B + C{(\mathit{Potential}{\mathit{Ratio}}_{1})}^{D} + E{(\mathit{Potential}{\mathit{Ratio}}_{2})}^{F}}  \\  \\  = \frac{\mathit{Reservoir} \mathit{Fluid} \mathit{Volume} {\mathit{Potential}}^{1.0}}{1.0 + 10\times {(\mathit{GOR})}^{2}}\end{matrix}$ | (12.30) |
 | --- | --- |
 
 
