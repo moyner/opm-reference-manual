@@ -4,7 +4,7 @@ subtitle: "2025-04"
 ---
 
 ::: {.content-visible when-format="html"}
-![](../markdown/images/Image46_409be8acca21.png){fig-align="center" width="40%"}
+![](images/Image46_409be8acca21.png){fig-align="center" width="40%"}
 :::
 
 ## About This Manual

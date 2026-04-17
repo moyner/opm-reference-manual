@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: _book
+filters:
+  - keyword_link_filter.lua
 
 book:
   title: "OPM Flow Reference Manual"
