@@ -1,0 +1,210 @@
+#!/usr/bin/env python3
+"""Generate Quarto .qmd wrapper files by scanning the markdown directory.
+
+This script creates chapter and appendix .qmd files that use Quarto's
+{{< include >}} directive to pull in the actual markdown content.
+Re-run this script whenever new keyword files are added.
+"""
+
+import os
+import sys
+from pathlib import Path
+
+QUARTO_DIR = Path(__file__).resolve().parent
+MARKDOWN_DIR = QUARTO_DIR.parent / "markdown"
+CHAPTERS_DIR = QUARTO_DIR / "chapters"
+APPENDICES_DIR = QUARTO_DIR / "appendices"
+
+CHAPTER_TITLES = {
+    1: "Introduction",
+    2: "Installing and Running Flow",
+    3: "Keyword Documentation Structure",
+    4: "Global Section Keywords",
+    5: "RUNSPEC Section",
+    6: "GRID Section",
+    7: "EDIT Section",
+    8: "PROPS Section",
+    9: "REGIONS Section",
+    10: "SOLUTION Section",
+    11: "SUMMARY Section",
+    12: "SCHEDULE Section",
+}
+
+CHAPTER_SLUGS = {
+    1: "01-introduction",
+    2: "02-installation",
+    3: "03-keyword-structure",
+    4: "04-global-keywords",
+    5: "05-runspec",
+    6: "06-grid",
+    7: "07-edit",
+    8: "08-props",
+    9: "09-regions",
+    10: "10-solution",
+    11: "11-summary",
+    12: "12-schedule",
+}
+
+APPENDIX_TITLES = {
+    "A": "Keyword Summary",
+    "B": "Release Notes",
+    "C": "OPMRUN",
+    "D": "Python Interface",
+    "E": "Command Line Options",
+    "F": "Output File Formats",
+}
+
+APPENDIX_SLUGS = {
+    "A": "A-keyword-summary",
+    "B": "B-release-notes",
+    "C": "C-opmrun",
+    "D": "D-python",
+    "E": "E-command-line",
+    "F": "F-output-formats",
+}
+
+# Chapters that have keyword subsections (N.2 data requirements + N.3 keywords)
+KEYWORD_CHAPTERS = range(4, 13)
+
+
+def get_keyword_files(chapter_num: int) -> list[str]:
+    """Return sorted list of keyword .md filenames for a chapter's subsections."""
+    subsection_dir = MARKDOWN_DIR / "chapters" / "subsections" / f"{chapter_num}.3"
+    if not subsection_dir.is_dir():
+        return []
+    keywords = []
+    for f in subsection_dir.iterdir():
+        if f.suffix == ".md" and f.name != ".md":
+            keywords.append(f.name)
+    return sorted(keywords)
+
+
+def has_data_requirements(chapter_num: int) -> bool:
+    """Check if a chapter has a section N/2.md (Data Requirements)."""
+    section_file = MARKDOWN_DIR / "chapters" / "sections" / str(chapter_num) / "2.md"
+    return section_file.is_file()
+
+
+def generate_chapter_qmd(chapter_num: int) -> str:
+    """Generate the content of a chapter .qmd file."""
+    title = CHAPTER_TITLES[chapter_num]
+    include_base = "../markdown/chapters"
+
+    lines = [
+        "---",
+        f'title: "{title}"',
+        "---",
+        "",
+        f"{{{{< include {include_base}/{chapter_num}.md >}}}}",
+        "",
+    ]
+
+    if chapter_num in KEYWORD_CHAPTERS:
+        # Include data requirements section if it exists
+        if has_data_requirements(chapter_num):
+            lines.append(
+                f"{{{{< include {include_base}/sections/{chapter_num}/2.md >}}}}"
+            )
+            lines.append("")
+
+        # Include keyword files alphabetically
+        keywords = get_keyword_files(chapter_num)
+        if keywords:
+            lines.append("## Keyword Definitions")
+            lines.append("")
+            for kw in keywords:
+                lines.append(
+                    f"{{{{< include {include_base}/subsections/{chapter_num}.3/{kw} >}}}}"
+                )
+                lines.append("")
+
+    return "\n".join(lines)
+
+
+def generate_appendix_qmd(letter: str) -> str:
+    """Generate the content of an appendix .qmd file."""
+    title = APPENDIX_TITLES[letter]
+    include_path = f"../markdown/appendices/{letter}.md"
+
+    lines = [
+        "---",
+        f'title: "{title}"',
+        "---",
+        "",
+        f"{{{{< include {include_path} >}}}}",
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def generate_index_qmd() -> str:
+    """Generate the index.qmd title page."""
+    return """---
+title: "OPM Flow Reference Manual"
+subtitle: "2025-04"
+---
+
+::: {.content-visible when-format="html"}
+![](../markdown/images/Image46_409be8acca21.png){fig-align="center" width="40%"}
+:::
+
+## About This Manual
+
+The **OPM Flow Reference Manual** provides comprehensive documentation for the
+Open Porous Media (OPM) Flow reservoir simulator. OPM Flow is a fully-implicit,
+black-oil and compositional reservoir simulator capable of running industry-standard
+simulation models.
+
+This manual covers:
+
+- **Installation and Setup** -- How to install and run OPM Flow
+- **Keyword Reference** -- Complete documentation of all supported keywords organized
+  by input deck section (GLOBAL, RUNSPEC, GRID, EDIT, PROPS, REGIONS, SOLUTION,
+  SUMMARY, SCHEDULE)
+- **Appendices** -- Keyword summaries, release notes, the OPMRUN graphical interface,
+  Python scripting interface, command line options, and output file formats
+
+### How to Use This Manual
+
+Use the table of contents or the search bar to navigate to specific keywords or topics.
+Keywords are organized by their input deck section, matching the structure of OPM Flow
+simulation input files.
+
+::: {.callout-note}
+This manual corresponds to **OPM Flow version 2025-04**.
+:::
+"""
+
+
+def main():
+    CHAPTERS_DIR.mkdir(parents=True, exist_ok=True)
+    APPENDICES_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Generate index.qmd
+    index_path = QUARTO_DIR / "index.qmd"
+    index_path.write_text(generate_index_qmd())
+    print(f"Generated {index_path.relative_to(QUARTO_DIR)}")
+
+    # Generate chapter files
+    for num in range(1, 13):
+        slug = CHAPTER_SLUGS[num]
+        filepath = CHAPTERS_DIR / f"{slug}.qmd"
+        content = generate_chapter_qmd(num)
+        filepath.write_text(content)
+        keyword_count = len(get_keyword_files(num)) if num in KEYWORD_CHAPTERS else 0
+        extra = f" ({keyword_count} keywords)" if keyword_count else ""
+        print(f"Generated chapters/{slug}.qmd{extra}")
+
+    # Generate appendix files
+    for letter in ["A", "B", "C", "D", "E", "F"]:
+        slug = APPENDIX_SLUGS[letter]
+        filepath = APPENDICES_DIR / f"{slug}.qmd"
+        content = generate_appendix_qmd(letter)
+        filepath.write_text(content)
+        print(f"Generated appendices/{slug}.qmd")
+
+    print(f"\nDone! Generated {12 + 6 + 1} files.")
+
+
+if __name__ == "__main__":
+    main()

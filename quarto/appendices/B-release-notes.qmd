@@ -1,0 +1,5 @@
+---
+title: "Release Notes"
+---
+
+{{< include ../markdown/appendices/B.md >}}

@@ -1,0 +1,449 @@
+---
+title: "GRID Section"
+---
+
+{{< include ../markdown/chapters/6.md >}}
+
+{{< include ../markdown/chapters/sections/6/2.md >}}
+
+## Keyword Definitions
+
+{{< include ../markdown/chapters/subsections/6.3/ACTNUM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/ADD.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/ADDREG.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/ADDZCORN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/AMALGAM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/AQUANCON.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/AQUCON.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/AQUCT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/AQUNNC.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/AQUNUM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/AUTOCOAR.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/BCCON.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/BOUNDARY.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/BOX.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/BTOBALFA.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/BTOBALFV.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/CARFIN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/COALNUM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/COARSEN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/COLLAPSE.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/COLUMNS.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/COORD.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/COORDSYS.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/COPY.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/COPYBOX.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/COPYREG.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/CRITPERM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DEBUG.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DIFFMR-.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DIFFMR.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DIFFMTH-.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DIFFMTHT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DIFFMX-.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DIFFMX.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DIFFMY-.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DIFFMY.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DIFFMZ-.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DIFFMZ.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DISPERC.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DOMAINS.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DPGRID.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DPNUM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DR.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DRV.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DTHETA.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DTHETAV.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DUMPFLUX.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DX.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DXV.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DY.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DYV.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DZ.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DZMATRIX.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DZMTRX.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DZMTRXV.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DZNET.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/DZV.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/ECHO.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/END.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/ENDBOX.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/ENDFIN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/ENDINC.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/ENDSKIP.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/EQLZCORN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/EQUALREG.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/EQUALS.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/EXTFIN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/EXTHOST.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/EXTRAPMS.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/EXTREPGL.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/FAULTS.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/FILEUNIT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/FLUXNUM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/FLUXREG.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/FLUXTYPE.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/FORMFEED.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/GDFILE.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/GDORIENT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/GETDATA.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/GRID.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/GRIDFILE.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/GRIDUNIT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/HALFTRAN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/HEATCR.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/HEATCRT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/HMAQUNUM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/HMFAULTS.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/HMMLAQUN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/HMMLT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/HMMMREGT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/HMMULRGT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/HMMULTFT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/HMMULTSG.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/HRFIN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/HXFIN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/HYFIN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/HZFIN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/IHOST.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/IMPORT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/INCLUDE.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/INIT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/INRAD.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/IONROCK.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/ISOLNUM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/JFUNC.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/JFUNCR.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/LGRCOPY.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/LINKPERM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/LTOSIGMA.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/LX.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/LXFIN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/LY.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/LYFIN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/LZ.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/LZFIN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MAPAXES.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MAPUNITS.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MAXVALUE.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MESSAGE.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MESSAGES.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MINNNCT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MINPORV.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MINPV.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MINPVV.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MINVALUE.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MPFANUM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MPFNNC.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTFLT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTIPLY.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTIREG.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTNUM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTPV.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTR-.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTR.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTREGD.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTREGH.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTREGP.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTREGT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTTHT-.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTTHT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTX-.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTX.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTY-.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTY.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTZ-.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/MULTZ.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/NEWTRAN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/NINENUM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/NMATOPTS.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/NNC.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/NODPPM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/NOECHO.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/NOGGF.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/NOWARN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/NTG.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/NXFIN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/NYFIN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/NZFIN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/OLDTRAN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/OLDTRANR.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/OPERATE.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/OPERATER.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/OPERNUM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/OUTRAD.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PARAOPTS.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PEBI.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PERMAVE.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PERMJFUN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PERMR.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PERMTHT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PERMX.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PERMY.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PERMZ.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PETGRID.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PINCH.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PINCHNUM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PINCHOUT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PINCHREG.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PINCHXY.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PORO.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PYEND.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/PYINPUT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/QMOBIL.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/RADFIN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/RADFIN4.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/REFINE.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/RESVNUM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/ROCKFRAC.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/RPTGRID.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/RPTGRIDL.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/RPTINIT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/RPTISOL.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/SIGMA.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/SIGMAGD.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/SIGMAGDV.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/SIGMAV.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/SKIP.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/SKIP100.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/SKIP300.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/SMULTX.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/SMULTY.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/SMULTZ.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/SOLVDIRS.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/SOLVNUM.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/SPECGRID.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/THCGAS.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/THCOIL.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/THCONR.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/THCONSF.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/THCROCK.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/THCWATER.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/THPRESFT.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/TOPS.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/TRANGL.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/USEFLUX.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/USENOFLO.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/VEDEBUG.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/VEFIN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/WARN.md >}}
+
+{{< include ../markdown/chapters/subsections/6.3/ZCORN.md >}}

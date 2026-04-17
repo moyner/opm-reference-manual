@@ -1,0 +1,34 @@
+---
+title: "OPM Flow Reference Manual"
+subtitle: "2025-04"
+---
+
+::: {.content-visible when-format="html"}
+![](../markdown/images/Image46_409be8acca21.png){fig-align="center" width="40%"}
+:::
+
+## About This Manual
+
+The **OPM Flow Reference Manual** provides comprehensive documentation for the
+Open Porous Media (OPM) Flow reservoir simulator. OPM Flow is a fully-implicit,
+black-oil and compositional reservoir simulator capable of running industry-standard
+simulation models.
+
+This manual covers:
+
+- **Installation and Setup** -- How to install and run OPM Flow
+- **Keyword Reference** -- Complete documentation of all supported keywords organized
+  by input deck section (GLOBAL, RUNSPEC, GRID, EDIT, PROPS, REGIONS, SOLUTION,
+  SUMMARY, SCHEDULE)
+- **Appendices** -- Keyword summaries, release notes, the OPMRUN graphical interface,
+  Python scripting interface, command line options, and output file formats
+
+### How to Use This Manual
+
+Use the table of contents or the search bar to navigate to specific keywords or topics.
+Keywords are organized by their input deck section, matching the structure of OPM Flow
+simulation input files.
+
+::: {.callout-note}
+This manual corresponds to **OPM Flow version 2025-04**.
+:::
