@@ -177,6 +177,20 @@ def main():
     CHAPTERS_DIR.mkdir(parents=True, exist_ok=True)
     APPENDICES_DIR.mkdir(parents=True, exist_ok=True)
 
+    # Create symlinks for image directories so Quarto can resolve image paths
+    ch_images_link = CHAPTERS_DIR / "images"
+    if not ch_images_link.exists():
+        ch_images_link.symlink_to(
+            Path("../../markdown/chapters/images"), target_is_directory=True
+        )
+        print("Created symlink: chapters/images -> ../../markdown/chapters/images")
+    app_images_link = APPENDICES_DIR / "images"
+    if not app_images_link.exists():
+        app_images_link.symlink_to(
+            Path("../../markdown/appendices/images"), target_is_directory=True
+        )
+        print("Created symlink: appendices/images -> ../../markdown/appendices/images")
+
     # Generate index.qmd
     index_path = QUARTO_DIR / "index.qmd"
     index_path.write_text(generate_index_qmd())

@@ -142,7 +142,7 @@ In terms of the keyword units, given the intrinsic viscosity in ml/g, polymer co
 
 
 $$
-\left[\mathrm{η}\right] = K{\left({M}_{w} ⋅ 1.0\times {10}^{-3}\right)}^{a}\overset{\dot}{ }1.0\times {10}^{-3}
+\left[\mathrm{η}\right] = K{\left({M}_{w} ⋅ 1.0\times {10}^{-3}\right)}^{a}\cdot 1.0\times {10}^{-3}
 $$ {#eq-8-80}
 
 and equation (8.79) becomes:

@@ -351,14 +351,24 @@ def mathml_to_latex(elem):
         if len(children) >= 2:
             base = mathml_to_latex(children[0])
             over = mathml_to_latex(children[1])
+            over_stripped = over.strip()
             over_map = {
                 "^": r"\hat",
                 "→": r"\vec",
                 "¯": r"\bar",
                 "˙": r"\dot",
                 "¨": r"\ddot",
+                r"\dot": r"\dot",
+                r"\ddot": r"\ddot",
             }
-            over_cmd = over_map.get(over.strip())
+            # Special case: dot accent over empty/whitespace base → just the cdot operator
+            # This pattern appears in FODT for the divergence operator (∇·)
+            base_stripped = base.strip()
+            if over_stripped in ("˙", r"\dot", r"\cdot") and (
+                not base_stripped or base_stripped == r"\text{ }"
+            ):
+                return r"\cdot "
+            over_cmd = over_map.get(over_stripped)
             if over_cmd:
                 return over_cmd + "{" + base + "}"
             return r"\overset{" + over + "}{" + base + "}"
@@ -436,9 +446,10 @@ def extract_frame(frame_elem):
 class FODTConverter:
     """Convert a single FODT file to Markdown."""
 
-    def __init__(self, fodt_path, images_dir):
+    def __init__(self, fodt_path, images_dir, md_dir=None):
         self.fodt_path = Path(fodt_path)
         self.images_dir = Path(images_dir)
+        self.md_dir = Path(md_dir) if md_dir else self.images_dir.parent
         self.image_counter = 0
         self.lines = []
         self.tree = None
@@ -713,7 +724,9 @@ class FODTConverter:
             f.write(img_bytes)
 
         # Return relative path for markdown
-        rel_path = os.path.relpath(img_path, self.images_dir.parent)
+        # Use a simple images/filename path - the Quarto build creates
+        # symlinks so this resolves correctly regardless of MD file depth
+        rel_path = f"images/{filename}"
         alt_text = frame_name if frame_name else f"Image {self.image_counter}"
         return f"![{alt_text}]({rel_path})"
 
@@ -849,29 +862,35 @@ class FODTConverter:
                 return
 
         # Check if this looks like an equation table:
-        # 1 data row, 2 cells, first cell is $...$, second is (X.Y) style number
+        # Each row has 2 cells, first cell is $...$, last is (X.Y) style number or empty
         non_empty_rows = [r for r in rows if any(c.strip() for c in r)]
-        if (
-            len(non_empty_rows) == 1
-            and len(non_empty_rows[0]) >= 2
-        ):
-            eq_cell = non_empty_rows[0][0].strip()
-            num_cell = non_empty_rows[0][-1].strip()
-            eq_num_match = re.match(r"^\((\d+(?:\.\d+)*)\)$", num_cell)
-            if (
-                eq_cell.startswith("$")
-                and eq_cell.endswith("$")
-                and eq_num_match
-            ):
-                # Extract equation content without outer $ delimiters
-                eq_content = eq_cell[1:-1]
-                # Build label from equation number: dots → dashes
-                eq_label = eq_num_match.group(1).replace(".", "-")
-                self.lines.append("")
-                self.lines.append("$$")
-                self.lines.append(eq_content)
-                self.lines.append(f"$$ {{#eq-{eq_label}}}")
-                self.lines.append("")
+        if non_empty_rows and len(non_empty_rows[0]) >= 2:
+            all_eq = True
+            eq_entries = []
+            for row_data in non_empty_rows:
+                eq_cell = row_data[0].strip()
+                num_cell = row_data[-1].strip()
+                eq_num_match = re.match(r"^\(?(\d+(?:\.\d+)*)\)?$", num_cell)
+                if eq_cell.startswith("$") and eq_cell.endswith("$"):
+                    eq_content = eq_cell[1:-1].strip()
+                    if eq_num_match:
+                        eq_label = eq_num_match.group(1).replace(".", "-")
+                    else:
+                        eq_label = None
+                    eq_entries.append((eq_content, eq_label))
+                else:
+                    all_eq = False
+                    break
+            if all_eq and eq_entries:
+                for eq_content, eq_label in eq_entries:
+                    self.lines.append("")
+                    self.lines.append("$$")
+                    self.lines.append(eq_content)
+                    if eq_label:
+                        self.lines.append(f"$$ {{#eq-{eq_label}}}")
+                    else:
+                        self.lines.append("$$")
+                    self.lines.append("")
                 return
 
         # Build markdown table
@@ -972,13 +991,24 @@ def main():
         md_rel = rel_path.with_suffix(".md")
 
         out_dir = markdown_dir / md_rel.parent
-        images_dir = out_dir / "images"
+        out_file = markdown_dir / md_rel
+
+        # Determine the top-level category for shared images directory
+        # chapters/* and chapters/sections/* and chapters/subsections/* -> chapters/images
+        # appendices/* -> appendices/images
+        # other -> images
+        rel_parts = md_rel.parts
+        if len(rel_parts) >= 2 and rel_parts[0] == "chapters":
+            images_dir = markdown_dir / "chapters" / "images"
+        elif len(rel_parts) >= 2 and rel_parts[0] == "appendices":
+            images_dir = markdown_dir / "appendices" / "images"
+        else:
+            images_dir = out_dir / "images"
 
         try:
-            converter = FODTConverter(fodt_path, images_dir)
+            converter = FODTConverter(fodt_path, images_dir, md_dir=out_dir)
             markdown = converter.convert()
 
-            out_file = markdown_dir / md_rel
             out_file.parent.mkdir(parents=True, exist_ok=True)
             with open(out_file, "w", encoding="utf-8") as f:
                 f.write(markdown)
