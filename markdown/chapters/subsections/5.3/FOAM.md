@@ -1,13 +1,13 @@
-### FOAM – Activate the Foam Phase and Model {#kw-FOAM}
+### FOAM – Activate the Foam Phase and Model
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword activates the foam phase and modeling option. The keyword will also invoke data input file checking to ensure that all the required foam phase input parameters are defined in the input deck.  Note in the commercial simulator the FOAM phase and model can be used in conjunction with the [POLYMER](#kw-POLYMER) and [SURFACT](#kw-SURFACT) phases; this is not the case for OPM Flow.  OPM Flow’s FOAM phase and model is a standalone implementation and cannot be used in conjunction with either the [POLYMER](#kw-POLYMER) or [SURFACT](#kw-SURFACT) phases.
+This keyword activates the foam phase and modeling option. The keyword will also invoke data input file checking to ensure that all the required foam phase input parameters are defined in the input deck.  Note in the commercial simulator the FOAM phase and model can be used in conjunction with the POLYMER and SURFACT phases; this is not the case for OPM Flow.  OPM Flow’s FOAM phase and model is a standalone implementation and cannot be used in conjunction with either the POLYMER or SURFACT phases.
 
 Foam flooding is an enhanced oil recovery flood process that attempts to control injected gas breakthrough in an oil reservoir by changing the mobility of the injected fluid.
 

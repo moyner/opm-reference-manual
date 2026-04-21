@@ -1,7 +1,7 @@
-### SGFN – Gas Saturation Tables (Format Type 2) {#kw-SGFN}
+### SGFN – Gas Saturation Tables (Format Type 2)
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -13,15 +13,18 @@ The SGFN keyword defines the gas relative permeability and oil-gas capillary pre
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [SGAS](#kw-SGAS) | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating at one, that defines the gas saturation. | None |
+| 1 | SGAS | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating at one, that defines the gas saturation. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 2 | [KRG](#kw-KRG) | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the gas relative permeability. | None |
+| 2 | KRG | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the gas relative permeability. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | 3 | PCOG | A columnar vector of real values that are either equal or increasing down the column that defines the oil-gas capillary pressure. | None |
 | psia | bars | atm |  |
 | Notes: |  |  |  |
-: SGFN Keyword Description {#tbl-8-148}
-See also the [GSF](#kw-GSF) - Gas Saturation Tables versus Gas Saturation (Gas-Water and [CO2STORE](#kw-CO2STORE) Systems) keyword in the [PROPS](#kw-PROPS) section, that defines the gas relative permeability and gas-water capillary pressure data as a function of gas saturation, for when only the gas and water phases are present in the model. Note that the [GSF](#kw-GSF) keyword must be used in conjunction with the [WSF](#kw-WSF) - Water Saturation Tables versus Water Saturation (Gas-Water and [CO2STORE](#kw-CO2STORE) Systems) keyword, also in the [PROPS](#kw-PROPS) section. [WSF](#kw-WSF) defines the water saturation as a function of water saturation for when only the gas and water phases are present in the model.
+
+*Table 8.148: SGFN Keyword Description*
+
+
+See also the GSF - Gas Saturation Tables versus Gas Saturation (Gas-Water and CO2STORE Systems) keyword in the PROPS section, that defines the gas relative permeability and gas-water capillary pressure data as a function of gas saturation, for when only the gas and water phases are present in the model. Note that the GSF keyword must be used in conjunction with the WSF - Water Saturation Tables versus Water Saturation (Gas-Water and CO2STORE Systems) keyword, also in the PROPS section. WSF defines the water saturation as a function of water saturation for when only the gas and water phases are present in the model.
 
 
 #### Example

@@ -1,15 +1,15 @@
-### RS – Define the Initial Equilibration GOR (Rs) for All Grid Blocks {#kw-RS}
+### RS – Define the Initial Equilibration GOR (Rs) for All Grid Blocks
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The RS keyword defines the initial equilibration gas-oil ratio values for all grid cells in the model and should be used in conjunction with the [PBUB](#kw-PBUB), [PDEW](#kw-PDEW), [PRESSURE](#kw-PRESSURE), [RV](#kw-RV), [SGAS](#kw-SGAS), [SOIL](#kw-SOIL) and [SWAT](#kw-SWAT) keywords etc., to fully describe the initial state of the model. The keyword should only be used if dissolved gas has been activated in the model via the [DISGAS](#kw-DISGAS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The RS keyword defines the initial equilibration gas-oil ratio values for all grid cells in the model and should be used in conjunction with the PBUB, PDEW, PRESSURE, RV, SGAS, SOIL and SWAT keywords etc., to fully describe the initial state of the model. The keyword should only be used if dissolved gas has been activated in the model via the DISGAS keyword in the RUNSPEC section.
 
-This is the non-standard method to initialize the model via enumeration and is seldom employed in the industry. The standard methodology is for OPM Flow to initialize a model using the parameters on the [EQUIL](#kw-EQUIL) keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
+This is the non-standard method to initialize the model via enumeration and is seldom employed in the industry. The standard methodology is for OPM Flow to initialize a model using the parameters on the EQUIL keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
 
 
 | No. | Name | Description | Default |
@@ -18,8 +18,11 @@ This is the non-standard method to initialize the model via enumeration and is s
 | 1 | RS | RS is an array of real positive numbers assigning the initial equilibration gas-oil ratio values to each cell in the model. Repeat counts may be used, for example 20*1.30. | None |
 | Mscf/stb | sm3/sm3 | scc/scc |  |
 | Notes: |  |  |  |
-: RS Keyword Description {#tbl-10-29}
-See also the [PBUB](#kw-PBUB), [PDEW](#kw-PDEW), [PRESSURE](#kw-PRESSURE), [RV](#kw-RV), [SGAS](#kw-SGAS), [SOIL](#kw-SOIL) and [SWAT](#kw-SWAT) keywords to fully define the initial state of the model.
+
+*Table 10.29: RS Keyword Description*
+
+
+See also the PBUB, PDEW, PRESSURE, RV, SGAS, SOIL and SWAT keywords to fully define the initial state of the model.
 
 
 #### Example

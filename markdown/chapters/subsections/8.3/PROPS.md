@@ -1,13 +1,13 @@
-### PROPS – Define the Start of the PROPS Section of Keywords {#kw-PROPS}
+### PROPS – Define the Start of the PROPS Section of Keywords
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | PROPS | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The PROPS activation keyword marks the end of the [EDIT](#kw-EDIT) section and the start of the PROPS section that defines the key fluid and rock property data for the simulator
+The PROPS activation keyword marks the end of the EDIT section and the start of the PROPS section that defines the key fluid and rock property data for the simulator
 
 There is no data required for this keyword.
 
@@ -25,4 +25,4 @@ PROPS
 ```
 
 
-The above example marks the end of the [EDIT](#kw-EDIT) section and the start of the PROPS section in the OPM Flow data input file.
+The above example marks the end of the EDIT section and the start of the PROPS section in the OPM Flow data input file.

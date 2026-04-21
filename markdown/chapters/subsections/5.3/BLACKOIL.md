@@ -1,13 +1,13 @@
-### BLACKOIL – Activate Black-Oil Phases {#kw-BLACKOIL}
+### BLACKOIL – Activate Black-Oil Phases
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword switches on the black-oil formulation, and is equivalent to setting the phases present in the model to be oil, vaporized oil, gas, and dissolved gas. Note if water is present in the model this needs to be explicitly stated via the [WATER](#kw-WATER) keyword in the [RUNSPEC](#kw-RUNSPEC) section (see also the [LIVEOIL](#kw-LIVEOIL) keywords in the [RUNSPEC](#kw-RUNSPEC) section). The keyword is used by the commercial simulator’s compositional [THERMAL](#kw-THERMAL) option to set the phases present in the model.
+This keyword switches on the black-oil formulation, and is equivalent to setting the phases present in the model to be oil, vaporized oil, gas, and dissolved gas. Note if water is present in the model this needs to be explicitly stated via the WATER keyword in the RUNSPEC section (see also the LIVEOIL keywords in the RUNSPEC section). The keyword is used by the commercial simulator’s compositional THERMAL option to set the phases present in the model.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 
@@ -25,7 +25,7 @@ BLACKOIL
 ```
 
 
-Alternatively one could explicitly declare the phases using the following keywords in the [RUNSPEC](#kw-RUNSPEC) section.
+Alternatively one could explicitly declare the phases using the following keywords in the RUNSPEC section.
 
 
 ```

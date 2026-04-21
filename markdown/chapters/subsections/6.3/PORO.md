@@ -1,7 +1,7 @@
-### PORO – Define the Porosity Values for All the Cells {#kw-PORO}
+### PORO – Define the Porosity Values for All the Cells
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,8 +16,11 @@ PORO defines the porosity for all the cells in the model via an array. The keywo
 | 1 | PORO | PORO is an array of real positive numbers that are greater than or equal to zero and less than or equal to one that are the porosity values for each cell in the model. Repeat counts may be used, for example 3000*0.15 | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: PORO Keyword Description {#tbl-6-112}
-See also the [NTG](#kw-NTG), [PERMX](#kw-PERMX), [PERMY](#kw-PERMY) and [PERMX](#kw-PERMX) keywords to fully define a grid’s properties
+
+*Table 6.112: PORO Keyword Description*
+
+
+See also the NTG, PERMX, PERMY and PERMX keywords to fully define a grid’s properties
 
 
 #### Example
@@ -32,4 +35,4 @@ PORO
 
 ```
 
-The above example defines a constant porosity of 0.300 to all 300 cells in the model as defined by the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The above example defines a constant porosity of 0.300 to all 300 cells in the model as defined by the DIMENS keyword in the RUNSPEC section.

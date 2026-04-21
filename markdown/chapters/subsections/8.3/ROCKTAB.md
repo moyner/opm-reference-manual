@@ -1,33 +1,36 @@
-### ROCKTAB – Rock Compaction Tables {#kw-ROCKTAB}
+### ROCKTAB – Rock Compaction Tables
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The ROCKTAB keyword defines the rock compaction attributes to be applied when the rock compaction option has been invoked by the [ROCKCOMP](#kw-ROCKCOMP) keyword in the [RUNSPEC](#kw-RUNSPEC) section. ROCKTAB defines pore volume and transmissibility multipliers versus pressure that are used in the compaction calculations. If the [RKTRMDIR](#kw-RKTRMDIR) has been activated in the [PROPS](#kw-PROPS) section, then the transmissibility multiplier is directional dependent and two additional columns are used to define the y and z direction transmissibility multipliers.
+The ROCKTAB keyword defines the rock compaction attributes to be applied when the rock compaction option has been invoked by the ROCKCOMP keyword in the RUNSPEC section. ROCKTAB defines pore volume and transmissibility multipliers versus pressure that are used in the compaction calculations. If the RKTRMDIR has been activated in the PROPS section, then the transmissibility multiplier is directional dependent and two additional columns are used to define the y and z direction transmissibility multipliers.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | PRESS | If the ROCKOPT1 variable has been set to [PRESSURE](#kw-PRESSURE) on the [ROCKOPTS](#kw-ROCKOPTS) keyword in the [PROPS](#kw-PROPS) section, then PRESS should be a columnar vector of real monotonically increasing down the column values, that define the reference pressure for which the other parameters correspond to. If ROCKOPT1 has been set to STRESS, then PRESS should be a columnar vector of real monotonically decreasing down the column values. | None |
+| 1 | PRESS | If the ROCKOPT1 variable has been set to PRESSURE on the ROCKOPTS keyword in the PROPS section, then PRESS should be a columnar vector of real monotonically increasing down the column values, that define the reference pressure for which the other parameters correspond to. If ROCKOPT1 has been set to STRESS, then PRESS should be a columnar vector of real monotonically decreasing down the column values. | None |
 | psia | bars | atm |  |
-| 2 | [PORV](#kw-PORV) | A columnar vector of real positive values that are either equal or increasing down the column that define the rock pore volume multiplier for a given PRESS. | None |
+| 2 | PORV | A columnar vector of real positive values that are either equal or increasing down the column that define the rock pore volume multiplier for a given PRESS. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 3 | TRANS | If the [RKTRMDIR](#kw-RKTRMDIR) is absent from the input deck, then TRANS is a columnar vector of real positive values that are either equal or increasing down the column that define the x, y, and z directional transmissibility multipliers for the corresponding PRESS. If the [RKTRMDIR](#kw-RKTRMDIR) is present in the input deck, then TRANS is a columnar vector of real positive values that are either equal or increasing down the column that define only the x directional transmissibility multipliers for the corresponding PRESS. | None |
+| 3 | TRANS | If the RKTRMDIR is absent from the input deck, then TRANS is a columnar vector of real positive values that are either equal or increasing down the column that define the x, y, and z directional transmissibility multipliers for the corresponding PRESS. If the RKTRMDIR is present in the input deck, then TRANS is a columnar vector of real positive values that are either equal or increasing down the column that define only the x directional transmissibility multipliers for the corresponding PRESS. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 4 | TRANSY | If the [RKTRMDIR](#kw-RKTRMDIR) is absent from the input deck, then TRANSY is ignored. If the [RKTRMDIR](#kw-RKTRMDIR) is present in the input deck, then TRANSY is a columnar vector of real positive values that are either equal or increasing down the column that define only the y directional transmissibility multipliers for the corresponding PRESS. | None |
+| 4 | TRANSY | If the RKTRMDIR is absent from the input deck, then TRANSY is ignored. If the RKTRMDIR is present in the input deck, then TRANSY is a columnar vector of real positive values that are either equal or increasing down the column that define only the y directional transmissibility multipliers for the corresponding PRESS. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 5 | TRANSZ | If the [RKTRMDIR](#kw-RKTRMDIR) is absent from the input deck, then TRANSZ is ignored. If the [RKTRMDIR](#kw-RKTRMDIR) is present in the input deck, then TRANSZ is a columnar vector of real positive values that are either equal or increasing down the column that define only the z directional transmissibility multipliers for the corresponding PRESS. | None |
+| 5 | TRANSZ | If the RKTRMDIR is absent from the input deck, then TRANSZ is ignored. If the RKTRMDIR is present in the input deck, then TRANSZ is a columnar vector of real positive values that are either equal or increasing down the column that define only the z directional transmissibility multipliers for the corresponding PRESS. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: ROCKTAB Keyword Description {#tbl-8-129}
+
+*Table 8.129: ROCKTAB Keyword Description*
+
+
 #### Examples
 
-The example below defines two rock compaction tables, assuming NTROCC is equal to two on the [ROCKCOMP](#kw-ROCKCOMP) keyword and NPPVT is greater than or equal to five on the [TABDIMS](#kw-TABDIMS) keyword and that the [RKTRMDIR](#kw-RKTRMDIR) keyword is present in the input deck.
+The example below defines two rock compaction tables, assuming NTROCC is equal to two on the ROCKCOMP keyword and NPPVT is greater than or equal to five on the TABDIMS keyword and that the RKTRMDIR keyword is present in the input deck.
 
 
 ```
@@ -54,7 +57,7 @@ ROCKTAB
 
 ```
 
-As the x, y and z directional transmissibility multipliers are identical in the above example, we could eliminate the [RKTRMDIR](#kw-RKTRMDIR) keyword from the input deck and enter the data in the three column format, as shown on the next page.
+As the x, y and z directional transmissibility multipliers are identical in the above example, we could eliminate the RKTRMDIR keyword from the input deck and enter the data in the three column format, as shown on the next page.
 
 
 ```

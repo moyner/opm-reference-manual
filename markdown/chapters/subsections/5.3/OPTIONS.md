@@ -1,7 +1,7 @@
-### OPTIONS – Activate Various Program Options {#kw-OPTIONS}
+### OPTIONS – Activate Various Program Options
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,7 +16,10 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | --- | :------ | --- |
 | 1 - 273 | Commercial simulator options keyword, used to to switch on or off specific features. The keyword is commonly used to revert the simulator's behavior to past functionality that has been depreciated in the current version of the commercial simulator, for backward compatibility with previous models. | 0 |
 | Notes: |  |  |
-: OPTIONS Keyword Description {#tbl-5-32}
+
+*Table 5.32: OPTIONS Keyword Description*
+
+
 #### Examples
 
 

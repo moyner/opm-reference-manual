@@ -1,13 +1,13 @@
-### PERMFACT – Permeability Multiplication Factor as a Function of Porosity Change {#kw-PERMFACT}
+### PERMFACT – Permeability Multiplication Factor as a Function of Porosity Change
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-PERMFACT defines the permeability multiplication factor due to a change in porosity. The keyword is used in conjunction with OPM Flow’s Salt Precipitation model, in which the pore space is reduced due to salt precipitating in the pore space, causing a reduction in porosity and an associated reduction in permeability. This keyword is also used for the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) and [MICP](#kw-MICP) model, where the pore space is reduced due to biofilm formation, and for the [MICP](#kw-MICP) model, also due to calcite precipitation.
+PERMFACT defines the permeability multiplication factor due to a change in porosity. The keyword is used in conjunction with OPM Flow’s Salt Precipitation model, in which the pore space is reduced due to salt precipitating in the pore space, causing a reduction in porosity and an associated reduction in permeability. This keyword is also used for the [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) and MICP model, where the pore space is reduced due to biofilm formation, and for the MICP model, also due to calcite precipitation.
 
 
 ::: {.callout-note}
@@ -23,7 +23,10 @@ This is an OPM Flow specific keyword.
 | 2 | PERMFAC | A real positive monotonically increasing columnar vector that defines the permeability (k) multiplier associated with POROFAC and used to scale a grid block's permeability due to the reduction in pore volume caused by salt precipitation.  Where: $\begin{matrix}\mathit{PERMFAC} = m(ϕ) \\ \mathit{with} k = m(ϕ){k}_{0}\end{matrix}$ | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: PERMFACT Keyword Description {#tbl-8-97}
+
+*Table 8.97: PERMFACT Keyword Description*
+
+
 The porosity reduction can be written as a function proportional to the initial porosity, e.g., considering the volume fraction of salt (${s}_{s}$) precipitated out of the vaporized water phase, that is:
 
 
@@ -54,7 +57,7 @@ See also Kozeny-Carment (extended)^[J. Kozeny, "Ueber kapillare Leitung des Wass
 
 #### Example
 
-The example below defines two PERMFACT tables assuming NTSFUN equals two and NSSFUN is greater than or equal to five on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The example below defines two PERMFACT tables assuming NTSFUN equals two and NSSFUN is greater than or equal to five on the TABDIMS keyword in the RUNSPEC section.
 
 
 ```
@@ -80,4 +83,4 @@ PERMFACT
 ```
 
 
-Both tables use equation (8.72) with Φc equal to zero and ɣ equal to 2.0. Note that PERMFACT changes the permeability in all three dimensions, that is the [PERMX](#kw-PERMX), [PERMY](#kw-PERMY) and [PERMZ](#kw-PERMZ) arrays are all modified.
+Both tables use equation (8.72) with Φc equal to zero and ɣ equal to 2.0. Note that PERMFACT changes the permeability in all three dimensions, that is the PERMX, PERMY and PERMZ arrays are all modified.

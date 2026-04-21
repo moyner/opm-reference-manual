@@ -1,13 +1,13 @@
-### STONE2 – Activate Stone’s Second Three Phase Oil Relative Permeability Model {#kw-STONE2}
+### STONE2 – Activate Stone’s Second Three Phase Oil Relative Permeability Model
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword activates Stone’s^[Stone, H. L. “Estimation of Three-Phase Relative Permeability and Residual Oil Data,” Journal of Canadian Petroleum Technology (1973) 12, No. 4, 53-61.] second three phase oil relative permeability model as modified by Aziz and Settari^[Aziz, K. and Settari, A. Petroleum Reservoir Simulation, London, UK, Applied Science Publishers (1979), page 398.].  If the [STONE](#kw-STONE), [STONE1](#kw-STONE1) and STONE2 keywords are not present in the input deck then the default three phase oil relative permeability model is employed.  The STONE2 keyword should only be used in three phase runs containing the oil, gas and water phases.
+This keyword activates Stone’s^[Stone, H. L. “Estimation of Three-Phase Relative Permeability and Residual Oil Data,” Journal of Canadian Petroleum Technology (1973) 12, No. 4, 53-61.] second three phase oil relative permeability model as modified by Aziz and Settari^[Aziz, K. and Settari, A. Petroleum Reservoir Simulation, London, UK, Applied Science Publishers (1979), page 398.].  If the STONE, STONE1 and STONE2 keywords are not present in the input deck then the default three phase oil relative permeability model is employed.  The STONE2 keyword should only be used in three phase runs containing the oil, gas and water phases.
 
 There is no data required for this keyword.
 

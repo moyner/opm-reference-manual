@@ -1,13 +1,13 @@
-### TRACERKP – Standard Partitioned Tracer Option K(P) Tables {#kw-TRACERKP}
+### TRACERKP – Standard Partitioned Tracer Option K(P) Tables
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword, TRACERKP, defines the Standard Partitioned Tracer option K(P) tables, for when the Partitioned Tracer option has been activate with the [PARTTRAC](#kw-PARTTRAC) keyword in the [RUNSPEC](#kw-RUNSPEC) section.  Standard partitioned tracers only have a “free” and “solution” phases; whereas, Multi-partitioned tracers can partition into any number of phases (oil, water, gas etc.) and have adsorption, decay and diffusion parameters specific to each phase. For the TRACERKP keyword the K(P) tables relate the ratio of the reference phase (the “free” phase) to the solution phase versus pressure. So for example, given a standard partitioned tracer in oil and gas, with the oil phase acting as the reference phase, then TRACERKP would consist of columnar vectors of:
+This keyword, TRACERKP, defines the Standard Partitioned Tracer option K(P) tables, for when the Partitioned Tracer option has been activate with the PARTTRAC keyword in the RUNSPEC section.  Standard partitioned tracers only have a “free” and “solution” phases; whereas, Multi-partitioned tracers can partition into any number of phases (oil, water, gas etc.) and have adsorption, decay and diffusion parameters specific to each phase. For the TRACERKP keyword the K(P) tables relate the ratio of the reference phase (the “free” phase) to the solution phase versus pressure. So for example, given a standard partitioned tracer in oil and gas, with the oil phase acting as the reference phase, then TRACERKP would consist of columnar vectors of:
 
 
 $$
@@ -23,6 +23,6 @@ $\mathit{Coil}$	= oil concentration
 $\mathit{Cgas}$	= gas concentration
 
 
-See also the [TRACERKM](#kw-TRACERKM) keyword in the [PROPS](#kw-PROPS) section that provides similar data for tmulti-partitioned tracers.
+See also the TRACERKM keyword in the PROPS section that provides similar data for tmulti-partitioned tracers.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.

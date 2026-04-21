@@ -1,17 +1,17 @@
-### UDQ – Declare User Define Quantities (“UDQ”) {#kw-UDQ}
+### UDQ – Declare User Define Quantities (“UDQ”)
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword starts the definition of a UDQ section that stipulates the variables and operations used to access the User Defined Quantities features in OPM Flow. UDQ variables can be constants, [SUMMARY](#kw-SUMMARY) variables, as defined in the [SUMMARY](#kw-SUMMARY) section, or a formula using various mathematical functions together with constants and [SUMMARY](#kw-SUMMARY) variables. Available operations include the ASSIGN, DEFINE, UNITS and UPDATE commands that are sub-keywords to the UDQ section keyword.
+This keyword starts the definition of a UDQ section that stipulates the variables and operations used to access the User Defined Quantities features in OPM Flow. UDQ variables can be constants, SUMMARY variables, as defined in the SUMMARY section, or a formula using various mathematical functions together with constants and SUMMARY variables. Available operations include the ASSIGN, DEFINE, UNITS and UPDATE commands that are sub-keywords to the UDQ section keyword.
 
-User Defined Quantities can be output to the summmary file and used as User Defined Arguments (“UDA”) in the [SCHEDULE](#kw-SCHEDULE) section with various group, well, and connection keywords.
+User Defined Quantities can be output to the summmary file and used as User Defined Arguments (“UDA”) in the SCHEDULE section with various group, well, and connection keywords.
 
-Although this keyword is read by OPM Flow and the [ACTION](#kw-ACTION) and UDQ computational logic and calculations have been implemented, one should use caution when using this facility as it may result in OPM Flow aborting.
+Although this keyword is read by OPM Flow and the ACTION and UDQ computational logic and calculations have been implemented, one should use caution when using this facility as it may result in OPM Flow aborting.
 
 
 | No. | Name | Description | Default |
@@ -23,8 +23,11 @@ Although this keyword is read by OPM Flow and the [ACTION](#kw-ACTION) and UDQ c
 |  | / | Termination of a UDQ record. Note that multiple numbers of records can be entered within a UDQ section with each record terminated by a “/”. |  |
 | / | Define the end of UDQ Definition Section |  |  |
 | Notes: |  |  |  |
-: UDQ Keyword Description {#tbl-12-71}
-All the functions available for use in the DEFINE EXPRESSION in the commercial simulator are listed in @tbl-12-71 below.
+
+*Table 12.71: UDQ Keyword Description*
+
+
+All the functions available for use in the DEFINE EXPRESSION in the commercial simulator are listed in Table 12.71 below.
 
 
 | UDQ - Description of Functions |  |  |  |
@@ -52,21 +55,21 @@ All the functions available for use in the DEFINE EXPRESSION in the commercial s
 | NORMI() | 6 | unary scalar | Infinity norm of defined elements. |
 | NINT() | 6 | unary elemental | Nearest integer to defined elements. |
 | PROD() | 6 | unary scalar | Product of defined elements. |
-| RANDN() | 6 | unary elemental | Random sample from Normal distribution N(0,1), where the seed is specified by the [UDQPARAM](#kw-UDQPARAM) keyword Item 1. |
-| RANDU() | 6 | unary elemental | Random sample from Uniform distribution U(-1,1), where the seed is specified by the [UDQPARAM](#kw-UDQPARAM) keyword Item 1. |
-| RRNDN() | 6 | unary elemental | Random sample from Normal distribution N(0,1), where the seed is determined from the current time. By default restart simulations will use the seed from the base simulation (see [UDQDIMS](#kw-UDQDIMS) keyword Item 11). |
-| RRNDU() | 6 | unary elemental | Random sample from Uniform distribution U(-1,1), where the seed is determined from the current time. By default restart simulations will use the seed from the base simulation (see [UDQDIMS](#kw-UDQDIMS) keyword Item 11). |
+| RANDN() | 6 | unary elemental | Random sample from Normal distribution N(0,1), where the seed is specified by the UDQPARAM keyword Item 1. |
+| RANDU() | 6 | unary elemental | Random sample from Uniform distribution U(-1,1), where the seed is specified by the UDQPARAM keyword Item 1. |
+| RRNDN() | 6 | unary elemental | Random sample from Normal distribution N(0,1), where the seed is determined from the current time. By default restart simulations will use the seed from the base simulation (see UDQDIMS keyword Item 11). |
+| RRNDU() | 6 | unary elemental | Random sample from Uniform distribution U(-1,1), where the seed is determined from the current time. By default restart simulations will use the seed from the base simulation (see UDQDIMS keyword Item 11). |
 | SORTA() | 6 | unary elemental | Position of the element in an ascending sort of defined elements. |
 | SORTD() | 6 | unary elemental | Position of the element in an descending sort of defined elements. |
 | SUM() | 6 | unary scalar | Sum of defined elements. |
 | UNDEF() | 6 | unary elemental | Returns 1 if element is undefined, otherwise returns undefined. |
 | TU*[] | 6 | unary elemental | Lookup value of the user defined table based on the arguments in the square brackets. All arguments must have the same type or be scalar. A scalar is returned if all the arguments are scalar, or the same type of UDQ set is returned as the UDQ set arguments. |
-| <= | 5 | binary intersection | Returns 1 if the LHS is less than or equal to the RHS, otherwise return 0. The tolerance for equality is specified by the [UDQPARAM](#kw-UDQPARAM) keyword Item 4. |
-| >= | 5 | binary intersection | Returns 1 if the LHS is greater than or equal to the RHS, otherwise return 0. The tolerance for equality is specified by the [UDQPARAM](#kw-UDQPARAM) keyword Item 4. |
+| <= | 5 | binary intersection | Returns 1 if the LHS is less than or equal to the RHS, otherwise return 0. The tolerance for equality is specified by the UDQPARAM keyword Item 4. |
+| >= | 5 | binary intersection | Returns 1 if the LHS is greater than or equal to the RHS, otherwise return 0. The tolerance for equality is specified by the UDQPARAM keyword Item 4. |
 | < | 5 | binary intersection | Returns 1 if the LHS is less than the RHS, otherwise return 0. |
 | > | 5 | binary intersection | Returns 1 if the LHS is greater than the RHS, otherwise return 0. |
-| == | 5 | binary intersection | Returns 1 if the LHS is equal to the RHS. The tolerance for equality is specified by the [UDQPARAM](#kw-UDQPARAM) keyword Item 4. |
-| != | 5 | binary intersection | Returns 1 if the LHS is not equal to the RHS. The tolerance for equality is specified by the [UDQPARAM](#kw-UDQPARAM) keyword Item 4. |
+| == | 5 | binary intersection | Returns 1 if the LHS is equal to the RHS. The tolerance for equality is specified by the UDQPARAM keyword Item 4. |
+| != | 5 | binary intersection | Returns 1 if the LHS is not equal to the RHS. The tolerance for equality is specified by the UDQPARAM keyword Item 4. |
 | ^ | 4 | binary intersection | Exponentiation. |
 | * | 3 | binary intersection | Multiplication. |
 | / | 3 | binary intersection | Division. |
@@ -77,35 +80,41 @@ All the functions available for use in the DEFINE EXPRESSION in the commercial s
 | UMIN | 1 | binary union | Returns minimum of intersecting elements from the union of two UDQ sets. |
 | UMUL | 1 | binary union | Returns product of intersecting elements from the union of two UDQ sets. |
 | Notes: |  |  |  |
-: UDQ - Description of Functions {#tbl-12-71}
-See also the [UDADIMS](#kw-UDADIMS), [UDQDIMS](#kw-UDQDIMS) and [UDQPARAM](#kw-UDQPARAM) keywords in the [RUNSPEC](#kw-RUNSPEC) section to define the dimensions for the UDQ keyword and associated variables.
+
+*Table 12.71: UDQ - Description of Functions*
+
+
+See also the UDADIMS, UDQDIMS and UDQPARAM keywords in the RUNSPEC section to define the dimensions for the UDQ keyword and associated variables.
 
 
 ::: {.callout-note}
-Wells and/or groups needed in a UDQ DEFINE statement must be present at the point of definition. In particular, wells must have been introduced using the [WELSPECS](#kw-WELSPECS) keyword prior to the UDQ keyword if any specific well name is used in the defining expression. Similarly, well lists must have been introduced and populated through the [WLIST](#kw-WLIST) keyword before using the well list name in the UDQ definition. Finally, groups must be introduced through the [WELSPECS](#kw-WELSPECS) or [GRUPTREE](#kw-GRUPTREE) keywords before using any specific group names in the defining expression.
+Wells and/or groups needed in a UDQ DEFINE statement must be present at the point of definition. In particular, wells must have been introduced using the WELSPECS keyword prior to the UDQ keyword if any specific well name is used in the defining expression. Similarly, well lists must have been introduced and populated through the WLIST keyword before using the well list name in the UDQ definition. Finally, groups must be introduced through the WELSPECS or GRUPTREE keywords before using any specific group names in the defining expression.
 :::
 
-User Defined Quantities can also be used as User Defined Arguments (“UDA”) in the [SCHEDULE](#kw-SCHEDULE) section with various group, well, and connection keywords. In this case, the UDA variables are used to replace numerical values on these keywords by UDA variables that have been defined by the UDQ keyword.  For example, if we wish to make the oil rate for certain wells be a function of their water cut, then one can define the function using the UDQ keyword that results in a UDQ variable, WU_WCUT say, and then use WU_WCUT as a UDA variable on the [WCONPROD](#kw-WCONPROD) keyword for the ORAT parameter. @tbl-12-72 lists the keywords that can be used with UDA variables.
+User Defined Quantities can also be used as User Defined Arguments (“UDA”) in the SCHEDULE section with various group, well, and connection keywords. In this case, the UDA variables are used to replace numerical values on these keywords by UDA variables that have been defined by the UDQ keyword.  For example, if we wish to make the oil rate for certain wells be a function of their water cut, then one can define the function using the UDQ keyword that results in a UDQ variable, WU_WCUT say, and then use WU_WCUT as a UDA variable on the WCONPROD keyword for the ORAT parameter. Table 12.72 lists the keywords that can be used with UDA variables.
 
 
 | UDQ - User Defined Argument Supported Keywords Schedule Section Keywords Status |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- |
 | Number | Group Keywords | Well Keywords | Connection Keywords | Miscellaneous Keywords |  |
-| 1 | [GCONINJE](#kw-GCONINJE) | [WALKALIN](#kw-WALKALIN) | WINJEDET | [CECON](#kw-CECON) | [LINCOM](#kw-LINCOM) |
-| 2 | [GCONPRI](#kw-GCONPRI) | [WAPI](#kw-WAPI) | [WINJFCNC](#REF_HEADING_KEYWORD_WINJFCNC) | [CPIFACT](#kw-CPIFACT) |  |
-| 3 | [GCONPROD](#kw-GCONPROD) | [WCONHIST](#kw-WCONHIST) | [WINJTEMP](#kw-WINJTEMP) | [CPIFACTL](#kw-CPIFACTL) |  |
-| 4 | [GCONSALE](#kw-GCONSALE) | [WCONINJE](#kw-WCONINJE) | [WPOLYMER](#kw-WPOLYMER) |  |  |
-| 5 | [GCONSUMP](#kw-GCONSUMP) | [WCONPROD](#kw-WCONPROD) | [WSALT](#kw-WSALT) |  |  |
-| 6 | [GECON](#kw-GECON) | [WECON](#kw-WECON) | [WSOLVENT](#kw-WSOLVENT) |  |  |
-| 7 | GRUPFUEL | WECONCMF | [WSURFACT](#kw-WSURFACT) |  |  |
-| 8 | GRUPSALE | [WELDRAW](#kw-WELDRAW) | [WTADD](#kw-WTADD) |  |  |
-| 9 | [GSATPROD](#kw-GSATPROD) | [WELLSTRE](#kw-WELLSTRE) | [WTMULT](#kw-WTMULT) |  |  |
-| 10 | [GTADD](#kw-GTADD) | [WELTARG](#kw-WELTARG) | [WTRACER](#kw-WTRACER) |  |  |
-| 11 | [GTMULT](#kw-GTMULT) | [WFOAM](#kw-WFOAM) |  |  |  |
+| 1 | GCONINJE | WALKALIN | WINJEDET | CECON | LINCOM |
+| 2 | GCONPRI | WAPI | [WINJFCNC](#REF_HEADING_KEYWORD_WINJFCNC) | CPIFACT |  |
+| 3 | GCONPROD | WCONHIST | WINJTEMP | CPIFACTL |  |
+| 4 | GCONSALE | WCONINJE | WPOLYMER |  |  |
+| 5 | GCONSUMP | WCONPROD | WSALT |  |  |
+| 6 | GECON | WECON | WSOLVENT |  |  |
+| 7 | GRUPFUEL | WECONCMF | WSURFACT |  |  |
+| 8 | GRUPSALE | WELDRAW | WTADD |  |  |
+| 9 | GSATPROD | WELLSTRE | WTMULT |  |  |
+| 10 | GTADD | WELTARG | WTRACER |  |  |
+| 11 | GTMULT | WFOAM |  |  |  |
 |  |  | Multi-Segment Well Keywords |  |  |  |
-| 1 |  | [WSEGTABL](#kw-WSEGTABL) | [WSEGVALV](#kw-WSEGVALV) |  |  |
+| 1 |  | WSEGTABL | WSEGVALV |  |  |
 | Notes: |  |  |  |  |  |
-: UDQ - User Defined Argument Supported Keywords {#tbl-12-72}
+
+*Table 12.72: UDQ - User Defined Argument Supported Keywords*
+
+
 ::: {.callout-note}
 Note that after the terminating “/” for the ASSIGN operator normally any comments can be entered; however, if there is “/” within the comment field, as per: ASSIGN FUNGLYLD 1.196   /    Condensate Yield (63.5 / 56.7) / (1.0 – 0.065) then the simulator will abort. The work around is to manually place the comment characters “--” after the ASSIGN terminating “/”, like so: ASSIGN FUNGLYLD 1.196   / -- Condensate Yield (63.5 / 56.7) / (1.0 – 0.06)
 :::
@@ -161,7 +170,7 @@ UNITS       FU_FLPGR  STBD                     /
 
 In the above the DEFINE operator is use to define the equations to calculate the corrected condensate (FU_FNGLR) and LPG rates (FU_FLPGR) with the UPDATE operator set to ON so that the rates are calculate at every time step, and finally, the UNITS operator is used to set the units of the calculated rates.
 
-The final example show the use of the [UDADIMS](#kw-UDADIMS) and [UDQDIMS](#kw-UDQDIMS) keywords in the [RUNSPEC](#kw-RUNSPEC) section, followed by the keywords in the [SCHEDULE](#kw-SCHEDULE) section that define a UDQ definition that uses the DEFINE operator to calculate adjusted well rates based on an expression. The final set of keywords show how the  UDQ defined variables are employed on the [WCONPROD](#kw-WCONPROD) keyword to control the production constraints for several wells.
+The final example show the use of the UDADIMS and UDQDIMS keywords in the RUNSPEC section, followed by the keywords in the SCHEDULE section that define a UDQ definition that uses the DEFINE operator to calculate adjusted well rates based on an expression. The final set of keywords show how the  UDQ defined variables are employed on the WCONPROD keyword to control the production constraints for several wells.
 
 
 ```
@@ -182,7 +191,7 @@ UDQDIMS
 
 ```
 
-And the [SCHEDULE](#kw-SCHEDULE) section part of the example is shown below.
+And the SCHEDULE section part of the example is shown below.
 
 
 ```

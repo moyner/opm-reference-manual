@@ -1,7 +1,7 @@
-### WINJMULT – Define Well Pressure Dependent Injectivity Multipliers {#kw-WINJMULT}
+### WINJMULT – Define Well Pressure Dependent Injectivity Multipliers
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -13,7 +13,7 @@ The WINJMULT keyword defines pressure dependent injectivity multipliers for inje
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | FRACPRES | FRACPRES is the fracture opening pressure (Pfractue) used in equation 12.3.296.1. | None |
 | psia | barsa | atma |  |
 | 3 | ALPHA | ALPHA is the multiplier gradient, α, in equation 12.3.296.1. | Defined |
@@ -23,7 +23,10 @@ The WINJMULT keyword defines pressure dependent injectivity multipliers for inje
 | 6 | J | An integer value less than or equal to NY that defines the connection location in the J-direction. If set to zero, a negative value, or defaulted with 1* then all connections in the J-direction will be multiplied by ALPHA, depending on the selected OPTION value. | 1* |
 | 7 | K | An integer value less than or equal to NZ that defines the connection location in the K-direction. If set to zero, a negative value, or defaulted with 1* then all connections in the K-direction will be multiplied by ALPHA, depending on the selected OPTION value. | 1* |
 | Notes: |  |  |  |
-: WINJMULT Keyword Description {#tbl-12-3-296-1}
+
+*Table 12.3.296.1: WINJMULT Keyword Description*
+
+
 The methodology for applying the well pressure dependent injectivity multipliers is outlined in equation 12.3.296.1.
 
 
@@ -35,13 +38,13 @@ where:
 
 Multiplier	=	the resulting multiplier to be applied to the selected connections.
 
-α	= 	the ALPHA multiplier gradient in @tbl-12-3-296-1.
+α	= 	the ALPHA multiplier gradient in Table 12.3.296.1.
 
 PWBHP	=	either the well’s current flowing bottom-hole pressure, or the selected
 
 individual connection’s sand face pressure.
 
-Pfracture	=  	the effective fracture opening pressure, FRACPRES in @tbl-12-3-296-1.
+Pfracture	=  	the effective fracture opening pressure, FRACPRES in Table 12.3.296.1.
 
 
 The equation is applied every time there is a calculation to determine a well’s flow rate, this results in the calculated mobility rates being scaled up by the Multiplier value in equation 12.3.296.1. Note also that since the scaling is performed on the connection fluid mobility values, then the reported connection transmissibilities in the print file etc. remain unchanged.

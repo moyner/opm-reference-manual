@@ -1,13 +1,13 @@
-### TUNINGH – Numerical Tuning Control for History Match Gradient Calculations {#kw-TUNINGH}
+### TUNINGH – Numerical Tuning Control for History Match Gradient Calculations
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-Defines the parameters used for controlling the commercial simulator’s numerical convergence parameters. The keyword is similar to the [TUNING](#kw-TUNING) keyword in the [SCHEDULE](#kw-SCHEDULE) section, but the defaults on this keyword are optimized for high throughput runs. See section 2.2 Running OPM Flow 2023-04 From The Command Line on how to invoke various numerical schemes via the OPM Flow command line interface.
+Defines the parameters used for controlling the commercial simulator’s numerical convergence parameters. The keyword is similar to the TUNING keyword in the SCHEDULE section, but the defaults on this keyword are optimized for high throughput runs. See section 2.2 Running OPM Flow 2023-04 From The Command Line on how to invoke various numerical schemes via the OPM Flow command line interface.
 
 This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.
 
@@ -26,7 +26,10 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 | 5 | LGTMAX | LGTMAX is a positive integer greater or equal to LGTMIN that sets the maximum number of linear iterations within a Newton iteration. | 25 |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: TUNINGH Keyword Description {#tbl-12-68}
+
+*Table 12.68: TUNINGH Keyword Description*
+
+
 #### Example
 
 

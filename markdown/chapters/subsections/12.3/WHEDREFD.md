@@ -1,13 +1,13 @@
-### WHEDREFD – Define Well Hydraulic Head Reference Depth {#kw-WHEDREFD}
+### WHEDREFD – Define Well Hydraulic Head Reference Depth
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The WHEDREFD keyword sets the hydraulic head reference depth for reporting the hydraulic head pressure for the well, for wells that have previously been defined by the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section.
+The WHEDREFD keyword sets the hydraulic head reference depth for reporting the hydraulic head pressure for the well, for wells that have previously been defined by the WELSPECS keyword in the SCHEDULE section.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -16,11 +16,14 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well hydraulic head reference depth data is being defined. | None |
-| 2 | HYDREF | A real value that defines the hydraulic head reference depth for reporting the hydraulic head pressure for the well. HYDREF cannot be defaulted on the keyword; however if a well has not been set by this keyword HYDREF is set equal to the value on the [HYDRHEAD](#kw-HYDRHEAD) keyword. | None |
+| 2 | HYDREF | A real value that defines the hydraulic head reference depth for reporting the hydraulic head pressure for the well. HYDREF cannot be defaulted on the keyword; however if a well has not been set by this keyword HYDREF is set equal to the value on the HYDRHEAD keyword. | None |
 | feet | m | cm |  |
 | Notes: |  |  |  |
-: WHEDREFD Keyword Description {#tbl-12-97}
-See also the [HYDRHEAD](#kw-HYDRHEAD) keyword in the [PROPS](#kw-PROPS) section.
+
+*Table 12.97: WHEDREFD Keyword Description*
+
+
+See also the HYDRHEAD keyword in the PROPS section.
 
 
 #### Example

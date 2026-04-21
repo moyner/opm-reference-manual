@@ -1,7 +1,7 @@
-### AQUNUM – Define Numerical Aquifer Properties {#kw-AQUNUM}
+### AQUNUM – Define Numerical Aquifer Properties
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -13,38 +13,41 @@ The AQUNUM keyword defines the properties of numerical aquifers, including which
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | AQUID | AQUID is a positive integer greater than or equal to one and less than or equal to the maximum number of numerical aquifers as defined by the MXNAQN variable on the [AQUDIMS](#kw-AQUDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, that defines the aquifer to be connected to the grid. | None |
+| 1 | AQUID | AQUID is a positive integer greater than or equal to one and less than or equal to the maximum number of numerical aquifers as defined by the MXNAQN variable on the AQUDIMS keyword in the RUNSPEC section, that defines the aquifer to be connected to the grid. | None |
 | 2 | I | A positive integer that defines the cell in the I-direction that represents  the AQUID aquifer, and which must be greater than or equal to one and less than or equal to NX. | None |
 | 3 | J | A positive integer that defines the cell in the J-direction that represents the AQUID aquifer,  and which must be greater than or equal to one and less than or equal to NY. | None |
 | 4 | K | A positive integer that defines the cell in the K-direction that represents the AQUID aquifer, and which must be greater than or equal to one and less than or equal to NZ. | None |
-| 5 | AREA | AREA is a real positive value that defines the cross-sectional area of the aquifer used in calculating the aquifer connection transmissibility. The actual transmissibility between the numerical aquifer and the connected grid cell is the harmonic average of the aquifer connection transmissibility and the calculated connected cell transmissibility. The value entered for AREA does not effect the visualization of the cell in OPM ResInsight, as it is only used in calculating the transmissibility. Note that the AQUOPT1 variable on the [AQUCON](#kw-AQUCON) keyword in the [GRID](#kw-GRID) section allows one to use the value entered for AREA or to use the grid cell cross-sectional area instead for the transmissibility calculation. | None |
+| 5 | AREA | AREA is a real positive value that defines the cross-sectional area of the aquifer used in calculating the aquifer connection transmissibility. The actual transmissibility between the numerical aquifer and the connected grid cell is the harmonic average of the aquifer connection transmissibility and the calculated connected cell transmissibility. The value entered for AREA does not effect the visualization of the cell in OPM ResInsight, as it is only used in calculating the transmissibility. Note that the AQUOPT1 variable on the AQUCON keyword in the GRID section allows one to use the value entered for AREA or to use the grid cell cross-sectional area instead for the transmissibility calculation. | None |
 | ft2 | m2 | cm2 |  |
 | 6 | LENGTH | LENGTH is a real positive value that defines the length of the numerical aquifer. Similar to the AREA variable, LENGTH is not constrained by the original host cell size and the value entered does not effect the visualization of the cell in OPM ResInsight. | None |
 | feet | m | cm |  |
-| 7 | [PORO](#kw-PORO) | [PORO](#kw-PORO) is a real positive number greater than zero and less than or equal to one that assigns the porosity to the numerical aquifer. | None |
+| 7 | PORO | PORO is a real positive number greater than zero and less than or equal to one that assigns the porosity to the numerical aquifer. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | 8 | PERM | PERM is a real positive number that assigns the permeability to the numerical aquifer. | None |
 | mD | mD | mD |  |
-| 9 | [DATUM](#kw-DATUM) | [DATUM](#kw-DATUM) is a real positive number that sets the reference datum depth of the numerical aquifer.  Similar to the AREA variable, [DATUM](#kw-DATUM) is not constrained by the original host cell depth and the value entered does not effect the visualization of the cell in OPM ResInsight. If defaulted then the depth of cell (I, J, K) will be used | Cell Depth |
+| 9 | DATUM | DATUM is a real positive number that sets the reference datum depth of the numerical aquifer.  Similar to the AREA variable, DATUM is not constrained by the original host cell depth and the value entered does not effect the visualization of the cell in OPM ResInsight. If defaulted then the depth of cell (I, J, K) will be used | Cell Depth |
 | feet | m | cm |  |
-| 10 | PRESS | PRESS is a single positive value that defines the numerical aquifer pressure at [DATUM](#kw-DATUM). If PRESS is defaulted then the simulator will set the aquifer’s initial reservoir pressure to be in equilibrium with the cells the aquifer is contacted to.   This is the preferred manner to initialize the numerical aquifer. | 1* |
+| 10 | PRESS | PRESS is a single positive value that defines the numerical aquifer pressure at DATUM. If PRESS is defaulted then the simulator will set the aquifer’s initial reservoir pressure to be in equilibrium with the cells the aquifer is contacted to.   This is the preferred manner to initialize the numerical aquifer. | 1* |
 | psia | barsa | atma |  |
-| 11 | [PVTNUM](#kw-PVTNUM) | [PVTNUM](#kw-PVTNUM) is positive integer greater than zero and less than the NTPVT variable on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, that defines the [PVTW](#kw-PVTW) table allocated to the numerical aquifer. If defaulted then the PVT tables allocated to cell (I, J, K) will be used. | Cell [PVTNUM](#kw-PVTNUM) |
-| 12 | [SATNUM](#kw-SATNUM) | [SATNUM](#kw-SATNUM) is positive integer greater than zero and less than the NTSFUN variable on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, that defines the saturation tables allocated to the numerical aquifer. If defaulted then the saturation tables allocated to cell (I, J, K) will be used. | Cell [SATNUM](#kw-SATNUM) |
+| 11 | PVTNUM | PVTNUM is positive integer greater than zero and less than the NTPVT variable on the TABDIMS keyword in the RUNSPEC section, that defines the PVTW table allocated to the numerical aquifer. If defaulted then the PVT tables allocated to cell (I, J, K) will be used. | Cell PVTNUM |
+| 12 | SATNUM | SATNUM is positive integer greater than zero and less than the NTSFUN variable on the TABDIMS keyword in the RUNSPEC section, that defines the saturation tables allocated to the numerical aquifer. If defaulted then the saturation tables allocated to cell (I, J, K) will be used. | Cell SATNUM |
 | Notes: |  |  |  |
-: AQUNUM Keyword Description {#tbl-6-10}
-Numerical aquifers are modeled as one-dimensional, with aquifer flow assumed to be in the direction defined by LENGTH, and flux out of the aquifer is through the cross sectional area defined by AREA. Note that, all the aquifer cells must be isolated from the reservoir cells, with only the [AQUCON](#kw-AQUCON) connections connecting to the actual reservoir cells.
 
-The values entered on the AQUNUM keyword are used to calculate the aquifer's pore volume and the transmissibility between the aquifer and the connected cell faces defined on the [AQUCON](#kw-AQUCON) keyword. Thus:
+*Table 6.10: AQUNUM Keyword Description*
 
-- The aquifer’s pore volume is always calculated from the data entered on the AQUNUM keyword using$\mathit{Pore} \mathit{Volume}=\mathit{AREA}\times \mathit{LENGTH}\times \mathit{[PORO](#kw-PORO)}$and any modifications to the host cell values performed in either the [GRID](#kw-GRID) or [EDIT](#kw-EDIT) sections are always ignored for cells declared as numerical aquifers cells.
-- For the transmissibility calculation either the cross-sectional area (AREA) defined on the AQUNUM keyword may be used or the connecting cell cross-sectional area by setting the AQUOPT1 variable on the [AQUCON](#kw-AQUCON) keyword.
 
-In order to fully define a numerical aquifer one has to define the aquifer properties via the AQUNUM keyword, and how the aquifer is connected to the reservoir using the [AQUCON](#kw-AQUCON) keyword in the [GRID](#kw-GRID) or [SOLUTION](#kw-SOLUTION) sections.
+Numerical aquifers are modeled as one-dimensional, with aquifer flow assumed to be in the direction defined by LENGTH, and flux out of the aquifer is through the cross sectional area defined by AREA. Note that, all the aquifer cells must be isolated from the reservoir cells, with only the AQUCON connections connecting to the actual reservoir cells.
+
+The values entered on the AQUNUM keyword are used to calculate the aquifer's pore volume and the transmissibility between the aquifer and the connected cell faces defined on the AQUCON keyword. Thus:
+
+- The aquifer’s pore volume is always calculated from the data entered on the AQUNUM keyword using$\mathit{Pore} \mathit{Volume}=\mathit{AREA}\times \mathit{LENGTH}\times \mathit{PORO}$and any modifications to the host cell values performed in either the GRID or EDIT sections are always ignored for cells declared as numerical aquifers cells.
+- For the transmissibility calculation either the cross-sectional area (AREA) defined on the AQUNUM keyword may be used or the connecting cell cross-sectional area by setting the AQUOPT1 variable on the AQUCON keyword.
+
+In order to fully define a numerical aquifer one has to define the aquifer properties via the AQUNUM keyword, and how the aquifer is connected to the reservoir using the AQUCON keyword in the GRID or SOLUTION sections.
 
 
 ::: {.callout-note}
-If the [AQUCON](#kw-AQUCON) keyword has been utilized in the run deck then OPM Flow will write the AQUIFERN array to the *.[INIT](#kw-INIT) file in order to visualize the aquifer connections in OPM ResInsight. This is accomplished by setting the AQUIFERN value to 2^(AQUID-1) for cells connected to aquifer AQUID. If a cell is connected to multiple numerical aquifers then AQUIFERN is summed for all aquifers connected to a cell. Note that connecting cells to multiple aquifers is best avoided. Finally for cells representing the numerical aquifers themselves,  AQUIFERN is set to minus AQUID.
+If the AQUCON keyword has been utilized in the run deck then OPM Flow will write the AQUIFERN array to the *.INIT file in order to visualize the aquifer connections in OPM ResInsight. This is accomplished by setting the AQUIFERN value to 2^(AQUID-1) for cells connected to aquifer AQUID. If a cell is connected to multiple numerical aquifers then AQUIFERN is summed for all aquifers connected to a cell. Note that connecting cells to multiple aquifers is best avoided. Finally for cells representing the numerical aquifers themselves,  AQUIFERN is set to minus AQUID.
 :::
 
 
@@ -52,12 +55,12 @@ Using one aquifer cell should generally be sufficient, provided the aquifer prop
 
 The aquifer pore volume can be used to define the amount of pressure support; whereas, the aquifer transmissibility will influence the responsiveness of the aquifer.
 
-See also the [AQUDIMS](#kw-AQUDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section that defines the numerical aquifer dimensions.
+See also the AQUDIMS keyword in the RUNSPEC section that defines the numerical aquifer dimensions.
 
 
 #### Example
 
-Given the following grid and aquifer dimensions in the [RUNSPEC](#kw-RUNSPEC) section:
+Given the following grid and aquifer dimensions in the RUNSPEC section:
 
 
 ```

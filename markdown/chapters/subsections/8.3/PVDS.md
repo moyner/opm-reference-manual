@@ -1,13 +1,13 @@
-### PVDS – Solvent PVT Properties for the Solvent Model {#kw-PVDS}
+### PVDS – Solvent PVT Properties for the Solvent Model
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-PVDS defines the solvent PVT properties for use with [SOLVENT](#kw-SOLVENT) option. The solvent is treated as an additional dry gas phase within the model. This keyword should only be used if the [SOLVENT](#kw-SOLVENT) model has been invoked in the [RUNSPEC](#kw-RUNSPEC) section.
+PVDS defines the solvent PVT properties for use with SOLVENT option. The solvent is treated as an additional dry gas phase within the model. This keyword should only be used if the SOLVENT model has been invoked in the RUNSPEC section.
 
 
 | No. | Name | Description | Default |
@@ -20,7 +20,10 @@ PVDS defines the solvent PVT properties for use with [SOLVENT](#kw-SOLVENT) opti
 | 3 | GVISC | A columnar vector of real increasing down the column values that defines the corresponding solvent phase viscosity. | None |
 | cP | cP | cP |  |
 | Notes: |  |  |  |
-: PVDS Keyword Description {#tbl-8-116}
+
+*Table 8.116: PVDS Keyword Description*
+
+
 #### Example
 
 
@@ -71,6 +74,6 @@ PVDS
 ```
 
 
-The above example defines two solvent PVT tables assuming NTPVT equals two and NPPVT is greater than or equal to 16 on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The above example defines two solvent PVT tables assuming NTPVT equals two and NPPVT is greater than or equal to 16 on the TABDIMS keyword in the RUNSPEC section.
 
 There is no terminating “/” for this keyword.

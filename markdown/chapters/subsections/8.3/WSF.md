@@ -1,30 +1,33 @@
-### WSF – Water Saturation Function Tables (Gas-Water Systems) {#kw-WSF}
+### WSF – Water Saturation Function Tables (Gas-Water Systems)
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The WSF keyword defines the water relative permeability data versus water saturation tables for when only gas and water are present in the input deck.  This keyword should only be used if the gas and water phases are present in the run, and can therefore also be used with the [CO2STORE](#kw-CO2STORE) and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) models. In addition, the keyword must be used in conjunction with the [GSF](#kw-GSF) keyword in the [PROPS](#kw-PROPS) section, that defines the gas relative permeability and gas-water capillary pressure data versus gas saturation for gas-water systems.
+The WSF keyword defines the water relative permeability data versus water saturation tables for when only gas and water are present in the input deck.  This keyword should only be used if the gas and water phases are present in the run, and can therefore also be used with the CO2STORE and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) models. In addition, the keyword must be used in conjunction with the GSF keyword in the PROPS section, that defines the gas relative permeability and gas-water capillary pressure data versus gas saturation for gas-water systems.
 
 
 ::: {.callout-note}
-WSF is a compositional keyword in the commercial compositional simulator, and will therefore cause an error in the commercial black-oil simulator. Currently, both the [GSF](#kw-GSF) and WSF keywords can only be used with the [CO2STORE](#kw-CO2STORE) and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) models.
+WSF is a compositional keyword in the commercial compositional simulator, and will therefore cause an error in the commercial black-oil simulator. Currently, both the GSF and WSF keywords can only be used with the CO2STORE and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) models.
 :::
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [SWAT](#kw-SWAT) | A columnar vector of real values monotonically increasing down the column starting from the connate water saturation and terminating at one, that defines the water saturation. | None |
+| 1 | SWAT | A columnar vector of real values monotonically increasing down the column starting from the connate water saturation and terminating at one, that defines the water saturation. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 2 | [KRW](#kw-KRW) | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the water relative permeability with respect to water saturation. Note that the first entry in the column must be zero. | None |
+| 2 | KRW | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the water relative permeability with respect to water saturation. Note that the first entry in the column must be zero. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: WSF Keyword Description {#tbl-8-200}
-See also the [GSF](#kw-GSF) - Gas Saturation Tables versus Gas Saturation (Gas-Water and [CO2STORE](#kw-CO2STORE) Systems) keyword in the [PROPS](#kw-PROPS) section, that defines the gas relative permeability and gas-water capillary pressure data as a function of gas saturation, for when only the gas and water water phases are present in the model.
+
+*Table 8.200: WSF Keyword Description*
+
+
+See also the GSF - Gas Saturation Tables versus Gas Saturation (Gas-Water and CO2STORE Systems) keyword in the PROPS section, that defines the gas relative permeability and gas-water capillary pressure data as a function of gas saturation, for when only the gas and water water phases are present in the model.
 
 
 #### Example

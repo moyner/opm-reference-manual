@@ -1,24 +1,27 @@
-### LSLTWNUM – Define the Low Salt Water Wet Saturation Table Region Numbers {#kw-LSLTWNUM}
+### LSLTWNUM – Define the Low Salt Water Wet Saturation Table Region Numbers
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The LSLTWNUM keyword defines the saturation tables (relative permeability and capillary pressure tables) region numbers for each grid block, as such there must be one entry for each cell in the model. The region number specifies which set of relative permeability tables ([SWFN](#kw-SWFN), [SOF3](#kw-SOF3) and related keywords) are used to calculate the relative permeability and capillary pressure in a grid block. The keyword should only be used if the Low Salinity option for the Brine model and the Surfactant Wettability option have been activated by the [LOWSALT](#kw-LOWSALT) and [SURFACTW](#kw-SURFACTW) keywords, respectively, in the [RUNSPEC](#kw-RUNSPEC) section.
+The LSLTWNUM keyword defines the saturation tables (relative permeability and capillary pressure tables) region numbers for each grid block, as such there must be one entry for each cell in the model. The region number specifies which set of relative permeability tables (SWFN, SOF3 and related keywords) are used to calculate the relative permeability and capillary pressure in a grid block. The keyword should only be used if the Low Salinity option for the Brine model and the Surfactant Wettability option have been activated by the LOWSALT and SURFACTW keywords, respectively, in the RUNSPEC section.
 
-The water wet curves are calculated as a weighted average of the low salinity saturation tables (allocated by this keyword) and the high salinity water wet saturation tables (allocated by the [SURFWNUM](#kw-SURFWNUM) keyword in the [REGIONS](#kw-REGIONS) section), using the weights provided by the [LSALTFNC](#kw-LSALTFNC) keyword in the [PROPS](#kw-PROPS) section.
+The water wet curves are calculated as a weighted average of the low salinity saturation tables (allocated by this keyword) and the high salinity water wet saturation tables (allocated by the SURFWNUM keyword in the REGIONS section), using the weights provided by the LSALTFNC keyword in the PROPS section.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | LSLTWNUM | LSLTWNUM defines an array of positive integers assigning a grid cell to a particular saturation table region. The maximum number of LSLTWNUM regions is set by the NTSFUN variable on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | 1 |
+| 1 | LSLTWNUM | LSLTWNUM defines an array of positive integers assigning a grid cell to a particular saturation table region. The maximum number of LSLTWNUM regions is set by the NTSFUN variable on the TABDIMS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
-: LSLTWNUM Keyword Description {#tbl-9-11}
+
+*Table 9.11: LSLTWNUM Keyword Description*
+
+
 #### Example
 
 The example below sets three LSLTWNUM regions for the model.

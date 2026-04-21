@@ -1,13 +1,13 @@
-### LIVEOIL – Activate the Live Oil Phase (Oil with Free and Dissolved Gas) {#kw-LIVEOIL}
+### LIVEOIL – Activate the Live Oil Phase (Oil with Free and Dissolved Gas)
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword activates oil, free and dissolved gas in the model and therefore makes the oil phase live oil^[“Live” oil is oil that contains gas in solution, which is normally the case for most conventional oil reservoirs. However, for oil reservoirs classified as heavy oil reservoirs, the in situ dissolved gas may be negligible and oil would then be classified as gas-free oil which is commonly referred to as “dead” oil.]  in the black-oil formulation, and is equivalent to setting the phases present in the model to be oil, dissolved gas, gas and water phases. Note if water is present in the model this needs to be explicitly stated via the [WATER](#kw-WATER) keyword in the [RUNSPEC](#kw-RUNSPEC) section (see also the [BLACKOIL](#kw-BLACKOIL) and DEADOIL keywords in the [RUNSPEC](#kw-RUNSPEC) section). The keyword is used by the commercial simulator’s compositional [THERMAL](#kw-THERMAL) option to set the phases present in the model.
+This keyword activates oil, free and dissolved gas in the model and therefore makes the oil phase live oil^[“Live” oil is oil that contains gas in solution, which is normally the case for most conventional oil reservoirs. However, for oil reservoirs classified as heavy oil reservoirs, the in situ dissolved gas may be negligible and oil would then be classified as gas-free oil which is commonly referred to as “dead” oil.]  in the black-oil formulation, and is equivalent to setting the phases present in the model to be oil, dissolved gas, gas and water phases. Note if water is present in the model this needs to be explicitly stated via the WATER keyword in the RUNSPEC section (see also the BLACKOIL and DEADOIL keywords in the RUNSPEC section). The keyword is used by the commercial simulator’s compositional THERMAL option to set the phases present in the model.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 
@@ -27,7 +27,7 @@ LIVEOIL
 ```
 
 
-Alternatively one could explicitly declare the phases using the following keywords in the [RUNSPEC](#kw-RUNSPEC) section.
+Alternatively one could explicitly declare the phases using the following keywords in the RUNSPEC section.
 
 
 ```

@@ -1,7 +1,7 @@
-### TRANX – Define the Transmissibility in the X Direction for All the Cells {#kw-TRANX}
+### TRANX – Define the Transmissibility in the X Direction for All the Cells
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,8 +16,11 @@ TRANX defines the transmissibility in the X direction for all the cells in the m
 | 1 | TRANX | TRANX is an array of real positive numbers assigning the transmissibility in the X direction to each cell in the model. Repeat counts may be used, for example 20*100.0. | None |
 | cP.rb/day/psia | cP.rm3/day/bars | cP.rcc/hr/atm |  |
 | Notes: |  |  |  |
-: TRANX Keyword Description {#tbl-7-9}
-See also the [TRANY](#kw-TRANY) and TRANYZ keywords to modify the transmissibilities in the other directions.
+
+*Table 7.9: TRANX Keyword Description*
+
+
+See also the TRANY and TRANYZ keywords to modify the transmissibilities in the other directions.
 
 
 #### Example
@@ -43,4 +46,4 @@ ENDBOX
 ```
 
 
-Here the [BOX](#kw-BOX) statement is used to define the input grid for the TRANX keyword, which overwrites the transmissibility previously calculated with transmissibility values of zero, resulting in a no-flow boundary in that part of the field. The [ENDBOX](#kw-ENDBOX) keyword resets the input box to the full grid.
+Here the BOX statement is used to define the input grid for the TRANX keyword, which overwrites the transmissibility previously calculated with transmissibility values of zero, resulting in a no-flow boundary in that part of the field. The ENDBOX keyword resets the input box to the full grid.

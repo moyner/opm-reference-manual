@@ -1,15 +1,15 @@
-### ROCK2DTR – Transmissibility Compaction versus Pressure and Sw Tables {#kw-ROCK2DTR}
+### ROCK2DTR – Transmissibility Compaction versus Pressure and Sw Tables
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The ROCK2DTR keyword defines rock compressibility transmissibility multipliers as a function of pressure and water saturation (“Sw”) for when the rock compaction option has been invoked by the [ROCKCOMP](#kw-ROCKCOMP) keyword in the [RUNSPEC](#kw-RUNSPEC) section. The pressure values are defined on this keyword and the water saturations are declared on the associated [ROCKWNOD](#kw-ROCKWNOD) keyword in the [PROPS](#kw-PROPS) section
+The ROCK2DTR keyword defines rock compressibility transmissibility multipliers as a function of pressure and water saturation (“Sw”) for when the rock compaction option has been invoked by the ROCKCOMP keyword in the RUNSPEC section. The pressure values are defined on this keyword and the water saturations are declared on the associated ROCKWNOD keyword in the PROPS section
 
-The rock compaction pore volume and transmissibility multipliers, entered via the [ROCKTAB](#kw-ROCKTAB), [ROCK2D](#kw-ROCK2D) and  ROCK2DTR keywords, are applied to the pore pressure, unless the [OVERBURD](#kw-OVERBURD) keyword in [PROPS](#kw-PROPS) section is included in the input deck.  When the [OVERBURD](#kw-OVERBURD) keyword is present the multipliers are applied to the effective pore volume pressure, that is${P}_{(\mathit{effective})} = {P}_{(\mathit{Pressure})} - {P}_{(\mathit{overburden})}$. If the keyword is not present in the input deck then the overburden pressure is set to zero.
+The rock compaction pore volume and transmissibility multipliers, entered via the ROCKTAB, ROCK2D and  ROCK2DTR keywords, are applied to the pore pressure, unless the OVERBURD keyword in PROPS section is included in the input deck.  When the OVERBURD keyword is present the multipliers are applied to the effective pore volume pressure, that is${P}_{(\mathit{effective})} = {P}_{(\mathit{Pressure})} - {P}_{(\mathit{overburden})}$. If the keyword is not present in the input deck then the overburden pressure is set to zero.
 
 This keyword should only be used if compaction option has been enabled.
 
@@ -19,16 +19,18 @@ This keyword should only be used if compaction option has been enabled.
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | A columnar vector of real monotonically increasing down the column   values that defines the corresponding overburden pressure for the subsequent MULT columnar vector. | None |
 | psia | bars | atm |  |
-| 2 | MULT | A columnar vector of real equal or decreasing down the column values that are less than or equal to one, that defines the rock compressibility transmissibility multipliers corresponding to PRESS and for each water saturation entry in the [ROCKWNOD](#kw-ROCKWNOD) keyword. | None |
+| 2 | MULT | A columnar vector of real equal or decreasing down the column values that are less than or equal to one, that defines the rock compressibility transmissibility multipliers corresponding to PRESS and for each water saturation entry in the ROCKWNOD keyword. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: ROCK2DTR Keyword Description {#tbl-8-127}
-See also the [OVERBURD](#kw-OVERBURD), [ROCKTAB](#kw-ROCKTAB),  [ROCK2D](#kw-ROCK2D), and [ROCKWNOD](#kw-ROCKWNOD) keywords in the [PROPS](#kw-PROPS) section.
+
+*Table 8.127: ROCK2DTR Keyword Description*
+
+See also the OVERBURD, ROCKTAB,  ROCK2D, and ROCKWNOD keywords in the PROPS section.
 
 
 #### Example
 
-The following example defines two rock compressibility transmissibility compaction tables, assuming NTROCC is equal to two on the [ROCKCOMP](#kw-ROCKCOMP) keyword and NSSFUN is greater than or equal to four on the [TABDIMS](#kw-TABDIMS) keyword.
+The following example defines two rock compressibility transmissibility compaction tables, assuming NTROCC is equal to two on the ROCKCOMP keyword and NSSFUN is greater than or equal to four on the TABDIMS keyword.
 
 
 ```

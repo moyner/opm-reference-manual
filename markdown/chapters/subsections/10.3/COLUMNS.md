@@ -1,4 +1,4 @@
-### COLUMNS – Define Input File Column Margins {#kw-COLUMNS}
+### COLUMNS – Define Input File Column Margins
 
 The COLUMNS keyword defines the input file column margins; characters outside the margins are ignored by the input parser.
 

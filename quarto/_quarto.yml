@@ -1,6 +1,10 @@
 project:
   type: book
   output-dir: _book
+  pre-render: python3 generate_qmd.py
+from: markdown+fenced_divs
+filters:
+  - keyword_link_filter.lua
 
 book:
   title: "OPM Flow Reference Manual"

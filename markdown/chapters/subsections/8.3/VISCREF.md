@@ -1,13 +1,13 @@
-### VISCREF –  Define Viscosity-Temperature Reference Conditions {#kw-VISCREF}
+### VISCREF –  Define Viscosity-Temperature Reference Conditions
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-VISCREF defines the reference conditions for the viscosity-temperature tables, [GASVISCT](#kw-GASVISCT), [OILVISCT](#kw-OILVISCT) and [WATVISCT](#kw-WATVISCT), for when the thermal option has been activated by [THERMAL](#kw-THERMAL) keyword in the [RUNSPEC](#kw-RUNSPEC) section. This keyword can only be used if the thermal option has been activated by the [THERMAL](#kw-THERMAL) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Note this is different to the commercial simulator that uses the [TEMP](#kw-TEMP) keyword in the [RUNSPEC](#kw-RUNSPEC) section to activate the black-oil thermal model.
+VISCREF defines the reference conditions for the viscosity-temperature tables, GASVISCT, OILVISCT and WATVISCT, for when the thermal option has been activated by THERMAL keyword in the RUNSPEC section. This keyword can only be used if the thermal option has been activated by the THERMAL keyword in the RUNSPEC section. Note this is different to the commercial simulator that uses the TEMP keyword in the RUNSPEC section to activate the black-oil thermal model.
 
 
 | No. | Name | Description | Default |
@@ -15,18 +15,21 @@ VISCREF defines the reference conditions for the viscosity-temperature tables, [
 | Field | Metric | Laboratory |  |
 | 1 | PRES | PRES is a real positive number defining the reference pressure for the viscosity and temperature tables | None |
 | psia | barsa | atma |  |
-| 2 | [RS](#kw-RS) | [RS](#kw-RS) is a real positive number defining the reference gas-oil ratio for when the model contains gas dissolved as activated by the [DISGAS](#kw-DISGAS) keyword in the [RUNSPEC](#kw-RUNSPEC) section | None |
+| 2 | RS | RS is a real positive number defining the reference gas-oil ratio for when the model contains gas dissolved as activated by the DISGAS keyword in the RUNSPEC section | None |
 | Mscf/stb | sm3/sm3 | scc/scc |  |
-| 3 | [API](#kw-API) | [API](#kw-API) is a real number defining the oil [API](#kw-API) for when the [API](#kw-API) tracking option has been invoked by the [API](#kw-API) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Note that OPM Flow does not support [API](#kw-API) tracking, and therefore this variable is ignored. | None |
+| 3 | API | API is a real number defining the oil API for when the API tracking option has been invoked by the API keyword in the RUNSPEC section. Note that OPM Flow does not support API tracking, and therefore this variable is ignored. | None |
 | oAPI | oAPI | oAPI |  |
 | Notes: |  |  |  |
-: VISCREF Keyword Description {#tbl-8-196}
-OPM Flow currently does not support [API](#kw-API) tracking and therefore item (3) of this keyword is ignored.  See also the [OILVISCT](#kw-OILVISCT), [GASVISCT](#kw-GASVISCT) and [WATVISCT](#kw-WATVISCT) keywords in the [PROPS](#kw-PROPS) section.
+
+*Table 8.196: VISCREF Keyword Description*
+
+
+OPM Flow currently does not support API tracking and therefore item (3) of this keyword is ignored.  See also the OILVISCT, GASVISCT and WATVISCT keywords in the PROPS section.
 
 
 #### Example
 
-The following example shows the VISCREF keyword for when the thermal option has been activated by the [THERMAL](#kw-THERMAL) keyword in the [RUNSPEC](#kw-RUNSPEC) section and for when NTPVT on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section is set to five.
+The following example shows the VISCREF keyword for when the thermal option has been activated by the THERMAL keyword in the RUNSPEC section and for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to five.
 
 
 ```

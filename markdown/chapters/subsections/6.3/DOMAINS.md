@@ -1,13 +1,13 @@
-### DOMAINS – Define the Parallel Domain Properties {#kw-DOMAINS}
+### DOMAINS – Define the Parallel Domain Properties
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The DOMAINS keyword defines the parallel domain properties for when parallel processing has been invoked by the [PARALLEL](#kw-PARALLEL) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The DOMAINS keyword defines the parallel domain properties for when parallel processing has been invoked by the PARALLEL keyword in the RUNSPEC section.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 

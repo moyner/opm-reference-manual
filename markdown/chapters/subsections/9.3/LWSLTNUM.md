@@ -1,24 +1,27 @@
-### LWSLTNUM – Define the Low Salt Oil Wet Saturation Table Region Numbers {#kw-LWSLTNUM}
+### LWSLTNUM – Define the Low Salt Oil Wet Saturation Table Region Numbers
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The LWSLTNUM keyword defines the saturation tables (relative permeability and capillary pressure tables) region numbers for each grid block, as such there must be one entry for each cell in the model. The region number specifies which set of relative permeability tables ([SWFN](#kw-SWFN), [SOF3](#kw-SOF3) and related keywords) are used to calculate the relative permeability and capillary pressure in a grid block. The keyword should only be used if the Low Salinity option for the Brine model has been activated by the [LOWSALT](#kw-LOWSALT) kwyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The LWSLTNUM keyword defines the saturation tables (relative permeability and capillary pressure tables) region numbers for each grid block, as such there must be one entry for each cell in the model. The region number specifies which set of relative permeability tables (SWFN, SOF3 and related keywords) are used to calculate the relative permeability and capillary pressure in a grid block. The keyword should only be used if the Low Salinity option for the Brine model has been activated by the LOWSALT kwyword in the RUNSPEC section.
 
-The oil wet curves are calculated as a weighted average of the low salinity saturation tables (allocated by this keyword) and the high salinity oil wet saturation tables (allocated by the [SATNUM](#kw-SATNUM) keyword in the [REGIONS](#kw-REGIONS) section), using the weights provided by the [LSALTFNC](#kw-LSALTFNC) keyword in the [PROPS](#kw-PROPS) section.
+The oil wet curves are calculated as a weighted average of the low salinity saturation tables (allocated by this keyword) and the high salinity oil wet saturation tables (allocated by the SATNUM keyword in the REGIONS section), using the weights provided by the LSALTFNC keyword in the PROPS section.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | LWSLTNUM | LWSLTNUM defines an array of positive integers assigning a grid cell to a particular saturation table region. The maximum number of [LSLTWNUM](#kw-LSLTWNUM) regions is set by the NTSFUN variable on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | 1 |
+| 1 | LWSLTNUM | LWSLTNUM defines an array of positive integers assigning a grid cell to a particular saturation table region. The maximum number of LSLTWNUM regions is set by the NTSFUN variable on the TABDIMS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
-: LWSLTNUM Keyword Description {#tbl-9-13}
+
+*Table 9.13: LWSLTNUM Keyword Description*
+
+
 #### Example
 
 The example below sets three LWSLTNUM regions for the model.

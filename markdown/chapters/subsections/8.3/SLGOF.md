@@ -1,7 +1,7 @@
-### SLGOF – Gas-Oil Saturation Tables versus Gas (Format Type 1) {#kw-SLGOF}
+### SLGOF – Gas-Oil Saturation Tables versus Gas (Format Type 1)
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -13,16 +13,19 @@ The SLGOF keyword defines the oil and gas relative permeability and oil-gas capi
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | SLIQ | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the liquid  saturation, that is the connate water saturation ([SWL](#kw-SWL)) plus the oil saturation. The first entry should correspond to residual liquid, that is Swc + Sorg and the last entry should be 1.0 to correspond to a gas saturation of zero. | None |
+| 1 | SLIQ | A columnar vector of real monotonically increasing down the column values starting from zero and terminating at one, that defines the liquid  saturation, that is the connate water saturation (SWL) plus the oil saturation. The first entry should correspond to residual liquid, that is Swc + Sorg and the last entry should be 1.0 to correspond to a gas saturation of zero. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 2 | [KRG](#kw-KRG) | A columnar vector of real values that are either equal or decreasing down the column and that are greater than or equal to zero and less than or equal to one that defines the gas relative permeability.. | None |
+| 2 | KRG | A columnar vector of real values that are either equal or decreasing down the column and that are greater than or equal to zero and less than or equal to one that defines the gas relative permeability.. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 3 | [KRO](#kw-KRO) | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the oil relative permeability with respect to gas and connate water saturation. When water is active in the run, the last entry the column, that is at krog(Sg = 0), must be the same as the first entry in the corresponding [SWOF](#kw-SWOF)  table, that is at krow(So = 1 - Swco). The first value in the column should be zero. | None |
+| 3 | KRO | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the oil relative permeability with respect to gas and connate water saturation. When water is active in the run, the last entry the column, that is at krog(Sg = 0), must be the same as the first entry in the corresponding SWOF  table, that is at krow(So = 1 - Swco). The first value in the column should be zero. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | 4 | PCOG | A columnar vector of real values that are either equal or decreasing down the column that defines the oil-gas relative capillary pressure. | None |
 | psia | bars | atm |  |
 | Notes: |  |  |  |
-: SLGOF Keyword Description {#tbl-8-163}
+
+*Table 8.163: SLGOF Keyword Description*
+
+
 #### Example
 
 

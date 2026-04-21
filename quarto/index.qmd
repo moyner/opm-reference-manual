@@ -3,9 +3,7 @@ title: "OPM Flow Reference Manual"
 subtitle: "2025-04"
 ---
 
-::: {.content-visible when-format="html"}
-![](../markdown/images/Image46_409be8acca21.png){fig-align="center" width="40%"}
-:::
+![](images/Image46_409be8acca21.png){fig-align="center" width="40%"}
 
 ## About This Manual
 
@@ -29,6 +27,4 @@ Use the table of contents or the search bar to navigate to specific keywords or 
 Keywords are organized by their input deck section, matching the structure of OPM Flow
 simulation input files.
 
-::: {.callout-note}
-This manual corresponds to **OPM Flow version 2025-04**.
-:::
+> **Note:** This manual corresponds to **OPM Flow version 2025-04**.

@@ -1,36 +1,36 @@
-### CO2SOL – Activate Dissolved CO2 in the Water Phase {#kw-CO2SOL}
+### CO2SOL – Activate Dissolved CO2 in the Water Phase
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [CO2SOL](#REF_HEADING_KEYWORD_CO2SOL) keyword activates dissolved carbon dioxide (CO2) in the water phase, where CO2 is represented by the [SOLVENT](#kw-SOLVENT) pseudo component, using the simulator’s CO2-Brine PVT model. This keyword is a compositional keyword in the commercial simulator but has been implemented in OPM Flow’s black-oil model.
+The [CO2SOL](#REF_HEADING_KEYWORD_CO2SOL) keyword activates dissolved carbon dioxide (CO2) in the water phase, where CO2 is represented by the SOLVENT pseudo component, using the simulator’s CO2-Brine PVT model. This keyword is a compositional keyword in the commercial simulator but has been implemented in OPM Flow’s black-oil model.
 
-The [CO2SOL](#REF_HEADING_KEYWORD_CO2SOL) keyword can be used when modelling CO2 injection in depleted hydrocarbon reservoirs. See also the [CO2STORE](#kw-CO2STORE) keyword in the [RUNSPEC](#kw-RUNSPEC) section which can be used when modelling CO2 injection in saline aquifers.
+The [CO2SOL](#REF_HEADING_KEYWORD_CO2SOL) keyword can be used when modelling CO2 injection in depleted hydrocarbon reservoirs. See also the CO2STORE keyword in the RUNSPEC section which can be used when modelling CO2 injection in saline aquifers.
 
-The CO2-Brine PVT model computes the PVT properties such as density, viscosity, and enthalpy internally as functions of pressure, temperature, and composition by using analytic correlations and models from the literature rather than by interpolation of tabulated values in the input deck. These values are transformed to the standard black-oil equivalent PVT tables internally by the simulator. A full description of the underlying PVT models is described by Sandve et al.^[Tor Harald Sandve1, Sarah E. Gasda, Atgeirr Rasmussen, and Alf Birger Rustad. Convective dissolution in field scale CO2 storage simulation using the OPM Flow simulator. Submitted to TCCS 11 – Trondheim Conference on CO2 Capture, Transport and Storage Trondheim, Norway – June 21-23, 2021.]. Note that the CO2-Brine PVT properties depend on the temperature and salinity and these must therefore be entered in the [PROPS](#kw-PROPS) section. The reservoir temperature can be defined using, e.g., the [RTEMP](#kw-RTEMP) keyword. Region based salinity can be provided using the [SALINITY](#kw-SALINITY) keyword.
+The CO2-Brine PVT model computes the PVT properties such as density, viscosity, and enthalpy internally as functions of pressure, temperature, and composition by using analytic correlations and models from the literature rather than by interpolation of tabulated values in the input deck. These values are transformed to the standard black-oil equivalent PVT tables internally by the simulator. A full description of the underlying PVT models is described by Sandve et al.^[Tor Harald Sandve1, Sarah E. Gasda, Atgeirr Rasmussen, and Alf Birger Rustad. Convective dissolution in field scale CO2 storage simulation using the OPM Flow simulator. Submitted to TCCS 11 – Trondheim Conference on CO2 Capture, Transport and Storage Trondheim, Norway – June 21-23, 2021.]. Note that the CO2-Brine PVT properties depend on the temperature and salinity and these must therefore be entered in the PROPS section. The reservoir temperature can be defined using, e.g., the RTEMP keyword. Region based salinity can be provided using the SALINITY keyword.
 
-The [CO2SOL](#REF_HEADING_KEYWORD_CO2SOL) keyword must be used together with the [SOLVENT](#kw-SOLVENT) keyword in the [RUNSPEC](#kw-RUNSPEC) section. The [SOLVENT](#kw-SOLVENT) keyword activates the four component black-oil model: oil, water and gas, plus a solvent (in this case CO2).
+The [CO2SOL](#REF_HEADING_KEYWORD_CO2SOL) keyword must be used together with the SOLVENT keyword in the RUNSPEC section. The SOLVENT keyword activates the four component black-oil model: oil, water and gas, plus a solvent (in this case CO2).
 
-The [DISGASW](#kw-DISGASW) keyword in the [RUNSPEC](#kw-RUNSPEC) section can be used to model dissolution of CO2 in the Brine. Note that hydrocarbon gas is not allowed to dissolve in the Brine (this is considered a reasonable assumption for most hydrocarbon gases).
+The DISGASW keyword in the RUNSPEC section can be used to model dissolution of CO2 in the Brine. Note that hydrocarbon gas is not allowed to dissolve in the Brine (this is considered a reasonable assumption for most hydrocarbon gases).
 
-The hydrocarbon reservoir fluid properties should be set up as normal apart from the water PVT properties, which will be defined by the simulators’ CO2-Brine PVT model, so the water PVT keywords (e.g. [PVTW](#kw-PVTW)) are not required. The CO2 PVT properties will also be defined by the CO2-Brine PVT model so the solvent PVT keywords (e.g. [SDENSITY](#kw-SDENSITY), [PVTSOL](#kw-PVTSOL)) are also not required.
+The hydrocarbon reservoir fluid properties should be set up as normal apart from the water PVT properties, which will be defined by the simulators’ CO2-Brine PVT model, so the water PVT keywords (e.g. PVTW) are not required. The CO2 PVT properties will also be defined by the CO2-Brine PVT model so the solvent PVT keywords (e.g. SDENSITY, PVTSOL) are also not required.
 
-The oil-water and gas-water saturation functions should be set up as normal. The CO2 and gas miscible relative permeability tables should be defined using the [SSFN](#kw-SSFN) keyword in the [PROPS](#kw-PROPS) section.
+The oil-water and gas-water saturation functions should be set up as normal. The CO2 and gas miscible relative permeability tables should be defined using the SSFN keyword in the PROPS section.
 
-The initial CO2 saturations in the model can be specified by enumeration using the [SSOL](#kw-SSOL) keyword in the [SOLUTION](#kw-SOLUTION) section.
+The initial CO2 saturations in the model can be specified by enumeration using the SSOL keyword in the SOLUTION section.
 
-The CO2 fraction in a well’s injection stream can be defined using the [WSOLVENT](#kw-WSOLVENT) keyword in the [SCHEDULE](#kw-SCHEDULE) section.
+The CO2 fraction in a well’s injection stream can be defined using the WSOLVENT keyword in the SCHEDULE section.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 
 
 #### Example
 
-The example shows the usage of [CO2SOL](#REF_HEADING_KEYWORD_CO2SOL) to model CO2 injection in a live-oil reservoir. The [RUNSPEC](#kw-RUNSPEC) section includes the [CO2SOL](#REF_HEADING_KEYWORD_CO2SOL) keyword, which activates dissolved carbon dioxide (CO2) in the water phase. The [SOLVENT](#kw-SOLVENT) keyword activates the solvent pseudo component, which represents CO2. The [DISGASW](#kw-DISGASW) keyword has been used to activate dissolved CO2 in the brine.
+The example shows the usage of [CO2SOL](#REF_HEADING_KEYWORD_CO2SOL) to model CO2 injection in a live-oil reservoir. The RUNSPEC section includes the [CO2SOL](#REF_HEADING_KEYWORD_CO2SOL) keyword, which activates dissolved carbon dioxide (CO2) in the water phase. The SOLVENT keyword activates the solvent pseudo component, which represents CO2. The DISGASW keyword has been used to activate dissolved CO2 in the brine.
 
 
 ```
@@ -58,7 +58,7 @@ DISGASW
 
 ```
 
-The second part of the example covers the additional data required in the [PROPS](#kw-PROPS) section, in which the CO2-gas miscible relative permeabilities are defined using the [SSFN](#kw-SSFN) keyword. The initial temperature and salinity are defined using the [RTEMP](#kw-RTEMP) and [SALINITY](#kw-SALINITY) keywords. The oil and gas PVT properties should be defined in the normal way. No water PVT data is required.
+The second part of the example covers the additional data required in the PROPS section, in which the CO2-gas miscible relative permeabilities are defined using the SSFN keyword. The initial temperature and salinity are defined using the RTEMP and SALINITY keywords. The oil and gas PVT properties should be defined in the normal way. No water PVT data is required.
 
 
 ```
@@ -91,7 +91,7 @@ SSFN
 
 ```
 
-The third part of the example covers initialising the model in the [SOLUTION](#kw-SOLUTION) section. Here the [EQUIL](#kw-EQUIL) keyword is used as normal to equilibrate the oil, gas and water phases, and the [SSOL](#kw-SSOL) keyword to specify that there is initially no CO2 present in the gas phase.
+The third part of the example covers initialising the model in the SOLUTION section. Here the EQUIL keyword is used as normal to equilibrate the oil, gas and water phases, and the SSOL keyword to specify that there is initially no CO2 present in the gas phase.
 
 
 ```
@@ -144,7 +144,7 @@ FNPT
 
 ```
 
-The final part of the example covers the [SCHEDULE](#kw-SCHEDULE) section. The [WSOLVENT](#kw-WSOLVENT) keyword is used to specify the injected solvent fraction (in this case pure CO2).
+The final part of the example covers the SCHEDULE section. The WSOLVENT keyword is used to specify the injected solvent fraction (in this case pure CO2).
 
 
 ```

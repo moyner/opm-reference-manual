@@ -1,20 +1,23 @@
-### OPERNUM – Define Regions for Mathematical Operations on Arrays {#kw-OPERNUM}
+### OPERNUM – Define Regions for Mathematical Operations on Arrays
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword defines the [OPERATER](#kw-OPERATER) region numbers for each grid block. The OPERNUM keyword defines the region numbers for each grid block, as such there must be one entry for each cell in the model. The array can also be used with the [EQUALREG](#kw-EQUALREG), [ADDREG](#kw-ADDREG), [COPYREG](#kw-COPYREG), [MULTIREG](#kw-MULTIREG), [MULTREGP](#kw-MULTREGP) and [MULTREGT](#kw-MULTREGT) keywords, as well as the [OPERATER](#kw-OPERATER) keyword in calculating various grid properties in the [GRID](#kw-GRID) and REGION section.
+This keyword defines the OPERATER region numbers for each grid block. The OPERNUM keyword defines the region numbers for each grid block, as such there must be one entry for each cell in the model. The array can also be used with the EQUALREG, ADDREG, COPYREG, MULTIREG, MULTREGP and MULTREGT keywords, as well as the OPERATER keyword in calculating various grid properties in the GRID and REGION section.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | OPERNUM | OPERNUM defines an array of positive integers greater than or equal to one that assigns a grid cell to a particular OPERNUM region. The maximum number of OPERNUM regions is set by the NOPREG variable on the [REGDIMS](#kw-REGDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Note that the default value of zero implies that the calculations requested by the [OPERATER](#kw-OPERATER) keyword will not be performed. | 0 |
+| 1 | OPERNUM | OPERNUM defines an array of positive integers greater than or equal to one that assigns a grid cell to a particular OPERNUM region. The maximum number of OPERNUM regions is set by the NOPREG variable on the REGDIMS keyword in the RUNSPEC section. Note that the default value of zero implies that the calculations requested by the OPERATER keyword will not be performed. | 0 |
 | Notes: |  |  |  |
-: OPERNUM Keyword Description {#tbl-6-98}
+
+*Table 6.98: OPERNUM Keyword Description*
+
+
 #### Examples
 
 The example below sets three OPERNUM regions for a 4 x 5 x 2 model.
@@ -30,7 +33,7 @@ OPERNUM
 /
 ```
 
-Alternatively the [EQUALS](#kw-EQUALS) keyword could be employed to accomplish the same task, that is:
+Alternatively the EQUALS keyword could be employed to accomplish the same task, that is:
 
 
 ```
@@ -44,7 +47,7 @@ EQUALS
 /
 ```
 
-One can then increase [PERMX](#kw-PERMX) by 25% in region three only.
+One can then increase PERMX by 25% in region three only.
 
 
 ```

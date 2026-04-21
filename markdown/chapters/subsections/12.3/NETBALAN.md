@@ -1,7 +1,7 @@
-### NETBALAN – Network Balancing Parameters {#kw-NETBALAN}
+### NETBALAN – Network Balancing Parameters
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -19,7 +19,7 @@ NETBALAN keyword causes the simulator to perform a network balancing operation a
 | psia 1.45 | barsa 0.10 | atma 0.09869 |  |
 | 3 | NMXITER | A positive integer value that defines the maximum number of network balancing operations that may be performed during a network balancing  computation. | 10 |
 | dimensionless | dimensionless | dimensionless |  |
-| 4 | GRPCNV | GRPCNV is a real positive value less than one that sets the group tolerance criteria used to define if convergence has been satisfied for: In both cases GRPCNV is an acceptable fraction of the group’s rate target. Thus, the default value 0.01 means that network balance calculated rate must be within 0.01 (or 1.0%) of the groups’ production target. Note that this criteria may not be satisfied if the number of Newton iterations used in updating the well targets, as set by the [NUPCOL](#kw-NUPCOL) keyword in the [RUNSPEC](#kw-RUNSPEC) section, or the [NUPCOL](#kw-NUPCOL) parameter on the [GCONTOL](#kw-GCONTOL) keyword in the [SCHEDULE](#kw-SCHEDULE) section, is exceeded. Group convergence criteria can also be set by the GRPCNV parameter on the [GCONTOL](#kw-GCONTOL) keyword in the [SCHEDULE](#kw-SCHEDULE) section. If both values of GRPCNV have been entered, then the minimum of the two is used. | 0.01 |
+| 4 | GRPCNV | GRPCNV is a real positive value less than one that sets the group tolerance criteria used to define if convergence has been satisfied for: In both cases GRPCNV is an acceptable fraction of the group’s rate target. Thus, the default value 0.01 means that network balance calculated rate must be within 0.01 (or 1.0%) of the groups’ production target. Note that this criteria may not be satisfied if the number of Newton iterations used in updating the well targets, as set by the NUPCOL keyword in the RUNSPEC section, or the NUPCOL parameter on the GCONTOL keyword in the SCHEDULE section, is exceeded. Group convergence criteria can also be set by the GRPCNV parameter on the GCONTOL keyword in the SCHEDULE section. If both values of GRPCNV have been entered, then the minimum of the two is used. | 0.01 |
 | dimensionless | dimensionless | dimensionless |  |
 | 5 | THPMXITE | A positive integer value that defines the maximum number of well THP iterations for wells in subsea completion.anifold groups under rate control. There is no equivalent iteration maximum for automatic chokes in groups under rate control, as the pressure drop across the chokes is automatically calculated in the network balancing calculation. Thus, NMXITER is used for these calculations. | 10 |
 | dimensionless | dimensionless | dimensionless |  |
@@ -27,10 +27,13 @@ NETBALAN keyword causes the simulator to perform a network balancing operation a
 | psia | barsa | atma |  |
 | 7 | NMAXERR | A real positive value that stipulates the maximum branch error in a network balance calculation, at the end of the time step. Again, NMAXERR is compared against the branch error (Error), where Error is the difference between the pressure drop along the branch from the previous network balance and the current calculation, at the end of the time step. If Error is greater than NMAXERR then the simulator will enforce a time step chop. Time step chops are computationally expensive and should therefore be minimized.  Hence, care should be used in setting this value, which should be significantly greater than NTRGERR. The default value of 1.0 x 1020  means that this parameter has no effect in the selection of the time step size. | 1.0 x 1020 |
 | psia | barsa | atma |  |
-| 8 | NTSMIN | NTSMIN is a real positive value that sets the minimum time step size for when NTRGERR and NMAXERR have values. Large network balancing errors (Error) can take place for various reasons, a common occurrence is for wells producing near their operating limit which may shut in during a network balance operation. If NTRGERR and NMAXERR have values, then this will result in the simulator enforcing time step chops to perhaps very small time steps.  NTSMIN can therefore be used to set the minimum time step size under, and only, these circumstances. The default value, TSMINZ, is taken from TSMINZ parameter on the [TUNING](#kw-TUNING) keyword in the [SCHEDULE](#kw-SCHEDULE) section. | TSMINZ |
+| 8 | NTSMIN | NTSMIN is a real positive value that sets the minimum time step size for when NTRGERR and NMAXERR have values. Large network balancing errors (Error) can take place for various reasons, a common occurrence is for wells producing near their operating limit which may shut in during a network balance operation. If NTRGERR and NMAXERR have values, then this will result in the simulator enforcing time step chops to perhaps very small time steps.  NTSMIN can therefore be used to set the minimum time step size under, and only, these circumstances. The default value, TSMINZ, is taken from TSMINZ parameter on the TUNING keyword in the SCHEDULE section. | TSMINZ |
 | days | days | hour |  |
 | Notes: |  |  |  |
-: NETBALAN Keyword Description {#tbl-12-53}
+
+*Table 12.53: NETBALAN Keyword Description*
+
+
 #### Examples
 
 The first example sets network balancing to occur at the beginning of each time step using a 1.0 psia convergence criteria, and a maximum of 10 iterations.  All the other parameters are defaulted.
@@ -47,7 +50,7 @@ NETBALAN
 ```
 
 
-The next example sets network balancing to occur for the first [NUPCOL](#kw-NUPCOL) Newton iterations for each time step. All the other parameters are defaulted.
+The next example sets network balancing to occur for the first NUPCOL Newton iterations for each time step. All the other parameters are defaulted.
 
 
 ```

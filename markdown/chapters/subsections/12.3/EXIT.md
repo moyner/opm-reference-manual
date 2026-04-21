@@ -1,17 +1,17 @@
-### EXIT – Exit Simulation from within an Action Section {#kw-EXIT}
+### EXIT – Exit Simulation from within an Action Section
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The EXIT keyword is part of OPM Flow’s [ACTION](#kw-ACTION) facility that allows for terminating the simulation for when a condition within an [ACTIONX](#kw-ACTIONX) definition is satisfied.  Invoking the keyword within an [ACTIONX](#kw-ACTIONX) definition will result in the simulation terminating with an exit status code. The [ACTION](#kw-ACTION) facility allows the user to enter computational logic to the simulation run based on the how the simulation run is proceeding – see the [ACTIONX](#kw-ACTIONX) keyword in the [SCHEDULE](#kw-SCHEDULE) section.
+The EXIT keyword is part of OPM Flow’s ACTION facility that allows for terminating the simulation for when a condition within an ACTIONX definition is satisfied.  Invoking the keyword within an ACTIONX definition will result in the simulation terminating with an exit status code. The ACTION facility allows the user to enter computational logic to the simulation run based on the how the simulation run is proceeding – see the ACTIONX keyword in the SCHEDULE section.
 
 
 ::: {.callout-note}
-This is an OPM Flow specific keyword for the simulator’s [ACTION](#kw-ACTION) facility and will therefore cause an error if used in the commercial simulator.
+This is an OPM Flow specific keyword for the simulator’s ACTION facility and will therefore cause an error if used in the commercial simulator.
 :::
 
 
@@ -19,13 +19,16 @@ This is an OPM Flow specific keyword for the simulator’s [ACTION](#kw-ACTION) 
 | --- | --- | :------ | --- |
 | 1 | EXITCODE | An optional integer that sets the exit code printed to the *.PRT file, if not not defined the default value of zero will be used. | 0 |
 | Notes: |  |  |  |
-: EXIT Keyword Description {#tbl-12-25}
-The EXIT keyword should only be used as part of an [ACTIONX](#kw-ACTIONX) block, if found elsewhere in the input deck it will be ignored.
+
+*Table 12.25: EXIT Keyword Description*
+
+
+The EXIT keyword should only be used as part of an ACTIONX block, if found elsewhere in the input deck it will be ignored.
 
 
 #### Examples
 
-The first example uses the [ACTIONX](#kw-ACTIONX) keyword to define a condition for when the Field Oil Production Rate (“FOPR) falls below 1,000 stb/d (or 1,000 m3) using the default value for the EXITCODE.
+The first example uses the ACTIONX keyword to define a condition for when the Field Oil Production Rate (“FOPR) falls below 1,000 stb/d (or 1,000 m3) using the default value for the EXITCODE.
 
 
 ```

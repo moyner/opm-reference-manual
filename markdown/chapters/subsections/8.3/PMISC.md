@@ -1,13 +1,13 @@
-### PMISC – Define Miscibility versus Pressure Tables {#kw-PMISC}
+### PMISC – Define Miscibility versus Pressure Tables
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-PMISC defines the transition between immiscible and miscible displacement as a function of oil pressure tables, for when the [MISCIBLE](#kw-MISCIBLE) keyword in the [RUNSPEC](#kw-RUNSPEC) section has be activated. If this keyword is absent from the input deck and [MISCIBLE](#kw-MISCIBLE) keyword in the [RUNSPEC](#kw-RUNSPEC) keyword has been activated, then miscibility is independent of the oil phase pressure.
+PMISC defines the transition between immiscible and miscible displacement as a function of oil pressure tables, for when the MISCIBLE keyword in the RUNSPEC section has be activated. If this keyword is absent from the input deck and MISCIBLE keyword in the RUNSPEC keyword has been activated, then miscibility is independent of the oil phase pressure.
 
 
 | No. | Name | Description | Default |
@@ -15,10 +15,13 @@ PMISC defines the transition between immiscible and miscible displacement as a f
 | Field | Metric | Laboratory |  |
 | 1 | PRESS | A columnar vector of real monotonically increasing down the column   values that defines the oil phase pressure. | None |
 | psia | barsa | atma |  |
-| 2 | [MISC](#kw-MISC) | A columnar vector of real equal or increasing down the column values that defines the corresponding miscibility factor. [MISC](#kw-MISC) is a scaling that should lie be zero and one, where zero means no miscibility and one means full miscibility. | None |
+| 2 | MISC | A columnar vector of real equal or increasing down the column values that defines the corresponding miscibility factor. MISC is a scaling that should lie be zero and one, where zero means no miscibility and one means full miscibility. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: PMISC Keyword Description {#tbl-8-110}
+
+*Table 8.110: PMISC Keyword Description*
+
+
 #### Example
 
 
@@ -46,4 +49,4 @@ PMISC
 ```
 
 
-The above example defines two miscibility versus pressure tables assuming NTMISC equals two and NSMISC is greater than or equal to six on the [MISCIBLE](#kw-MISCIBLE) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The above example defines two miscibility versus pressure tables assuming NTMISC equals two and NSMISC is greater than or equal to six on the MISCIBLE keyword in the RUNSPEC section.

@@ -1,13 +1,13 @@
-### WPIMULTL – Define Well Connection Multipliers (LGR) {#kw-WPIMULTL}
+### WPIMULTL – Define Well Connection Multipliers (LGR)
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The WPIMULTL keyword defines a well connection factor multiplier that scales the existing well connection factor values, for a well in a Local Grid Refinement (“[LGR](#kw-LGR)”). The resulting effect is scale the well’s productivity at the reporting time step the keyword is entered.
+The WPIMULTL keyword defines a well connection factor multiplier that scales the existing well connection factor values, for a well in a Local Grid Refinement (“LGR”). The resulting effect is scale the well’s productivity at the reporting time step the keyword is entered.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -15,28 +15,31 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well and well connection status data is being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECL](#kw-WELSPECL) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well and well connection status data is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECL keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | PIMULT | A real positive value that will be used to scale the well connection factors defined by I, J, K, C1 and C2 below. | 1.0 |
-| 3 | LGRNAME | A character string of up to eight characters in length that defines the [LGR](#kw-LGR) name for which the well [LGR](#kw-LGR) connection multiplier factor (PIMULT) is being defined. Note that LGRNAME must have been declared previously using the [WELSPECL](#kw-WELSPECL) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. If defaulted with 1* the [LGR](#kw-LGR) on the [WELSPECL](#kw-WELSPECL) keyword will be utilized. | Defined |
+| 3 | LGRNAME | A character string of up to eight characters in length that defines the LGR name for which the well LGR connection multiplier factor (PIMULT) is being defined. Note that LGRNAME must have been declared previously using the WELSPECL keyword in the SCHEDULE section, otherwise an error may occur. If defaulted with 1* the LGR on the WELSPECL keyword will be utilized. | Defined |
 | 3 | I | An integer less than or equal to NX that defines the connection location in the I-direction. | 1* |
 | 4 | J | An integer less than or equal to NY that defines the connection location in the J-direction. | 1* |
 | 5 | K | An integer less than or equal to NZ that defines the connection location in the K-direction. | 1* |
-| 6 | C1 | An integer value that defines the first completion in the range. Connections are lumped into completions via the [COMPLUMP](#kw-COMPLUMP) keyword, and C1 refers to the first completion number, as defined by the [COMPLUMP](#kw-COMPLUMP) keyword, and all the connections contained within the C1 completion | 1* |
-| 7 | C2 | An integer value that defines the last completion in the range. Connections are lumped into completions via the [COMPLUMP](#kw-COMPLUMP) keyword, and C2 refers to the last completion number, as defined by the [COMPLUMP](#kw-COMPLUMP) keyword, and all the connections contained within the C2 completion | 1* |
+| 6 | C1 | An integer value that defines the first completion in the range. Connections are lumped into completions via the COMPLUMP keyword, and C1 refers to the first completion number, as defined by the COMPLUMP keyword, and all the connections contained within the C1 completion | 1* |
+| 7 | C2 | An integer value that defines the last completion in the range. Connections are lumped into completions via the COMPLUMP keyword, and C2 refers to the last completion number, as defined by the COMPLUMP keyword, and all the connections contained within the C2 completion | 1* |
 | Notes: |  |  |  |
-: WPIMULT Keyword Description {#tbl-12-111}
+
+*Table 12.111: WPIMULT Keyword Description*
+
+
 If variables I, J K, C1 and C2 are all defaulted with a negative value or 1*, then PIMULT is applied to all the well connections in the well.
 
 If variables I, J K, C1 and C2 are set to zero (meaning any or all values), or a positive value then PIMULT is applied to the defined connections. The defined connections are those with the I, J, K variables in the specified location and a completion number in the range specified by C1 and C2.
 
 Note, that PIMULT is applied at the time the WPIMULTL keyword is entered and is cumulative if applied to the same well connections, provided there are intervening report time steps between consecutive WPIMULTL keywords. Consequently, if there are no intervening report time steps between consecutive WPIMULTL keywords utilizing the same well connections, then only the last set is applied.
 
-See also the PIMULTAB keyword that defines productivity index multiplier versus water cut tables that are used to scaled a well’s connection factors based on a wells connection current producing water cut. The keyword is documented in the [SCHEDULE](#kw-SCHEDULE) section.
+See also the PIMULTAB keyword that defines productivity index multiplier versus water cut tables that are used to scaled a well’s connection factors based on a wells connection current producing water cut. The keyword is documented in the SCHEDULE section.
 
 
 #### Example
 
-The following example defines two vertical oil wells using the [WELSPECL](#kw-WELSPECL) keyword and their associated connection data.
+The following example defines two vertical oil wells using the WELSPECL keyword and their associated connection data.
 
 
 ```

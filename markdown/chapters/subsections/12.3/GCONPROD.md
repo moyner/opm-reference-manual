@@ -1,19 +1,19 @@
-### GCONPROD – Group Production Targets and Constraints {#kw-GCONPROD}
+### GCONPROD – Group Production Targets and Constraints
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The GCONPROD keyword defines production targets and constraints for groups, including the top most group in the group hierarchy known as the [FIELD](#kw-FIELD) group. Wells are allocated to groups when the wells are specified by the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section.  Wells defined to be under group control will have their production rates controlled by the group to which they belong, in addition to any well constraints defined for the wells.
+The GCONPROD keyword defines production targets and constraints for groups, including the top most group in the group hierarchy known as the FIELD group. Wells are allocated to groups when the wells are specified by the WELSPECS keyword in the SCHEDULE section.  Wells defined to be under group control will have their production rates controlled by the group to which they belong, in addition to any well constraints defined for the wells.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group target and constraints are being defined. The group named [FIELD](#kw-FIELD) is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the [GRUPTREE](#kw-GRUPTREE) keyword in the [SCHEDULE](#kw-SCHEDULE) section, when there is more than one level of groups, otherwise all the groups will sit directly under the [FIELD](#kw-FIELD) group in the group tree hierarchy. | None |
+| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group target and constraints are being defined. The group named FIELD is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword in the SCHEDULE section, when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
 | 2 | TARGET | A defined character string that specifies the production rate control mode for the group. The simulator will attempt to meet the TARGET rate as defined by remaining items on this keyword. TARGET should be set to one of the following character strings: Note that the commercial simulator includes additional options (not listed above) that are not currently supported by OPM Flow. | None |
 | 3 | ORAT | A real positive value that defines the maximum surface oil production rate target or constraint. This value may be specified using a User Defined Argument (UDA). | None |
 | stb/d | sm3/day | scc/hour |  |
@@ -23,14 +23,14 @@ The GCONPROD keyword defines production targets and constraints for groups, incl
 | Mscf/d | sm3/day | scc/hour |  |
 | 6 | LRAT | A real positive value that defines the maximum surface liquid (oil plus water) production rate target or constraint. This value may be specified using a User Defined Argument (UDA). | None |
 | stb/d | sm3/day | scc/hour |  |
-| 7 | [ACTION](#kw-ACTION) | A defined character string that specifies the action to be taken if the constraints in (3) to (6) are violated. [ACTION](#kw-ACTION) should be set to one of the following character strings: The corrective action takes places at the end of the time step in which the constraint is violated. Note that only the NONE, WELL and RATE options are currently supported by OPM Flow. | None |
-| 8 | GRPCNTL | A defined character string that determines if this group is subject to higher level group control. GRPCNTL will be ignored for the [FIELD](#kw-FIELD) group. | None |
+| 7 | ACTION | A defined character string that specifies the action to be taken if the constraints in (3) to (6) are violated. ACTION should be set to one of the following character strings: The corrective action takes places at the end of the time step in which the constraint is violated. Note that only the NONE, WELL and RATE options are currently supported by OPM Flow. | None |
+| 8 | GRPCNTL | A defined character string that determines if this group is subject to higher level group control. GRPCNTL will be ignored for the FIELD group. | None |
 | 9 | GRPGUIDE | A real positive value that defines a group's production guide rate expressed as a dimensionless number.  A group requires a value for GRPGUIDE only if it is required to produce a specified proportion of a higher level group’s rate | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 10 | GUIPHASE | A defined character string that sets the guide phase to which the guide rate in item (9) applies.  GUIPHASE should be set to one of the following character strings: Note that only the [OIL](#kw-OIL), WAT, [GAS](#kw-GAS), LIQ and default options are currently supported by OPM Flow. | 1* |
-| 11 | ACTWAT | A defined character string that defines the action to be taken if the WRAT constraint, item (4), is violated. ACTWAT should be set to one of the following character strings: If defaulted then procedure defined by [ACTION](#kw-ACTION), item (7), is applied.  The corrective action takes places at the end of the time step in which the constraint is violated. Note that only the NONE and RATE options are currently supported by OPM Flow. | 1* |
-| 12 | ACTGAS | A defined character string that defines the action to be taken if the GRAT constraint, item (5), is violated. ACTGAS should be set to one of the following character strings: If defaulted then procedure defined by [ACTION](#kw-ACTION), item (7), is applied.  The corrective action takes places at the end of the time step in which the constraint is violated Note that only the NONE and RATE options are currently supported by OPM Flow. | 1* |
-| 13 | ACTLIQ | A defined character string that defines the action to be taken if the LRAT constraint, item (6), is violated. ACLIQT should be set to one of the following character strings: If defaulted then procedure defined by [ACTION](#kw-ACTION), item (7), is applied.  The corrective action takes places at the end of the time step in which the constraint is violated. Note that only the NONE and RATE options are currently supported by OPM Flow. | 1* |
+| 10 | GUIPHASE | A defined character string that sets the guide phase to which the guide rate in item (9) applies.  GUIPHASE should be set to one of the following character strings: Note that only the OIL, WAT, GAS, LIQ and default options are currently supported by OPM Flow. | 1* |
+| 11 | ACTWAT | A defined character string that defines the action to be taken if the WRAT constraint, item (4), is violated. ACTWAT should be set to one of the following character strings: If defaulted then procedure defined by ACTION, item (7), is applied.  The corrective action takes places at the end of the time step in which the constraint is violated. Note that only the NONE and RATE options are currently supported by OPM Flow. | 1* |
+| 12 | ACTGAS | A defined character string that defines the action to be taken if the GRAT constraint, item (5), is violated. ACTGAS should be set to one of the following character strings: If defaulted then procedure defined by ACTION, item (7), is applied.  The corrective action takes places at the end of the time step in which the constraint is violated Note that only the NONE and RATE options are currently supported by OPM Flow. | 1* |
+| 13 | ACTLIQ | A defined character string that defines the action to be taken if the LRAT constraint, item (6), is violated. ACLIQT should be set to one of the following character strings: If defaulted then procedure defined by ACTION, item (7), is applied.  The corrective action takes places at the end of the time step in which the constraint is violated. Note that only the NONE and RATE options are currently supported by OPM Flow. | 1* |
 | 14 | RESV | A real positive value that defines the maximum reservoir volume production rate target or constraint. This value may be specified using a User Defined Argument (UDA). | None |
 | rb/d | rm3/day | rcc/hour |  |
 | 15 | RESVFRAC | A real positive value that defines the maximum reservoir volume production balancing fraction. Not used and should be defaulted with 1*. | 1* |
@@ -41,13 +41,16 @@ The GCONPROD keyword defines production targets and constraints for groups, incl
 | 20 | COMBRATE | Linearly combined production rate used in the commercial compositional simulator. Not used and should be defaulted with 1*. | 1* |
 | 21 | COMBPROC | Linearly combined procure for when exceeding COMBRATE, used in the commercial black-oil simulator. Not used and should be defaulted with 1*. | 1* |
 | Notes: |  |  |  |
-: GCONPROD Keyword Description {#tbl-12-3-89-1}
-See also the [GRUPTREE](#kw-GRUPTREE) keyword to define the hierarchy of the groups below the [FIELD](#kw-FIELD) level, the [GCONINJE](#kw-GCONINJE) keyword to define a group’s injection targets and constraints, the [WCONPROD](#kw-WCONPROD) keyword to define a production well’s targets and constraints, and the [WCONINJE](#kw-WCONINJE) keyword to define an injection well’s targets and constraints. All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
+
+*Table 12.3.89.1: GCONPROD Keyword Description*
+
+
+See also the GRUPTREE keyword to define the hierarchy of the groups below the FIELD level, the GCONINJE keyword to define a group’s injection targets and constraints, the WCONPROD keyword to define a production well’s targets and constraints, and the WCONINJE keyword to define an injection well’s targets and constraints. All the aforementioned keywords are described in the SCHEDULE section.
 
 
 #### Example
 
-The following example defines the production targets and constraints for the field and two groups that are one level below the field group, since the [GRUPTREE](#kw-GRUPTREE) keyword has not been entered to define the group  hierarchy.
+The following example defines the production targets and constraints for the field and two groups that are one level below the field group, since the GRUPTREE keyword has not been entered to define the group  hierarchy.
 
 
 ```
@@ -64,4 +67,4 @@ GRP02    FLD   25E3   1*     1*     1*     1*     1*    1*     1*     1*      /
 ```
 
 
-All groups are controlled by oil rate targets or constraints, but only the field level has water, gas and liquid constraints to reflect the actual production facility constraints. The wells under group control will be produced based on oil potential of each of the wells under group control, such that the field oil production target of 40,000 stb/d is honored and subject to the other phase fluid constraints.  In addition, GRP01 and GRP02 oil rate values of 25,000 stb/d are constraints as these two groups are subject to the [FIELD](#kw-FIELD) level targets and constraints.
+All groups are controlled by oil rate targets or constraints, but only the field level has water, gas and liquid constraints to reflect the actual production facility constraints. The wells under group control will be produced based on oil potential of each of the wells under group control, such that the field oil production target of 40,000 stb/d is honored and subject to the other phase fluid constraints.  In addition, GRP01 and GRP02 oil rate values of 25,000 stb/d are constraints as these two groups are subject to the FIELD level targets and constraints.

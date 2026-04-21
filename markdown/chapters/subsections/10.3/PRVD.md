@@ -1,15 +1,15 @@
-### PRVD – Define the Initial Equilibration Pressures versus Depth {#kw-PRVD}
+### PRVD – Define the Initial Equilibration Pressures versus Depth
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The PRVD keyword defines the initial reservoir pressure versus depth and should be used in conjunction with the [PBUB](#kw-PBUB), [PDEW](#kw-PDEW), [RS](#kw-RS), [RV](#kw-RV), [SGAS](#kw-SGAS), [SOIL](#kw-SOIL) and [SWAT](#kw-SWAT) keywords etc., to fully describe the initial state of the model.  PRVD is an alternative to the [PRESSURE](#kw-PRESSURE) keyword in the [SOLUTION](#kw-SOLUTION) section, that defines the initial equilibration pressures for all grid cells in the model
+The PRVD keyword defines the initial reservoir pressure versus depth and should be used in conjunction with the PBUB, PDEW, RS, RV, SGAS, SOIL and SWAT keywords etc., to fully describe the initial state of the model.  PRVD is an alternative to the PRESSURE keyword in the SOLUTION section, that defines the initial equilibration pressures for all grid cells in the model
 
-The keyword is used by the Enumeration Initialization method to initialize the model, as opposed to the Equilibration Initialization method that utilizes the [EQUIL](#kw-EQUIL) keyword in the [SOLUTION](#kw-SOLUTION) section. This is the non-standard formulation to initialize the model and is seldom employed in the industry.  The standard methodology is for OPM Flow to initialize a model using the parameters on the [EQUIL](#kw-EQUIL) keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
+The keyword is used by the Enumeration Initialization method to initialize the model, as opposed to the Equilibration Initialization method that utilizes the EQUIL keyword in the SOLUTION section. This is the non-standard formulation to initialize the model and is seldom employed in the industry.  The standard methodology is for OPM Flow to initialize a model using the parameters on the EQUIL keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -17,18 +17,21 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [DEPTH](#kw-DEPTH) | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding reservoir oil pressures values, [PRESSURE](#kw-PRESSURE). | None |
+| 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding reservoir oil pressures values, PRESSURE. | None |
 | feet | m | cm |  |
-| 2 | [PRESSURE](#kw-PRESSURE) | A columnar vector of real values that defines the initial equilibration oil pressure values at the corresponding [DEPTH](#kw-DEPTH). | None |
+| 2 | PRESSURE | A columnar vector of real values that defines the initial equilibration oil pressure values at the corresponding DEPTH. | None |
 | psia | barsa | atma |  |
 | Notes: |  |  |  |
-: PRVD Keyword Description {#tbl-10-24}
-See also the [PBUB](#kw-PBUB), [PDEW](#kw-PDEW), [RS](#kw-RS), [RV](#kw-RV), [SGAS](#kw-SGAS), [SOIL](#kw-SOIL) and [SWAT](#kw-SWAT) keywords to fully define the initial state of the model.
+
+*Table 10.24: PRVD Keyword Description*
+
+
+See also the PBUB, PDEW, RS, RV, SGAS, SOIL and SWAT keywords to fully define the initial state of the model.
 
 
 #### Example
 
-Given NTEQUL equals three and NDRXVD is greater than or equal to five on the [EQLDIMS](#kw-EQLDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, then the following example defines the initial oil reservoir pressure versus depth
+Given NTEQUL equals three and NDRXVD is greater than or equal to five on the EQLDIMS keyword in the RUNSPEC section, then the following example defines the initial oil reservoir pressure versus depth
 
 
 ```

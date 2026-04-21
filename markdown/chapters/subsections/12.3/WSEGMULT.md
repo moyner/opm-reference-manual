@@ -1,7 +1,7 @@
-### WSEGMULT – Define Multi-Segment Well Frictional Pressure Loss Multipliers {#kw-WSEGMULT}
+### WSEGMULT – Define Multi-Segment Well Frictional Pressure Loss Multipliers
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 

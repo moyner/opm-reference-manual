@@ -6,14 +6,17 @@ This script creates chapter and appendix .qmd files that use Quarto's
 Re-run this script whenever new keyword files are added.
 """
 
-import os
 import sys
+import json
+import shutil
+import re
 from pathlib import Path
 
 QUARTO_DIR = Path(__file__).resolve().parent
 MARKDOWN_DIR = QUARTO_DIR.parent / "markdown"
 CHAPTERS_DIR = QUARTO_DIR / "chapters"
 APPENDICES_DIR = QUARTO_DIR / "appendices"
+GENERATED_MD_DIR = QUARTO_DIR / ".generated-markdown"
 
 CHAPTER_TITLES = {
     1: "Introduction",
@@ -88,7 +91,7 @@ def has_data_requirements(chapter_num: int) -> bool:
 def generate_chapter_qmd(chapter_num: int) -> str:
     """Generate the content of a chapter .qmd file."""
     # Include paths are relative to the .qmd file location (quarto/chapters/)
-    include_base = "../../markdown/chapters"
+    include_base = "../.generated-markdown/chapters"
 
     lines = [
         f"{{{{< include {include_base}/{chapter_num}.md >}}}}",
@@ -109,9 +112,12 @@ def generate_chapter_qmd(chapter_num: int) -> str:
             lines.append("## Keyword Definitions")
             lines.append("")
             for kw in keywords:
+                keyword = Path(kw).stem
+                lines.append(f"::: {{#kw-{keyword}}}")
                 lines.append(
                     f"{{{{< include {include_base}/subsections/{chapter_num}.3/{kw} >}}}}"
                 )
+                lines.append(":::")
                 lines.append("")
 
     return "\n".join(lines)
@@ -121,7 +127,7 @@ def generate_appendix_qmd(letter: str) -> str:
     """Generate the content of an appendix .qmd file."""
     title = APPENDIX_TITLES[letter]
     # Include paths are relative to the .qmd file location (quarto/appendices/)
-    include_path = f"../../markdown/appendices/{letter}.md"
+    include_path = f"../.generated-markdown/appendices/{letter}.md"
 
     lines = [
         "---",
@@ -141,9 +147,7 @@ title: "OPM Flow Reference Manual"
 subtitle: "2025-04"
 ---
 
-::: {.content-visible when-format="html"}
-![](../markdown/images/Image46_409be8acca21.png){fig-align="center" width="40%"}
-:::
+![](images/Image46_409be8acca21.png){fig-align="center" width="40%"}
 
 ## About This Manual
 
@@ -167,10 +171,19 @@ Use the table of contents or the search bar to navigate to specific keywords or 
 Keywords are organized by their input deck section, matching the structure of OPM Flow
 simulation input files.
 
-::: {.callout-note}
-This manual corresponds to **OPM Flow version 2025-04**.
-:::
+> **Note:** This manual corresponds to **OPM Flow version 2025-04**.
 """
+
+
+def generate_keyword_map() -> dict[str, str]:
+    """Generate keyword-to-chapter-slug map."""
+    keyword_map = {}
+    for num in KEYWORD_CHAPTERS:
+        slug = CHAPTER_SLUGS[num]
+        for kw_file in get_keyword_files(num):
+            keyword = Path(kw_file).stem
+            keyword_map[keyword] = slug
+    return keyword_map
 
 
 def generate_quarto_yml() -> str:
@@ -195,6 +208,10 @@ def generate_quarto_yml() -> str:
     return f"""project:
   type: book
   output-dir: _book
+  pre-render: python3 generate_qmd.py
+from: markdown+fenced_divs
+filters:
+  - keyword_link_filter.lua
 
 book:
   title: "OPM Flow Reference Manual"
@@ -239,19 +256,82 @@ def main():
     CHAPTERS_DIR.mkdir(parents=True, exist_ok=True)
     APPENDICES_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Create symlinks for image directories so Quarto can resolve image paths
-    ch_images_link = CHAPTERS_DIR / "images"
-    if not ch_images_link.exists():
-        ch_images_link.symlink_to(
-            Path("../../markdown/chapters/images"), target_is_directory=True
-        )
-        print("Created symlink: chapters/images -> ../../markdown/chapters/images")
-    app_images_link = APPENDICES_DIR / "images"
-    if not app_images_link.exists():
-        app_images_link.symlink_to(
-            Path("../../markdown/appendices/images"), target_is_directory=True
-        )
-        print("Created symlink: appendices/images -> ../../markdown/appendices/images")
+    # Build a sanitized markdown mirror used by Quarto includes.
+    # This avoids legacy "../../images/..." paths that can break LaTeX input rules.
+    if GENERATED_MD_DIR.exists():
+        shutil.rmtree(GENERATED_MD_DIR)
+    shutil.copytree(MARKDOWN_DIR, GENERATED_MD_DIR)
+
+    absolute_images_dir = (QUARTO_DIR / "images").resolve().as_posix()
+
+    def normalize_image_paths(text: str) -> str:
+        # Convert relative image links to project-local images/ paths.
+        text = re.sub(r"\((?:\.\./)+images/", f"({absolute_images_dir}/", text)
+        text = re.sub(r"src=\"(?:\.\./)+images/", f'src="{absolute_images_dir}/', text)
+        text = re.sub(r"src='(?:\.\./)+images/", f"src='{absolute_images_dir}/", text)
+        return text
+
+    for md_file in GENERATED_MD_DIR.rglob("*.md"):
+        md_file.write_text(normalize_image_paths(md_file.read_text(encoding="utf-8")), encoding="utf-8")
+
+    def copy_tree(src: Path, dst: Path):
+        if not src.is_dir():
+            print(f"Skipping missing {src.relative_to(QUARTO_DIR.parent)}")
+            return
+        if dst.is_symlink() or dst.is_file():
+            dst.unlink()
+        elif dst.is_dir():
+            shutil.rmtree(dst)
+        shutil.copytree(src, dst)
+        print(f"Copied {src.relative_to(QUARTO_DIR.parent)} -> {dst.relative_to(QUARTO_DIR)}")
+
+    def merge_tree(src: Path, dst: Path):
+        if not src.is_dir():
+            print(f"Skipping missing {src.relative_to(QUARTO_DIR.parent)}")
+            return
+        dst.mkdir(parents=True, exist_ok=True)
+        for path in src.rglob("*"):
+            rel = path.relative_to(src)
+            target = dst / rel
+            if path.is_dir():
+                target.mkdir(parents=True, exist_ok=True)
+            else:
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(path, target)
+        src_display = src.relative_to(QUARTO_DIR.parent)
+        dst_display = dst.relative_to(QUARTO_DIR.parent)
+        print(f"Merged {src_display} -> {dst_display}")
+
+    # Copy image directories so builds also work on platforms without symlink support.
+    chapters_images = MARKDOWN_DIR / "chapters" / "images"
+    appendices_images = MARKDOWN_DIR / "appendices" / "images"
+    root_images = MARKDOWN_DIR / "images"
+
+    copy_tree(chapters_images, CHAPTERS_DIR / "images")
+    copy_tree(appendices_images, APPENDICES_DIR / "images")
+
+    # Also populate quarto/images so legacy ../../images paths in included markdown
+    # continue to resolve correctly during render.
+    copy_tree(root_images, QUARTO_DIR / "images")
+    merge_tree(chapters_images, QUARTO_DIR / "images")
+    merge_tree(appendices_images, QUARTO_DIR / "images")
+
+    # Pandoc/LaTeX can resolve image paths like "chapters/../../images/..."
+    # against the project root; keep that location populated as well.
+    merge_tree(chapters_images, QUARTO_DIR.parent / "images")
+    merge_tree(appendices_images, QUARTO_DIR.parent / "images")
+
+    # Quarto may compile TeX from inside _book; keep images mirrored there too.
+    copy_tree(root_images, QUARTO_DIR / "_book" / "images")
+    merge_tree(chapters_images, QUARTO_DIR / "_book" / "images")
+    merge_tree(appendices_images, QUARTO_DIR / "_book" / "images")
+
+    # Generate keyword map for Quarto link rewriting filter
+    keyword_map_path = QUARTO_DIR / "keyword_map.json"
+    keyword_map_path.write_text(
+        json.dumps(generate_keyword_map(), sort_keys=True, indent=2) + "\n"
+    )
+    print(f"Generated {keyword_map_path.relative_to(QUARTO_DIR)}")
 
     # Generate _quarto.yml with explicit chapter/appendix titles
     quarto_yml_path = QUARTO_DIR / "_quarto.yml"

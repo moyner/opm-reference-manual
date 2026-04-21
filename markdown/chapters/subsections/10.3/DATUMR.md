@@ -1,13 +1,13 @@
-### DATUMR – Define Datum Depths for the FIPNUM Regions {#kw-DATUMR}
+### DATUMR – Define Datum Depths for the FIPNUM Regions
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The DATUMR keyword defines the datum depth for each fluid in-place region ([FIPNUM](#kw-FIPNUM)) declared in the model. This allows for all grid block potentials (depth corrected pressures) to be calculated at a common depth within a [FIPNUM](#kw-FIPNUM) region.
+The DATUMR keyword defines the datum depth for each fluid in-place region (FIPNUM) declared in the model. This allows for all grid block potentials (depth corrected pressures) to be calculated at a common depth within a FIPNUM region.
 
 
 | No. | Name | Description | Default |
@@ -16,8 +16,11 @@ The DATUMR keyword defines the datum depth for each fluid in-place region ([FIPN
 | 1 | DATUMR | DATUMR is a vector of positive values that defines the datum depth for each fluid in-place region. | None |
 | feet | m | cm |  |
 | Notes: |  |  |  |
-: DATUMR Keyword Description {#tbl-10-12}
-See also the [DATUM](#kw-DATUM) and [DATUMRX](#kw-DATUMRX) keywords in the [SOLUTION](#kw-SOLUTION) section that also define the datum depth for the model.
+
+*Table 10.12: DATUMR Keyword Description*
+
+
+See also the DATUM and DATUMRX keywords in the SOLUTION section that also define the datum depth for the model.
 
 
 #### Example
@@ -35,4 +38,4 @@ DATUMR
 ```
 
 
-The above example defines the datum depth for three [FIPNUM](#kw-FIPNUM) regions, for when NTFIP has been set equal to three on the [REGDIMS](#kw-REGDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The above example defines the datum depth for three FIPNUM regions, for when NTFIP has been set equal to three on the REGDIMS keyword in the RUNSPEC section.

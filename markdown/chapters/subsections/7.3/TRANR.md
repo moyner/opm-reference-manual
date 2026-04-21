@@ -1,7 +1,7 @@
-### TRANR – Define the Transmissibility in the +R Direction for All the Cells {#kw-TRANR}
+### TRANR – Define the Transmissibility in the +R Direction for All the Cells
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -18,8 +18,11 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | 1 | TRANR | TRANR is an array of real positive numbers assigning the transmissibility in the R direction to each cell in the model. Repeat counts may be used, for example 20*100.0. | None |
 | cP.rb/day/psia | cP.rm3/day/bars | cP.rcc/hr/atm |  |
 | Notes: |  |  |  |
-: TRANR Keyword Description {#tbl-7-7}
-See also the [TRANTHT](#kw-TRANTHT) and TRANYZ keywords to modify the transmissibilities in the other directions.
+
+*Table 7.7: TRANR Keyword Description*
+
+
+See also the TRANTHT and TRANYZ keywords to modify the transmissibilities in the other directions.
 
 
 #### Example
@@ -44,4 +47,4 @@ TRANR
 ENDBOX
 ```
 
-Here the [BOX](#kw-BOX) statement is used to define the input grid for the TRANR keyword, which overwrites the transmissibility previously calculated with transmissibility values of zero, resulting in a no-flow boundary in that part of the grid. The [ENDBOX](#kw-ENDBOX) keyword resets the input box to the full grid.
+Here the BOX statement is used to define the input grid for the TRANR keyword, which overwrites the transmissibility previously calculated with transmissibility values of zero, resulting in a no-flow boundary in that part of the grid. The ENDBOX keyword resets the input box to the full grid.

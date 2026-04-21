@@ -1,151 +1,297 @@
-{{< include ../../markdown/chapters/9.md >}}
+{{< include ../.generated-markdown/chapters/9.md >}}
 
-{{< include ../../markdown/chapters/sections/9/2.md >}}
+{{< include ../.generated-markdown/chapters/sections/9/2.md >}}
 
 ## Keyword Definitions
 
-{{< include ../../markdown/chapters/subsections/9.3/ADD.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/ADDREG.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/BOUNDARY.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/BOX.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/COLUMNS.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/COPY.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/COPYBOX.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/COPYREG.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/DEBUG.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/ECHO.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/END.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/ENDBOX.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/ENDFIN.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/ENDINC.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/ENDNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/ENDSKIP.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/EOSNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/EQLNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/EQUALREG.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/EQUALS.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/EXTRAPMS.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/FILEUNIT.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/FIP.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/FIPNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/FIPOWG.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/FORMFEED.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/GETDATA.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/HA.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/HBNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/HM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/HMPROPS.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/HWSNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/IMBNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/IMBNUMMF.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/IMPORT.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/INCLUDE.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/KRNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/KRNUMMF.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/LSLTWNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/LSNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/LWSLTNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/LWSNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/MESSAGE.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/MESSAGES.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/MISCNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/MULTIPLY.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/MULTIREG.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/NOECHO.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/NOWARN.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/OPERATE.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/OPERATER.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/OPERNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/PENUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/PLMIXNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/PVTNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/PYEND.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/PYINPUT.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/REFINE.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/REGIONS.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/RESIDNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/ROCKNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/RPTREGS.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/SATNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/SKIP.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/SKIP100.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/SKIP300.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/SURFNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/SURFWNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/TNUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/TRKPF.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/WARN.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/WH2NUM.md >}}
-
-{{< include ../../markdown/chapters/subsections/9.3/WH3NUM.md >}}
+::: {#kw-ADD}
+{{< include ../.generated-markdown/chapters/subsections/9.3/ADD.md >}}
+:::
+
+::: {#kw-ADDREG}
+{{< include ../.generated-markdown/chapters/subsections/9.3/ADDREG.md >}}
+:::
+
+::: {#kw-BOUNDARY}
+{{< include ../.generated-markdown/chapters/subsections/9.3/BOUNDARY.md >}}
+:::
+
+::: {#kw-BOX}
+{{< include ../.generated-markdown/chapters/subsections/9.3/BOX.md >}}
+:::
+
+::: {#kw-COLUMNS}
+{{< include ../.generated-markdown/chapters/subsections/9.3/COLUMNS.md >}}
+:::
+
+::: {#kw-COPY}
+{{< include ../.generated-markdown/chapters/subsections/9.3/COPY.md >}}
+:::
+
+::: {#kw-COPYBOX}
+{{< include ../.generated-markdown/chapters/subsections/9.3/COPYBOX.md >}}
+:::
+
+::: {#kw-COPYREG}
+{{< include ../.generated-markdown/chapters/subsections/9.3/COPYREG.md >}}
+:::
+
+::: {#kw-DEBUG}
+{{< include ../.generated-markdown/chapters/subsections/9.3/DEBUG.md >}}
+:::
+
+::: {#kw-ECHO}
+{{< include ../.generated-markdown/chapters/subsections/9.3/ECHO.md >}}
+:::
+
+::: {#kw-END}
+{{< include ../.generated-markdown/chapters/subsections/9.3/END.md >}}
+:::
+
+::: {#kw-ENDBOX}
+{{< include ../.generated-markdown/chapters/subsections/9.3/ENDBOX.md >}}
+:::
+
+::: {#kw-ENDFIN}
+{{< include ../.generated-markdown/chapters/subsections/9.3/ENDFIN.md >}}
+:::
+
+::: {#kw-ENDINC}
+{{< include ../.generated-markdown/chapters/subsections/9.3/ENDINC.md >}}
+:::
+
+::: {#kw-ENDNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/ENDNUM.md >}}
+:::
+
+::: {#kw-ENDSKIP}
+{{< include ../.generated-markdown/chapters/subsections/9.3/ENDSKIP.md >}}
+:::
+
+::: {#kw-EOSNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/EOSNUM.md >}}
+:::
+
+::: {#kw-EQLNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/EQLNUM.md >}}
+:::
+
+::: {#kw-EQUALREG}
+{{< include ../.generated-markdown/chapters/subsections/9.3/EQUALREG.md >}}
+:::
+
+::: {#kw-EQUALS}
+{{< include ../.generated-markdown/chapters/subsections/9.3/EQUALS.md >}}
+:::
+
+::: {#kw-EXTRAPMS}
+{{< include ../.generated-markdown/chapters/subsections/9.3/EXTRAPMS.md >}}
+:::
+
+::: {#kw-FILEUNIT}
+{{< include ../.generated-markdown/chapters/subsections/9.3/FILEUNIT.md >}}
+:::
+
+::: {#kw-FIP}
+{{< include ../.generated-markdown/chapters/subsections/9.3/FIP.md >}}
+:::
+
+::: {#kw-FIPNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/FIPNUM.md >}}
+:::
+
+::: {#kw-FIPOWG}
+{{< include ../.generated-markdown/chapters/subsections/9.3/FIPOWG.md >}}
+:::
+
+::: {#kw-FORMFEED}
+{{< include ../.generated-markdown/chapters/subsections/9.3/FORMFEED.md >}}
+:::
+
+::: {#kw-GETDATA}
+{{< include ../.generated-markdown/chapters/subsections/9.3/GETDATA.md >}}
+:::
+
+::: {#kw-HA}
+{{< include ../.generated-markdown/chapters/subsections/9.3/HA.md >}}
+:::
+
+::: {#kw-HBNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/HBNUM.md >}}
+:::
+
+::: {#kw-HM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/HM.md >}}
+:::
+
+::: {#kw-HMPROPS}
+{{< include ../.generated-markdown/chapters/subsections/9.3/HMPROPS.md >}}
+:::
+
+::: {#kw-HWSNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/HWSNUM.md >}}
+:::
+
+::: {#kw-IMBNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/IMBNUM.md >}}
+:::
+
+::: {#kw-IMBNUMMF}
+{{< include ../.generated-markdown/chapters/subsections/9.3/IMBNUMMF.md >}}
+:::
+
+::: {#kw-IMPORT}
+{{< include ../.generated-markdown/chapters/subsections/9.3/IMPORT.md >}}
+:::
+
+::: {#kw-INCLUDE}
+{{< include ../.generated-markdown/chapters/subsections/9.3/INCLUDE.md >}}
+:::
+
+::: {#kw-KRNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/KRNUM.md >}}
+:::
+
+::: {#kw-KRNUMMF}
+{{< include ../.generated-markdown/chapters/subsections/9.3/KRNUMMF.md >}}
+:::
+
+::: {#kw-LSLTWNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/LSLTWNUM.md >}}
+:::
+
+::: {#kw-LSNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/LSNUM.md >}}
+:::
+
+::: {#kw-LWSLTNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/LWSLTNUM.md >}}
+:::
+
+::: {#kw-LWSNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/LWSNUM.md >}}
+:::
+
+::: {#kw-MESSAGE}
+{{< include ../.generated-markdown/chapters/subsections/9.3/MESSAGE.md >}}
+:::
+
+::: {#kw-MESSAGES}
+{{< include ../.generated-markdown/chapters/subsections/9.3/MESSAGES.md >}}
+:::
+
+::: {#kw-MISCNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/MISCNUM.md >}}
+:::
+
+::: {#kw-MULTIPLY}
+{{< include ../.generated-markdown/chapters/subsections/9.3/MULTIPLY.md >}}
+:::
+
+::: {#kw-MULTIREG}
+{{< include ../.generated-markdown/chapters/subsections/9.3/MULTIREG.md >}}
+:::
+
+::: {#kw-NOECHO}
+{{< include ../.generated-markdown/chapters/subsections/9.3/NOECHO.md >}}
+:::
+
+::: {#kw-NOWARN}
+{{< include ../.generated-markdown/chapters/subsections/9.3/NOWARN.md >}}
+:::
+
+::: {#kw-OPERATE}
+{{< include ../.generated-markdown/chapters/subsections/9.3/OPERATE.md >}}
+:::
+
+::: {#kw-OPERATER}
+{{< include ../.generated-markdown/chapters/subsections/9.3/OPERATER.md >}}
+:::
+
+::: {#kw-OPERNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/OPERNUM.md >}}
+:::
+
+::: {#kw-PENUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/PENUM.md >}}
+:::
+
+::: {#kw-PLMIXNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/PLMIXNUM.md >}}
+:::
+
+::: {#kw-PVTNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/PVTNUM.md >}}
+:::
+
+::: {#kw-PYEND}
+{{< include ../.generated-markdown/chapters/subsections/9.3/PYEND.md >}}
+:::
+
+::: {#kw-PYINPUT}
+{{< include ../.generated-markdown/chapters/subsections/9.3/PYINPUT.md >}}
+:::
+
+::: {#kw-REFINE}
+{{< include ../.generated-markdown/chapters/subsections/9.3/REFINE.md >}}
+:::
+
+::: {#kw-REGIONS}
+{{< include ../.generated-markdown/chapters/subsections/9.3/REGIONS.md >}}
+:::
+
+::: {#kw-RESIDNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/RESIDNUM.md >}}
+:::
+
+::: {#kw-ROCKNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/ROCKNUM.md >}}
+:::
+
+::: {#kw-RPTREGS}
+{{< include ../.generated-markdown/chapters/subsections/9.3/RPTREGS.md >}}
+:::
+
+::: {#kw-SATNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/SATNUM.md >}}
+:::
+
+::: {#kw-SKIP}
+{{< include ../.generated-markdown/chapters/subsections/9.3/SKIP.md >}}
+:::
+
+::: {#kw-SKIP100}
+{{< include ../.generated-markdown/chapters/subsections/9.3/SKIP100.md >}}
+:::
+
+::: {#kw-SKIP300}
+{{< include ../.generated-markdown/chapters/subsections/9.3/SKIP300.md >}}
+:::
+
+::: {#kw-SURFNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/SURFNUM.md >}}
+:::
+
+::: {#kw-SURFWNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/SURFWNUM.md >}}
+:::
+
+::: {#kw-TNUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/TNUM.md >}}
+:::
+
+::: {#kw-TRKPF}
+{{< include ../.generated-markdown/chapters/subsections/9.3/TRKPF.md >}}
+:::
+
+::: {#kw-WARN}
+{{< include ../.generated-markdown/chapters/subsections/9.3/WARN.md >}}
+:::
+
+::: {#kw-WH2NUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/WH2NUM.md >}}
+:::
+
+::: {#kw-WH3NUM}
+{{< include ../.generated-markdown/chapters/subsections/9.3/WH3NUM.md >}}
+:::

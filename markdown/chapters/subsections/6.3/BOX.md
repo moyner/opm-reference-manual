@@ -1,7 +1,7 @@
-### BOX – Define a Range of Grid Blocks to Enter Property Data {#kw-BOX}
+### BOX – Define a Range of Grid Blocks to Enter Property Data
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -9,7 +9,7 @@
 
 BOX defines a range of grid blocks for which subsequent data is assigned for all the cells in the defined BOX. Values are set for cells within the defined box grid using natural reading order, initially along the I-direction then J-direction and finally the K-direction. If fewer values are assigned than exist within the defined block space, then subsequent values are set starting from the next block that was not previously assigned for that property. This is the same behavior as applies to setting grid properties for an unboxed grid.
 
-Note that the BOX grid is reset by the keyword [ENDBOX](#kw-ENDBOX) by resetting the current defined BOX to be the  whole grid. The keyword can be used for any array and for all grid types.
+Note that the BOX grid is reset by the keyword ENDBOX by resetting the current defined BOX to be the  whole grid. The keyword can be used for any array and for all grid types.
 
 
 | No. | Name | Description | Default |
@@ -21,8 +21,11 @@ Note that the BOX grid is reset by the keyword [ENDBOX](#kw-ENDBOX) by resetting
 | 5 | K1 | A positive integer that defines the lower bound of the array in the K-direction to be modified must be greater than or equal to one and less than or equal to K2 and NZ. | 1 |
 | 6 | K2 | A positive integer that defines the upper bound of the array in the K-direction to be modified must be greater than or equal to KI and less than or equal to NZ. | NZ |
 | Notes: |  |  |  |
-: BOX Keyword Description {#tbl-6-11}
-See also the [ADD](#kw-ADD), [COPY](#kw-COPY), [ENDBOX](#kw-ENDBOX), [EQUALS](#kw-EQUALS),  and [MULTIPLY](#kw-MULTIPLY) keywords can also be used to enter data in a subset of the model.
+
+*Table 6.11: BOX Keyword Description*
+
+
+See also the ADD, COPY, ENDBOX, EQUALS,  and MULTIPLY keywords can also be used to enter data in a subset of the model.
 
 
 #### Examples
@@ -54,7 +57,7 @@ ENDBOX
 
 The above example set the BOX grid to be the last layer in the model which means that 100 x 100, that is 10,000 values need to entered for each property.
 
-Alternatively, one could use the [EQUALS](#kw-EQUALS) keyword to accomplish the same thing.
+Alternatively, one could use the EQUALS keyword to accomplish the same thing.
 
 
 ```
@@ -70,5 +73,5 @@ EQUALS
 
 
 ::: {.callout-note}
-It is good practice to always use the [ENDBOX](#kw-ENDBOX) keyword to reset the input back to the full grid when all the modifications for a sub-grid have been completed.
+It is good practice to always use the ENDBOX keyword to reset the input back to the full grid when all the modifications for a sub-grid have been completed.
 :::

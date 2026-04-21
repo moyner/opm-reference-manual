@@ -1,15 +1,15 @@
-### TLMIXPAR – Define the Miscible Todd-Longstaff Mixing Parameters {#kw-TLMIXPAR}
+### TLMIXPAR – Define the Miscible Todd-Longstaff Mixing Parameters
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The TLMIXPAR keyword defines the Todd-Longstaff^[Todd, M. and Longstaff, W. “The Development, Testing and Application of a Numerical Simulator for Predicting Miscible Flood Performance,” paper SPE 3484, Journal of Canadian Petroleum Technology (1972) 24, No. 7, 874-882.] mixing parameters, for when either the miscible or solvent options have been activated by the [MISCIBLE](#kw-MISCIBLE) or [SOLVENT](#kw-SOLVENT) keywords in the [RUNSPEC](#kw-RUNSPEC) section. This keyword must be present in the input deck if the [MISCIBLE](#kw-MISCIBLE) or [SOLVENT](#kw-SOLVENT) keywords have been activated.
+The TLMIXPAR keyword defines the Todd-Longstaff^[Todd, M. and Longstaff, W. “The Development, Testing and Application of a Numerical Simulator for Predicting Miscible Flood Performance,” paper SPE 3484, Journal of Canadian Petroleum Technology (1972) 24, No. 7, 874-882.] mixing parameters, for when either the miscible or solvent options have been activated by the MISCIBLE or SOLVENT keywords in the RUNSPEC section. This keyword must be present in the input deck if the MISCIBLE or SOLVENT keywords have been activated.
 
-Note that If the [POLYMER](#kw-POLYMER) option has been activated by the [POLYMER](#kw-POLYMER) keyword in the [RUNSPEC](#kw-RUNSPEC) section, then this keyword is ignored and the mixing parameters are taken from the [PLMIXPAR](#kw-PLMIXPAR) keyword instead.
+Note that If the POLYMER option has been activated by the POLYMER keyword in the RUNSPEC section, then this keyword is ignored and the mixing parameters are taken from the PLMIXPAR keyword instead.
 
 
 | No. | Name | Description | Default |
@@ -20,7 +20,10 @@ Note that If the [POLYMER](#kw-POLYMER) option has been activated by the [POLYME
 | 2 | TLMDEN | A real positive value that is greater than or equal to zero and less than or equal to one, that defines the density Todd-Longstaff mixing parameter for each miscibility region. | The same value as entered for TLMVIS |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: TLMIXPAR Keyword Description {#tbl-8-192}
+
+*Table 8.192: TLMIXPAR Keyword Description*
+
+
 #### Example
 
 
@@ -38,4 +41,4 @@ TLMIXPAR
 
 ```
 
-The above example defines three Todd-Longstaff mixing parameter data sets, based on the NTMISC variable on the [MISCIBLE](#kw-MISCIBLE) keyword in the [RUNSPEC](#kw-RUNSPEC) section being equal to three.
+The above example defines three Todd-Longstaff mixing parameter data sets, based on the NTMISC variable on the MISCIBLE keyword in the RUNSPEC section being equal to three.

@@ -1,13 +1,13 @@
-### PLYADS – Define Polymer Rock Adsorption Tables {#kw-PLYADS}
+### PLYADS – Define Polymer Rock Adsorption Tables
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The PLYADS keyword defines the rock polymer adsorption tables for when the polymer option has been activated by the [POLYMER](#kw-POLYMER) keyword in the [RUNSPEC](#kw-RUNSPEC) section.  Alternatively, the functions can be entered  via the [PLYADSS](#kw-PLYADSS) keyword in the [PROPS](#kw-PROPS) section for when salt sensitivity is to be considered.
+The PLYADS keyword defines the rock polymer adsorption tables for when the polymer option has been activated by the POLYMER keyword in the RUNSPEC section.  Alternatively, the functions can be entered  via the PLYADSS keyword in the PROPS section for when salt sensitivity is to be considered.
 
 
 | No. | Name | Description | Default |
@@ -18,8 +18,11 @@ The PLYADS keyword defines the rock polymer adsorption tables for when the polym
 | 2 | POLRATIO | A columnar vector of real increasing down the column values that defines the mass of adsorbed polymer per unit mass of rock. The first entry should be zero to define a zero ratio of polymer concentration. | None |
 | lb/lb | kg/kg | gm/gm |  |
 | Notes: |  |  |  |
-: PLYADS Keyword Description {#tbl-8-99}
-See also the [PLYADSS](#kw-PLYADSS) keyword in the [PROPS](#kw-PROPS) section to also define rock polymer adsorption tables when the polymer concentration is a function of salinity.
+
+*Table 8.99: PLYADS Keyword Description*
+
+
+See also the PLYADSS keyword in the PROPS section to also define rock polymer adsorption tables when the polymer concentration is a function of salinity.
 
 
 #### Example
@@ -53,6 +56,6 @@ PLYADS
 
 ```
 
-The above example defines two polymer rock adsorption tables assuming NTSFUN equals two and NSSFUN is greater than or equal to eight on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The above example defines two polymer rock adsorption tables assuming NTSFUN equals two and NSSFUN is greater than or equal to eight on the TABDIMS keyword in the RUNSPEC section.
 
 There is no terminating “/” for this keyword.

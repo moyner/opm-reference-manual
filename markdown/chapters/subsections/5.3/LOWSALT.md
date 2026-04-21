@@ -1,13 +1,13 @@
-### LOWSALT – Activate the Low Salt Brine Phase in the Brine Model {#kw-LOWSALT}
+### LOWSALT – Activate the Low Salt Brine Phase in the Brine Model
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword, LOWSALT, activates the low salt brine phase for the Brine option and also activates the Brine option. See also the [BRINE](#kw-BRINE) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+This keyword, LOWSALT, activates the low salt brine phase for the Brine option and also activates the Brine option. See also the BRINE keyword in the RUNSPEC section.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 

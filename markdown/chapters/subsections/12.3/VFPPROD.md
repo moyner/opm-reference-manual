@@ -1,15 +1,15 @@
-### VFPPROD – Define Production Vertical Flow Performance Tables {#kw-VFPPROD}
+### VFPPROD – Define Production Vertical Flow Performance Tables
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The VFPPROD keyword defines production Vertical Flow Performance (“VFP”) tables that are used to determine the outflow or downstream pressure based on the inlet or upstream pressure and the phases flowing through the system.  For a production well this means the table relates the flowing bottom-hole pressure (“BHP”) to the well’s tubing head pressure (“THP”) based on the oil, gas and water rates (and any artificial lift quantities ("ALQ") like gas lift gas), or phases ratios, flowing up the wellbore.  The table is also used to describe the pressure relationship when the network option is being used.  In this case the table describes the pipeline pressure behavior from the LOWER group (inlet node) to the HIGHER group (outlet node) given the current flowing conditions (the group relationship is defined by the [GRUPTREE](#kw-GRUPTREE) keyword in [SCHEDULE](#kw-SCHEDULE) section).
+The VFPPROD keyword defines production Vertical Flow Performance (“VFP”) tables that are used to determine the outflow or downstream pressure based on the inlet or upstream pressure and the phases flowing through the system.  For a production well this means the table relates the flowing bottom-hole pressure (“BHP”) to the well’s tubing head pressure (“THP”) based on the oil, gas and water rates (and any artificial lift quantities ("ALQ") like gas lift gas), or phases ratios, flowing up the wellbore.  The table is also used to describe the pressure relationship when the network option is being used.  In this case the table describes the pipeline pressure behavior from the LOWER group (inlet node) to the HIGHER group (outlet node) given the current flowing conditions (the group relationship is defined by the GRUPTREE keyword in SCHEDULE section).
 
-Each VFPPROD table must be entered with a separate VFPPROD keyword that consists of seven records, with 1-1 to 1-9 representing record one items (1) to (9), 2-1 representing record two item (1), and so on in the “No.” column in @tbl-12-75. Each record is terminated by a “/”.
+Each VFPPROD table must be entered with a separate VFPPROD keyword that consists of seven records, with 1-1 to 1-9 representing record one items (1) to (9), 2-1 representing record two item (1), and so on in the “No.” column in Table 12.75. Each record is terminated by a “/”.
 
 The seventh record should be repeated to give BHP data as a function of FLO for each combination of THP, WFR, GFR, and ALQ values. If record seven is only entered once then the BHP values will depend only on flow rate (FLO), and will be replicated across all combinations of THP, WFR, GFR, and ALQ values.
 
@@ -17,30 +17,30 @@ The seventh record should be repeated to give BHP data as a function of FLO for 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1-1 | VFPTAB | A positive integer greater than zero and less than or equal to the MXVFPTAB variable as defined on the [VFPPDIMS](#kw-VFPPDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section,  that defines the vertical lift performance table number. | None |
-| 1-2 | VFPREF | A real positive value that defines the reference depth used to generate  this VFPPROD table data set. OPM Flow automatically corrects any difference between VFPREF and the BHPREF on the [WELSPECS](#kw-WELSPECS) and [WPAVEDEP](#kw-WPAVEDEP) keywords in the [SCHEDULE](#kw-SCHEDULE) section, using the current hydrostatic head. | None |
+| 1-1 | VFPTAB | A positive integer greater than zero and less than or equal to the MXVFPTAB variable as defined on the VFPPDIMS keyword in the RUNSPEC section,  that defines the vertical lift performance table number. | None |
+| 1-2 | VFPREF | A real positive value that defines the reference depth used to generate  this VFPPROD table data set. OPM Flow automatically corrects any difference between VFPREF and the BHPREF on the WELSPECS and WPAVEDEP keywords in the SCHEDULE section, using the current hydrostatic head. | None |
 | 1-3 | FLO | A defined character string that defines the flowing phases, and should be set to one of the following character strings: | None |
 | 1-4 | WFR | A defined character string that defines the flowing water fraction and should be set to one of the following character strings: | None |
 | 1-5 | GFR | A defined character string that defines the flowing gas fraction and should be set to one of the following character strings: | None |
 | 1-6 | VFPTYPE | A defined character string that should be defaulted or set equal to THP. | THP |
-| 1-7 | ALQ | A defined character string that defines the artificial lift quantity and should be set to one of the following character strings: The DENO and DENG options are not supported by OPM Flow. The ALQ parameter is just another variable used to interpolate the outflow pressure based on the inlet pressure, together with the phases flowing through the system.  As such,  ALQ can represent any parameter; however, the units should be consistent with that used to set the value. For example,  if pump speed (Hz) is used to set a well’s artificial lift quantity via the [WCONPROD](#kw-WCONPROD)(ALQ-WELL) parameter in the [SCHEDULE](#kw-SCHEDULE) section, then the ALQ-DATA should represent pump speed in Hz. The default value is ' ' or undefined, that covers the case when the ALQ variable is not entered, except for when gas lift is employed in the model. When gas lift is active then the default value for ALQ is set to GRAT provided: In addition, if any of the above is true than ALQ must be set to GRAT. | ' ' |
+| 1-7 | ALQ | A defined character string that defines the artificial lift quantity and should be set to one of the following character strings: The DENO and DENG options are not supported by OPM Flow. The ALQ parameter is just another variable used to interpolate the outflow pressure based on the inlet pressure, together with the phases flowing through the system.  As such,  ALQ can represent any parameter; however, the units should be consistent with that used to set the value. For example,  if pump speed (Hz) is used to set a well’s artificial lift quantity via the WCONPROD(ALQ-WELL) parameter in the SCHEDULE section, then the ALQ-DATA should represent pump speed in Hz. The default value is ' ' or undefined, that covers the case when the ALQ variable is not entered, except for when gas lift is employed in the model. When gas lift is active then the default value for ALQ is set to GRAT provided: In addition, if any of the above is true than ALQ must be set to GRAT. | ' ' |
 | 1-8 | VFPUNITS | A defined character string that specifies the units system for the VFP table. An error message is output if this is not the same as the model units. | Model units |
-| [FIELD](#kw-FIELD) | [METRIC](#kw-METRIC) | [LAB](#kw-LAB) |  |
-| 1-9 | VFPVALUE | A defined character string that defines the type of data in the VFP-DATA vector. This should be set equal to BHP if the vector contains bottom-hole pressure data, or [TEMP](#kw-TEMP) if the vector contains Tubing Head Temperature (THT) data. OPM Flow only supports the (default) BHP option. | BHP |
+| FIELD | METRIC | LAB |  |
+| 1-9 | VFPVALUE | A defined character string that defines the type of data in the VFP-DATA vector. This should be set equal to BHP if the vector contains bottom-hole pressure data, or TEMP if the vector contains Tubing Head Temperature (THT) data. OPM Flow only supports the (default) BHP option. | BHP |
 | 1-10 | / | Record terminated by a “/” | Not Applicable |
-| 2-1 | FLO-DATA | A real positive monotonically increasing vector that defines the numerical values of the flowing phase declared by the FLO variable. The number of entries must greater than two and less than or equal to MXMFLO as defined on the [VFPPDIMS](#kw-VFPPDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | None |
+| 2-1 | FLO-DATA | A real positive monotonically increasing vector that defines the numerical values of the flowing phase declared by the FLO variable. The number of entries must greater than two and less than or equal to MXMFLO as defined on the VFPPDIMS keyword in the RUNSPEC section. | None |
 | Liquid: stb Gas: Mscf | Liquid: sm3 Gas: sm3 | Liquid: scc Gas: scc |  |
 | 2-2 | / | Record terminated by a “/” | Not Applicable |
-| 3-1 | THP-DATA | A real positive monotonically increasing vector that defines the numerical values of the tubing head pressure values. The number of entries must greater than two and less than or equal to MXMTHP as defined on the [VFPPDIMS](#kw-VFPPDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | None |
+| 3-1 | THP-DATA | A real positive monotonically increasing vector that defines the numerical values of the tubing head pressure values. The number of entries must greater than two and less than or equal to MXMTHP as defined on the VFPPDIMS keyword in the RUNSPEC section. | None |
 | psia | barsa | atma |  |
 | 3-2 | / | Record terminated by a “/” | Not Applicable |
-| 4-1 | WFR-DATA | A real positive monotonically increasing vector that defines the numerical values of the flowing water fraction declared by the WFR variable. The number of entries must greater than two and less than or equal to MXMWFR as defined on the [VFPPDIMS](#kw-VFPPDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | None |
+| 4-1 | WFR-DATA | A real positive monotonically increasing vector that defines the numerical values of the flowing water fraction declared by the WFR variable. The number of entries must greater than two and less than or equal to MXMWFR as defined on the VFPPDIMS keyword in the RUNSPEC section. | None |
 | WOR: stb/stb WCT: stb/stb WGR: stb/Mscf | sm3/sm3 sm3/sm3 sm3/sm3 | scc/scc scc/scc scc/scc |  |
 | 4-2 | / | Record terminated by a “/” | Not Applicable |
-| 5-1 | GFR-DATA | A real positive monotonically increasing vector that defines the numerical values of the flowing gas fraction declared by the GFR variable. The number of entries must greater than two and less than or equal to MXMGFR as defined on the [VFPPDIMS](#kw-VFPPDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | None |
+| 5-1 | GFR-DATA | A real positive monotonically increasing vector that defines the numerical values of the flowing gas fraction declared by the GFR variable. The number of entries must greater than two and less than or equal to MXMGFR as defined on the VFPPDIMS keyword in the RUNSPEC section. | None |
 | GOR: Mscf/stb GLR: Mscf/stb OGR: stb/Mscf | sm3/sm3 sm3/sm3 sm3/sm3 | scc/scc scc/scc scc/scc |  |
 | 5-2 | / | Record terminated by a “/” | Not Applicable |
-| 6-1 | ALQ-DATA | A real positive monotonically increasing vector that defines the numerical values of the artificial lift quantity declared by the ALQ variable. The number of entries must greater than two and less than or equal to MXMALQ as defined on the [VFPPDIMS](#kw-VFPPDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | None |
+| 6-1 | ALQ-DATA | A real positive monotonically increasing vector that defines the numerical values of the artificial lift quantity declared by the ALQ variable. The number of entries must greater than two and less than or equal to MXMALQ as defined on the VFPPDIMS keyword in the RUNSPEC section. | None |
 | GRAT: Mscf/d IGLR: Mscf/stb TGLR: Mscf/stb DENO: lb/ft3 DENG: lb/ft3 BEAN: 1/64 inch | sm3/day sm3/sm3 sm3/sm3 kg/m3 kg/m3 mm | scc/hour scc/scc scc/scc gm/cc gm/cc mm |  |
 | 6-2 | / | Record terminated by a “/” | Not Applicable |
 | 7-1 | NTHP | This data record consists of a series of integer values that defines the index of THP, WFR, GFR, ALQ entered via the those records on this keyword. The first index, NTHP, is an integer value that defines the index of THP values entered via the THP-DATA records on this keyword. For example, if THP-DATA is equal to 100, 200, 300 and 350 and NTHP is equal to three then NTHP refers to third entry, that is THP equal to 300. | None |
@@ -51,25 +51,28 @@ The seventh record should be repeated to give BHP data as a function of FLO for 
 | psia | barsa | atma |  |
 | 7-2 | / | Each Index (NTHP, NWFR, NGFR, NALQ. VFP-DATA) data set is terminated by a “/” | Not Applicable |
 | Notes: |  |  |  |
-: VFPPROD Keyword Description {#tbl-12-75}
-The data for this keyword is generated by an external program and is normally included into the input deck using the [INCLUDE](#kw-INCLUDE) keyword as described in section CHAPTER 4: GLOBAL SECTION KEYWORDS, as the data can be quite voluminous.
+
+*Table 12.75: VFPPROD Keyword Description*
+
+
+The data for this keyword is generated by an external program and is normally included into the input deck using the INCLUDE keyword as described in section CHAPTER 4: GLOBAL SECTION KEYWORDS, as the data can be quite voluminous.
 
 Note that for equivalent two phase runs:
 
-- For example oil-water runs with only the [OIL](#kw-OIL) and [WATER](#kw-WATER) keywords in the [RUNSPEC](#kw-RUNSPEC) section, or runs that model dead oil^[“Dead” oil is oil that it contains no dissolved gas or a relatively thick oil or residue that has lost its volatile components.] with a constant solution gas-oil ratio value defined by the [RSCONST](#kw-RSCONST) keyword in the [PROPS](#kw-PROPS) section, then the FLO parameter in @tbl-12-75 must be set to either [OIL](#kw-OIL) or LIQ, WFR to either WCT or WOR, and GFR to GOR.
-- Gas-water models with only the [GAS](#kw-GAS) and [WATER](#kw-WATER) keywords in the [RUNSPEC](#kw-RUNSPEC) section, or models that only have dry gas^[Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.] with a constant condensate-gas ratio defined by the [RVCONST](#kw-RVCONST) keyword in the [PROPS](#kw-PROPS) section, then the FLO parameter in @tbl-12-75 must be set to [GAS](#kw-GAS), WFR to WGR, and GFR to OGR.
+- For example oil-water runs with only the OIL and WATER keywords in the RUNSPEC section, or runs that model dead oil^[“Dead” oil is oil that it contains no dissolved gas or a relatively thick oil or residue that has lost its volatile components.] with a constant solution gas-oil ratio value defined by the RSCONST keyword in the PROPS section, then the FLO parameter in Table 12.75 must be set to either OIL or LIQ, WFR to either WCT or WOR, and GFR to GOR.
+- Gas-water models with only the GAS and WATER keywords in the RUNSPEC section, or models that only have dry gas^[Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.] with a constant condensate-gas ratio defined by the RVCONST keyword in the PROPS section, then the FLO parameter in Table 12.75 must be set to GAS, WFR to WGR, and GFR to OGR.
 
 
 ::: {.callout-note}
-It is possible to have only the [OIL](#kw-OIL) and [WATER](#kw-WATER) keywords in the [RUNSPEC](#kw-RUNSPEC) section and to use gas lift for the wells, without declaring the [GAS](#kw-GAS) phase in the [RUNSPEC](#kw-RUNSPEC) section. In this case,  the FLO parameter in @tbl-12-75 must be set to either [OIL](#kw-OIL) or LIQ, WFR to either WCT or WOR, and GFR to GOR.  In this case the ALQ parameter is optional, but if present must set to GRAT.  If the ALQ and ALQ-DATA parameters are absent then the GFR-DATA will be used based on the flowing GOR plus the stipulated gas lift gas.
+It is possible to have only the OIL and WATER keywords in the RUNSPEC section and to use gas lift for the wells, without declaring the GAS phase in the RUNSPEC section. In this case,  the FLO parameter in Table 12.75 must be set to either OIL or LIQ, WFR to either WCT or WOR, and GFR to GOR.  In this case the ALQ parameter is optional, but if present must set to GRAT.  If the ALQ and ALQ-DATA parameters are absent then the GFR-DATA will be used based on the flowing GOR plus the stipulated gas lift gas.
 :::
 
 
-See also the [WELSPECS](#kw-WELSPECS) keyword to define wells and the [WCONPROD](#kw-WCONPROD) keyword that is used to allocate the VFPPROD tables to specific wells.  Note that one VFPPROD table can be allocated to one or more wells, provided the wells in question have a similar trajectory and similar flow characteristics, for example vertical oil wells producing from the same reservoir, or different reservoirs with similar PVT properties.
+See also the WELSPECS keyword to define wells and the WCONPROD keyword that is used to allocate the VFPPROD tables to specific wells.  Note that one VFPPROD table can be allocated to one or more wells, provided the wells in question have a similar trajectory and similar flow characteristics, for example vertical oil wells producing from the same reservoir, or different reservoirs with similar PVT properties.
 
-The [VFPINJ](#kw-VFPINJ) keyword is used to enter VFP tables for injection wells or to describe the pressure relationship when the network option is being used.  In this case the table describes the pipeline pressure behavior from the HIGHER group (inlet node) to the LOWER group (outlet node) given the current injection conditions.
+The VFPINJ keyword is used to enter VFP tables for injection wells or to describe the pressure relationship when the network option is being used.  In this case the table describes the pipeline pressure behavior from the HIGHER group (inlet node) to the LOWER group (outlet node) given the current injection conditions.
 
-All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
+All the aforementioned keywords are described in the SCHEDULE section.
 
 
 #### Examples

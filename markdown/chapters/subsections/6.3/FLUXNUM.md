@@ -1,20 +1,23 @@
-### FLUXNUM – Define the Flux Regions {#kw-FLUXNUM}
+### FLUXNUM – Define the Flux Regions
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The FLUXNUM keyword defines the flux region numbers for each grid block, as such there must be one entry for each cell in the model.  The array is used with the Flux Boundary option to define the various flux regions; however, the Flux Boundary option has not been implemented in OPM Flow. In addition, the array can be used with the [EQUALREG](#kw-EQUALREG), [ADDREG](#kw-ADDREG), [COPYREG](#kw-COPYREG), [MULTIREG](#kw-MULTIREG), [MULTREGP](#kw-MULTREGP) and [MULTREGT](#kw-MULTREGT) keywords in calculating various grid properties in the [GRID](#kw-GRID) section. This facility has been implemented in OPM Flow.
+The FLUXNUM keyword defines the flux region numbers for each grid block, as such there must be one entry for each cell in the model.  The array is used with the Flux Boundary option to define the various flux regions; however, the Flux Boundary option has not been implemented in OPM Flow. In addition, the array can be used with the EQUALREG, ADDREG, COPYREG, MULTIREG, MULTREGP and MULTREGT keywords in calculating various grid properties in the GRID section. This facility has been implemented in OPM Flow.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | FLUXNUM | FLUXNUM defines an array of positive integers assigning a grid cell to a particular flux region. The maximum number of flux regions is set by the MXNFLX variable on the [REGDIMS](#kw-REGDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | 1 |
+| 1 | FLUXNUM | FLUXNUM defines an array of positive integers assigning a grid cell to a particular flux region. The maximum number of flux regions is set by the MXNFLX variable on the REGDIMS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
-: FLUXNUM Keyword Description {#tbl-6-39}
+
+*Table 6.39: FLUXNUM Keyword Description*
+
+
 #### Examples
 
 The example below sets three FLUXNUM regions for a 4 x 5 x 2 model.
@@ -31,7 +34,7 @@ FLUXNUM
 
 ```
 
-Alternatively the [EQUALS](#kw-EQUALS) keyword could be employed to accomplish the same task, that is:
+Alternatively the EQUALS keyword could be employed to accomplish the same task, that is:
 
 
 ```

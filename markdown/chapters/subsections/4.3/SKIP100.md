@@ -1,24 +1,24 @@
-### SKIP100 – Activate Skipping of Keywords by Black-Oil Simulator {#kw-SKIP100}
+### SKIP100 – Activate Skipping of Keywords by Black-Oil Simulator
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The SKIP100 keyword activates skipping of all keywords and input data by the commercial black-oil simulator until the [ENDSKIP](#kw-ENDSKIP) keyword is encountered. All keywords between the SKIP100 and [ENDSKIP](#kw-ENDSKIP) keywords are ignored by the commercial black-oil simulator. The SKIP100 keyword is ignored by the commercial compositional simulator. Each SKIP100 keyword should be paired with an [ENDSKIP](#kw-ENDSKIP) keyword. See also the [SKIP](#kw-SKIP) and [SKIP300](#kw-SKIP300) keywords.
+The SKIP100 keyword activates skipping of all keywords and input data by the commercial black-oil simulator until the ENDSKIP keyword is encountered. All keywords between the SKIP100 and ENDSKIP keywords are ignored by the commercial black-oil simulator. The SKIP100 keyword is ignored by the commercial compositional simulator. Each SKIP100 keyword should be paired with an ENDSKIP keyword. See also the SKIP and SKIP300 keywords.
 
 There is no data required for this keyword.
 
 By default OPM Flow behaves like the commercial black-oil simulator. However, this behaviour can be changed using the --input-skip-mode command line parameter.
 
-The nesting of pairs of either the [SKIP](#kw-SKIP), SKIP100, or [SKIP300](#kw-SKIP300) keyword and the [ENDSKIP](#kw-ENDSKIP) keyword is not supported by OPM Flow.
+The nesting of pairs of either the SKIP, SKIP100, or SKIP300 keyword and the ENDSKIP keyword is not supported by OPM Flow.
 
 
 #### Example
 
-If the following example is read using the commercial black-oil simulator then the [SKIP300](#kw-SKIP300) keyword will be ignored and the black-oil PVT data will be read, the SKIP100 keyword will cause the compositional PVT data to be ignored, and then the remainder of the input will be read after the next [ENDSKIP](#kw-ENDSKIP) keyword is encountered.
+If the following example is read using the commercial black-oil simulator then the SKIP300 keyword will be ignored and the black-oil PVT data will be read, the SKIP100 keyword will cause the compositional PVT data to be ignored, and then the remainder of the input will be read after the next ENDSKIP keyword is encountered.
 
 
 ```

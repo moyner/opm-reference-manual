@@ -1,13 +1,13 @@
-### COMPTRAJ – Define Well Trajectory Connections to the Grid {#kw-COMPTRAJ}
+### COMPTRAJ – Define Well Trajectory Connections to the Grid
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The COMPTRAJ keyword defines how a well that has been declared as a trajectory well, using the [WELTRAJ](#kw-WELTRAJ) keyword in the [SCHEDULE](#kw-SCHEDULE) section, is connected to the reservoir model by defining or modifying existing well perforation depths. The keyword can only be used for wells defined by the [WELTRAJ](#kw-WELTRAJ) keyword, and [WELTRAJ](#kw-WELTRAJ) defined wells must use the COMPTRAJ keyword to define the connections to the grid, that is one cannot use [COMPDAT](#kw-COMPDAT) for these type of wells.
+The COMPTRAJ keyword defines how a well that has been declared as a trajectory well, using the WELTRAJ keyword in the SCHEDULE section, is connected to the reservoir model by defining or modifying existing well perforation depths. The keyword can only be used for wells defined by the WELTRAJ keyword, and WELTRAJ defined wells must use the COMPTRAJ keyword to define the connections to the grid, that is one cannot use COMPDAT for these type of wells.
 
 
 ::: {.callout-note}
@@ -18,16 +18,16 @@ This is an OPM Flow specific keyword and will therefore cause an error in the co
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
-| 2 | IBRANCH | A positive integer greater than or equal to one and less than or equal to MXBRAN on [WSEGDIMS](#kw-WSEGDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section that defines the branch number of a segment. All segments on the main stem must have IBRANCH set to one and lateral branches should have values between two and MXSEGS on the  [WSEGDIMS](#kw-WSEGDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Only the default value of one is currently supported, that is only the main branch of a multi-segment well is supported,  or a single trajectory for a conventional well. | 1 |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
+| 2 | IBRANCH | A positive integer greater than or equal to one and less than or equal to MXBRAN on WSEGDIMS keyword in the RUNSPEC section that defines the branch number of a segment. All segments on the main stem must have IBRANCH set to one and lateral branches should have values between two and MXSEGS on the  WSEGDIMS keyword in the RUNSPEC section. Only the default value of one is currently supported, that is only the main branch of a multi-segment well is supported,  or a single trajectory for a conventional well. | 1 |
 | 3 ‍ | TOP | A real positive value that defines the depth of the top of the perforation interval, and should be less than the value entered for the BOT parameter (the bottom perforation depth). | None |
 | feet | m | cm |  |
 | 4 ‍ | BOT | A real positive value that defines the depth of the base of the perforation interval, and should be greater than the value entered for the TOP parameter (the top perforation interval). | None |
 | feet | m | cm |  |
 | 5 | REF | REF is a defined character string that defines the reference depth type for TOP and BOT, and should be set to either: Only measured depth is currently supported, that is MD. | MD |
-| 6 | ICOMP | An integer greater than or equal to one and less than or equal to MXCONS as defined on the [WELLDIMS](#kw-WELLDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, that defines the completion number of the currently defined perforation interval (connection interval). If defaulted with 1*, then ICOMP is set equal to one. | 1 |
+| 6 | ICOMP | An integer greater than or equal to one and less than or equal to MXCONS as defined on the WELLDIMS keyword in the RUNSPEC section, that defines the completion number of the currently defined perforation interval (connection interval). If defaulted with 1*, then ICOMP is set equal to one. | 1 |
 | 7 | STATUS | A defined character string of length four that defines the connections’ operational status within the perforation interval, STATUS should be set to one of the following character strings: | OPEN |
-| 8 | [SATNUM](#kw-SATNUM) | An integer greater than or equal to zero and less than NTSFUN as declared on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC), that defines the saturation table number to be used for flow between the reservoir grid block and the well connections. If [SATNUM](#kw-SATNUM) is set to zero or defaulted with 1* then: | 0 |
+| 8 | SATNUM | An integer greater than or equal to zero and less than NTSFUN as declared on the TABDIMS keyword in the RUNSPEC, that defines the saturation table number to be used for flow between the reservoir grid block and the well connections. If SATNUM is set to zero or defaulted with 1* then: | 0 |
 | 9 | CONFACT | A real value greater than or equal to zero that defines the transmissibility connection factor between the well bore and the reservoir grid block. If set to zero or defaulted with 1* then items (10) through (13) are used to calculate CONFACT. | Defined |
 | cP.rb/day/psia 0 | cP.rm3/day/bars 0 | cP.rcc/hr/atm 0 |  |
 | 10 | DW | A real positive value that defines the well bore diameter of the connections for the well. DW is used in calculating a well’s productivity or injectivity index; however the value will be ignored in calculating the connections CONFACT value if CONFAC has been directly entered. | None |
@@ -36,21 +36,24 @@ This is an OPM Flow specific keyword and will therefore cause an error in the co
 | mD.ft | mD.m | mD.cm |  |
 | 12 | SKIN | A real value that defines the connections dimensionless skin factor. SKIN is used in calculating a well’s productivity or injectivity index; however, the value will be ignored in calculating the connections CONFACT value if CONFACT has been directly entered. | 0.0 |
 | dimensionless | dimensionless | dimensionless |  |
-| 13 | DFACT | A real value that defines the non-Darcy D factor coefficient for gas wells. This value should be defaulted with 1* and the non-Darcy D factor coefficient for gas wells defined via the [WDFAC](#kw-WDFAC) keyword in the [SCHEDULE](#kw-SCHEDULE) section. Currently this option is not supported by OPM Flow. | 1* |
+| 13 | DFACT | A real value that defines the non-Darcy D factor coefficient for gas wells. This value should be defaulted with 1* and the non-Darcy D factor coefficient for gas wells defined via the WDFAC keyword in the SCHEDULE section. Currently this option is not supported by OPM Flow. | 1* |
 | day/Mscf | day/m3 | hour/sc |  |
 | Notes: |  |  |  |
-: COMPTRAJ Keyword Description {#tbl-12-18}
-Using the [WELTRAJ](#kw-WELTRAJ) and COMPTRAJ keywords to define wells and how they are connected to grid, offers several advantages compared to the conventional approach based on the (I, J, K) co-ordinates of the grid. The approach allows for the wells to be independent of the grid, which is particularly useful when running ensemble cases, as the well connections are no longer required to be re-calculated for each ensemble case. In addition, quality control of the model is improved by using consistent perforation data in both the static and dynamic models.
+
+*Table 12.18: COMPTRAJ Keyword Description*
+
+
+Using the WELTRAJ and COMPTRAJ keywords to define wells and how they are connected to grid, offers several advantages compared to the conventional approach based on the (I, J, K) co-ordinates of the grid. The approach allows for the wells to be independent of the grid, which is particularly useful when running ensemble cases, as the well connections are no longer required to be re-calculated for each ensemble case. In addition, quality control of the model is improved by using consistent perforation data in both the static and dynamic models.
 
 
 ::: {.callout-note}
-The term well connection is used to describe individual connections from the wellbore to the reservoir grid, as opposed to well completions. A well completion is used to describe a set of connections, for example, a well may consist of several completions with each completion consisting of multiple connections. For wells defined using the [WELTRAJ](#kw-WELTRAJ) and COMPTRAJ keywords, the [WELTRAJ](#kw-WELTRAJ) keyword defines the trajectory of the well within the model, and the COMPTRAJ defines the perforation intervals in the well.  A perforation interval will automatically generate various well connections to the grid, and in addition multiple perforation intervals may be grouped into a completion.
+The term well connection is used to describe individual connections from the wellbore to the reservoir grid, as opposed to well completions. A well completion is used to describe a set of connections, for example, a well may consist of several completions with each completion consisting of multiple connections. For wells defined using the WELTRAJ and COMPTRAJ keywords, the WELTRAJ keyword defines the trajectory of the well within the model, and the COMPTRAJ defines the perforation intervals in the well.  A perforation interval will automatically generate various well connections to the grid, and in addition multiple perforation intervals may be grouped into a completion.
 :::
 
 
 #### Example
 
-The following example defines two trajectory wells oil wells, OP01 and OP02, using the [WELTRAJ](#kw-WELTRAJ) keyword, together with their perforations using the COMPTRAJ keyword.
+The following example defines two trajectory wells oil wells, OP01 and OP02, using the WELTRAJ keyword, together with their perforations using the COMPTRAJ keyword.
 
 
 ```

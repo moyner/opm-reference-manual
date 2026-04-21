@@ -1,7 +1,7 @@
-### GSATPROD – Define Group Satellite Production Rates {#kw-GSATPROD}
+### GSATPROD – Define Group Satellite Production Rates
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -15,7 +15,7 @@ This keyword is used to import additional fluid streams into the model from othe
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | GRPNAME | A character string of up to eight characters in length that defines the satellite group name for which the group production import rates are being defined. The group named [FIELD](#kw-FIELD) is the top most group and should not be used with this keyword. Note that the group hierarchy should be defined by the [GRUPTREE](#kw-GRUPTREE) keyword in the [SCHEDULE](#kw-SCHEDULE) section when there is more than one level of groups, otherwise all the groups will sit directly under the [FIELD](#kw-FIELD) group in the group tree hierarchy. Note that a satellite group cannot have subordinate groups or wells. | None |
+| 1 | GRPNAME | A character string of up to eight characters in length that defines the satellite group name for which the group production import rates are being defined. The group named FIELD is the top most group and should not be used with this keyword. Note that the group hierarchy should be defined by the GRUPTREE keyword in the SCHEDULE section when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. Note that a satellite group cannot have subordinate groups or wells. | None |
 | 2 | ORAT | A real value, greater than or equal to zero, that defines the satellite’s surface oil production rate to be imported into the model. This value may be specified using a User Defined Argument (UDA). | 0.0 |
 | stb/d | sm3/day | scc/hour |  |
 | 3 | WRAT | A real value, greater than or equal to zero, that defines the satellite’s surface water production rate to be imported into the model. This value may be specified using a User Defined Argument (UDA). | 0.0 |
@@ -28,12 +28,15 @@ This keyword is used to import additional fluid streams into the model from othe
 | Mscf/d | sm3/day | scc/hour |  |
 | 7 | CALRATE | A real value greater than or equal to zero that defines the satellite's calorific production rate. This item is not supported by OPM Flow and should be defaulted (1*) or set to zero. | 0.0 |
 | Notes: |  |  |  |
-: GSATPROD Keyword Description {#tbl-12-46}
-See also the [GSATINJE](#kw-GSATINJE) and [GRUPTREE](#kw-GRUPTREE) keywords to define satellite injection rates and the group hierarchy, respectively. For non-satellite groups see the [GCONINJE](#kw-GCONINJE) and [GCONPROD](#kw-GCONPROD) keywords. All the aforementioned keywords are in the [SCHEDULE](#kw-SCHEDULE) section.
+
+*Table 12.46: GSATPROD Keyword Description*
+
+
+See also the GSATINJE and GRUPTREE keywords to define satellite injection rates and the group hierarchy, respectively. For non-satellite groups see the GCONINJE and GCONPROD keywords. All the aforementioned keywords are in the SCHEDULE section.
 
 
 ::: {.callout-note}
-Once a group has been defined to be a satellite group, via the [GSATINJE](#kw-GSATINJE) and GSATPROD keywords, then the equivalent modeled group keywords, [GCONINJE](#kw-GCONINJE) and [GCONPROD](#kw-GCONPROD) in the [SCHEDULE](#kw-SCHEDULE) section, cannot be used to set the operating conditions for satellite groups, only the [GSATINJE](#kw-GSATINJE) and GSATPROD keywords may be used.
+Once a group has been defined to be a satellite group, via the GSATINJE and GSATPROD keywords, then the equivalent modeled group keywords, GCONINJE and GCONPROD in the SCHEDULE section, cannot be used to set the operating conditions for satellite groups, only the GSATINJE and GSATPROD keywords may be used.
 :::
 
 
@@ -101,4 +104,4 @@ FLD-C    20.0   9.00   20E3   0.0    1*                    /
 
 ```
 
-Since the field gas rate is set to 450 MMscf/d and the satellite production is 50 MMscf/d, then FLD-A will produce only 400 MMscf/d and not the stipulated 450 MMscf/d on the [GCONPROD](#kw-GCONPROD) keyword.
+Since the field gas rate is set to 450 MMscf/d and the satellite production is 50 MMscf/d, then FLD-A will produce only 400 MMscf/d and not the stipulated 450 MMscf/d on the GCONPROD keyword.

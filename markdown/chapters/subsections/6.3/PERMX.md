@@ -1,7 +1,7 @@
-### PERMX – Define the Permeability in the X Direction for All the Cells {#kw-PERMX}
+### PERMX – Define the Permeability in the X Direction for All the Cells
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,8 +16,11 @@ PERMX defines the permeability in the X direction for all the cells in the model
 | 1 | PERMX | PERMX is an array of real positive numbers assigning the permeability in the X direction to each cell in the model. Repeat counts may be used, for example 20*100.0. | None |
 | mD | mD | mD |  |
 | Notes: |  |  |  |
-: PERMX Keyword Description {#tbl-6-105}
-See also the [PERMY](#kw-PERMY) and [PERMZ](#kw-PERMZ) keywords to fully define the permeability for the model.
+
+*Table 6.105: PERMX Keyword Description*
+
+
+See also the PERMY and PERMZ keywords to fully define the permeability for the model.
 
 
 #### Example
@@ -32,4 +35,4 @@ PERMX
 
 ```
 
-The above example defines the PERMX to be 500.0, 50.0, and 200.0 for the first, second and third layers in the model for all 300 cells, as defined by the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The above example defines the PERMX to be 500.0, 50.0, and 200.0 for the first, second and third layers in the model for all 300 cells, as defined by the DIMENS keyword in the RUNSPEC section.

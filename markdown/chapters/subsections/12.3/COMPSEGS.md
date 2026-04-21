@@ -1,13 +1,13 @@
-### COMPSEGS – Define Well Connections for Multi-Segment Wells {#kw-COMPSEGS}
+### COMPSEGS – Define Well Connections for Multi-Segment Wells
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword defines how a multi-segment well is connected to the reservoir by allocating each well connection to a well segement. Note that the well must have previously been defined as a multi-segment well using the [WELSEGS](#kw-WELSEGS) keyword in the [SCHEDULE](#kw-SCHEDULE) section and the well connections must have previously been defined via the [COMPDAT](#kw-COMPDAT) keyword in the [SCHEDULE](#kw-SCHEDULE) section.
+This keyword defines how a multi-segment well is connected to the reservoir by allocating each well connection to a well segement. Note that the well must have previously been defined as a multi-segment well using the WELSEGS keyword in the SCHEDULE section and the well connections must have previously been defined via the COMPDAT keyword in the SCHEDULE section.
 
 The COMPSEGS keyword should be repeated for each multi-segment well in the model.
 
@@ -15,19 +15,19 @@ The COMPSEGS keyword should be repeated for each multi-segment well in the model
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1-1 | WELNAME | A character string of up to eight characters in length that defines the well name for which a multi-segment well is being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
+| 1-1 | WELNAME | A character string of up to eight characters in length that defines the well name for which a multi-segment well is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 1-2 | / | Record terminated by a “/” | Not Applicable |
 | 2-1 | I | A positive integer greater than or equal to one and less than or equal to NX that defines the connection location in the I-direction. | None |
 | 2-2 | J | A positive integer greater than or equal to one and less than or equal to NY that defines the connection location in the J-direction. | None |
 | 2-3 | K | A positive integer greater than or equal to one and less than or equal to NZ that defines the connection location in the K-direction. | None |
-| 2-4 | IBRANCH | A positive integer greater than or equal to one and less than or equal to MXBRAN on [WSEGDIMS](#kw-WSEGDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section that defines the branch number of the defined I, J and K connection. | None |
+| 2-4 | IBRANCH | A positive integer greater than or equal to one and less than or equal to MXBRAN on WSEGDIMS keyword in the RUNSPEC section that defines the branch number of the defined I, J and K connection. | None |
 | 2-5 | LENGTH1 | A real positive value that defines the length of the tubing from the tubing reference point (for example Measure Depth Relative to Kelly Bushing, MDRKB) to the start of the connection in the I, J, K cell. | None |
 | feet | m | cm |  |
 | 2-6 | LENGTH2 | A real positive value that defines the length of the tubing from the tubing reference point to the end of the connection in the I, J, K cell. |  |
 | feet | m | cm | None |
 | 2-7 | DIRECT | A one letter character string that defines the orientation of the connections and should be set to either X, Y or Z, or either I, J or K. The direction of connections may also determine the length of the connection. Currently this option is not supported by OPM Flow. | None |
 | 2-8 | IJKEND | A positive integer that is set to one of the following depending on the orientation of the connections (DIRECT): For example,  if DIRECT is equal to Y or J then the IJKEND will be associated with the J-direction. The value may be less than or greater than Y or J but must be between 1 and NY. Currently this option is not supported by OPM Flow. | None |
-| 2-9 | [DEPTH](#kw-DEPTH) | A real positive value that defines the datum depth for this set of connections, normally taken as the mid-point of the perforations associated with this set of connections. Currently this option is not supported by OPM Flow. | None |
+| 2-9 | DEPTH | A real positive value that defines the datum depth for this set of connections, normally taken as the mid-point of the perforations associated with this set of connections. Currently this option is not supported by OPM Flow. | None |
 | feet | m | cm |  |
 | 2-10 | THLEN | A real positive value that defines the length of the well in the connection cells for this set of completions that is used in thermal calculations. If this value is defaulted then the thickness of the cell in the direction of the well orientation (DIRECT) is used. Currently this option is not supported by OPM Flow. | None |
 | feet | m | cm |  |
@@ -35,10 +35,13 @@ The COMPSEGS keyword should be repeated for each multi-segment well in the model
 | feet | m | cm |  |
 | 2-12 | / | Record terminated by a “/” | Not Applicable |
 | Notes: |  |  |  |
-: COMPSEGS Keyword Description {#tbl-12-17}
-The maximum number of wells and completions should be defined via the [WELLDIMS](#kw-WELLDIMS) keyword and the maximum number of multi-segment wells, segments and branches should be declared on the [WSEGDIMS](#kw-WSEGDIMS) keyword, both keywords are in the [RUNSPEC](#kw-RUNSPEC) section.
 
-See also the [WELSPECS](#kw-WELSPECS) keyword to define wells, the [COMPDAT](#kw-COMPDAT) keyword to define the well connections for both standard wells and multi-segment wells, and the [COMPSEGL](#kw-COMPSEGL) keyword to define multi-segment  connections in a [LGR](#kw-LGR). All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
+*Table 12.17: COMPSEGS Keyword Description*
+
+
+The maximum number of wells and completions should be defined via the WELLDIMS keyword and the maximum number of multi-segment wells, segments and branches should be declared on the WSEGDIMS keyword, both keywords are in the RUNSPEC section.
+
+See also the WELSPECS keyword to define wells, the COMPDAT keyword to define the well connections for both standard wells and multi-segment wells, and the COMPSEGL keyword to define multi-segment  connections in a LGR. All the aforementioned keywords are described in the SCHEDULE section.
 
 
 #### Example
@@ -96,4 +99,4 @@ OP02                                                                           /
 /
 ```
 
-Note that the [COMPDAT](#kw-COMPDAT) keyword in the [SCHEDULE](#kw-SCHEDULE) section must also be defined for these two wells.
+Note that the COMPDAT keyword in the SCHEDULE section must also be defined for these two wells.

@@ -1,19 +1,19 @@
-### GASFDECR – Define Field Gas Sales Contract Monthly Reduction {#kw-GASFDECR}
+### GASFDECR – Define Field Gas Sales Contract Monthly Reduction
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword, GASFDECR, defines the field’s monthly reduction in the gas sales contract quantity for when the Gas Field Operations option has been activated by the [GASFIELD](#kw-GASFIELD) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Gas contracts are commonly based on a Daily Contract Quantity (“DCQ”) that determines the gas rate that the field should be produced at, which is normally expressed as a multiple of the DCQ, for example 1.33, and is often referred to as the “swing factor”. Some gas contracts also define a maximum DCQ (“Max DCQ”) and/or a minimum take or pay DCQ (“Min DCQ”), as well as seasonal demand characteristics. For example, gas rates may be set higher in the winter months in order to meet heating demand compared with summer months in colder climates, and the opposite in warmer climates where air conditioning demand is high.
+This keyword, GASFDECR, defines the field’s monthly reduction in the gas sales contract quantity for when the Gas Field Operations option has been activated by the GASFIELD keyword in the RUNSPEC section. Gas contracts are commonly based on a Daily Contract Quantity (“DCQ”) that determines the gas rate that the field should be produced at, which is normally expressed as a multiple of the DCQ, for example 1.33, and is often referred to as the “swing factor”. Some gas contracts also define a maximum DCQ (“Max DCQ”) and/or a minimum take or pay DCQ (“Min DCQ”), as well as seasonal demand characteristics. For example, gas rates may be set higher in the winter months in order to meet heating demand compared with summer months in colder climates, and the opposite in warmer climates where air conditioning demand is high.
 
 Thus, the DCQ must be calculated first over a contract period, where the contract period is commonly   contract years, or in some instances contract quarters.  This is performed by the simulator using the current DCQ and checking to see if the (DCQ x Swing Factor) can be satisfied throughout the current contract period, if not the DCQ is re-calculated so that the (DCQ x Swing Factor) condition is satisfied. Once this condition is met, the second and final pass uses the calculated DCQ in conjunction with the monthly scaling profile data to set the monthly gas rate for the field:
 
 
 $$
-{Q}_{\mathit{month}} = \mathit{DCQ}\times {\mathit{[SWINGFAC](#kw-SWINGFAC)}}_{\mathit{month}}
+{Q}_{\mathit{month}} = \mathit{DCQ}\times {\mathit{SWINGFAC}}_{\mathit{month}}
 $$ {#eq-12-19}
 
 Where:
@@ -29,7 +29,7 @@ Here the GASFDECR keyword allows for a reduction in the calculated final pass mo
 
 
 $$
-{Q}_{\mathit{month}} = (\mathit{DCQ}\times {\mathit{[SWINGFAC](#kw-SWINGFAC)}}_{\mathit{month}}) - {\mathit{GASFDECR}}_{\mathit{month}}
+{Q}_{\mathit{month}} = (\mathit{DCQ}\times {\mathit{SWINGFAC}}_{\mathit{month}}) - {\mathit{GASFDECR}}_{\mathit{month}}
 $$ {#eq-12-20}
 
 Where:

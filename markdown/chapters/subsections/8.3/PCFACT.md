@@ -1,7 +1,7 @@
-### PCFACT – Capillary Pressure Multiplication Factor as a Function of Porosity Change {#kw-PCFACT}
+### PCFACT – Capillary Pressure Multiplication Factor as a Function of Porosity Change
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -11,7 +11,7 @@
 
 
 ::: {.callout-note}
-This is an OPM Flow specific keyword for the simulator’s Salt Precipitation model that is activated by the [BRINE](#kw-BRINE) and [PRECSALT](#kw-PRECSALT) keywords and declaring that vaporized water is present in the run via the [VAPWAT](#kw-VAPWAT) keyword. All three keywords are in the [RUNSPEC](#kw-RUNSPEC) section.
+This is an OPM Flow specific keyword for the simulator’s Salt Precipitation model that is activated by the BRINE and PRECSALT keywords and declaring that vaporized water is present in the run via the VAPWAT keyword. All three keywords are in the RUNSPEC section.
 :::
 
 
@@ -23,7 +23,10 @@ This is an OPM Flow specific keyword for the simulator’s Salt Precipitation mo
 | 2 | PCFAC | A real positive monotonically decreasing columnar vector that defines the capillary pressure (${p}_{c}$) multiplier associated with POROFAC and used to scale a grid block's capillary pressure due to the reduction in pore volume caused by salt precipitation.  Where: $\begin{matrix}\mathit{PCFAC} = m(\frac{ϕ}{{ϕ}_{0}}) \\ \mathit{with} {p}_{c} = m(\frac{ϕ}{{ϕ}_{0}}){p}_{c0}\end{matrix}$ | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: PCFACT Keyword Description {#tbl-8-3-199-1}
+
+*Table 8.3.199.1: PCFACT Keyword Description*
+
+
 The porosity reduction is a function of the volume fraction of salt (${s}_{s}$) precipitated out of the vaporized water phase, that is:
 
 
@@ -31,7 +34,7 @@ $$
 ϕ = (1 - {s}_{s}){ϕ}_{0}
 $$ {#eq-8-3-199-1}
 
-The capillary pressure factor data can be estimated from the permeability and porosity factors defined by the [PERMFACT](#kw-PERMFACT) keyword in the [PROPS](#kw-PROPS) section using the Leverett J-function, for example:
+The capillary pressure factor data can be estimated from the permeability and porosity factors defined by the PERMFACT keyword in the PROPS section using the Leverett J-function, for example:
 
 
 $$
@@ -49,7 +52,7 @@ ${p}_{c0}$, ${p}_{c}$ 	=	the initial and scaled capillary pressure.
 
 #### Example
 
-The example below defines two [PCFACT](#REF_HEADING_KEYWORD_PCFACT_8_3) tables assuming NTSFUN equals two and NSSFUN is greater than or equal to five on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The example below defines two [PCFACT](#REF_HEADING_KEYWORD_PCFACT_8_3) tables assuming NTSFUN equals two and NSSFUN is greater than or equal to five on the TABDIMS keyword in the RUNSPEC section.
 
 
 ```

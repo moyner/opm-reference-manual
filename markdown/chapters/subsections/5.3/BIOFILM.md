@@ -1,7 +1,7 @@
-### BIOFILM – Activate the Biofilm Model {#kw-BIOFILM}
+### BIOFILM – Activate the Biofilm Model
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -11,7 +11,7 @@ The [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM) keyword activates the biofilm model 
 
 
 ::: {.callout-note}
-This is an OPM Flow specific keyword used to investigate biofilm effects in underground applications. The module requires that either the [CO2STORE](#kw-CO2STORE) or [H2STORE](#REF_HEADING_KEYWORD_H2STORE) keywords in the [RUNSPEC](#kw-RUNSPEC) to be active.
+This is an OPM Flow specific keyword used to investigate biofilm effects in underground applications. The module requires that either the CO2STORE or [H2STORE](#REF_HEADING_KEYWORD_H2STORE) keywords in the RUNSPEC to be active.
 :::
 
 

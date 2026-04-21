@@ -1,13 +1,13 @@
-### DATE – Activate the DATE Option for the SUMMARY File {#kw-DATE}
+### DATE – Activate the DATE Option for the SUMMARY File
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword activates the writing out of the date of each time step to the [SUMMARY](#kw-SUMMARY) file. Normally only  the time in days and decimal years are written out to the [SUMMARY](#kw-SUMMARY) file, activating the DATE option also results in the DATE being written out to the [SUMMARY](#kw-SUMMARY) file as well. This option is normally used when the [RUNSUM](#kw-RUNSUM) keyword in the [SUMMARY](#kw-SUMMARY) section has been activated to produce a RSM file.
+This keyword activates the writing out of the date of each time step to the SUMMARY file. Normally only  the time in days and decimal years are written out to the SUMMARY file, activating the DATE option also results in the DATE being written out to the SUMMARY file as well. This option is normally used when the RUNSUM keyword in the SUMMARY section has been activated to produce a RSM file.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 
@@ -37,7 +37,7 @@ The following example shows an example RSM file output when the DATE option has 
 
 ```
 
-And activating the [SUMMARY](#kw-SUMMARY) file DATE option with:
+And activating the SUMMARY file DATE option with:
 
 
 ```

@@ -1,26 +1,26 @@
-### LWPCW – End-Point Scaling of Grid Cell Water Capillary Pressure (Low Salinity and Water Wet) {#kw-LWPCW}
+### LWPCW – End-Point Scaling of Grid Cell Water Capillary Pressure (Low Salinity and Water Wet)
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-LWPCW defines the maximum water-oil pressure values for all the cells in the model via an array, for when the Low Salt and Surfactant Wettability options have been selected.  The [ENDSCALE](#kw-ENDSCALE) keyword in the [RUNSPEC](#kw-RUNSPEC) section should be activated to enable end-point scaling and the use of this keyword. In addition the Low Salt option should be activated by the [LOWSALT](#kw-LOWSALT) keyword in the [RUNSPEC](#kw-RUNSPEC) section and the Surfactant Wettability option activated by the [SURFACT](#kw-SURFACT) or [SURFACTW](#kw-SURFACTW) keywords, which are also in the [RUNSPEC](#kw-RUNSPEC) section. The keyword re-scales the oil-water capillary pressure in the low salinity water wet capillary saturation tables from the cell’s assigned saturation function by the grid block’s LWPCW value.
+LWPCW defines the maximum water-oil pressure values for all the cells in the model via an array, for when the Low Salt and Surfactant Wettability options have been selected.  The ENDSCALE keyword in the RUNSPEC section should be activated to enable end-point scaling and the use of this keyword. In addition the Low Salt option should be activated by the LOWSALT keyword in the RUNSPEC section and the Surfactant Wettability option activated by the SURFACT or SURFACTW keywords, which are also in the RUNSPEC section. The keyword re-scales the oil-water capillary pressure in the low salinity water wet capillary saturation tables from the cell’s assigned saturation function by the grid block’s LWPCW value.
 
 The capillary pressure for a grid block is scaled by:
 
 
 $$
-{P}_{c} = {P}_{{c}_{\mathit{TABLE}}}(\frac{\mathit{[HWPCW](#kw-HWPCW)}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}})
+{P}_{c} = {P}_{{c}_{\mathit{TABLE}}}(\frac{\mathit{HWPCW}}{{P}_{{c}_{\mathit{TABLE}-\mathit{MAX}}}})
 $$ {#eq-8-65}
 
 Where:
 
 ${P}_{c}$	=	the resulting high salinity water wet water capillary pressure for a grid cell.
 
-$\mathit{[HWPCW](#kw-HWPCW)}$	= 	the maximum capillary pressure from the [HWPCW](#kw-HWPCW) array for a given cell.
+$\mathit{HWPCW}$	= 	the maximum capillary pressure from the HWPCW array for a given cell.
 
 ${P}_{{c}_{\mathit{TABLE}}}$	= 	the capillary pressure in the high salinity water wet water capillary pressure
 

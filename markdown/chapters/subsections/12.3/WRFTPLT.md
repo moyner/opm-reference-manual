@@ -1,7 +1,7 @@
-### WRFTPLT – Activate Well RFT and PLT Reporting to the RFT File {#kw-WRFTPLT}
+### WRFTPLT – Activate Well RFT and PLT Reporting to the RFT File
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -9,19 +9,22 @@
 
 This keyword activates reporting of a well’s depth pressure and fluid rates profile to the RFT file for the requested wells at the time the keyword is activated. Data written out by the simulator is used to match the field measured data collected from both the Repeat Formation Tester (“RFT”) tool and various Production Logging Tools (“PLT”).
 
-See the [WRFT](#kw-WRFT) keyword in the [SCHEDULE](#kw-SCHEDULE) section for a brief description of the RFT data set. This keyword also actives the writing out of each well connection’s fluid rates, connection factors and KH data, etc., as the PLT data. The PLT data is used to compare with measured data from wire line production logging tools.
+See the WRFT keyword in the SCHEDULE section for a brief description of the RFT data set. This keyword also actives the writing out of each well connection’s fluid rates, connection factors and KH data, etc., as the PLT data. The PLT data is used to compare with measured data from wire line production logging tools.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A columnar vector of character strings of up to eight characters in length for each item,  that defines the well name for which the RFT data should be written to the RFT file. Note that the WELNAME must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. If the WELNAME is left blank then the data is written out for all wells at the time they are first opened to flow. If the WELNAME is given, then the RFT data for the well at the time step the keyword is invoked is written out. | None |
+| 1 | WELNAME | A columnar vector of character strings of up to eight characters in length for each item,  that defines the well name for which the RFT data should be written to the RFT file. Note that the WELNAME must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. If the WELNAME is left blank then the data is written out for all wells at the time they are first opened to flow. If the WELNAME is given, then the RFT data for the well at the time step the keyword is invoked is written out. | None |
 | 2 | RFT | A defined character string that sets the RFT data set output options and should be set to one of the following character strings. | NO |
 | 3 | PLT | A defined character string that sets the PLT data set output options and should be set to one of the following character strings. | NO |
-| 4 | MULTISEG | A defined character string that sets the output options for multi-segment wells, that is the flow rates and pressures through each well segment, and should be set to one of the following character strings. Note the commercial simulator also uses MULTISEG to control the output of “rivers” for when the RIVERS Model has been enabled via the [RIVRDIMS](#kw-RIVRDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. OPM Flow does not support the RIVERS Model. | NO |
+| 4 | MULTISEG | A defined character string that sets the output options for multi-segment wells, that is the flow rates and pressures through each well segment, and should be set to one of the following character strings. Note the commercial simulator also uses MULTISEG to control the output of “rivers” for when the RIVERS Model has been enabled via the RIVRDIMS keyword in the RUNSPEC section. OPM Flow does not support the RIVERS Model. | NO |
 | Notes: |  |  |  |
-: WRFTPLT Keyword Description {#tbl-12-116}
-See also the [WRFT](#kw-WRFT) keyword in the [SCHEDULE](#kw-SCHEDULE) section that has less flexible reporting options.
+
+*Table 12.116: WRFTPLT Keyword Description*
+
+
+See also the WRFT keyword in the SCHEDULE section that has less flexible reporting options.
 
 
 #### Examples

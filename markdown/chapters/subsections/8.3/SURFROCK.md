@@ -1,13 +1,13 @@
-### SURFROCK – Define Surfactant-Rock Properties {#kw-SURFROCK}
+### SURFROCK – Define Surfactant-Rock Properties
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The SURFROCK keyword defines rock properties for when the Surfactant option has been activated by the SURFACTANT keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The SURFROCK keyword defines rock properties for when the Surfactant option has been activated by the SURFACTANT keyword in the RUNSPEC section.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -17,10 +17,13 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | Field | Metric | Laboratory |  |
 | 1 | ADINDX | A positive integer of 1 or 2 that defines the surfactant desorption option. | Defined |
 | dimensionless 1 | dimensionless 1 | dimensionless 1 |  |
-| 2 | [DENSITY](#kw-DENSITY) | A real value that defines the rock in-situ density, that is at reservoir conditions. | None |
+| 2 | DENSITY | A real value that defines the rock in-situ density, that is at reservoir conditions. | None |
 | lb/rtb | kg/rm3 | gm/rcc |  |
 | Notes: |  |  |  |
-: SURFROCK Keyword Description {#tbl-8-182}
+
+*Table 8.182: SURFROCK Keyword Description*
+
+
 #### Example
 
 
@@ -38,6 +41,6 @@ SURFROCK
 ```
 
 
-The above example defines three surfactant-rock tables, based on the NTSFUN variable on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section being equal to three.
+The above example defines three surfactant-rock tables, based on the NTSFUN variable on the TABDIMS keyword in the RUNSPEC section being equal to three.
 
 There is no terminating “/” for this keyword.

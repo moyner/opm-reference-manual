@@ -1,13 +1,13 @@
-### PARAOPTS – Define Parallel Run Options {#kw-PARAOPTS}
+### PARAOPTS – Define Parallel Run Options
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The PARAOPTS keyword defines various options for parallel runs, for when the Parallel option has been invoked by the [PARALLEL](#kw-PARALLEL) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The PARAOPTS keyword defines various options for parallel runs, for when the Parallel option has been invoked by the PARALLEL keyword in the RUNSPEC section.
 
 This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.
 

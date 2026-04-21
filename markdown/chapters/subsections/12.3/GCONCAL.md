@@ -1,13 +1,13 @@
-### GCONCAL – Group Production Calorific Targets {#kw-GCONCAL}
+### GCONCAL – Group Production Calorific Targets
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The GCONCAL keyword defines calorific production targets and constraints for groups, including the top most group in the group hierarchy known as the [FIELD](#kw-FIELD) group. Wells are allocated to groups when the wells are specified by the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section.  Wells defined to be under group control will have their production rates controlled by the group to which they belong, in addition to any well constraints defined for the wells.
+The GCONCAL keyword defines calorific production targets and constraints for groups, including the top most group in the group hierarchy known as the FIELD group. Wells are allocated to groups when the wells are specified by the WELSPECS keyword in the SCHEDULE section.  Wells defined to be under group control will have their production rates controlled by the group to which they belong, in addition to any well constraints defined for the wells.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -15,15 +15,18 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group’s target calorific value is being defined. The group named [FIELD](#kw-FIELD) is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the [GRUPTREE](#kw-GRUPTREE) keyword when there is more than one level of groups, otherwise all the groups will sit directly under the [FIELD](#kw-FIELD) group in the group tree hierarchy. | None |
+| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group’s target calorific value is being defined. The group named FIELD is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
 | 2 | CALVAL | A real positive value that defines the target surface calorific value of the produced gas. The default value of 1 x 1020 switches off calorific control for the group. | 1.0 x 1020 |
 | Btu/Mscf | kJ/sm3 | J/hour |  |
-| 3 | [ACTION](#kw-ACTION) | A defined character string that defines the action to be taken if the CALVAL is violated. [ACTION](#kw-ACTION) should be set to one of the following character strings: The corrective action takes places at the end of the time step in which the constraint is violated. | None |
+| 3 | ACTION | A defined character string that defines the action to be taken if the CALVAL is violated. ACTION should be set to one of the following character strings: The corrective action takes places at the end of the time step in which the constraint is violated. | None |
 | 4 | FACTOR | A real positive value that is less than or equal to one that defines the amount wells can be scaled back in order to satisfy CALVAL. Note this assumes that there are wells within the group that are producing with higher and lower calorific values, and the simulator is thus able to fine a combination of wells that satisfy the group’s CALVAL target. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: GCONCAL Keyword Description {#tbl-12-27}
-See also the [GRUPTREE](#kw-GRUPTREE) keyword to define the hierarchy of the groups below the [FIELD](#kw-FIELD) level, the  [GCONPROD](#kw-GCONPROD) and [GCONINJE](#kw-GCONINJE) keywords to define a group’s production and injection rate targets and constraints, the [WCONPROD](#kw-WCONPROD) keyword to define a production well’s targets and constraints, and the [WCONINJE](#kw-WCONINJE) keyword to define an injection well’s targets and constraints. All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
+
+*Table 12.27: GCONCAL Keyword Description*
+
+
+See also the GRUPTREE keyword to define the hierarchy of the groups below the FIELD level, the  GCONPROD and GCONINJE keywords to define a group’s production and injection rate targets and constraints, the WCONPROD keyword to define a production well’s targets and constraints, and the WCONINJE keyword to define an injection well’s targets and constraints. All the aforementioned keywords are described in the SCHEDULE section.
 
 
 #### Example

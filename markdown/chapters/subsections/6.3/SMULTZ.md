@@ -1,15 +1,15 @@
-### SMULTZ – Multiply Cell Transmissibility in the +Z Direction (Auto-Refinement) {#kw-SMULTZ}
+### SMULTZ – Multiply Cell Transmissibility in the +Z Direction (Auto-Refinement)
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-SMULTZ multiples the transmissibility between two cell faces in the +Z direction between cells in a host base grid and the connecting auto-refined grid cells, via an array, that is the keyword sets the transmissibility multiplier of block (Ihost, Jhost, Khost) in the host base grid, multiplies the transmissibility all the cells (Iauto, Jauto, Kauto) and (Iauto, Jauto, K+1auto) in the auto-refinement grid. The Auto Refinement option must be enabled to use this keyword via the [AUTOREF](#kw-AUTOREF) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+SMULTZ multiples the transmissibility between two cell faces in the +Z direction between cells in a host base grid and the connecting auto-refined grid cells, via an array, that is the keyword sets the transmissibility multiplier of block (Ihost, Jhost, Khost) in the host base grid, multiplies the transmissibility all the cells (Iauto, Jauto, Kauto) and (Iauto, Jauto, K+1auto) in the auto-refinement grid. The Auto Refinement option must be enabled to use this keyword via the AUTOREF keyword in the RUNSPEC section.
 
-An alternative to defining the complete array is to use the [BOX](#kw-BOX) keyword to define an area of the grid and then use the SMULTZ keyword to set the multipliers just for the area defined by the [BOX](#kw-BOX) keyword (see the example).
+An alternative to defining the complete array is to use the BOX keyword to define an area of the grid and then use the SMULTZ keyword to set the multipliers just for the area defined by the BOX keyword (see the example).
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -18,8 +18,11 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | --- | --- | :------ | --- |
 | 1 | SMULTZ+ | SMULTZ+ is an array of real positive numbers assigning the transmissibility multipliers in the +X direction to each cell face in the model. Repeat counts may be used, for example 20*100.0. | 1.0 |
 | Notes: |  |  |  |
-: SMULTX Keyword Description {#tbl-6-120}
-See also the [MULTX](#kw-MULTX), [MULTY](#kw-MULTY) and [MULTZ](#kw-MULTZ) keywords for scaling transmissible between grid cells.
+
+*Table 6.120: SMULTX Keyword Description*
+
+
+See also the MULTX, MULTY and MULTZ keywords for scaling transmissible between grid cells.
 
 
 #### Example
@@ -45,4 +48,4 @@ ENDBOX
 ```
 
 
-The above example defines a 0.3 scaling multiplier for the 18 cells defined by the preceding [BOX](#kw-BOX) statement. The [ENDBOX](#kw-ENDBOX) keyword resets the input box to the full grid.
+The above example defines a 0.3 scaling multiplier for the 18 cells defined by the preceding BOX statement. The ENDBOX keyword resets the input box to the full grid.

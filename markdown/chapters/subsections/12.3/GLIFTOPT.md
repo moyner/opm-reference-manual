@@ -1,33 +1,36 @@
-### GLIFTOPT – Define Group Gas Optimization Limits {#kw-GLIFTOPT}
+### GLIFTOPT – Define Group Gas Optimization Limits
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The GLIFTOPT keyword defines the maximum amount of gas lift gas available and the maximum amount of gas the group can produce, including the top most group in the group hierarchy known as the [FIELD](#kw-FIELD) group, for when gas lift optimization has been activated via the [LIFTOPT](#kw-LIFTOPT) keyword in the [SCHEDULE](#kw-SCHEDULE) section. Note that the [LIFTOPT](#kw-LIFTOPT) keyword should precede the GLIFTOPT keyword in the [SCHEDULE](#kw-SCHEDULE) section in order to activate the gas lift optimization facility.
+The GLIFTOPT keyword defines the maximum amount of gas lift gas available and the maximum amount of gas the group can produce, including the top most group in the group hierarchy known as the FIELD group, for when gas lift optimization has been activated via the LIFTOPT keyword in the SCHEDULE section. Note that the LIFTOPT keyword should precede the GLIFTOPT keyword in the SCHEDULE section in order to activate the gas lift optimization facility.
 
-Wells are allocated to groups when the wells are specified by the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section.  Wells defined to be under group control will have their production rates controlled by the group to which they belong, in addition to any well constraints defined for the wells, including any well gas lift optimization parameters on the [WLIFTOPT](#kw-WLIFTOPT) keyword.
+Wells are allocated to groups when the wells are specified by the WELSPECS keyword in the SCHEDULE section.  Wells defined to be under group control will have their production rates controlled by the group to which they belong, in addition to any well constraints defined for the wells, including any well gas lift optimization parameters on the WLIFTOPT keyword.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group’s gas lift optimization parameters are being defined. The group named [FIELD](#kw-FIELD) is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the [GRUPTREE](#kw-GRUPTREE) keyword when there is more than one level of groups, otherwise all the groups will sit directly under the [FIELD](#kw-FIELD) group in the group tree hierarchy. | None |
-| 2 | MXLIFT | A real value that defines the total amount of gas lift gas available for this group and any subordinate groups, multiplied by their respective efficiency factors. The units for MXLIFT are the same as that defined by the ALQ parameter on the [VFPPROD](#kw-VFPPROD) keyword in the [SCHEDULE](#kw-SCHEDULE) section. In this case ALQ should be GRAT on the [VFPPROD](#kw-VFPPROD) keyword, as MXLIFT applies to the maximum amount of gas lift gas available. The default value of zero, or a negative value implies that there is no limit applied to the group and its subordinate groups. | 0 |
+| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group’s gas lift optimization parameters are being defined. The group named FIELD is the top most group and should be used to set targets and constraints for the field. Note that the group hierarchy should be defined by the GRUPTREE keyword when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
+| 2 | MXLIFT | A real value that defines the total amount of gas lift gas available for this group and any subordinate groups, multiplied by their respective efficiency factors. The units for MXLIFT are the same as that defined by the ALQ parameter on the VFPPROD keyword in the SCHEDULE section. In this case ALQ should be GRAT on the VFPPROD keyword, as MXLIFT applies to the maximum amount of gas lift gas available. The default value of zero, or a negative value implies that there is no limit applied to the group and its subordinate groups. | 0 |
 | Mscf/d | sm3/day | scc/hour |  |
 | 3 | MXGAS | A real value that defines the total amount of gas the group can process. This is the sum of the gas lift gas plus the produced gas for this group and any subordinate groups, multiplied by their respective efficiency factors. The default value of zero, or a negative value implies that there is no limit applied to the group and its subordinate groups | 0 |
 | Mscf/d | sm3/day | scc/hour |  |
 | Notes: |  |  |  |
-: GLIFTOPT Keyword Description {#tbl-12-40}
-See also the [LIFTOPT](#kw-LIFTOPT) keyword to activate gas lift optimization, the [WLIFTOPT](#kw-WLIFTOPT) keyword to define the wells under gas lift optimization control, the [GRUPTREE](#kw-GRUPTREE) keyword to define the hierarchy of the groups below the [FIELD](#kw-FIELD) level, the [GCONPROD](#kw-GCONPROD) and [GCONINJE](#kw-GCONINJE) keywords to define a group’s production and injection rate targets and constraints. All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
+
+*Table 12.40: GLIFTOPT Keyword Description*
+
+
+See also the LIFTOPT keyword to activate gas lift optimization, the WLIFTOPT keyword to define the wells under gas lift optimization control, the GRUPTREE keyword to define the hierarchy of the groups below the FIELD level, the GCONPROD and GCONINJE keywords to define a group’s production and injection rate targets and constraints. All the aforementioned keywords are described in the SCHEDULE section.
 
 
 #### Example
 
-The following example first switches on gas lift optimization via the [LIFTOPT](#kw-LIFTOPT) keyword and then defines the artificial lift constraints for the field, assuming all the well are on gas lift, using the GLIFTOPT keyword.
+The following example first switches on gas lift optimization via the LIFTOPT keyword and then defines the artificial lift constraints for the field, assuming all the well are on gas lift, using the GLIFTOPT keyword.
 
 
 ```
@@ -49,7 +52,7 @@ FIELD    200E3     1*                                                          /
 ```
 
 
-Here the [LIFTOPT](#kw-LIFTOPT) keyword defines the maximum incremental gas lift gas quantity to be 12.5 x 103 m3, the minimum incremental oil gain per m3 of gas lift gas is set to 5.0 x 10-3 m3, the time step interval is set to zero to perform the gas optimization every time step, and finally the gas lift optimization will be performed [NUPCOL](#kw-NUPCOL) Newton iterations for the time step.
+Here the LIFTOPT keyword defines the maximum incremental gas lift gas quantity to be 12.5 x 103 m3, the minimum incremental oil gain per m3 of gas lift gas is set to 5.0 x 10-3 m3, the time step interval is set to zero to perform the gas optimization every time step, and finally the gas lift optimization will be performed NUPCOL Newton iterations for the time step.
 
 
 The GLIFTOPT sets the maximum amount of gas lift gas for the field to 200,000 m3 and there is no maximum limit for the total maximum amount of gas that the group can process.

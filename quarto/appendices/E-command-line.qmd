@@ -2,4 +2,4 @@
 title: "Command Line Options"
 ---
 
-{{< include ../../markdown/appendices/E.md >}}
+{{< include ../.generated-markdown/appendices/E.md >}}

@@ -1,7 +1,7 @@
-### PRIORITY – Activate and Define Well Prioritization Coefficients {#kw-PRIORITY}
+### PRIORITY – Activate and Define Well Prioritization Coefficients
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -34,7 +34,7 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [TIME](#kw-TIME) | A real positive integer that defines the minimum time interval between executing the well priority calculation. The calculation is performed at the beginning of the time step that exceeds the previous calculation (t0) by a minimum of [TIME](#kw-TIME), that is for when tn ≥  ( t0 + [TIME](#kw-TIME)). Note that the default value of zero means that the calculation is performed at each time step. As a consequence, this may result in some oscillation as well wells are switched on/off at subsequent time steps. | 0 |
+| 1 | TIME | A real positive integer that defines the minimum time interval between executing the well priority calculation. The calculation is performed at the beginning of the time step that exceeds the previous calculation (t0) by a minimum of TIME, that is for when tn ≥  ( t0 + TIME). Note that the default value of zero means that the calculation is performed at each time step. As a consequence, this may result in some oscillation as well wells are switched on/off at subsequent time steps. | 0 |
 | days | days | hours |  |
 | 2 | A1 | A real positive integer greater than or equal to zero that defines a1 priority coefficient in equation (12.31). | 0 |
 | 3 | A2 | A real positive integer greater than or equal to zero that defines a2 priority coefficient in equation (12.31). | 0 |
@@ -45,7 +45,10 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | 8 | B3 | A real positive integer greater than or equal to zero that defines b3 priority coefficient in equation (12.31). | 0 |
 | 9 | B4 | A real positive integer greater than or equal to zero that defines b4 priority coefficient in equation (12.31). | 0 |
 | Notes: |  |  |  |
-: PRIORITY Keyword Description {#tbl-12-59}
+
+*Table 12.59: PRIORITY Keyword Description*
+
+
 #### Example
 
 

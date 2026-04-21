@@ -1088,13 +1088,16 @@ def main():
         rel_parts = md_rel.parts
         if len(rel_parts) >= 2 and rel_parts[0] == "chapters":
             images_dir = markdown_dir / "chapters" / "images"
+            md_base_dir = markdown_dir / "chapters"
         elif len(rel_parts) >= 2 and rel_parts[0] == "appendices":
             images_dir = markdown_dir / "appendices" / "images"
+            md_base_dir = markdown_dir / "appendices"
         else:
             images_dir = out_dir / "images"
+            md_base_dir = out_dir
 
         try:
-            converter = FODTConverter(fodt_path, images_dir, md_dir=out_dir)
+            converter = FODTConverter(fodt_path, images_dir, md_dir=md_base_dir)
             markdown = converter.convert()
 
             out_file.parent.mkdir(parents=True, exist_ok=True)

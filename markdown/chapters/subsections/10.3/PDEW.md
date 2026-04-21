@@ -1,15 +1,15 @@
-### PDEW – Define the Initial Equilibration Dew-Point Pressure for All Grid Blocks {#kw-PDEW}
+### PDEW – Define the Initial Equilibration Dew-Point Pressure for All Grid Blocks
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The PDEW keyword defines the initial equilibration dew-point pressure values for all grid cells in the model and should be used in conjunction with the [PBUB](#kw-PBUB), [PRESSURE](#kw-PRESSURE), [RS](#kw-RS), [RV](#kw-RV), [SGAS](#kw-SGAS), [SOIL](#kw-SOIL) and [SWAT](#kw-SWAT) keywords etc., to fully describe the initial state of the model. The keyword should only be used if vaporized oil been activated in the model via the [VAPOIL](#kw-VAPOIL) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The PDEW keyword defines the initial equilibration dew-point pressure values for all grid cells in the model and should be used in conjunction with the PBUB, PRESSURE, RS, RV, SGAS, SOIL and SWAT keywords etc., to fully describe the initial state of the model. The keyword should only be used if vaporized oil been activated in the model via the VAPOIL keyword in the RUNSPEC section.
 
-This is the non-standard method to initialize the model via enumeration and is seldom employed in the industry. The standard methodology is for OPM Flow to initialize a model using the parameters on the [EQUIL](#kw-EQUIL) keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
+This is the non-standard method to initialize the model via enumeration and is seldom employed in the industry. The standard methodology is for OPM Flow to initialize a model using the parameters on the EQUIL keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -20,8 +20,11 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | 1 | PDEW | PDEW is an array of real positive numbers assigning the initial equilibration dew-point pressure values to each cell in the model. Repeat counts may be used, for example 20*3525.0 | None |
 | psia | barsa | atma |  |
 | Notes: |  |  |  |
-: PDEW Keyword Description {#tbl-10-21}
-See also the [PBUB](#kw-PBUB), [PRESSURE](#kw-PRESSURE), [RS](#kw-RS), [RV](#kw-RV), [SGAS](#kw-SGAS), [SOIL](#kw-SOIL) and [SWAT](#kw-SWAT) keywords to fully define the initial state of the model.
+
+*Table 10.21: PDEW Keyword Description*
+
+
+See also the PBUB, PRESSURE, RS, RV, SGAS, SOIL and SWAT keywords to fully define the initial state of the model.
 
 
 #### Example

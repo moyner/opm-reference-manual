@@ -1,15 +1,15 @@
-### JFUNCR – Activate the Leverett J-function Saturation Table Option {#kw-JFUNCR}
+### JFUNCR – Activate the Leverett J-function Saturation Table Option
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-JFUNCR keyword activates Leverett-J-Function^[Leverett, M. C.; “Capillary Behaviour in Porous Solids”, Trans. AIME (1941) 142, 152-168.] Saturation Table option which is a commonly used technique to normalize capillary pressure base on laboratory measured core plugs porosity and permeability values and the resulting capillary pressure data. This keyword is an extension of the [JFUNC](#kw-JFUNC) keyword in the [GRID](#kw-GRID) section that uses the parameters on the [JFUNC](#kw-JFUNC) keyword combined with a cell’s porosity and permeability to perform the scaling globally.  In comparison, the JFUNCR allows for the J-Function parameters to be declared per saturation table number, resulting in greater flexibility.
+JFUNCR keyword activates Leverett-J-Function^[Leverett, M. C.; “Capillary Behaviour in Porous Solids”, Trans. AIME (1941) 142, 152-168.] Saturation Table option which is a commonly used technique to normalize capillary pressure base on laboratory measured core plugs porosity and permeability values and the resulting capillary pressure data. This keyword is an extension of the JFUNC keyword in the GRID section that uses the parameters on the JFUNC keyword combined with a cell’s porosity and permeability to perform the scaling globally.  In comparison, the JFUNCR allows for the J-Function parameters to be declared per saturation table number, resulting in greater flexibility.
 
-The keyword should only be used if end-point scaling is switched on using the [ENDSCALE](#kw-ENDSCALE) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The keyword should only be used if end-point scaling is switched on using the ENDSCALE keyword in the RUNSPEC section.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -18,15 +18,18 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
 | 1 | JFOPT | A character string that defines which capillary data sets the J-Function option should be applied to, based on the following options: | BOTH |
-| 2 | OWSTEN | A positive real number that defines oil-water surface tension used to de-normalized J-Function data entered in the [PROPS](#kw-PROPS) section. | None |
+| 2 | OWSTEN | A positive real number that defines oil-water surface tension used to de-normalized J-Function data entered in the PROPS section. | None |
 | dynes/cm | dynes/cm | dynes/cm |  |
-| 3 | OGSTEN | A positive real number that defines oil-gas surface tension used to de-normalized J-Function data entered in the [PROPS](#kw-PROPS) section. | None |
+| 3 | OGSTEN | A positive real number that defines oil-gas surface tension used to de-normalized J-Function data entered in the PROPS section. | None |
 | dynes/cm | dynes/cm | dynes/cm |  |
 | 4 | ALPHA | A positive real value that defines an alternative power value for the porosity term in the J-Function equation, that is instead of$\sqrt{\frac{k}{\mathrm{φ}}}$ use $\frac{{k}^{0.5}}{{\mathrm{φ}}^{\mathrm{α}}}$instead in the transformation. | 0.5 |
 | 5 | BETA | A positive real number that defines an alternative power value for the permeability term in the J-Function equation, that is instead of $\sqrt{\frac{k}{\mathrm{φ}}}$use $\frac{{k}^{\mathrm{β}}}{{\mathrm{φ}}^{0.5}}$instead in the transformation. | 0.5 |
 | 6 | PERM | PERM is a character string that sets the permeability array to be used in the transform, based on the following options: | XY |
 | Notes: |  |  |  |
-: JFUNCR Keyword Description {#tbl-6-54}
+
+*Table 6.54: JFUNCR Keyword Description*
+
+
 Just like the relative permeability data capillary pressure data are measured on core plugs with varying quality and perhaps from different reservoirs. It is therefore necessary to determine averaged data, before employing the data in engineering calculations. This is commonly done by using the Leverett J-function^[Leverett, M. C.; “Capillary Behaviour in Porous Solids”, Trans. AIME (1941) 142, 152-168.], which is defined as:
 
 
@@ -91,20 +94,20 @@ k	=	permeability, (m2)
 β	=	permeability value
 
 
-The [JFUNC](#kw-JFUNC) keyword allows the data entered as capillary pressure in the saturation tables, for example, by using the [SGFN](#kw-SGFN) and [SWFN](#kw-SWFN) keywords in the [PROPS](#kw-PROPS) section to be treated as J-functions instead, and to de-normalize these curves for each active cell in the model using the options and values defined with the [JFUNC](#kw-JFUNC) keyword combined with a cells porosity and permeability values.
+The JFUNC keyword allows the data entered as capillary pressure in the saturation tables, for example, by using the SGFN and SWFN keywords in the PROPS section to be treated as J-functions instead, and to de-normalize these curves for each active cell in the model using the options and values defined with the JFUNC keyword combined with a cells porosity and permeability values.
 
 
 ::: {.callout-note}
-If either the [JFUNC](#kw-JFUNC) or JFUNCR keywords are used to activate J-Function scaling then the [ENDSCALE](#kw-ENDSCALE) keyword in the [RUNSPEC](#kw-RUNSPEC) section must also be present in the input deck, in order for the dimensionless J-function values entered on the [SWFN](#kw-SWFN), [SGFN](#kw-SGFN) or the [SWOF](#kw-SWOF), [SGOF](#kw-SGOF), [SLGOF](#kw-SLGOF) keywords to be re-scaled to capillary pressure data. Note if the [ENDSCALE](#kw-ENDSCALE) keyword is absent, then like the commercial simulator,  J-Function scaling is not performed, and the values entered on the [SWFN](#kw-SWFN), [SGFN](#kw-SGFN) or the [SWOF](#kw-SWOF), [SGOF](#kw-SGOF), [SLGOF](#kw-SLGOF) keywords are used as entered.
+If either the JFUNC or JFUNCR keywords are used to activate J-Function scaling then the ENDSCALE keyword in the RUNSPEC section must also be present in the input deck, in order for the dimensionless J-function values entered on the SWFN, SGFN or the SWOF, SGOF, SLGOF keywords to be re-scaled to capillary pressure data. Note if the ENDSCALE keyword is absent, then like the commercial simulator,  J-Function scaling is not performed, and the values entered on the SWFN, SGFN or the SWOF, SGOF, SLGOF keywords are used as entered.
 :::
 
 
-See also the [JFUNC](#kw-JFUNC) keyword in the [GRID](#kw-GRID) section that uses the parameters on the [JFUNC](#kw-JFUNC) keyword combined with a cell’s porosity and permeability to perform the scaling globally.
+See also the JFUNC keyword in the GRID section that uses the parameters on the JFUNC keyword combined with a cell’s porosity and permeability to perform the scaling globally.
 
 
 #### Example
 
-The example below assumes NTSFUN is equal to five on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The example below assumes NTSFUN is equal to five on the TABDIMS keyword in the RUNSPEC section.
 
 
 ```
@@ -121,4 +124,4 @@ JFUNCR
 ```
 
 
-Here the oil-water capillary pressure data entered on the [SWFN](#kw-SWFN) keyword in the [PROPS](#kw-PROPS) section are treated as J-Functions, and that the J-Function should be de-normalized using an oil-water surface density of 22.5 dynes/cm, using the default power values and the average of the [PERMX](#kw-PERMX) and [PERMY](#kw-PERMY) values for each grid block, for all five tables. Note that since all the JFUNCR parameters are the same for all saturation tables then the [JFUNC](#kw-JFUNC) keyword could be used instead in this instance.
+Here the oil-water capillary pressure data entered on the SWFN keyword in the PROPS section are treated as J-Functions, and that the J-Function should be de-normalized using an oil-water surface density of 22.5 dynes/cm, using the default power values and the average of the PERMX and PERMY values for each grid block, for all five tables. Note that since all the JFUNCR parameters are the same for all saturation tables then the JFUNC keyword could be used instead in this instance.

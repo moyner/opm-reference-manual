@@ -1,7 +1,7 @@
-### SWFN – Water Saturation Tables (Format Type 2) {#kw-SWFN}
+### SWFN – Water Saturation Tables (Format Type 2)
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -13,14 +13,17 @@ The SWFN keyword defines the water relative permeability and water-oil capillary
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [SWAT](#kw-SWAT) | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating at one, that defines the water  saturation. | None |
+| 1 | SWAT | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating at one, that defines the water  saturation. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 2 | [KRW](#kw-KRW) | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the water relative permeability with respect to gas saturation. The first value in the column should be zero. | None |
+| 2 | KRW | A columnar vector of real values that are either equal or increasing down the column and that are greater than or equal to zero and less than or equal to one that defines the water relative permeability with respect to gas saturation. The first value in the column should be zero. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 3 | PCWO | A columnar vector of real values that are either equal or increasing down the column that defines the water-oil relative capillary pressure. If the [SWATINIT](#kw-SWATINIT) keyword has been used to initialize the model then columnar vector has to be strictly monotonically increasing. | None |
+| 3 | PCWO | A columnar vector of real values that are either equal or increasing down the column that defines the water-oil relative capillary pressure. If the SWATINIT keyword has been used to initialize the model then columnar vector has to be strictly monotonically increasing. | None |
 | psia | bars | atm |  |
 | Notes: |  |  |  |
-: SWFN Keyword Description {#tbl-8-3-332-1}
+
+*Table 8.3.332.1: SWFN Keyword Description*
+
+
 #### Example
 
 

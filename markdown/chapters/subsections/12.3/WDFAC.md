@@ -1,7 +1,7 @@
-### WDFAC – Define Gas Flow Dependent Skin Factor {#kw-WDFAC}
+### WDFAC – Define Gas Flow Dependent Skin Factor
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -15,12 +15,15 @@ Internally the simulator evaluates a D-factor for each well connection by assumi
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well D-factor is being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well D-factor is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section. | None |
 | 2 | DFACTOR | A real positive value greater than or equal to zero that defines the D-factor for the well. | 0.0 |
 | day/Mscf | day/m3 | hour/scc |  |
 | Notes: |  |  |  |
-: WDFAC Keyword Description {#tbl-12-3-259-1}
-See also the [WDFACCOR](#kw-WDFACCOR) keyword in the [SCHEDULE](#kw-SCHEDULE) section that uses Dake’s^[Dake, L.P. Fundamentals of Reservoir Engineering, Amsterdam, The Netherlands, Elsevier Science BV (1978)  Chapter 8.6, pages 252-257.] correlation to calculate the well D-factor; and the [COMPDAT](#kw-COMPDAT) keyword in the [SCHEDULE](#kw-SCHEDULE) section that can be used to specify the connection D-factors directly.
+
+*Table 12.3.259.1: WDFAC Keyword Description*
+
+
+See also the WDFACCOR keyword in the SCHEDULE section that uses Dake’s^[Dake, L.P. Fundamentals of Reservoir Engineering, Amsterdam, The Netherlands, Elsevier Science BV (1978)  Chapter 8.6, pages 252-257.] correlation to calculate the well D-factor; and the COMPDAT keyword in the SCHEDULE section that can be used to specify the connection D-factors directly.
 
 
 #### Example

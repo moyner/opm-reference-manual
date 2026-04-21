@@ -1,24 +1,27 @@
-### SGCWMIS – Miscible Critical Gas versus Water Saturation Functions {#kw-SGCWMIS}
+### SGCWMIS – Miscible Critical Gas versus Water Saturation Functions
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-SGCWMIS defines the dependency between the miscible critical gas saturation and the water saturation, for when the [MISCIBLE](#kw-MISCIBLE) keyword in the [RUNSPEC](#kw-RUNSPEC) section has been activated. The keyword can only be used with the [MISCIBLE](#kw-MISCIBLE) option and for when the oil, water and gas phases are active in the model.
+SGCWMIS defines the dependency between the miscible critical gas saturation and the water saturation, for when the MISCIBLE keyword in the RUNSPEC section has been activated. The keyword can only be used with the MISCIBLE option and for when the oil, water and gas phases are active in the model.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [SWAT](#kw-SWAT) | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating atone, that defines the water  saturation. | None |
+| 1 | SWAT | A columnar vector of real monotonically increasing down the column   values starting from zero and terminating atone, that defines the water  saturation. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 2 | SGCMIS | A columnar vector of real equal or increasing down the column values that are greater than or equal to zero and less than one,  that define the corresponding miscible gas critical gas saturation for the corresponding water saturation [SWAT](#kw-SWAT). | None |
+| 2 | SGCMIS | A columnar vector of real equal or increasing down the column values that are greater than or equal to zero and less than one,  that define the corresponding miscible gas critical gas saturation for the corresponding water saturation SWAT. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: SGCWMIS Keyword Description {#tbl-8-147}
+
+*Table 8.147: SGCWMIS Keyword Description*
+
+
 #### Example
 
 
@@ -42,4 +45,4 @@ SGCWMIS
 ```
 
 
-The above example defines two miscible critical gas saturation versus water saturation tables assuming NTMISC equals two and NSMISC is greater than or equal to three on the [MISCIBLE](#kw-MISCIBLE) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The above example defines two miscible critical gas saturation versus water saturation tables assuming NTMISC equals two and NSMISC is greater than or equal to three on the MISCIBLE keyword in the RUNSPEC section.

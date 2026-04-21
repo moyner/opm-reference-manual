@@ -1,7 +1,7 @@
-### THCO2MIX – Specify Thermal Mixing Models {#kw-THCO2MIX}
+### THCO2MIX – Specify Thermal Mixing Models
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -9,7 +9,7 @@
 
 The [THCO2MIX](#REF_HEADING_KEYWORD_THCO2MIX_8_3) keyword specifies the thermal mixing models for salt in the water phase, CO2 in the liquid phase and vaporized water in gas phase.
 
-This is an OPM Flow specific keyword that should only be used if the [CO2STORE](#kw-CO2STORE) keyword has been specified in the [RUNSPEC](#kw-RUNSPEC) section.
+This is an OPM Flow specific keyword that should only be used if the CO2STORE keyword has been specified in the RUNSPEC section.
 
 
 | No. | Name | Description | Default |
@@ -18,7 +18,10 @@ This is an OPM Flow specific keyword that should only be used if the [CO2STORE](
 | 2 | LIQMOD | A defined character string that specifies the thermal mixing model for CO2 in the liquid phase, and should be set to one of the following: | DUANSUN |
 | 3 | GASMOD | A defined character string that specifies the thermal mixing model for vaporized water in the gas phase, and should be set to one of the following: | NONE |
 | Notes: |  |  |  |
-: [THCO2MIX](#REF_HEADING_KEYWORD_THCO2MIX_8_3) Keyword Description {#tbl-8-3-343-1}
+
+*Table 8.3.343.1: [THCO2MIX](#REF_HEADING_KEYWORD_THCO2MIX_8_3) Keyword Description*
+
+
 #### Example
 
 The following example specifies the default thermal mixing models for salt in the liquid phase, CO2 in the liquid phase, and vaporized water in the gas phase.

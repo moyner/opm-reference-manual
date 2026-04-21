@@ -1,13 +1,13 @@
-### WWPAVE – Well Block Average Pressure Calculation Parameters for Individual Wells {#kw-WWPAVE}
+### WWPAVE – Well Block Average Pressure Calculation Parameters for Individual Wells
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The WWPAVE keyword defines the method and parameters for calculating a well’s block average pressures for individual wells that can be written to the [SUMMARY](#kw-SUMMARY) and RSM files via the WBP, WBP4, WBP5 and WBP9 vectors in the [SUMMARY](#kw-SUMMARY) section.  The resulting average pressure can be written out to the summary file in order to compared with field observed data. The keyword is similar to the WPAVE keyword in the [SCHEDULE](#kw-SCHEDULE) section that has similar functionality, but is applied to all wells in the model.
+The WWPAVE keyword defines the method and parameters for calculating a well’s block average pressures for individual wells that can be written to the SUMMARY and RSM files via the WBP, WBP4, WBP5 and WBP9 vectors in the SUMMARY section.  The resulting average pressure can be written out to the summary file in order to compared with field observed data. The keyword is similar to the WPAVE keyword in the SCHEDULE section that has similar functionality, but is applied to all wells in the model.
 
 Note that WWPAVE will overwrite any parameters on the WPAVE keyword for a given well, and that WWPAVE can also be overwritten by any subsequent WPAVE keyword.
 
@@ -15,16 +15,19 @@ Note that WWPAVE will overwrite any parameters on the WPAVE keyword for a given 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well average pressure calculation parameters are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well average pressure calculation parameters are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | WPAVE1 | A real dimensionless value that defines the weighting factor between the inner block and the surrounding blocks used in the calculation of the connection factor weighted average pressure. If WPAVE1 is greater than or equal to zero and less than or equal to one, then the average pressure for each well connection is calculated based on this weighting factor. A value of zero indicates only the surrounding blocks should be used in the calculation; and a value of one indicates only the inner blocks should be used. If WPAVE1 is less than zero, then the average pressure for each well connection is weighted based on the pore volumes of the inner and surrounding blocks. | 0.5 |
 | 3 | WPAVE2 | A real dimensionless value greater than or equal to zero and less than or equal to one, that defines the weighting factor between the connection weighted average pressures and the pore volume weighted average pressures. If WPAVE2 is equal to one, then the average pressures are calculate based only using the connection factor calculated pressures. If WPAVE2 is equal to zero, then average pressures are calculate based on only using the pore volumes calculated pressures. | 1.0 |
-| 4 | WPAVE3 | A defined character string that determines how the hydrostatic head calculation is performed in correcting the pressures to the BHP reference depth on the [WELSPECS](#kw-WELSPECS) or [WPAVEDEP](#kw-WPAVEDEP) keywords in the [SCHEDULE](#kw-SCHEDULE) section. WPAVE3 should be set to one of the following character strings: | WELL |
+| 4 | WPAVE3 | A defined character string that determines how the hydrostatic head calculation is performed in correcting the pressures to the BHP reference depth on the WELSPECS or WPAVEDEP keywords in the SCHEDULE section. WPAVE3 should be set to one of the following character strings: | WELL |
 | 5 | WPAVE4 | A defined character string that determines which connections should be used in the calculations, WPAVE4 should be set to one of the following character strings: Only the OPEN option is currently supported by the simulator. | OPEN |
 | Notes: |  |  |  |
-: WWPAVE Keyword Description {#tbl-12-3-356-1}
+
+*Table 12.3.356.1: WWPAVE Keyword Description*
+
+
 The keyword is not applicable and should not be used with radial and spider grid geometries.
 
-See also the [WELSPECS](#kw-WELSPECS) keyword that defines a well and a well’s bottom-hole pressure reference depth, the [WPAVEDEP](#kw-WPAVEDEP) keyword that also defines a well’s bottom-hole pressure reference depth, and the [COMPDAT](#kw-COMPDAT) keyword to define a well’s connections. All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
+See also the WELSPECS keyword that defines a well and a well’s bottom-hole pressure reference depth, the WPAVEDEP keyword that also defines a well’s bottom-hole pressure reference depth, and the COMPDAT keyword to define a well’s connections. All the aforementioned keywords are described in the SCHEDULE section.
 
 
 #### Examples
