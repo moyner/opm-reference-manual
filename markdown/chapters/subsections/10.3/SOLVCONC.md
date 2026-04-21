@@ -1,17 +1,17 @@
-### SOLVCONC – Define the Initial Coal Solvent Concentration for All Grid Blocks {#kw-SOLVCONC}
+### SOLVCONC – Define the Initial Coal Solvent Concentration for All Grid Blocks
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The SOLVCONC keyword defines the initial coal solvent concentration values for all matrix grid cells in the model and should be used in conjunction with the [SCVD](#kw-SCVD) keyword in the [SOLUTION](#kw-SOLUTION) section, to fully describe the initial state of the model. The keyword should only be used if the coal phase has been activated in the model via the [COAL](#kw-COAL) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Note both SOLVCONC and [SCVD](#kw-SCVD) are optional as the simulator will calculate the coal solvent concentration based on the equilibrium concentration and the block pressure.
+The SOLVCONC keyword defines the initial coal solvent concentration values for all matrix grid cells in the model and should be used in conjunction with the SCVD keyword in the SOLUTION section, to fully describe the initial state of the model. The keyword should only be used if the coal phase has been activated in the model via the COAL keyword in the RUNSPEC section. Note both SOLVCONC and SCVD are optional as the simulator will calculate the coal solvent concentration based on the equilibrium concentration and the block pressure.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
-This is the non-standard method to initialize the model via enumeration and is seldom employed in the industry. The standard methodology is for OPM Flow to initialize a model using the parameters on the [EQUIL](#kw-EQUIL) keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
+This is the non-standard method to initialize the model via enumeration and is seldom employed in the industry. The standard methodology is for OPM Flow to initialize a model using the parameters on the EQUIL keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
 
 
 | No. | Name | Description | Default |
@@ -20,8 +20,11 @@ This is the non-standard method to initialize the model via enumeration and is s
 | 1 | SOLVCONC | SOLVCONC is an array of real positive numbers that define the initial equilibration coal solvent concentration values to each matrix cell in the model. Repeat counts may be used, for example 20*75.0. | None |
 | Mscf/ft3 | sm3/m3 | scc/cc |  |
 | Notes: |  |  |  |
-: SOLVCONC Keyword Description {#tbl-10-48}
-See also the [SCVD](#kw-SCVD) keyword in the [SOLUTION](#kw-SOLUTION) section to fully define the initial state of the model.
+
+*Table 10.48: SOLVCONC Keyword Description*
+
+
+See also the SCVD keyword in the SOLUTION section to fully define the initial state of the model.
 
 
 #### Example

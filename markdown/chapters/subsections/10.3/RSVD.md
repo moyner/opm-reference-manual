@@ -1,32 +1,34 @@
-### RSVD – Equilibration Dissolved Gas-Oil Ratio (Rs) versus Depth Tables {#kw-RSVD}
+### RSVD – Equilibration Dissolved Gas-Oil Ratio (Rs) versus Depth Tables
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The RSVD keyword defines the dissolved gas-oil ratio (Rs) versus depth tables for each equilibration region that should be used when there is dissolved gas in the model ([DISGAS](#kw-DISGAS) has been activated in the [RUNSPEC](#kw-RUNSPEC) section) and the EQLOPT1 variable has been set to a positive integer on the [EQUIL](#kw-EQUIL) keyword in the [SOLUTION](#kw-SOLUTION) section.
+The RSVD keyword defines the dissolved gas-oil ratio (Rs) versus depth tables for each equilibration region that should be used when there is dissolved gas in the model (DISGAS has been activated in the RUNSPEC section) and the EQLOPT1 variable has been set to a positive integer on the EQUIL keyword in the SOLUTION section.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [DEPTH](#kw-DEPTH) | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding dissolve gas-oil ratio values, [RS](#kw-RS). | None |
+| 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding dissolve gas-oil ratio values, RS. | None |
 | feet | m | cm |  |
-| 2 | [RS](#kw-RS) | A columnar vector of real values that defines the dissolved gas-oil ratio values at the corresponding [DEPTH](#kw-DEPTH). | None |
+| 2 | RS | A columnar vector of real values that defines the dissolved gas-oil ratio values at the corresponding DEPTH. | None |
 | Mscf/stb | sm3/sm3 | scc/scc |  |
 | Notes: |  |  |  |
-: RSVD Keyword Description {#tbl-10-30}
-Alternatively, the oil bubble-point pressure versus depth tables may be entered using the [PBVD](#kw-PBVD) keyword in the [SOLUTION](#kw-SOLUTION) section instead of this keyword.
 
-See also the [PBVD](#kw-PBVD) and [EQUIL](#kw-EQUIL) keywords in the [SOLUTION](#kw-SOLUTION) section.
+*Table 10.30: RSVD Keyword Description*
+
+Alternatively, the oil bubble-point pressure versus depth tables may be entered using the PBVD keyword in the SOLUTION section instead of this keyword.
+
+See also the PBVD and EQUIL keywords in the SOLUTION section.
 
 
 #### Example
 
-Given NTEQUL equals three and NDRXVD is greater than or equal to two on the [EQLDIMS](#kw-EQLDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, then the following example defines the bubble-point versus depth functions.
+Given NTEQUL equals three and NDRXVD is greater than or equal to two on the EQLDIMS keyword in the RUNSPEC section, then the following example defines the bubble-point versus depth functions.
 
 
 ```

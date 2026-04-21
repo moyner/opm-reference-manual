@@ -1,13 +1,13 @@
-### MULTREGT – Multiply Transmissibilities Between Regions {#kw-MULTREGT}
+### MULTREGT – Multiply Transmissibilities Between Regions
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The MULTREGT keyword multiplies the transmissibility between two regions by a constant. The region number array can be [FLUXNUM](#kw-FLUXNUM), [MULTNUM](#kw-MULTNUM) or [OPERNUM](#kw-OPERNUM) and these arrays must be defined and be available before the MULTREGT keyword is read by the simulator. The constant should be a real number.
+The MULTREGT keyword multiplies the transmissibility between two regions by a constant. The region number array can be FLUXNUM, MULTNUM or OPERNUM and these arrays must be defined and be available before the MULTREGT keyword is read by the simulator. The constant should be a real number.
 
 
 | No. | Name | Description | Default |
@@ -16,12 +16,15 @@ The MULTREGT keyword multiplies the transmissibility between two regions by a co
 | 2 | REGION2 | A positive integer value that defines the to REGION number for which the CONSTANT in (3) should be applied. | None |
 | 3 | CONSTANT | A real positive value to multiply the transmissibility between REGION1 and REGION2. | 1 |
 | 4 | DIR | A character string that defines the direction to apply the transmissibility multiplier between the two regions, should be set to one of the following X, Y, Z, XY, XZ, YZ, or XYZ. | XYZ |
-| 5 | TYPE | A character string that defines the type of connections the transmissibility multiplier should be applied to, should be one of the following: | [ALL](#kw-ALL) |
+| 5 | TYPE | A character string that defines the type of connections the transmissibility multiplier should be applied to, should be one of the following: | ALL |
 | 6 | REGION ARRAY | A single character that defines the REGION ARRAY that is used to specify the regions identified by REGION1 and REGION2.  REGION ARRAY can have the following values: | M |
 | Notes: |  |  |  |
-: MULTREGT Keyword Description {#tbl-6-79}
+
+*Table 6.79: MULTREGT Keyword Description*
+
+
 ::: {.callout-note}
-Note if the MULTREGT keyword is used in the [EDIT](#kw-EDIT) section, OPM Flow will always apply the changes irrespective, of if the [TRANX](#kw-TRANX), [TRANY](#kw-TRANY) and [TRANZ](#kw-TRANZ) transmissibility arrays have been entered or not in the [EDIT](#kw-EDIT) section. This behavior is different to the commercial simulator that only applies the keyword if the transmissibility arrays have been entered in the [EDIT](#kw-EDIT) section.
+Note if the MULTREGT keyword is used in the EDIT section, OPM Flow will always apply the changes irrespective, of if the TRANX, TRANY and TRANZ transmissibility arrays have been entered or not in the EDIT section. This behavior is different to the commercial simulator that only applies the keyword if the transmissibility arrays have been entered in the EDIT section.
 :::
 
 
@@ -40,4 +43,4 @@ MULTREGT
 
 ```
 
-The above example isolates all regions from one another by setting the transmissibility for the [MULTNUM](#kw-MULTNUM) regions to zero in all directions and for all connections types.
+The above example isolates all regions from one another by setting the transmissibility for the MULTNUM regions to zero in all directions and for all connections types.

@@ -1,13 +1,13 @@
-### ENDBOX – Define the End of the BOX Defined Grid {#kw-ENDBOX}
+### ENDBOX – Define the End of the BOX Defined Grid
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword marks the end of a previously defined [BOX](#kw-BOX) sub-grid as defined by a previously entered [BOX](#kw-BOX) keyword. The keyword resets the input grid to be the full grid as defined by the NX, NY, and NZ variables on the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+This keyword marks the end of a previously defined BOX sub-grid as defined by a previously entered BOX keyword. The keyword resets the input grid to be the full grid as defined by the NX, NY, and NZ variables on the DIMENS keyword in the RUNSPEC section.
 
 There is no data required for this keyword.
 
@@ -36,7 +36,7 @@ ENDBOX
 ```
 
 
-The above example defines a subset of the grid and sets the cells [PERMZ](#kw-PERMZ) values to 0.01 for that area. After which the ENDBOX keyword resets the input to be the full grid.
+The above example defines a subset of the grid and sets the cells PERMZ values to 0.01 for that area. After which the ENDBOX keyword resets the input to be the full grid.
 
 
 ::: {.callout-note}

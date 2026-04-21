@@ -1,7 +1,7 @@
-### PARALLEL – Define Parallel Run Configuration {#kw-PARALLEL}
+### PARALLEL – Define Parallel Run Configuration
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -15,7 +15,10 @@ The PARALLEL keyword defines the run to use parallel processing and sets the dom
 | 1 | NPROCS | A positive integer that defines the number of domains or parallel processors to use for this run. | 1 |
 | 2 | RTYPE | A character string set to either SERIAL to run the parallel code in serial mode for testing the code, or DISTRIBUTED to full utilize parallel processing. | DISTRIBUTED |
 | Notes: |  |  |  |
-: PARALLEL Keyword Description {#tbl-5-33}
+
+*Table 5.33: PARALLEL Keyword Description*
+
+
 OPM Flow uses a different numerical scheme which makes this keyword redundant; hence, OPM Flow  ignores this keyword. It is documented here for completeness.
 
 

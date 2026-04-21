@@ -110,9 +110,12 @@ def generate_chapter_qmd(chapter_num: int) -> str:
             lines.append("## Keyword Definitions")
             lines.append("")
             for kw in keywords:
+                keyword = Path(kw).stem
+                lines.append(f"::: {{#kw-{keyword}}}")
                 lines.append(
                     f"{{{{< include {include_base}/subsections/{chapter_num}.3/{kw} >}}}}"
                 )
+                lines.append(":::")
                 lines.append("")
 
     return "\n".join(lines)
@@ -251,19 +254,45 @@ def main():
     CHAPTERS_DIR.mkdir(parents=True, exist_ok=True)
     APPENDICES_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Copy image directories so builds also work on platforms without symlink support.
-    image_dirs = [
-        (MARKDOWN_DIR / "chapters" / "images", CHAPTERS_DIR / "images"),
-        (MARKDOWN_DIR / "appendices" / "images", APPENDICES_DIR / "images"),
-        (MARKDOWN_DIR / "images", QUARTO_DIR / "images"),
-    ]
-    for src, dst in image_dirs:
+    def copy_tree(src: Path, dst: Path):
+        if not src.is_dir():
+            print(f"Skipping missing {src.relative_to(QUARTO_DIR.parent)}")
+            return
         if dst.is_symlink() or dst.is_file():
             dst.unlink()
         elif dst.is_dir():
             shutil.rmtree(dst)
         shutil.copytree(src, dst)
         print(f"Copied {src.relative_to(QUARTO_DIR.parent)} -> {dst.relative_to(QUARTO_DIR)}")
+
+    def merge_tree(src: Path, dst: Path):
+        if not src.is_dir():
+            print(f"Skipping missing {src.relative_to(QUARTO_DIR.parent)}")
+            return
+        dst.mkdir(parents=True, exist_ok=True)
+        for path in src.rglob("*"):
+            rel = path.relative_to(src)
+            target = dst / rel
+            if path.is_dir():
+                target.mkdir(parents=True, exist_ok=True)
+            else:
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(path, target)
+        print(f"Merged {src.relative_to(QUARTO_DIR.parent)} -> {dst.relative_to(QUARTO_DIR)}")
+
+    # Copy image directories so builds also work on platforms without symlink support.
+    chapters_images = MARKDOWN_DIR / "chapters" / "images"
+    appendices_images = MARKDOWN_DIR / "appendices" / "images"
+    root_images = MARKDOWN_DIR / "images"
+
+    copy_tree(chapters_images, CHAPTERS_DIR / "images")
+    copy_tree(appendices_images, APPENDICES_DIR / "images")
+
+    # Also populate quarto/images so legacy ../../images paths in included markdown
+    # continue to resolve correctly during render.
+    copy_tree(root_images, QUARTO_DIR / "images")
+    merge_tree(chapters_images, QUARTO_DIR / "images")
+    merge_tree(appendices_images, QUARTO_DIR / "images")
 
     # Generate keyword map for Quarto link rewriting filter
     keyword_map_path = QUARTO_DIR / "keyword_map.json"

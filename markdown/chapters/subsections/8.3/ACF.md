@@ -1,13 +1,13 @@
-### ACF – Define Acentric Factors {#kw-ACF}
+### ACF – Define Acentric Factors
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [ACF](#REF_HEADING_KEYWORD_ACF) keyword defines the acentric factors for each of the compositional components active in the model and for each equation of state. The keyword should only be used if the compositional mode has been requested using the [COMPS](#kw-COMPS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The [ACF](#REF_HEADING_KEYWORD_ACF) keyword defines the acentric factors for each of the compositional components active in the model and for each equation of state. The keyword should only be used if the compositional mode has been requested using the COMPS keyword in the RUNSPEC section.
 
 OPM Flow does not currently support the general compositional modeling formulation.
 
@@ -18,7 +18,10 @@ This keyword is not supported by OPM Flow but it will be parsed and its data ign
 | --- | --- | :------ | --- |
 | 1 | [ACF](#REF_HEADING_KEYWORD_ACF) | A series of real numbers that define the acentric factors for each of the compositional components active in the model. | None |
 | Notes: |  |  |  |
-: ACF Keyword Description {#tbl-8-3-1-1}
+
+*Table 8.3.1.1: ACF Keyword Description*
+
+
 #### Examples
 
 The following example defines the acentric factors for each component in a single three-component equation of state model.

@@ -1,46 +1,46 @@
-### WELSEGS – Define Multi-Segment Wells and Their Segment Structure {#kw-WELSEGS}
+### WELSEGS – Define Multi-Segment Wells and Their Segment Structure
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The WELSEGS keyword defines a well to be a multi-segment well and defines the well’s segment structure. Note that the well must have previously been defined by the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section and that the WELSEGS keyword should be repeated for each multi-segment well in the model.
+The WELSEGS keyword defines a well to be a multi-segment well and defines the well’s segment structure. Note that the well must have previously been defined by the WELSPECS keyword in the SCHEDULE section and that the WELSEGS keyword should be repeated for each multi-segment well in the model.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1-1 | WELNAME | A character string of up to eight characters in length that defines the well name for which a multi-segment well is being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
+| 1-1 | WELNAME | A character string of up to eight characters in length that defines the well name for which a multi-segment well is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 1-2 | TOPDEP | A real value that defines the depth of the nodal point of the top segment. This is used as the reference depth for reporting the bottom-hole pressure for the multi-segment well. If the keyword is entered multiple times for the same well, due to for example the well configuration changing through time, then it is only necessary to enter this data the first time the keyword is used for a well. | None |
 | feet | m | cm |  |
-| 1-3 | TOPLEN | A real positive value that defines the length of the tubing from the tubing reference point (for example Measured Depth Relative to Kelly Bushing, MDRKB) to the nodal point of the top segment. Tubing pressures between the nodal point of the top segment and the well head are not calculated by the multi-segment well option as these are taken into account by the VFP tables allocated to the well and entered via the [VFPPROD](#kw-VFPPROD) and [VFPINJ](#kw-VFPINJ) keywords in the [SCHEDULE](#kw-SCHEDULE) section. If TOPLEN is set to zero or defaulted then the tubing length is measured from the nodal point of the top segment. | 0 |
+| 1-3 | TOPLEN | A real positive value that defines the length of the tubing from the tubing reference point (for example Measured Depth Relative to Kelly Bushing, MDRKB) to the nodal point of the top segment. Tubing pressures between the nodal point of the top segment and the well head are not calculated by the multi-segment well option as these are taken into account by the VFP tables allocated to the well and entered via the VFPPROD and VFPINJ keywords in the SCHEDULE section. If TOPLEN is set to zero or defaulted then the tubing length is measured from the nodal point of the top segment. | 0 |
 | feet | m | cm |  |
 | 1-4 | WBORVOL | A real positive value that defines the effective wellbore volume for the top segment, that is from the tubing head or wellhead at the surface to the nodal point of the top segment. The default value of 1.0 x 10-5 results in minimal wellbore storage. | 1.0E-5 |
 | ft3 | m3 | cm3 |  |
-| 1-5 | TUBOPT | A defined character string that specifies the type of length and depth data entered for LENGTH and [DEPTH](#kw-DEPTH) on the second record and should be set to one of the following: As there is no default value for TUBOPT one of the above options must be explicitly defined. | None |
+| 1-5 | TUBOPT | A defined character string that specifies the type of length and depth data entered for LENGTH and DEPTH on the second record and should be set to one of the following: As there is no default value for TUBOPT one of the above options must be explicitly defined. | None |
 | 1-6 | PRESOPT | A defined character string that specifies the pressure drop calculation used for each well segment and should be set to one of the following: The default value for PRESOPT of HFA sets the pressure calculation to include the hydrostatic, friction and acceleration terms. | HFA |
 | 1-7 | FLOWOPT | A defined character string that specifies the type of multi-phase calculation used for each well segment and should be set to one of the following: OPM Flow only supports the default value of HO. | HO |
 | 1-8 | TOPX | A real positive value equal to or greater than zero that defines the coordinate in the x-direction of the nodal point of the top segment that is used for display purposes only. Currently this option is not supported by OPM Flow. | None |
 | feet | m | cm |  |
 | 1-9 | TOPY | A real positive value equal to or greater than zero that defines the coordinate in the y-direction of the nodal point of the top segment that is used for display purposes only. Currently this option is not supported by OPM Flow. | None |
 | feet | m | cm |  |
-| 1-10 | XAREATH | A real positive value equal to or greater than zero that defines the cross-sectional area of the pipe wall used in thermal conductivity calculations for when the temperature calculation is activated by the [TEMP](#kw-TEMP) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Currently this option is not supported by OPM Flow. | None |
+| 1-10 | XAREATH | A real positive value equal to or greater than zero that defines the cross-sectional area of the pipe wall used in thermal conductivity calculations for when the temperature calculation is activated by the TEMP keyword in the RUNSPEC section. Currently this option is not supported by OPM Flow. | None |
 | ft2 | m2 | cm2 |  |
-| 1-11 | VHEATCAP | A real positive value equal to or greater than zero that defines the volumetric heat capacity of the pipe wall used in thermal conductivity calculations for when the temperature calculation is activated by the [TEMP](#kw-TEMP) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Currently this option is not supported by OPM Flow. | None |
+| 1-11 | VHEATCAP | A real positive value equal to or greater than zero that defines the volumetric heat capacity of the pipe wall used in thermal conductivity calculations for when the temperature calculation is activated by the TEMP keyword in the RUNSPEC section. Currently this option is not supported by OPM Flow. | None |
 | Btu/ft/day/°R | kJ/m/day/K | J/cm/hr/K |  |
-| 1-12 | THCON | A real positive value equal to or greater than zero that defines the thermal conductivity of the pipe wall used in thermal conductivity calculations for when the temperature calculation is activated by the [TEMP](#kw-TEMP) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Currently this option is not supported by OPM Flow. | None |
+| 1-12 | THCON | A real positive value equal to or greater than zero that defines the thermal conductivity of the pipe wall used in thermal conductivity calculations for when the temperature calculation is activated by the TEMP keyword in the RUNSPEC section. Currently this option is not supported by OPM Flow. | None |
 | Btu/ft/day/°R | kJ/m/day/K | J/cm/hr/K |  |
 | 1-13 | / | Record terminated by a “/” | Not Applicable |
-| 2-1 | ISEG1 | A positive integer greater than or equal to two and less than or equal to MXSEGS on [WSEGDIMS](#kw-WSEGDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section that defines the start of the segment range. | None |
-| 2-2 | ISEG2 | A positive integer greater than or equal to ISEG1 on this record and less than or equal to MXSEGS on the [WSEGDIMS](#kw-WSEGDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section that defines the end of the segment range. | None |
-| 2-3 | IBRANCH | A positive integer greater than or equal to one and less than or equal to MXBRAN on [WSEGDIMS](#kw-WSEGDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section that defines the branch number of a segment. All segments on the main stem must have IBRANCH set to one, and those on lateral branches should have IBRANCH set to between two and MXBRAN. | None |
-| 2-4 | ISEG3 | A positive integer greater than or equal to one and less than or equal to  MXSEGS on the [WSEGDIMS](#kw-WSEGDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section that defines the outlet segment for the segment at the start of the segment range (ISEG1). | None |
+| 2-1 | ISEG1 | A positive integer greater than or equal to two and less than or equal to MXSEGS on WSEGDIMS keyword in the RUNSPEC section that defines the start of the segment range. | None |
+| 2-2 | ISEG2 | A positive integer greater than or equal to ISEG1 on this record and less than or equal to MXSEGS on the WSEGDIMS keyword in the RUNSPEC section that defines the end of the segment range. | None |
+| 2-3 | IBRANCH | A positive integer greater than or equal to one and less than or equal to MXBRAN on WSEGDIMS keyword in the RUNSPEC section that defines the branch number of a segment. All segments on the main stem must have IBRANCH set to one, and those on lateral branches should have IBRANCH set to between two and MXBRAN. | None |
+| 2-4 | ISEG3 | A positive integer greater than or equal to one and less than or equal to  MXSEGS on the WSEGDIMS keyword in the RUNSPEC section that defines the outlet segment for the segment at the start of the segment range (ISEG1). | None |
 | 2-5 | LENGTH | A real positive value that: | None |
 | feet | m | cm |  |
-| 2-6 | [DEPTH](#kw-DEPTH) | A real positive value that: |  |
+| 2-6 | DEPTH | A real positive value that: |  |
 | feet | m | cm | None |
 | 2-7 | ID | A real positive value that defines the tubing internal diameter of each segment in the segment range. | None |
 | feet | m | cm |  |
@@ -54,23 +54,26 @@ The WELSEGS keyword defines a well to be a multi-segment well and defines the we
 | feet | m | cm |  |
 | 2-12 | YCORDS | A real positive value that: Currently this option is not supported by OPM Flow. | None |
 | feet | m | cm |  |
-| 2-13 | XAREAS | A real positive value equal to or greater than zero that defines the cross-sectional area of the pipe wall for this segment, that is used in thermal conductivity calculations for when the temperature calculation is activated by the [TEMP](#kw-TEMP) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Currently this option is not supported by OPM Flow. | None |
+| 2-13 | XAREAS | A real positive value equal to or greater than zero that defines the cross-sectional area of the pipe wall for this segment, that is used in thermal conductivity calculations for when the temperature calculation is activated by the TEMP keyword in the RUNSPEC section. Currently this option is not supported by OPM Flow. | None |
 | ft2 | m2 | cm2 |  |
-| 2-14 | VHEATSEG | A real positive value equal to or greater than zero that defines the volumetric heat capacity of the pipe wall for this segment, that is used in thermal conductivity calculations for when the temperature calculation is activated by the [TEMP](#kw-TEMP) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Currently this option is not supported by OPM Flow. | None |
+| 2-14 | VHEATSEG | A real positive value equal to or greater than zero that defines the volumetric heat capacity of the pipe wall for this segment, that is used in thermal conductivity calculations for when the temperature calculation is activated by the TEMP keyword in the RUNSPEC section. Currently this option is not supported by OPM Flow. | None |
 | Btu/ft/day/°R | kJ/m/day/K | J/cm/hr/K |  |
-| 2-15 | THCSEG | A real positive value equal to or greater than zero that defines the thermal conductivity of the pipe wall for this segment, that is used in thermal conductivity calculations for when the temperature calculation is activated by the [TEMP](#kw-TEMP) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Currently this option is not supported by OPM Flow. | None |
+| 2-15 | THCSEG | A real positive value equal to or greater than zero that defines the thermal conductivity of the pipe wall for this segment, that is used in thermal conductivity calculations for when the temperature calculation is activated by the TEMP keyword in the RUNSPEC section. Currently this option is not supported by OPM Flow. | None |
 | Btu/ft/day/°R | kJ/m/day/K | J/cm/hr/K |  |
 | 2-16 | / | Record terminated by a “/” | Not Applicable |
 | Notes: |  |  |  |
-: WELSEGS Keyword Description {#tbl-12-90}
-The maximum number of wells should be defined via the [WELLDIMS](#kw-WELLDIMS) keyword and the maximum number of multi-segment wells should be declared on the [WSEGDIMS](#kw-WSEGDIMS) keyword, both keywords are in the [RUNSPEC](#kw-RUNSPEC) section.
 
-See also the [WELSPECS](#kw-WELSPECS) keyword to define wells, the [COMPDAT](#kw-COMPDAT) keyword to define the well completions for both ordinary wells and multi-segment wells, and the [COMPSEGS](#kw-COMPSEGS) keyword to define multi-segment well  segment completions. All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
+*Table 12.90: WELSEGS Keyword Description*
+
+
+The maximum number of wells should be defined via the WELLDIMS keyword and the maximum number of multi-segment wells should be declared on the WSEGDIMS keyword, both keywords are in the RUNSPEC section.
+
+See also the WELSPECS keyword to define wells, the COMPDAT keyword to define the well completions for both ordinary wells and multi-segment wells, and the COMPSEGS keyword to define multi-segment well  segment completions. All the aforementioned keywords are described in the SCHEDULE section.
 
 
 #### Example
 
-The following example defines one multi-segment oil production well (OP01) using the [WELSPECS](#kw-WELSPECS), WELSEGS, [COMPDAT](#kw-COMPDAT) and [COMPSEGS](#kw-COMPSEGS) keywords, and one standard water injection well (WI01) using the [WELSPECS](#kw-WELSPECS) and [COMPDAT](#kw-COMPDAT) keywords.
+The following example defines one multi-segment oil production well (OP01) using the WELSPECS, WELSEGS, COMPDAT and COMPSEGS keywords, and one standard water injection well (WI01) using the WELSPECS and COMPDAT keywords.
 
 
 ```
@@ -205,7 +208,7 @@ OP01                                                                           /
 /
 ```
 
-Note the use of both the [COMPDAT](#kw-COMPDAT) and [COMPSEGS](#kw-COMPSEGS) keywords to fully define a multi-segment well’s completion.
+Note the use of both the COMPDAT and COMPSEGS keywords to fully define a multi-segment well’s completion.
 
 
 Finally,  Figure 12.15 depicts the resulting well configuration for both wells, with the conventional water injection well shown in blue and the multi-segment oil producer shown in green.

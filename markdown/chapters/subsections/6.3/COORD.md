@@ -1,13 +1,13 @@
-### COORD – Define a Set of Coordinates Lines for a Reservoir Grid {#kw-COORD}
+### COORD – Define a Set of Coordinates Lines for a Reservoir Grid
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-COORD defines a set of coordinate lines or pillars for a reservoir grid via an array.  A total of 6 x (NX+1) x (NY+1) values must be specified for each coordinate data set (or reservoir). For multiple reservoirs, where  [NUMRES](#kw-NUMRES) is greater than one, there must be 6 x (NX+1) x (NY+1) x [NUMRES](#kw-NUMRES) values. In OPM Flow [NUMRES](#kw-NUMRES) can only be set to one.
+COORD defines a set of coordinate lines or pillars for a reservoir grid via an array.  A total of 6 x (NX+1) x (NY+1) values must be specified for each coordinate data set (or reservoir). For multiple reservoirs, where  NUMRES is greater than one, there must be 6 x (NX+1) x (NY+1) x NUMRES values. In OPM Flow NUMRES can only be set to one.
 
 For Cartesian geometry, each line is defined by the (x, y, z) coordinates of two distinct points on the line. The lines are entered with I cycling fastest then J.  For radial geometry, each line is defined by the (r, theta, z) coordinates of two distinct points on the line. The lines are entered with R cycling fastest then THETA.
 
@@ -25,8 +25,11 @@ The keyword can only be used with Irregular Corner-Point Grids.
 | 6 | Z2-Column | Base Z coordinate |  |
 |  | feet | metres | cm |
 | Notes: |  |  |  |
-: COORD Keyword Description {#tbl-6-14}
-See also the [SPECGRID](#kw-SPECGRID), [COORDSYS](#kw-COORDSYS) and [ZCORN](#kw-ZCORN) keywords to fully define an Irregular Corner-Point Grid.
+
+*Table 6.14: COORD Keyword Description*
+
+
+See also the SPECGRID, COORDSYS and ZCORN keywords to fully define an Irregular Corner-Point Grid.
 
 
 #### Example
@@ -56,4 +59,4 @@ COORD
 
 ```
 
-The above example defines vertical coordinate lines for a regular 3 by 2 grid with [DX](#kw-DX) equal to 100 and [DY](#kw-DY) equal to 200.
+The above example defines vertical coordinate lines for a regular 3 by 2 grid with DX equal to 100 and DY equal to 200.

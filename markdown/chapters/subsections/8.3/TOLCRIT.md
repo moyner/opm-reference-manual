@@ -1,7 +1,7 @@
-### TOLCRIT – Define The Critical Saturation Tolerance {#kw-TOLCRIT}
+### TOLCRIT – Define The Critical Saturation Tolerance
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,7 +16,10 @@ Critical fluid saturations are determined from the relative permeability tables,
 | 1 | TOLCRIT | TOLCRIT is a real positive number greater than zero and less than one that defines the critical saturation tolerance used to determine the critical saturation of a fluid in the relative permeability tables. The default value of 1 x 10-6 means that relative permeabilty values less than this value will be treated as being equal to zero. | 1 x 10-6 |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: TOLCRIT Keyword Description {#tbl-8-193}
+
+*Table 8.193: TOLCRIT Keyword Description*
+
+
 See also section 8.2.4 Saturation Tables (Relative Permeability and Capillary Pressure Tables) for a description of the relative permeability tables and the various end-point definitions, including oil, water and gas critical saturations.
 
 

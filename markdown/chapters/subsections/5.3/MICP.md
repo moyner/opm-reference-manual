@@ -1,7 +1,7 @@
-### MICP – Activate the Microbially Induced Calcite Precipitation Model {#kw-MICP}
+### MICP – Activate the Microbially Induced Calcite Precipitation Model
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -11,7 +11,7 @@ The MICP keyword activates the Microbially Induced Calcite Precipitation (“MIC
 
 
 ::: {.callout-note}
-This is an OPM Flow specific keyword used to investigate leakage remediation. The module requires that both the MICP and [WATER](#kw-WATER) keywords in the [RUNSPEC](#kw-RUNSPEC) to be active.
+This is an OPM Flow specific keyword used to investigate leakage remediation. The module requires that both the MICP and WATER keywords in the RUNSPEC to be active.
 :::
 
 

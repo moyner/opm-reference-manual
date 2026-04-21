@@ -1,28 +1,31 @@
-### IMBNUM – Define the Imbibition Saturation Table Region Numbers {#kw-IMBNUM}
+### IMBNUM – Define the Imbibition Saturation Table Region Numbers
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The IMBNUM keyword defines the imbibition saturation tables (relative permeability and capillary pressure tables) region numbers for each grid block, as such there must be one entry for each cell in the model. The region number specifies which set of relative permeability tables ([SGFN](#kw-SGFN), [SWFN](#kw-SWFN), [SOF2](#kw-SOF2), [SOF3](#kw-SOF3), [SOF32D](#kw-SOF32D), [SGOF](#kw-SGOF), [SLGOF](#kw-SLGOF) and [SWOF](#kw-SWOF)) are used to calculate the relative permeability and capillary pressure in a grid block.
+The IMBNUM keyword defines the imbibition saturation tables (relative permeability and capillary pressure tables) region numbers for each grid block, as such there must be one entry for each cell in the model. The region number specifies which set of relative permeability tables (SGFN, SWFN, SOF2, SOF3, SOF32D, SGOF, SLGOF and SWOF) are used to calculate the relative permeability and capillary pressure in a grid block.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | IMBNUM | IMBNUM defines an array of positive integers assigning a grid cell to a particular saturation table region. The maximum number of IMBNUM regions is set by the NTSFUN variable on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | 1 |
+| 1 | IMBNUM | IMBNUM defines an array of positive integers assigning a grid cell to a particular saturation table region. The maximum number of IMBNUM regions is set by the NTSFUN variable on the TABDIMS keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
-: IMBNUM Keyword Description {#tbl-9-9}
-In addition, saturation table assignment may be directional dependent in which case the directional dependent versions of the aforementioned array should be used, that is IMBNUMX, IMBNUMY and IMBNUMZ instead of IMBNUM. There is also the facility to make the directional end-point scaling reversible or non-reversible and if the non-reversible option is selected, the non-reversible versions of the aforementioned arrays should be used, that is IMBNUMX, IMBNUMX-, IMBNUMY, IMBNUMY-, IMBNUMZ and IMBNUMZ-, instead of the IMBNUM keyword. For reference, see @tbl-5-40, that lists the various keywords that may be used with directional dependent relative permeability tables.
+
+*Table 9.9: IMBNUM Keyword Description*
+
+
+In addition, saturation table assignment may be directional dependent in which case the directional dependent versions of the aforementioned array should be used, that is IMBNUMX, IMBNUMY and IMBNUMZ instead of IMBNUM. There is also the facility to make the directional end-point scaling reversible or non-reversible and if the non-reversible option is selected, the non-reversible versions of the aforementioned arrays should be used, that is IMBNUMX, IMBNUMX-, IMBNUMY, IMBNUMY-, IMBNUMZ and IMBNUMZ-, instead of the IMBNUM keyword. For reference, see Table 5.40, that lists the various keywords that may be used with directional dependent relative permeability tables.
 
 Note, currently IMBNUMX-, IMBNUMY-, and IMBNUMZ- are not supported by OPM Flow.
 
 
 #### Example
 
-The example below sets three IMBNUM regions for a 4 x 5 x 2 model using the [EQUALS](#kw-EQUALS) keyword.
+The example below sets three IMBNUM regions for a 4 x 5 x 2 model using the EQUALS keyword.
 
 
 ```

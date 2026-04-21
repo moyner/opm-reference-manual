@@ -1,17 +1,17 @@
-### RUNSUM – Activate RSM File Output of the SUMMARY Data {#kw-RUNSUM}
+### RUNSUM – Activate RSM File Output of the SUMMARY Data
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword activates the writing out of the [SUMMARY](#kw-SUMMARY) file data in a columnar format to the PRT file. Normally the [SEPARATE](#kw-SEPARATE) keyword in the [SUMMARY](#kw-SUMMARY) section is invoked in the same run to direct the data stream to a separate RSM file for easy loading into other programs, for example, Microsoft's [EXCEL](#kw-EXCEL) or LibreOffice’s CALC spreadsheet programs.
+This keyword activates the writing out of the SUMMARY file data in a columnar format to the PRT file. Normally the SEPARATE keyword in the SUMMARY section is invoked in the same run to direct the data stream to a separate RSM file for easy loading into other programs, for example, Microsoft's EXCEL or LibreOffice’s CALC spreadsheet programs.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 
-See also the [EXCEL](#kw-EXCEL), [RPTONLY](#kw-RPTONLY) and [SEPARATE](#kw-SEPARATE) keywords in the [SUMMARY](#kw-SUMMARY) section.
+See also the EXCEL, RPTONLY and SEPARATE keywords in the SUMMARY section.
 
 
 #### Example

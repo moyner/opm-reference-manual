@@ -1,7 +1,7 @@
-### NUPCOL – Define the Maximum Number of Newton Iterations Used to Update Well Targets {#kw-NUPCOL}
+### NUPCOL – Define the Maximum Number of Newton Iterations Used to Update Well Targets
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -18,8 +18,11 @@ See also section 2.2 Running OPM Flow 2023-04 From The Command Line on how to se
 | --- | --- | :------ | --- |
 | 1 | NUPCOL | A positive integer that defines the maximum number of Newton iterations used to update well targets within a time step. | 3 |
 | Notes: |  |  |  |
-: NUPCOL Keyword Description {#tbl-5-31}
-See also the [MINNPCOL](#kw-MINNPCOL) keyword in the [RUNSPEC](#kw-RUNSPEC) section that sets the minimum number of Newton iterations within a time step that may be used to update the well production and injection targets, after which the well targets will be frozen until the time step calculations have converged and the time step is complete. Note that [MINNPCOL](#kw-MINNPCOL) is an OPM Flow specific keyword.
+
+*Table 5.31: NUPCOL Keyword Description*
+
+
+See also the MINNPCOL keyword in the RUNSPEC section that sets the minimum number of Newton iterations within a time step that may be used to update the well production and injection targets, after which the well targets will be frozen until the time step calculations have converged and the time step is complete. Note that MINNPCOL is an OPM Flow specific keyword.
 
 
 #### Example

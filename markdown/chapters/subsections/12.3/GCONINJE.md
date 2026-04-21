@@ -1,30 +1,30 @@
-### GCONINJE – Group Injection Targets and Constraints {#kw-GCONINJE}
+### GCONINJE – Group Injection Targets and Constraints
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The GCONINJE keyword defines injection targets and constraints for groups, including the top most group in the group hierarchy known as the [FIELD](#kw-FIELD) group. Wells are allocated to groups when the wells are specified by the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section.  Wells defined to be under group control will have their injection rates controlled by the group to which they belong, in addition to any well constraints defined for the wells.
+The GCONINJE keyword defines injection targets and constraints for groups, including the top most group in the group hierarchy known as the FIELD group. Wells are allocated to groups when the wells are specified by the WELSPECS keyword in the SCHEDULE section.  Wells defined to be under group control will have their injection rates controlled by the group to which they belong, in addition to any well constraints defined for the wells.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group target and constraints are being defined. The group named [FIELD](#kw-FIELD) is the top most group and should be used to set targets and constraints for the whole field. Note that the group hierarchy should be defined by the [GRUPTREE](#kw-GRUPTREE) keyword in the [SCHEDULE](#kw-SCHEDULE), when there is more than one level of groups, otherwise all the groups will sit directly under the [FIELD](#kw-FIELD) group in the group tree hierarchy. | None |
+| 1 | GRPNAME | A character string of up to eight characters in length that defines the group name for which the group target and constraints are being defined. The group named FIELD is the top most group and should be used to set targets and constraints for the whole field. Note that the group hierarchy should be defined by the GRUPTREE keyword in the SCHEDULE, when there is more than one level of groups, otherwise all the groups will sit directly under the FIELD group in the group tree hierarchy. | None |
 | 2 | TYPE | A defined character string that defines the type of injection fluid. TYPE should be set to one of the following character strings: | None |
 | 3 | TARGET | A defined character string that sets the target injection control for the group, all the other phases will therefore act as constraints. The simulator will attempt to meet the TARGET based on the phase rate stated in items (4) to (7) on this keyword. TARGET should be set to one of the following character strings: | None |
 | 4 | RATE | A real positive value that defines the maximum surface injection rate target or constraint for the phase declared by the TYPE variable. This value may be specified using a User Defined Argument (UDA). | None |
 | Liquid stb/d Gas Mscf/d | Liquid sm3/day Gas sm3/day | Liquid scc/hour Gas scc/hour |  |
 | 5 | RESV | A real positive value that defines the maximum reservoir volume injection rate target or constraint. This value may be specified using a User Defined Argument (UDA). Note setting a value here other than the default means that TYPE, item (2) will be the supplement or “make up” phase. | None |
 | rtb/d | rm3/day | rcc/hour |  |
-| 6 | REIN | A real positive value that defines the target or constraint re-injection fraction for the produced phase defined by the TYPE variable. This value may be specified using a User Defined Argument (UDA). For example, if TYPE is equal to [GAS](#kw-GAS) and REIN is equal to 0.85, then 85% of the produced gas will be re-injected. | None |
+| 6 | REIN | A real positive value that defines the target or constraint re-injection fraction for the produced phase defined by the TYPE variable. This value may be specified using a User Defined Argument (UDA). For example, if TYPE is equal to GAS and REIN is equal to 0.85, then 85% of the produced gas will be re-injected. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | 7 | VREP | A real positive value that defines the target or constraint of the voidage replacement ratio based on all the produced fluids. This value may be specified using a User Defined Argument (UDA). For example, if TYPE is equal to WAT and VREP is equal to 1.00, then 100% of the produced reservoir volume will be re-inject as an equivalent water volume. Note setting a value here other than the default means that TYPE, item (2) will be the supplement phase. | None |
 | dimensionless | dimensionless | dimensionless |  |
-| 8 | GRPCNTL | A defined character string that determines if this group is subject to higher level group control. This variable is ignored if GRPNAME is equal to [FIELD](#kw-FIELD). | YES |
+| 8 | GRPCNTL | A defined character string that determines if this group is subject to higher level group control. This variable is ignored if GRPNAME is equal to FIELD. | YES |
 | 9 | GRPGUIDE | A real positive value that defines a group's injection guide rate expressed as a dimensionless number.  A group requires a value for GRPGUIDE only if it is required to produce a specified proportion of a higher level group’s rate. Defaulting GRPGUIDE results in the subordinate groups and wells under guide control having their rates dictated by any higher level groups under guide rate control. In other words the GRPNAME is masked out. Setting GRPGUIDE to a real positive value and GUIPHASE to either RATE or RESV will result in a constant injection guide rate. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | 10 | GUIPHASE | A defined character string that sets the guide phase to which the guide rate in item (9) applies.  GUIPHASE should be set to one of the following character strings: OPM Flow now supports all guide rate options.  The default value of 1* means that the group has no injection guide rate for this phase. | None |
@@ -32,13 +32,16 @@ The GCONINJE keyword defines injection targets and constraints for groups, inclu
 | 12 | GRPVREP | A character string of up to eight characters in length that defines the group name whose production rate should be used for applying the VREP quantity to be injected into GRPNAME. This variable is used to re-inject the VREP production faction from another group (GRPVREP) via this group (GRPNAME).  If GRPVREP is defaulted then the voidage quantity for GRPNAME will be based on the production from GRPNAME itself. | GRPNAME |
 | 13 | WGASRATE | Wet gas injection rate used in the commercial compositional simulator. Not used and should be defaulted with 1*. | 1* |
 | Notes: |  |  |  |
-: GCONINJE Keyword Description {#tbl-12-29}
-See also the [GRUPTREE](#kw-GRUPTREE) keyword to define the hierarchy of the groups below the [FIELD](#kw-FIELD) level, the [GCONPROD](#kw-GCONPROD) keyword to define a group’s production targets and constraints, the [WCONPROD](#kw-WCONPROD) keyword to define a production well’s targets and constraints, and the [WCONINJE](#kw-WCONINJE) keyword to define an injection well’s targets and constraints. All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
+
+*Table 12.29: GCONINJE Keyword Description*
+
+
+See also the GRUPTREE keyword to define the hierarchy of the groups below the FIELD level, the GCONPROD keyword to define a group’s production targets and constraints, the WCONPROD keyword to define a production well’s targets and constraints, and the WCONINJE keyword to define an injection well’s targets and constraints. All the aforementioned keywords are described in the SCHEDULE section.
 
 
 #### Example
 
-The following example defines the injection targets and constraints for the field and two groups that are one level below the field group, since the [GRUPTREE](#kw-GRUPTREE) keyword has not been entered to define the group  hierarchy.
+The following example defines the injection targets and constraints for the field and two groups that are one level below the field group, since the GRUPTREE keyword has not been entered to define the group  hierarchy.
 
 
 ```

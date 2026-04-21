@@ -1,13 +1,13 @@
-### SDENSITY – Define the Miscible or Solvent Surface Gas Density {#kw-SDENSITY}
+### SDENSITY – Define the Miscible or Solvent Surface Gas Density
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The SDENSITY keyword defines density at surface conditions of either the miscible injection gas for when the [MISCIBLE](#kw-MISCIBLE) option has been invoked in the [RUNSPEC](#kw-RUNSPEC) section, or the solvent for when the [SOLVENT](#kw-SOLVENT) option has been invoked in the [RUNSPEC](#kw-RUNSPEC) section. This keyword must be invoked if either the [MISCIBLE](#kw-MISCIBLE) or [SOLVENT](#kw-SOLVENT) options have been activated in the [RUNSPEC](#kw-RUNSPEC) section.
+The SDENSITY keyword defines density at surface conditions of either the miscible injection gas for when the MISCIBLE option has been invoked in the RUNSPEC section, or the solvent for when the SOLVENT option has been invoked in the RUNSPEC section. This keyword must be invoked if either the MISCIBLE or SOLVENT options have been activated in the RUNSPEC section.
 
 
 | No. | Name | Description | Default |
@@ -16,13 +16,16 @@ The SDENSITY keyword defines density at surface conditions of either the miscibl
 | 1 | SDENSITY | SDENSITY is a real positive number defining the density at surface conditions of either: | None |
 | lb/ft3 | kg/m3 | gm/cc |  |
 | Notes: |  |  |  |
-: SDENSITY Keyword Description {#tbl-8-145}
-In addition to this keyword, the surface density or gravity of the in-place natural gas must be entered using either the [DENSITY](#kw-DENSITY) or [GRAVITY](#kw-GRAVITY) keywords.
+
+*Table 8.145: SDENSITY Keyword Description*
+
+
+In addition to this keyword, the surface density or gravity of the in-place natural gas must be entered using either the DENSITY or GRAVITY keywords.
 
 
 #### Examples
 
-The following shows the SDENSITY keyword for when NTPVT on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section is set to one.
+The following shows the SDENSITY keyword for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to one.
 
 
 ```
@@ -35,7 +38,7 @@ SDENSITY
 ```
 
 
-The next example shows the SDENSITY keyword for when NTPVT on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section is set to three.
+The next example shows the SDENSITY keyword for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to three.
 
 
 ```

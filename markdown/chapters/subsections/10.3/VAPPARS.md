@@ -1,13 +1,13 @@
-### VAPPARS – Oil Vaporization Parameters {#kw-VAPPARS}
+### VAPPARS – Oil Vaporization Parameters
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-VAPPARS defines the rate of oil vaporization in the presence of undersaturated gas and the rate at which the remaining oil gets “heavier” via the reduction in the solution gas-oil ratio (“Rs”). This keyword should only be used if the [OIL](#kw-OIL), [GAS](#kw-GAS), [DISGAS](#kw-DISGAS) and [VAPOIL](#kw-VAPOIL) keywords in the [RUNSPEC](#kw-RUNSPEC) section have been invoked to allow oil, gas, dissolved gas and vaporized oil to be present in the model.
+VAPPARS defines the rate of oil vaporization in the presence of undersaturated gas and the rate at which the remaining oil gets “heavier” via the reduction in the solution gas-oil ratio (“Rs”). This keyword should only be used if the OIL, GAS, DISGAS and VAPOIL keywords in the RUNSPEC section have been invoked to allow oil, gas, dissolved gas and vaporized oil to be present in the model.
 
 
 | No. | Name | Description | Default |
@@ -18,10 +18,13 @@ VAPPARS defines the rate of oil vaporization in the presence of undersaturated g
 | 2 | VAPPAR2 | VAPPAR2 is a real positive dimensionless number that defines the rate at which the Rs of the remaining oil in a grid cell decreases The default value of zero invokes the standard black-oil formulation in which the remaining oil’s Rs does not change as the oil vaporizes into the available undersaturated gas in a grid cell. Increasing this parameter increases the difference between the remaining oil and the vaporized oil Rs values. Typical values for VAPPAR2 are less than one. | 0 |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: VAPPARS Keyword Description {#tbl-10-63}
+
+*Table 10.63: VAPPARS Keyword Description*
+
+
 Note this keyword is normally used in history matching field performance to control the availability of the vaporized oil phase.
 
-See also the [DRSDT](#kw-DRSDT) and [DRVDT](#kw-DRVDT) keywords in the [SCHEDULE](#kw-SCHEDULE) section that control the rate at which the solution gas-oil ratio and the vaporized oil-gas ratio increase within a grid block, respectively.
+See also the DRSDT and DRVDT keywords in the SCHEDULE section that control the rate at which the solution gas-oil ratio and the vaporized oil-gas ratio increase within a grid block, respectively.
 
 
 #### Examples

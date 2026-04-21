@@ -1,13 +1,13 @@
-### ECLMC – Activate Multi-Component Brine Model {#kw-ECLMC}
+### ECLMC – Activate Multi-Component Brine Model
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The ECLMC keyword activates the Multi-Component Brine model that allows for the water phase to have multiple water salinities. The keyword should be used in conjunction with the [BRINE](#kw-BRINE) keyword in the [RUNSPEC](#kw-RUNSPEC). Both keywords must be specified to activate the Multi-Component Brine model, whereas the [BRINE](#kw-BRINE) keyword only is required to activate the standard brine tracking model.
+The ECLMC keyword activates the Multi-Component Brine model that allows for the water phase to have multiple water salinities. The keyword should be used in conjunction with the BRINE keyword in the RUNSPEC. Both keywords must be specified to activate the Multi-Component Brine model, whereas the BRINE keyword only is required to activate the standard brine tracking model.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 
@@ -27,7 +27,7 @@ BRINE
 ```
 
 
-The next example shows the ECLMC and [BRINE](#kw-BRINE) keywords for when the Multi-Component Brine model is required.
+The next example shows the ECLMC and BRINE keywords for when the Multi-Component Brine model is required.
 
 
 ```

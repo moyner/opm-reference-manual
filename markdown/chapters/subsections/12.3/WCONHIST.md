@@ -1,21 +1,21 @@
-### WCONHIST – Define Well Historical Production Rates and Pressures {#kw-WCONHIST}
+### WCONHIST – Define Well Historical Production Rates and Pressures
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The WCONHIST keyword defines production rates and pressures for wells that have been declared history matching wells by the use of this keyword. History matching wells are handled differently than ordinary wells that use the [WCONPROD](#kw-WCONPROD) keyword for controlling their production targets and constraints. However, the wells still need to be defined like ordinary production wells using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section.
+The WCONHIST keyword defines production rates and pressures for wells that have been declared history matching wells by the use of this keyword. History matching wells are handled differently than ordinary wells that use the WCONPROD keyword for controlling their production targets and constraints. However, the wells still need to be defined like ordinary production wells using the WELSPECS keyword in the SCHEDULE section.
 
-Note that although wells can be allocated to a group when they are specified by the [WELSPECS](#kw-WELSPECS) keyword, history matching wells cannot operate under group control. Field and group reporting is still consistent for all wells allocated to a group.
+Note that although wells can be allocated to a group when they are specified by the WELSPECS keyword, history matching wells cannot operate under group control. Field and group reporting is still consistent for all wells allocated to a group.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the wells observed production rates and pressures are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the wells observed production rates and pressures are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | STATUS | A defined character string that declares the status of the well. STATUS should be set to one of the following character strings: Note a well’s STATUS should always be set either STOP or SHUT if the well’s production is to be set to zero. Just setting a well’s production rate to zero means that the well is open to flow with a zero rate. | OPEN |
 | 3 | TARGET | A defined character string that sets the observed target production phase for the well, all the other phases are calculated unconstrained and used for reporting only. The simulator will attempt to meet the TARGET based on the phase rate stated in items (4) to (6) and (10) on this keyword. TARGET should be set to one of the following character strings: | None |
 | 4 | ORAT | A real positive value that defines the observed surface oil production rate target or constraint. This value may be specified using a User Defined Argument (UDA). | Defined |
@@ -24,8 +24,8 @@ Note that although wells can be allocated to a group when they are specified by 
 | stb/d 0.0 | sm3/day 0.0 | scc/hour 0.0 |  |
 | 6 | GRAT | A real positive value that defines the observed surface gas production rate target or constraint This value may be specified using a User Defined Argument (UDA). | Defined |
 | Mscf/d 0.0 | sm3/day 0.0 | scc/hour 0.0 |  |
-| 7 | VFPTAB | A positive integer greater than or equal to zero that defines the vertical lift performance tables to be used for calculating the tubing head pressure for the well. If a non-zero value is entered then the vertical lift performance tables must be entered via the [VFPPROD](#kw-VFPPROD) keyword in the [SCHEDULE](#kw-SCHEDULE) section and allocated to the well via this item. The default value of zero implies no vertical lift performance table initially. If this value is then reset to be greater than zero then the table will be used to calculate the well’s tubing head pressure. Subsequently, the default is to use the previously declared table number. | 0 |
-| 8 | ALQ-WELL | A real positive value that defines the artificial lift quantity to be used in conjunction with the [VFPPROD](#kw-VFPPROD) assigned to the well via that keyword's VFPTAB variable. This value may be specified using a User Defined Argument (UDA). VFPTAB vertical lift performance table and the artificial lift quantity ALQ-WELL are used with the well fluid rates to calculate the well’s tubing head pressures values from the bottom-hole pressure. Note that the units for ALQ-WELL is dependent on the associated variable on the [VFPPROD](#kw-VFPPROD) keyword. | None |
+| 7 | VFPTAB | A positive integer greater than or equal to zero that defines the vertical lift performance tables to be used for calculating the tubing head pressure for the well. If a non-zero value is entered then the vertical lift performance tables must be entered via the VFPPROD keyword in the SCHEDULE section and allocated to the well via this item. The default value of zero implies no vertical lift performance table initially. If this value is then reset to be greater than zero then the table will be used to calculate the well’s tubing head pressure. Subsequently, the default is to use the previously declared table number. | 0 |
+| 8 | ALQ-WELL | A real positive value that defines the artificial lift quantity to be used in conjunction with the VFPPROD assigned to the well via that keyword's VFPTAB variable. This value may be specified using a User Defined Argument (UDA). VFPTAB vertical lift performance table and the artificial lift quantity ALQ-WELL are used with the well fluid rates to calculate the well’s tubing head pressures values from the bottom-hole pressure. Note that the units for ALQ-WELL is dependent on the associated variable on the VFPPROD keyword. | None |
 | 9 | THP | A real positive value that defines the observed tubing head pressure. This value may be specified using a User Defined Argument (UDA). This parameter is only used for comparing the actual tubing head pressure given here with those calculated by the simulator, that is history matching wells can only be controlled by either the surface injection rate or their bottom-hole pressure. | Defined |
 | psia 0.0 | barsa 0.0 | atma 0.0 |  |
 | 10 | BHP | A real positive value that defines the observed bottom-hole pressure. This value may be specified using a User Defined Argument (UDA). | Defined |
@@ -33,16 +33,19 @@ Note that although wells can be allocated to a group when they are specified by 
 | 11 | WGRA | A real positive value that defines the observed wet gas rate in the commercial compositional simulator. The parameter is ignored by OPM Flow and should be defaulted or set to the default value of zero. | 0.0 |
 | 12 | NGL | A real positive value that defines the observed Natural Gas Liquid (“NGL”) rate in the commercial compositional simulator. The parameter is ignored by OPM Flow and should be defaulted or set to the default value of zero. | 0.0 |
 | Notes: |  |  |  |
-: WCONHIST Keyword Description {#tbl-12-77}
-See also the [WHISTCTL](#kw-WHISTCTL) keyword that can be used to reset the TARGET phase, the [GCONPROD](#kw-GCONPROD) and [GCONINJE](#kw-GCONINJE) keywords to define a group’s production and injection targets and constraints, and the [WCONPROD](#kw-WCONPROD) keyword to define a production well’s targets and constraints. All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
+
+*Table 12.77: WCONHIST Keyword Description*
+
+
+See also the WHISTCTL keyword that can be used to reset the TARGET phase, the GCONPROD and GCONINJE keywords to define a group’s production and injection targets and constraints, and the WCONPROD keyword to define a production well’s targets and constraints. All the aforementioned keywords are described in the SCHEDULE section.
 
 
 ::: {.callout-note}
-One can use TARGET set to RESV in the initial history matching runs to get a “reasonable” pressure match, this ensures that the total reservoir withdrawals are correct, although the individual phase withdrawals will not match. Once a reasonable pressure match is achieved for the reservoir then one can reset TARGET to the sales phase, [OIL](#kw-OIL) or [GAS](#kw-GAS), and continue with the matching of all the phases. In oil reservoirs some engineers prefer to use LIQ rather than [OIL](#kw-OIL) as the TARGET phase, although one should consider that as the water phase has no commercial value, the measurement accuracy is significantly less than the oil sales phase.
+One can use TARGET set to RESV in the initial history matching runs to get a “reasonable” pressure match, this ensures that the total reservoir withdrawals are correct, although the individual phase withdrawals will not match. Once a reasonable pressure match is achieved for the reservoir then one can reset TARGET to the sales phase, OIL or GAS, and continue with the matching of all the phases. In oil reservoirs some engineers prefer to use LIQ rather than OIL as the TARGET phase, although one should consider that as the water phase has no commercial value, the measurement accuracy is significantly less than the oil sales phase.
 :::
 
 
-History matching wells are converted to ordinary wells by restating a well’s control mode using either the  [WCONPROD](#kw-WCONPROD) or [WELTARG](#kw-WELTARG) keywords in the [SCHEDULE](#kw-SCHEDULE) section.
+History matching wells are converted to ordinary wells by restating a well’s control mode using either the  WCONPROD or WELTARG keywords in the SCHEDULE section.
 
 
 #### Examples
@@ -81,9 +84,9 @@ WCONHIST                                                                        
 /
 ```
 
-From January 1, 2000 well OP01 is open and is on oil rate control, and produces 15,500 stb/d oil, with the observed rates of 100 stb/d of water and 15.5 MMscf/d of gas. The well uses [VFPPROD](#kw-VFPPROD) vertical lift table number 10 so that OPM Flow can calculate the tubing head pressures based on the fluids produced and the calculated pressures in the simulator.
+From January 1, 2000 well OP01 is open and is on oil rate control, and produces 15,500 stb/d oil, with the observed rates of 100 stb/d of water and 15.5 MMscf/d of gas. The well uses VFPPROD vertical lift table number 10 so that OPM Flow can calculate the tubing head pressures based on the fluids produced and the calculated pressures in the simulator.
 
-The next example illustrates how to convert OP01 from a history match well to a normal production well at the start for the forecast run at August 1, 2017 using the [WELTARG](#kw-WELTARG) keyword.
+The next example illustrates how to convert OP01 from a history match well to a normal production well at the start for the forecast run at August 1, 2017 using the WELTARG keyword.
 
 
 ```

@@ -1,7 +1,7 @@
-### DIMENS – Define the Dimensions of the Model {#kw-DIMENS}
+### DIMENS – Define the Dimensions of the Model
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,8 +16,11 @@ DIMENS defines the dimensions of the model entered as integer vector. The keywor
 | 2 | NY | A positive integer value that defines the number of grid blocks in the y direction for Cartesian grids or the number of grid blocks in the theta direction for radial grids. | None |
 | 3 | NZ | A positive integer value that defines the number of grid blocks in the z direction for both Cartesian and radial grids. | None |
 | Notes: |  |  |  |
-: DIMENS Keyword Description {#tbl-5-9}
-Note that NX, NY and NZ are not maximum values but the actual size of the grid. OPM Flow applies these parameters when reading in particular data sets. For example if NX, NY, and NZ are set to 10, 10 and 10 respectively, then for the grid property data like [PORO](#kw-PORO). OPM Flow expects to read in 10 x 10 x 10 or 1,000 porosity values for the [PORO](#kw-PORO) array.  If the number of porosity values is not equal to 1,000 then OPM Flow will produce an error.
+
+*Table 5.9: DIMENS Keyword Description*
+
+
+Note that NX, NY and NZ are not maximum values but the actual size of the grid. OPM Flow applies these parameters when reading in particular data sets. For example if NX, NY, and NZ are set to 10, 10 and 10 respectively, then for the grid property data like PORO. OPM Flow expects to read in 10 x 10 x 10 or 1,000 porosity values for the PORO array.  If the number of porosity values is not equal to 1,000 then OPM Flow will produce an error.
 
 
 #### Example

@@ -1,13 +1,13 @@
-### SURFADS – Define Surfactant Rock Adsorption Tables {#kw-SURFADS}
+### SURFADS – Define Surfactant Rock Adsorption Tables
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The SURFADS keyword defines the rock surfactant adsorption tables for when the surfactant option has been activated by the [SURFACT](#kw-SURFACT) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The SURFADS keyword defines the rock surfactant adsorption tables for when the surfactant option has been activated by the SURFACT keyword in the RUNSPEC section.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -20,8 +20,11 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | 2 | SURRATIO | A columnar vector of real increasing down the column values that defines the mass of adsorbed surfactant per unit mass of rock of the saturated concentration of surfactant adsorbed by the rock. The first entry should be zero to define a zero ratio of surfactant concentration. | None |
 | lb/lb | kg/kg | gm/gm |  |
 | Notes: |  |  |  |
-: SURFADS Keyword Description {#tbl-8-181}
-See also the [ADSORP](#kw-ADSORP) keyword in the [PROPS](#kw-PROPS) section that employs adsorption functions, as oppose to adsorption tables, to define rock surfactant adsorption behavior.
+
+*Table 8.181: SURFADS Keyword Description*
+
+
+See also the ADSORP keyword in the PROPS section that employs adsorption functions, as oppose to adsorption tables, to define rock surfactant adsorption behavior.
 
 
 #### Example
@@ -55,6 +58,6 @@ SURFADS
 
 ```
 
-The above example defines two surfactant rock adsorption tables assuming NTSFUN equals two and NSSFUN is greater than or equal to eight on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The above example defines two surfactant rock adsorption tables assuming NTSFUN equals two and NSSFUN is greater than or equal to eight on the TABDIMS keyword in the RUNSPEC section.
 
 There is no terminating “/” for this keyword.

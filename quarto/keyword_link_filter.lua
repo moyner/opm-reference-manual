@@ -92,6 +92,13 @@ end
 function Link(link)
   local keyword = link.target:match("^#kw%-(.+)$")
   if not keyword then
+    local ref_keyword = link.target:match("^#REF_HEADING_KEYWORD_(.+)$")
+    if ref_keyword then
+      -- LibreOffice-style anchors often append section numbers like _11_3.
+      keyword = ref_keyword:gsub("(_%d+)+$", "")
+    end
+  end
+  if not keyword then
     return nil
   end
 

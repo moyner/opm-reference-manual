@@ -1,13 +1,13 @@
-### LPCW – End-Point Scaling of Grid Cell Water Capillary Pressure (Low Salinity and Oil Wet) {#kw-LPCW}
+### LPCW – End-Point Scaling of Grid Cell Water Capillary Pressure (Low Salinity and Oil Wet)
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-LPCW defines the maximum oil-water pressure values for all the cells in the model via an array, for when the Low Salt option and the End-point Scaling options has been activated by the [LOWSALT](#kw-LOWSALT) and the [ENDSCALE](#kw-ENDSCALE) keywords in the [RUNSPEC](#kw-RUNSPEC) section. The keyword re-scales the oil-water capillary pressure in the low salinity oil wet capillary saturation tables from a cell’s assigned saturation function by the grid block’s LPCW value.
+LPCW defines the maximum oil-water pressure values for all the cells in the model via an array, for when the Low Salt option and the End-point Scaling options has been activated by the LOWSALT and the ENDSCALE keywords in the RUNSPEC section. The keyword re-scales the oil-water capillary pressure in the low salinity oil wet capillary saturation tables from a cell’s assigned saturation function by the grid block’s LPCW value.
 
 The capillary pressure for a grid block is scaled by:
 

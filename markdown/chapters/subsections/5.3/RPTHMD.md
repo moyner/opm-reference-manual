@@ -1,12 +1,12 @@
-### RPTHMD – Define Well History Match Gradient Reporting Options {#kw-RPTHMD}
+### RPTHMD – Define Well History Match Gradient Reporting Options
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword, RPTHMD, defines the options and level of history match output that should be written to history match file (*.HMD), for when the History Match Gradient option has been activated by the [HMDIMS](#kw-HMDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+This keyword, RPTHMD, defines the options and level of history match output that should be written to history match file (*.HMD), for when the History Match Gradient option has been activated by the HMDIMS keyword in the RUNSPEC section.
 
 This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.

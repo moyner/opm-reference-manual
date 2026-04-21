@@ -1,15 +1,15 @@
-### SALTP – Define the Initial Precipitated Salt Volume Fraction for All Grid Blocks {#kw-SALTP}
+### SALTP – Define the Initial Precipitated Salt Volume Fraction for All Grid Blocks
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The SALTP keyword defines the initial equilibration precipitated salt volume fraction values for all grid cells in the model and should be used in conjunction with the [PBUB](#kw-PBUB), [PDEW](#kw-PDEW), [PRESSURE](#kw-PRESSURE), [RS](#kw-RS), [RV](#kw-RV), [SGAS](#kw-SGAS), [SOIL](#kw-SOIL) and [SWAT](#kw-SWAT) keywords etc., to fully describe the initial state of the model. The keyword should only be used if the salt (brine) phase has been activated in the model via the [BRINE](#kw-BRINE) keyword, and the [PRECSALT](#kw-PRECSALT) keyword to activate OPM Flow’s Salt Precipitation Model. Both keywords are in the [RUNSPEC](#kw-RUNSPEC) section.
+The SALTP keyword defines the initial equilibration precipitated salt volume fraction values for all grid cells in the model and should be used in conjunction with the PBUB, PDEW, PRESSURE, RS, RV, SGAS, SOIL and SWAT keywords etc., to fully describe the initial state of the model. The keyword should only be used if the salt (brine) phase has been activated in the model via the BRINE keyword, and the PRECSALT keyword to activate OPM Flow’s Salt Precipitation Model. Both keywords are in the RUNSPEC section.
 
-This is the non-standard method to initialize the model via enumeration and is seldom employed in the industry. The standard methodology is for OPM Flow to initialize a model using the parameters on the [EQUIL](#kw-EQUIL) keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
+This is the non-standard method to initialize the model via enumeration and is seldom employed in the industry. The standard methodology is for OPM Flow to initialize a model using the parameters on the EQUIL keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
 
 
 | No. | Name | Description | Default |
@@ -18,18 +18,21 @@ This is the non-standard method to initialize the model via enumeration and is s
 | 1 | SALTP | SALTP is an array of real positive numbers that are greater than or equal to zero and less than or equal to one, that define the initial equilibration salt volume fraction values to each cell in the model. Repeat counts may be used, for example 20*0.15. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: SALTP Keyword Description {#tbl-10-37}
-See also the [PBUB](#kw-PBUB), [PDEW](#kw-PDEW), [PRESSURE](#kw-PRESSURE), [RS](#kw-RS), [RV](#kw-RV), [SGAS](#kw-SGAS), [SOIL](#kw-SOIL) and [SWAT](#kw-SWAT) keywords to fully define the initial state of the model.
+
+*Table 10.37: SALTP Keyword Description*
+
+
+See also the PBUB, PDEW, PRESSURE, RS, RV, SGAS, SOIL and SWAT keywords to fully define the initial state of the model.
 
 
 ::: {.callout-note}
-This is an OPM Flow specific keyword for the simulator’s Salt Precipitation Model that is activated by the [PRECSALT](#kw-PRECSALT) keyword and declaring that vaporized water is present in the run via the [VAPWAT](#kw-VAPWAT) in the [RUNSPEC](#kw-RUNSPEC) section. This keyword defines the initial precipitated salt volume fraction contained within the pore space. See [SALT](#kw-SALT) in the [SOLUTION](#kw-SOLUTION) section that defines the initial salt concentration within the water phase.
+This is an OPM Flow specific keyword for the simulator’s Salt Precipitation Model that is activated by the PRECSALT keyword and declaring that vaporized water is present in the run via the VAPWAT in the RUNSPEC section. This keyword defines the initial precipitated salt volume fraction contained within the pore space. See SALT in the SOLUTION section that defines the initial salt concentration within the water phase.
 :::
 
 
 #### Example
 
-The example activates the standard Brine Tracking model using the [BRINE](#kw-BRINE) keyword, OPM Flow’s Salt Precipitation model using the [PRECSALT](#kw-PRECSALT) keyword, and OPM Flow’s vaporized water phase with the [VAPWAT](#kw-VAPWAT) keyword; all three keywords are in the [RUNSPEC](#kw-RUNSPEC) section.
+The example activates the standard Brine Tracking model using the BRINE keyword, OPM Flow’s Salt Precipitation model using the PRECSALT keyword, and OPM Flow’s vaporized water phase with the VAPWAT keyword; all three keywords are in the RUNSPEC section.
 
 
 ```
@@ -59,7 +62,7 @@ VAPWAT
 
 ```
 
-Then in the [SOLUTION](#kw-SOLUTION) section the SALTP keyword would be of the form:
+Then in the SOLUTION section the SALTP keyword would be of the form:
 
 
 ```

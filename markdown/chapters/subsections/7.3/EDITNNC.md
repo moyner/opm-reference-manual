@@ -1,24 +1,24 @@
-### EDITNNC – Scale Non-Neighbor Connections Between Cells Manually {#kw-EDITNNC}
+### EDITNNC – Scale Non-Neighbor Connections Between Cells Manually
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-EDITNNC enables Non-Neighbor Connections (“[NNC](#kw-NNC)”), entered via the [NNC](#kw-NNC) keyword or calculated by the simulator, to be multiplied (re-scaled) by a constant.  For example, if the existing transmissibility between non-neighbor connections is Told and the multiplier is C, then the resulting transmissibility, Tnew, will be ${T}_{\mathit{new}} =C x {T}_{\mathit{old}}$.  Only previously defined [NNC](#kw-NNC)’s entered via the [NNC](#kw-NNC) keyword or calculated by the simulator can be edited, otherwise a warning message will be printed.
+EDITNNC enables Non-Neighbor Connections (“NNC”), entered via the NNC keyword or calculated by the simulator, to be multiplied (re-scaled) by a constant.  For example, if the existing transmissibility between non-neighbor connections is Told and the multiplier is C, then the resulting transmissibility, Tnew, will be ${T}_{\mathit{new}} =C x {T}_{\mathit{old}}$.  Only previously defined NNC’s entered via the NNC keyword or calculated by the simulator can be edited, otherwise a warning message will be printed.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | I1 | A positive integer that defines the first grid block in the I-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NX on the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | None |
-| 2 | J1 | A positive integer that defines the first grid block in the J-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NY on the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | None |
-| 3 | K1 | A positive integer that defines the first grid block in the K-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NZ on the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | None |
-| 4 | I2 | A positive integer that defines the second grid block in the I-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NX on the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | None |
-| 5 | J2 | A positive integer that defines the second grid block in the J-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NY on the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | None |
-| 6 | K2 | A positive integer that defines the second grid block in the K-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NZ on the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | None |
+| 1 | I1 | A positive integer that defines the first grid block in the I-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NX on the DIMENS keyword in the RUNSPEC section. | None |
+| 2 | J1 | A positive integer that defines the first grid block in the J-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NY on the DIMENS keyword in the RUNSPEC section. | None |
+| 3 | K1 | A positive integer that defines the first grid block in the K-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NZ on the DIMENS keyword in the RUNSPEC section. | None |
+| 4 | I2 | A positive integer that defines the second grid block in the I-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NX on the DIMENS keyword in the RUNSPEC section. | None |
+| 5 | J2 | A positive integer that defines the second grid block in the J-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NY on the DIMENS keyword in the RUNSPEC section. | None |
+| 6 | K2 | A positive integer that defines the second grid block in the K-direction in a non-neighbor connection, must be greater than or equal to one and less than or equal to NZ on the DIMENS keyword in the RUNSPEC section. | None |
 | 7 | TRANSMUL | TRANSMUL is a positive real number greater than or equal to zero that defines a constant that scales the transmissibility between the first grid block (I1, J1, K1) and the second grid block (I2, J2, K2). The default value of one means no scaling will be applied. | 1 |
 | dimensionless | dimensionless | dimensionless |  |
 | 8 | ISATNUM1 | The default value of zero means the existing saturation table allocated to the upstream cell (I1,J1,K1). | 0 |
@@ -30,14 +30,17 @@ EDITNNC enables Non-Neighbor Connections (“[NNC](#kw-NNC)”), entered via the
 | 14 | DIFFNNC | DIFFNNC is a positive real number greater than or equal to zero that scales the diffusivity between the first grid block (I1, J1, K1) and the second grid block (I2, J2, K2). | 0.0 |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: EDITNNC Keyword Description {#tbl-7-3}
+
+*Table 7.3: EDITNNC Keyword Description*
+
+
 Note that although items (8) to (14) for this keyword are not available in OPM Flow, even if they were, it is strongly recommended that these items are defaulted if the data is being entered manually, as opposed to being generated by pre-processing software.
 
-Care should be taken that cells in different [PVTNUM](#kw-PVTNUM) regions (see the [PVTNUM](#kw-PVTNUM) keyword in the [REGIONS](#kw-REGIONS) section) are not connected, since the fluid properties are associated with a cell. If for example, a rbbl or a rm3 of oil flows from [PVTNUM](#kw-PVTNUM) region 1 to [PVTNUM](#kw-PVTNUM) region 2,  then the oil properties of that oil will change from the PVT 1 data set to the PVT data set 2.  This will result in material balance errors, that may or may not cause numerical issues.
+Care should be taken that cells in different PVTNUM regions (see the PVTNUM keyword in the REGIONS section) are not connected, since the fluid properties are associated with a cell. If for example, a rbbl or a rm3 of oil flows from PVTNUM region 1 to PVTNUM region 2,  then the oil properties of that oil will change from the PVT 1 data set to the PVT data set 2.  This will result in material balance errors, that may or may not cause numerical issues.
 
-If the transmissibility across a fault needs to be modified see the [FAULTS](#kw-FAULTS) and [MULTFLT](#kw-MULTFLT) keywords in the [GRID](#kw-GRID) section for an alternative and less complicated method to modifying fault transmissibilities.  Transmissibility between reservoir regions can be modified by using [MULTREGT](#kw-MULTREGT) keyword, provided [MULTNUM](#kw-MULTNUM) has been used to define the inter-region transmissibility region numbers for each grid block. Finally, the [MULTX](#kw-MULTX), [MULTY](#kw-MULTY) and [MULTZ](#kw-MULTZ) series of keywords can be used to modify transmissibility between various cells. All the aforementioned keywords are described in the [GRID](#kw-GRID) section.
+If the transmissibility across a fault needs to be modified see the FAULTS and MULTFLT keywords in the GRID section for an alternative and less complicated method to modifying fault transmissibilities.  Transmissibility between reservoir regions can be modified by using MULTREGT keyword, provided MULTNUM has been used to define the inter-region transmissibility region numbers for each grid block. Finally, the MULTX, MULTY and MULTZ series of keywords can be used to modify transmissibility between various cells. All the aforementioned keywords are described in the GRID section.
 
-See also the [EDITNNCR](#kw-EDITNNCR) keyword in the [EDIT](#kw-EDIT) section that resets an existing [NNC](#kw-NNC) to a user defined value.
+See also the EDITNNCR keyword in the EDIT section that resets an existing NNC to a user defined value.
 
 
 #### Example

@@ -1,13 +1,13 @@
-### GCVD – Define Equilibration Coal Gas Concentration versus Depth Tables {#kw-GCVD}
+### GCVD – Define Equilibration Coal Gas Concentration versus Depth Tables
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The GCVD keyword defines the initial coal gas concentration versus depth tables for each equilibration region for when the coal phase has been activated in the run via the [COAL](#kw-COAL) keyword in the [RUNSPEC](#kw-RUNSPEC) section. The keyword may be used in conjunction with the [GASCONC](#kw-GASCONC) keyword in the [SOLUTION](#kw-SOLUTION) section, to fully describe the initial state of the model. Note both [GASCONC](#kw-GASCONC) and GCVD are optional as the simulator will calculate the coal gas concentration based on the equilibrium concentration and the block pressure.
+The GCVD keyword defines the initial coal gas concentration versus depth tables for each equilibration region for when the coal phase has been activated in the run via the COAL keyword in the RUNSPEC section. The keyword may be used in conjunction with the GASCONC keyword in the SOLUTION section, to fully describe the initial state of the model. Note both GASCONC and GCVD are optional as the simulator will calculate the coal gas concentration based on the equilibrium concentration and the block pressure.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -15,18 +15,20 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [DEPTH](#kw-DEPTH) | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding coal gas concentration, GCVALS. | None |
+| 1 | DEPTH | A columnar vector of real monotonically increasing down the column   values that defines the depth values for the corresponding coal gas concentration, GCVALS. | None |
 | feet | m | cm |  |
-| 2 | GCVALS | A columnar vector of real values that defines the coal gas concentration values at the corresponding [DEPTH](#kw-DEPTH). | None |
+| 2 | GCVALS | A columnar vector of real values that defines the coal gas concentration values at the corresponding DEPTH. | None |
 | Mscf/ft3 | sm3/m3 | scc/cc |  |
 | Notes: |  |  |  |
-: GCVD Keyword Description {#tbl-10-17}
-See also the [GASCONC](#kw-GASCONC) and [GASSATC](#kw-GASSATC) keywords in the [SOLUTION](#kw-SOLUTION) section.
+
+*Table 10.17: GCVD Keyword Description*
+
+See also the GASCONC and GASSATC keywords in the SOLUTION section.
 
 
 #### Example
 
-Given NTEQUL equals three and NDRXVD is greater than or equal to two on the [EQLDIMS](#kw-EQLDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, then the following example defines the coal gas concentration versus depth functions.
+Given NTEQUL equals three and NDRXVD is greater than or equal to two on the EQLDIMS keyword in the RUNSPEC section, then the following example defines the coal gas concentration versus depth functions.
 
 
 ```

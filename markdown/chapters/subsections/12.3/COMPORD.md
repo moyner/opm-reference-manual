@@ -1,23 +1,26 @@
-### COMPORD – Define Well Connection Ordering {#kw-COMPORD}
+### COMPORD – Define Well Connection Ordering
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The COMPORD keyword defines how the well connection data entered on the [COMPDAT](#kw-COMPDAT) keyword in the [SCHEDULE](#kw-SCHEDULE) section are to be ordered for a well.
+The COMPORD keyword defines how the well connection data entered on the COMPDAT keyword in the SCHEDULE section are to be ordered for a well.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
-| 2 | COMPORD | A character string that defines the method for ordering the well connections given on the [COMPDAT](#kw-COMPDAT) keyword, and should be set to [DEPTH](#kw-DEPTH), INPUT, or TRACK. All options are now supported by OPM Flow. | TRACK |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
+| 2 | COMPORD | A character string that defines the method for ordering the well connections given on the COMPDAT keyword, and should be set to DEPTH, INPUT, or TRACK. All options are now supported by OPM Flow. | TRACK |
 | Notes: |  |  |  |
-: COMPORD Keyword Description {#tbl-12-15}
-See also the [COMPDAT](#kw-COMPDAT) keyword in the [SCHEDULE](#kw-SCHEDULE) section.
+
+*Table 12.15: COMPORD Keyword Description*
+
+
+See also the COMPDAT keyword in the SCHEDULE section.
 
 
 ::: {.callout-note}
@@ -27,7 +30,7 @@ If visual inspection of the well trajectories in the model indicate problematic 
 
 #### Example
 
-The following example defines the connections for two vertical oil wells using the [COMPDAT](#kw-COMPDAT) keyword and the COMPORD to defined the connection ordering for the wells.
+The following example defines the connections for two vertical oil wells using the COMPDAT keyword and the COMPORD to defined the connection ordering for the wells.
 
 
 ```
@@ -51,7 +54,7 @@ OP02     DEPTH                                             /
 /
 ```
 
-The [DEPTH](#kw-DEPTH) option has been chosen because both wells are vertical. Also one could use the following format instead for the COMPORD:
+The DEPTH option has been chosen because both wells are vertical. Also one could use the following format instead for the COMPORD:
 
 
 ```
@@ -66,4 +69,4 @@ COMPORD
 ```
 
 
-as both wells should utilize the [DEPTH](#kw-DEPTH) option. This version would set all wells in the model to [DEPTH](#kw-DEPTH) connection ordering.
+as both wells should utilize the DEPTH option. This version would set all wells in the model to DEPTH connection ordering.

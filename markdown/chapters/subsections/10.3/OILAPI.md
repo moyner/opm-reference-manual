@@ -1,25 +1,28 @@
-### OILAPI – Define the Initial Equilibration Oil API for All Grid Blocks {#kw-OILAPI}
+### OILAPI – Define the Initial Equilibration Oil API for All Grid Blocks
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The OILAPI keyword defines the initial equilibration oil [API](#kw-API) gravity pressures for all grid cells in the model, for when the Oil [API](#kw-API) Tracking option as been invoked by the [API](#kw-API) keyword in the [RUNSPEC](#kw-RUNSPEC) section. The keyword should be used in conjunction with the [PBUB](#kw-PBUB), [PDEW](#kw-PDEW), [PRESSURE](#kw-PRESSURE), [RS](#kw-RS), [RV](#kw-RV), [SGAS](#kw-SGAS), [SOIL](#kw-SOIL) and [SWAT](#kw-SWAT) keywords etc., to fully describe the initial state of the model.
+The OILAPI keyword defines the initial equilibration oil API gravity pressures for all grid cells in the model, for when the Oil API Tracking option as been invoked by the API keyword in the RUNSPEC section. The keyword should be used in conjunction with the PBUB, PDEW, PRESSURE, RS, RV, SGAS, SOIL and SWAT keywords etc., to fully describe the initial state of the model.
 
-The keyword is used by the Enumeration Initialization method to initialize the model, as opposed to the Equilibration Initialization method that utilizes the [EQUIL](#kw-EQUIL) keyword in the [SOLUTION](#kw-SOLUTION) section. This is the non-standard formulation to initialize the model and is seldom employed in the industry.  The standard methodology is for OPM Flow to initialize a model using the parameters on the [EQUIL](#kw-EQUIL) keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
+The keyword is used by the Enumeration Initialization method to initialize the model, as opposed to the Equilibration Initialization method that utilizes the EQUIL keyword in the SOLUTION section. This is the non-standard formulation to initialize the model and is seldom employed in the industry.  The standard methodology is for OPM Flow to initialize a model using the parameters on the EQUIL keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | OILAPI | OILAPI is an array of real positive numbers assigning the initial equilibration oil [API](#kw-API) gravity to each cell in the model. The American Petroleum Institute (“[API](#kw-API)”) classifies oils based on an [API](#kw-API) gravity (γ[API](#kw-API)),  or degrees [API](#kw-API) (oAPI), the relationship between relative density (γo) of oil and [API](#kw-API) gravity (γ[API](#kw-API)) is given by: ${\mathrm{γ}}_{\mathit{[API](#kw-API)}} = \frac{141.5}{{\mathrm{γ}}_{o}} - 131.5$ Repeat counts may be used, for example 20*38.5 | None |
+| 1 | OILAPI | OILAPI is an array of real positive numbers assigning the initial equilibration oil API gravity to each cell in the model. The American Petroleum Institute (“API”) classifies oils based on an API gravity (γAPI),  or degrees API (oAPI), the relationship between relative density (γo) of oil and API gravity (γAPI) is given by: ${\mathrm{γ}}_{\mathit{API}} = \frac{141.5}{{\mathrm{γ}}_{o}} - 131.5$ Repeat counts may be used, for example 20*38.5 | None |
 | oAPI | oAPI | oAPI |  |
 | Notes: |  |  |  |
-: OILAPI Keyword Description {#tbl-10-18}
-See also the [PBUB](#kw-PBUB), [PDEW](#kw-PDEW), [PRESSURE](#kw-PRESSURE), [RS](#kw-RS), [RV](#kw-RV), [SGAS](#kw-SGAS), [SOIL](#kw-SOIL) and [SWAT](#kw-SWAT) keywords to fully define the initial state of the model.
+
+*Table 10.18: OILAPI Keyword Description*
+
+
+See also the PBUB, PDEW, PRESSURE, RS, RV, SGAS, SOIL and SWAT keywords to fully define the initial state of the model.
 
 
 #### Example
@@ -35,4 +38,4 @@ OILAPI
 
 ```
 
-The above example defines the initial equilibration oil [API](#kw-API) gravity to be 40.2 for all the cells in the first layer, 39.5 for all the cells in the second layer, and finally 38.2 for all the cells in the third layer.
+The above example defines the initial equilibration oil API gravity to be 40.2 for all the cells in the first layer, 39.5 for all the cells in the second layer, and finally 38.2 for all the cells in the third layer.

@@ -1,23 +1,23 @@
-### DIFFCWAT – Define PVT Region Water Component Diffusion Coefficients {#kw-DIFFCWAT}
+### DIFFCWAT – Define PVT Region Water Component Diffusion Coefficients
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The DIFFCWAT keyword defines the water diffusion coefficients assuming the standard mole fraction formulation for each compositional component in the model and for each PVT region, for when the Molecular Diffusion option has been activated by the [DIFFUSE](#kw-DIFFUSE) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The DIFFCWAT keyword defines the water diffusion coefficients assuming the standard mole fraction formulation for each compositional component in the model and for each PVT region, for when the Molecular Diffusion option has been activated by the DIFFUSE keyword in the RUNSPEC section.
 
 This keyword is optional as OPM Flow will automatically calculate the coefficients assuming the mole fraction formulation, as described by Sandve et al.^[Tor Harald Sandve, Sarah E. Gasda, Atgeirr Rasmussen, and Alf Birger Rustad. Convective dissolution in field scale CO2 storage simulation using the OPM Flow simulator. Submitted to TCCS 11 – Trondheim Conference on CO2 Capture, Transport and Storage Trondheim, Norway – June 21-23, 2021.], if the [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) and DIFFCWAT keywords are absent from the input deck.  The keyword thus allows one to overwrite the automatically calculated values.
 
-The keyword should only be used if the [CO2STORE](#kw-CO2STORE) or [H2STORE](#REF_HEADING_KEYWORD_H2STORE) keyword and either the [GASWAT](#kw-GASWAT) or the [GAS](#kw-GAS) and [WATER](#kw-WATER) keywords in the [RUNSPEC](#kw-RUNSPEC) section, have also been activated for the gas-water two component model.
+The keyword should only be used if the CO2STORE or [H2STORE](#REF_HEADING_KEYWORD_H2STORE) keyword and either the GASWAT or the GAS and WATER keywords in the RUNSPEC section, have also been activated for the gas-water two component model.
 
-See also the [DIFFAGAS](#REF_HEADING_KEYWORD_DIFFAGAS_8_3) and [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) keywords that assume a mass fraction formulation for diffusion rather than the standard mole fraction formulation assumed by the [DIFFCGAS](#kw-DIFFCGAS) and DIFFCWAT keywords. The [DIFFAGAS](#REF_HEADING_KEYWORD_DIFFAGAS_8_3) and [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) keywords cannot be used in combination with the [DIFFCGAS](#kw-DIFFCGAS) and DIFFCWAT keywords.
+See also the [DIFFAGAS](#REF_HEADING_KEYWORD_DIFFAGAS_8_3) and [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) keywords that assume a mass fraction formulation for diffusion rather than the standard mole fraction formulation assumed by the DIFFCGAS and DIFFCWAT keywords. The [DIFFAGAS](#REF_HEADING_KEYWORD_DIFFAGAS_8_3) and [DIFFAWAT](#REF_HEADING_KEYWORD_DIFFAWAT_8_3) keywords cannot be used in combination with the DIFFCGAS and DIFFCWAT keywords.
 
 
 ::: {.callout-note}
-This is an OPM Flow keyword used with OPM Flow’s [CO2STORE](#kw-CO2STORE) or [H2STORE](#REF_HEADING_KEYWORD_H2STORE) and [GASWAT](#kw-GASWAT) keywords in the [RUNSPEC](#kw-RUNSPEC) section, and should not be confused with the more general version of the DIFFCWAT keyword used in the commercial compositional simulator.
+This is an OPM Flow keyword used with OPM Flow’s CO2STORE or [H2STORE](#REF_HEADING_KEYWORD_H2STORE) and GASWAT keywords in the RUNSPEC section, and should not be confused with the more general version of the DIFFCWAT keyword used in the commercial compositional simulator.
 :::
 
 
@@ -29,15 +29,18 @@ This is an OPM Flow keyword used with OPM Flow’s [CO2STORE](#kw-CO2STORE) or [
 | 2 | WATDIFF | A real positive number that specifies the water in water diffusion coefficient in the given PVT region. | None |
 | ft2/day | m2/day | cm2/hour |  |
 | Notes: |  |  |  |
-: DIFFCWAT Keyword Description {#tbl-8-30}
+
+*Table 8.30: DIFFCWAT Keyword Description*
+
+
 ::: {.callout-note}
-The option has been tested in combination with the [CO2STORE](#kw-CO2STORE) keyword, but not for the general case at this point.
+The option has been tested in combination with the CO2STORE keyword, but not for the general case at this point.
 :::
 
 
-See also the [DIFFUSE](#kw-DIFFUSE) keyword in the [RUNSPEC](#kw-RUNSPEC) section to activate the Molecular Diffusion option and the [DIFFCGAS](#kw-DIFFCGAS) keyword in the [PROPS](#kw-PROPS) section that defines the gas diffusion coefficients for each compositional component in the model and for each PVT region. Finally, for gas-oil systems the [DIFFC](#kw-DIFFC) keyword in the [PROPS](#kw-PROPS) section should be used.
+See also the DIFFUSE keyword in the RUNSPEC section to activate the Molecular Diffusion option and the DIFFCGAS keyword in the PROPS section that defines the gas diffusion coefficients for each compositional component in the model and for each PVT region. Finally, for gas-oil systems the DIFFC keyword in the PROPS section should be used.
 
-Normally diffusion coefficients are measured in laboratory units, that is cm2/s, for ease of use @tbl-8-31 outlines the conversion factors for converting the laboratory measured diffusion coefficients to those used by the simulator.
+Normally diffusion coefficients are measured in laboratory units, that is cm2/s, for ease of use Table 8.31 outlines the conversion factors for converting the laboratory measured diffusion coefficients to those used by the simulator.
 
 
 | Diffusivity Conversion Factors |  |  |
@@ -46,10 +49,13 @@ Normally diffusion coefficients are measured in laboratory units, that is cm2/s,
 | 1 cm2/s | 92.9979 ft2/day | Field |
 | 8.64 m2/day | Metric |  |
 | 3600 cm2/hour | Laboratory |  |
-: Diffusivity Conversion Factors {#tbl-8-31}
+
+*Table 8.31: Diffusivity Conversion Factors*
+
+
 #### Example
 
-The example below is based on field units, with NTPVT equal to three on the [TABDIMS](#kw-TABDIMS) keyword.
+The example below is based on field units, with NTPVT equal to three on the TABDIMS keyword.
 
 
 ```

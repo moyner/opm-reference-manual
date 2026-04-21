@@ -1,13 +1,13 @@
-### PVDG – Gas PVT Properties for Dry Gas {#kw-PVDG}
+### PVDG – Gas PVT Properties for Dry Gas
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-PVDG defines the gas PVT properties for dry gas^[Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.]. If the gas has a constant and uniform vaporized oil concentration, Condensate-Gas Ratio (“CGR”), and if the reservoir pressure never drops below the saturation pressure (dew point pressure), then the model can be run more efficiently by omitting the [OIL](#kw-OIL) and [VAPOIL](#kw-VAPOIL) keywords from the [RUNSPEC](#kw-RUNSPEC) section, treating the gas as a dry gas, and defining a constant Rv (CGR) value with keyword [RVCONST](#kw-RVCONST) or [RVCONSTT](#kw-RVCONSTT) in the [PROPS](#kw-PROPS) section. This results in the model being run with as a dry gas problem with no active oil (condensate) phase. However, OPM Flow takes into account the constant Rv in the calculations and reporting.
+PVDG defines the gas PVT properties for dry gas^[Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.]. If the gas has a constant and uniform vaporized oil concentration, Condensate-Gas Ratio (“CGR”), and if the reservoir pressure never drops below the saturation pressure (dew point pressure), then the model can be run more efficiently by omitting the OIL and VAPOIL keywords from the RUNSPEC section, treating the gas as a dry gas, and defining a constant Rv (CGR) value with keyword RVCONST or RVCONSTT in the PROPS section. This results in the model being run with as a dry gas problem with no active oil (condensate) phase. However, OPM Flow takes into account the constant Rv in the calculations and reporting.
 
 
 | No. | Name | Description | Default |
@@ -20,16 +20,19 @@ PVDG defines the gas PVT properties for dry gas^[Natural gas that occurs in the 
 | 3 | GVISC | A columnar vector of real increasing down the column values that defines the corresponding gas phase viscosity. | None |
 | cP | cP | cP |  |
 | Notes: |  |  |  |
-: PVDG Keyword Description {#tbl-8-114}
+
+*Table 8.114: PVDG Keyword Description*
+
+
 Note that provided the first table has been entered, subsequent tables may be defaulted, in this case the prior table is copied to the current table. See the second example for an illustration on how to use this feature.
 
 
-See also the [RVCONST](#kw-RVCONST) and [RVCONSTT](#kw-RVCONSTT) keywords to define the constant Rv for dry gas.
+See also the RVCONST and RVCONSTT keywords to define the constant Rv for dry gas.
 
 
 #### Example
 
-The first example below defines two dry gas PVT tables assuming NTPVT equals two and NPPVT is greater than or equal to 22 on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The first example below defines two dry gas PVT tables assuming NTPVT equals two and NPPVT is greater than or equal to 22 on the TABDIMS keyword in the RUNSPEC section.
 
 
 ```
@@ -89,7 +92,7 @@ PVDG
 ```
 
 
-The second example defines four dry gas PVT tables assuming NTPVT equals four and NPPVT is greater than or equal to 22 on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Here table two defaults to table one, and table four defaults to table three.
+The second example defines four dry gas PVT tables assuming NTPVT equals four and NPPVT is greater than or equal to 22 on the TABDIMS keyword in the RUNSPEC section. Here table two defaults to table one, and table four defaults to table three.
 
 
 ```

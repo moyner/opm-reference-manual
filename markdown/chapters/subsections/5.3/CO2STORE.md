@@ -1,7 +1,7 @@
-### CO2STORE – Activate the CO2 Storage Model {#kw-CO2STORE}
+### CO2STORE – Activate the CO2 Storage Model
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -9,26 +9,26 @@
 
 The CO2STORE keyword activates the carbon dioxide (CO2) storage model for the run to account for both  carbon dioxide and water phase solubility, via the simulator’s CO2-Brine PVT model. This keyword is a compositional keyword in the commercial simulator but has been implemented in OPM Flow’s black-oil model.
 
-The CO2-Brine PVT model computes the PVT properties such as density, viscosity, and enthalpy internally as functions of pressure, temperature, and composition by using analytic correlations and models from the literature rather than by interpolation from tabulated values. These values are transformed to the standard black-oil equivalent PVT tables internally by the simulator. A full description of the underlying PVT models is described by Sandve et al.^[Tor Harald Sandve1, Sarah E. Gasda, Atgeirr Rasmussen, and Alf Birger Rustad. Convective dissolution in field scale CO2 storage simulation using the OPM Flow simulator. Submitted to TCCS 11 – Trondheim Conference on CO2 Capture, Transport and Storage Trondheim, Norway – June 21-23, 2021.]. This means that the normal PVT keywords like [DENSITY](#kw-DENSITY), [PVTO](#kw-PVTO), [PVDG](#kw-PVDG) etc. are not required by OPM Flow when this model is activated, and if entered will be ignored by the simulator. Note that the CO2-Brine PVT properties depend on the temperature and salinity and these must therefore be entered in the [PROPS](#kw-PROPS) or [SOLUTION](#kw-SOLUTION) sections. The reservoir temperature can be defined using, e.g., the [RTEMP](#kw-RTEMP) keyword. Region based salinity can be provided using the [SALINITY](#kw-SALINITY) keyword.
+The CO2-Brine PVT model computes the PVT properties such as density, viscosity, and enthalpy internally as functions of pressure, temperature, and composition by using analytic correlations and models from the literature rather than by interpolation from tabulated values. These values are transformed to the standard black-oil equivalent PVT tables internally by the simulator. A full description of the underlying PVT models is described by Sandve et al.^[Tor Harald Sandve1, Sarah E. Gasda, Atgeirr Rasmussen, and Alf Birger Rustad. Convective dissolution in field scale CO2 storage simulation using the OPM Flow simulator. Submitted to TCCS 11 – Trondheim Conference on CO2 Capture, Transport and Storage Trondheim, Norway – June 21-23, 2021.]. This means that the normal PVT keywords like DENSITY, PVTO, PVDG etc. are not required by OPM Flow when this model is activated, and if entered will be ignored by the simulator. Note that the CO2-Brine PVT properties depend on the temperature and salinity and these must therefore be entered in the PROPS or SOLUTION sections. The reservoir temperature can be defined using, e.g., the RTEMP keyword. Region based salinity can be provided using the SALINITY keyword.
 
-The CO2STORE keyword must be used together with either: (1) the [GAS](#kw-GAS) and [WATER](#kw-WATER) keywords (or alternatively the [GASWAT](#kw-GASWAT) keyword), or (2) the [GAS](#kw-GAS) and [OIL](#kw-OIL) keywords in the [RUNSPEC](#kw-RUNSPEC) section. It is recommended that the standard method option (1) is used.
+The CO2STORE keyword must be used together with either: (1) the GAS and WATER keywords (or alternatively the GASWAT keyword), or (2) the GAS and OIL keywords in the RUNSPEC section. It is recommended that the standard method option (1) is used.
 
-The [DISGASW](#kw-DISGASW) keyword in the [RUNSPEC](#kw-RUNSPEC) section can be used with option (1) to model dissolution of CO2 in the Brine.
+The DISGASW keyword in the RUNSPEC section can be used with option (1) to model dissolution of CO2 in the Brine.
 
-Option (1) has the advantage that it can be used with the [VAPWAT](#kw-VAPWAT) and [PRECSALT](#kw-PRECSALT) keywords in the [RUNSPEC](#kw-RUNSPEC) section to model the impact of both vaporization of residual water and salt precipitation in the near wellbore region on injectivity of CO2 injection wells.
+Option (1) has the advantage that it can be used with the VAPWAT and PRECSALT keywords in the RUNSPEC section to model the impact of both vaporization of residual water and salt precipitation in the near wellbore region on injectivity of CO2 injection wells.
 
-In option (1), the [GAS](#kw-GAS) and [WATER](#kw-WATER) (or [GASWAT](#kw-GASWAT)) keywords declare that the gas and water phases are present in the model. When the CO2STORE option is used the water phase represents the brine and the gas phase represents CO2. Note that the input and output keywords need to be consistent with this assumption, e.g., [GSF](#kw-GSF) (gas saturation function) and [WSF](#kw-WSF) (water saturation function) should be used for the CO2-Brine relative permeability, etc.
+In option (1), the GAS and WATER (or GASWAT) keywords declare that the gas and water phases are present in the model. When the CO2STORE option is used the water phase represents the brine and the gas phase represents CO2. Note that the input and output keywords need to be consistent with this assumption, e.g., GSF (gas saturation function) and WSF (water saturation function) should be used for the CO2-Brine relative permeability, etc.
 
-Although, the [DISGAS](#kw-DISGAS) and [VAPOIL](#kw-VAPOIL) keywords can be used with option (2) to model CO2 dissolution and water vaporization, salt precipitation is not supported with option (2).
+Although, the DISGAS and VAPOIL keywords can be used with option (2) to model CO2 dissolution and water vaporization, salt precipitation is not supported with option (2).
 
-In option (2), the [GAS](#kw-GAS) and [OIL](#kw-OIL) keywords declare that the gas and oil phases are present in the model. Internally when CO2STORE is used the oil phase refers to the brine and the gas phase to CO2. Again, the input and output keywords need to be consistent with this assumption, e.g., [SGOF](#kw-SGOF) (gas-oil relative permeability) is used for the CO2-Brine relative permeability, FOIP (Field Oil-In-Place) shows the total amount of brine in the reservoir, etc.
+In option (2), the GAS and OIL keywords declare that the gas and oil phases are present in the model. Internally when CO2STORE is used the oil phase refers to the brine and the gas phase to CO2. Again, the input and output keywords need to be consistent with this assumption, e.g., SGOF (gas-oil relative permeability) is used for the CO2-Brine relative permeability, FOIP (Field Oil-In-Place) shows the total amount of brine in the reservoir, etc.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 
 
 #### Examples
 
-The first example shows the standard usage of CO2STORE with Option (1) the Gas-Water model ([GASWAT](#kw-GASWAT)).  Here we also activate the dissolved gas in water ([DISGASW](#kw-DISGASW)) and vaporized water in gas ([VAPWAT](#kw-VAPWAT)) options in the [RUNSPEC](#kw-RUNSPEC) section.
+The first example shows the standard usage of CO2STORE with Option (1) the Gas-Water model (GASWAT).  Here we also activate the dissolved gas in water (DISGASW) and vaporized water in gas (VAPWAT) options in the RUNSPEC section.
 
 
 ```
@@ -60,7 +60,7 @@ VAPWAT
 
 ```
 
-The second part of the example covers the data required for the [PROPS](#kw-PROPS) section, in which the two-phase relative permeability functions are set using [GSF](#kw-GSF) and [WSF](#kw-WSF) keywords.
+The second part of the example covers the data required for the PROPS section, in which the two-phase relative permeability functions are set using GSF and WSF keywords.
 
 
 ```
@@ -121,9 +121,9 @@ SALINITY
 
 ```
 
-No other data is required to define the fluid and rock properties in the [PROPS](#kw-PROPS) section as the data is generated from internal analytic correlations and models by the simulator. Finally, note that units for salinity are to the 10-3, thus for metric units we have 10-3 x kg-M/kg.
+No other data is required to define the fluid and rock properties in the PROPS section as the data is generated from internal analytic correlations and models by the simulator. Finally, note that units for salinity are to the 10-3, thus for metric units we have 10-3 x kg-M/kg.
 
-The third part of the example covers initializing the model in the [SOLUTION](#kw-SOLUTION) section. Here we set the [EQUIL](#kw-EQUIL)(EQLOPT6) parameter equal to one, to use table number one of the [RVWVD](#kw-RVWVD) keyword, in order to set the vaporized water versus depth distribution for the model.
+The third part of the example covers initializing the model in the SOLUTION section. Here we set the EQUIL(EQLOPT6) parameter equal to one, to use table number one of the RVWVD keyword, in order to set the vaporized water versus depth distribution for the model.
 
 
 ```
@@ -152,7 +152,7 @@ RVWVD
 ```
 
 
-In the [SUMMARY](#kw-SUMMARY) section, the simulator supports summary vectors specific to CO2 storage (see Section 11.1.12 Option Specific Variables - CO2STORE/[H2STORE](#kw-H2STORE) Model) including those shown below.
+In the SUMMARY section, the simulator supports summary vectors specific to CO2 storage (see Section 11.1.12 Option Specific Variables - CO2STORE/H2STORE Model) including those shown below.
 
 
 ```
@@ -178,7 +178,7 @@ FGCDM
 
 ```
 
-The final part of the example covers the [SCHEDULE](#kw-SCHEDULE) section. The standard [WCONINJE](#kw-WCONINJE) keyword is used to set the gas injection rate, in this case 100,000 sm3/day of CO2.
+The final part of the example covers the SCHEDULE section. The standard WCONINJE keyword is used to set the gas injection rate, in this case 100,000 sm3/day of CO2.
 
 
 ```
@@ -229,7 +229,7 @@ TSTEP
 Note in order to get the liquid phase mole fractions of CO2, that is, the mole fractions of CO2 in the water phase (XMFCO2), and the vapor phase mole fractions (YMFWAT) to the restart file, one must use the command line parameter enable-opm-rst-file set equal to true.
 
 
-The second example shows how to use CO2STORE with the alternative option (2). The example below declares that the carbon dioxide storage model is active for the run to account for both carbon dioxide and water phase solubility using OPM Flow’s CO2-Brine PVT model. Option (2) is used where the [OIL](#kw-OIL) phase refers to the brine and the [GAS](#kw-GAS) phase to CO2.
+The second example shows how to use CO2STORE with the alternative option (2). The example below declares that the carbon dioxide storage model is active for the run to account for both carbon dioxide and water phase solubility using OPM Flow’s CO2-Brine PVT model. Option (2) is used where the OIL phase refers to the brine and the GAS phase to CO2.
 
 
 ```
@@ -263,7 +263,7 @@ VAPOIL
 
 ```
 
-The second part of the example covers the data required for the [PROPS](#kw-PROPS) section, in which the input keywords need to be consistent with the [OIL](#kw-OIL) phase referring to the Brine and the [GAS](#kw-GAS) to CO2; that is  [SGOF](#kw-SGOF) (gas-oil relative permeability) is used to define the CO2-Brine relative permeability table.
+The second part of the example covers the data required for the PROPS section, in which the input keywords need to be consistent with the OIL phase referring to the Brine and the GAS to CO2; that is  SGOF (gas-oil relative permeability) is used to define the CO2-Brine relative permeability table.
 
 
 ```
@@ -305,7 +305,7 @@ SALINITY
 
 ```
 
-The third part of the example covers initializing the model in the [SOLUTION](#kw-SOLUTION) section. Here we set the [EQUIL](#kw-EQUIL)(EQLOPT1 and EQLOPT2) parameters equal to one, to use table number one of the [RSVD](#kw-RSVD) and [RVVD](#kw-RVVD) keywords, in order to set the initial dissolved CO2 and vaporized water versus depth distribution for the model.
+The third part of the example covers initializing the model in the SOLUTION section. Here we set the EQUIL(EQLOPT1 and EQLOPT2) parameters equal to one, to use table number one of the RSVD and RVVD keywords, in order to set the initial dissolved CO2 and vaporized water versus depth distribution for the model.
 
 
 ```
@@ -339,4 +339,4 @@ RVVD
 
 ```
 
-See also the [DRSDTCON](#kw-DRSDTCON) keyword in the [SCHEDULE](#kw-SCHEDULE) section for details of how to control convective dissolution of carbon dioxide into the in-situ brine.
+See also the DRSDTCON keyword in the SCHEDULE section for details of how to control convective dissolution of carbon dioxide into the in-situ brine.

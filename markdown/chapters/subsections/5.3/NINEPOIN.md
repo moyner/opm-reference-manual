@@ -1,7 +1,7 @@
-### NINEPOIN – Activate the Nine-Point Discretization Option {#kw-NINEPOIN}
+### NINEPOIN – Activate the Nine-Point Discretization Option
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -11,7 +11,7 @@ The NINEPOIN keyword activates the Nine-Point Discretization formulation for the
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
-In none Local Grid Refinement runs the [NINENUM](#kw-NINENUM) keyword in the [GRID](#kw-GRID) section may be use to optionally set parts of the grid to use nine-point discretization and the remaining regions to use the conventional standard five-point discretization formulation.
+In none Local Grid Refinement runs the NINENUM keyword in the GRID section may be use to optionally set parts of the grid to use nine-point discretization and the remaining regions to use the conventional standard five-point discretization formulation.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 

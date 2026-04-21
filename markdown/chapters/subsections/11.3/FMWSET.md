@@ -1,13 +1,13 @@
-### FMWSET – Export Well Status Vectors for the Field to File {#kw-FMWSET}
+### FMWSET – Export Well Status Vectors for the Field to File
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword is similar to the [ALL](#kw-ALL) keyword in the [SUMMARY](#kw-SUMMARY) section, in that it results in a group of summary variables to be written out to the [SUMMARY](#kw-SUMMARY) file. In this case the keyword activates the writing out of a set of data vectors that give the production and injections status of all the wells in the model, as well as the number of wells in the drilling queue and the number of workover events occurring within a time step. Both instantaneous and cumulative well counts and events are written out as listed in @tbl-11-28.
+This keyword is similar to the ALL keyword in the SUMMARY section, in that it results in a group of summary variables to be written out to the SUMMARY file. In this case the keyword activates the writing out of a set of data vectors that give the production and injections status of all the wells in the model, as well as the number of wells in the drilling queue and the number of workover events occurring within a time step. Both instantaneous and cumulative well counts and events are written out as listed in Table 11.28.
 
 There is no data required for this keyword.
 
@@ -40,8 +40,11 @@ This keyword is not supported by OPM Flow but has no effect on the results so it
 | Total number of injection wells | MWIT | FMWIT | GMWIT |  |
 | Total number of production wells | MWPT | FMWPT | GMWPT |  |
 | Notes: |  |  |  |  |
-: FMWSET - Standard Field and Group Well Status Summary Variables {#tbl-11-28}
-See also the [GMWSET](#kw-GMWSET) keyword in the [SUMMARY](#kw-SUMMARY) schedule that has similar functionality but at a group level.
+
+*Table 11.28: FMWSET - Standard Field and Group Well Status Summary Variables*
+
+
+See also the GMWSET keyword in the SUMMARY schedule that has similar functionality but at a group level.
 
 
 #### Example
@@ -69,4 +72,4 @@ SEPARATE
 ```
 
 
-The above example exports the field standard well status variables to the [SUMMARY](#kw-SUMMARY) file.
+The above example exports the field standard well status variables to the SUMMARY file.

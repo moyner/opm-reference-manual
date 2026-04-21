@@ -1,13 +1,13 @@
-### RSSPEC – Activate Output of the RESTART Index File {#kw-RSSPEC}
+### RSSPEC – Activate Output of the RESTART Index File
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The RSSPEC keyword activates the writing out of the [RESTART](#kw-RESTART) index file (*.RSSPEC). The restart data (pressure, saturations etc. through time for each active cell) are written out to two files one file contains the data, *.UNRST for example, and the second file contains an index of the data (*.RSSPEC) stored in the *.UNRST file. This keyword is somewhat redundant as the [RESTART](#kw-RESTART) index file is written out by default. See the [NORSSPEC](#kw-NORSSPEC) keyword in the [RUNSPEC](#kw-RUNSPEC) section that deactivates the writing out of the file.
+The RSSPEC keyword activates the writing out of the RESTART index file (*.RSSPEC). The restart data (pressure, saturations etc. through time for each active cell) are written out to two files one file contains the data, *.UNRST for example, and the second file contains an index of the data (*.RSSPEC) stored in the *.UNRST file. This keyword is somewhat redundant as the RESTART index file is written out by default. See the NORSSPEC keyword in the RUNSPEC section that deactivates the writing out of the file.
 
 Hence, OPM Flow ignores this keyword. It is documented here for completeness.
 

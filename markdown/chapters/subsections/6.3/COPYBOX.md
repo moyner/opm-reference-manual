@@ -1,7 +1,7 @@
-### COPYBOX – Copy Array Data Defined by a Box {#kw-COPYBOX}
+### COPYBOX – Copy Array Data Defined by a Box
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -28,38 +28,44 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | 12 | K3 | A positive integer that defines the DESTINATION lower bound of the array in the K-direction to be modified must be greater than or equal to one and less than or equal to K2 and NZ. | 1 |
 | 13 | K4 | A positive integer that defines the DESTINATION upper bound of the array in the K-direction to be modified must be greater than or equal to KI and less than or equal to NZ. | NZ |
 | Notes: |  |  |  |
-: COPYBOX Keyword Description {#tbl-6-18}
-Note that the [SOURCE](#REF_HEADING_KEYWORD_SOURCE_12_3) and DESTINATION arrays must be of the same size in all dimensions and the applicable arrays for each section are defined in @tbl-6-19.
+
+*Table 6.18: COPYBOX Keyword Description*
+
+
+Note that the [SOURCE](#REF_HEADING_KEYWORD_SOURCE_12_3) and DESTINATION arrays must be of the same size in all dimensions and the applicable arrays for each section are defined in Table 6.19.
 
 
 | COPYBOX Keyword and Variable Options by Section |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- |
-| [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
-| [DX](#kw-DX) |  | [SWL](#kw-SWL) | [ENDNUM](#kw-ENDNUM) |  |  |  |
-| [DY](#kw-DY) |  | [SWCR](#kw-SWCR) | [EQLNUM](#kw-EQLNUM) |  |  |  |
-| [DZ](#kw-DZ) |  | [SWU](#kw-SWU) | [FIPNUM](#kw-FIPNUM) |  |  |  |
-| [PERMX](#kw-PERMX) |  | [SGL](#kw-SGL) | [IMBNUM](#kw-IMBNUM) |  |  |  |
-| [PERMY](#kw-PERMY) |  | [SGCR](#kw-SGCR) | [MISCNUM](#kw-MISCNUM) |  |  |  |
-| [PERMZ](#kw-PERMZ) |  | [SGU](#kw-SGU) | [PVTNUM](#kw-PVTNUM) |  |  |  |
-| [MULTX](#kw-MULTX) |  | [KRW](#kw-KRW) | [ROCKNUM](#kw-ROCKNUM) |  |  |  |
-| [MULTY](#kw-MULTY) |  | [KRO](#kw-KRO) | [SATNUM](#kw-SATNUM) |  |  |  |
-| [MULTZ](#kw-MULTZ) |  | [KRG](#kw-KRG) | [WH2NUM](#kw-WH2NUM) |  |  |  |
-| [DR](#kw-DR) |  | [PCG](#kw-PCG) |  |  |  |  |
-| [DTHETA](#kw-DTHETA) |  | [PCW](#kw-PCW) |  |  |  |  |
-| [PERMR](#kw-PERMR) |  |  |  |  |  |  |
-| [PERMTHT](#kw-PERMTHT) |  |  |  |  |  |  |
-| [DZNET](#kw-DZNET) |  |  |  |  |  |  |
-| [PORO](#kw-PORO) |  |  |  |  |  |  |
-| [NTG](#kw-NTG) |  |  |  |  |  |  |
-| [FLUXNUM](#kw-FLUXNUM) |  |  |  |  |  |  |
-| [MULTNUM](#kw-MULTNUM) |  |  |  |  |  |  |
-| [MPFANUM](#kw-MPFANUM) |  |  |  |  |  |  |
-| [DIFFX](#kw-DIFFX) |  |  |  |  |  |  |
-| [DIFFY](#kw-DIFFY) |  |  |  |  |  |  |
-| [DIFFZ](#kw-DIFFZ) |  |  |  |  |  |  |
-| [DIFFR](#kw-DIFFR) |  |  |  |  |  |  |
-| [DIFFTHT](#kw-DIFFTHT) |  |  |  |  |  |  |
-: COPYBOX Keyword Applicable Arrays by Section {#tbl-6-19}
+| GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| DX |  | SWL | ENDNUM |  |  |  |
+| DY |  | SWCR | EQLNUM |  |  |  |
+| DZ |  | SWU | FIPNUM |  |  |  |
+| PERMX |  | SGL | IMBNUM |  |  |  |
+| PERMY |  | SGCR | MISCNUM |  |  |  |
+| PERMZ |  | SGU | PVTNUM |  |  |  |
+| MULTX |  | KRW | ROCKNUM |  |  |  |
+| MULTY |  | KRO | SATNUM |  |  |  |
+| MULTZ |  | KRG | WH2NUM |  |  |  |
+| DR |  | PCG |  |  |  |  |
+| DTHETA |  | PCW |  |  |  |  |
+| PERMR |  |  |  |  |  |  |
+| PERMTHT |  |  |  |  |  |  |
+| DZNET |  |  |  |  |  |  |
+| PORO |  |  |  |  |  |  |
+| NTG |  |  |  |  |  |  |
+| FLUXNUM |  |  |  |  |  |  |
+| MULTNUM |  |  |  |  |  |  |
+| MPFANUM |  |  |  |  |  |  |
+| DIFFX |  |  |  |  |  |  |
+| DIFFY |  |  |  |  |  |  |
+| DIFFZ |  |  |  |  |  |  |
+| DIFFR |  |  |  |  |  |  |
+| DIFFTHT |  |  |  |  |  |  |
+
+*Table 6.19: COPYBOX Keyword Applicable Arrays by Section*
+
+
 #### Example
 
 
@@ -74,4 +80,4 @@ COPYBOX
 ```
 
 
-The above example copies all the [PORO](#kw-PORO) and [PERMX](#kw-PERMX) values in layers 12 to 14 to layers 15 and 17.
+The above example copies all the PORO and PERMX values in layers 12 to 14 to layers 15 and 17.

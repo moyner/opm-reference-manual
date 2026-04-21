@@ -1,7 +1,7 @@
-### FRICTION – Activate Wellbore Friction Option {#kw-FRICTION}
+### FRICTION – Activate Wellbore Friction Option
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -17,7 +17,10 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | 1 | MXWELS | A positive integer defining the maximum number of wellbore friction wells for this model. | 0 |
 | 3 | MXBRAN | A positive integer defining the maximum number of branches per well. The default value of one implies a standard well with no branches. | 1 |
 | Notes: |  |  |  |
-: FRICTION Keyword Description {#tbl-5-16}
+
+*Table 5.16: FRICTION Keyword Description*
+
+
 #### Example
 
 

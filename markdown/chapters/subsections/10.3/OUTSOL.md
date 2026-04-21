@@ -1,12 +1,12 @@
-### OUTSOL – Define Data to be Written to the RESTART File (Retired) {#kw-OUTSOL}
+### OUTSOL – Define Data to be Written to the RESTART File (Retired)
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-This keyword defines the data and frequency of the data to be written to the [RESTART](#kw-RESTART) file at each requested restart point. The keyword has been replaced by the [RPTRST](#kw-RPTRST) keyword in the [SOLUTION](#kw-SOLUTION) and [SCHEDULE](#kw-SCHEDULE) sections and is therefore considered retired.
+This keyword defines the data and frequency of the data to be written to the RESTART file at each requested restart point. The keyword has been replaced by the RPTRST keyword in the SOLUTION and SCHEDULE sections and is therefore considered retired.
 
 This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.

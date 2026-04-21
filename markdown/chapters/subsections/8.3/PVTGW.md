@@ -1,13 +1,13 @@
-### PVTGW – Gas PVT Properties for Dry Gas with Vaporized Water {#kw-PVTGW}
+### PVTGW – Gas PVT Properties for Dry Gas with Vaporized Water
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-PVTGW defines the gas PVT properties for dry gas^[Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.] with vaporized water. This keyword should be used when the [VAPWAT](#kw-VAPWAT) keyword has be declared in the [RUNSPEC](#kw-RUNSPEC) section indicating that that vaporized water is present in the dry gas phase. The keyword may be used for gas-water and oil-water-gas input decks that contain the dry gas and vaporized water phases.
+PVTGW defines the gas PVT properties for dry gas^[Natural gas that occurs in the absence of condensate or liquid hydrocarbons, or gas that had condensable hydrocarbons removed, is called dry gas. It is primarily methane with some intermediates. The hydrocarbon mixture is solely gas in the reservoir and there is no liquid (condensate surface liquid) formed either in the reservoir or at surface. The term dry indicates that the gas does not contain heavier hydrocarbons to form liquids at the surface conditions. Dry gas typically has GOR's greater than 100,000 scf/stb or 18,000 Sm3/m3.] with vaporized water. This keyword should be used when the VAPWAT keyword has be declared in the RUNSPEC section indicating that that vaporized water is present in the dry gas phase. The keyword may be used for gas-water and oil-water-gas input decks that contain the dry gas and vaporized water phases.
 
 
 ::: {.callout-note}
@@ -27,16 +27,19 @@ This is an OPM Flow specific keyword for the simulator’s Water Vaporization Mo
 | 4 | VISS | VISU | VISS a columnar vector of real increasing down the column values that defines the corresponding gas phase viscosity for a given pressure (PRESS) and for a given RWS. VISU a columnar vector of real decreasing from VISS down the column values that defines the corresponding gas phase viscosity for a given pressure (PRESS) and for a given RWU. | None |
 | cP | cP | cP |  |  |
 | Notes: |  |  |  |  |
-: PVTGW Keyword Description {#tbl-8-118}
+
+*Table 8.118: PVTGW Keyword Description*
+
+
 Note that provided the first table has been entered, subsequent tables may be defaulted, in this case the prior table is copied to the current table.
 
 
 ::: {.callout-note}
-If both the [VAPWAT](#kw-VAPWAT) and [VAPOIL](#kw-VAPOIL) keywords have been declared in the [RUNSPEC](#kw-RUNSPEC) section indicating that both vaporized water and vaporized oil are present in the wet gas, then the PVTGW keyword should be used along with the [PVTG](#kw-PVTG) keyword in the [PROPS](#kw-PROPS) section to fully define the wet gas PVT properties. The PVTGW keyword should be used to define the gas properties as a function of pressure and water-gas ratio ([RVW](#kw-RVW)), assuming oil-saturated gas. The [PVTG](#kw-PVTG) keyword should be used to define the gas properties as a function of pressure and oil-gas ratio ([RV](#kw-RV)), assuming water-saturated gas. Alternatively, the [PVTGWO](#kw-PVTGWO) keyword in the [PROPS](#kw-PROPS) section may be used instead of the PVTGW and [PVTG](#kw-PVTG) keywords to fully define the wet gas PVT properties.
+If both the VAPWAT and VAPOIL keywords have been declared in the RUNSPEC section indicating that both vaporized water and vaporized oil are present in the wet gas, then the PVTGW keyword should be used along with the PVTG keyword in the PROPS section to fully define the wet gas PVT properties. The PVTGW keyword should be used to define the gas properties as a function of pressure and water-gas ratio (RVW), assuming oil-saturated gas. The PVTG keyword should be used to define the gas properties as a function of pressure and oil-gas ratio (RV), assuming water-saturated gas. Alternatively, the PVTGWO keyword in the PROPS section may be used instead of the PVTGW and PVTG keywords to fully define the wet gas PVT properties.
 :::
 
 
-See also the [PVTG](#kw-PVTG) keyword in the [PROPS](#kw-PROPS) section that defines the wet gas PVT for when vaporized oil is present in the gas phase.  Alternatively, the [PVTGWO](#kw-PVTGWO) keyword in the [PROPS](#kw-PROPS) section may be utilized instead of [PVTG](#kw-PVTG) and PVTGW to fully define the wet gas PVT properties, for when both vaporized oil and water are present in the gas phase.
+See also the PVTG keyword in the PROPS section that defines the wet gas PVT for when vaporized oil is present in the gas phase.  Alternatively, the PVTGWO keyword in the PROPS section may be utilized instead of PVTG and PVTGW to fully define the wet gas PVT properties, for when both vaporized oil and water are present in the gas phase.
 
 
 #### Example
@@ -82,6 +85,6 @@ PVTGW
 ```
 
 
-The above example defines two dry gas PVT tables assuming NTPVT equals two and NPPVT is greater than or equal to eight on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The above example defines two dry gas PVT tables assuming NTPVT equals two and NPPVT is greater than or equal to eight on the TABDIMS keyword in the RUNSPEC section.
 
 Notice that there is no terminating “/” for this keyword only for a table and a sub table.

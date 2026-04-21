@@ -1,7 +1,7 @@
-### SOURCE – Define Source Term {#kw-SOURCE}
+### SOURCE – Define Source Term
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -20,16 +20,19 @@ This is an OPM Flow specific keyword that is not supported by the commercial sim
 | 1 | I | A positive integer greater than zero and less than or equal to NX that defines the location of the source term in the I-direction. | None |
 | 2 | J | A positive integer greater than zero and less than or equal to NY that defines the location of the source term in the J-direction. | None |
 | 3 | K | A positive integer greater than zero and less than or equal to NZ that defines the location of the source term in the K-direction. | None |
-| 4 | COMP | A defined character string that defines the pseudo component to be injected by the source term, COMP should be set to one of the following character strings: The [SOLVENT](#kw-SOLVENT) or [POLYMER](#kw-POLYMER) option should only be specified if the solvent or polymer model has been activated by the [SOLVENT](#kw-SOLVENT) or [POLYMER](#kw-POLYMER) keyword respectively in the [RUNSPEC](#kw-RUNSPEC) section. MICR, OXYG, or UREA requires the [MICP](#kw-MICP) keyword. A pseudo component must be specified if the mass injection rate is non-zero. | NONE |
+| 4 | COMP | A defined character string that defines the pseudo component to be injected by the source term, COMP should be set to one of the following character strings: The SOLVENT or POLYMER option should only be specified if the solvent or polymer model has been activated by the SOLVENT or POLYMER keyword respectively in the RUNSPEC section. MICR, OXYG, or UREA requires the MICP keyword. A pseudo component must be specified if the mass injection rate is non-zero. | NONE |
 | 5 | RATE | A real value that defines the source term’s mass injection rate of the specified component COMP. | 0.0 |
 | lb/day | kg/day | gm/hour |  |
-| 6 | HRATE | A real value that defines the source term’s heat injection rate1. The heat injection rate should only be specified if the thermal model has been activated by the [THERMAL](#kw-THERMAL) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | 0.0 |
+| 6 | HRATE | A real value that defines the source term’s heat injection rate1. The heat injection rate should only be specified if the thermal model has been activated by the THERMAL keyword in the RUNSPEC section. | 0.0 |
 | Btu/day | kJ/day | J/hour |  |
-| 7 | [TEMP](#kw-TEMP) | A real value that defines the temperature of the injected component1. The temperature of the source term should only be specified if the thermal model has been activated by the [THERMAL](#kw-THERMAL) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | None |
+| 7 | TEMP | A real value that defines the temperature of the injected component1. The temperature of the source term should only be specified if the thermal model has been activated by the THERMAL keyword in the RUNSPEC section. | None |
 | °F | °C | °C |  |
 | Notes: |  |  |  |
-: SOURCE Keyword Description {#tbl-12-3-223-1}
-See also the [BCCON](#REF_HEADING_KEYWORD_BCCON) keyword in the [GRID](#kw-GRID) section and the [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keyword in the [SCHEDULE](#kw-SCHEDULE) section that can be used to specify boundary conditions.
+
+*Table 12.3.223.1: SOURCE Keyword Description*
+
+
+See also the [BCCON](#REF_HEADING_KEYWORD_BCCON) keyword in the GRID section and the [BCPROP](#REF_HEADING_KEYWORD_BCPROP) keyword in the SCHEDULE section that can be used to specify boundary conditions.
 
 
 #### Example

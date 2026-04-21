@@ -1,18 +1,18 @@
-### BRINE – Activate Brine Tracking Option {#kw-BRINE}
+### BRINE – Activate Brine Tracking Option
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The BRINE keyword activates the standard Brine Tracking model and optionally defines the water phase to have various salinities if the [ECLMC](#kw-ECLMC) keyword in the [RUNSPEC](#kw-RUNSPEC) section has been used to activate the Multi-Component Brine model, that allows for the water phase to have multiple water salinities.  Note that the Multi-Component Brine model is not supported by OPM Flow.
+The BRINE keyword activates the standard Brine Tracking model and optionally defines the water phase to have various salinities if the ECLMC keyword in the RUNSPEC section has been used to activate the Multi-Component Brine model, that allows for the water phase to have multiple water salinities.  Note that the Multi-Component Brine model is not supported by OPM Flow.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | SALTS | An optional character vector string that defines the salts to be tracked for when the Multi-Component Brine model has been activated by the [ECLMC](#kw-ECLMC) keyword in the [RUNSPEC](#kw-RUNSPEC) section. SALTS should be set to one or more of the following salt chemical formulae: | None |
+| 1 | SALTS | An optional character vector string that defines the salts to be tracked for when the Multi-Component Brine model has been activated by the ECLMC keyword in the RUNSPEC section. SALTS should be set to one or more of the following salt chemical formulae: | None |
 | Salt Name | Salt Chemical Formulae |  |  |
 | Sodium Chloride | NaCl |  |  |
 | Potassium Chloride | KCl |  |  |
@@ -26,10 +26,13 @@ The BRINE keyword activates the standard Brine Tracking model and optionally def
 | Potassium Sulfate | K2SO4 |  |  |
 | Calcium Sulfate | CaSO4 |  |  |
 | Magnesium Sulfate | MgSO4 |  |  |
-| Note that the [ECLMC](#kw-ECLMC) option is currently not available in OPM Flow, so only the BRINE keyword without the optional [SALT](#kw-SALT) variables should be declared in the input deck. |  |  |  |
+| Note that the ECLMC option is currently not available in OPM Flow, so only the BRINE keyword without the optional SALT variables should be declared in the input deck. |  |  |  |
 | Notes: |  |  |  |
-: BRINE Keyword Description {#tbl-5-6}
-See also the [PRECSALT](#kw-PRECSALT) and [VAPWAT](#kw-VAPWAT) keywords in the [RUNSPEC](#kw-RUNSPEC) section that activates OPM Flow’s Salt Precipitation model, and the [PVTWSALT](#kw-PVTWSALT) keyword in the [PROPS](#kw-PROPS) section to define the water properties with respect to salt concentration.
+
+*Table 5.6: BRINE Keyword Description*
+
+
+See also the PRECSALT and VAPWAT keywords in the RUNSPEC section that activates OPM Flow’s Salt Precipitation model, and the PVTWSALT keyword in the PROPS section to define the water properties with respect to salt concentration.
 
 
 #### Example

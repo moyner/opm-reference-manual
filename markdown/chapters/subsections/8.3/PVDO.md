@@ -1,13 +1,13 @@
-### PVDO – Oil PVT Properties for Dead Oil {#kw-PVDO}
+### PVDO – Oil PVT Properties for Dead Oil
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-PVDO defines the oil PVT properties for dead oil^[“Dead” oil is oil that it contains no dissolved gas or a relatively thick oil or residue that has lost its volatile components.]. If the oil has a constant and uniform dissolved gas concentration, Gas-Oil Ratio (“GOR”), and if the reservoir pressure never drops below the saturation pressure (bubble point pressure), then the model can be run more efficiently by omitting the [GAS](#kw-GAS) and [DISGAS](#kw-DISGAS) keywords from the [RUNSPEC](#kw-RUNSPEC) section, treating the oil as a dead oil, and defining a constant Rs (GOR) value with keyword [RSCONST](#kw-RSCONST) or [RSCONSTT](#kw-RSCONSTT) in the [PROPS](#kw-PROPS) section. This results in the model being run as a dead oil problem with no active gas phase. However, OPM Flow takes into account the constant Rs in the calculations and reporting.
+PVDO defines the oil PVT properties for dead oil^[“Dead” oil is oil that it contains no dissolved gas or a relatively thick oil or residue that has lost its volatile components.]. If the oil has a constant and uniform dissolved gas concentration, Gas-Oil Ratio (“GOR”), and if the reservoir pressure never drops below the saturation pressure (bubble point pressure), then the model can be run more efficiently by omitting the GAS and DISGAS keywords from the RUNSPEC section, treating the oil as a dead oil, and defining a constant Rs (GOR) value with keyword RSCONST or RSCONSTT in the PROPS section. This results in the model being run as a dead oil problem with no active gas phase. However, OPM Flow takes into account the constant Rs in the calculations and reporting.
 
 
 | No. | Name | Description | Default |
@@ -20,15 +20,18 @@ PVDO defines the oil PVT properties for dead oil^[“Dead” oil is oil that it 
 | 3 | OVISC | A columnar vector of real increasing down the column values that defines the corresponding oil phase viscosity. | None |
 | cP | cP | cP |  |
 | Notes: |  |  |  |
-: PVDO Keyword Description {#tbl-8-115}
+
+*Table 8.115: PVDO Keyword Description*
+
+
 Note that provided the first table has been entered, subsequent tables may be defaulted, in this case the prior table is copied to the current table. See the second example for an illustration on how to use this feature.
 
-See also the [RSCONST](#kw-RSCONST) and [RSCONSTT](#kw-RSCONSTT) keywords to define the constant Rs for dead oil and [PVCDO](#kw-PVCDO) as an alternative keyword to enter the dead oil properties.
+See also the RSCONST and RSCONSTT keywords to define the constant Rs for dead oil and PVCDO as an alternative keyword to enter the dead oil properties.
 
 
 #### Example
 
-The example below defines two dead oil PVT tables with variable viscosity and compressibility with respect to pressure, and assumes that NTPVT equals two and NPPVT is greater than or equal to eight on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The example below defines two dead oil PVT tables with variable viscosity and compressibility with respect to pressure, and assumes that NTPVT equals two and NPPVT is greater than or equal to eight on the TABDIMS keyword in the RUNSPEC section.
 
 
 ```
@@ -58,7 +61,7 @@ PVDO
 
 ```
 
-The second example defines four dead oil PVT tables with variable viscosity and compressibility with respect to pressure, and assumes that NTPVT equals four and NPPVT is greater than or equal to eight on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Here table two defaults to table one, and table four defaults to table three.
+The second example defines four dead oil PVT tables with variable viscosity and compressibility with respect to pressure, and assumes that NTPVT equals four and NPPVT is greater than or equal to eight on the TABDIMS keyword in the RUNSPEC section. Here table two defaults to table one, and table four defaults to table three.
 
 
 ```

@@ -1,7 +1,7 @@
-### DZ – Define the Size of Grid Blocks in the Z Direction for All Cells {#kw-DZ}
+### DZ – Define the Size of Grid Blocks in the Z Direction for All Cells
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,8 +16,11 @@ DZ defines the size of all grid blocks in the Z direction via an array for each 
 | 1 | DZ | DZ is an array of real numbers describing the cell size in the Z direction for each cell in the model. Repeat counts may be used, for example 10*100.0. | None |
 | feet | m | cm |  |
 | Notes: |  |  |  |
-: DZ Keyword Description {#tbl-6-30}
-See also the [DX](#kw-DX), [DY](#kw-DY) and [TOPS](#kw-TOPS) keywords to fully define a Cartesian Regular Grid.
+
+*Table 6.30: DZ Keyword Description*
+
+
+See also the DX, DY and TOPS keywords to fully define a Cartesian Regular Grid.
 
 
 #### Example
@@ -32,4 +35,4 @@ DZ
 ```
 
 
-The above example defines the size of the cells in the Z direction based on 300 cells in the model as defined by the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The above example defines the size of the cells in the Z direction based on 300 cells in the model as defined by the DIMENS keyword in the RUNSPEC section.

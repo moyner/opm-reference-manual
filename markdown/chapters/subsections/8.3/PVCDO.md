@@ -1,13 +1,13 @@
-### PVCDO – Oil PVT Properties for Dead Oil (Constant Compressibility) {#kw-PVCDO}
+### PVCDO – Oil PVT Properties for Dead Oil (Constant Compressibility)
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-PVCDO defines the oil PVT properties for dead oil^[“Dead” oil is oil that it contains no dissolved gas or a relatively thick oil or residue that has lost its volatile components.] with constant compressibility. If the oil has a constant and uniform dissolved gas concentration, Gas-Oil Ratio (“GOR”), and if the reservoir pressure never drops below the saturation pressure (bubble point pressure), then the model can be run more efficiently by omitting the [GAS](#kw-GAS) and [DISGAS](#kw-DISGAS) keywords from the [RUNSPEC](#kw-RUNSPEC) section, treating the oil as a dead oil, and defining a constant Rs (GOR) value with keyword [RSCONST](#kw-RSCONST) or [RSCONSTT](#kw-RSCONSTT) in the [PROPS](#kw-PROPS) section. This results in the model being run as a dead oil problem with no active gas phase. However, OPM Flow takes into account the constant Rs in the calculations and reporting.
+PVCDO defines the oil PVT properties for dead oil^[“Dead” oil is oil that it contains no dissolved gas or a relatively thick oil or residue that has lost its volatile components.] with constant compressibility. If the oil has a constant and uniform dissolved gas concentration, Gas-Oil Ratio (“GOR”), and if the reservoir pressure never drops below the saturation pressure (bubble point pressure), then the model can be run more efficiently by omitting the GAS and DISGAS keywords from the RUNSPEC section, treating the oil as a dead oil, and defining a constant Rs (GOR) value with keyword RSCONST or RSCONSTT in the PROPS section. This results in the model being run as a dead oil problem with no active gas phase. However, OPM Flow takes into account the constant Rs in the calculations and reporting.
 
 
 | No. | Name | Description | Default |
@@ -24,8 +24,11 @@ PVCDO defines the oil PVT properties for dead oil^[“Dead” oil is oil that it
 | 5 | OVISCOMP | OVISCOMP is a real positive value defining the oil viscosibility (µoc) at the oil reference pressure and is defined as: ${μ}_{\mathit{oc}} = \frac{1}{{μ}_{o}}(\frac{d{μ}_{o}}{\mathit{dP}})$ | None |
 | 1/psia | 1/barsa | 1/atma |  |
 | Notes: |  |  |  |
-: PVCDO Keyword Description {#tbl-8-3-225-1}
-See also the [RSCONST](#kw-RSCONST) and [RSCONSTT](#kw-RSCONSTT) keywords to define the constant Rs for dead oil and [PVDO](#kw-PVDO) as an alternative keyword to enter the dead oil properties.
+
+*Table 8.3.225.1: PVCDO Keyword Description*
+
+
+See also the RSCONST and RSCONSTT keywords to define the constant Rs for dead oil and PVDO as an alternative keyword to enter the dead oil properties.
 
 
 #### Example
@@ -47,6 +50,6 @@ PVCDO
 
 ```
 
-The above example defines five dead oil PVT tables with constant compressibility and viscosity, and assumes that NTPVT equals five on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The above example defines five dead oil PVT tables with constant compressibility and viscosity, and assumes that NTPVT equals five on the TABDIMS keyword in the RUNSPEC section.
 
 There is no terminating “/” for this keyword.

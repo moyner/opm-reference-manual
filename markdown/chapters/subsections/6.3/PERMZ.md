@@ -1,7 +1,7 @@
-### PERMZ – Define the Permeability in the Z Direction for All the Cells {#kw-PERMZ}
+### PERMZ – Define the Permeability in the Z Direction for All the Cells
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,18 +16,21 @@ PERMZ defines the permeability in the Z direction for all the cells in the model
 | 1 | PERMZ | PERMZ is an array of real positive numbers assigning the permeability in the Z direction to each cell in the model. Repeat counts may be used, for example 200*50.0. | None |
 | mD | mD | mD |  |
 | Notes: |  |  |  |
-: PERMZ Keyword Description {#tbl-6-107}
+
+*Table 6.107: PERMZ Keyword Description*
+
+
 ::: {.callout-note}
-Although [PERMX](#kw-PERMX) and [PERMY](#kw-PERMY) are commonly set to be equal, PERMZ is typically not equal to either [PERMX](#kw-PERMX) or [PERMY](#kw-PERMY). Normally PERMZ is set as a fraction of [PERMX](#kw-PERMX) with typical values ranging from 0.1 to 0.5 times [PERMX](#kw-PERMX).
+Although PERMX and PERMY are commonly set to be equal, PERMZ is typically not equal to either PERMX or PERMY. Normally PERMZ is set as a fraction of PERMX with typical values ranging from 0.1 to 0.5 times PERMX.
 :::
 
 
-See also the [PERMX](#kw-PERMX) and [PERMY](#kw-PERMY) keywords to fully define the permeability for the model.
+See also the PERMX and PERMY keywords to fully define the permeability for the model.
 
 
 #### Example
 
-The example below defines the PERMZ to be 50.0, 5.0, and 20.0 for the first, second and third layers in the model for all 300 cells, as defined by the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The example below defines the PERMZ to be 50.0, 5.0, and 20.0 for the first, second and third layers in the model for all 300 cells, as defined by the DIMENS keyword in the RUNSPEC section.
 
 
 ```
@@ -40,7 +43,7 @@ PERMZ
 ```
 
 
-The next example sets [PERMX](#kw-PERMX) to be 500.0, 50.0, and 200.0 for the first, second and third layers in the model for all 300 cells, as defined by the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section. It then copies the [PERMX](#kw-PERMX) values to the [PERMY](#kw-PERMY) and PERMZ arrays, and finally multiplies PERMZ by 0.1 times to get the final values for PERMZ.
+The next example sets PERMX to be 500.0, 50.0, and 200.0 for the first, second and third layers in the model for all 300 cells, as defined by the DIMENS keyword in the RUNSPEC section. It then copies the PERMX values to the PERMY and PERMZ arrays, and finally multiplies PERMZ by 0.1 times to get the final values for PERMZ.
 
 
 ```
@@ -65,4 +68,4 @@ MULTIPLY
 
 ```
 
-The above sequence of keywords is quite common in input decks, that is copying the [PERMX](#kw-PERMX) data to the [PERMY](#kw-PERMY) and PERMZ arrays and then adjusting the [PERMY](#kw-PERMY) and PERMZ arrays as required using the [MULTIPLY](#kw-MULTIPLY) keyword.
+The above sequence of keywords is quite common in input decks, that is copying the PERMX data to the PERMY and PERMZ arrays and then adjusting the PERMY and PERMZ arrays as required using the MULTIPLY keyword.

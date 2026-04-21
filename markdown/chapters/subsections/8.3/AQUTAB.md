@@ -1,7 +1,7 @@
-### AQUTAB – Define Carter-Tracy Aquifer Influence Functions {#kw-AQUTAB}
+### AQUTAB – Define Carter-Tracy Aquifer Influence Functions
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -18,13 +18,16 @@ The AQUTAB keyword defines additional Carter-Tracy^[Carter, R. D., and Tracy, G.
 | 2 | PD | Dimensionless Pressure | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: AQUTAB Keyword Description {#tbl-8-18}
+
+*Table 8.18: AQUTAB Keyword Description*
+
+
 ::: {.callout-note}
 OPM Flow includes the infinite acting Carter-Tracy aquifer influence table as a default for table number one; thus data entered on this keyword starts from table number two.
 :::
 
 
-@tbl-8-19 to @tbl-8-22 outline the standard finite tables derived by van Everdingen and Hurst that are used for the Carter-Tracy analytical aquifers and are taken from Bradely^[Bradley Howard B., et al., Petroleum Engineering Handbook, Society of Petroleum Engineers (June 1989), ISBN:9781555630102.] table 38-6 on page 38-12. In the tables rD is defined as the ratio of the aquifer external radius divided by hydrocarbon radius, that is:${r}_{D} = \frac{{r}_{e}}{{r}_{o}}$.
+Table 8.19 to Table 8.22 outline the standard finite tables derived by van Everdingen and Hurst that are used for the Carter-Tracy analytical aquifers and are taken from Bradely^[Bradley Howard B., et al., Petroleum Engineering Handbook, Society of Petroleum Engineers (June 1989), ISBN:9781555630102.] table 38-6 on page 38-12. In the tables rD is defined as the ratio of the aquifer external radius divided by hydrocarbon radius, that is:${r}_{D} = \frac{{r}_{e}}{{r}_{o}}$.
 
 
 | Carter-Tracy Aquifer Influence Functions |  |  |  |  |  |  |  |  |
@@ -54,7 +57,10 @@ OPM Flow includes the infinite acting Carter-Tracy aquifer influence table as a 
 | 21 |  |  | 2.0000 | 1.6490 | 3.0000 | 1.5960 |  |  |
 | 22 |  |  | 3.0000 | 2.3160 | 4.0000 | 1.9770 |  |  |
 | 23 |  |  | 5.0000 | 3.6490 | 5.0000 | 2.3580 |  |  |
-: Carter-Tracy Aquifer Influence Functions (RD =1.5, 2.0, 2.5 and 3.0) {#tbl-8-19}
+
+*Table 8.19: Carter-Tracy Aquifer Influence Functions (RD =1.5, 2.0, 2.5 and 3.0)*
+
+
 | Carter-Tracy Aquifer Influence Functions |  |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | No. | rD = 3.5 Dimensionless | rD = 4.0 Dimensionless | rD = 4.5 Dimensionless | rD = 5.0 Dimensionless |  |  |  |  |
@@ -88,7 +94,10 @@ OPM Flow includes the infinite acting Carter-Tracy aquifer influence table as a 
 | 27 |  |  |  |  | 13.0000 | 2.2390 | 13.0000 | 2.0590 |
 | 28 |  |  |  |  | 14.0000 | 2.3430 | 14.0000 | 2.1420 |
 | 29 |  |  |  |  | 15.0000 | 2.4470 | 15.0000 | 2.2250 |
-: Carter-Tracy Aquifer Influence Functions (RD =3.5, 4.0, 4.5 and 5.0) {#tbl-8-20}
+
+*Table 8.20: Carter-Tracy Aquifer Influence Functions (RD =3.5, 4.0, 4.5 and 5.0)*
+
+
 | Carter-Tracy Aquifer Influence Functions |  |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | No. | rD = 6.0 Dimensionless | rD = 7.0 Dimensionless | rD = 8.0 Dimensionless | rD = 9.0 Dimensionless |  |  |  |  |
@@ -120,7 +129,10 @@ OPM Flow includes the infinite acting Carter-Tracy aquifer influence table as a 
 | 25 | 30.0000 | 2.8460 |  |  |  |  | 40.0000 | 2.4960 |
 | 26 |  |  |  |  |  |  | 45.0000 | 2.6210 |
 | 27 |  |  |  |  |  |  | 50.0000 | 2.7460 |
-: Carter-Tracy Aquifer Influence Functions (RD =6.0, 7.0, 8.0 and 9.0) {#tbl-8-21}
+
+*Table 8.21: Carter-Tracy Aquifer Influence Functions (RD =6.0, 7.0, 8.0 and 9.0)*
+
+
 | Carter-Tracy Aquifer Influence Functions |  |  |  |  |
 | --- | --- | --- | --- | --- |
 | No. | rD = 10.0 Dimensionless | Finite Linear Dimensionless |  |  |
@@ -151,10 +163,13 @@ OPM Flow includes the infinite acting Carter-Tracy aquifer influence table as a 
 | 24 | 50.0000 | 2.6040 |  |  |
 | 25 | 60.0000 | 2.8060 |  |  |
 | 26 | 70.0000 | 3.0080 |  |  |
-: Carter-Tracy Aquifer Influence Functions (RD =10 and Finite Linear) {#tbl-8-22}
-For the finite linear Carter-Tracy influence function in @tbl-8-22 set the inner radius of the aquifer to the length of linear aquifer and the angle of influence to$= \frac{360\times \mathit{Width}}{(2\times π\times \mathit{Length})}$on the [AQUCT](#kw-AQUCT) keyword in the grid section.
 
-For reference, @tbl-8-23 outlines the content terminal rate case for an infinite aquifer derived by van Everdingen and Hurst, that is the default table number one used for the Carter-Tracy analytical aquifers, as implemented in OPM Flow.
+*Table 8.22: Carter-Tracy Aquifer Influence Functions (RD =10 and Finite Linear)*
+
+
+For the finite linear Carter-Tracy influence function in Table 8.22 set the inner radius of the aquifer to the length of linear aquifer and the angle of influence to$= \frac{360\times \mathit{Width}}{(2\times π\times \mathit{Length})}$on the AQUCT keyword in the grid section.
+
+For reference, Table 8.23 outlines the content terminal rate case for an infinite aquifer derived by van Everdingen and Hurst, that is the default table number one used for the Carter-Tracy analytical aquifers, as implemented in OPM Flow.
 
 
 | Carter-Tracy Infinite Radial Aquifer Influence Function (Default) |  |  |  |  |  |
@@ -187,7 +202,10 @@ For reference, @tbl-8-23 outlines the content terminal rate case for an infinite
 | 24 | 9.0 | 1,6040 | 50 | 8000,00 | 4.8732 |
 | 25 | 10.0 | 1,6510 | 51 | 10000,00 | 4.9815 |
 | 26 | 15.0 | 1,8290 |  |  |  |
-: Carter-Tracy Infinite Radial Aquifer Influence Function (Default) {#tbl-8-23}
+
+*Table 8.23: Carter-Tracy Infinite Radial Aquifer Influence Function (Default)*
+
+
 For an overview of analytical aquifers see Dake^[Dake, L.P. Fundamentals of Reservoir Engineering, Amsterdam, The Netherlands, Elsevier Science BV (1978)  Chapter 9.].
 
 

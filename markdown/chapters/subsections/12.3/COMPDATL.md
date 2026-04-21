@@ -1,13 +1,13 @@
-### COMPDATL – Define Well Connections to a LGR Grid {#kw-COMPDATL}
+### COMPDATL – Define Well Connections to a LGR Grid
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The COMPDATL keyword defines how a well in a Local Grid Refinement (“[LGR](#kw-LGR)”) is connected to the reservoir by declaring the [LGR](#kw-LGR) and defining or modifying existing well connections. Ideally the connections should be declared in the correct sequence, starting with the connection nearest the well head and then working along the wellbore towards the bottom or toe of the well, however this may not be possible or convenient, for example when connections are added or removed from a well during the simulation (see the  [COMPORD](#kw-COMPORD) keyword in the [SCHEDULE](#kw-SCHEDULE) section for options regarding connection ordering).
+The COMPDATL keyword defines how a well in a Local Grid Refinement (“LGR”) is connected to the reservoir by declaring the LGR and defining or modifying existing well connections. Ideally the connections should be declared in the correct sequence, starting with the connection nearest the well head and then working along the wellbore towards the bottom or toe of the well, however this may not be possible or convenient, for example when connections are added or removed from a well during the simulation (see the  COMPORD keyword in the SCHEDULE section for options regarding connection ordering).
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -15,14 +15,14 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
-| 2 | LGRNAME | A character string of up to eight characters in length that defines the [LGR](#kw-LGR) name for which the well [LGR](#kw-LGR) connection data are being defined. Note that the well name (LGRNAME) must have been declared previously using the [WELSPECL](#kw-WELSPECL) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. If defaulted with 1* the [LGR](#kw-LGR) on the [WELSPECL](#kw-WELSPECL) keyword will be utilized. | Defined |
-| 3 | I | A positive integer greater than or equal to zero and less than or equal to NX that defines the connection location in the I-direction. If set to zero or defaulted with 1* the location is taken from the wellhead location I-direction value on the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section. | 0 |
-| 4 | J | A positive integer greater than or equal to zero and less than or equal to NY that defines the connection location in the J-direction. If set to zero or defaulted with 1* the location is taken from the wellhead location J-direction value on the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section. | 0 |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
+| 2 | LGRNAME | A character string of up to eight characters in length that defines the LGR name for which the well LGR connection data are being defined. Note that the well name (LGRNAME) must have been declared previously using the WELSPECL keyword in the SCHEDULE section, otherwise an error may occur. If defaulted with 1* the LGR on the WELSPECL keyword will be utilized. | Defined |
+| 3 | I | A positive integer greater than or equal to zero and less than or equal to NX that defines the connection location in the I-direction. If set to zero or defaulted with 1* the location is taken from the wellhead location I-direction value on the WELSPECS keyword in the SCHEDULE section. | 0 |
+| 4 | J | A positive integer greater than or equal to zero and less than or equal to NY that defines the connection location in the J-direction. If set to zero or defaulted with 1* the location is taken from the wellhead location J-direction value on the WELSPECS keyword in the SCHEDULE section. | 0 |
 | 5 | K1 | A positive integer greater than or equal to one and less than or equal to NZ that defines the UPPER connection location in the K-direction. | None |
 | 6 | K2 | A positive integer greater than or equal to K1 and less than or equal to NZ that defines the LOWER connection location in the K-direction. | None |
 | 7 | STATUS | A character string of length four that defines the connections’ operational status, STATUS should be set to one of the following character strings: | OPEN |
-| 8 | [SATNUM](#kw-SATNUM) | An integer greater than or equal to zero and less than NTSFUN as declared on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC), that defines the saturation table number to be used for flow between the reservoir grid block and the well connections. If [SATNUM](#kw-SATNUM) is set to zero or defaulted with 1* then: | 0 |
+| 8 | SATNUM | An integer greater than or equal to zero and less than NTSFUN as declared on the TABDIMS keyword in the RUNSPEC, that defines the saturation table number to be used for flow between the reservoir grid block and the well connections. If SATNUM is set to zero or defaulted with 1* then: | 0 |
 | 9 | CONFACT | A real value greater than or equal to zero that defines the transmissibility connection factor between the well bore and the reservoir grid block. If set to zero or defaulted with 1* then items (9) through (13) are used to calculate CONFACT. | Defined |
 | cP.rb/day/psia 0 | cP.rm3/day/bars 0 | cP.rcc/hr/atm 0 |  |
 | 10 | DW | A real positive value that defines the well bore diameter of the connections for the well. DW is used in calculating a well’s productivity or injectivity index; however the value will be ignored in calculating the connections CONFACT value if CONFAC has been directly entered. | None |
@@ -31,14 +31,17 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | mD.ft | mD.m | mD.cm |  |
 | 12 | SKIN | A real value that defines the connections dimensionless skin factor. SKIN is used in calculating a well’s productivity or injectivity index; however, the value will be ignored in calculating the connections CONFACT value if CONFAC has been directly entered. | 0.0 |
 | dimensionless | dimensionless | dimensionless |  |
-| 13 | DFACT | A real value that defines the non-Darcy D factor coefficient for gas wells. This value should be defaulted with 1* and the non-Darcy D factor coefficient for gas wells defined via the [WDFAC](#kw-WDFAC) keyword in the [SCHEDULE](#kw-SCHEDULE) section. Currently this option is not supported by OPM Flow. | 1* |
+| 13 | DFACT | A real value that defines the non-Darcy D factor coefficient for gas wells. This value should be defaulted with 1* and the non-Darcy D factor coefficient for gas wells defined via the WDFAC keyword in the SCHEDULE section. Currently this option is not supported by OPM Flow. | 1* |
 | day/Mscf | day/m3 | hour/sc |  |
 | 14 | DIRECT | A one letter character string that defines the orientation of the connections and should be set to either X, Y, or Z. The direction of connections also determines the length of the connection used to calculate the connection factor if CONFAC has not been entered directly. The default value is for a vertical connection, that is DIRECT is defaulted to Z. | Z |
 | Notes: |  |  |  |
-: COMPDATL Keyword Description {#tbl-12-11}
+
+*Table 12.11: COMPDATL Keyword Description*
+
+
 Multiple grid block connections can be defined on one record for vertical wells by assigning different values to K1 and K2, for deviated and horizontal wells this may not be possible and therefore each grid block connection must be separately defined by using one record per connection, setting K1 equal to K2 in each record.
 
-See also the [WELSPECS](#kw-WELSPECS) keyword to define wells, the [COMPIMB](#kw-COMPIMB) to reset the imbibition relative permeability table allocation, and the [COMPORD](#kw-COMPORD) to re-order the completions along the well trajectory. In addition, the [COMPLUMP](#kw-COMPLUMP) keyword groups well connections together to form well completions for a well. All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
+See also the WELSPECS keyword to define wells, the COMPIMB to reset the imbibition relative permeability table allocation, and the COMPORD to re-order the completions along the well trajectory. In addition, the COMPLUMP keyword groups well connections together to form well completions for a well. All the aforementioned keywords are described in the SCHEDULE section.
 
 
 ::: {.callout-note}
@@ -48,7 +51,7 @@ The term well connection is used to describe individual connections from the wel
 
 #### Example
 
-The following example defines two vertical oil wells using the [WELSPECS](#kw-WELSPECS) keyword and their associated connection data.
+The following example defines two vertical oil wells using the WELSPECS keyword and their associated connection data.
 
 
 ```

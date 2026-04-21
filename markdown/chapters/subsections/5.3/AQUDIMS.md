@@ -1,7 +1,7 @@
-### AQUDIMS – Define Aquifer Dimensions {#kw-AQUDIMS}
+### AQUDIMS – Define Aquifer Dimensions
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -12,16 +12,19 @@ The AQUDIMS keyword defines the dimensions of the various aquifer property data.
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | MXNAQN | A positive integer value that defines the [AQUNUM](#kw-AQUNUM) keyword maximum number of lines associated with this keyword, that is the maximum number of numerical aquifers | 1 |
-| 2 | MXNAQC | A positive integer value that defines the [AQUCON](#kw-AQUCON) keyword maximum number of lines of connection data associated with this keyword, that is the maximum number of lines of connection data for numerical aquifers. | 1 |
-| 3 | NIFTBL | A positive integer value that defines the [AQUTAB](#kw-AQUTAB) keyword maximum number of Carter-Tracy aquifer tables associated with this keyword. | 1 |
-| 4 | NRIFTB | A positive integer value that defines the [AQUTAB](#kw-AQUTAB) keyword maximum number of rows in the Carter-Tracy aquifer tables associated with this keyword. NRIFTB must not be less than 36 in order to accommodate the default infinite acting Carter-Tracy aquifer influence function. | 36 |
-| 5 | NANAQ | A positive integer value that defines the [AQUFETP](#kw-AQUFETP), [AQUFLUX](#kw-AQUFLUX) and [AQUCT](#kw-AQUCT) maximum number of analytical aquifers defined by these three keywords. | 1 |
+| 1 | MXNAQN | A positive integer value that defines the AQUNUM keyword maximum number of lines associated with this keyword, that is the maximum number of numerical aquifers | 1 |
+| 2 | MXNAQC | A positive integer value that defines the AQUCON keyword maximum number of lines of connection data associated with this keyword, that is the maximum number of lines of connection data for numerical aquifers. | 1 |
+| 3 | NIFTBL | A positive integer value that defines the AQUTAB keyword maximum number of Carter-Tracy aquifer tables associated with this keyword. | 1 |
+| 4 | NRIFTB | A positive integer value that defines the AQUTAB keyword maximum number of rows in the Carter-Tracy aquifer tables associated with this keyword. NRIFTB must not be less than 36 in order to accommodate the default infinite acting Carter-Tracy aquifer influence function. | 36 |
+| 5 | NANAQ | A positive integer value that defines the AQUFETP, AQUFLUX and AQUCT maximum number of analytical aquifers defined by these three keywords. | 1 |
 | 6 | NCAMAX | A positive integer value that defines the maximum number of cells connected to an analytical aquifer. | 1 |
 | 7 | MXNALI | A positive integer value that defines the maximum number of aquifer lists. | 0 |
 | 8 | MXAAQL | A positive integer value that defines the maximum number of analytical aquifers in any single aquifer list as defined by (7). | 0 |
 | Notes: |  |  |  |
-: AQUDIMS Keyword Description {#tbl-5-5}
+
+*Table 5.5: AQUDIMS Keyword Description*
+
+
 #### Example
 
 

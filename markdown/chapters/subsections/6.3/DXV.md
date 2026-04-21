@@ -1,7 +1,7 @@
-### DXV – Define the Size of Grid Blocks in the X Direction via a Vector {#kw-DXV}
+### DXV – Define the Size of Grid Blocks in the X Direction via a Vector
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,8 +16,11 @@ DXV defines the size of grid blocks in the X direction via a vector as opposed t
 | 1 | DXV | DXV is a vector of real numbers describing the cell size for the grid blocks in the X direction. Repeat counts may be used, for example 10*100.0. | None |
 | feet | m | cm |  |
 | Notes: |  |  |  |
-: DXV Keyword Description {#tbl-6-27}
-See also the [DYV](#kw-DYV), [DZV](#kw-DZV) and [TOPS](#kw-TOPS) keywords to fully define a Cartesian Regular Grid.
+
+*Table 6.27: DXV Keyword Description*
+
+
+See also the DYV, DZV and TOPS keywords to fully define a Cartesian Regular Grid.
 
 
 #### Example
@@ -32,4 +35,4 @@ DXV
 ```
 
 
-The above example defines the size of the cells in the X direction based on NX equals 5 on the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The above example defines the size of the cells in the X direction based on NX equals 5 on the DIMENS keyword in the RUNSPEC section.

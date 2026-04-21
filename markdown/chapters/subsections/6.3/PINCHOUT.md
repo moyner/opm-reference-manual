@@ -1,13 +1,13 @@
-### PINCHOUT – Define Pinch-Out Layers Option (Fixed) {#kw-PINCHOUT}
+### PINCHOUT – Define Pinch-Out Layers Option (Fixed)
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The PINCHOUT keyword activates the generation of Non-Neighbor Connections (“NNCs”) in the vertical (K) direction due to layers pinching out, using a constant threshold thickness of 0.001 for all unit systems.  See also the [PINCH](#kw-PINCH) keyword in the [GRID](#kw-GRID) section that allows for specifying the threshold thickness and other parameters on a layer basis, and the [PINCHREG](#kw-PINCHREG) keyword that applies the pinch-out controls to various regions in the model defined by the [PINCHNUM](#kw-PINCHNUM) keyword.
+The PINCHOUT keyword activates the generation of Non-Neighbor Connections (“NNCs”) in the vertical (K) direction due to layers pinching out, using a constant threshold thickness of 0.001 for all unit systems.  See also the PINCH keyword in the GRID section that allows for specifying the threshold thickness and other parameters on a layer basis, and the PINCHREG keyword that applies the pinch-out controls to various regions in the model defined by the PINCHNUM keyword.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 

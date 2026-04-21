@@ -1,7 +1,7 @@
-### EXTRAPMS – Activate Extrapolation Warning Messages {#kw-EXTRAPMS}
+### EXTRAPMS – Activate Extrapolation Warning Messages
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -14,7 +14,10 @@ The EXTRAPMS keyword activates extrapolation warning messages for when OPM Flow 
 | --- | --- | :------ | --- |
 | 1 | EXTRAP | Defines a single integer that activates the extrapolation warning message options for PVT and VFP tables. EXTRAP can have the following values: | 0 |
 | Notes: |  |  |  |
-: EXTRAPMS Keyword Description {#tbl-4-2}
+
+*Table 4.2: EXTRAPMS Keyword Description*
+
+
 This keyword is not supported by OPM Flow but has no effect on the results so it will be ignored.
 
 

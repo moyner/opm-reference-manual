@@ -1,7 +1,7 @@
-### DYV – Define the Size of Grid Blocks in the Y Direction via a Vector {#kw-DYV}
+### DYV – Define the Size of Grid Blocks in the Y Direction via a Vector
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,8 +16,11 @@ DYV defines the size of grid blocks in the Y direction via a vector as opposed t
 | 1 | DYV | DYV is a vector of real numbers describing the cell size for the grid blocks in the Y direction. Repeat counts may be used, for example 10*100.0. | None |
 | feet | m | cm |  |
 | Notes: |  |  |  |
-: DYV Keyword Description {#tbl-6-29}
-See also the [DXV](#kw-DXV), [DZV](#kw-DZV) and [TOPS](#kw-TOPS) keywords to fully define a Cartesian Regular Grid.
+
+*Table 6.29: DYV Keyword Description*
+
+
+See also the DXV, DZV and TOPS keywords to fully define a Cartesian Regular Grid.
 
 
 #### Example
@@ -32,4 +35,4 @@ DYV
 ```
 
 
-The above example defines the size of the cells in the Y direction based on NY equals 5 on the [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The above example defines the size of the cells in the Y direction based on NY equals 5 on the DIMENS keyword in the RUNSPEC section.

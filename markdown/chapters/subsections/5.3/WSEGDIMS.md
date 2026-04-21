@@ -1,7 +1,7 @@
-### WSEGDIMS – Define Multi-Segment Well Dimensions {#kw-WSEGDIMS}
+### WSEGDIMS – Define Multi-Segment Well Dimensions
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -17,7 +17,10 @@ The WSEGSDIMS keyword defines the multi-segment well dimensions for the multi-se
 | 3 | MXBRAN | A positive integer defining the maximum number of branches per multi-segment well, including the main branch groups for this model. | 1 |
 | 4 | MXLINKS | A positive integer defining the maximum number of segment links per multi-segment well. The simulator does not currently support multi-segment chord links, and therefore this parameter is ignored. | 0 |
 | Notes: |  |  |  |
-: WSEGDIMS Keyword Description {#tbl-5-59}
+
+*Table 5.59: WSEGDIMS Keyword Description*
+
+
 #### Example
 
 

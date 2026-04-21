@@ -1,13 +1,13 @@
-### SURFVISC – Surfactant Solution Viscosity versus Concentration {#kw-SURFVISC}
+### SURFVISC – Surfactant Solution Viscosity versus Concentration
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-SURFSVISC defines the surfactant viscosity relationship of solution water viscosity with respect to increasing surfactant concentration within a grid block. The surfactant option must be activated by the [SURFACT](#kw-SURFACT) keyword in the [RUNSPEC](#kw-RUNSPEC) section in order to use this keyword.
+SURFSVISC defines the surfactant viscosity relationship of solution water viscosity with respect to increasing surfactant concentration within a grid block. The surfactant option must be activated by the SURFACT keyword in the RUNSPEC section in order to use this keyword.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -17,10 +17,13 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | Field | Metric | Laboratory |  |
 | 1 | SURFCON | A columnar vector of real monotonically increasing down the column values that defines the surfactant concentration in the solution surrounding the rock. The first entry should be zero to define a no surfactant concentration. | None |
 | lb/stb | kg/sm3 | gm/scc |  |
-| 2 | SURFVISC | A columnar vector of real positive values that defines the solution water  viscosity of the solution for the given SURFCON entry at the reference pressure value, PRES, entered on the [PVTW](#kw-PVTW) keyword in the [PROPS](#kw-PROPS) section. | None |
+| 2 | SURFVISC | A columnar vector of real positive values that defines the solution water  viscosity of the solution for the given SURFCON entry at the reference pressure value, PRES, entered on the PVTW keyword in the PROPS section. | None |
 | cP | cP | cP |  |
 | Notes: |  |  |  |
-: SURFVISC Keyword Description {#tbl-8-183}
+
+*Table 8.183: SURFVISC Keyword Description*
+
+
 #### Example
 
 
@@ -49,4 +52,4 @@ SURFVISC
 ```
 
 
-The example defines two surfactant viscosity scaling factor tables, based on the NTPVT variable on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section being equal to two and NPPVT variable on the same keyword being greater than or equal to six.
+The example defines two surfactant viscosity scaling factor tables, based on the NTPVT variable on the TABDIMS keyword in the RUNSPEC section being equal to two and NPPVT variable on the same keyword being greater than or equal to six.

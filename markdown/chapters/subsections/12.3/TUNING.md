@@ -1,13 +1,13 @@
-### TUNING – Numerical Tuning Control {#kw-TUNING}
+### TUNING – Numerical Tuning Control
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The TUNING keyword defines the parameters used to control the commercial simulator’s time stepping and numerical convergence for the global grid. The keyword is similar to the [TUNINGDP](#kw-TUNINGDP) keyword in the [SCHEDULE](#kw-SCHEDULE) section that is optimized for high throughput runs. The keyword is mostly ignored by OPM Flow; however, the simulator can be instructed to read some parameters from the TUNING keyword if the appropriate command line parameter has been activated (see section 2.2 Running OPM Flow 2023-04 From The Command Line).
+The TUNING keyword defines the parameters used to control the commercial simulator’s time stepping and numerical convergence for the global grid. The keyword is similar to the TUNINGDP keyword in the SCHEDULE section that is optimized for high throughput runs. The keyword is mostly ignored by OPM Flow; however, the simulator can be instructed to read some parameters from the TUNING keyword if the appropriate command line parameter has been activated (see section 2.2 Running OPM Flow 2023-04 From The Command Line).
 
 
 | No. | Name | Description | Default |
@@ -81,12 +81,15 @@ The TUNING keyword defines the parameters used to control the commercial simulat
 | psia | barsa | atma |  |
 | 3-10 | XXXDPR | XXXDPR is a positive real value that stipulates the maximum tolerable pressure change within a time step. | None |
 | psia | barsa | atma |  |
-| 3-11 | MNWRFP | MNWRFP is a positive integer greater than one and less than NEWTMX that defines the minimum number of Newton iterations before invoking the bisection algorithm for when the polymer phase is active in the model via the [POLYMER](#kw-POLYMER) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | 4 |
+| 3-11 | MNWRFP | MNWRFP is a positive integer greater than one and less than NEWTMX that defines the minimum number of Newton iterations before invoking the bisection algorithm for when the polymer phase is active in the model via the POLYMER keyword in the RUNSPEC section. | 4 |
 | dimensionless | dimensionless | dimensionless |  |
 | 3-12 | / | Record terminated by a “/” | Not Applicable |
 | Notes: |  |  |  |
-: TUNING Keyword Description {#tbl-12-66}
-Note that for record number two (items 2-1 to 2-13) the maximum values should always be greater than the associated target value; for example, XXXCNV should be greater than TRGCNV.  Also note that the TUNING keyword is stored on the restart files (see [RPTRST](#kw-RPTRST) – Define Data to be Written to the [RESTART](#kw-RESTART) File) enabling the parameters to be utilized in a restart run without re-specifying the keyword.
+
+*Table 12.66: TUNING Keyword Description*
+
+
+Note that for record number two (items 2-1 to 2-13) the maximum values should always be greater than the associated target value; for example, XXXCNV should be greater than TRGCNV.  Also note that the TUNING keyword is stored on the restart files (see RPTRST – Define Data to be Written to the RESTART File) enabling the parameters to be utilized in a restart run without re-specifying the keyword.
 
 
 #### Example

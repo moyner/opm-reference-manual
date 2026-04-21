@@ -1,13 +1,13 @@
-### BPARA – Activate Block Parallel License {#kw-BPARA}
+### BPARA – Activate Block Parallel License
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The BPARA keyword activates the block parallel license in the commercial simulator.  There is no data required for this keyword; however the keyword should be followed by the [PARALLEL](#kw-PARALLEL) keyword in the [RUNSPEC](#kw-RUNSPEC) section, as illustrated in the example below.
+The BPARA keyword activates the block parallel license in the commercial simulator.  There is no data required for this keyword; however the keyword should be followed by the PARALLEL keyword in the RUNSPEC section, as illustrated in the example below.
 
 There is no data required for this keyword and there is no terminating “/” for this keyword.
 

@@ -1,20 +1,23 @@
-### ENDNUM – Define the End-Point Scaling Depth Region Numbers {#kw-ENDNUM}
+### ENDNUM – Define the End-Point Scaling Depth Region Numbers
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The ENDNUM keyword defines the end-point scaling depth table region numbers for each grid block. The end-point scaling depth tables for various regions are defined by the ENPVTD^[This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.] and the [ENKRVD](#kw-ENKRVD)^[This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.] keywords in the [PROPS](#kw-PROPS) section.  In the [RUNSPEC](#kw-RUNSPEC) section the NTENDP variable on the [ENDSCALE](#kw-ENDSCALE) keyword defines the maximum number of depth tables.
+The ENDNUM keyword defines the end-point scaling depth table region numbers for each grid block. The end-point scaling depth tables for various regions are defined by the ENPVTD^[This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.] and the ENKRVD^[This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.] keywords in the PROPS section.  In the RUNSPEC section the NTENDP variable on the ENDSCALE keyword defines the maximum number of depth tables.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | ENDNUM | ENDNUM defines an array of positive integers assigning a grid cell to a particular end-point scaling depth table region. The maximum number of ENDNUM regions is set by the NTENDP variable on the [ENDSCALE](#kw-ENDSCALE) keyword in the [RUNSPEC](#kw-RUNSPEC) section. | 1 |
+| 1 | ENDNUM | ENDNUM defines an array of positive integers assigning a grid cell to a particular end-point scaling depth table region. The maximum number of ENDNUM regions is set by the NTENDP variable on the ENDSCALE keyword in the RUNSPEC section. | 1 |
 | Notes: |  |  |  |
-: ENDNUM Keyword Description {#tbl-9-2}
+
+*Table 9.2: ENDNUM Keyword Description*
+
+
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
 
@@ -34,7 +37,7 @@ ENDNUM
 ```
 
 
-Alternatively the [EQUALS](#kw-EQUALS) keyword could be employed to accomplish the same task, that is:
+Alternatively the EQUALS keyword could be employed to accomplish the same task, that is:
 
 
 ```

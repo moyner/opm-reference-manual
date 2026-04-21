@@ -1,28 +1,31 @@
-### OILDENT – Define Oil Density Temperature Coefficients {#kw-OILDENT}
+### OILDENT – Define Oil Density Temperature Coefficients
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-OILDENT defines the oil density as a function of temperature coefficients for when OPM Flow’s thermal option has been activated by the [THERMAL](#kw-THERMAL) keyword in the [RUNSPEC](#kw-RUNSPEC). Note this is an OPM Flow keyword used with OPM Flow’s black-oil thermal model that is not available in the commercial simulator’s black-oil thermal formulation.
+OILDENT defines the oil density as a function of temperature coefficients for when OPM Flow’s thermal option has been activated by the THERMAL keyword in the RUNSPEC. Note this is an OPM Flow keyword used with OPM Flow’s black-oil thermal model that is not available in the commercial simulator’s black-oil thermal formulation.
 
-This keyword can only be used if OPM Flow’s thermal option has been activated by the [THERMAL](#kw-THERMAL) keyword in the [RUNSPEC](#kw-RUNSPEC) section. Note this is different to the commercial simulator that uses the [TEMP](#kw-TEMP) keyword in the [RUNSPEC](#kw-RUNSPEC) section to activate the black-oil thermal model.
+This keyword can only be used if OPM Flow’s thermal option has been activated by the THERMAL keyword in the RUNSPEC section. Note this is different to the commercial simulator that uses the TEMP keyword in the RUNSPEC section to activate the black-oil thermal model.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | [TEMP](#kw-TEMP) | [TEMP](#kw-TEMP) is a real positive value greater than zero that defines the absolute reference temperature used with TEXP1 and TEXP2 to estimate the change in oil density with respect to temperature. | Defined |
+| 1 | TEMP | TEMP is a real positive value greater than zero that defines the absolute reference temperature used with TEXP1 and TEXP2 to estimate the change in oil density with respect to temperature. | Defined |
 | oR 527.67 | K 293.15 | K 293.15 |  |
 | 2 | TEXP1 | TEXP1 is a real positive value greater than zero that defines the oil thermal expansion coefficient of the first order. | Defined |
 | 1/oR 1.67 x 10-4 | 1/K 3.0 x 10-4 | 1/K 3.0 x 10-4 |  |
 | 3 | TEXP2 | TEXP2 is a real positive value greater than zero that defines the oil thermal expansion coefficient of the second order. | Defined |
 | 1/oR2 9.26 x 10-7 | 1/K2 3.0 x 10-6 | 1/K2 3.0 x 10-6 |  |
 | Notes: |  |  |  |
-: OILDENT Keyword Description {#tbl-8-3-186-1}
+
+*Table 8.3.186.1: OILDENT Keyword Description*
+
+
 The oil density at a given pressure and temperature is calculated from its value at surface conditions and the oil shrinkage factor (the reciprocal of the oil formation volume factor) as shown in the following equation:
 
 
@@ -57,7 +60,7 @@ $\mathit{ref}$	= subscript indicating reference conditions
 
 #### Example
 
-The following example shows the OILDENT keyword using the default values, for when the thermal option has been activated by the [THERMAL](#kw-THERMAL) keyword in the [RUNSPEC](#kw-RUNSPEC) section and for when NTPVT on the [TABDIMS](#kw-TABDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section is set to two.
+The following example shows the OILDENT keyword using the default values, for when the thermal option has been activated by the THERMAL keyword in the RUNSPEC section and for when NTPVT on the TABDIMS keyword in the RUNSPEC section is set to two.
 
 
 ```

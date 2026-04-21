@@ -1,12 +1,12 @@
-### EXTHOST – Define Host Cells for External LGRs {#kw-EXTHOST}
+### EXTHOST – Define Host Cells for External LGRs
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The EXTHOST keyword defines the host global grid blocks for an external Local Grid Refinement (“[LGR](#kw-LGR)”)  for when LGRs have been activated for the model using the [LGR](#kw-LGR) keyword in the [RUNSPEC](#kw-RUNSPEC) section, and the global grid is an unstructured grid.
+The EXTHOST keyword defines the host global grid blocks for an external Local Grid Refinement (“LGR”)  for when LGRs have been activated for the model using the LGR keyword in the RUNSPEC section, and the global grid is an unstructured grid.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.

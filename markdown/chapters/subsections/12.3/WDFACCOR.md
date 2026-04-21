@@ -1,7 +1,7 @@
-### WDFACCOR – Gas Flow Dependent Skin Factor (Correlation) {#kw-WDFACCOR}
+### WDFACCOR – Gas Flow Dependent Skin Factor (Correlation)
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -13,7 +13,7 @@ WDFACCOR keyword defines the parameters to calculate a gas well’s connection D
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well D-factor correlation is being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well D-factor correlation is being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section. | None |
 | 2 | A | A real value greater than or equal to zero that defines the coefficient A in the D-factor correlation. | 0.0 |
 | cP.day.ft2/mD/Mscf | cP.day.m2/mD/sm3 | cP.hour.cm2/mD/scc |  |
 | 3 | B | A real value that defines the exponent B of the grid block permeability in the D-factor correlation. | 0.0 |
@@ -21,7 +21,10 @@ WDFACCOR keyword defines the parameters to calculate a gas well’s connection D
 | 4 | C | A real value that defines the exponent C of the grid block porosity in the D-factor correlation. | 0.0 |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: WDFACCOR Keyword Description {#tbl-12-3-260-1}
+
+*Table 12.3.260.1: WDFACCOR Keyword Description*
+
+
 The simulator evaluates the connection D-factors using the following expression based on Dake’s correlation:
 
 
@@ -46,7 +49,7 @@ ${μ}_{g}$	= gas viscosity at bottom hole conditions.
 
 Note that since ${μ}_{g}$ is dependent on pressure the D-factor will also vary with pressure.
 
-See also the [WDFAC](#kw-WDFAC) keyword in the [SCHEDULE](#kw-SCHEDULE) section that can be used to specify the well D-factor; and the [COMPDAT](#kw-COMPDAT) keyword in the [SCHEDULE](#kw-SCHEDULE) section that can be used to specify the connection D-factors directly.
+See also the WDFAC keyword in the SCHEDULE section that can be used to specify the well D-factor; and the COMPDAT keyword in the SCHEDULE section that can be used to specify the connection D-factors directly.
 
 
 #### Examples

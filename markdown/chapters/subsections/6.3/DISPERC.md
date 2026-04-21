@@ -1,7 +1,7 @@
-### DISPERC – Define the Mechanical Dispersivity for All Cells {#kw-DISPERC}
+### DISPERC – Define the Mechanical Dispersivity for All Cells
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -16,13 +16,16 @@ The [DISPERC](#REF_HEADING_KEYWORD_DISPERC_6_3) keyword defines the mechanical d
 | 1 | [DISPERC](#REF_HEADING_KEYWORD_DISPERC_6_3) | [DISPERC](#REF_HEADING_KEYWORD_DISPERC_6_3) is an array of real positive values that defines the mechanical dispersivity for each cell in the model. Repeat counts may be used, for example 20*1.0. | None |
 | feet | m | cm |  |
 | Notes: |  |  |  |
-: [DISPERC](#REF_HEADING_KEYWORD_DISPERC_6_3) Keyword Description {#tbl-6-3-39-1}
+
+*Table 6.3.39.1: [DISPERC](#REF_HEADING_KEYWORD_DISPERC_6_3) Keyword Description*
+
+
 ::: {.callout-note}
-The option has been tested in combination with the [CO2STORE](#kw-CO2STORE), [H2STORE](#REF_HEADING_KEYWORD_H2STORE), [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM), or [MICP](#kw-MICP) keywords, but not for the general case at this point.
+The option has been tested in combination with the CO2STORE, [H2STORE](#REF_HEADING_KEYWORD_H2STORE), [BIOFILM](#REF_HEADING_KEYWORD_BIOFILM), or MICP keywords, but not for the general case at this point.
 :::
 
 
-See also the [CO2STORE](#kw-CO2STORE) and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) keywords in the [RUNSPEC](#kw-RUNSPEC) section that active OPM Flow’s CO2 and H2 storage models respectively.
+See also the CO2STORE and [H2STORE](#REF_HEADING_KEYWORD_H2STORE) keywords in the RUNSPEC section that active OPM Flow’s CO2 and H2 storage models respectively.
 
 
 #### Example

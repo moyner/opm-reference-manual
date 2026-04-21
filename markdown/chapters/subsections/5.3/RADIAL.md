@@ -1,15 +1,15 @@
-### RADIAL – Radial Grid Activation Option {#kw-RADIAL}
+### RADIAL – Radial Grid Activation Option
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-RADIAL activates the radial grid geometry option for the model, if this keyword and the [SPIDER](#kw-SPIDER) keyword are omitted then Cartesian geometry is assumed by OPM Flow.
+RADIAL activates the radial grid geometry option for the model, if this keyword and the SPIDER keyword are omitted then Cartesian geometry is assumed by OPM Flow.
 
-See also the [SPIDER](#kw-SPIDER) keyword in the [RUNSPEC](#kw-RUNSPEC) section ([SPIDER](#kw-SPIDER) – Spider Grid Activation Option). This is an OPM Flow specific keyword for the simulator’s Spider Grid option, that emulates a Radial Grid via corner-point geometry.  Both Spider and Radial grids will be displayed the same in OPM ResInsight, as they both use Irregular Corner-Point Grid geometry. The difference is that the radial model’s pore volumes are adjusted to match the radial geometry pore volumes, whereas, the Spider grid volumes are not adjusted. See the examples in the section on Radial Grids (Radial Grids) and Spider Grids (Spider Grids) for further information.
+See also the SPIDER keyword in the RUNSPEC section (SPIDER – Spider Grid Activation Option). This is an OPM Flow specific keyword for the simulator’s Spider Grid option, that emulates a Radial Grid via corner-point geometry.  Both Spider and Radial grids will be displayed the same in OPM ResInsight, as they both use Irregular Corner-Point Grid geometry. The difference is that the radial model’s pore volumes are adjusted to match the radial geometry pore volumes, whereas, the Spider grid volumes are not adjusted. See the examples in the section on Radial Grids (Radial Grids) and Spider Grids (Spider Grids) for further information.
 
 
 #### Example

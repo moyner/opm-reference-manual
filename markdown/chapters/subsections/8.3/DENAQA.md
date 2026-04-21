@@ -1,17 +1,17 @@
-### DENAQA – Specify Ezrokhi Coefficients for Aqueous Density {#kw-DENAQA}
+### DENAQA – Specify Ezrokhi Coefficients for Aqueous Density
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The [DENAQA](#REF_HEADING_KEYWORD_DENAQA_8_3) keyword specifies the three Ezrokhi coefficients for each compositional component and for each equation of state that are used to calculate the aqueous phase density. The keyword should only be used if the compositional mode has been requested using the [COMPS](#kw-COMPS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+The [DENAQA](#REF_HEADING_KEYWORD_DENAQA_8_3) keyword specifies the three Ezrokhi coefficients for each compositional component and for each equation of state that are used to calculate the aqueous phase density. The keyword should only be used if the compositional mode has been requested using the COMPS keyword in the RUNSPEC section.
 
 OPM Flow does not currently support the general compositional modeling formulation.
 
-This keyword is only supported by OPM Flow when the two phase gas-water CO2 storage model has been activated using the [CO2STORE](#kw-CO2STORE) keyword and either the [GASWAT](#kw-GASWAT) or the [GAS](#kw-GAS) and [WATER](#kw-WATER) keywords in the [RUNSPEC](#kw-RUNSPEC) section. The component names "H2O", "CO2" and "NACL" (water, CO2 and salt respectively) must be specified using the [CNAMES](#kw-CNAMES) keyword.
+This keyword is only supported by OPM Flow when the two phase gas-water CO2 storage model has been activated using the CO2STORE keyword and either the GASWAT or the GAS and WATER keywords in the RUNSPEC section. The component names "H2O", "CO2" and "NACL" (water, CO2 and salt respectively) must be specified using the CNAMES keyword.
 
 
 | No. | Name | Description | Default |
@@ -20,7 +20,10 @@ This keyword is only supported by OPM Flow when the two phase gas-water CO2 stor
 | 1 | COEFFS | A series of real numbers that define the three Ezrokhi coeffients for each of the compositional components active in the model. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: DENAQA Keyword Description {#tbl-8-3-28-1}
+
+*Table 8.3.28.1: DENAQA Keyword Description*
+
+
 #### Examples
 
 The following example defines the Ezrokhi coefficients for each component in a single three-component equation of state model.

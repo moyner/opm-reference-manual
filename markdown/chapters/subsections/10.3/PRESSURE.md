@@ -1,15 +1,15 @@
-### PRESSURE – Define the Initial Equilibration Pressures for All Grid Blocks {#kw-PRESSURE}
+### PRESSURE – Define the Initial Equilibration Pressures for All Grid Blocks
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The PRESSURE keyword defines the initial equilibration pressures for all grid cells in the model and should be used in conjunction with the [PBUB](#kw-PBUB), [PDEW](#kw-PDEW), [RS](#kw-RS), [RV](#kw-RV), [SGAS](#kw-SGAS), [SOIL](#kw-SOIL) and [SWAT](#kw-SWAT) keywords etc., to fully describe the initial state of the model.
+The PRESSURE keyword defines the initial equilibration pressures for all grid cells in the model and should be used in conjunction with the PBUB, PDEW, RS, RV, SGAS, SOIL and SWAT keywords etc., to fully describe the initial state of the model.
 
-The keyword is used by the Enumeration Initialization method to initialize the model, as opposed to the Equilibration Initialization method that utilizes the [EQUIL](#kw-EQUIL) keyword in the [SOLUTION](#kw-SOLUTION) section. This is the non-standard formulation to initialize the model and is seldom employed in the industry.  The standard methodology is for OPM Flow to initialize a model using the parameters on the [EQUIL](#kw-EQUIL) keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
+The keyword is used by the Enumeration Initialization method to initialize the model, as opposed to the Equilibration Initialization method that utilizes the EQUIL keyword in the SOLUTION section. This is the non-standard formulation to initialize the model and is seldom employed in the industry.  The standard methodology is for OPM Flow to initialize a model using the parameters on the EQUIL keyword combined with other keywords to fully describe the initial state of the model.  The keyword can be used with all grid types.
 
 
 | No. | Name | Description | Default |
@@ -18,8 +18,11 @@ The keyword is used by the Enumeration Initialization method to initialize the m
 | 1 | PRESSURE | PRESSURE is an array of real positive numbers assigning the initial equilibration pressures to each cell in the model. Repeat counts may be used, for example 20*4200.0. | None |
 | psia | barsa | atma |  |
 | Notes: |  |  |  |
-: PRESSURE Keyword Description {#tbl-10-23}
-See also the [PBUB](#kw-PBUB), [PDEW](#kw-PDEW), [RS](#kw-RS), [RV](#kw-RV), [SGAS](#kw-SGAS), [SOIL](#kw-SOIL) and [SWAT](#kw-SWAT) keywords to fully define the initial state of the model.
+
+*Table 10.23: PRESSURE Keyword Description*
+
+
+See also the PBUB, PDEW, RS, RV, SGAS, SOIL and SWAT keywords to fully define the initial state of the model.
 
 
 #### Example

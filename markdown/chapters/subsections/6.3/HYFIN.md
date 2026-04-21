@@ -1,13 +1,13 @@
-### HYFIN – Define the Ratio of LGR Grid Blocks in the Y-Direction {#kw-HYFIN}
+### HYFIN – Define the Ratio of LGR Grid Blocks in the Y-Direction
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-HYFIN defines the split ratio of grid blocks for the [DYV](#kw-DYV) keyword in the y-direction via a vector within a Local Grid Refinement (“[LGR](#kw-LGR)”) as opposed to defining the size for each cell for a Cartesian [LGR](#kw-LGR) Grid. The [LGR](#kw-LGR) keyword in the [RUNSPEC](#kw-RUNSPEC) section should be activated to indicate an [LGR](#kw-LGR) is being used, and the keyword HYFIN should be placed in between the [CARFIN](#kw-CARFIN) and [ENDFIN](#kw-ENDFIN) keywords in the [GRID](#kw-GRID) section. The [DYV](#kw-DYV) keyword in the [GRID](#kw-GRID) section defines the grid size in terms of the length, that is feet for field units, this keyword defines the length as the ratio of the coarse cells.
+HYFIN defines the split ratio of grid blocks for the DYV keyword in the y-direction via a vector within a Local Grid Refinement (“LGR”) as opposed to defining the size for each cell for a Cartesian LGR Grid. The LGR keyword in the RUNSPEC section should be activated to indicate an LGR is being used, and the keyword HYFIN should be placed in between the CARFIN and ENDFIN keywords in the GRID section. The DYV keyword in the GRID section defines the grid size in terms of the length, that is feet for field units, this keyword defines the length as the ratio of the coarse cells.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -15,11 +15,14 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | HYFIN | HYFIN is a vector of real numbers describing the ratio of cell size for the grid blocks in the y-direction in a Cartesian [LGR](#kw-LGR) grid. Repeat counts may be used, for example 2*2.0. | None |
+| 1 | HYFIN | HYFIN is a vector of real numbers describing the ratio of cell size for the grid blocks in the y-direction in a Cartesian LGR grid. Repeat counts may be used, for example 2*2.0. | None |
 | dimensionless | dimensionless | dimensionless |  |
 | Notes: |  |  |  |
-: HYFIN Keyword Description {#tbl-6-48}
-See also the [CARFIN](#kw-CARFIN), [ENDFIN](#kw-ENDFIN), [HXFIN](#kw-HXFIN), and [HZFIN](#kw-HZFIN) keywords in the [GRID](#kw-GRID) section to fully define a Cartesian [LGR](#kw-LGR) grid model.
+
+*Table 6.48: HYFIN Keyword Description*
+
+
+See also the CARFIN, ENDFIN, HXFIN, and HZFIN keywords in the GRID section to fully define a Cartesian LGR grid model.
 
 
 #### Example
@@ -46,4 +49,4 @@ ENDFIN
 
 ```
 
-The above example defines the size of the cells in the y-direction based on NY equals five on the [CARFIN](#kw-CARFIN) keyword in the [GRID](#kw-GRID) section.
+The above example defines the size of the cells in the y-direction based on NY equals five on the CARFIN keyword in the GRID section.

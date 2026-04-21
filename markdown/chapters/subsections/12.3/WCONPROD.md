@@ -1,19 +1,19 @@
-### WCONPROD – Define Well Production Targets and Constraints {#kw-WCONPROD}
+### WCONPROD – Define Well Production Targets and Constraints
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The WCONPROD keyword defines production targets and constraints for wells that have previously been defined by the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section. Note that wells can be allocated to a group when they are specified by the [WELSPECS](#kw-WELSPECS) keyword.  Wells defined to be under group control will have their production rates controlled by the group to which they belong, in addition to any well constraints defined for the wells using this keyword.
+The WCONPROD keyword defines production targets and constraints for wells that have previously been defined by the WELSPECS keyword in the SCHEDULE section. Note that wells can be allocated to a group when they are specified by the WELSPECS keyword.  Wells defined to be under group control will have their production rates controlled by the group to which they belong, in addition to any well constraints defined for the wells using this keyword.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well production targets and constraints data are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well production targets and constraints data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
 | 2 | STATUS | A defined character string that declares the status of the well. STATUS should be set to one of the following character strings: Note a well’s STATUS should always be set either STOP or SHUT if the well’s production is to be set to zero. Just setting a well’s production rate to zero means that the well is open to flow with a zero rate, this will cause numerical issues especially for wells under THP control. | OPEN |
 | 3 | TARGET | A defined character string that sets the target production phase for the well, all the other phases will therefore act as constraints. The simulator will attempt to meet the TARGET based on the phase rate stated in items (4) to (10) on this keyword. TARGET should be set to one of the following character strings: Here the default tokens of 1* or '' may be used, and both default tokens behave in the same manner; however, the actual default value used when TARGET is defaulted is dependent on the data entered on this keyword as described below: Note the default value of one atmosphere should be avoided as the BHP will result in unrealistic well potentials as well as optimistic production forecasts for the well. | 1* |
 | 4 | ORAT | A real positive value that defines the maximum surface oil production rate target or constraint. This value may be specified using a User Defined Argument (UDA). | None |
@@ -30,8 +30,8 @@ The WCONPROD keyword defines production targets and constraints for wells that h
 | psia 14.70 | barsa 1.01325. | atma 1.0 |  |
 | 10 | THP | A real positive value that defines the minimum tubing head pressure target or constraint. This value may be specified using a User Defined Argument (UDA). Note the default value of zero should be avoided if the well’s control TARGET has been set to THP, as this will result in optimistic production forecasts for a well, since a well must flow against a back pressure imposed by the surface facilities. | Defined |
 | psia 0.0 | barsa 0.0 | atma 0.0 |  |
-| 11 | VFPTAB | A positive integer greater than or equal to zero that defines the vertical lift performance tables to be used for calculating the tubing head pressure for the well. If a non-zero value is entered then the vertical lift performance tables must be entered via the [VFPPROD](#kw-VFPPROD) keyword in the [SCHEDULE](#kw-SCHEDULE) section and allocated to the well via this item. The default value of zero implies no vertical lift performance tables and in this case TARGET cannot be set to THP and in addition item (10) should be defaulted or set to zero. | 0 |
-| 12 | ALQ-WELL | A real positive value that defines the artificial lift quantity to be used in conjunction with the [VFPPROD](#kw-VFPPROD) assigned to the well via the VFPTAB variable. This value may be specified using a User Defined Argument (UDA). VFPTAB vertical lift performance table and the artificial lift quantity ALQ-WELL are used with the well fluid rates to calculate the well’s tubing head pressures values from the bottom-hole pressure. Note that the units for ALQ-WELL are dependent on the associated variable on the [VFPPROD](#kw-VFPPROD) keyword. | 0.0 |
+| 11 | VFPTAB | A positive integer greater than or equal to zero that defines the vertical lift performance tables to be used for calculating the tubing head pressure for the well. If a non-zero value is entered then the vertical lift performance tables must be entered via the VFPPROD keyword in the SCHEDULE section and allocated to the well via this item. The default value of zero implies no vertical lift performance tables and in this case TARGET cannot be set to THP and in addition item (10) should be defaulted or set to zero. | 0 |
+| 12 | ALQ-WELL | A real positive value that defines the artificial lift quantity to be used in conjunction with the VFPPROD assigned to the well via the VFPTAB variable. This value may be specified using a User Defined Argument (UDA). VFPTAB vertical lift performance table and the artificial lift quantity ALQ-WELL are used with the well fluid rates to calculate the well’s tubing head pressures values from the bottom-hole pressure. Note that the units for ALQ-WELL are dependent on the associated variable on the VFPPROD keyword. | 0.0 |
 | 13 | WGASRATE | Wet gas production rate used in the commercial compositional simulator. Not used and should be defaulted with 1*. | 1* |
 | 14 | MOLARATE | Total molar rate used in the commercial compositional simulator. Not used and should be defaulted with 1*. | 1* |
 | 15 | STEAMRAT | Thermal/Temperature steam rate (Cold Water Equivalent) for steam producers used in the commercial compositional simulator. Not used and should be defaulted with 1*. | 1* |
@@ -41,8 +41,11 @@ The WCONPROD keyword defines production targets and constraints for wells that h
 | 19 | COMBPROC | Linearly combined procedure for when exceeding COMBRATE, used in the commercial compositional simulator. Not used and should be defaulted with 1*. | 1* |
 | 20 | NGL | A real positive value that defines the observed Natural Gas Liquid (“NGL”) rate in the commercial compositional simulator. Not used and should be defaulted with 1*. | 1* |
 | Notes: |  |  |  |
-: WCONPROD Keyword Description {#tbl-12-80}
-See also the [GCONPROD](#kw-GCONPROD) and [GCONINJE](#kw-GCONINJE) keywords to define a group’s production and injection targets and constraints, and the [WCONINJE](#kw-WCONINJE) keyword to define an injection well’s targets and constraints. All the aforementioned keywords are described in the [SCHEDULE](#kw-SCHEDULE) section.
+
+*Table 12.80: WCONPROD Keyword Description*
+
+
+See also the GCONPROD and GCONINJE keywords to define a group’s production and injection targets and constraints, and the WCONINJE keyword to define an injection well’s targets and constraints. All the aforementioned keywords are described in the SCHEDULE section.
 
 
 #### Example
@@ -65,10 +68,10 @@ OP05     SHUT   GRUP 20E3   1*     1*    1*    1*     500.0                    /
 /
 ```
 
-Well OP01 is open and is on group control, subject to a maximum oil rate constraint of 5,000 stb/d and a minimum bottom-hole pressure of 500 psia. OP02 is also open and on group control but it’s maximum oil rate constraint has been set 10,000 stb/d, and is subject to a minimum bottom-hole pressure limit of 200 psia and a minimum tubing head pressure limit of 500 psia using [VFPPROD](#kw-VFPPROD) vertical lift table number two. Well OP03 is very similar to OP02, but with a 15,000 stb/d maximum oil constraint and using [VFPPROD](#kw-VFPPROD) vertical lift table number three with an artificial lift parameter of 10. The next well is not on group control. Well OP04 is open and has an oil rate target of 20,000 stb/d, subject to a minimum bottom-hole pressure of 500 psia.  Finally, well OP05 is shut and will not be brought back on production despite being put under group control, as the well has been declared shut.
+Well OP01 is open and is on group control, subject to a maximum oil rate constraint of 5,000 stb/d and a minimum bottom-hole pressure of 500 psia. OP02 is also open and on group control but it’s maximum oil rate constraint has been set 10,000 stb/d, and is subject to a minimum bottom-hole pressure limit of 200 psia and a minimum tubing head pressure limit of 500 psia using VFPPROD vertical lift table number two. Well OP03 is very similar to OP02, but with a 15,000 stb/d maximum oil constraint and using VFPPROD vertical lift table number three with an artificial lift parameter of 10. The next well is not on group control. Well OP04 is open and has an oil rate target of 20,000 stb/d, subject to a minimum bottom-hole pressure of 500 psia.  Finally, well OP05 is shut and will not be brought back on production despite being put under group control, as the well has been declared shut.
 
 
-The next example defines the production targets and constraints for five wells, of which well OP01 is under group control as the well’s group target and constraints have been set with the [GCONPROD](#kw-GCONPROD) keyword, and wells OP02 to OP05 belong to groups that have not had their group constraints set by [GCONPROD](#kw-GCONPROD).
+The next example defines the production targets and constraints for five wells, of which well OP01 is under group control as the well’s group target and constraints have been set with the GCONPROD keyword, and wells OP02 to OP05 belong to groups that have not had their group constraints set by GCONPROD.
 
 
 ```

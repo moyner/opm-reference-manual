@@ -1,19 +1,19 @@
-### AQUCON – Define Numerical Aquifer Connections to the Grid {#kw-AQUCON}
+### AQUCON – Define Numerical Aquifer Connections to the Grid
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-AQUCON keyword defines how numerical aquifers are connected to the simulation grid and these type of  aquifers are characterized by the [AQUNUM](#kw-AQUNUM) keyword in the [GRID](#kw-GRID) section. Analytical aquifers are connected to the simulation grid by the [AQUANCON](#kw-AQUANCON) keyword in the [GRID](#kw-GRID) section, this includes the Carter-Tracy and Fetkovich analytical aquifers, both of which are implemented in OPM Flow. Both aquifer types dimensions are declared by the [AQUDIMS](#kw-AQUDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section.
+AQUCON keyword defines how numerical aquifers are connected to the simulation grid and these type of  aquifers are characterized by the AQUNUM keyword in the GRID section. Analytical aquifers are connected to the simulation grid by the AQUANCON keyword in the GRID section, this includes the Carter-Tracy and Fetkovich analytical aquifers, both of which are implemented in OPM Flow. Both aquifer types dimensions are declared by the AQUDIMS keyword in the RUNSPEC section.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | AQUID | AQUID is a positive integer greater than or equal to one and less than or equal to the maximum number of numerical aquifers as defined by the MXNAQN variable on the [AQUDIMS](#kw-AQUDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, that defines the aquifer to be connected to the grid. | None |
+| 1 | AQUID | AQUID is a positive integer greater than or equal to one and less than or equal to the maximum number of numerical aquifers as defined by the MXNAQN variable on the AQUDIMS keyword in the RUNSPEC section, that defines the aquifer to be connected to the grid. | None |
 | 2 | I1 | A positive integer that defines the lower bound of the cells in the I-direction to be connected to the aquifer and must be greater than or equal to one and less than or equal to I2 and NX. | 1 |
 | 3 | I2 | A positive integer that defines the upper bound of the cells in the I-direction to be connected to the aquifer and must be greater than or equal to I1 and less than or equal to NX | NX |
 | 4 | J1 | A positive integer that defines the lower bound of the cells in the J-direction to be connected to the aquifer and must be greater than or equal to one and less than or equal to J2 and NY. | 1 |
@@ -29,9 +29,12 @@ AQUCON keyword defines how numerical aquifers are connected to the simulation gr
 | 12 | VEOPT1 | Vertical Equilibrium Option Number 1– Not Used | 1 |
 | 13 | VEOPT2 | Vertical Equilibrium Option Number 2– Not Used | 1 |
 | Notes: |  |  |  |
-: AQUCON Keyword Description {#tbl-6-8}
+
+*Table 6.8: AQUCON Keyword Description*
+
+
 ::: {.callout-note}
-If the AQUCON keyword has been utilized in the run deck then OPM Flow will write the AQUIFERN array to the *.[INIT](#kw-INIT) file in order to visualize the aquifer connections in OPM ResInsight. This is accomplished by setting the AQUIFERN value to 2^(AQUID-1) for cells connected to aquifer AQUID. If a cell is connected to multiple numerical aquifers then AQUIFERN is summed for all aquifers connected to a cell. Note that connecting cells to multiple aquifers is best avoided. Finally, for cells representing the numerical aquifers themselves,  AQUIFERN is set to minus AQUID.
+If the AQUCON keyword has been utilized in the run deck then OPM Flow will write the AQUIFERN array to the *.INIT file in order to visualize the aquifer connections in OPM ResInsight. This is accomplished by setting the AQUIFERN value to 2^(AQUID-1) for cells connected to aquifer AQUID. If a cell is connected to multiple numerical aquifers then AQUIFERN is summed for all aquifers connected to a cell. Note that connecting cells to multiple aquifers is best avoided. Finally, for cells representing the numerical aquifers themselves,  AQUIFERN is set to minus AQUID.
 :::
 
 
@@ -58,4 +61,4 @@ AQUCON
 
 ```
 
-See the [AQUNUM](#kw-AQUNUM) keyword in the [GRID](#kw-GRID) section for a complete example on defining and connecting a numerical aquifer to a simulation grid.
+See the AQUNUM keyword in the GRID section for a complete example on defining and connecting a numerical aquifer to a simulation grid.

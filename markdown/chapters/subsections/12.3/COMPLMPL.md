@@ -1,17 +1,17 @@
-### COMPLMPL – Assign Well LGR Connections to Completions {#kw-COMPLMPL}
+### COMPLMPL – Assign Well LGR Connections to Completions
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The COMPLMPL keyword assigns well connections in a [LGR](#kw-LGR), as defined by the [COMPDATL](#kw-COMPDATL) keyword in the [SCHEDULE](#kw-SCHEDULE) section, to completion intervals. This “lumping” of the connections to various completion intervals allows automatic workovers and economic criteria to be applied to the completions (that is a set of connections) as opposed to the connections.  This allows for a more realistic approach for workovers operations.
+The COMPLMPL keyword assigns well connections in a LGR, as defined by the COMPDATL keyword in the SCHEDULE section, to completion intervals. This “lumping” of the connections to various completion intervals allows automatic workovers and economic criteria to be applied to the completions (that is a set of connections) as opposed to the connections.  This allows for a more realistic approach for workovers operations.
 
 For example, if the water cut criteria for working over a well was set to 95%, and the average grid block connection thickness was one meter,  then once a well’s water cut reached 95% the worst offending one meter connection would be shut-in. If the well’s actual perforation interval was 10 meters and the 10 connections were lumped as one completion, then when the water cut limit of 95% is reach, the completion would be shut-in, that is all of the 10 connections within the completion would be shut-in.
 
-As the keyword is used to lump connections into a completions, the simulator adds together the contribution from all connections in the completion and uses the total values to test the economic limits.  Note that a connection can only belong to one completion.  In addition, completions can be used instead of connections in the [WELOPEN](#kw-WELOPEN) and [WPIMULT](#kw-WPIMULT) keywords if the completions have been defined by [COMPLUMP](#kw-COMPLUMP) for a well.
+As the keyword is used to lump connections into a completions, the simulator adds together the contribution from all connections in the completion and uses the total values to test the economic limits.  Note that a connection can only belong to one completion.  In addition, completions can be used instead of connections in the WELOPEN and WPIMULT keywords if the completions have been defined by COMPLUMP for a well.
 
 This keyword is not supported by OPM Flow but would change the results if supported so the simulation will be stopped.
 
@@ -19,24 +19,27 @@ This keyword is not supported by OPM Flow but would change the results if suppor
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
 | Field | Metric | Laboratory |  |
-| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the [WELSPECS](#kw-WELSPECS) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. | None |
-| 2 | LGRNAME | A character string of up to eight characters in length that defines the [LGR](#kw-LGR) name for which the well [LGR](#kw-LGR) connection data are being defined. Note that the well name (LGRNAME) must have been declared previously using the [WELSPECL](#kw-WELSPECL) keyword in the [SCHEDULE](#kw-SCHEDULE) section, otherwise an error may occur. If defaulted with 1* the [LGR](#kw-LGR) on the [WELSPECL](#kw-WELSPECL) keyword will be utilized. | Defined |
+| 1 | WELNAME | A character string of up to eight characters in length that defines the well name for which the well connection data are being defined. Note that the well name (WELNAME) must have been declared previously using the WELSPECS keyword in the SCHEDULE section, otherwise an error may occur. | None |
+| 2 | LGRNAME | A character string of up to eight characters in length that defines the LGR name for which the well LGR connection data are being defined. Note that the well name (LGRNAME) must have been declared previously using the WELSPECL keyword in the SCHEDULE section, otherwise an error may occur. If defaulted with 1* the LGR on the WELSPECL keyword will be utilized. | Defined |
 | 3 | I | A positive integer greater than or equal to zero and less than or equal to NX that defines the connection location in the I-direction. If set to zero or defaulted with 1* then all connections in the I-direction that also satisfy J, K1 and K2 criteria are assigned the ICOMP completion number. | 0 |
 | 4 | J | A positive integer greater than or equal to zero and less than or equal to NY that defines the connection location in the J-direction. If set to zero or defaulted with 1* then all connections in the J-direction that also satisfy I, K1 and K2 criteria are assigned the ICOMP completion number. | 0 |
 | 5 | K1 | A positive integer greater than or equal to one and less than or equal to NZ that defines the UPPER connection location in the K-direction. If set to zero or defaulted with 1* then the upper most connection in the well is used. | 0 |
 | 6 | K2 | A positive integer greater than or equal to K1 and less than or equal to NZ that defines the LOWER connection location in the K-direction. If set to zero or defaulted with 1* then the low most connection in the well is used. | 0 |
-| 7 | ICOMP | An integer greater than or equal to one and less than or equal to MXCONS as defined on the [WELLDIMS](#kw-WELLDIMS) keyword in the [RUNSPEC](#kw-RUNSPEC) section, that defines the completion number of the currently defined set of connections. If I, J, K1, K2 are all set to zero or defaulted to 1*, then all connections in the well have the same completion number of ICOMP. | None |
+| 7 | ICOMP | An integer greater than or equal to one and less than or equal to MXCONS as defined on the WELLDIMS keyword in the RUNSPEC section, that defines the completion number of the currently defined set of connections. If I, J, K1, K2 are all set to zero or defaulted to 1*, then all connections in the well have the same completion number of ICOMP. | None |
 | Notes: |  |  |  |
-: COMPLUPL Keyword Description {#tbl-12-13}
+
+*Table 12.13: COMPLUPL Keyword Description*
+
+
 Multiple grid block connections can be defined on one record for vertical wells by assigning different values to K1 and K2, for deviated and horizontal wells this may not be possible and therefore each grid block connection must be separately defined by setting K1 equal to K2.
 
 
-See also the [COMPDATL](#kw-COMPDATL) keyword in the [SCHEDULE](#kw-SCHEDULE) section.
+See also the COMPDATL keyword in the SCHEDULE section.
 
 
 #### Example
 
-The following example defines the connections for two vertical oil wells using the [COMPDATL](#kw-COMPDATL) keyword and the re-allocation of the connections to completions intervals using the COMPLMPL keyword.
+The following example defines the connections for two vertical oil wells using the COMPDATL keyword and the re-allocation of the connections to completions intervals using the COMPLMPL keyword.
 
 
 ```

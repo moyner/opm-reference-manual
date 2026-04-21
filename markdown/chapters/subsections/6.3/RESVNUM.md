@@ -1,23 +1,26 @@
-### RESVNUM – Define Reservoir Coordinate Data Set {#kw-RESVNUM}
+### RESVNUM – Define Reservoir Coordinate Data Set
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
 #### Description
 
-The RESVNUM keyword is used to define the start of a reservoir coordinate data set and stipulates the reservoir number for the data set.  The keyword is used in conjunction with the [COORD](#kw-COORD) keyword in the [GRID](#kw-GRID) section, that specifies a set of coordinate lines or pillars for a reservoir grid via an array. Note that the [COORD](#kw-COORD) keyword should immediately follow the RESVNUM keyword.
+The RESVNUM keyword is used to define the start of a reservoir coordinate data set and stipulates the reservoir number for the data set.  The keyword is used in conjunction with the COORD keyword in the GRID section, that specifies a set of coordinate lines or pillars for a reservoir grid via an array. Note that the COORD keyword should immediately follow the RESVNUM keyword.
 
 Although the keyword is processed by OPM Flow, the keyword is effectively ignored as only the default value of one is supported.
 
 
 | No. | Name | Description | Default |
 | --- | --- | :------ | --- |
-| 1 | RESVNUM | A positive integer values that defines the reservoir coordinate data set, or the independent reservoir, for which the subsequent [COORD](#kw-COORD) data is to be associated with. RESVNUM should be less than or equal to [NUMRES](#kw-NUMRES) on the [NUMRES](#kw-NUMRES) keyword in the [RUNSPEC](#kw-RUNSPEC) section. OPM Flow currently only accepts a single data set, that is the default value of one. | 1 |
+| 1 | RESVNUM | A positive integer values that defines the reservoir coordinate data set, or the independent reservoir, for which the subsequent COORD data is to be associated with. RESVNUM should be less than or equal to NUMRES on the NUMRES keyword in the RUNSPEC section. OPM Flow currently only accepts a single data set, that is the default value of one. | 1 |
 | Notes: |  |  |  |
-: RESVNUM Keyword Description {#tbl-6-114}
-See the [NUMRES](#kw-NUMRES) keyword in the [RUNSPEC](#kw-RUNSPEC) section that defines the number of reservoir grids ([COORD](#kw-COORD) data sets) that the simulator should process.
+
+*Table 6.114: RESVNUM Keyword Description*
+
+
+See the NUMRES keyword in the RUNSPEC section that defines the number of reservoir grids (COORD data sets) that the simulator should process.
 
 The facility is useful to combine two separate reservoir grids into one model in the simulator.
 

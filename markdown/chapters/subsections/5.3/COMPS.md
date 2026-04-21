@@ -1,7 +1,7 @@
-### COMPS  –  Activate Compositional Modeling Formulation {#kw-COMPS}
+### COMPS  –  Activate Compositional Modeling Formulation
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -13,7 +13,7 @@ OPM Flow does not currently support the general compositional modeling formulati
 
 
 ::: {.callout-note}
-This keyword is only supported by OPM Flow when the two component gas-water CO2 storage model has been activated using the [CO2STORE](#kw-CO2STORE) keyword and either the [GASWAT](#kw-GASWAT) or the [GAS](#kw-GAS) and [WATER](#kw-WATER) keywords in the [RUNSPEC](#kw-RUNSPEC) section. Secondly, although OPM Flow parses the keyword, the simulator currently ignores the data for this keyword.
+This keyword is only supported by OPM Flow when the two component gas-water CO2 storage model has been activated using the CO2STORE keyword and either the GASWAT or the GAS and WATER keywords in the RUNSPEC section. Secondly, although OPM Flow parses the keyword, the simulator currently ignores the data for this keyword.
 :::
 
 
@@ -21,10 +21,13 @@ This keyword is only supported by OPM Flow when the two component gas-water CO2 
 | --- | --- | :------ | --- |
 | 1 | COMPS | A positive integer defining the number of compositional components active in the model. Only the default value of two is currently supported by OPM Flow. | 2 |
 | Notes: |  |  |  |
-: COMPS Keyword Description {#tbl-5-7}
+
+*Table 5.7: COMPS Keyword Description*
+
+
 #### Example
 
-The following example shows how to request a two component compositional modeling formulation to be used with the [CO2STORE](#kw-CO2STORE) and [GASWAT](#kw-GASWAT) options.
+The following example shows how to request a two component compositional modeling formulation to be used with the CO2STORE and GASWAT options.
 
 
 ```

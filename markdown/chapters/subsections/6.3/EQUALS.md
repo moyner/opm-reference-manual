@@ -1,7 +1,7 @@
-### EQUALS – Sets a Specified Array to a Constant {#kw-EQUALS}
+### EQUALS – Sets a Specified Array to a Constant
 
 
-| [RUNSPEC](#kw-RUNSPEC) | [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
+| RUNSPEC | GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 
@@ -21,46 +21,52 @@ The EQUALS keyword sets a specified array or part of an array to a constant. The
 | 7 | K1 | A positive integer that defines the lower bound of the array in the K-direction to be modified must be greater than or equal to one and less than or equal to K2 and NZ. | 1 |
 | 8 | K2 | A positive integer that defines the upper bound of the array in the K-direction to be modified must be greater than or equal to KI and less than or equal to NZ. | NZ |
 | Notes: |  |  |  |
-: EQUALS Keyword Description {#tbl-6-35}
-Examples of the arrays most commonly operated on in each section are given in @tbl-6-36. Cells colored red indicate arrays that are not supported by OPM Flow operations.
+
+*Table 6.35: EQUALS Keyword Description*
+
+
+Examples of the arrays most commonly operated on in each section are given in Table 6.36. Cells colored red indicate arrays that are not supported by OPM Flow operations.
 
 
 | EQUALS Keyword and Variable Options by Section |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- |
-| [GRID](#kw-GRID) | [EDIT](#kw-EDIT) | [PROPS](#kw-PROPS) | [REGIONS](#kw-REGIONS) | [SOLUTION](#kw-SOLUTION) | [SUMMARY](#kw-SUMMARY) | [SCHEDULE](#kw-SCHEDULE) |
-| [DX](#kw-DX) | [DEPTH](#kw-DEPTH) | [SWL](#kw-SWL) | [ENDNUM](#kw-ENDNUM) | [PRESSURE](#kw-PRESSURE) |  |  |
-| [DY](#kw-DY) | [PORV](#kw-PORV) | [SWCR](#kw-SWCR) | [EQLNUM](#kw-EQLNUM) | [SWAT](#kw-SWAT) |  |  |
-| [DZ](#kw-DZ) | [TRANX](#kw-TRANX) | [SWU](#kw-SWU) | [FIPNUM](#kw-FIPNUM) | [SGAS](#kw-SGAS) |  |  |
-| [PERMX](#kw-PERMX) | [TRANY](#kw-TRANY) | [SGL](#kw-SGL) | [IMBNUM](#kw-IMBNUM) | [RV](#kw-RV) |  |  |
-| [PERMY](#kw-PERMY) | [TRANZ](#kw-TRANZ) | [SGCR](#kw-SGCR) | [MISCNUM](#kw-MISCNUM) | [RS](#kw-RS) |  |  |
-| [PERMZ](#kw-PERMZ) | [DIFFX](#kw-DIFFX) | [SGU](#kw-SGU) | [PVTNUM](#kw-PVTNUM) | [TBLK](#kw-TBLK) |  |  |
-| [MULTX](#kw-MULTX) | [DIFFY](#kw-DIFFY) | [KRW](#kw-KRW) | [ROCKNUM](#kw-ROCKNUM) | [GI](#kw-GI) |  |  |
-| [MULTY](#kw-MULTY) | [DIFFZ](#kw-DIFFZ) | [KRO](#kw-KRO) | [SATNUM](#kw-SATNUM) | [OILAPI](#kw-OILAPI) |  |  |
-| [MULTZ](#kw-MULTZ) | [TRANR](#kw-TRANR) | [KRG](#kw-KRG) | [WH2NUM](#kw-WH2NUM) | [SALT](#kw-SALT) |  |  |
-| [DR](#kw-DR) | [TRANTHT](#kw-TRANTHT) | [PCG](#kw-PCG) |  | [GASCONC](#kw-GASCONC) |  |  |
-| [DTHETA](#kw-DTHETA) | [DIFFR](#kw-DIFFR) | [PCW](#kw-PCW) |  | [SOLVCONC](#kw-SOLVCONC) |  |  |
-| [PERMR](#kw-PERMR) | [DIFFTHT](#kw-DIFFTHT) |  |  | [SOLVFRAC](#kw-SOLVFRAC) |  |  |
-| [PERMTHT](#kw-PERMTHT) |  |  |  | [SFOAM](#kw-SFOAM) |  |  |
-| [DZNET](#kw-DZNET) |  |  |  | [SPOLY](#kw-SPOLY) |  |  |
-| [PORO](#kw-PORO) |  |  |  |  |  |  |
-| [NTG](#kw-NTG) |  |  |  |  |  |  |
-| [FLUXNUM](#kw-FLUXNUM) |  |  |  |  |  |  |
-| [MULTNUM](#kw-MULTNUM) |  |  |  |  |  |  |
-| [MPFANUM](#kw-MPFANUM) |  |  |  |  |  |  |
-| [DIFFX](#kw-DIFFX) |  |  |  |  |  |  |
-| [DIFFY](#kw-DIFFY) |  |  |  |  |  |  |
-| [DIFFZ](#kw-DIFFZ) |  |  |  |  |  |  |
-| [DIFFR](#kw-DIFFR) |  |  |  |  |  |  |
-| [DIFFTHT](#kw-DIFFTHT) |  |  |  |  |  |  |
-: EQUALS Keyword Applicable Arrays by Section {#tbl-6-36}
+| GRID | EDIT | PROPS | REGIONS | SOLUTION | SUMMARY | SCHEDULE |
+| DX | DEPTH | SWL | ENDNUM | PRESSURE |  |  |
+| DY | PORV | SWCR | EQLNUM | SWAT |  |  |
+| DZ | TRANX | SWU | FIPNUM | SGAS |  |  |
+| PERMX | TRANY | SGL | IMBNUM | RV |  |  |
+| PERMY | TRANZ | SGCR | MISCNUM | RS |  |  |
+| PERMZ | DIFFX | SGU | PVTNUM | TBLK |  |  |
+| MULTX | DIFFY | KRW | ROCKNUM | GI |  |  |
+| MULTY | DIFFZ | KRO | SATNUM | OILAPI |  |  |
+| MULTZ | TRANR | KRG | WH2NUM | SALT |  |  |
+| DR | TRANTHT | PCG |  | GASCONC |  |  |
+| DTHETA | DIFFR | PCW |  | SOLVCONC |  |  |
+| PERMR | DIFFTHT |  |  | SOLVFRAC |  |  |
+| PERMTHT |  |  |  | SFOAM |  |  |
+| DZNET |  |  |  | SPOLY |  |  |
+| PORO |  |  |  |  |  |  |
+| NTG |  |  |  |  |  |  |
+| FLUXNUM |  |  |  |  |  |  |
+| MULTNUM |  |  |  |  |  |  |
+| MPFANUM |  |  |  |  |  |  |
+| DIFFX |  |  |  |  |  |  |
+| DIFFY |  |  |  |  |  |  |
+| DIFFZ |  |  |  |  |  |  |
+| DIFFR |  |  |  |  |  |  |
+| DIFFTHT |  |  |  |  |  |  |
+
+*Table 6.36: EQUALS Keyword Applicable Arrays by Section*
+
+
 ::: {.callout-note}
-Unlike the commercial simulator, using the EQUALS keyword to setup the structure of the grid using the [DX](#kw-DX), [DY](#kw-DY), [DZ](#kw-DZ) and [TOPS](#kw-TOPS) keywords should be avoided as it may cause OPM Flow to prematurely fail during the initialization. See the second example on the correct way to setup this type of grid.
+Unlike the commercial simulator, using the EQUALS keyword to setup the structure of the grid using the DX, DY, DZ and TOPS keywords should be avoided as it may cause OPM Flow to prematurely fail during the initialization. See the second example on the correct way to setup this type of grid.
 :::
 
 
 #### Examples
 
-The first example resets the [PERMX](#kw-PERMX), [PERMY](#kw-PERMY) and [PERMZ](#kw-PERMZ), arrays to 0.10, 0.10, and 0.01 for all cells in layer five, respectively.
+The first example resets the PERMX, PERMY and PERMZ, arrays to 0.10, 0.10, and 0.01 for all cells in layer five, respectively.
 
 
 ```
@@ -75,7 +81,7 @@ EQUALS
 ```
 
 
-The second example illustrates how to correctly setup a Cartesian Regular Grid in OPM Flow, given the  [DIMENS](#kw-DIMENS) keyword in the [RUNSPEC](#kw-RUNSPEC) section is set to:
+The second example illustrates how to correctly setup a Cartesian Regular Grid in OPM Flow, given the  DIMENS keyword in the RUNSPEC section is set to:
 
 
 ```
@@ -87,7 +93,7 @@ DIMENS
 ```
 
 
-and the following keywords in the [GRID](#kw-GRID) section:
+and the following keywords in the GRID section:
 
 
 ```
@@ -140,4 +146,4 @@ EQUALS
 ```
 
 
-Notice that the [DX](#kw-DX), [DY](#kw-DY), [DZ](#kw-DZ) and [TOPS](#kw-TOPS) keywords are defined separately, that is they are not included in the EQUALS keyword.
+Notice that the DX, DY, DZ and TOPS keywords are defined separately, that is they are not included in the EQUALS keyword.
