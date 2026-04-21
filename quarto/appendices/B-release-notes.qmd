@@ -2,4 +2,4 @@
 title: "Release Notes"
 ---
 
-{{< include ../../markdown/appendices/B.md >}}
+{{< include ../.generated-markdown/appendices/B.md >}}

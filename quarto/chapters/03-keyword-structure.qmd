@@ -1,1 +1,1 @@
-{{< include ../../markdown/chapters/3.md >}}
+{{< include ../.generated-markdown/chapters/3.md >}}

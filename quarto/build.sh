@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# build.sh — Generate QMD wrappers and render the Quarto book.
+# build.sh - Generate QMD wrappers and render the Quarto book.
 #
 # Usage:
 #   ./build.sh          # Render all formats (HTML + PDF)
@@ -10,27 +10,44 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-echo "==> Generating .qmd wrapper files …"
+echo "==> Generating .qmd wrapper files ..."
 python3 generate_qmd.py
+
+run_quarto() {
+  if command -v quarto >/dev/null 2>&1; then
+    quarto "$@"
+    return
+  fi
+
+  if command -v powershell.exe >/dev/null 2>&1; then
+    # Fallback for Git Bash on Windows where Quarto is installed but not on bash PATH.
+    powershell.exe -NoProfile -Command "quarto $*"
+    return
+  fi
+
+  echo "Error: Quarto CLI not found on PATH."
+  echo "Install Quarto or make sure the 'quarto' command is available."
+  exit 1
+}
 
 FORMAT="${1:-all}"
 
 case "$FORMAT" in
   html)
-    echo "==> Rendering HTML …"
-    quarto render --to html
+    echo "==> Rendering HTML ..."
+    run_quarto render --to html
     ;;
   pdf)
-    echo "==> Rendering PDF …"
-    quarto render --to pdf
+    echo "==> Rendering PDF ..."
+    run_quarto render --to pdf
     ;;
   preview)
-    echo "==> Starting live preview …"
-    quarto preview
+    echo "==> Starting live preview ..."
+    run_quarto preview
     ;;
   all)
-    echo "==> Rendering all formats …"
-    quarto render
+    echo "==> Rendering all formats ..."
+    run_quarto render
     ;;
   *)
     echo "Unknown format: $FORMAT"

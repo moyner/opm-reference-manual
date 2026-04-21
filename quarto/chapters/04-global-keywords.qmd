@@ -1,73 +1,73 @@
-{{< include ../../markdown/chapters/4.md >}}
+{{< include ../.generated-markdown/chapters/4.md >}}
 
-{{< include ../../markdown/chapters/sections/4/2.md >}}
+{{< include ../.generated-markdown/chapters/sections/4/2.md >}}
 
 ## Keyword Definitions
 
 ::: {#kw-COLUMNS}
-{{< include ../../markdown/chapters/subsections/4.3/COLUMNS.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/COLUMNS.md >}}
 :::
 
 ::: {#kw-DEBUG}
-{{< include ../../markdown/chapters/subsections/4.3/DEBUG.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/DEBUG.md >}}
 :::
 
 ::: {#kw-ECHO}
-{{< include ../../markdown/chapters/subsections/4.3/ECHO.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/ECHO.md >}}
 :::
 
 ::: {#kw-END}
-{{< include ../../markdown/chapters/subsections/4.3/END.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/END.md >}}
 :::
 
 ::: {#kw-ENDINC}
-{{< include ../../markdown/chapters/subsections/4.3/ENDINC.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/ENDINC.md >}}
 :::
 
 ::: {#kw-ENDSKIP}
-{{< include ../../markdown/chapters/subsections/4.3/ENDSKIP.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/ENDSKIP.md >}}
 :::
 
 ::: {#kw-EXTRAPMS}
-{{< include ../../markdown/chapters/subsections/4.3/EXTRAPMS.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/EXTRAPMS.md >}}
 :::
 
 ::: {#kw-FORMFEED}
-{{< include ../../markdown/chapters/subsections/4.3/FORMFEED.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/FORMFEED.md >}}
 :::
 
 ::: {#kw-INCLUDE}
-{{< include ../../markdown/chapters/subsections/4.3/INCLUDE.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/INCLUDE.md >}}
 :::
 
 ::: {#kw-MESSAGE}
-{{< include ../../markdown/chapters/subsections/4.3/MESSAGE.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/MESSAGE.md >}}
 :::
 
 ::: {#kw-MESSAGES}
-{{< include ../../markdown/chapters/subsections/4.3/MESSAGES.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/MESSAGES.md >}}
 :::
 
 ::: {#kw-NOECHO}
-{{< include ../../markdown/chapters/subsections/4.3/NOECHO.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/NOECHO.md >}}
 :::
 
 ::: {#kw-NOWARN}
-{{< include ../../markdown/chapters/subsections/4.3/NOWARN.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/NOWARN.md >}}
 :::
 
 ::: {#kw-SKIP}
-{{< include ../../markdown/chapters/subsections/4.3/SKIP.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/SKIP.md >}}
 :::
 
 ::: {#kw-SKIP100}
-{{< include ../../markdown/chapters/subsections/4.3/SKIP100.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/SKIP100.md >}}
 :::
 
 ::: {#kw-SKIP300}
-{{< include ../../markdown/chapters/subsections/4.3/SKIP300.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/SKIP300.md >}}
 :::
 
 ::: {#kw-WARN}
-{{< include ../../markdown/chapters/subsections/4.3/WARN.md >}}
+{{< include ../.generated-markdown/chapters/subsections/4.3/WARN.md >}}
 :::

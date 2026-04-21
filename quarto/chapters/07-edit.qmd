@@ -1,293 +1,293 @@
-{{< include ../../markdown/chapters/7.md >}}
+{{< include ../.generated-markdown/chapters/7.md >}}
 
-{{< include ../../markdown/chapters/sections/7/2.md >}}
+{{< include ../.generated-markdown/chapters/sections/7/2.md >}}
 
 ## Keyword Definitions
 
 ::: {#kw-ADD}
-{{< include ../../markdown/chapters/subsections/7.3/ADD.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/ADD.md >}}
 :::
 
 ::: {#kw-ADDREG}
-{{< include ../../markdown/chapters/subsections/7.3/ADDREG.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/ADDREG.md >}}
 :::
 
 ::: {#kw-BOUNDARY}
-{{< include ../../markdown/chapters/subsections/7.3/BOUNDARY.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/BOUNDARY.md >}}
 :::
 
 ::: {#kw-BOX}
-{{< include ../../markdown/chapters/subsections/7.3/BOX.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/BOX.md >}}
 :::
 
 ::: {#kw-COLUMNS}
-{{< include ../../markdown/chapters/subsections/7.3/COLUMNS.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/COLUMNS.md >}}
 :::
 
 ::: {#kw-COPY}
-{{< include ../../markdown/chapters/subsections/7.3/COPY.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/COPY.md >}}
 :::
 
 ::: {#kw-COPYREG}
-{{< include ../../markdown/chapters/subsections/7.3/COPYREG.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/COPYREG.md >}}
 :::
 
 ::: {#kw-DEBUG}
-{{< include ../../markdown/chapters/subsections/7.3/DEBUG.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/DEBUG.md >}}
 :::
 
 ::: {#kw-DEPTH}
-{{< include ../../markdown/chapters/subsections/7.3/DEPTH.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/DEPTH.md >}}
 :::
 
 ::: {#kw-DIFFR}
-{{< include ../../markdown/chapters/subsections/7.3/DIFFR.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/DIFFR.md >}}
 :::
 
 ::: {#kw-DIFFTHT}
-{{< include ../../markdown/chapters/subsections/7.3/DIFFTHT.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/DIFFTHT.md >}}
 :::
 
 ::: {#kw-DIFFX}
-{{< include ../../markdown/chapters/subsections/7.3/DIFFX.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/DIFFX.md >}}
 :::
 
 ::: {#kw-DIFFY}
-{{< include ../../markdown/chapters/subsections/7.3/DIFFY.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/DIFFY.md >}}
 :::
 
 ::: {#kw-DIFFZ}
-{{< include ../../markdown/chapters/subsections/7.3/DIFFZ.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/DIFFZ.md >}}
 :::
 
 ::: {#kw-ECHO}
-{{< include ../../markdown/chapters/subsections/7.3/ECHO.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/ECHO.md >}}
 :::
 
 ::: {#kw-EDIT}
-{{< include ../../markdown/chapters/subsections/7.3/EDIT.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/EDIT.md >}}
 :::
 
 ::: {#kw-EDITNNC}
-{{< include ../../markdown/chapters/subsections/7.3/EDITNNC.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/EDITNNC.md >}}
 :::
 
 ::: {#kw-EDITNNCR}
-{{< include ../../markdown/chapters/subsections/7.3/EDITNNCR.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/EDITNNCR.md >}}
 :::
 
 ::: {#kw-END}
-{{< include ../../markdown/chapters/subsections/7.3/END.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/END.md >}}
 :::
 
 ::: {#kw-ENDBOX}
-{{< include ../../markdown/chapters/subsections/7.3/ENDBOX.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/ENDBOX.md >}}
 :::
 
 ::: {#kw-ENDFIN}
-{{< include ../../markdown/chapters/subsections/7.3/ENDFIN.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/ENDFIN.md >}}
 :::
 
 ::: {#kw-ENDINC}
-{{< include ../../markdown/chapters/subsections/7.3/ENDINC.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/ENDINC.md >}}
 :::
 
 ::: {#kw-ENDSKIP}
-{{< include ../../markdown/chapters/subsections/7.3/ENDSKIP.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/ENDSKIP.md >}}
 :::
 
 ::: {#kw-EQUALREG}
-{{< include ../../markdown/chapters/subsections/7.3/EQUALREG.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/EQUALREG.md >}}
 :::
 
 ::: {#kw-EQUALS}
-{{< include ../../markdown/chapters/subsections/7.3/EQUALS.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/EQUALS.md >}}
 :::
 
 ::: {#kw-EXTRAPMS}
-{{< include ../../markdown/chapters/subsections/7.3/EXTRAPMS.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/EXTRAPMS.md >}}
 :::
 
 ::: {#kw-FILEUNIT}
-{{< include ../../markdown/chapters/subsections/7.3/FILEUNIT.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/FILEUNIT.md >}}
 :::
 
 ::: {#kw-FORMFEED}
-{{< include ../../markdown/chapters/subsections/7.3/FORMFEED.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/FORMFEED.md >}}
 :::
 
 ::: {#kw-GETDATA}
-{{< include ../../markdown/chapters/subsections/7.3/GETDATA.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/GETDATA.md >}}
 :::
 
 ::: {#kw-HMMULT}
-{{< include ../../markdown/chapters/subsections/7.3/HMMULT.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/HMMULT.md >}}
 :::
 
 ::: {#kw-IMPORT}
-{{< include ../../markdown/chapters/subsections/7.3/IMPORT.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/IMPORT.md >}}
 :::
 
 ::: {#kw-INCLUDE}
-{{< include ../../markdown/chapters/subsections/7.3/INCLUDE.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/INCLUDE.md >}}
 :::
 
 ::: {#kw-LGRCOPY}
-{{< include ../../markdown/chapters/subsections/7.3/LGRCOPY.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/LGRCOPY.md >}}
 :::
 
 ::: {#kw-MAXVALUE}
-{{< include ../../markdown/chapters/subsections/7.3/MAXVALUE.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MAXVALUE.md >}}
 :::
 
 ::: {#kw-MESSAGE}
-{{< include ../../markdown/chapters/subsections/7.3/MESSAGE.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MESSAGE.md >}}
 :::
 
 ::: {#kw-MESSAGES}
-{{< include ../../markdown/chapters/subsections/7.3/MESSAGES.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MESSAGES.md >}}
 :::
 
 ::: {#kw-MINVALUE}
-{{< include ../../markdown/chapters/subsections/7.3/MINVALUE.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MINVALUE.md >}}
 :::
 
 ::: {#kw-MULTFLT}
-{{< include ../../markdown/chapters/subsections/7.3/MULTFLT.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTFLT.md >}}
 :::
 
 ::: {#kw-MULTIPLY}
-{{< include ../../markdown/chapters/subsections/7.3/MULTIPLY.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTIPLY.md >}}
 :::
 
 ::: {#kw-MULTIREG}
-{{< include ../../markdown/chapters/subsections/7.3/MULTIREG.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTIREG.md >}}
 :::
 
 ::: {#kw-MULTPV}
-{{< include ../../markdown/chapters/subsections/7.3/MULTPV.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTPV.md >}}
 :::
 
 ::: {#kw-MULTR-}
-{{< include ../../markdown/chapters/subsections/7.3/MULTR-.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTR-.md >}}
 :::
 
 ::: {#kw-MULTR}
-{{< include ../../markdown/chapters/subsections/7.3/MULTR.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTR.md >}}
 :::
 
 ::: {#kw-MULTREGD}
-{{< include ../../markdown/chapters/subsections/7.3/MULTREGD.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTREGD.md >}}
 :::
 
 ::: {#kw-MULTREGH}
-{{< include ../../markdown/chapters/subsections/7.3/MULTREGH.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTREGH.md >}}
 :::
 
 ::: {#kw-MULTREGP}
-{{< include ../../markdown/chapters/subsections/7.3/MULTREGP.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTREGP.md >}}
 :::
 
 ::: {#kw-MULTREGT}
-{{< include ../../markdown/chapters/subsections/7.3/MULTREGT.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTREGT.md >}}
 :::
 
 ::: {#kw-MULTTHT-}
-{{< include ../../markdown/chapters/subsections/7.3/MULTTHT-.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTTHT-.md >}}
 :::
 
 ::: {#kw-MULTTHT}
-{{< include ../../markdown/chapters/subsections/7.3/MULTTHT.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTTHT.md >}}
 :::
 
 ::: {#kw-MULTX-}
-{{< include ../../markdown/chapters/subsections/7.3/MULTX-.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTX-.md >}}
 :::
 
 ::: {#kw-MULTX}
-{{< include ../../markdown/chapters/subsections/7.3/MULTX.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTX.md >}}
 :::
 
 ::: {#kw-MULTY-}
-{{< include ../../markdown/chapters/subsections/7.3/MULTY-.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTY-.md >}}
 :::
 
 ::: {#kw-MULTY}
-{{< include ../../markdown/chapters/subsections/7.3/MULTY.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTY.md >}}
 :::
 
 ::: {#kw-MULTZ-}
-{{< include ../../markdown/chapters/subsections/7.3/MULTZ-.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTZ-.md >}}
 :::
 
 ::: {#kw-MULTZ}
-{{< include ../../markdown/chapters/subsections/7.3/MULTZ.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/MULTZ.md >}}
 :::
 
 ::: {#kw-NOECHO}
-{{< include ../../markdown/chapters/subsections/7.3/NOECHO.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/NOECHO.md >}}
 :::
 
 ::: {#kw-NOWARN}
-{{< include ../../markdown/chapters/subsections/7.3/NOWARN.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/NOWARN.md >}}
 :::
 
 ::: {#kw-OPERATE}
-{{< include ../../markdown/chapters/subsections/7.3/OPERATE.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/OPERATE.md >}}
 :::
 
 ::: {#kw-OPERATER}
-{{< include ../../markdown/chapters/subsections/7.3/OPERATER.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/OPERATER.md >}}
 :::
 
 ::: {#kw-PORV}
-{{< include ../../markdown/chapters/subsections/7.3/PORV.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/PORV.md >}}
 :::
 
 ::: {#kw-PYEND}
-{{< include ../../markdown/chapters/subsections/7.3/PYEND.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/PYEND.md >}}
 :::
 
 ::: {#kw-PYINPUT}
-{{< include ../../markdown/chapters/subsections/7.3/PYINPUT.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/PYINPUT.md >}}
 :::
 
 ::: {#kw-REFINE}
-{{< include ../../markdown/chapters/subsections/7.3/REFINE.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/REFINE.md >}}
 :::
 
 ::: {#kw-SKIP}
-{{< include ../../markdown/chapters/subsections/7.3/SKIP.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/SKIP.md >}}
 :::
 
 ::: {#kw-SKIP100}
-{{< include ../../markdown/chapters/subsections/7.3/SKIP100.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/SKIP100.md >}}
 :::
 
 ::: {#kw-SKIP300}
-{{< include ../../markdown/chapters/subsections/7.3/SKIP300.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/SKIP300.md >}}
 :::
 
 ::: {#kw-TRANR}
-{{< include ../../markdown/chapters/subsections/7.3/TRANR.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/TRANR.md >}}
 :::
 
 ::: {#kw-TRANTHT}
-{{< include ../../markdown/chapters/subsections/7.3/TRANTHT.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/TRANTHT.md >}}
 :::
 
 ::: {#kw-TRANX}
-{{< include ../../markdown/chapters/subsections/7.3/TRANX.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/TRANX.md >}}
 :::
 
 ::: {#kw-TRANY}
-{{< include ../../markdown/chapters/subsections/7.3/TRANY.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/TRANY.md >}}
 :::
 
 ::: {#kw-TRANZ}
-{{< include ../../markdown/chapters/subsections/7.3/TRANZ.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/TRANZ.md >}}
 :::
 
 ::: {#kw-WARN}
-{{< include ../../markdown/chapters/subsections/7.3/WARN.md >}}
+{{< include ../.generated-markdown/chapters/subsections/7.3/WARN.md >}}
 :::

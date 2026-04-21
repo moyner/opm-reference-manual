@@ -2,4 +2,4 @@
 title: "OPMRUN"
 ---
 
-{{< include ../../markdown/appendices/C.md >}}
+{{< include ../.generated-markdown/appendices/C.md >}}

@@ -72,6 +72,20 @@ local function trim(text)
   return text:gsub("^%s+", ""):gsub("%s+$", "")
 end
 
+local function normalize_image_path(path)
+  local normalized = path:gsub("\\", "/")
+  local filename = normalized:match("^%.%./%.%./images/(.+)$")
+    or normalized:match("^%.%./images/(.+)$")
+    or normalized:match("^chapters/%.%./%.%./images/(.+)$")
+    or normalized:match("^appendices/%.%./%.%./images/(.+)$")
+
+  if filename then
+    return "images/" .. filename
+  end
+
+  return normalized
+end
+
 local function is_location_table(tbl)
   if not tbl.head or not tbl.head.rows or #tbl.head.rows == 0 then
     return false
@@ -122,4 +136,13 @@ function Table(tbl)
     tbl.attr.classes:insert("keyword-location-table")
   end
   return tbl
+end
+
+function Image(img)
+  local updated = normalize_image_path(img.src)
+  if updated ~= img.src then
+    img.src = updated
+    return img
+  end
+  return nil
 end
